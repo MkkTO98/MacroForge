@@ -1,0 +1,9 @@
+{
+  "cleanup": "dropdb --if-exists executed",
+  "database": "macroforge_wdi_smoke_2d46fe806c9f",
+  "expected_rows": 8,
+  "loader_runs": 2,
+  "run_key": "wdi-smoke-rerun-2d46fe806c9f",
+  "status": "succeeded",
+  "validation_report": "/home/mkkto/srv/projectforge/workspace/projects/macroforge/artifacts/reports/wdi-validation-smoke-20260602.json"
+}

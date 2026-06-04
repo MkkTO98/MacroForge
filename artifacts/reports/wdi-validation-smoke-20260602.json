@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "expected": 0,
+      "name": "required_tables_exist",
+      "observed": 0,
+      "status": "pass"
+    },
+    {
+      "expected": 8,
+      "name": "staging_expected_rows",
+      "observed": 8,
+      "status": "pass"
+    },
+    {
+      "expected": 8,
+      "name": "fact_expected_rows",
+      "observed": 8,
+      "status": "pass"
+    },
+    {
+      "expected": 0,
+      "name": "no_duplicate_fact_grain",
+      "observed": 0,
+      "status": "pass"
+    },
+    {
+      "expected": 0,
+      "name": "quality_checks_pass",
+      "observed": 0,
+      "status": "pass"
+    },
+    {
+      "expected": ">=2",
+      "name": "lineage_events_present",
+      "observed": 2,
+      "status": "pass"
+    }
+  ],
+  "database": "macroforge_wdi_smoke_2d46fe806c9f",
+  "expected_rows": 8,
+  "status": "pass",
+  "task": "TASK-007"
+}

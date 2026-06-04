@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+
+# Logs and runtime outputs
+logs/raw/*
+logs/derived/*
+logs/index/*
+logs/agents/*
+!logs/raw/.gitkeep
+!logs/derived/.gitkeep
+!logs/index/.gitkeep
+!logs/agents/.gitkeep
+
+# Agent queues
+question_queue/pending/*
+question_queue/answered/*
+question_queue/archive/*
+!question_queue/pending/.gitkeep
+!question_queue/answered/.gitkeep
+!question_queue/archive/.gitkeep
+
+# Generated projects and generated context reports
+/generated/
+context/active_context.md
+context/context_audit.json
+context/context_audit.md
+context/context_manifest.json
+
+# MacroForge data artifacts (keep only summaries/placeholders by default)
+data/raw/*
+data/staging/*
+data/curated/*
+data/metadata/*
+!data/raw/.gitkeep
+!data/raw/_SUMMARY.md
+!data/staging/.gitkeep
+!data/staging/_SUMMARY.md
+!data/curated/.gitkeep
+!data/curated/_SUMMARY.md
+!data/metadata/.gitkeep
+!data/metadata/_SUMMARY.md
+
+# Historical exports/scaffold archives are recovery evidence, not normal project context
+*.zip
+chat.html
+conversations.json
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

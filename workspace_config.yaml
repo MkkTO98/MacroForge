@@ -1,0 +1,15 @@
+# Workspace linkage for generated projects.
+# This file points a project toward a parent ProjectForge workspace without
+# duplicating the whole workspace inside the project.
+workspace:
+  mode: hybrid_inheritance
+  projectforge_root: /home/mkkto/srv/projectforge
+  root: /home/mkkto/srv/projectforge/workspace
+  projects_root: /home/mkkto/srv/projectforge/workspace/projects
+  centralized_resources:
+    models: shared_models
+    skills: shared_skills
+    notifications: shared_notifications
+    context_patterns: shared_context
+  local_overrides_require_decision_artifact: true
+  project_may_propose_projectforge_template_improvements: true

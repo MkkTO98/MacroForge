@@ -1,0 +1,13 @@
+{
+  "attribute_sets": 1,
+  "fact_rows": 8,
+  "lineage_events": 2,
+  "quality_checks": 4,
+  "staging_rows": 8,
+  "status": "succeeded",
+  "task": "TASK-015",
+  "unit_codes": [
+    "USD_EXC",
+    "USD_PPP"
+  ]
+}

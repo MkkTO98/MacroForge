@@ -1,0 +1,162 @@
+{
+  "combined_row_count": 8,
+  "combined_rows": [
+    {
+      "country_id": "DK",
+      "country_name": "Denmark",
+      "countryiso3code": "DNK",
+      "date": "2021",
+      "decimal": 0,
+      "indicator_id": "NY.GDP.MKTP.CD",
+      "indicator_name": "GDP (current US$)",
+      "obs_status": null,
+      "source": "World Bank WDI",
+      "unit": null,
+      "value": 406110162088.054
+    },
+    {
+      "country_id": "DK",
+      "country_name": "Denmark",
+      "countryiso3code": "DNK",
+      "date": "2020",
+      "decimal": 0,
+      "indicator_id": "NY.GDP.MKTP.CD",
+      "indicator_name": "GDP (current US$)",
+      "obs_status": null,
+      "source": "World Bank WDI",
+      "unit": null,
+      "value": 355631021931.621
+    },
+    {
+      "country_id": "US",
+      "country_name": "United States",
+      "countryiso3code": "USA",
+      "date": "2021",
+      "decimal": 0,
+      "indicator_id": "NY.GDP.MKTP.CD",
+      "indicator_name": "GDP (current US$)",
+      "obs_status": null,
+      "source": "World Bank WDI",
+      "unit": null,
+      "value": 23315080560000
+    },
+    {
+      "country_id": "US",
+      "country_name": "United States",
+      "countryiso3code": "USA",
+      "date": "2020",
+      "decimal": 0,
+      "indicator_id": "NY.GDP.MKTP.CD",
+      "indicator_name": "GDP (current US$)",
+      "obs_status": null,
+      "source": "World Bank WDI",
+      "unit": null,
+      "value": 21060473613000
+    },
+    {
+      "country_id": "DK",
+      "country_name": "Denmark",
+      "countryiso3code": "DNK",
+      "date": "2021",
+      "decimal": 0,
+      "indicator_id": "SP.POP.TOTL",
+      "indicator_name": "Population, total",
+      "obs_status": null,
+      "source": "World Bank WDI",
+      "unit": null,
+      "value": 5856733
+    },
+    {
+      "country_id": "DK",
+      "country_name": "Denmark",
+      "countryiso3code": "DNK",
+      "date": "2020",
+      "decimal": 0,
+      "indicator_id": "SP.POP.TOTL",
+      "indicator_name": "Population, total",
+      "obs_status": null,
+      "source": "World Bank WDI",
+      "unit": null,
+      "value": 5831404
+    },
+    {
+      "country_id": "US",
+      "country_name": "United States",
+      "countryiso3code": "USA",
+      "date": "2021",
+      "decimal": 0,
+      "indicator_id": "SP.POP.TOTL",
+      "indicator_name": "Population, total",
+      "obs_status": null,
+      "source": "World Bank WDI",
+      "unit": null,
+      "value": 332099760
+    },
+    {
+      "country_id": "US",
+      "country_name": "United States",
+      "countryiso3code": "USA",
+      "date": "2020",
+      "decimal": 0,
+      "indicator_id": "SP.POP.TOTL",
+      "indicator_name": "Population, total",
+      "obs_status": null,
+      "source": "World Bank WDI",
+      "unit": null,
+      "value": 331577720
+    }
+  ],
+  "countries": [
+    "USA",
+    "DNK"
+  ],
+  "created_at_utc": "2026-06-02T21:58:59.702466+00:00",
+  "created_by_session": "parallel Hermes session at user request",
+  "date_range": "2020:2021",
+  "entries": [
+    {
+      "bytes": 928,
+      "content_type": "application/json;charset=utf-8",
+      "indicator": "NY.GDP.MKTP.CD",
+      "metadata": {
+        "lastupdated": "2026-04-08",
+        "page": 1,
+        "pages": 1,
+        "per_page": 1000,
+        "sourceid": "2",
+        "total": 4
+      },
+      "raw_path": "/home/mkkto/srv/projectforge/workspace/projects/macroforge/artifacts/handoffs/wdi-live-smoke-support-20260602/worldbank_wdi_NY.GDP.MKTP.CD_USA_DNK_2020_2021_raw.json",
+      "row_count": 4,
+      "sha256": "fe79eb846324a5d69df9518844e08b41add5377ac4f968208bd1152898d91167",
+      "status": 200,
+      "url": "https://api.worldbank.org/v2/country/USA;DNK/indicator/NY.GDP.MKTP.CD?date=2020:2021&format=json&per_page=1000"
+    },
+    {
+      "bytes": 888,
+      "content_type": "application/json;charset=utf-8",
+      "indicator": "SP.POP.TOTL",
+      "metadata": {
+        "lastupdated": "2026-04-08",
+        "page": 1,
+        "pages": 1,
+        "per_page": 1000,
+        "sourceid": "2",
+        "total": 4
+      },
+      "raw_path": "/home/mkkto/srv/projectforge/workspace/projects/macroforge/artifacts/handoffs/wdi-live-smoke-support-20260602/worldbank_wdi_SP.POP.TOTL_USA_DNK_2020_2021_raw.json",
+      "row_count": 4,
+      "sha256": "bfda0ac8ed98a9a68ceb6af210f893f2a57e1313b829c1fd9cb73c70b04d5c0b",
+      "status": 200,
+      "url": "https://api.worldbank.org/v2/country/USA;DNK/indicator/SP.POP.TOTL?date=2020:2021&format=json&per_page=1000"
+    }
+  ],
+  "expected_rows": "2 indicators x 2 countries x 2 years = 8 observations",
+  "indicators": [
+    "NY.GDP.MKTP.CD",
+    "SP.POP.TOTL"
+  ],
+  "intended_task": "TASK-005 WDI smoke slice support; user referred to TASK-004, but current TASK-004 schema foundation is already completed in project files.",
+  "project": "MacroForge",
+  "purpose": "Support another active Hermes session whose terminal permission layer blocked live no-key World Bank WDI HTTP access. This bundle provides the live API responses and checksums so that session can continue without making network calls."
+}

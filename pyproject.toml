@@ -1,0 +1,11 @@
+[project]
+name = "macroforge"
+version = "0.1.0"
+description = "Generated Python data project"
+requires-python = ">=3.11"
+
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

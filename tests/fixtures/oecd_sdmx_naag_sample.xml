@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:GenericData
+  xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+  xmlns:generic="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic">
+  <message:DataSet>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="FREQ" value="A"/>
+        <generic:Value id="REF_AREA" value="AUS"/>
+        <generic:Value id="MEASURE" value="B1GQ"/>
+        <generic:Value id="UNIT_MEASURE" value="USD_EXC"/>
+        <generic:Value id="CHAPTER" value="NAAG_I"/>
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension id="TIME_PERIOD" value="2020"/>
+        <generic:ObsValue value="1439.0230643897"/>
+        <generic:Attributes>
+          <generic:Value id="CONF_STATUS" value="F"/>
+          <generic:Value id="DECIMALS" value="2"/>
+          <generic:Value id="OBS_STATUS" value="A"/>
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension id="TIME_PERIOD" value="2021"/>
+        <generic:ObsValue value="1552.667"/>
+        <generic:Attributes>
+          <generic:Value id="CONF_STATUS" value="F"/>
+          <generic:Value id="DECIMALS" value="2"/>
+          <generic:Value id="OBS_STATUS" value="A"/>
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="FREQ" value="A"/>
+        <generic:Value id="REF_AREA" value="USA"/>
+        <generic:Value id="MEASURE" value="B1GQ"/>
+        <generic:Value id="UNIT_MEASURE" value="USD_EXC"/>
+        <generic:Value id="CHAPTER" value="NAAG_I"/>
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension id="TIME_PERIOD" value="2020"/>
+        <generic:ObsValue value="21322.95"/>
+        <generic:Attributes>
+          <generic:Value id="CONF_STATUS" value="F"/>
+          <generic:Value id="DECIMALS" value="2"/>
+          <generic:Value id="OBS_STATUS" value="A"/>
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="FREQ" value="A"/>
+        <generic:Value id="REF_AREA" value="DNK"/>
+        <generic:Value id="MEASURE" value="B1GQ"/>
+        <generic:Value id="UNIT_MEASURE" value="DKK"/>
+        <generic:Value id="CHAPTER" value="NAAG_I"/>
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension id="TIME_PERIOD" value="2020"/>
+        <generic:ObsValue value="2321.0"/>
+        <generic:Attributes>
+          <generic:Value id="CONF_STATUS" value="F"/>
+          <generic:Value id="DECIMALS" value="1"/>
+          <generic:Value id="OBS_STATUS" value="A"/>
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+  </message:DataSet>
+</message:GenericData>

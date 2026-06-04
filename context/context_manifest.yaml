@@ -1,0 +1,12 @@
+context_manifest:
+  purpose: "Machine-readable map of the files agents should consider first."
+  required_always:
+    - CONSTITUTION.md
+    - instructions/GENERAL_INSTRUCTIONS.md
+    - state/active_goal.md
+    - state/project_state.md
+  generated_outputs:
+    - context/active_context.md
+    - context/compressed_context.md
+  notes:
+    - "Update this manifest when project structure changes substantially."

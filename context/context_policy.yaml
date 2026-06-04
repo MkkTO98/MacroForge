@@ -1,0 +1,116 @@
+context_policy:
+  mode: local_execution_cloud_governance
+
+  budgets:
+    local_model_tokens: 24000
+    cloud_governance_tokens: 10000
+    cloud_governance_target_tokens: 8000
+    project_wide_review_tokens: 64000
+    project_wide_review_target_tokens: 32000
+
+  budget_intent:
+    local_model_tokens: routine local execution and implementation context
+    cloud_governance_tokens: default compact cloud reasoning bundle for high-leverage decisions
+    project_wide_review_tokens: justified cloud governance mode for audits, redesigns, strategic reviews, and gap analysis
+
+  context_modes:
+    normal:
+      purpose: local execution or narrow task work
+      default_model_target: local
+      includes: [project_summary, active_task_file, relevant_folder_summaries, relevant_decision_records, explicitly_retrieved_source_files, short_recent_handoff_summary]
+    governance:
+      purpose: compact cloud architecture/strategy reasoning over selected evidence
+      default_model_target: cloud
+      requires_context_audit: true
+      budget: cloud_governance_tokens
+    project_wide_review:
+      purpose: larger cloud governance review for architecture audit, redesign, strategic planning, gap analysis, and consistency review
+      default_model_target: cloud
+      requires_context_audit: true
+      requires_review_justification: true
+      budget: project_wide_review_tokens
+      starts_with_all_folder_summaries: true
+      still_excludes_raw_logs_by_default: true
+
+  normal_context_may_include:
+    - project_summary
+    - active_task_file
+    - relevant_folder_summaries
+    - relevant_decision_records
+    - explicitly_retrieved_source_files
+    - short_recent_handoff_summary
+
+  normal_context_must_not_include:
+    - raw_logs
+    - entire_previous_conversations
+    - full_session_jsonl_files
+    - whole_project_file_dumps
+    - unrelated_folders
+    - large_tool_outputs
+    - generated_artifacts_unless_explicitly_relevant
+
+  retrieval_order:
+    - read_project_summary
+    - identify_relevant_folders
+    - read_relevant_folder_summaries
+    - read_relevant_decision_records
+    - retrieve_only_relevant_files
+    - expand_context_incrementally_if_audit_or_reasoning_need_justifies_it
+    - read_raw_logs_only_for_failure_investigation_or_summary_gap
+
+  folder_summaries:
+    enabled: true
+    filename: _SUMMARY.md
+    maintained_by: context_manager
+    use_before_deep_file_reads: true
+
+  task_completion:
+    update_summaries: true
+    summary_mode: affected_only
+    require_summary_inspection: true
+    require_final_verification_after_summary_updates: true
+    rule: >-
+      When a task is completed, update task outcome/status, state, handoff,
+      and affected folder summaries. Prefer affected-only summary refresh;
+      inspect refreshed summaries for stale curated Active Work, Needs
+      Attention, or task status sections; patch manually if needed; then run
+      final verification after governance and summary edits.
+
+  limits:
+    summary_file_chars: 4000
+    handoff_chars: 3000
+    active_task_chars: 8000
+    decision_record_chars: 6000
+    explicit_source_file_chars: 20000
+    project_wide_source_file_chars: 12000
+    project_wide_folder_summary_count: 200
+
+  raw_logs:
+    stored_for: audit_debugging_only
+    include_in_normal_context: false
+    allowed_contexts:
+      - failure_investigation
+      - forensic
+      - incident
+    rule: Raw logs are never included in normal context bundles. Governance reviews use summaries and decision history first.
+
+  cloud_audit:
+    required_before_cloud_model: true
+    report_paths:
+      json: context/context_audit.json
+      markdown: context/context_audit.md
+    required_fields:
+      - total_estimated_tokens
+      - context_mode
+      - review_justification_when_project_wide
+      - included_files_with_reasons
+      - excluded_files_with_reasons
+      - raw_logs_excluded
+      - summaries_used
+      - model_selected_and_reason
+
+  compression:
+    summarize_large_files: true
+    large_file_line_threshold: 250
+    prefer_summaries_for_non_target_folders: true
+    summaries_and_log_compression_use_local_model: true

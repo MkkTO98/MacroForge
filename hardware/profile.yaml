@@ -1,0 +1,18 @@
+hardware_profile:
+  machine_name: ASK_LATER
+  os: ASK_LATER
+  ram_gb: ASK_LATER
+  cpu_threads: ASK_LATER
+  gpu:
+    vendor: ASK_LATER
+    model: ASK_LATER
+    vram_gb: ASK_LATER
+  local_model_runtimes:
+    - ollama
+  limits:
+    max_parallel_large_models: 1
+    max_parallel_small_models: 3
+    prefer_smallest_sufficient_model: true
+    escalate_to_codex_when_local_capability_fails: true
+  note: >
+    This is the canonical hardware profile. Do not duplicate it under models/.
