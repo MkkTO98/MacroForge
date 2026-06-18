@@ -64,3 +64,5 @@ Do not:
 ## Outcome
 
 Complete. TASK-040 added deterministic OECD unit-basis comparability helpers and tests, generated `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json` and `.md`, and recorded separate `USD_EXC` exchange-rate and `USD_PPP` PPP comparability candidates for existing OECD `B1GQ` GDP evidence. The output preserves TASK-039 boundaries: no accepted/base mapping state mutation, no canonical asset manifest mutation, no report integration, no auto-apply, no unit/currency conversion, no frequency aggregation, no model calls, no live fetches, no migrations, and no live/default `macro` writes.
+
+Closeout evidence: full tests passed (`70 passed in 4.84s`), coherence passed with no blocks, context health passed with no blocks, recovery reported no blockers or pending questions, unrelated deterministic report churn was restored, and the implementation was committed locally as `58492f7 Add OECD unit-basis comparability evidence`.
