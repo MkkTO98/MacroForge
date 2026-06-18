@@ -201,3 +201,55 @@ def test_wdi_enrichment_audit_writer_is_deterministic_and_reads_back_metadata_ev
     assert loaded["workflow"]["metadata"]["model_calls"] == "none"
     assert loaded["workflow"]["metadata"]["live_fetches"] == "none"
     assert loaded["workflow"]["metadata"]["database_writes"] == "none"
+
+
+def test_oecd_unit_basis_split_separates_usd_exchange_rate_and_ppp_without_advancing_state():
+    seed = _seed_state()
+
+    audit = canonicalization_state.build_oecd_unit_basis_comparability_audit(seed)
+
+    assert audit["task"] == "TASK-040"
+    assert audit["status"] == "succeeded"
+    assert audit["metadata"]["advancement_requirements"] == "artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json"
+    assert audit["metadata"]["model_calls"] == "none"
+    assert audit["metadata"]["unit_conversion"] == "not_implemented"
+    assert audit["accepted_mapping_state_mutated"] is False
+    assert audit["canonical_asset_manifest_mutated"] is False
+
+    candidates = {candidate["basis"]: candidate for candidate in audit["oecd_basis_candidates"]}
+    assert set(candidates) == {"exchange_rate", "ppp"}
+    assert candidates["exchange_rate"]["unit_profile_id"] == "unit:OECD_NAAG:USD_EXC"
+    assert candidates["exchange_rate"]["comparability_group"] == "current_usd_exchange_rate_basis"
+    assert candidates["ppp"]["unit_profile_id"] == "unit:OECD_NAAG:USD_PPP"
+    assert candidates["ppp"]["comparability_group"] == "current_usd_ppp_basis"
+    assert all(candidate["report_integration"] == "deferred" for candidate in candidates.values())
+    assert all(candidate["auto_apply"] is False for candidate in candidates.values())
+
+    assert audit["checks"] == {
+        "oecd_evidence_found": "pass",
+        "usd_exchange_rate_and_ppp_split": "pass",
+        "basis_caveats_preserved": "pass",
+        "no_conversion_or_aggregation": "pass",
+        "no_accepted_state_or_manifest_mutation": "pass",
+        "no_auto_apply_or_report_integration": "pass",
+        "task_039_requirements_linked": "pass",
+    }
+
+
+def test_oecd_unit_basis_audit_writer_is_deterministic_and_human_readable(tmp_path):
+    seed = _seed_state()
+    json_path = tmp_path / "artifacts" / "reports" / "canonicalization-oecd-unit-basis-comparability-20260618.json"
+    md_path = tmp_path / "artifacts" / "reports" / "canonicalization-oecd-unit-basis-comparability-20260618.md"
+
+    report = canonicalization_state.write_oecd_unit_basis_comparability_audit(json_path, md_path, seed)
+    first_json = json_path.read_text(encoding="utf-8")
+    first_md = md_path.read_text(encoding="utf-8")
+    canonicalization_state.write_oecd_unit_basis_comparability_audit(json_path, md_path, seed)
+
+    assert json_path.read_text(encoding="utf-8") == first_json
+    assert md_path.read_text(encoding="utf-8") == first_md
+    assert report["status"] == "succeeded"
+    assert "# OECD unit-basis comparability split" in first_md
+    assert "USD_EXC" in first_md
+    assert "USD_PPP" in first_md
+    assert "No accepted mapping state was mutated" in first_md

@@ -15,6 +15,8 @@ This folder is part of the ProjectForge file-backed operating system for `artifa
 - `canonical-gdp-snapshot-20260604.md`
 - `canonicalization-deferred-mapping-advancement-requirements-20260618.json`
 - `canonicalization-deferred-mapping-advancement-requirements-20260618.md`
+- `canonicalization-oecd-unit-basis-comparability-20260618.json`
+- `canonicalization-oecd-unit-basis-comparability-20260618.md`
 - `canonicalization-proposal-workflow-20260613.json`
 - `canonicalization-review-lifecycle-20260614.json`
 - `canonicalization-review-lifecycle-20260614.md`
@@ -37,6 +39,7 @@ This folder is part of the ProjectForge file-backed operating system for `artifa
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- TASK-040 produced `canonicalization-oecd-unit-basis-comparability-20260618.json` and `.md`, separating OECD `B1GQ` `USD_EXC` exchange-rate and `USD_PPP` PPP unit-basis candidates without mutating accepted/base state, the canonical asset manifest, reports, conversion, aggregation, sources, migrations, or model/runtime behavior.
 - TASK-039 produced `canonicalization-deferred-mapping-advancement-requirements-20260618.json` and `.md`, persisting concrete rationale, missing evidence/policy, semantic blockers, minimum advancement conditions, caveats, evidence pointers, replay requirements, and forbidden shortcuts for TASK-038 deferred OECD/Eurostat mappings.
 - TASK-038 produced `canonicalization-review-lifecycle-20260614.json` and `.md`, validating the bounded proposal -> review -> accepted/provisional lifecycle with one WDI governed provisional outcome and OECD/Eurostat deferred outcomes. It records explicit review decisions, check gates, state deltas, manifest deltas, lineage, and replay evidence without mutating base state or the canonical asset manifest.
 - `R-20260613-review-to-accepted-lifecycle-validation-design.md` remains the prior recommendation-only design artifact that TASK-038 executed in bounded form.
@@ -49,4 +52,4 @@ This folder is part of the ProjectForge file-backed operating system for `artifa
 - TASK-028 produced `canonical-gdp-snapshot-20260604.json` and `.md`, recording the first canonical-only GDP snapshot/audit report with 16 GDP observations, 0 missing bounded GDP observations, 0 duplicate fact grains, and 0 failing quality checks.
 
 ## Needs Attention
-- Do not treat the TASK-032, TASK-034, TASK-037, or TASK-038 canonicalization reports as live `macro` database writes, PostgreSQL persistence, model canonicalization, conversion, aggregation, accepted production ontology, auto-applied mapping state, or direct canonical asset manifest mutation.
+- Do not treat the TASK-032, TASK-034, TASK-037, TASK-038, TASK-039, or TASK-040 canonicalization reports as live `macro` database writes, PostgreSQL persistence, model canonicalization, conversion, aggregation, accepted production ontology, auto-applied mapping state, or direct canonical asset manifest mutation.

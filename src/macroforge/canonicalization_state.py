@@ -11,10 +11,15 @@ DEFAULT_AUDIT_PATH = "artifacts/reports/canonicalization-state-foundation-202606
 SOURCE_REPORT_PATH = "artifacts/reports/canonical-gdp-snapshot-20260604.json"
 DEFAULT_PROPOSAL_WORKFLOW_AUDIT_PATH = "artifacts/reports/canonicalization-proposal-workflow-20260613.json"
 DEFAULT_WDI_UNIT_METADATA_ENRICHMENT_AUDIT_PATH = "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json"
+DEFAULT_OECD_UNIT_BASIS_COMPARABILITY_JSON_PATH = "artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json"
+DEFAULT_OECD_UNIT_BASIS_COMPARABILITY_MD_PATH = "artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.md"
+ADVANCEMENT_REQUIREMENTS_PATH = "artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json"
 SOURCE_STATE_REPORT_PATH = "artifacts/reports/canonicalization-state-foundation-20260605.json"
 RUN_ID = "run:canonicalization-seed-20260605"
 PROPOSAL_WORKFLOW_RUN_ID = "run:canonicalization-proposal-workflow-20260613"
 WDI_UNIT_METADATA_ENRICHMENT_RUN_ID = "run:wdi-unit-metadata-enrichment-20260613"
+OECD_UNIT_BASIS_COMPARABILITY_RUN_ID = "run:oecd-unit-basis-comparability-20260618"
+TASK_040_GENERATED_AT = "2026-06-18T12:00:00Z"
 CANONICAL_GDP_CONCEPT_ID = "MACRO_GDP_OUTPUT"
 WDI_GDP_METADATA_FIXTURE = {
     "source_code": "WDI",
@@ -670,6 +675,174 @@ def write_wdi_unit_metadata_enrichment_audit(path: str | Path, seed_state: dict[
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return report
+
+
+def _oecd_unit_basis_candidates(seed_state: dict[str, Any]) -> list[dict[str, Any]]:
+    profiles_by_id = _unit_profiles_by_id(seed_state)
+    evidence = next(
+        row
+        for row in seed_state["provider_indicator_evidence"]
+        if row["source_code"] == "OECD_NAAG" and row["provider_indicator_code"] == "B1GQ"
+    )
+    candidates: list[dict[str, Any]] = []
+    for profile_id in sorted(evidence["unit_profile_ids"]):
+        profile = profiles_by_id[profile_id]
+        if profile["source_code"] != "OECD_NAAG":
+            continue
+        basis = profile["currency_basis"]
+        candidates.append(
+            {
+                "candidate_id": f"oecd-basis-candidate:{evidence['provider_indicator_code']}:{profile['provider_unit_code']}",
+                "provider": evidence["source_code"],
+                "provider_dataset_code": evidence["provider_dataset_code"],
+                "provider_indicator_code": evidence["provider_indicator_code"],
+                "unit_profile_id": profile["unit_profile_id"],
+                "provider_unit_code": profile["provider_unit_code"],
+                "basis": basis,
+                "comparability_group": profile["comparability_group"],
+                "currency": profile["currency"],
+                "price_basis": profile["price_basis"],
+                "scale_multiplier": profile["scale_multiplier"],
+                "caveats": list(profile["caveats"]),
+                "review_state": "review_required",
+                "report_integration": "deferred",
+                "auto_apply": False,
+                "advancement_effect": "basis_distinguished_not_accepted",
+            }
+        )
+    return candidates
+
+
+def _oecd_unit_basis_checks(report: dict[str, Any]) -> dict[str, str]:
+    candidates = report["oecd_basis_candidates"]
+    units = {candidate["provider_unit_code"] for candidate in candidates}
+    caveats = [caveat for candidate in candidates for caveat in candidate["caveats"]]
+    return {
+        "oecd_evidence_found": "pass" if candidates else "fail",
+        "usd_exchange_rate_and_ppp_split": "pass"
+        if units == {"USD_EXC", "USD_PPP"}
+        and {candidate["basis"] for candidate in candidates} == {"exchange_rate", "ppp"}
+        else "fail",
+        "basis_caveats_preserved": "pass"
+        if any("Exchange-rate USD" in caveat for caveat in caveats)
+        and any("PPP-basis USD" in caveat for caveat in caveats)
+        else "fail",
+        "no_conversion_or_aggregation": "pass"
+        if report["metadata"]["unit_conversion"] == "not_implemented"
+        and report["metadata"]["frequency_aggregation"] == "not_implemented"
+        else "fail",
+        "no_accepted_state_or_manifest_mutation": "pass"
+        if report["accepted_mapping_state_mutated"] is False
+        and report["canonical_asset_manifest_mutated"] is False
+        else "fail",
+        "no_auto_apply_or_report_integration": "pass"
+        if all(candidate["auto_apply"] is False and candidate["report_integration"] == "deferred" for candidate in candidates)
+        else "fail",
+        "task_039_requirements_linked": "pass"
+        if report["metadata"]["advancement_requirements"] == ADVANCEMENT_REQUIREMENTS_PATH
+        else "fail",
+    }
+
+
+def build_oecd_unit_basis_comparability_audit(seed_state: dict[str, Any]) -> dict[str, Any]:
+    candidates = _oecd_unit_basis_candidates(seed_state)
+    report = {
+        "task": "TASK-040",
+        "metadata": {
+            "generated_at": TASK_040_GENERATED_AT,
+            "run_id": OECD_UNIT_BASIS_COMPARABILITY_RUN_ID,
+            "source_state_report": SOURCE_STATE_REPORT_PATH,
+            "advancement_requirements": ADVANCEMENT_REQUIREMENTS_PATH,
+            "source_lifecycle_artifact": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+            "scope": "fixture_backed_oecd_gdp_unit_basis_comparability_split",
+            "model_calls": "none",
+            "live_fetches": "none",
+            "database_writes": "none",
+            "unit_conversion": "not_implemented",
+            "frequency_aggregation": "not_implemented",
+        },
+        "purpose": "Distinguish OECD USD_EXC and USD_PPP basis evidence before any mapping status advancement.",
+        "provider_evidence_id": "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+        "canonical_concept_id": CANONICAL_GDP_CONCEPT_ID,
+        "current_review_status": "deferred_pending_unit_basis_policy",
+        "resulting_review_status": "basis_distinguished_pending_review",
+        "oecd_basis_candidates": candidates,
+        "accepted_mapping_state_mutated": False,
+        "canonical_asset_manifest_mutated": False,
+        "forbidden_shortcuts_preserved": [
+            "no unit or currency conversion",
+            "no frequency aggregation",
+            "no report integration",
+            "no auto-apply",
+            "no accepted/base mapping state mutation",
+        ],
+    }
+    report["checks"] = _oecd_unit_basis_checks(report)
+    report["status"] = "succeeded" if all(value == "pass" for value in report["checks"].values()) else "failed"
+    return report
+
+
+def _render_oecd_unit_basis_markdown(report: dict[str, Any]) -> str:
+    lines = [
+        "# OECD unit-basis comparability split",
+        "",
+        "TASK-040 records a deterministic split of existing OECD GDP unit-basis evidence.",
+        "",
+        f"Status: {report['status']}",
+        f"Source requirements: `{report['metadata']['advancement_requirements']}`",
+        "",
+        "## Basis candidates",
+        "",
+    ]
+    for candidate in report["oecd_basis_candidates"]:
+        lines.extend(
+            [
+                f"- `{candidate['provider_unit_code']}` -> `{candidate['comparability_group']}`",
+                f"  - basis: `{candidate['basis']}`",
+                f"  - report integration: `{candidate['report_integration']}`",
+                f"  - auto apply: `{candidate['auto_apply']}`",
+                f"  - caveats: {'; '.join(candidate['caveats'])}",
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "## Boundary result",
+            "",
+            "No accepted mapping state was mutated.",
+            "No canonical asset manifest base file was mutated.",
+            "No unit/currency conversion, frequency aggregation, or report integration was implemented.",
+            "",
+            "## Checks",
+            "",
+        ]
+    )
+    lines.extend(f"- {key}: {value}" for key, value in report["checks"].items())
+    return "\n".join(lines) + "\n"
+
+
+def write_oecd_unit_basis_comparability_audit(
+    json_path: str | Path,
+    markdown_path: str | Path,
+    seed_state: dict[str, Any],
+) -> dict[str, Any]:
+    report = build_oecd_unit_basis_comparability_audit(seed_state)
+    output_json = Path(json_path)
+    output_md = Path(markdown_path)
+    output_json.parent.mkdir(parents=True, exist_ok=True)
+    output_md.parent.mkdir(parents=True, exist_ok=True)
+    output_json.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    output_md.write_text(_render_oecd_unit_basis_markdown(report), encoding="utf-8")
+    return report
+
+
+def write_oecd_unit_basis_comparability_audit_from_state(
+    state_report_path: str | Path = SOURCE_STATE_REPORT_PATH,
+    json_path: str | Path = DEFAULT_OECD_UNIT_BASIS_COMPARABILITY_JSON_PATH,
+    markdown_path: str | Path = DEFAULT_OECD_UNIT_BASIS_COMPARABILITY_MD_PATH,
+) -> dict[str, Any]:
+    seed_state = json.loads(Path(state_report_path).read_text(encoding="utf-8"))
+    return write_oecd_unit_basis_comparability_audit(json_path, markdown_path, seed_state)
 
 
 def write_proposal_workflow_audit_from_state(

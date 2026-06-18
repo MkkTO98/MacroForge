@@ -46,13 +46,14 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-037-implement-bounded-wdi-unit-metadata-enrichment-for-canonicalization-evidence.md`
 - `TASK-038-simulate-bounded-canonicalization-review-lifecycle.md`
 - `TASK-039-persist-deferred-mapping-advancement-requirements.md`
+- `TASK-040-implement-oecd-unit-basis-comparability-split.md`
 - `TASK-PF-20260614-continuity-recovery-adoption.md`
 - `backlog.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- TASK-001 through TASK-039 are complete; TASK-031 was an Architecture-to-Reality remediation hygiene interruption and TASK-035 was a narrow ArchitectureHarvest integration interruption.
-- TASK-038 validated the bounded proposal -> review -> accepted/provisional lifecycle using existing WDI/OECD/Eurostat GDP evidence only; see `TASK-038-simulate-bounded-canonicalization-review-lifecycle.md`.
+- TASK-001 through TASK-040 are complete; TASK-031 was an Architecture-to-Reality remediation hygiene interruption and TASK-035 was a narrow ArchitectureHarvest integration interruption.
+- TASK-040 implemented deterministic OECD unit-basis comparability split evidence for `USD_EXC` exchange-rate versus `USD_PPP` PPP candidates; see `TASK-040-implement-oecd-unit-basis-comparability-split.md`.
 - TASK-039 persisted concrete deferred mapping advancement requirements for OECD/Eurostat; see `TASK-039-persist-deferred-mapping-advancement-requirements.md`.
 - `TASK-PF-20260614-continuity-recovery-adoption.md` is complete and records operating-system adoption only.
 

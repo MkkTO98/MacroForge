@@ -4,7 +4,7 @@ Project: MacroForge
 
 ## Current milestone
 
-Milestone 3 — canonical-domain PostgreSQL substrate, deterministic canonicalization proposal workflow, WDI unit metadata enrichment, review lifecycle validation, and deferred mapping advancement-requirements persistence are complete.
+Milestone 3 — canonical-domain PostgreSQL substrate, deterministic canonicalization proposal workflow, WDI unit metadata enrichment, review lifecycle validation, deferred mapping advancement-requirements persistence, and OECD unit-basis comparability split are complete.
 
 ## Purpose
 
@@ -12,7 +12,7 @@ MacroForge exists to progressively reduce the recurring effort required to build
 
 ## Current objective
 
-TASK-039 is complete. MacroForge has no open implementation task after this synchronization pass. Future work on OECD or Eurostat GDP mapping advancement should start from `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json` and must satisfy the recorded minimum advancement conditions before changing mapping status, accepted/base state, manifests, or reports.
+TASK-040 is complete. It implemented the first TASK-039 OECD advancement requirement by separating OECD `USD_EXC` exchange-rate and `USD_PPP` PPP basis candidates in deterministic audit artifacts without advancing accepted mapping status. Future OECD GDP mapping advancement should start from `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json`; Eurostat advancement should still start from `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json` and satisfy its minimum conditions before changing mapping status, accepted/base state, manifests, or reports.
 
 ## V1 success
 
@@ -35,7 +35,10 @@ MacroForge v1 succeeds when one World Bank WDI vertical slice proves raw evidenc
 - TASK-039: `artifacts/tasks/TASK-039-persist-deferred-mapping-advancement-requirements.md`
 - TASK-039 requirements JSON: `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json`
 - TASK-039 requirements report: `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.md`
+- TASK-040: `artifacts/tasks/TASK-040-implement-oecd-unit-basis-comparability-split.md`
+- TASK-040 OECD basis JSON: `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json`
+- TASK-040 OECD basis report: `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.md`
 
 ## Preserved boundaries
 
-TASK-038 and TASK-039 did not call models, live-fetch data, add sources, add migrations, write to live/default `macro`, implement unit/currency conversion, aggregate frequencies, integrate GDP reports, extract generalized metadata/source frameworks, add provider-specific fact columns, auto-apply accepted mappings, mutate base accepted state, mutate `artifacts/manifests/canonical_assets.json`, or push to git.
+TASK-038 through TASK-040 did not call models, live-fetch data, add sources, add migrations, write to live/default `macro`, implement unit/currency conversion, aggregate frequencies, integrate GDP reports, extract generalized metadata/source frameworks, add provider-specific fact columns, auto-apply accepted mappings, mutate base accepted state, mutate `artifacts/manifests/canonical_assets.json`, or push to git.

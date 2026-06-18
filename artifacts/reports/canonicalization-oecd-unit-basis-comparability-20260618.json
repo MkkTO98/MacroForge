@@ -1,0 +1,82 @@
+{
+  "accepted_mapping_state_mutated": false,
+  "canonical_asset_manifest_mutated": false,
+  "canonical_concept_id": "MACRO_GDP_OUTPUT",
+  "checks": {
+    "basis_caveats_preserved": "pass",
+    "no_accepted_state_or_manifest_mutation": "pass",
+    "no_auto_apply_or_report_integration": "pass",
+    "no_conversion_or_aggregation": "pass",
+    "oecd_evidence_found": "pass",
+    "task_039_requirements_linked": "pass",
+    "usd_exchange_rate_and_ppp_split": "pass"
+  },
+  "current_review_status": "deferred_pending_unit_basis_policy",
+  "forbidden_shortcuts_preserved": [
+    "no unit or currency conversion",
+    "no frequency aggregation",
+    "no report integration",
+    "no auto-apply",
+    "no accepted/base mapping state mutation"
+  ],
+  "metadata": {
+    "advancement_requirements": "artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json",
+    "database_writes": "none",
+    "frequency_aggregation": "not_implemented",
+    "generated_at": "2026-06-18T12:00:00Z",
+    "live_fetches": "none",
+    "model_calls": "none",
+    "run_id": "run:oecd-unit-basis-comparability-20260618",
+    "scope": "fixture_backed_oecd_gdp_unit_basis_comparability_split",
+    "source_lifecycle_artifact": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+    "source_state_report": "artifacts/reports/canonicalization-state-foundation-20260605.json",
+    "unit_conversion": "not_implemented"
+  },
+  "oecd_basis_candidates": [
+    {
+      "advancement_effect": "basis_distinguished_not_accepted",
+      "auto_apply": false,
+      "basis": "exchange_rate",
+      "candidate_id": "oecd-basis-candidate:B1GQ:USD_EXC",
+      "caveats": [
+        "Exchange-rate USD and PPP USD are separate comparability profiles."
+      ],
+      "comparability_group": "current_usd_exchange_rate_basis",
+      "currency": "USD",
+      "price_basis": "current",
+      "provider": "OECD_NAAG",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "provider_indicator_code": "B1GQ",
+      "provider_unit_code": "USD_EXC",
+      "report_integration": "deferred",
+      "review_state": "review_required",
+      "scale_multiplier": null,
+      "unit_profile_id": "unit:OECD_NAAG:USD_EXC"
+    },
+    {
+      "advancement_effect": "basis_distinguished_not_accepted",
+      "auto_apply": false,
+      "basis": "ppp",
+      "candidate_id": "oecd-basis-candidate:B1GQ:USD_PPP",
+      "caveats": [
+        "PPP-basis USD and exchange-rate USD are separate comparability profiles."
+      ],
+      "comparability_group": "current_usd_ppp_basis",
+      "currency": "USD",
+      "price_basis": "current",
+      "provider": "OECD_NAAG",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "provider_indicator_code": "B1GQ",
+      "provider_unit_code": "USD_PPP",
+      "report_integration": "deferred",
+      "review_state": "review_required",
+      "scale_multiplier": null,
+      "unit_profile_id": "unit:OECD_NAAG:USD_PPP"
+    }
+  ],
+  "provider_evidence_id": "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+  "purpose": "Distinguish OECD USD_EXC and USD_PPP basis evidence before any mapping status advancement.",
+  "resulting_review_status": "basis_distinguished_pending_review",
+  "status": "succeeded",
+  "task": "TASK-040"
+}

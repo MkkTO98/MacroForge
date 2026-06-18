@@ -3,13 +3,13 @@
 Project: MacroForge
 Template: python_data_project
 Canonical path: `/home/mkkto/srv/EIP/projects/MacroForge`
-Last updated UTC: 2026-06-18T08:45:52Z
+Last updated UTC: 2026-06-18T12:00:00Z
 
 ## Current state
 
 MacroForge is a ProjectForge-generated autonomous EIP project and AI-first macroeconomic and investing research platform. Its governing purpose is to progressively reduce the recurring effort required to build, maintain, validate, canonicalize, and use trusted macroeconomic data for investment-relevant research. Trusted macroeconomic databases and datasets are outputs; the effort-reduction system is the project. Previous deleted MacroForge files and Desktop/ChatGPT exports are historical evidence only unless explicitly curated into current artifacts.
 
-TASK-004 through TASK-039 are complete. TASK-031 was an Architecture-to-Reality remediation hygiene interruption and did not supersede the domain sequence. TASK-035 retrofitted ProjectForge-generated MetaHarvest compatibility placeholders and implemented `MF-AH-REV-001` narrowly as a file-backed canonical asset manifest registry. TASK-034 implemented the deterministic canonicalization proposal workflow. TASK-036 completed DEC-021 and selected TASK-037. TASK-037 completed bounded WDI unit metadata enrichment for canonicalization evidence. TASK-038 validated the proposal -> review -> accepted/provisional lifecycle in bounded file-backed form, demonstrating one governed provisional WDI outcome and deferred OECD/Eurostat outcomes with explicit decisions, gates, deltas, lineage, and replay evidence. TASK-039 persisted the deferred OECD/Eurostat mapping advancement requirements as compact JSON/Markdown recovery artifacts.
+TASK-004 through TASK-040 are complete. TASK-031 was an Architecture-to-Reality remediation hygiene interruption and did not supersede the domain sequence. TASK-035 retrofitted ProjectForge-generated MetaHarvest compatibility placeholders and implemented `MF-AH-REV-001` narrowly as a file-backed canonical asset manifest registry. TASK-034 implemented the deterministic canonicalization proposal workflow. TASK-036 completed DEC-021 and selected TASK-037. TASK-037 completed bounded WDI unit metadata enrichment for canonicalization evidence. TASK-038 validated the proposal -> review -> accepted/provisional lifecycle in bounded file-backed form, demonstrating one governed provisional WDI outcome and deferred OECD/Eurostat outcomes with explicit decisions, gates, deltas, lineage, and replay evidence. TASK-039 persisted the deferred OECD/Eurostat mapping advancement requirements as compact JSON/Markdown recovery artifacts. TASK-040 implemented a deterministic OECD unit-basis comparability split for existing `B1GQ` evidence, separating `USD_EXC` exchange-rate and `USD_PPP` PPP candidates without advancing accepted mapping state.
 
 ProjectForge continuity/recovery adoption is complete via `artifacts/tasks/TASK-PF-20260614-continuity-recovery-adoption.md`. Fresh MacroForge sessions can run `python3 tools/recover_session.py --project . --json` to recover state, active/recent task, recent decisions, blockers, next actions, and resume procedure without broad repository scanning.
 
@@ -40,10 +40,11 @@ ProjectForge continuity/recovery adoption is complete via `artifacts/tasks/TASK-
 - TASK-036 completed DEC-021 and selected bounded WDI unit metadata enrichment as the next uncertainty-reduction step.
 - TASK-037 implemented bounded WDI-specific fixture metadata enrichment for existing `NY.GDP.MKTP.CD` canonicalization evidence. It reduced WDI `unknown_unit_metadata` in proposal evidence to explicit current-USD metadata evidence while preserving no-unit-conversion, high-impact review routing, proposal/accepted-state separation, no auto-apply, and non-WDI source behavior.
 - TASK-038 produced `artifacts/reports/canonicalization-review-lifecycle-20260614.json` and `.md`, validating a bounded proposal -> review -> accepted/provisional lifecycle over existing WDI/OECD/Eurostat GDP evidence. It records explicit review decisions, check gates, state deltas, manifest deltas, lineage edges, and replay inputs. WDI moved to governed provisional; OECD and Eurostat remained deferred.
+- TASK-040 produced `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json` and `.md`, separating existing OECD `B1GQ` `USD_EXC` exchange-rate and `USD_PPP` PPP unit-basis candidates while keeping review status deferred/pending and avoiding accepted/base state mutation.
 
 ## Active objective
 
-No open implementation task after TASK-039 closeout. Future OECD/Eurostat GDP mapping advancement work should start from `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json` and satisfy its minimum advancement conditions before changing mapping status, accepted/base state, manifest state, or report behavior.
+No open implementation task after TASK-040 closeout. Future OECD GDP mapping advancement should start from `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json` and still requires explicit review before any mapping status, accepted/base state, manifest, or report behavior changes. Future Eurostat GDP mapping advancement should start from `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json` and satisfy its minimum advancement conditions first.
 
 ## Current governance posture
 
@@ -74,6 +75,9 @@ Until a new task/decision explicitly changes scope, future canonicalization life
 - Completed TASK-039: `artifacts/tasks/TASK-039-persist-deferred-mapping-advancement-requirements.md`
 - TASK-039 requirements artifact: `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json`
 - TASK-039 requirements report: `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.md`
+- Completed TASK-040: `artifacts/tasks/TASK-040-implement-oecd-unit-basis-comparability-split.md`
+- TASK-040 OECD unit-basis artifact: `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json`
+- TASK-040 OECD unit-basis report: `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.md`
 - Canonicalization implementation: `src/macroforge/canonicalization_state.py`
 - Accepted canonicalization design: `docs/architecture/minimal-ai-assisted-canonicalization-layer.md`
 - Completed TASK-035: `artifacts/tasks/TASK-035-implement-narrow-architectureharvest-canonical-asset-manifest.md`

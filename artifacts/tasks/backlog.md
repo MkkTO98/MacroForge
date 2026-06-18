@@ -188,3 +188,9 @@ TASK-038 validated the proposal -> review -> accepted/provisional lifecycle in b
 39. TASK-039 — Persist deferred mapping advancement requirements after TASK-038. Complete.
 
 TASK-039 created `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json` and `.md`, recording the rationale, missing evidence/policy, semantic blocker, minimum advancement condition, caveats, evidence pointers, replay requirements, and forbidden shortcuts for TASK-038 deferred OECD and Eurostat GDP mappings. It did not change source code, tests, schemas, source evidence, accepted/base mapping state, the canonical asset manifest, or GDP reports.
+
+## Completed OECD unit-basis comparability task
+
+40. TASK-040 — Implement OECD unit-basis comparability split for canonicalization evidence. Complete.
+
+TASK-040 implemented the first TASK-039 advancement requirement for OECD `B1GQ`: deterministic separation of `USD_EXC` exchange-rate and `USD_PPP` PPP comparability basis candidates. It added tested helper/writer functions in `src/macroforge/canonicalization_state.py` and generated `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json` and `.md`. It preserved no accepted/base mapping mutation, no manifest base mutation, no report integration, no auto-apply, no model calls, no live fetches, no migrations, no live/default `macro` writes, no unit/currency conversion, and no frequency aggregation.
