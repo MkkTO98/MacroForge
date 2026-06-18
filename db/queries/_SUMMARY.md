@@ -9,7 +9,7 @@ Validation and reporting SQL queries.
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `schema_health_check.sql` checks required v0 tables with `to_regclass`.
+- `schema_health_check.sql` checks required v0/canonical-domain tables with `to_regclass`, including WDI, OECD/SDMX, and Eurostat staging tables.
 
 ## Needs Attention
 - No folder-specific issues recorded.

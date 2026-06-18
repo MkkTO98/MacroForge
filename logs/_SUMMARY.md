@@ -12,7 +12,7 @@ This folder is part of the ProjectForge file-backed operating system for `logs`.
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- No folder-specific active work recorded.
+- Operational logs are optional debugging artifacts only; primary governance continuity lives in task, decision, state, handoff, and report artifacts.
 
 ## Needs Attention
-- No folder-specific issues recorded.
+- Do not treat empty JSONL operational logs as missing project state. Read logs only for debugging/forensic/failure investigation when governance artifacts are insufficient.

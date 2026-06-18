@@ -6,23 +6,26 @@ ProjectForge factory contract; generated mode validates the lighter project-loca
 contract produced by `tools/new_project.py`.
 """
 from __future__ import annotations
-import argparse, json, sys
+import argparse, importlib.util, json, sys
 from pathlib import Path
 
 ROOT_REQUIRED = [
  'CONSTITUTION.md','projectforge.yaml','state/active_goal.md','state/project_state.md',
  'state/architecture.md','permissions/allowlist.yaml','permissions/denylist.yaml',
  'permissions/escalation_rules.yaml','context/context_policy.yaml','simulation/dry_run_policy.yaml',
- 'metrics/metrics_policy.yaml','recovery/escalation_policy.yaml','hardware/profile.yaml',
- 'automation/orchestration_schedule.yaml','docs/OPERATOR_MANUAL.md'
+ 'metrics/metrics_policy.yaml','recovery/escalation_policy.yaml','recovery/continuity_framework.md','hardware/profile.yaml',
+ 'automation/orchestration_schedule.yaml','docs/OPERATOR_MANUAL.md','tools/architecture_reality_audit.py','tools/recover_session.py'
 ]
 
 GENERATED_REQUIRED = [
  'CONSTITUTION.md','AGENTS.md','project.yaml','state/active_goal.md','state/project_state.md',
  'state/architecture.md','permissions/allowlist.yaml','permissions/denylist.yaml',
  'permissions/escalation_rules.yaml','context/context_policy.yaml','simulation/dry_run_policy.yaml',
- 'metrics/metrics_policy.yaml','recovery/escalation_policy.yaml','hardware/profile.yaml',
- 'workspace_config.yaml','tools/check_coherence.py','tools/run.py'
+ 'metrics/metrics_policy.yaml','recovery/escalation_policy.yaml','recovery/continuity_framework.md','hardware/profile.yaml',
+ 'workspace_config.yaml','tools/check_coherence.py','tools/run.py','tools/architecture_reality_audit.py','tools/recover_session.py',
+ 'architecture/architecture_state.md','architecture/architectureharvest/relevance_map.yaml',
+ 'architecture/architectureharvest/adoption_candidates.md','architecture/architectureharvest/rejected_candidates.md',
+ 'architecture/architectureharvest/review_history.md'
 ]
 
 
@@ -73,6 +76,29 @@ def check_common(root: Path, blocks: list[str], warns: list[str]) -> None:
         warns.append('logging policy does not clearly define logs as raw operational records')
     if not has_text(root/'metrics'/'metrics_policy.yaml', 'derived'):
         warns.append('metrics policy does not clearly define metrics as derived evidence')
+    if not has_text(root/'recovery'/'continuity_framework.md', 'Standard ProjectForge closeout contract'):
+        blocks.append('continuity framework missing standard closeout contract')
+    if not has_text(root/'recovery'/'continuity_framework.md', 'Recover project state and continue work'):
+        blocks.append('continuity framework missing fresh-session recovery command contract')
+    if not has_text(root/'context'/'context_policy.yaml', 'standard_closeout_order'):
+        blocks.append('context policy missing standard continuity closeout order')
+    if not has_text(root/'context'/'context_policy.yaml', 'standard_closeout_command'):
+        blocks.append('context policy missing standard closeout command')
+    run_context_health(root, blocks, warns)
+
+
+def run_context_health(root: Path, blocks: list[str], warns: list[str]) -> None:
+    checker = root / 'tools' / 'context_health.py'
+    if not checker.exists():
+        warns.append('tools/context_health.py missing; context-size hygiene is not automated')
+        return
+    spec = importlib.util.spec_from_file_location('projectforge_context_health', checker)
+    assert spec and spec.loader
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    report = mod.check(root)
+    blocks.extend(f'context health: {item}' for item in report.get('blocks', []))
+    warns.extend(f'context health: {item}' for item in report.get('warnings', []))
 
 
 def check_root(root: Path):
@@ -86,8 +112,11 @@ def check_root(root: Path):
         blocks.append('automation schedule does not run validate_dry_run')
     if not has_text(root/'automation'/'orchestration_schedule.yaml', 'review_metrics'):
         blocks.append('automation schedule does not run review_metrics')
-    if not has_text(root/'workspace'/'workspace_policy.yaml', '/home/mkkto/srv/projectforge/workspace/projects'):
-        blocks.append('workspace policy does not contain canonical generated projects path')
+    if not has_text(root/'automation'/'orchestration_schedule.yaml', 'architecture_reality_audit'):
+        blocks.append('automation schedule does not run architecture_reality_audit')
+    expected_projects_root = str((root/'workspace'/'projects').resolve())
+    if not has_text(root/'workspace'/'workspace_policy.yaml', expected_projects_root):
+        blocks.append('workspace policy does not contain configured generated projects path')
     return blocks, warns
 
 
@@ -102,6 +131,10 @@ def check_generated(root: Path):
         blocks.append('workspace_config.yaml must record parent projectforge_root')
     if has_text(root/'state'/'active_goal.md', 'Project:') and not has_text(root/'state'/'active_goal.md', 'Purpose'):
         warns.append('state/active_goal.md appears underpopulated')
+    if not has_text(root/'architecture'/'architectureharvest'/'relevance_map.yaml', 'consult_required_during'):
+        blocks.append('architectureharvest relevance_map.yaml missing consultation trigger list')
+    if not has_text(root/'architecture'/'architectureharvest'/'relevance_map.yaml', 'active'):
+        blocks.append('architectureharvest relevance_map.yaml missing active/staleness statuses')
     return blocks, warns
 
 

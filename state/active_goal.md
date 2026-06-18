@@ -4,15 +4,15 @@ Project: MacroForge
 
 ## Current milestone
 
-Milestone 3 — second-source PostgreSQL promotion, post-second-source architecture review, shared validation/reporting hardening, post-hardening next-scope governance, bounded OECD/SDMX codelist/label enrichment, and a bounded third-source architecture spike are complete.
+Milestone 3 — canonical-domain PostgreSQL substrate, deterministic canonicalization proposal workflow, WDI unit metadata enrichment, review lifecycle validation, and deferred mapping advancement-requirements persistence are complete.
 
 ## Purpose
 
-MacroForge is an AI-first macroeconomic and investing research platform that begins as a reproducible PostgreSQL-backed macro data warehouse.
+MacroForge exists to progressively reduce the recurring effort required to build, maintain, validate, canonicalize, and use trusted macroeconomic data for investment-relevant research. Trusted macroeconomic databases and datasets are outputs; the project itself is the effort-reduction machine.
 
 ## Current objective
 
-TASK-020 is complete and DEC-010 has reoriented the schema response toward canonical-domain identity. The active design task is TASK-021: design canonical period, territory, and provider mapping schema evolution before any executable migration or third-source PostgreSQL promotion.
+TASK-039 is complete. MacroForge has no open implementation task after this synchronization pass. Future work on OECD or Eurostat GDP mapping advancement should start from `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json` and must satisfy the recorded minimum advancement conditions before changing mapping status, accepted/base state, manifests, or reports.
 
 ## V1 success
 
@@ -20,9 +20,22 @@ MacroForge v1 succeeds when one World Bank WDI vertical slice proves raw evidenc
 
 ## Current defaults
 
-- Recreate schema/WDI/OECD cleanly from decisions, tasks, and tests.
+- Evaluate future work by asking which recurring effort it reduces: source onboarding, source maintenance, validation, canonical mapping, schema evolution, downstream analysis, or future agent recovery/context effort.
 - Use isolated temporary PostgreSQL databases for smoke verification unless a fresh dry-run and explicit approval allow otherwise.
-- Keep WDI and OECD/SDMX source-specific until accepted decision triggers justify broader abstractions.
-- Treat OECD/SDMX labels/descriptions as filesystem metadata/report evidence first; do not load labels into PostgreSQL or change schemas without a new accepted decision.
-- Treat Eurostat TASK-020 evidence as architecture-spike evidence only; do not promote Eurostat to PostgreSQL until period, territory, and provider metadata schema changes are accepted.
 - Preserve canonical-domain identities: structured periods, ISO3 country identity, explicit territory types for aggregates, and provider period/territory codes as mappings/metadata rather than curated identities.
+- Treat PostgreSQL as the accepted analytical store, not proof of truth by itself.
+- Treat confidence scores as review-routing metadata, not truth.
+- Use `artifacts/manifests/canonical_assets.json` as the minimal file-backed pointer registry for existing accepted/provisional canonicalization artifacts.
+
+## Latest completed evidence
+
+- TASK-038: `artifacts/tasks/TASK-038-simulate-bounded-canonicalization-review-lifecycle.md`
+- TASK-038 lifecycle JSON: `artifacts/reports/canonicalization-review-lifecycle-20260614.json`
+- TASK-038 lifecycle report: `artifacts/reports/canonicalization-review-lifecycle-20260614.md`
+- TASK-039: `artifacts/tasks/TASK-039-persist-deferred-mapping-advancement-requirements.md`
+- TASK-039 requirements JSON: `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json`
+- TASK-039 requirements report: `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.md`
+
+## Preserved boundaries
+
+TASK-038 and TASK-039 did not call models, live-fetch data, add sources, add migrations, write to live/default `macro`, implement unit/currency conversion, aggregate frequencies, integrate GDP reports, extract generalized metadata/source frameworks, add provider-specific fact columns, auto-apply accepted mappings, mutate base accepted state, mutate `artifacts/manifests/canonical_assets.json`, or push to git.

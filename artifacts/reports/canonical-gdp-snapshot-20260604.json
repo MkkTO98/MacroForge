@@ -1,0 +1,388 @@
+{
+  "checks": {
+    "annual_and_quarterly_explicit": "pass",
+    "core_query_boundary": "pass",
+    "missingness_bounded_fixture_complete": "pass",
+    "no_duplicate_fact_grain": "pass",
+    "quality_checks_pass": "pass"
+  },
+  "coverage": {
+    "fact_rows_by_source": {
+      "EUROSTAT_NAMQ_GDP": 4,
+      "OECD_NAAG": 8,
+      "WDI": 8
+    },
+    "fact_rows_total": 20,
+    "frequencies": [
+      "A",
+      "Q"
+    ],
+    "indicator_count": 4,
+    "indicators": [
+      "B1GQ",
+      "NY.GDP.MKTP.CD",
+      "SP.POP.TOTL"
+    ],
+    "period_count": 4,
+    "periods": [
+      "2020",
+      "2021",
+      "2023 Q1",
+      "2023 Q2"
+    ],
+    "sources": [
+      "EUROSTAT_NAMQ_GDP",
+      "OECD_NAAG",
+      "WDI"
+    ],
+    "territories": [
+      "AUS",
+      "DEU",
+      "DNK",
+      "FRA",
+      "USA"
+    ],
+    "territory_count": 5,
+    "unit_count": 4,
+    "units": [
+      "CP_MEUR",
+      "unknown",
+      "USD_EXC",
+      "USD_PPP"
+    ]
+  },
+  "data_quality": {
+    "core_query_boundary": "curated_and_meta_only",
+    "duplicate_fact_grain_count": 0,
+    "failing_quality_checks": 0,
+    "quality_checks_by_source": {
+      "EUROSTAT_NAMQ_GDP": 4,
+      "OECD_NAAG": 4,
+      "WDI": 2
+    }
+  },
+  "gdp_snapshot": {
+    "comparison_boundary": "descriptive_only_no_unit_conversion_no_frequency_aggregation",
+    "observations": [
+      {
+        "as_of_date": "2026-06-04",
+        "frequency": "Q",
+        "indicator_code": "B1GQ",
+        "indicator_name": "Gross domestic product at market prices",
+        "observation_status": "observed",
+        "period_end_date": "2023-03-31",
+        "period_label": "2023 Q1",
+        "period_start_date": "2023-01-01",
+        "provider_dataset_code": "namq_10_gdp",
+        "release_key": "EUROSTAT_NAMQ_GDP:namq_10_gdp:2023-Q1-2023-Q2:914888671969",
+        "source_code": "EUROSTAT_NAMQ_GDP",
+        "territory_code": "DEU",
+        "territory_name": "Germany",
+        "unit_code": "CP_MEUR",
+        "value": "1043520.0"
+      },
+      {
+        "as_of_date": "2026-06-04",
+        "frequency": "Q",
+        "indicator_code": "B1GQ",
+        "indicator_name": "Gross domestic product at market prices",
+        "observation_status": "observed",
+        "period_end_date": "2023-06-30",
+        "period_label": "2023 Q2",
+        "period_start_date": "2023-04-01",
+        "provider_dataset_code": "namq_10_gdp",
+        "release_key": "EUROSTAT_NAMQ_GDP:namq_10_gdp:2023-Q1-2023-Q2:914888671969",
+        "source_code": "EUROSTAT_NAMQ_GDP",
+        "territory_code": "DEU",
+        "territory_name": "Germany",
+        "unit_code": "CP_MEUR",
+        "value": "1031880.0"
+      },
+      {
+        "as_of_date": "2026-06-04",
+        "frequency": "Q",
+        "indicator_code": "B1GQ",
+        "indicator_name": "Gross domestic product at market prices",
+        "observation_status": "observed",
+        "period_end_date": "2023-03-31",
+        "period_label": "2023 Q1",
+        "period_start_date": "2023-01-01",
+        "provider_dataset_code": "namq_10_gdp",
+        "release_key": "EUROSTAT_NAMQ_GDP:namq_10_gdp:2023-Q1-2023-Q2:914888671969",
+        "source_code": "EUROSTAT_NAMQ_GDP",
+        "territory_code": "FRA",
+        "territory_name": "France",
+        "unit_code": "CP_MEUR",
+        "value": "684762.7"
+      },
+      {
+        "as_of_date": "2026-06-04",
+        "frequency": "Q",
+        "indicator_code": "B1GQ",
+        "indicator_name": "Gross domestic product at market prices",
+        "observation_status": "observed",
+        "period_end_date": "2023-06-30",
+        "period_label": "2023 Q2",
+        "period_start_date": "2023-04-01",
+        "provider_dataset_code": "namq_10_gdp",
+        "release_key": "EUROSTAT_NAMQ_GDP:namq_10_gdp:2023-Q1-2023-Q2:914888671969",
+        "source_code": "EUROSTAT_NAMQ_GDP",
+        "territory_code": "FRA",
+        "territory_name": "France",
+        "unit_code": "CP_MEUR",
+        "value": "706147.7"
+      },
+      {
+        "as_of_date": "2026-06-03",
+        "frequency": "A",
+        "indicator_code": "B1GQ",
+        "indicator_name": "B1GQ",
+        "observation_status": "observed",
+        "period_end_date": "2020-12-31",
+        "period_label": "2020",
+        "period_start_date": "2020-01-01",
+        "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+        "release_key": "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:2020-2021:d81d56186d66",
+        "source_code": "OECD_NAAG",
+        "territory_code": "AUS",
+        "territory_name": "AUS",
+        "unit_code": "USD_EXC",
+        "value": "1439.0230643897"
+      },
+      {
+        "as_of_date": "2026-06-03",
+        "frequency": "A",
+        "indicator_code": "B1GQ",
+        "indicator_name": "B1GQ",
+        "observation_status": "observed",
+        "period_end_date": "2020-12-31",
+        "period_label": "2020",
+        "period_start_date": "2020-01-01",
+        "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+        "release_key": "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:2020-2021:d81d56186d66",
+        "source_code": "OECD_NAAG",
+        "territory_code": "AUS",
+        "territory_name": "AUS",
+        "unit_code": "USD_PPP",
+        "value": "1461.06600664252"
+      },
+      {
+        "as_of_date": "2026-06-03",
+        "frequency": "A",
+        "indicator_code": "B1GQ",
+        "indicator_name": "B1GQ",
+        "observation_status": "observed",
+        "period_end_date": "2021-12-31",
+        "period_label": "2021",
+        "period_start_date": "2021-01-01",
+        "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+        "release_key": "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:2020-2021:d81d56186d66",
+        "source_code": "OECD_NAAG",
+        "territory_code": "AUS",
+        "territory_name": "AUS",
+        "unit_code": "USD_EXC",
+        "value": "1755.45328534911"
+      },
+      {
+        "as_of_date": "2026-06-03",
+        "frequency": "A",
+        "indicator_code": "B1GQ",
+        "indicator_name": "B1GQ",
+        "observation_status": "observed",
+        "period_end_date": "2021-12-31",
+        "period_label": "2021",
+        "period_start_date": "2021-01-01",
+        "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+        "release_key": "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:2020-2021:d81d56186d66",
+        "source_code": "OECD_NAAG",
+        "territory_code": "AUS",
+        "territory_name": "AUS",
+        "unit_code": "USD_PPP",
+        "value": "1674.32946449161"
+      },
+      {
+        "as_of_date": "2026-06-03",
+        "frequency": "A",
+        "indicator_code": "B1GQ",
+        "indicator_name": "B1GQ",
+        "observation_status": "observed",
+        "period_end_date": "2020-12-31",
+        "period_label": "2020",
+        "period_start_date": "2020-01-01",
+        "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+        "release_key": "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:2020-2021:d81d56186d66",
+        "source_code": "OECD_NAAG",
+        "territory_code": "USA",
+        "territory_name": "USA",
+        "unit_code": "USD_EXC",
+        "value": "21375.281"
+      },
+      {
+        "as_of_date": "2026-06-03",
+        "frequency": "A",
+        "indicator_code": "B1GQ",
+        "indicator_name": "B1GQ",
+        "observation_status": "observed",
+        "period_end_date": "2020-12-31",
+        "period_label": "2020",
+        "period_start_date": "2020-01-01",
+        "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+        "release_key": "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:2020-2021:d81d56186d66",
+        "source_code": "OECD_NAAG",
+        "territory_code": "USA",
+        "territory_name": "USA",
+        "unit_code": "USD_PPP",
+        "value": "21375.281"
+      },
+      {
+        "as_of_date": "2026-06-03",
+        "frequency": "A",
+        "indicator_code": "B1GQ",
+        "indicator_name": "B1GQ",
+        "observation_status": "observed",
+        "period_end_date": "2021-12-31",
+        "period_label": "2021",
+        "period_start_date": "2021-01-01",
+        "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+        "release_key": "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:2020-2021:d81d56186d66",
+        "source_code": "OECD_NAAG",
+        "territory_code": "USA",
+        "territory_name": "USA",
+        "unit_code": "USD_EXC",
+        "value": "23725.645"
+      },
+      {
+        "as_of_date": "2026-06-03",
+        "frequency": "A",
+        "indicator_code": "B1GQ",
+        "indicator_name": "B1GQ",
+        "observation_status": "observed",
+        "period_end_date": "2021-12-31",
+        "period_label": "2021",
+        "period_start_date": "2021-01-01",
+        "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+        "release_key": "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:2020-2021:d81d56186d66",
+        "source_code": "OECD_NAAG",
+        "territory_code": "USA",
+        "territory_name": "USA",
+        "unit_code": "USD_PPP",
+        "value": "23725.645"
+      },
+      {
+        "as_of_date": "2026-04-08",
+        "frequency": "A",
+        "indicator_code": "NY.GDP.MKTP.CD",
+        "indicator_name": "GDP (current US$)",
+        "observation_status": "observed",
+        "period_end_date": "2020-12-31",
+        "period_label": "2020",
+        "period_start_date": "2020-01-01",
+        "provider_dataset_code": "WDI",
+        "release_key": "WDI:2026-04-08:2020:2021",
+        "source_code": "WDI",
+        "territory_code": "DNK",
+        "territory_name": "Denmark",
+        "unit_code": "unknown",
+        "value": "355631021931.621"
+      },
+      {
+        "as_of_date": "2026-04-08",
+        "frequency": "A",
+        "indicator_code": "NY.GDP.MKTP.CD",
+        "indicator_name": "GDP (current US$)",
+        "observation_status": "observed",
+        "period_end_date": "2021-12-31",
+        "period_label": "2021",
+        "period_start_date": "2021-01-01",
+        "provider_dataset_code": "WDI",
+        "release_key": "WDI:2026-04-08:2020:2021",
+        "source_code": "WDI",
+        "territory_code": "DNK",
+        "territory_name": "Denmark",
+        "unit_code": "unknown",
+        "value": "406110162088.054"
+      },
+      {
+        "as_of_date": "2026-04-08",
+        "frequency": "A",
+        "indicator_code": "NY.GDP.MKTP.CD",
+        "indicator_name": "GDP (current US$)",
+        "observation_status": "observed",
+        "period_end_date": "2020-12-31",
+        "period_label": "2020",
+        "period_start_date": "2020-01-01",
+        "provider_dataset_code": "WDI",
+        "release_key": "WDI:2026-04-08:2020:2021",
+        "source_code": "WDI",
+        "territory_code": "USA",
+        "territory_name": "USA",
+        "unit_code": "unknown",
+        "value": "21060473613000"
+      },
+      {
+        "as_of_date": "2026-04-08",
+        "frequency": "A",
+        "indicator_code": "NY.GDP.MKTP.CD",
+        "indicator_name": "GDP (current US$)",
+        "observation_status": "observed",
+        "period_end_date": "2021-12-31",
+        "period_label": "2021",
+        "period_start_date": "2021-01-01",
+        "provider_dataset_code": "WDI",
+        "release_key": "WDI:2026-04-08:2020:2021",
+        "source_code": "WDI",
+        "territory_code": "USA",
+        "territory_name": "USA",
+        "unit_code": "unknown",
+        "value": "23315080560000"
+      }
+    ]
+  },
+  "metadata": {
+    "database": "macroforge_canonical_gdp_snapshot_test_6cd5127a7df1",
+    "database_safety": "isolated_temporary_database",
+    "generated_at": "2026-06-04T00:00:00Z",
+    "notes": [
+      "Core report queries use curated canonical tables plus meta source/dataset/lineage/quality metadata only.",
+      "No staging tables are queried for the core report.",
+      "No unit conversion or frequency aggregation is performed."
+    ],
+    "report_name": "canonical_gdp_snapshot",
+    "sources_included": [
+      "EUROSTAT_NAMQ_GDP",
+      "OECD_NAAG",
+      "WDI"
+    ]
+  },
+  "missingness": {
+    "expected_observation_count": 16,
+    "missing_observation_count": 0,
+    "missing_observations": [],
+    "notes": [
+      "Expected coverage is bounded to observed source-specific indicator/unit, territory, and period universes; no cross-source unit conversion or frequency aggregation is assumed."
+    ],
+    "observed_observation_count": 16
+  },
+  "source_lineage": [
+    {
+      "dataset_release_count": 1,
+      "latest_to_artifact": "staging.eurostat_namq_observation",
+      "lineage_event_count": 2,
+      "source_code": "EUROSTAT_NAMQ_GDP"
+    },
+    {
+      "dataset_release_count": 1,
+      "latest_to_artifact": "staging.oecd_sdmx_observation",
+      "lineage_event_count": 2,
+      "source_code": "OECD_NAAG"
+    },
+    {
+      "dataset_release_count": 1,
+      "latest_to_artifact": "staging.wdi_observation",
+      "lineage_event_count": 2,
+      "source_code": "WDI"
+    }
+  ],
+  "status": "succeeded",
+  "task": "TASK-028"
+}

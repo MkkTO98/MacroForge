@@ -16,7 +16,8 @@ Human-readable MacroForge architecture, roadmap, data model, runbooks, and gloss
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- Milestone roadmap, source contract, and architecture docs are updated: DEC-010 canonical-domain schema re-evaluation is complete and TASK-021 schema design is open.
+- Milestone roadmap and architecture docs are updated through DEC-021/TASK-037.
+- TASK-037 completed bounded WDI unit metadata enrichment for canonicalization evidence.
 
 ## Needs Attention
-- Do not implement period/territory/provider metadata schema changes, third-source PostgreSQL promotion, generalized source framework work, or research/mart scope without a new accepted decision artifact and dry-run. Preserve canonical-domain identities over provider-centric identities.
+- Await user direction for the next bounded task; do not expand into AI/model calls, persistence, report integration, unit conversion, live source/database writes, new sources, or generalized metadata/source frameworks without a new decision.

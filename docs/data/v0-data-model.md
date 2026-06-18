@@ -10,6 +10,9 @@
 ## Migration and health check
 
 - Migration: `db/migrations/001_v0_schema_foundation.sql`
+- OECD/SDMX staging migration: `db/migrations/002_oecd_sdmx_staging.sql`
+- Canonical-domain migration: `db/migrations/003_canonical_domain_dimensions.sql`
+- Eurostat NAMQ staging migration: `db/migrations/004_eurostat_namq_staging.sql`
 - Schema reference: `db/schema/v0_schema_foundation.md`
 - Health check: `db/queries/schema_health_check.sql`
 
@@ -22,16 +25,22 @@
 - `meta.pipeline_run`
 - `meta.lineage_event`
 - `meta.quality_check`
+- `meta.provider_period_mapping`
+- `meta.provider_territory_mapping`
+- `meta.provider_code_list`
+- `meta.provider_code`
 
 ### staging
 
 - `staging.wdi_observation`
+- `staging.oecd_sdmx_observation`
+- `staging.eurostat_namq_observation`
 
 ### curated
 
 - `curated.dim_indicator`
-- `curated.dim_territory`
-- `curated.dim_period`
+- `curated.dim_territory`: ISO3-preserved countries plus bounded `territory_type` support for optional aggregate/economic-area rows.
+- `curated.dim_period`: structured annual, quarterly, monthly, and daily-ready canonical period intervals.
 - `curated.dim_unit`
 - `curated.dim_attribute_set`
 - `curated.fact_observation`
@@ -50,5 +59,7 @@ Initial candidate grain for `curated.fact_observation`:
 - Keep natural-key columns `NOT NULL` where uniqueness/idempotency depends on them.
 - Avoid wide nullable fact tables.
 - Use `attribute_set` for source-specific qualifiers.
+- Keep provider period strings, provider territory codes, and provider code dictionaries in `meta` mappings/dictionaries rather than canonical dimension identity.
+- Do not add provider-specific columns to `curated.fact_observation`.
 - Add latest-vintage views later.
 - Validate the model against WDI before generalizing to many providers.

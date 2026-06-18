@@ -1,119 +1,40 @@
-# Handoff — MacroForge DEC-010 complete; TASK-021 open
+# Handoff — MacroForge EIP synchronization and TASK-039 closeout
 
-Timestamp UTC: 2026-06-04T08:39:47Z
+Timestamp UTC: 2026-06-18T08:51:15Z
 
 ## Status
 
-DEC-010 is accepted and the canonical-domain schema design note is complete.
+MacroForge is active at `/home/mkkto/srv/EIP/projects/MacroForge`. It is an autonomous EIP project; EIP is only the neutral ecosystem container. ProjectForge is the sibling project scaffold system at `/home/mkkto/srv/EIP/projects/ProjectForge`; MetaHarvest is the sibling advisory knowledge-harvesting project at `/home/mkkto/srv/EIP/projects/MetaHarvest`.
 
-The user corrected the TASK-020 schema interpretation: provider representations should not become canonical identities. MacroForge should preserve source-agnostic canonical observations for long-term heterogeneous macroeconomic and investment research.
+No git repository exists at MacroForge, `/home/mkkto/srv/EIP`, or the sibling project roots in this filesystem snapshot.
 
-TASK-021 is open to design concrete schema evolution for canonical periods, canonical territories, and provider mappings. No executable migration or Eurostat PostgreSQL promotion has been implemented.
+## Work completed
 
-## Context used
+- Performed bounded reality audit: location, repository state, active tasks, latest handoff, task queue, summaries/status artifacts, and stale path references.
+- Patched active stale status surfaces, including README and summaries that still implied TASK-038 had not been created or that the next task was only pending approval.
+- Opened and completed TASK-039: `artifacts/tasks/TASK-039-persist-deferred-mapping-advancement-requirements.md`.
+- Created TASK-039 artifacts:
+  - `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json`
+  - `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.md`
 
-- `CONSTITUTION.md`
-- `instructions/GENERAL_INSTRUCTIONS.md`
-- `context/context_policy.yaml`
-- generated governance context bundle:
-  - `context/active_context.md`
-  - `context/context_audit.md`
-- `state/active_goal.md`
-- `state/project_state.md`
-- `state/architecture.md`
-- `context/latest_handoff.md`
-- `db/migrations/001_v0_schema_foundation.sql`
-- `docs/data/v0-data-model.md`
-- `artifacts/reports/eurostat-third-source-architecture-spike-20260604.md`
-- `artifacts/decisions/DEC-009-third-source-spike-scope.md`
+## Current task state
 
-## Files changed
+TASK-039 is complete. No implementation task is open after closeout. Future OECD/Eurostat GDP mapping advancement should start from the TASK-039 requirements JSON and must satisfy the recorded minimum advancement conditions before changing mapping status, accepted/base state, manifest state, or report behavior.
 
-Created:
+## Validation run
 
-- `docs/architecture/canonical-domain-schema-evolution.md`
-- `artifacts/decisions/DEC-010-canonical-domain-schema-evolution.md`
-- `artifacts/tasks/TASK-021-design-canonical-period-territory-provider-mapping-schema-evolution.md`
-- `simulation/dry_runs/20260604_083947-canonical-domain-schema-design-note.md`
+- `python3 tools/validate_dry_run.py simulation/dry_runs/20260618_084552-task-039-deferred-mapping-advancement-requirements.md` -> valid.
+- TASK-039 JSON invariant validation -> PASS.
+- `python3 tools/recover_session.py --project . --json` -> recovered TASK-038/TASK-039 with no blockers.
+- `python3 tools/check_coherence.py --project . --json` -> no blocks, no warnings.
+- `python3 tools/context_health.py --project . --json` -> no blocks, no warnings.
+- `uvx --from pytest --with pyyaml pytest tests -q` -> 68 passed in 7.64s.
+- `python3 tools/architecture_reality_audit.py --project . --json` -> no blocks, no warnings.
 
-Updated:
+## Resume
 
-- `artifacts/tasks/backlog.md`
-- `state/active_goal.md`
-- `state/project_state.md`
-- `state/architecture.md`
-- `docs/roadmap.md`
-- `docs/data/source-contract.md`
-- `artifacts/reports/eurostat-third-source-architecture-spike-20260604.md`
-- affected `_SUMMARY.md` files
-- `context/latest_handoff.md`
+Run from `/home/mkkto/srv/EIP/projects/MacroForge`:
 
-## Design conclusion
-
-Canonical-domain schema evolution is better than provider-centric schema evolution for MacroForge.
-
-Provider-centric evolution is fast for ingestion but lets provider period strings and geography codes become curated identities. That creates semantic debt across many heterogeneous sources.
-
-Canonical-domain evolution keeps curated dimensions as stable analytical domain entities:
-
-- Periods use structured canonical fields for annual, quarterly, monthly, and eventually daily observations.
-- Provider period strings stay in metadata/mapping tables.
-- ISO3 remains the canonical country identifier.
-- Aggregate regions use `territory_type` and explicit aggregate/economic-area support.
-- Provider geography codes map to canonical territories rather than replacing ISO3 semantics.
-- Provider code dictionaries remain metadata/provenance and mapping evidence.
-
-This better supports MacroForge's long-term goal of integrating many heterogeneous macroeconomic sources for investment research because downstream research can query stable domain identities instead of provider-shaped vocabularies.
-
-## Boundaries preserved
-
-- No executable schema migration.
-- No PostgreSQL writes.
-- No live `macro` writes.
-- No Eurostat PostgreSQL promotion.
-- No generalized ingestion framework.
-- No research/mart implementation.
-- No git commit/push.
-
-## Verification so far
-
-Governance context bundle:
-
-```text
-python3 tools/build_context.py --project . --model-target cloud --context-mode governance --task-type architecture_decision --task "Re-evaluate TASK-020 Eurostat schema recommendations from canonical-domain perspective: compare provider-centric vs canonical-domain schema evolution for periods, territories, provider mappings, and long-term heterogeneous macro source integration" --decisions DEC-009 --model-selected gpt-5.5 --model-reason "Current user requested a schema design re-evaluation and comparison note after Eurostat architecture spike"
-
-{
-  "context": "/home/mkkto/srv/projectforge/workspace/projects/macroforge/context/active_context.md",
-  "audit": "/home/mkkto/srv/projectforge/workspace/projects/macroforge/context/context_audit.json",
-  "estimated_tokens": 7645,
-  "budget_tokens": 10000,
-  "within_budget": true,
-  "context_mode": "governance"
-}
+```bash
+python3 tools/recover_session.py --project . --json
 ```
-
-Dry-run validation:
-
-```text
-python3 tools/validate_dry_run.py simulation/dry_runs/20260604_083947-canonical-domain-schema-design-note.md
-
-valid: simulation/dry_runs/20260604_083947-canonical-domain-schema-design-note.md
-```
-
-Final verification after governance/summary/handoff updates:
-
-```text
-PYTHONPATH=src uvx --from pytest --with pyyaml pytest tests -q && python3 tools/check_coherence.py --project . --json
-
-.................................                                        [100%]
-33 passed in 1.74s
-{
-  "mode": "generated",
-  "blocks": [],
-  "warnings": []
-}
-```
-
-## Remaining risks / next step
-
-TASK-021 should decide the concrete schema design plan. It should not implement migrations. The next implementation task, if accepted later, should start with a fresh dry-run and tests.

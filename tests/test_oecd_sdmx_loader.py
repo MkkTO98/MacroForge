@@ -12,6 +12,7 @@ from macroforge import oecd_sdmx_loader
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 BASE_MIGRATION = PROJECT_ROOT / "db" / "migrations" / "001_v0_schema_foundation.sql"
 OECD_MIGRATION = PROJECT_ROOT / "db" / "migrations" / "002_oecd_sdmx_staging.sql"
+CANONICAL_DOMAIN_MIGRATION = PROJECT_ROOT / "db" / "migrations" / "003_canonical_domain_dimensions.sql"
 NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "oecd_sdmx" / "oecd-sdmx-smoke-normalized.json"
 
 
@@ -38,6 +39,8 @@ def test_oecd_sdmx_loader_builds_source_specific_sql_without_network(tmp_path):
     assert "curl" not in sql
     assert "INSERT INTO staging.oecd_sdmx_observation" in sql
     assert "INSERT INTO curated.fact_observation" in sql
+    assert "INSERT INTO meta.provider_period_mapping" in sql
+    assert "INSERT INTO meta.provider_territory_mapping" in sql
     assert "OECD_NAAG" in sql
     assert "USD_EXC" in sql
     assert "USD_PPP" in sql
@@ -74,7 +77,7 @@ def test_oecd_sdmx_loader_is_idempotent_against_isolated_postgres():
         raise
 
     try:
-        for migration in [BASE_MIGRATION, OECD_MIGRATION]:
+        for migration in [BASE_MIGRATION, OECD_MIGRATION, CANONICAL_DOMAIN_MIGRATION]:
             subprocess.run(
                 ["psql", "-v", "ON_ERROR_STOP=1", "-d", db_name, "-f", str(migration)],
                 check=True,
@@ -111,10 +114,24 @@ def test_oecd_sdmx_loader_is_idempotent_against_isolated_postgres():
           (SELECT count(*) FROM curated.dim_attribute_set),
           (SELECT count(*) FROM curated.fact_observation),
           (SELECT count(*) FROM meta.lineage_event),
-          (SELECT count(*) FROM meta.quality_check)
+          (SELECT count(*) FROM meta.quality_check),
+          (SELECT count(*) FROM meta.provider_period_mapping),
+          (SELECT count(*) FROM meta.provider_territory_mapping)
         """
         counts = [int(value) for value in _psql(db_name, counts_sql).split("|")]
-        assert counts == [1, 1, 1, 8, 1, 2, 2, 2, 1, 8, 2, 4]
+        assert counts == [1, 1, 1, 8, 1, 2, 2, 2, 1, 8, 2, 4, 2, 2]
+
+        canonical_shapes = _psql(
+            db_name,
+            """
+            SELECT
+              (SELECT string_agg(period_label, ',' ORDER BY period_label) FROM curated.dim_period),
+              (SELECT string_agg(territory_type || ':' || iso3_code || ':' || canonical_territory_code, ',' ORDER BY iso3_code) FROM curated.dim_territory),
+              (SELECT string_agg(provider_period_code, ',' ORDER BY provider_period_code) FROM meta.provider_period_mapping),
+              (SELECT string_agg(provider_territory_code, ',' ORDER BY provider_territory_code) FROM meta.provider_territory_mapping)
+            """,
+        ).split("|")
+        assert canonical_shapes == ["2020,2021", "country:AUS:AUS,country:USA:USA", "2020,2021", "AUS,USA"]
 
         duplicate_grain_count = int(
             _psql(

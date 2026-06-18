@@ -12,8 +12,8 @@ MacroForge is a long-lived, personal/internal, AI-first platform for macroeconom
 
 ## Current truth
 
-- ProjectForge is the outer operating system.
-- MacroForge is a generated/managed project under ProjectForge at `workspace/projects/macroforge`.
+- ProjectForge is the generating framework whose conventions MacroForge retains.
+- MacroForge is an autonomous EIP project at `/home/mkkto/srv/EIP/projects/MacroForge`; it is no longer physically nested under ProjectForge.
 - First implementation source is World Bank WDI.
 - Default DB name is `macro` unless a live verification step proves otherwise.
 - PostgreSQL is the authoritative analytical store.

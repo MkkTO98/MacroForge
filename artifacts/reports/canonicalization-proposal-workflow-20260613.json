@@ -1,0 +1,213 @@
+{
+  "accepted_mapping_state_mutated": false,
+  "checks": {
+    "annual_quarterly_non_aggregation": "pass",
+    "generated_from_provider_evidence": "pass",
+    "high_impact_review_routing": "pass",
+    "no_auto_apply_mapping_updates": "pass",
+    "proposal_state_separate_from_accepted_mapping_state": "pass",
+    "unknown_unit_caveat_propagated": "pass"
+  },
+  "generated_mapping_proposals": [
+    {
+      "comparability_blockers": [
+        "current_price_eur_millions"
+      ],
+      "confidence_band": "review_required",
+      "confidence_score": 0.88,
+      "created_at": "2026-06-05T00:00:00Z",
+      "frequency_applicability": [
+        "Q"
+      ],
+      "frequency_treatment": "explicit_no_aggregation",
+      "generated_from_provider_evidence_id": "evidence:EUROSTAT_NAMQ_GDP:namq_10_gdp:B1GQ",
+      "proposal_generation_run_id": "run:canonicalization-proposal-workflow-20260613",
+      "proposed_canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "provider_dataset_code": "namq_10_gdp",
+      "provider_indicator_code": "B1GQ",
+      "reasoning_summary": "Deterministic TASK-034 workflow proposal generated from existing provider evidence and TASK-032 canonicalization state; high-impact GDP and unit/frequency caveats remain review-gated.",
+      "relationship_type": "close",
+      "review_reasons": [
+        "high_impact_concept",
+        "quarterly_frequency_must_not_be_aggregated"
+      ],
+      "review_state": "review_required",
+      "source_code": "EUROSTAT_NAMQ_GDP",
+      "unit_caveats": [
+        "Current-price million euro values are not directly comparable to USD_EXC, USD_PPP, or unknown units without conversion policy."
+      ],
+      "unit_profile_ids": [
+        "unit:EUROSTAT_NAMQ_GDP:CP_MEUR"
+      ],
+      "workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ"
+    },
+    {
+      "comparability_blockers": [
+        "current_usd_exchange_rate_basis",
+        "current_usd_ppp_basis"
+      ],
+      "confidence_band": "review_required",
+      "confidence_score": 0.86,
+      "created_at": "2026-06-05T00:00:00Z",
+      "frequency_applicability": [
+        "A"
+      ],
+      "frequency_treatment": "explicit_no_aggregation",
+      "generated_from_provider_evidence_id": "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+      "proposal_generation_run_id": "run:canonicalization-proposal-workflow-20260613",
+      "proposed_canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "provider_indicator_code": "B1GQ",
+      "reasoning_summary": "Deterministic TASK-034 workflow proposal generated from existing provider evidence and TASK-032 canonicalization state; high-impact GDP and unit/frequency caveats remain review-gated.",
+      "relationship_type": "close",
+      "review_reasons": [
+        "high_impact_concept",
+        "multiple_unit_profiles"
+      ],
+      "review_state": "review_required",
+      "source_code": "OECD_NAAG",
+      "unit_caveats": [
+        "Exchange-rate USD and PPP USD are separate comparability profiles.",
+        "PPP-basis USD and exchange-rate USD are separate comparability profiles."
+      ],
+      "unit_profile_ids": [
+        "unit:OECD_NAAG:USD_EXC",
+        "unit:OECD_NAAG:USD_PPP"
+      ],
+      "workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ"
+    },
+    {
+      "comparability_blockers": [
+        "unknown_unit_metadata"
+      ],
+      "confidence_band": "review_required",
+      "confidence_score": 0.82,
+      "created_at": "2026-06-05T00:00:00Z",
+      "frequency_applicability": [
+        "A"
+      ],
+      "frequency_treatment": "explicit_no_aggregation",
+      "generated_from_provider_evidence_id": "evidence:WDI:WDI:NY.GDP.MKTP.CD",
+      "proposal_generation_run_id": "run:canonicalization-proposal-workflow-20260613",
+      "proposed_canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "provider_dataset_code": "WDI",
+      "provider_indicator_code": "NY.GDP.MKTP.CD",
+      "reasoning_summary": "Deterministic TASK-034 workflow proposal generated from existing provider evidence and TASK-032 canonicalization state; high-impact GDP and unit/frequency caveats remain review-gated.",
+      "relationship_type": "close",
+      "review_reasons": [
+        "high_impact_concept",
+        "unknown unit metadata"
+      ],
+      "review_state": "review_required",
+      "source_code": "WDI",
+      "unit_caveats": [
+        "unknown unit metadata blocks direct comparability until WDI unit evidence is enriched."
+      ],
+      "unit_profile_ids": [
+        "unit:WDI:unknown"
+      ],
+      "workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD"
+    }
+  ],
+  "mapping_update_proposals": [
+    {
+      "auto_apply": false,
+      "mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ",
+      "proposed_changes": {
+        "preserve_accepted_mapping_id": true,
+        "preserve_accepted_status": "provisional",
+        "preserve_aggregation_policy": "no_frequency_aggregation",
+        "preserve_frequency_applicability": [
+          "Q"
+        ],
+        "propagate_comparability_caveats": [
+          "Current-price million euro values are not directly comparable to USD_EXC, USD_PPP, or unknown units without conversion policy."
+        ]
+      },
+      "proposed_review_state": "review_required",
+      "proposed_update_status": "provisional_review_required",
+      "target_existing_mapping_id": "mapping:v1:EUROSTAT_NAMQ_GDP:B1GQ:MACRO_GDP_OUTPUT",
+      "target_existing_mapping_version": 1,
+      "workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ"
+    },
+    {
+      "auto_apply": false,
+      "mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+      "proposed_changes": {
+        "preserve_accepted_mapping_id": true,
+        "preserve_accepted_status": "provisional",
+        "preserve_aggregation_policy": "no_frequency_aggregation",
+        "preserve_frequency_applicability": [
+          "A"
+        ],
+        "propagate_comparability_caveats": [
+          "Exchange-rate USD and PPP USD are separate comparability profiles.",
+          "PPP-basis USD and exchange-rate USD are separate comparability profiles."
+        ]
+      },
+      "proposed_review_state": "review_required",
+      "proposed_update_status": "provisional_review_required",
+      "target_existing_mapping_id": "mapping:v1:OECD_NAAG:B1GQ:MACRO_GDP_OUTPUT",
+      "target_existing_mapping_version": 1,
+      "workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ"
+    },
+    {
+      "auto_apply": false,
+      "mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+      "proposed_changes": {
+        "preserve_accepted_mapping_id": true,
+        "preserve_accepted_status": "provisional",
+        "preserve_aggregation_policy": "no_frequency_aggregation",
+        "preserve_frequency_applicability": [
+          "A"
+        ],
+        "propagate_comparability_caveats": [
+          "unknown unit metadata blocks direct comparability until WDI unit evidence is enriched."
+        ]
+      },
+      "proposed_review_state": "review_required",
+      "proposed_update_status": "provisional_review_required",
+      "target_existing_mapping_id": "mapping:v1:WDI:NY.GDP.MKTP.CD:MACRO_GDP_OUTPUT",
+      "target_existing_mapping_version": 1,
+      "workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD"
+    }
+  ],
+  "metadata": {
+    "database_writes": "none",
+    "frequency_aggregation": "not_implemented",
+    "generated_at": "2026-06-05T00:00:00Z",
+    "live_fetches": "none",
+    "model_calls": "none",
+    "scope": "fixture_backed_wdi_oecd_eurostat_gdp_proposal_workflow",
+    "source_state_report": "artifacts/reports/canonicalization-state-foundation-20260605.json",
+    "unit_conversion": "not_implemented"
+  },
+  "period_policy": {
+    "aggregation_policy": "no_frequency_aggregation",
+    "conversion_policy": "no_unit_conversion",
+    "frequencies_observed": [
+      "A",
+      "Q"
+    ]
+  },
+  "proposal_generation_run": {
+    "decision_policy": "DEC-019",
+    "input_state_versions": [
+      "seed-snapshot-20260604"
+    ],
+    "method_type": "deterministic_fixture_rules",
+    "model_version": "none",
+    "prompt_version": "none",
+    "ruleset_version": "proposal_workflow_rules_v1",
+    "run_id": "run:canonicalization-proposal-workflow-20260613"
+  },
+  "review_policy": {
+    "auto_accept_deferred_until_calibrated": true,
+    "confidence_score_is_routing_metadata_not_truth": true,
+    "high_impact_concepts": [
+      "MACRO_GDP_OUTPUT"
+    ]
+  },
+  "status": "succeeded",
+  "task": "TASK-034"
+}

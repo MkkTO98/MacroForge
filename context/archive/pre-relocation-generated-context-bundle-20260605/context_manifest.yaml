@@ -5,8 +5,12 @@ context_manifest:
     - instructions/GENERAL_INSTRUCTIONS.md
     - state/active_goal.md
     - state/project_state.md
+    - state/architecture.md
+    - context/latest_handoff.md
   generated_outputs:
     - context/active_context.md
     - context/compressed_context.md
   notes:
+    - "Use the required_always files as concise startup context."
+    - "Treat generated_outputs as task/model-target bundles; regenerate them with tools/build_context.py when needed instead of trusting stale copies."
     - "Update this manifest when project structure changes substantially."

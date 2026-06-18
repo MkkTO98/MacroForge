@@ -248,16 +248,29 @@ DEC-010 refinement:
 
 The TASK-020 schema recommendations are interpreted from a canonical-domain perspective, not a provider-centric one.
 
-1. Extend `curated.dim_period` with structured canonical period fields for annual, quarterly, monthly, and eventually daily observations. Provider period strings such as `2023-Q1` belong in metadata/mapping, not canonical period identity.
-2. Preserve ISO3 as the canonical country identifier. Add `territory_type` and aggregate/economic-area support for non-country territories rather than replacing ISO3 semantics with provider codes.
-3. Add provider period/territory/code mappings and provider code-list metadata before broad source promotion.
-4. If Eurostat is promoted later, use source-specific `staging.eurostat_namq_observation`; do not build a generalized ingestion framework yet.
-5. Preserve seasonal adjustment in `curated.dim_attribute_set` initially.
+1. Extend `curated.dim_period` with structured canonical period fields for annual, quarterly, monthly, and daily-ready observations. Provider period strings such as `2023-Q1` belong in metadata/mapping, not canonical period identity.
+2. Preserve ISO3 as the canonical country identifier. Add bounded `territory_type` support for countries plus optional explicit non-country aggregates/economic areas such as `EU27_2020` and `EA20`.
+3. Add provider period mappings, provider territory mappings, and minimal provider code-list/code dictionary tables before broad source promotion.
+4. Keep `curated.fact_observation` source-agnostic; do not widen it with provider-specific columns.
+5. If Eurostat is promoted later, use source-specific `staging.eurostat_namq_observation`; do not build a generalized ingestion framework yet.
+6. Preserve seasonal adjustment in `curated.dim_attribute_set` initially.
 
-Limits:
+TASK-021 / DEC-011 bounded design:
 
-- No PostgreSQL write occurred.
-- No executable schema migration was created.
-- No production-grade Eurostat ingestion was implemented.
-- No generalized ingestion/source framework was introduced.
-- Future schema implementation requires a new accepted decision/task.
+The concrete minimal schema design is recorded in `docs/architecture/minimal-canonical-domain-schema-design.md`.
+
+TASK-022 implementation:
+
+`db/migrations/003_canonical_domain_dimensions.sql` now implements the minimal canonical-domain schema evolution: structured canonical periods, bounded territory typing, provider period/territory mappings, and provider code dictionaries. WDI/OECD loaders were updated for compatibility with canonical period/territory mappings.
+
+TASK-023 / DEC-012 bounded Eurostat promotion design:
+
+`docs/architecture/bounded-eurostat-postgresql-promotion-design.md` accepts only a source-specific PostgreSQL promotion for the recorded Eurostat `namq_10_gdp` fixture. TASK-024 implemented that path with `db/migrations/004_eurostat_namq_staging.sql` and `src/macroforge/eurostat_namq_loader.py`: it loads from the recorded normalized fixture, maps `2023-Q1`/`2023-Q2` to canonical quarterly periods, maps Eurostat `DE`/`FR` to canonical `DEU`/`FRA`, loads bounded provider dictionaries, preserves seasonal/status metadata in attributes/source payloads, and keeps `curated.fact_observation` unchanged.
+
+Limits that still apply:
+
+- No live `macro` database write occurred.
+- Eurostat has only been implemented for the recorded bounded fixture in isolated PostgreSQL verification.
+- No production-grade/live Eurostat ingestion was implemented.
+- No generalized JSON-stat/source framework was introduced.
+- TASK-025 should review architecture before the next implementation scope.

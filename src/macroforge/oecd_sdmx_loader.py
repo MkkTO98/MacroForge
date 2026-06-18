@@ -199,20 +199,51 @@ SELECT s.source_id, d.measure_code, d.measure_code
 FROM source_row s CROSS JOIN distinct_indicators d
 ON CONFLICT (source_id, source_indicator_code) DO UPDATE SET indicator_name = EXCLUDED.indicator_name;
 
+WITH distinct_territories AS (
+    SELECT DISTINCT ref_area_code FROM _oecd_sdmx_rows
+)
+INSERT INTO curated.dim_territory (territory_type, iso3_code, canonical_territory_code, territory_name)
+SELECT 'country', d.ref_area_code, d.ref_area_code, d.ref_area_code
+FROM distinct_territories d
+ON CONFLICT (canonical_territory_code) DO UPDATE
+  SET territory_name = EXCLUDED.territory_name;
+
+INSERT INTO curated.dim_period (frequency, period_year, period_start_date, period_end_date, period_label)
+SELECT DISTINCT frequency, period_year, make_date(period_year, 1, 1), make_date(period_year, 12, 31), period_year::text
+FROM _oecd_sdmx_rows
+ON CONFLICT (frequency, period_start_date, period_end_date) DO UPDATE
+  SET period_label = EXCLUDED.period_label;
+
+WITH source_row AS (
+    SELECT source_id FROM meta.source WHERE source_code = {sql_literal(SOURCE_CODE)}
+), distinct_periods AS (
+    SELECT DISTINCT provider_dataset_code, frequency, period_year FROM _oecd_sdmx_rows
+)
+INSERT INTO meta.provider_period_mapping (source_id, provider_dataset_code, provider_period_code, period_id, provider_label)
+SELECT s.source_id, d.provider_dataset_code, d.period_year::text, p.period_id, d.period_year::text
+FROM source_row s
+CROSS JOIN distinct_periods d
+JOIN curated.dim_period p
+  ON p.frequency = d.frequency
+ AND p.period_start_date = make_date(d.period_year, 1, 1)
+ AND p.period_end_date = make_date(d.period_year, 12, 31)
+ON CONFLICT (source_id, provider_dataset_code, provider_period_code) DO UPDATE
+  SET period_id = EXCLUDED.period_id,
+      provider_label = EXCLUDED.provider_label;
+
 WITH source_row AS (
     SELECT source_id FROM meta.source WHERE source_code = {sql_literal(SOURCE_CODE)}
 ), distinct_territories AS (
-    SELECT DISTINCT ref_area_code FROM _oecd_sdmx_rows
+    SELECT DISTINCT provider_dataset_code, ref_area_code FROM _oecd_sdmx_rows
 )
-INSERT INTO curated.dim_territory (source_id, iso3_code, territory_name)
-SELECT s.source_id, d.ref_area_code, d.ref_area_code
-FROM source_row s CROSS JOIN distinct_territories d
-ON CONFLICT (source_id, iso3_code) DO UPDATE SET territory_name = EXCLUDED.territory_name;
-
-INSERT INTO curated.dim_period (frequency, period_year, period_start_date, period_end_date)
-SELECT DISTINCT frequency, period_year, make_date(period_year, 1, 1), make_date(period_year, 12, 31)
-FROM _oecd_sdmx_rows
-ON CONFLICT (frequency, period_year) DO NOTHING;
+INSERT INTO meta.provider_territory_mapping (source_id, provider_dataset_code, provider_territory_code, code_system, territory_id, provider_label)
+SELECT s.source_id, d.provider_dataset_code, d.ref_area_code, 'oecd_ref_area', t.territory_id, d.ref_area_code
+FROM source_row s
+CROSS JOIN distinct_territories d
+JOIN curated.dim_territory t ON t.iso3_code = d.ref_area_code
+ON CONFLICT (source_id, provider_dataset_code, code_system, provider_territory_code) DO UPDATE
+  SET territory_id = EXCLUDED.territory_id,
+      provider_label = EXCLUDED.provider_label;
 
 INSERT INTO curated.dim_unit (unit_code, unit_name)
 SELECT DISTINCT unit_measure_code, unit_measure_code
@@ -245,8 +276,8 @@ CROSS JOIN source_row s
 CROSS JOIN release_row rel
 CROSS JOIN run_row run
 JOIN curated.dim_indicator i ON i.source_id = s.source_id AND i.source_indicator_code = r.measure_code
-JOIN curated.dim_territory t ON t.source_id = s.source_id AND t.iso3_code = r.ref_area_code
-JOIN curated.dim_period p ON p.frequency = r.frequency AND p.period_year = r.period_year
+JOIN curated.dim_territory t ON t.iso3_code = r.ref_area_code
+JOIN curated.dim_period p ON p.frequency = r.frequency AND p.period_start_date = make_date(r.period_year, 1, 1) AND p.period_end_date = make_date(r.period_year, 12, 31)
 JOIN curated.dim_unit u ON u.unit_code = r.unit_measure_code
 JOIN curated.dim_attribute_set a ON a.attribute_hash = r.attribute_hash
 ON CONFLICT (source_id, indicator_id, territory_id, period_id, unit_id, attribute_set_id, as_of_date) DO UPDATE
@@ -272,7 +303,9 @@ WHERE NOT EXISTS (
     WHERE le.pipeline_run_id = run.pipeline_run_id AND le.event_type = v.event_type
 );
 
-WITH run_row AS (
+WITH source_row AS (
+    SELECT source_id FROM meta.source WHERE source_code = {sql_literal(SOURCE_CODE)}
+), run_row AS (
     SELECT pipeline_run_id FROM meta.pipeline_run WHERE run_key = {sql_literal(run_key)}
 )
 INSERT INTO meta.quality_check (pipeline_run_id, check_name, check_status, severity, observed_value, expected_value, details)
@@ -280,9 +313,9 @@ SELECT run.pipeline_run_id, check_name, check_status, severity, observed_value, 
 FROM run_row run CROSS JOIN (
     VALUES
       ('oecd_sdmx_expected_staging_rows', CASE WHEN (SELECT count(*) FROM staging.oecd_sdmx_observation swo JOIN run_row rr ON swo.pipeline_run_id = rr.pipeline_run_id) = {normalized.get('row_count', 8)} THEN 'pass' ELSE 'fail' END, 'error', (SELECT count(*)::numeric FROM staging.oecd_sdmx_observation swo JOIN run_row rr ON swo.pipeline_run_id = rr.pipeline_run_id), {normalized.get('row_count', 8)}::numeric, {json_literal({'scope': 'staging'})}),
-      ('oecd_sdmx_expected_fact_rows', CASE WHEN (SELECT count(*) FROM curated.fact_observation) = {normalized.get('row_count', 8)} THEN 'pass' ELSE 'fail' END, 'error', (SELECT count(*)::numeric FROM curated.fact_observation), {normalized.get('row_count', 8)}::numeric, {json_literal({'scope': 'curated'})}),
+      ('oecd_sdmx_expected_fact_rows', CASE WHEN (SELECT count(*) FROM curated.fact_observation fo JOIN source_row s ON fo.source_id = s.source_id) = {normalized.get('row_count', 8)} THEN 'pass' ELSE 'fail' END, 'error', (SELECT count(*)::numeric FROM curated.fact_observation fo JOIN source_row s ON fo.source_id = s.source_id), {normalized.get('row_count', 8)}::numeric, {json_literal({'scope': 'curated_source'})}),
       ('oecd_sdmx_expected_units', CASE WHEN (SELECT count(DISTINCT unit_code) FROM curated.dim_unit WHERE unit_code IN ('USD_EXC', 'USD_PPP')) = 2 THEN 'pass' ELSE 'fail' END, 'error', (SELECT count(DISTINCT unit_code)::numeric FROM curated.dim_unit WHERE unit_code IN ('USD_EXC', 'USD_PPP')), 2::numeric, {json_literal({'scope': 'units'})}),
-      ('oecd_sdmx_expected_attribute_sets', CASE WHEN (SELECT count(*) FROM curated.dim_attribute_set) = 1 THEN 'pass' ELSE 'fail' END, 'error', (SELECT count(*)::numeric FROM curated.dim_attribute_set), 1::numeric, {json_literal({'scope': 'attributes'})})
+      ('oecd_sdmx_expected_attribute_sets', CASE WHEN (SELECT count(DISTINCT fo.attribute_set_id) FROM curated.fact_observation fo JOIN source_row s ON fo.source_id = s.source_id) = 1 THEN 'pass' ELSE 'fail' END, 'error', (SELECT count(DISTINCT fo.attribute_set_id)::numeric FROM curated.fact_observation fo JOIN source_row s ON fo.source_id = s.source_id), 1::numeric, {json_literal({'scope': 'attributes_source'})})
 ) AS v(check_name, check_status, severity, observed_value, expected_value, details)
 WHERE NOT EXISTS (
     SELECT 1 FROM meta.quality_check qc

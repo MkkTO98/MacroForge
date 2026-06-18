@@ -11,6 +11,7 @@ from macroforge import wdi_loader
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MIGRATION = PROJECT_ROOT / "db" / "migrations" / "001_v0_schema_foundation.sql"
+CANONICAL_DOMAIN_MIGRATION = PROJECT_ROOT / "db" / "migrations" / "003_canonical_domain_dimensions.sql"
 NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "wdi" / "wdi-smoke-normalized.json"
 
 
@@ -42,12 +43,13 @@ def test_wdi_loader_is_idempotent_against_isolated_postgres(tmp_path):
         raise
 
     try:
-        subprocess.run(
-            ["psql", "-v", "ON_ERROR_STOP=1", "-d", db_name, "-f", str(MIGRATION)],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
+        for migration in [MIGRATION, CANONICAL_DOMAIN_MIGRATION]:
+            subprocess.run(
+                ["psql", "-v", "ON_ERROR_STOP=1", "-d", db_name, "-f", str(migration)],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
 
         first = wdi_loader.load_wdi_smoke_to_postgres(db_name, NORMALIZED, run_key="task-006-test")
         second = wdi_loader.load_wdi_smoke_to_postgres(db_name, NORMALIZED, run_key="task-006-test")
@@ -70,10 +72,24 @@ def test_wdi_loader_is_idempotent_against_isolated_postgres(tmp_path):
           (SELECT count(*) FROM curated.dim_attribute_set),
           (SELECT count(*) FROM curated.fact_observation),
           (SELECT count(*) FROM meta.lineage_event),
-          (SELECT count(*) FROM meta.quality_check)
+          (SELECT count(*) FROM meta.quality_check),
+          (SELECT count(*) FROM meta.provider_period_mapping),
+          (SELECT count(*) FROM meta.provider_territory_mapping)
         """
         counts = [int(value) for value in _psql(db_name, counts_sql).split("|")]
-        assert counts == [1, 1, 1, 8, 2, 2, 2, 1, 1, 8, 2, 2]
+        assert counts == [1, 1, 1, 8, 2, 2, 2, 1, 1, 8, 2, 2, 2, 2]
+
+        canonical_shapes = _psql(
+            db_name,
+            """
+            SELECT
+              (SELECT string_agg(period_label, ',' ORDER BY period_label) FROM curated.dim_period),
+              (SELECT string_agg(territory_type || ':' || iso3_code || ':' || canonical_territory_code, ',' ORDER BY iso3_code) FROM curated.dim_territory),
+              (SELECT string_agg(provider_period_code, ',' ORDER BY provider_period_code) FROM meta.provider_period_mapping),
+              (SELECT string_agg(provider_territory_code, ',' ORDER BY provider_territory_code) FROM meta.provider_territory_mapping)
+            """,
+        ).split("|")
+        assert canonical_shapes == ["2020,2021", "country:DNK:DNK,country:USA:USA", "2020,2021", "DNK,USA"]
 
         duplicate_grain_count = int(
             _psql(
@@ -99,6 +115,8 @@ def test_wdi_loader_cli_writes_load_report_sql_without_network(tmp_path):
 
     assert "INSERT INTO staging.wdi_observation" in sql
     assert "INSERT INTO curated.fact_observation" in sql
+    assert "INSERT INTO meta.provider_period_mapping" in sql
+    assert "INSERT INTO meta.provider_territory_mapping" in sql
     assert "ON CONFLICT" in sql
     assert "task-006-sql-test" in sql
 

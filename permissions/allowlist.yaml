@@ -34,6 +34,8 @@ levels:
       - python3 tools/check_coherence.py
       - python3 tools/validate_dry_run.py
       - python3 tools/select_model.py
+      - python3 tools/architecture_reality_audit.py
+      - python3 tools/context_health.py
 
   review:
     description: "Commands that modify project-local files or create commits."
@@ -59,7 +61,6 @@ levels:
       - python3 tools/build_context.py
       - python3 tools/update_context_summaries.py
       - python3 tools/review_metrics.py
-      - python3 tools/orchestrator_hygiene.py
       - python3 tools/escalate.py
 
   dangerous:

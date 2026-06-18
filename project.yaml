@@ -3,6 +3,6 @@ project:
   template: "python_data_project"
   kind: "python_data"
   created_by: "ProjectForge"
-  logging: "always_on"
+  logging: "optional_debug"
   decisions: "mandatory"
   deferred_specification: "enabled"

@@ -10,6 +10,7 @@ from macroforge import wdi_loader, wdi_validation
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MIGRATION = PROJECT_ROOT / "db" / "migrations" / "001_v0_schema_foundation.sql"
+CANONICAL_DOMAIN_MIGRATION = PROJECT_ROOT / "db" / "migrations" / "003_canonical_domain_dimensions.sql"
 NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "wdi" / "wdi-smoke-normalized.json"
 
 
@@ -30,12 +31,13 @@ def test_wdi_validation_report_passes_after_loader_rerun(tmp_path):
         raise
 
     try:
-        subprocess.run(
-            ["psql", "-v", "ON_ERROR_STOP=1", "-d", db_name, "-f", str(MIGRATION)],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
+        for migration in [MIGRATION, CANONICAL_DOMAIN_MIGRATION]:
+            subprocess.run(
+                ["psql", "-v", "ON_ERROR_STOP=1", "-d", db_name, "-f", str(migration)],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
         wdi_loader.load_wdi_smoke_to_postgres(db_name, NORMALIZED, run_key="task-007-validation-test")
         wdi_loader.load_wdi_smoke_to_postgres(db_name, NORMALIZED, run_key="task-007-validation-test")
 

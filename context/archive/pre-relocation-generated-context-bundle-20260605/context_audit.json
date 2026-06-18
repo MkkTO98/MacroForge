@@ -1,0 +1,567 @@
+{
+  "task": "TASK-033",
+  "task_type": "architecture_decision",
+  "context_mode": "project_wide_review",
+  "review_justification": "TASK-033 is a strategic next-scope governance decision after the canonicalization-state foundation; user explicitly requested option comparison for uncertainty reduction, including deferring AI dependence and validating workflow before complexity.",
+  "model_target": "cloud",
+  "model_selected": "gpt-5.5",
+  "model_reason": "TASK-033 is governance/architecture next-scope analysis optimizing uncertainty reduction after canonicalization-state foundation.",
+  "estimated_tokens": 32188,
+  "budget_tokens": 64000,
+  "within_budget": true,
+  "raw_logs_excluded": true,
+  "summaries_used": true,
+  "included_files": [
+    {
+      "path": "context/PROJECT_CONTEXT.md",
+      "reason": "project summary/current state",
+      "category": "project_summary",
+      "tokens": 441,
+      "truncated": false
+    },
+    {
+      "path": "state/project_state.md",
+      "reason": "project summary/current state",
+      "category": "project_summary",
+      "tokens": 1008,
+      "truncated": true
+    },
+    {
+      "path": "state/active_goal.md",
+      "reason": "project summary/current state",
+      "category": "project_summary",
+      "tokens": 595,
+      "truncated": false
+    },
+    {
+      "path": "state/architecture.md",
+      "reason": "project summary/current state",
+      "category": "project_summary",
+      "tokens": 1008,
+      "truncated": true
+    },
+    {
+      "path": "context/latest_handoff.md",
+      "reason": "short recent handoff summary",
+      "category": "handoff",
+      "tokens": 750,
+      "truncated": false
+    },
+    {
+      "path": "state/recent_changes.md",
+      "reason": "short recent handoff summary",
+      "category": "handoff",
+      "tokens": 25,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/tasks/TASK-033-decide-next-scope-after-canonicalization-state-foundation.md",
+      "reason": "active task file",
+      "category": "active_task",
+      "tokens": 678,
+      "truncated": false
+    },
+    {
+      "path": "_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 252,
+      "truncated": false
+    },
+    {
+      "path": "agents/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 124,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 99,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/decisions/_SUMMARY.md",
+      "reason": "explicitly requested relevant folder summary",
+      "category": "folder_summary",
+      "tokens": 693,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/handoffs/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 112,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/reports/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 486,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/reviews/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 91,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/tasks/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 744,
+      "truncated": false
+    },
+    {
+      "path": "confidence/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 100,
+      "truncated": false
+    },
+    {
+      "path": "config/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 95,
+      "truncated": false
+    },
+    {
+      "path": "context/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 227,
+      "truncated": false
+    },
+    {
+      "path": "context/imports/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 90,
+      "truncated": false
+    },
+    {
+      "path": "context/imports/chatgpt_export_recovery/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 61,
+      "truncated": false
+    },
+    {
+      "path": "context/reconstruction/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 155,
+      "truncated": false
+    },
+    {
+      "path": "data/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 174,
+      "truncated": false
+    },
+    {
+      "path": "data/curated/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 95,
+      "truncated": false
+    },
+    {
+      "path": "data/metadata/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 194,
+      "truncated": false
+    },
+    {
+      "path": "data/metadata/eurostat/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 104,
+      "truncated": false
+    },
+    {
+      "path": "data/metadata/oecd_sdmx/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 109,
+      "truncated": false
+    },
+    {
+      "path": "data/metadata/wdi/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 101,
+      "truncated": false
+    },
+    {
+      "path": "data/staging/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 99,
+      "truncated": false
+    },
+    {
+      "path": "db/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 186,
+      "truncated": false
+    },
+    {
+      "path": "db/migrations/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 244,
+      "truncated": false
+    },
+    {
+      "path": "db/queries/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 103,
+      "truncated": false
+    },
+    {
+      "path": "db/schema/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 100,
+      "truncated": false
+    },
+    {
+      "path": "docs/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 201,
+      "truncated": false
+    },
+    {
+      "path": "docs/architecture/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 311,
+      "truncated": false
+    },
+    {
+      "path": "docs/data/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 131,
+      "truncated": false
+    },
+    {
+      "path": "docs/runbooks/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 95,
+      "truncated": false
+    },
+    {
+      "path": "hardware/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 96,
+      "truncated": false
+    },
+    {
+      "path": "instructions/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 134,
+      "truncated": false
+    },
+    {
+      "path": "knowledge/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 96,
+      "truncated": false
+    },
+    {
+      "path": "logs/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 155,
+      "truncated": false
+    },
+    {
+      "path": "logs/derived/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 87,
+      "truncated": false
+    },
+    {
+      "path": "memory/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 97,
+      "truncated": false
+    },
+    {
+      "path": "memory/archive/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 88,
+      "truncated": false
+    },
+    {
+      "path": "memory/deprecated_decisions/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 95,
+      "truncated": false
+    },
+    {
+      "path": "metrics/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 100,
+      "truncated": false
+    },
+    {
+      "path": "metrics/recommendations/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 96,
+      "truncated": false
+    },
+    {
+      "path": "metrics/reports/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 92,
+      "truncated": false
+    },
+    {
+      "path": "models/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 96,
+      "truncated": false
+    },
+    {
+      "path": "permissions/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 133,
+      "truncated": false
+    },
+    {
+      "path": "pipelines/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 81,
+      "truncated": false
+    },
+    {
+      "path": "pipelines/wdi/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 134,
+      "truncated": false
+    },
+    {
+      "path": "policies/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 89,
+      "truncated": false
+    },
+    {
+      "path": "question_queue/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 95,
+      "truncated": false
+    },
+    {
+      "path": "question_queue/answered/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 93,
+      "truncated": false
+    },
+    {
+      "path": "question_queue/archive/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 92,
+      "truncated": false
+    },
+    {
+      "path": "question_queue/pending/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 92,
+      "truncated": false
+    },
+    {
+      "path": "recovery/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 103,
+      "truncated": false
+    },
+    {
+      "path": "simulation/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 105,
+      "truncated": false
+    },
+    {
+      "path": "simulation/dry_runs/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 452,
+      "truncated": false
+    },
+    {
+      "path": "skills/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 165,
+      "truncated": false
+    },
+    {
+      "path": "src/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 83,
+      "truncated": false
+    },
+    {
+      "path": "src/macroforge/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 326,
+      "truncated": false
+    },
+    {
+      "path": "state/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 231,
+      "truncated": false
+    },
+    {
+      "path": "tests/_SUMMARY.md",
+      "reason": "summary for explicitly retrieved source file parent",
+      "category": "folder_summary",
+      "tokens": 334,
+      "truncated": false
+    },
+    {
+      "path": "tests/fixtures/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 102,
+      "truncated": false
+    },
+    {
+      "path": "tests/invariants/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 93,
+      "truncated": false
+    },
+    {
+      "path": "tools/_SUMMARY.md",
+      "reason": "project-wide governance review folder map",
+      "category": "folder_summary",
+      "tokens": 224,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/decisions/DEC-015-next-scope-canonical-indicator-unit-comparability.md",
+      "reason": "explicitly requested decision record",
+      "category": "decision_record",
+      "tokens": 1508,
+      "truncated": true
+    },
+    {
+      "path": "artifacts/decisions/DEC-016-ai-assisted-canonicalization-layer.md",
+      "reason": "explicitly requested decision record",
+      "category": "decision_record",
+      "tokens": 1508,
+      "truncated": true
+    },
+    {
+      "path": "artifacts/decisions/DEC-018-minimal-ai-assisted-canonicalization-layer.md",
+      "reason": "explicitly requested decision record",
+      "category": "decision_record",
+      "tokens": 1367,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/tasks/TASK-032-implement-minimal-canonicalization-state-foundation.md",
+      "reason": "explicitly retrieved source file",
+      "category": "source_file",
+      "tokens": 930,
+      "truncated": false
+    },
+    {
+      "path": "artifacts/reports/canonicalization-state-foundation-20260605.json",
+      "reason": "explicitly retrieved source file",
+      "category": "source_file",
+      "tokens": 3008,
+      "truncated": true
+    },
+    {
+      "path": "src/macroforge/canonicalization_state.py",
+      "reason": "explicitly retrieved source file",
+      "category": "source_file",
+      "tokens": 3008,
+      "truncated": true
+    },
+    {
+      "path": "tests/test_canonicalization_state.py",
+      "reason": "explicitly retrieved source file",
+      "category": "source_file",
+      "tokens": 1651,
+      "truncated": false
+    },
+    {
+      "path": "docs/architecture/minimal-ai-assisted-canonicalization-layer.md",
+      "reason": "explicitly retrieved source file",
+      "category": "source_file",
+      "tokens": 3008,
+      "truncated": true
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": "data/raw/_SUMMARY.md",
+      "reason": "raw data excluded unless explicitly relevant"
+    },
+    {
+      "path": "data/raw/eurostat/_SUMMARY.md",
+      "reason": "raw data excluded unless explicitly relevant"
+    },
+    {
+      "path": "data/raw/oecd_sdmx/_SUMMARY.md",
+      "reason": "raw data excluded unless explicitly relevant"
+    },
+    {
+      "path": "data/raw/wdi/_SUMMARY.md",
+      "reason": "raw data excluded unless explicitly relevant"
+    },
+    {
+      "path": "logs/agents/_SUMMARY.md",
+      "reason": "raw logs/session transcripts excluded from normal context"
+    },
+    {
+      "path": "logs/raw/_SUMMARY.md",
+      "reason": "raw logs/session transcripts excluded from normal context"
+    }
+  ]
+}

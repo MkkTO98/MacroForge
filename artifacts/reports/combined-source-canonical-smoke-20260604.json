@@ -1,0 +1,73 @@
+{
+  "canonical_frequencies": [
+    "A",
+    "Q"
+  ],
+  "canonical_territories": [
+    "AUS",
+    "DEU",
+    "DNK",
+    "FRA",
+    "USA"
+  ],
+  "checks": {
+    "canonical_frequencies": "pass",
+    "canonical_territories": "pass",
+    "dataset_release_count": "pass",
+    "fact_rows_by_source": "pass",
+    "fact_rows_total": "pass",
+    "lineage_events": "pass",
+    "no_duplicate_fact_grain": "pass",
+    "provider_period_mappings": "pass",
+    "provider_territory_mappings": "pass",
+    "quality_checks_pass": "pass",
+    "quality_checks_present": "pass",
+    "source_count": "pass",
+    "source_specific_loaders_remain_separate": "pass",
+    "staging_rows": "pass"
+  },
+  "cleanup": "dropdb --if-exists executed",
+  "database": "macroforge_combined_source_test_e9124753317b",
+  "dataset_release_count": 3,
+  "duplicate_fact_grain_count": 0,
+  "fact_rows_by_source": {
+    "EUROSTAT_NAMQ_GDP": 4,
+    "OECD_NAAG": 8,
+    "WDI": 8
+  },
+  "fact_rows_total": 20,
+  "failing_quality_checks": 0,
+  "lineage_events_by_source": {
+    "EUROSTAT_NAMQ_GDP": 2,
+    "OECD_NAAG": 2,
+    "WDI": 2
+  },
+  "provider_period_mapping_count_by_source": {
+    "EUROSTAT_NAMQ_GDP": 2,
+    "OECD_NAAG": 2,
+    "WDI": 2
+  },
+  "provider_territory_mapping_count_by_source": {
+    "EUROSTAT_NAMQ_GDP": 2,
+    "OECD_NAAG": 2,
+    "WDI": 2
+  },
+  "quality_checks_by_source": {
+    "EUROSTAT_NAMQ_GDP": 4,
+    "OECD_NAAG": 4,
+    "WDI": 2
+  },
+  "source_count": 3,
+  "sources": [
+    "EUROSTAT_NAMQ_GDP",
+    "OECD_NAAG",
+    "WDI"
+  ],
+  "staging_rows_by_table": {
+    "staging.eurostat_namq_observation": 4,
+    "staging.oecd_sdmx_observation": 8,
+    "staging.wdi_observation": 8
+  },
+  "status": "succeeded",
+  "task": "TASK-026"
+}

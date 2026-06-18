@@ -1,0 +1,415 @@
+{
+  "accepted_mappings": [
+    {
+      "acceptance_source": "deterministic_fixture_policy",
+      "accepted_at": "2026-06-05T00:00:00Z",
+      "accepted_from_proposal_id": "proposal:run:canonicalization-seed-20260605:EUROSTAT_NAMQ_GDP:B1GQ",
+      "accepted_mapping_id": "mapping:v1:EUROSTAT_NAMQ_GDP:B1GQ:MACRO_GDP_OUTPUT",
+      "accepted_status": "provisional",
+      "affected_scope": "bounded_fixture_reports_only",
+      "aggregation_policy": "no_frequency_aggregation",
+      "canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "canonical_concept_version": 1,
+      "comparability_caveats": [
+        "Current-price million euro values are not directly comparable to USD_EXC, USD_PPP, or unknown units without conversion policy."
+      ],
+      "frequency_applicability": [
+        "Q"
+      ],
+      "mapping_version": 1,
+      "provider_dataset_code": "namq_10_gdp",
+      "provider_indicator_code": "B1GQ",
+      "provider_indicator_evidence_id": "evidence:EUROSTAT_NAMQ_GDP:namq_10_gdp:B1GQ",
+      "relationship_type": "close",
+      "review_reasons": [
+        "high_impact_concept",
+        "quarterly_frequency_must_not_be_aggregated"
+      ],
+      "review_state": "review_required",
+      "source_code": "EUROSTAT_NAMQ_GDP",
+      "superseded_by": null,
+      "supersedes": null,
+      "unit_profile_ids": [
+        "unit:EUROSTAT_NAMQ_GDP:CP_MEUR"
+      ]
+    },
+    {
+      "acceptance_source": "deterministic_fixture_policy",
+      "accepted_at": "2026-06-05T00:00:00Z",
+      "accepted_from_proposal_id": "proposal:run:canonicalization-seed-20260605:OECD_NAAG:B1GQ",
+      "accepted_mapping_id": "mapping:v1:OECD_NAAG:B1GQ:MACRO_GDP_OUTPUT",
+      "accepted_status": "provisional",
+      "affected_scope": "bounded_fixture_reports_only",
+      "aggregation_policy": "no_frequency_aggregation",
+      "canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "canonical_concept_version": 1,
+      "comparability_caveats": [
+        "Exchange-rate USD and PPP USD are separate comparability profiles.",
+        "PPP-basis USD and exchange-rate USD are separate comparability profiles."
+      ],
+      "frequency_applicability": [
+        "A"
+      ],
+      "mapping_version": 1,
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "provider_indicator_code": "B1GQ",
+      "provider_indicator_evidence_id": "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+      "relationship_type": "close",
+      "review_reasons": [
+        "high_impact_concept",
+        "multiple_unit_profiles"
+      ],
+      "review_state": "review_required",
+      "source_code": "OECD_NAAG",
+      "superseded_by": null,
+      "supersedes": null,
+      "unit_profile_ids": [
+        "unit:OECD_NAAG:USD_EXC",
+        "unit:OECD_NAAG:USD_PPP"
+      ]
+    },
+    {
+      "acceptance_source": "deterministic_fixture_policy",
+      "accepted_at": "2026-06-05T00:00:00Z",
+      "accepted_from_proposal_id": "proposal:run:canonicalization-seed-20260605:WDI:NY.GDP.MKTP.CD",
+      "accepted_mapping_id": "mapping:v1:WDI:NY.GDP.MKTP.CD:MACRO_GDP_OUTPUT",
+      "accepted_status": "provisional",
+      "affected_scope": "bounded_fixture_reports_only",
+      "aggregation_policy": "no_frequency_aggregation",
+      "canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "canonical_concept_version": 1,
+      "comparability_caveats": [
+        "unknown unit metadata blocks direct comparability until WDI unit evidence is enriched."
+      ],
+      "frequency_applicability": [
+        "A"
+      ],
+      "mapping_version": 1,
+      "provider_dataset_code": "WDI",
+      "provider_indicator_code": "NY.GDP.MKTP.CD",
+      "provider_indicator_evidence_id": "evidence:WDI:WDI:NY.GDP.MKTP.CD",
+      "relationship_type": "close",
+      "review_reasons": [
+        "high_impact_concept",
+        "unknown unit metadata"
+      ],
+      "review_state": "review_required",
+      "source_code": "WDI",
+      "superseded_by": null,
+      "supersedes": null,
+      "unit_profile_ids": [
+        "unit:WDI:unknown"
+      ]
+    }
+  ],
+  "canonical_creation_proposals": [],
+  "canonical_indicator_concepts": [
+    {
+      "canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "default_comparability_caveats": [
+        "Units, price basis, currency basis, and frequency must be checked before comparison."
+      ],
+      "definition": "Source-agnostic GDP/output concept candidate for bounded fixture evidence; exact national-accounting scope remains review-gated.",
+      "domain": "macroeconomics",
+      "label": "Gross domestic product output",
+      "lifecycle_status": "proposed_active_seed",
+      "measure_type": "flow",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": 1
+    }
+  ],
+  "canonicalization_runs": [
+    {
+      "input_evidence_versions": [
+        "seed-snapshot-20260604"
+      ],
+      "method_type": "deterministic_fixture_rules",
+      "model_version": "none",
+      "policy_version": "DEC-018",
+      "prompt_version": "none",
+      "ruleset_version": "canonicalization_seed_rules_v1",
+      "run_id": "run:canonicalization-seed-20260605",
+      "thresholds": {
+        "auto_accept_min": 0.95,
+        "review_required_below": 0.95
+      },
+      "timestamp": "2026-06-05T00:00:00Z"
+    }
+  ],
+  "checks": {
+    "annual_quarterly_non_aggregation": "pass",
+    "high_impact_review_routing": "pass",
+    "proposal_state_separate_from_accepted_mapping_state": "pass",
+    "supersession_fields_present": "pass",
+    "unknown_units_block_direct_comparability": "pass"
+  },
+  "mapping_proposals": [
+    {
+      "canonicalization_run_id": "run:canonicalization-seed-20260605",
+      "confidence_band": "review_required",
+      "confidence_score": 0.88,
+      "created_at": "2026-06-05T00:00:00Z",
+      "evidence_references": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json"
+      ],
+      "frequency_treatment": "explicit_no_aggregation",
+      "proposal_id": "proposal:run:canonicalization-seed-20260605:EUROSTAT_NAMQ_GDP:B1GQ",
+      "proposed_canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "provider_indicator_evidence_id": "evidence:EUROSTAT_NAMQ_GDP:namq_10_gdp:B1GQ",
+      "reasoning_summary": "Bounded fixture evidence identifies GDP-like provider indicators, but high-impact GDP mappings require review and unit/frequency caveats.",
+      "relationship_type": "close",
+      "review_reasons": [
+        "high_impact_concept",
+        "quarterly_frequency_must_not_be_aggregated"
+      ],
+      "status": "review_required",
+      "superseded_by": null,
+      "supersedes": null,
+      "unit_profile_ids": [
+        "unit:EUROSTAT_NAMQ_GDP:CP_MEUR"
+      ]
+    },
+    {
+      "canonicalization_run_id": "run:canonicalization-seed-20260605",
+      "confidence_band": "review_required",
+      "confidence_score": 0.86,
+      "created_at": "2026-06-05T00:00:00Z",
+      "evidence_references": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json"
+      ],
+      "frequency_treatment": "explicit_no_aggregation",
+      "proposal_id": "proposal:run:canonicalization-seed-20260605:OECD_NAAG:B1GQ",
+      "proposed_canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "provider_indicator_evidence_id": "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+      "reasoning_summary": "Bounded fixture evidence identifies GDP-like provider indicators, but high-impact GDP mappings require review and unit/frequency caveats.",
+      "relationship_type": "close",
+      "review_reasons": [
+        "high_impact_concept",
+        "multiple_unit_profiles"
+      ],
+      "status": "review_required",
+      "superseded_by": null,
+      "supersedes": null,
+      "unit_profile_ids": [
+        "unit:OECD_NAAG:USD_EXC",
+        "unit:OECD_NAAG:USD_PPP"
+      ]
+    },
+    {
+      "canonicalization_run_id": "run:canonicalization-seed-20260605",
+      "confidence_band": "review_required",
+      "confidence_score": 0.82,
+      "created_at": "2026-06-05T00:00:00Z",
+      "evidence_references": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json"
+      ],
+      "frequency_treatment": "explicit_no_aggregation",
+      "proposal_id": "proposal:run:canonicalization-seed-20260605:WDI:NY.GDP.MKTP.CD",
+      "proposed_canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "provider_indicator_evidence_id": "evidence:WDI:WDI:NY.GDP.MKTP.CD",
+      "reasoning_summary": "Bounded fixture evidence identifies GDP-like provider indicators, but high-impact GDP mappings require review and unit/frequency caveats.",
+      "relationship_type": "close",
+      "review_reasons": [
+        "high_impact_concept",
+        "unknown unit metadata"
+      ],
+      "status": "review_required",
+      "superseded_by": null,
+      "supersedes": null,
+      "unit_profile_ids": [
+        "unit:WDI:unknown"
+      ]
+    }
+  ],
+  "metadata": {
+    "frequency_aggregation": "not_implemented",
+    "generated_at": "2026-06-05T00:00:00Z",
+    "live_fetches": "none",
+    "model_calls": "none",
+    "scope": "fixture_backed_wdi_oecd_eurostat_gdp_seed",
+    "source_report": "artifacts/reports/canonical-gdp-snapshot-20260604.json",
+    "unit_conversion": "not_implemented"
+  },
+  "period_policy": {
+    "aggregation_policy": "no_frequency_aggregation",
+    "conversion_policy": "no_unit_conversion",
+    "frequencies_observed": [
+      "A",
+      "Q"
+    ]
+  },
+  "provider_indicator_evidence": [
+    {
+      "evidence_id": "evidence:EUROSTAT_NAMQ_GDP:namq_10_gdp:B1GQ",
+      "evidence_version": "seed-snapshot-20260604",
+      "frequency_hints": [
+        "Q"
+      ],
+      "observation_count": 4,
+      "period_labels": [
+        "2023 Q1",
+        "2023 Q2"
+      ],
+      "provider_dataset_code": "namq_10_gdp",
+      "provider_description": null,
+      "provider_indicator_code": "B1GQ",
+      "provider_indicator_name": "Gross domestic product at market prices",
+      "raw_artifact_references": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json"
+      ],
+      "release_keys": [
+        "EUROSTAT_NAMQ_GDP:namq_10_gdp:2023-Q1-2023-Q2:914888671969"
+      ],
+      "source_code": "EUROSTAT_NAMQ_GDP",
+      "territory_hints": [
+        "DEU",
+        "FRA"
+      ],
+      "unit_profile_ids": [
+        "unit:EUROSTAT_NAMQ_GDP:CP_MEUR"
+      ]
+    },
+    {
+      "evidence_id": "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+      "evidence_version": "seed-snapshot-20260604",
+      "frequency_hints": [
+        "A"
+      ],
+      "observation_count": 8,
+      "period_labels": [
+        "2020",
+        "2021"
+      ],
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "provider_description": null,
+      "provider_indicator_code": "B1GQ",
+      "provider_indicator_name": "B1GQ",
+      "raw_artifact_references": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json"
+      ],
+      "release_keys": [
+        "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:2020-2021:d81d56186d66"
+      ],
+      "source_code": "OECD_NAAG",
+      "territory_hints": [
+        "AUS",
+        "USA"
+      ],
+      "unit_profile_ids": [
+        "unit:OECD_NAAG:USD_EXC",
+        "unit:OECD_NAAG:USD_PPP"
+      ]
+    },
+    {
+      "evidence_id": "evidence:WDI:WDI:NY.GDP.MKTP.CD",
+      "evidence_version": "seed-snapshot-20260604",
+      "frequency_hints": [
+        "A"
+      ],
+      "observation_count": 4,
+      "period_labels": [
+        "2020",
+        "2021"
+      ],
+      "provider_dataset_code": "WDI",
+      "provider_description": null,
+      "provider_indicator_code": "NY.GDP.MKTP.CD",
+      "provider_indicator_name": "GDP (current US$)",
+      "raw_artifact_references": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json"
+      ],
+      "release_keys": [
+        "WDI:2026-04-08:2020:2021"
+      ],
+      "source_code": "WDI",
+      "territory_hints": [
+        "DNK",
+        "USA"
+      ],
+      "unit_profile_ids": [
+        "unit:WDI:unknown"
+      ]
+    }
+  ],
+  "review_policy": {
+    "auto_accept_deferred_until_calibrated": true,
+    "confidence_score_is_routing_metadata_not_truth": true,
+    "high_impact_concepts": [
+      "MACRO_GDP_OUTPUT"
+    ]
+  },
+  "status": "succeeded",
+  "supersession_lineage": [],
+  "task": "TASK-032",
+  "unit_comparability_profiles": [
+    {
+      "caveats": [
+        "Current-price million euro values are not directly comparable to USD_EXC, USD_PPP, or unknown units without conversion policy."
+      ],
+      "comparability_group": "current_price_eur_millions",
+      "comparable_without_conversion": false,
+      "conversion_status": "deferred",
+      "currency": "EUR",
+      "currency_basis": "domestic_currency",
+      "metadata_quality": "partial",
+      "price_basis": "current",
+      "provider_unit_code": "CP_MEUR",
+      "scale_multiplier": 1000000,
+      "source_code": "EUROSTAT_NAMQ_GDP",
+      "unit_family": "currency",
+      "unit_profile_id": "unit:EUROSTAT_NAMQ_GDP:CP_MEUR"
+    },
+    {
+      "caveats": [
+        "Exchange-rate USD and PPP USD are separate comparability profiles."
+      ],
+      "comparability_group": "current_usd_exchange_rate_basis",
+      "comparable_without_conversion": false,
+      "conversion_status": "deferred",
+      "currency": "USD",
+      "currency_basis": "exchange_rate",
+      "metadata_quality": "partial",
+      "price_basis": "current",
+      "provider_unit_code": "USD_EXC",
+      "scale_multiplier": null,
+      "source_code": "OECD_NAAG",
+      "unit_family": "currency",
+      "unit_profile_id": "unit:OECD_NAAG:USD_EXC"
+    },
+    {
+      "caveats": [
+        "PPP-basis USD and exchange-rate USD are separate comparability profiles."
+      ],
+      "comparability_group": "current_usd_ppp_basis",
+      "comparable_without_conversion": false,
+      "conversion_status": "deferred",
+      "currency": "USD",
+      "currency_basis": "ppp",
+      "metadata_quality": "partial",
+      "price_basis": "current",
+      "provider_unit_code": "USD_PPP",
+      "scale_multiplier": null,
+      "source_code": "OECD_NAAG",
+      "unit_family": "currency",
+      "unit_profile_id": "unit:OECD_NAAG:USD_PPP"
+    },
+    {
+      "caveats": [
+        "unknown unit metadata blocks direct comparability until WDI unit evidence is enriched."
+      ],
+      "comparability_group": "unknown_unit_metadata",
+      "comparable_without_conversion": false,
+      "conversion_status": "deferred",
+      "currency": null,
+      "currency_basis": "unknown",
+      "metadata_quality": "unknown",
+      "price_basis": "unknown",
+      "provider_unit_code": "unknown",
+      "scale_multiplier": null,
+      "source_code": "WDI",
+      "unit_family": "unknown",
+      "unit_profile_id": "unit:WDI:unknown"
+    }
+  ]
+}

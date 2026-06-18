@@ -12,7 +12,7 @@ This folder is part of the ProjectForge file-backed operating system for `permis
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- No folder-specific active work recorded.
+- `allowlist.yaml` includes lightweight context-health and architecture-reality audit commands and no longer references nonexistent `tools/orchestrator_hygiene.py`.
 
 ## Needs Attention
 - No folder-specific issues recorded.

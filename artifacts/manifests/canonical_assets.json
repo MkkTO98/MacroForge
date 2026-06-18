@@ -1,0 +1,237 @@
+{
+  "allowed_roles": [
+    "raw",
+    "staging",
+    "canonical",
+    "report",
+    "mapping",
+    "validation"
+  ],
+  "allowed_statuses": [
+    "proposed",
+    "provisional",
+    "accepted",
+    "rejected",
+    "retired"
+  ],
+  "assets": [
+    {
+      "asset_key": "raw.provider_gdp_fixture_evidence",
+      "canonical_concept_or_mapping_pointer": "pending_review",
+      "notes_caveats": [
+        "Provider GDP fixture evidence only; provider identities are evidence and not canonical truth."
+      ],
+      "owner_or_review_authority": "MacroForge canonicalization review",
+      "related_artifact_paths": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json",
+        "artifacts/reports/canonicalization-state-foundation-20260605.json"
+      ],
+      "role": "raw",
+      "source_provider_evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json",
+        "artifacts/reports/canonicalization-state-foundation-20260605.json"
+      ],
+      "status": "provisional",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    },
+    {
+      "asset_key": "canonical.macro_gdp_output",
+      "canonical_concept_or_mapping_pointer": "canonical_concept:MACRO_GDP_OUTPUT:v1",
+      "notes_caveats": [
+        "Source-agnostic GDP/output concept candidate; national-accounting scope remains review-gated."
+      ],
+      "owner_or_review_authority": "MacroForge canonicalization review",
+      "related_artifact_paths": [
+        "artifacts/reports/canonicalization-state-foundation-20260605.json",
+        "docs/architecture/minimal-ai-assisted-canonicalization-layer.md",
+        "artifacts/decisions/DEC-018-minimal-ai-assisted-canonicalization-layer.md"
+      ],
+      "role": "canonical",
+      "source_provider_evidence_pointers": [],
+      "status": "proposed",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    },
+    {
+      "asset_key": "mapping.wdi.gdp_to_macro_gdp_output",
+      "canonical_concept_or_mapping_pointer": "mapping:v1:WDI:NY.GDP.MKTP.CD:MACRO_GDP_OUTPUT",
+      "notes_caveats": [
+        "Accepted mapping state is provisional; unknown WDI unit metadata blocks direct comparability until enriched/reviewed."
+      ],
+      "owner_or_review_authority": "MacroForge canonicalization review",
+      "related_artifact_paths": [
+        "artifacts/reports/canonicalization-state-foundation-20260605.json",
+        "artifacts/decisions/DEC-018-minimal-ai-assisted-canonicalization-layer.md"
+      ],
+      "role": "mapping",
+      "source_provider_evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json",
+        "artifacts/reports/canonicalization-state-foundation-20260605.json"
+      ],
+      "status": "provisional",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    },
+    {
+      "asset_key": "mapping.oecd_naag.gdp_to_macro_gdp_output",
+      "canonical_concept_or_mapping_pointer": "mapping:v1:OECD_NAAG:B1GQ:MACRO_GDP_OUTPUT",
+      "notes_caveats": [
+        "Accepted mapping state is provisional; exchange-rate USD and PPP USD remain separate comparability profiles."
+      ],
+      "owner_or_review_authority": "MacroForge canonicalization review",
+      "related_artifact_paths": [
+        "artifacts/reports/canonicalization-state-foundation-20260605.json",
+        "artifacts/decisions/DEC-018-minimal-ai-assisted-canonicalization-layer.md"
+      ],
+      "role": "mapping",
+      "source_provider_evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json",
+        "artifacts/reports/canonicalization-state-foundation-20260605.json"
+      ],
+      "status": "provisional",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    },
+    {
+      "asset_key": "mapping.eurostat_namq_gdp.to_macro_gdp_output",
+      "canonical_concept_or_mapping_pointer": "mapping:v1:EUROSTAT_NAMQ_GDP:B1GQ:MACRO_GDP_OUTPUT",
+      "notes_caveats": [
+        "Accepted mapping state is provisional; quarterly frequency must not be aggregated and current-price million euro values require conversion policy before comparison."
+      ],
+      "owner_or_review_authority": "MacroForge canonicalization review",
+      "related_artifact_paths": [
+        "artifacts/reports/canonicalization-state-foundation-20260605.json",
+        "artifacts/decisions/DEC-018-minimal-ai-assisted-canonicalization-layer.md"
+      ],
+      "role": "mapping",
+      "source_provider_evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json",
+        "artifacts/reports/canonicalization-state-foundation-20260605.json"
+      ],
+      "status": "provisional",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    },
+    {
+      "asset_key": "validation.canonicalization_state_foundation",
+      "canonical_concept_or_mapping_pointer": "canonicalization_state:seed:20260605",
+      "notes_caveats": [
+        "Validation confirms fixture-backed state separation, review routing, non-aggregation, and supersession fields."
+      ],
+      "owner_or_review_authority": "MacroForge deterministic test suite",
+      "related_artifact_paths": [
+        "artifacts/reports/canonicalization-state-foundation-20260605.json",
+        "tests/test_canonicalization_state.py",
+        "src/macroforge/canonicalization_state.py"
+      ],
+      "role": "validation",
+      "source_provider_evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json"
+      ],
+      "status": "accepted",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    },
+    {
+      "asset_key": "report.canonical_gdp_snapshot",
+      "canonical_concept_or_mapping_pointer": "report:canonical-gdp-snapshot-20260604",
+      "notes_caveats": [
+        "Deterministic GDP snapshot report from existing canonical facts and meta lineage/source metadata."
+      ],
+      "owner_or_review_authority": "MacroForge deterministic test suite",
+      "related_artifact_paths": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json",
+        "artifacts/reports/canonical-gdp-snapshot-20260604.md",
+        "tests/test_canonical_gdp_snapshot.py"
+      ],
+      "role": "report",
+      "source_provider_evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json"
+      ],
+      "status": "accepted",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    },
+    {
+      "asset_key": "canonical.schema_foundation",
+      "canonical_concept_or_mapping_pointer": "canonical_domain_schema:DEC-011:v1",
+      "notes_caveats": [
+        "Source-agnostic canonical-domain foundation; provider codes remain mapping/metadata rather than fact identity."
+      ],
+      "owner_or_review_authority": "MacroForge architecture decisions",
+      "related_artifact_paths": [
+        "docs/architecture/minimal-canonical-domain-schema-design.md",
+        "artifacts/decisions/DEC-011-minimal-canonical-domain-schema-design.md",
+        "db/migrations/003_canonical_domain_dimensions.sql",
+        "tests/test_schema_foundation.py"
+      ],
+      "role": "canonical",
+      "source_provider_evidence_pointers": [],
+      "status": "accepted",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    },
+    {
+      "asset_key": "mapping.provider_period_territory_schema",
+      "canonical_concept_or_mapping_pointer": "provider_mapping_schema:period_territory:v1",
+      "notes_caveats": [
+        "Provider period and territory codes are mapping-layer evidence, not curated canonical identities."
+      ],
+      "owner_or_review_authority": "MacroForge architecture decisions",
+      "related_artifact_paths": [
+        "docs/architecture/minimal-canonical-domain-schema-design.md",
+        "artifacts/decisions/DEC-010-canonical-domain-schema-evolution.md",
+        "artifacts/decisions/DEC-011-minimal-canonical-domain-schema-design.md",
+        "db/migrations/003_canonical_domain_dimensions.sql"
+      ],
+      "role": "mapping",
+      "source_provider_evidence_pointers": [],
+      "status": "accepted",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    },
+    {
+      "asset_key": "validation.minimal_source_contract",
+      "canonical_concept_or_mapping_pointer": "source_contract:minimal:v1",
+      "notes_caveats": [
+        "Contract guides bounded source-specific loaders; it is not a plugin registry or generalized ingestion framework."
+      ],
+      "owner_or_review_authority": "MacroForge architecture decisions",
+      "related_artifact_paths": [
+        "docs/data/source-contract.md",
+        "artifacts/tasks/TASK-010-define-minimal-source-contract-for-second-source-spike.md"
+      ],
+      "role": "validation",
+      "source_provider_evidence_pointers": [],
+      "status": "accepted",
+      "superseded_by": null,
+      "supersedes": null,
+      "version": "v1"
+    }
+  ],
+  "boundaries": [
+    "file_backed_only",
+    "no_dbt_runtime",
+    "no_dagster_runtime",
+    "no_orchestration_runtime",
+    "no_generalized_ingestion_framework",
+    "no_database_migration",
+    "no_raw_loader_changes"
+  ],
+  "implementation_scope": "MF-AH-REV-001-narrow-file-backed-registry",
+  "last_updated": "2026-06-08",
+  "owner_or_review_authority": "MacroForge architecture/canonicalization review",
+  "registry_id": "macroforge-canonical-assets",
+  "schema_version": 1,
+  "status": "active"
+}

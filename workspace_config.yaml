@@ -3,9 +3,9 @@
 # duplicating the whole workspace inside the project.
 workspace:
   mode: hybrid_inheritance
-  projectforge_root: /home/mkkto/srv/projectforge
-  root: /home/mkkto/srv/projectforge/workspace
-  projects_root: /home/mkkto/srv/projectforge/workspace/projects
+  projectforge_root: /home/mkkto/srv/EIP/projects/ProjectForge
+  root: /home/mkkto/srv/EIP/projects/ProjectForge/workspace
+  projects_root: /home/mkkto/srv/EIP/projects
   centralized_resources:
     models: shared_models
     skills: shared_skills

@@ -1,0 +1,730 @@
+{
+  "accepted_or_provisional_state_deltas": [
+    {
+      "acceptance_source": "explicit_review_decision",
+      "accepted_from_mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+      "accepted_from_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+      "auto_apply": false,
+      "base_state_mutated": false,
+      "canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "frequency_aggregation": "not_performed",
+      "frequency_applicability": [
+        "A"
+      ],
+      "old_review_status": "provisional_review_required",
+      "proposal_artifact_mutated": false,
+      "proposed_review_status": "review_approved_provisional",
+      "relationship_type": "close",
+      "report_integration": "deferred",
+      "required_caveats": [
+        "WDI fixture metadata identifies NY.GDP.MKTP.CD as current US dollars, but this is metadata evidence only and does not perform currency/unit conversion or prove canonical comparability.",
+        "High-impact GDP mapping remains review governed.",
+        "No currency/unit conversion is performed.",
+        "Report integration is deferred."
+      ],
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "target_existing_mapping_id": "mapping:v1:WDI:NY.GDP.MKTP.CD:MACRO_GDP_OUTPUT",
+      "target_existing_mapping_version": 1,
+      "unit_conversion": "not_performed",
+      "unit_profile_ids": [
+        "unit:WDI:unknown"
+      ]
+    },
+    {
+      "acceptance_source": "explicit_review_decision",
+      "accepted_from_mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+      "accepted_from_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+      "auto_apply": false,
+      "base_state_mutated": false,
+      "canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "frequency_aggregation": "not_performed",
+      "frequency_applicability": [
+        "A"
+      ],
+      "old_review_status": "provisional_review_required",
+      "proposal_artifact_mutated": false,
+      "proposed_review_status": "deferred_pending_unit_basis_policy",
+      "relationship_type": "close",
+      "report_integration": "deferred",
+      "required_caveats": [
+        "Exchange-rate USD and PPP USD are separate comparability profiles.",
+        "PPP-basis USD and exchange-rate USD are separate comparability profiles.",
+        "No conversion or basis-selection policy is applied.",
+        "Report integration is deferred."
+      ],
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "target_existing_mapping_id": "mapping:v1:OECD_NAAG:B1GQ:MACRO_GDP_OUTPUT",
+      "target_existing_mapping_version": 1,
+      "unit_conversion": "not_performed",
+      "unit_profile_ids": [
+        "unit:OECD_NAAG:USD_EXC",
+        "unit:OECD_NAAG:USD_PPP"
+      ]
+    },
+    {
+      "acceptance_source": "explicit_review_decision",
+      "accepted_from_mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ",
+      "accepted_from_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ",
+      "auto_apply": false,
+      "base_state_mutated": false,
+      "canonical_concept_id": "MACRO_GDP_OUTPUT",
+      "frequency_aggregation": "not_performed",
+      "frequency_applicability": [
+        "Q"
+      ],
+      "old_review_status": "provisional_review_required",
+      "proposal_artifact_mutated": false,
+      "proposed_review_status": "deferred_pending_frequency_currency_policy",
+      "relationship_type": "close",
+      "report_integration": "deferred",
+      "required_caveats": [
+        "Current-price million euro values are not directly comparable to USD_EXC, USD_PPP, or WDI current-USD metadata without conversion policy.",
+        "Quarterly frequency must not be aggregated to annual in this lifecycle validation.",
+        "No currency/unit conversion is performed.",
+        "Report integration is deferred."
+      ],
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "target_existing_mapping_id": "mapping:v1:EUROSTAT_NAMQ_GDP:B1GQ:MACRO_GDP_OUTPUT",
+      "target_existing_mapping_version": 1,
+      "unit_conversion": "not_performed",
+      "unit_profile_ids": [
+        "unit:EUROSTAT_NAMQ_GDP:CP_MEUR"
+      ]
+    }
+  ],
+  "check_gate_definitions": [
+    {
+      "check_id": "proposal_exists",
+      "requirement": "Referenced workflow proposal id is present in existing TASK-034/TASK-037 proposal artifacts."
+    },
+    {
+      "check_id": "mapping_update_proposal_exists",
+      "requirement": "Referenced mapping update proposal id is present in existing TASK-034/TASK-037 proposal artifacts."
+    },
+    {
+      "check_id": "auto_apply_false",
+      "requirement": "Proposal, review decision, state delta, and manifest delta preserve no-auto-apply behavior."
+    },
+    {
+      "check_id": "high_impact_review_recorded",
+      "requirement": "High-impact GDP mapping movement is caused by an explicit review decision, not confidence score."
+    },
+    {
+      "check_id": "evidence_links_complete",
+      "requirement": "Provider evidence, proposal, mapping update, review decision, state delta, manifest delta, and asset pointer are linked by ID/path."
+    },
+    {
+      "check_id": "unit_frequency_caveats_preserved",
+      "requirement": "Unit, currency basis, frequency, source metadata, and report-impact caveats are preserved."
+    },
+    {
+      "check_id": "no_conversion_or_aggregation",
+      "requirement": "No unit/currency conversion and no quarterly-to-annual aggregation are claimed or performed."
+    },
+    {
+      "check_id": "proposal_state_immutable",
+      "requirement": "Proposal artifacts are immutable inputs; lifecycle output is represented as deltas."
+    },
+    {
+      "check_id": "accepted_status_allowed",
+      "requirement": "Manifest base statuses remain within allowed enum; lifecycle-specific annotations do not expand base manifest schema."
+    },
+    {
+      "check_id": "report_impact_flagged",
+      "requirement": "Any report effect is explicitly flagged as deferred; GDP snapshot report is unchanged."
+    },
+    {
+      "check_id": "replay_inputs_declared",
+      "requirement": "Replay section declares every input path, checksum, and ID needed to reproduce the lifecycle judgment."
+    }
+  ],
+  "check_results": [
+    {
+      "check_result_id": "check-result:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "gate_notes": {
+        "accepted_status_allowed": "Base manifest status remains an allowed status; review annotation records lifecycle outcome without expanding manifest enum.",
+        "auto_apply_false": "Review decision and mapping update proposal path preserve auto_apply=false; lifecycle output is a delta, not automatic mutation.",
+        "evidence_links_complete": "Provider evidence, proposal, mapping update, review decision, state delta, manifest delta, and asset pointer are linked by id/path.",
+        "high_impact_review_recorded": "GDP/MACRO_GDP_OUTPUT review is explicit via review_decision_id.",
+        "mapping_update_proposal_exists": "Referenced mapping update proposal id is declared from artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json.",
+        "no_conversion_or_aggregation": "unit_conversion=not_performed and frequency_aggregation=not_performed.",
+        "proposal_exists": "Referenced workflow proposal id is declared from artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json.",
+        "proposal_state_immutable": "Proposal artifacts are inputs only; lifecycle artifact contains deltas.",
+        "replay_inputs_declared": "Input artifact paths, checksums, and ids are declared in replay section.",
+        "report_impact_flagged": "report_integration_deferred",
+        "unit_frequency_caveats_preserved": "Required caveats are copied into review decision, state delta, and manifest delta."
+      },
+      "gates": {
+        "accepted_status_allowed": "pass",
+        "auto_apply_false": "pass",
+        "evidence_links_complete": "pass",
+        "high_impact_review_recorded": "pass",
+        "mapping_update_proposal_exists": "pass",
+        "no_conversion_or_aggregation": "pass",
+        "proposal_exists": "pass",
+        "proposal_state_immutable": "pass",
+        "replay_inputs_declared": "pass",
+        "report_impact_flagged": "pass",
+        "unit_frequency_caveats_preserved": "pass"
+      },
+      "mapping_outcome": "governed_provisional",
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD"
+    },
+    {
+      "check_result_id": "check-result:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "gate_notes": {
+        "accepted_status_allowed": "Base manifest status remains an allowed status; review annotation records lifecycle outcome without expanding manifest enum.",
+        "auto_apply_false": "Review decision and mapping update proposal path preserve auto_apply=false; lifecycle output is a delta, not automatic mutation.",
+        "evidence_links_complete": "Provider evidence, proposal, mapping update, review decision, state delta, manifest delta, and asset pointer are linked by id/path.",
+        "high_impact_review_recorded": "GDP/MACRO_GDP_OUTPUT review is explicit via review_decision_id.",
+        "mapping_update_proposal_exists": "Referenced mapping update proposal id is declared from artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json.",
+        "no_conversion_or_aggregation": "unit_conversion=not_performed and frequency_aggregation=not_performed.",
+        "proposal_exists": "Referenced workflow proposal id is declared from artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json.",
+        "proposal_state_immutable": "Proposal artifacts are inputs only; lifecycle artifact contains deltas.",
+        "replay_inputs_declared": "Input artifact paths, checksums, and ids are declared in replay section.",
+        "report_impact_flagged": "report_integration_deferred",
+        "unit_frequency_caveats_preserved": "Required caveats are copied into review decision, state delta, and manifest delta."
+      },
+      "gates": {
+        "accepted_status_allowed": "pass",
+        "auto_apply_false": "pass",
+        "evidence_links_complete": "pass",
+        "high_impact_review_recorded": "pass",
+        "mapping_update_proposal_exists": "pass",
+        "no_conversion_or_aggregation": "pass",
+        "proposal_exists": "pass",
+        "proposal_state_immutable": "pass",
+        "replay_inputs_declared": "pass",
+        "report_impact_flagged": "pass",
+        "unit_frequency_caveats_preserved": "pass"
+      },
+      "mapping_outcome": "deferred",
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ"
+    },
+    {
+      "check_result_id": "check-result:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "gate_notes": {
+        "accepted_status_allowed": "Base manifest status remains an allowed status; review annotation records lifecycle outcome without expanding manifest enum.",
+        "auto_apply_false": "Review decision and mapping update proposal path preserve auto_apply=false; lifecycle output is a delta, not automatic mutation.",
+        "evidence_links_complete": "Provider evidence, proposal, mapping update, review decision, state delta, manifest delta, and asset pointer are linked by id/path.",
+        "high_impact_review_recorded": "GDP/MACRO_GDP_OUTPUT review is explicit via review_decision_id.",
+        "mapping_update_proposal_exists": "Referenced mapping update proposal id is declared from artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json.",
+        "no_conversion_or_aggregation": "unit_conversion=not_performed and frequency_aggregation=not_performed.",
+        "proposal_exists": "Referenced workflow proposal id is declared from artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json.",
+        "proposal_state_immutable": "Proposal artifacts are inputs only; lifecycle artifact contains deltas.",
+        "replay_inputs_declared": "Input artifact paths, checksums, and ids are declared in replay section.",
+        "report_impact_flagged": "report_integration_deferred",
+        "unit_frequency_caveats_preserved": "Required caveats are copied into review decision, state delta, and manifest delta."
+      },
+      "gates": {
+        "accepted_status_allowed": "pass",
+        "auto_apply_false": "pass",
+        "evidence_links_complete": "pass",
+        "high_impact_review_recorded": "pass",
+        "mapping_update_proposal_exists": "pass",
+        "no_conversion_or_aggregation": "pass",
+        "proposal_exists": "pass",
+        "proposal_state_immutable": "pass",
+        "replay_inputs_declared": "pass",
+        "report_impact_flagged": "pass",
+        "unit_frequency_caveats_preserved": "pass"
+      },
+      "mapping_outcome": "deferred",
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ"
+    }
+  ],
+  "input_artifacts": [
+    {
+      "path": "artifacts/reports/canonicalization-state-foundation-20260605.json",
+      "sha256": "9efa1f4bd5ca6acaeb0e1455935779565904ad76f5e5359f1b81302b0c21c61a"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-proposal-workflow-20260613.json",
+      "sha256": "6521f0ef3145a5ce1ba8b8082ba9072dcc55b5a4696afc605635e41c83ba0535"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+      "sha256": "e038a5f0a19f0299541b885bdc7592018fb1ab274f6069dac1ca2e1c18dc22a9"
+    },
+    {
+      "path": "artifacts/manifests/canonical_assets.json",
+      "sha256": "21a2bbdb05cd98be9b58099ce7a98ddf97f4fb998297680a80b7fdd3b2775768"
+    }
+  ],
+  "lineage_edges": [
+    {
+      "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+      "from_provider_evidence_id": "evidence:WDI:WDI:NY.GDP.MKTP.CD",
+      "lineage_edge_id": "lineage:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD:proposal-review-state-manifest",
+      "to_manifest_delta_id": "manifest-delta:canonical-assets:20260614:mapping.wdi.gdp_to_macro_gdp_output",
+      "to_mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+      "to_review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "to_state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "to_workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD"
+    },
+    {
+      "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+      "from_provider_evidence_id": "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+      "lineage_edge_id": "lineage:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ:proposal-review-state-manifest",
+      "to_manifest_delta_id": "manifest-delta:canonical-assets:20260614:mapping.oecd_naag.gdp_to_macro_gdp_output",
+      "to_mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+      "to_review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "to_state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "to_workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ"
+    },
+    {
+      "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+      "from_provider_evidence_id": "evidence:EUROSTAT_NAMQ_GDP:namq_10_gdp:B1GQ",
+      "lineage_edge_id": "lineage:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ:proposal-review-state-manifest",
+      "to_manifest_delta_id": "manifest-delta:canonical-assets:20260614:mapping.eurostat_namq_gdp.to_macro_gdp_output",
+      "to_mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ",
+      "to_review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "to_state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "to_workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ"
+    }
+  ],
+  "manifest_deltas": [
+    {
+      "accepted_or_provisional_state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "asset_key": "mapping.wdi.gdp_to_macro_gdp_output",
+      "base_manifest_mutated": false,
+      "base_manifest_path": "artifacts/manifests/canonical_assets.json",
+      "canonical_concept_or_mapping_pointer": "mapping:v1:WDI:NY.GDP.MKTP.CD:MACRO_GDP_OUTPUT",
+      "check_result_id": "check-result:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "direct_report_integration": false,
+      "lineage_edge_id": "lineage:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD:proposal-review-state-manifest",
+      "manifest_delta_id": "manifest-delta:canonical-assets:20260614:mapping.wdi.gdp_to_macro_gdp_output",
+      "old_status": "provisional",
+      "proposed_new_status": "provisional",
+      "proposed_review_annotation": "review_approved_provisional",
+      "related_artifact_paths": [
+        "artifacts/reports/canonicalization-state-foundation-20260605.json",
+        "artifacts/reports/canonicalization-proposal-workflow-20260613.json",
+        "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+        "artifacts/reports/canonicalization-review-lifecycle-20260614.json"
+      ],
+      "required_caveats": [
+        "WDI fixture metadata identifies NY.GDP.MKTP.CD as current US dollars, but this is metadata evidence only and does not perform currency/unit conversion or prove canonical comparability.",
+        "High-impact GDP mapping remains review governed.",
+        "No currency/unit conversion is performed.",
+        "Report integration is deferred."
+      ],
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "source_provider_evidence_pointers": [
+        "evidence:WDI:WDI:NY.GDP.MKTP.CD"
+      ]
+    },
+    {
+      "accepted_or_provisional_state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "asset_key": "mapping.oecd_naag.gdp_to_macro_gdp_output",
+      "base_manifest_mutated": false,
+      "base_manifest_path": "artifacts/manifests/canonical_assets.json",
+      "canonical_concept_or_mapping_pointer": "mapping:v1:OECD_NAAG:B1GQ:MACRO_GDP_OUTPUT",
+      "check_result_id": "check-result:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "direct_report_integration": false,
+      "lineage_edge_id": "lineage:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ:proposal-review-state-manifest",
+      "manifest_delta_id": "manifest-delta:canonical-assets:20260614:mapping.oecd_naag.gdp_to_macro_gdp_output",
+      "old_status": "provisional",
+      "proposed_new_status": "provisional",
+      "proposed_review_annotation": "deferred_pending_unit_basis_policy",
+      "related_artifact_paths": [
+        "artifacts/reports/canonicalization-state-foundation-20260605.json",
+        "artifacts/reports/canonicalization-proposal-workflow-20260613.json",
+        "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+        "artifacts/reports/canonicalization-review-lifecycle-20260614.json"
+      ],
+      "required_caveats": [
+        "Exchange-rate USD and PPP USD are separate comparability profiles.",
+        "PPP-basis USD and exchange-rate USD are separate comparability profiles.",
+        "No conversion or basis-selection policy is applied.",
+        "Report integration is deferred."
+      ],
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "source_provider_evidence_pointers": [
+        "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ"
+      ]
+    },
+    {
+      "accepted_or_provisional_state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "asset_key": "mapping.eurostat_namq_gdp.to_macro_gdp_output",
+      "base_manifest_mutated": false,
+      "base_manifest_path": "artifacts/manifests/canonical_assets.json",
+      "canonical_concept_or_mapping_pointer": "mapping:v1:EUROSTAT_NAMQ_GDP:B1GQ:MACRO_GDP_OUTPUT",
+      "check_result_id": "check-result:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "direct_report_integration": false,
+      "lineage_edge_id": "lineage:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ:proposal-review-state-manifest",
+      "manifest_delta_id": "manifest-delta:canonical-assets:20260614:mapping.eurostat_namq_gdp.to_macro_gdp_output",
+      "old_status": "provisional",
+      "proposed_new_status": "provisional",
+      "proposed_review_annotation": "deferred_pending_frequency_currency_policy",
+      "related_artifact_paths": [
+        "artifacts/reports/canonicalization-state-foundation-20260605.json",
+        "artifacts/reports/canonicalization-proposal-workflow-20260613.json",
+        "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+        "artifacts/reports/canonicalization-review-lifecycle-20260614.json"
+      ],
+      "required_caveats": [
+        "Current-price million euro values are not directly comparable to USD_EXC, USD_PPP, or WDI current-USD metadata without conversion policy.",
+        "Quarterly frequency must not be aggregated to annual in this lifecycle validation.",
+        "No currency/unit conversion is performed.",
+        "Report integration is deferred."
+      ],
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "source_provider_evidence_pointers": [
+        "evidence:EUROSTAT_NAMQ_GDP:namq_10_gdp:B1GQ"
+      ]
+    }
+  ],
+  "outcome_summary": {
+    "deferred_count": 2,
+    "deferred_or_rejected_outcomes": [
+      "OECD_NAAG:B1GQ -> MACRO_GDP_OUTPUT",
+      "EUROSTAT_NAMQ_GDP:B1GQ -> MACRO_GDP_OUTPUT"
+    ],
+    "governed_provisional_count": 1,
+    "governed_provisional_outcomes": [
+      "WDI:NY.GDP.MKTP.CD -> MACRO_GDP_OUTPUT"
+    ],
+    "interpretation": "The bounded lifecycle can reduce future manual canonicalization effort by making high-impact mapping movement reviewable, gated, delta-based, and replayable without auto-apply or hidden judgment. WDI can move to governed provisional state; OECD and Eurostat remain deferred because caveats are material and unresolved under current policy.",
+    "rejected_count": 0,
+    "validation_result": "adopt_narrowly"
+  },
+  "replay": {
+    "determinism_claim": "Replaying the declared IDs against the same input artifacts should reproduce one WDI governed provisional outcome and two deferred outcomes without reading chat context, live data, database state, model output, or mutable proposal state.",
+    "input_artifact_checksums": {
+      "artifacts/manifests/canonical_assets.json": "21a2bbdb05cd98be9b58099ce7a98ddf97f4fb998297680a80b7fdd3b2775768",
+      "artifacts/reports/canonicalization-proposal-workflow-20260613.json": "6521f0ef3145a5ce1ba8b8082ba9072dcc55b5a4696afc605635e41c83ba0535",
+      "artifacts/reports/canonicalization-state-foundation-20260605.json": "9efa1f4bd5ca6acaeb0e1455935779565904ad76f5e5359f1b81302b0c21c61a",
+      "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json": "e038a5f0a19f0299541b885bdc7592018fb1ab274f6069dac1ca2e1c18dc22a9"
+    },
+    "input_artifact_paths": [
+      "artifacts/reports/canonicalization-state-foundation-20260605.json",
+      "artifacts/reports/canonicalization-proposal-workflow-20260613.json",
+      "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+      "artifacts/manifests/canonical_assets.json"
+    ],
+    "replay_constraints": [
+      "file_backed_inputs_only",
+      "no_hidden_chat_context",
+      "no_live_fetches",
+      "no_database_reads_or_writes",
+      "no_model_calls",
+      "no_report_integration",
+      "proposal_artifacts_immutable",
+      "manifest_delta_only"
+    ],
+    "replay_report_id": "replay:canonicalization-gdp-lifecycle-20260614",
+    "required_ids": {
+      "check_result_ids": [
+        "check-result:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+        "check-result:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+        "check-result:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ"
+      ],
+      "manifest_delta_ids": [
+        "manifest-delta:canonical-assets:20260614:mapping.wdi.gdp_to_macro_gdp_output",
+        "manifest-delta:canonical-assets:20260614:mapping.oecd_naag.gdp_to_macro_gdp_output",
+        "manifest-delta:canonical-assets:20260614:mapping.eurostat_namq_gdp.to_macro_gdp_output"
+      ],
+      "mapping_update_proposal_ids": [
+        "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+        "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+        "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ"
+      ],
+      "provider_evidence_ids": [
+        "evidence:WDI:WDI:NY.GDP.MKTP.CD",
+        "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+        "evidence:EUROSTAT_NAMQ_GDP:namq_10_gdp:B1GQ"
+      ],
+      "review_decision_ids": [
+        "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+        "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+        "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ"
+      ],
+      "state_delta_ids": [
+        "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+        "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+        "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ"
+      ],
+      "workflow_proposal_ids": [
+        "workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+        "workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+        "workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ"
+      ]
+    }
+  },
+  "review_decisions": [
+    {
+      "accepted_state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "auto_apply": false,
+      "confidence_score_used_as_truth": false,
+      "created_at": "2026-06-14T15:12:06Z",
+      "decision": "accept_as_provisional",
+      "decision_rationale": "TASK-037 replaced generic WDI unknown-unit blocker with explicit current-USD source metadata evidence. Because GDP is high-impact and metadata remains source evidence rather than canonical truth, the mapping can move only to review-approved provisional state, not accepted truth.",
+      "evidence_links": [
+        {
+          "artifact_path": "artifacts/reports/canonicalization-state-foundation-20260605.json",
+          "id": "evidence:WDI:WDI:NY.GDP.MKTP.CD",
+          "kind": "provider_evidence"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+          "id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+          "kind": "workflow_proposal"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+          "id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+          "kind": "mapping_update_proposal"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+          "id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+          "kind": "review_decision"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+          "id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+          "kind": "state_delta"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+          "id": "manifest-delta:canonical-assets:20260614:mapping.wdi.gdp_to_macro_gdp_output",
+          "kind": "manifest_delta"
+        },
+        {
+          "artifact_path": "artifacts/manifests/canonical_assets.json",
+          "id": "mapping.wdi.gdp_to_macro_gdp_output",
+          "kind": "canonical_asset"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+          "id": "fixture:wdi:NY.GDP.MKTP.CD:unit_metadata",
+          "kind": "metadata_enrichment"
+        }
+      ],
+      "lineage_edge_id": "lineage:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD:proposal-review-state-manifest",
+      "manifest_delta_id": "manifest-delta:canonical-assets:20260614:mapping.wdi.gdp_to_macro_gdp_output",
+      "manual_review_recorded": true,
+      "outcome": "governed_provisional",
+      "required_caveats": [
+        "WDI fixture metadata identifies NY.GDP.MKTP.CD as current US dollars, but this is metadata evidence only and does not perform currency/unit conversion or prove canonical comparability.",
+        "High-impact GDP mapping remains review governed.",
+        "No currency/unit conversion is performed.",
+        "Report integration is deferred."
+      ],
+      "required_checks": [
+        "proposal_exists",
+        "mapping_update_proposal_exists",
+        "auto_apply_false",
+        "high_impact_review_recorded",
+        "evidence_links_complete",
+        "unit_frequency_caveats_preserved",
+        "no_conversion_or_aggregation",
+        "proposal_state_immutable",
+        "accepted_status_allowed",
+        "report_impact_flagged",
+        "replay_inputs_declared"
+      ],
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:WDI:NY.GDP.MKTP.CD",
+      "reviewed_mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+      "reviewed_workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:WDI:NY.GDP.MKTP.CD",
+      "reviewer_role": "MacroForge canonicalization review"
+    },
+    {
+      "accepted_state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "auto_apply": false,
+      "confidence_score_used_as_truth": false,
+      "created_at": "2026-06-14T15:12:06Z",
+      "decision": "defer",
+      "decision_rationale": "OECD B1GQ has GDP-like evidence, but the bounded evidence carries multiple unit/comparability profiles, USD_EXC and USD_PPP. The lifecycle must preserve separate basis caveats rather than approve a single comparable GDP mapping without policy.",
+      "evidence_links": [
+        {
+          "artifact_path": "artifacts/reports/canonicalization-state-foundation-20260605.json",
+          "id": "evidence:OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+          "kind": "provider_evidence"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+          "id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+          "kind": "workflow_proposal"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+          "id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+          "kind": "mapping_update_proposal"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+          "id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+          "kind": "review_decision"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+          "id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+          "kind": "state_delta"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+          "id": "manifest-delta:canonical-assets:20260614:mapping.oecd_naag.gdp_to_macro_gdp_output",
+          "kind": "manifest_delta"
+        },
+        {
+          "artifact_path": "artifacts/manifests/canonical_assets.json",
+          "id": "mapping.oecd_naag.gdp_to_macro_gdp_output",
+          "kind": "canonical_asset"
+        }
+      ],
+      "lineage_edge_id": "lineage:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ:proposal-review-state-manifest",
+      "manifest_delta_id": "manifest-delta:canonical-assets:20260614:mapping.oecd_naag.gdp_to_macro_gdp_output",
+      "manual_review_recorded": true,
+      "outcome": "deferred",
+      "required_caveats": [
+        "Exchange-rate USD and PPP USD are separate comparability profiles.",
+        "PPP-basis USD and exchange-rate USD are separate comparability profiles.",
+        "No conversion or basis-selection policy is applied.",
+        "Report integration is deferred."
+      ],
+      "required_checks": [
+        "proposal_exists",
+        "mapping_update_proposal_exists",
+        "auto_apply_false",
+        "high_impact_review_recorded",
+        "evidence_links_complete",
+        "unit_frequency_caveats_preserved",
+        "no_conversion_or_aggregation",
+        "proposal_state_immutable",
+        "accepted_status_allowed",
+        "report_impact_flagged",
+        "replay_inputs_declared"
+      ],
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:OECD_NAAG:B1GQ",
+      "reviewed_mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+      "reviewed_workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:OECD_NAAG:B1GQ",
+      "reviewer_role": "MacroForge canonicalization review"
+    },
+    {
+      "accepted_state_delta_id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "auto_apply": false,
+      "confidence_score_used_as_truth": false,
+      "created_at": "2026-06-14T15:12:06Z",
+      "decision": "defer",
+      "decision_rationale": "Eurostat B1GQ has GDP-like evidence, but quarterly current-price million EUR values cannot be treated as comparable to annual/current-USD evidence without explicit conversion and aggregation policy, which TASK-038 rejects.",
+      "evidence_links": [
+        {
+          "artifact_path": "artifacts/reports/canonicalization-state-foundation-20260605.json",
+          "id": "evidence:EUROSTAT_NAMQ_GDP:namq_10_gdp:B1GQ",
+          "kind": "provider_evidence"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+          "id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ",
+          "kind": "workflow_proposal"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+          "id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ",
+          "kind": "mapping_update_proposal"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+          "id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+          "kind": "review_decision"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+          "id": "state-delta:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+          "kind": "state_delta"
+        },
+        {
+          "artifact_path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+          "id": "manifest-delta:canonical-assets:20260614:mapping.eurostat_namq_gdp.to_macro_gdp_output",
+          "kind": "manifest_delta"
+        },
+        {
+          "artifact_path": "artifacts/manifests/canonical_assets.json",
+          "id": "mapping.eurostat_namq_gdp.to_macro_gdp_output",
+          "kind": "canonical_asset"
+        }
+      ],
+      "lineage_edge_id": "lineage:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ:proposal-review-state-manifest",
+      "manifest_delta_id": "manifest-delta:canonical-assets:20260614:mapping.eurostat_namq_gdp.to_macro_gdp_output",
+      "manual_review_recorded": true,
+      "outcome": "deferred",
+      "required_caveats": [
+        "Current-price million euro values are not directly comparable to USD_EXC, USD_PPP, or WDI current-USD metadata without conversion policy.",
+        "Quarterly frequency must not be aggregated to annual in this lifecycle validation.",
+        "No currency/unit conversion is performed.",
+        "Report integration is deferred."
+      ],
+      "required_checks": [
+        "proposal_exists",
+        "mapping_update_proposal_exists",
+        "auto_apply_false",
+        "high_impact_review_recorded",
+        "evidence_links_complete",
+        "unit_frequency_caveats_preserved",
+        "no_conversion_or_aggregation",
+        "proposal_state_immutable",
+        "accepted_status_allowed",
+        "report_impact_flagged",
+        "replay_inputs_declared"
+      ],
+      "review_decision_id": "review-decision:review-run:canonicalization-gdp-lifecycle-20260614:EUROSTAT_NAMQ_GDP:B1GQ",
+      "reviewed_mapping_update_proposal_id": "mapping-update:workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ",
+      "reviewed_workflow_proposal_id": "workflow-proposal:run:canonicalization-proposal-workflow-20260613:EUROSTAT_NAMQ_GDP:B1GQ",
+      "reviewer_role": "MacroForge canonicalization review"
+    }
+  ],
+  "review_run": {
+    "accepted_mapping_state_auto_mutated": false,
+    "base_manifest_mutated": false,
+    "created_at": "2026-06-14T15:12:06Z",
+    "database_writes": "none",
+    "decision_policy_versions": [
+      "DEC-018",
+      "DEC-019",
+      "DEC-020",
+      "DEC-021"
+    ],
+    "frequency_aggregation": "not_performed",
+    "live_fetches": "none",
+    "method_type": "bounded_file_backed_review_simulation",
+    "model_calls": "none",
+    "proposal_artifacts_mutated": false,
+    "report_integration": "deferred",
+    "review_policy_version": "DEC-018",
+    "review_run_id": "review-run:canonicalization-gdp-lifecycle-20260614",
+    "unit_conversion": "not_performed"
+  },
+  "reviewed_scope": {
+    "canonical_concept_id": "MACRO_GDP_OUTPUT",
+    "evidence_scope": "existing_TASK_032_TASK_034_TASK_037_fixture_backed_evidence_only",
+    "provider_indicators": [
+      "WDI:WDI:NY.GDP.MKTP.CD",
+      "OECD_NAAG:OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I:B1GQ",
+      "EUROSTAT_NAMQ_GDP:namq_10_gdp:B1GQ"
+    ]
+  },
+  "scope_boundaries_preserved": [
+    "no_code_changes",
+    "no_tests_added_or_modified",
+    "no_pipelines_workers_migrations_or_schemas",
+    "no_ai_or_model_calls",
+    "no_live_fetches",
+    "no_new_sources_or_indicators",
+    "no_postgresql_persistence",
+    "no_live_default_macro_writes",
+    "no_unit_or_currency_conversion",
+    "no_frequency_aggregation",
+    "no_gdp_report_integration",
+    "no_generalized_metadata_or_source_framework",
+    "no_base_manifest_mutation",
+    "no_accepted_state_auto_apply",
+    "no_git_push"
+  ],
+  "status": "succeeded",
+  "task": "TASK-038"
+}

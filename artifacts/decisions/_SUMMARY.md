@@ -41,10 +41,24 @@ This folder is part of the ProjectForge file-backed operating system for `artifa
 - `DEC-008-next-scope-after-shared-validation-reporting.md`
 - `DEC-009-third-source-spike-scope.md`
 - `DEC-010-canonical-domain-schema-evolution.md`
+- `DEC-011-minimal-canonical-domain-schema-design.md`
+- `DEC-012-bounded-eurostat-postgresql-promotion.md`
+- `DEC-013-post-third-source-architecture-and-next-scope.md`
+- `DEC-014-first-minimal-research-facing-canonical-output.md`
+- `DEC-015-next-scope-canonical-indicator-unit-comparability.md`
+- `DEC-016-ai-assisted-canonicalization-layer.md`
+- `DEC-017-architecture-reality-remediation-governance.md`
+- `DEC-018-minimal-ai-assisted-canonicalization-layer.md`
+- `DEC-019-next-scope-deterministic-canonicalization-proposal-workflow.md`
+- `DEC-020-architectureharvest-canonical-asset-manifest-registry.md`
+- `DEC-021-next-scope-after-deterministic-canonicalization-proposal-workflow.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- DEC-010 is accepted: MacroForge should prefer canonical-domain schema evolution over provider-centric identities.
+- DEC-021 is accepted and TASK-037 implemented its bounded WDI unit metadata enrichment scope.
+- DEC-020 is accepted: MacroForge adopted MF-AH-REV-001 in modified/narrow form as a file-backed canonical asset manifest registry.
+- DEC-019 is accepted and TASK-034 implemented its deterministic proposal workflow.
+- TASK-038 and TASK-039 executed bounded lifecycle/requirements artifact work under existing decisions and explicit user-approved task scope; no new decision changed architecture or authority.
 
 ## Needs Attention
-- DEC-010 does not approve executable migrations, Eurostat PostgreSQL promotion, generalized source framework work, or live `macro` writes; it governs TASK-021 design only.
+- No decision currently approves production accepted-state persistence, base manifest mutation, model-assisted canonicalization execution, report integration, conversion/aggregation policy, new sources, migrations, generalized metadata/framework extraction, accepted mapping auto-apply, or git push.

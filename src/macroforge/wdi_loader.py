@@ -156,20 +156,51 @@ SELECT s.source_id, d.indicator_code, d.indicator_name
 FROM source_row s CROSS JOIN distinct_indicators d
 ON CONFLICT (source_id, source_indicator_code) DO UPDATE SET indicator_name = EXCLUDED.indicator_name;
 
+WITH distinct_territories AS (
+    SELECT DISTINCT country_code, country_name FROM _wdi_rows
+)
+INSERT INTO curated.dim_territory (territory_type, iso3_code, canonical_territory_code, territory_name)
+SELECT 'country', d.country_code, d.country_code, d.country_name
+FROM distinct_territories d
+ON CONFLICT (canonical_territory_code) DO UPDATE
+  SET territory_name = EXCLUDED.territory_name;
+
+INSERT INTO curated.dim_period (frequency, period_year, period_start_date, period_end_date, period_label)
+SELECT DISTINCT 'A', period_year, make_date(period_year, 1, 1), make_date(period_year, 12, 31), period_year::text
+FROM _wdi_rows
+ON CONFLICT (frequency, period_start_date, period_end_date) DO UPDATE
+  SET period_label = EXCLUDED.period_label;
+
+WITH source_row AS (
+    SELECT source_id FROM meta.source WHERE source_code = {sql_literal(SOURCE_CODE)}
+), distinct_periods AS (
+    SELECT DISTINCT period_year FROM _wdi_rows
+)
+INSERT INTO meta.provider_period_mapping (source_id, provider_dataset_code, provider_period_code, period_id, provider_label)
+SELECT s.source_id, {sql_literal(DEFAULT_PROVIDER_DATASET)}, d.period_year::text, p.period_id, d.period_year::text
+FROM source_row s
+CROSS JOIN distinct_periods d
+JOIN curated.dim_period p
+  ON p.frequency = 'A'
+ AND p.period_start_date = make_date(d.period_year, 1, 1)
+ AND p.period_end_date = make_date(d.period_year, 12, 31)
+ON CONFLICT (source_id, provider_dataset_code, provider_period_code) DO UPDATE
+  SET period_id = EXCLUDED.period_id,
+      provider_label = EXCLUDED.provider_label;
+
 WITH source_row AS (
     SELECT source_id FROM meta.source WHERE source_code = {sql_literal(SOURCE_CODE)}
 ), distinct_territories AS (
     SELECT DISTINCT country_code, country_name FROM _wdi_rows
 )
-INSERT INTO curated.dim_territory (source_id, iso3_code, territory_name)
-SELECT s.source_id, d.country_code, d.country_name
-FROM source_row s CROSS JOIN distinct_territories d
-ON CONFLICT (source_id, iso3_code) DO UPDATE SET territory_name = EXCLUDED.territory_name;
-
-INSERT INTO curated.dim_period (frequency, period_year, period_start_date, period_end_date)
-SELECT DISTINCT 'A', period_year, make_date(period_year, 1, 1), make_date(period_year, 12, 31)
-FROM _wdi_rows
-ON CONFLICT (frequency, period_year) DO NOTHING;
+INSERT INTO meta.provider_territory_mapping (source_id, provider_dataset_code, provider_territory_code, code_system, territory_id, provider_label)
+SELECT s.source_id, {sql_literal(DEFAULT_PROVIDER_DATASET)}, d.country_code, 'wdi_countryiso3code', t.territory_id, d.country_name
+FROM source_row s
+CROSS JOIN distinct_territories d
+JOIN curated.dim_territory t ON t.iso3_code = d.country_code
+ON CONFLICT (source_id, provider_dataset_code, code_system, provider_territory_code) DO UPDATE
+  SET territory_id = EXCLUDED.territory_id,
+      provider_label = EXCLUDED.provider_label;
 
 INSERT INTO curated.dim_unit (unit_code, unit_name)
 SELECT DISTINCT unit_code, CASE WHEN unit_code = {sql_literal(UNKNOWN_UNIT_CODE)} THEN {sql_literal(UNKNOWN_UNIT_NAME)} ELSE unit_code END
@@ -201,8 +232,8 @@ CROSS JOIN source_row s
 CROSS JOIN release_row rel
 CROSS JOIN run_row run
 JOIN curated.dim_indicator i ON i.source_id = s.source_id AND i.source_indicator_code = w.indicator_code
-JOIN curated.dim_territory t ON t.source_id = s.source_id AND t.iso3_code = w.country_code
-JOIN curated.dim_period p ON p.frequency = 'A' AND p.period_year = w.period_year
+JOIN curated.dim_territory t ON t.iso3_code = w.country_code
+JOIN curated.dim_period p ON p.frequency = 'A' AND p.period_start_date = make_date(w.period_year, 1, 1) AND p.period_end_date = make_date(w.period_year, 12, 31)
 JOIN curated.dim_unit u ON u.unit_code = w.unit_code
 JOIN curated.dim_attribute_set a ON a.attribute_hash = {sql_literal(EMPTY_ATTRIBUTE_HASH)}
 ON CONFLICT (source_id, indicator_id, territory_id, period_id, unit_id, attribute_set_id, as_of_date) DO UPDATE
@@ -228,7 +259,9 @@ WHERE NOT EXISTS (
     WHERE le.pipeline_run_id = run.pipeline_run_id AND le.event_type = v.event_type
 );
 
-WITH run_row AS (
+WITH source_row AS (
+    SELECT source_id FROM meta.source WHERE source_code = {sql_literal(SOURCE_CODE)}
+), run_row AS (
     SELECT pipeline_run_id FROM meta.pipeline_run WHERE run_key = {sql_literal(run_key)}
 )
 INSERT INTO meta.quality_check (pipeline_run_id, check_name, check_status, severity, observed_value, expected_value, details)
@@ -236,7 +269,7 @@ SELECT run.pipeline_run_id, check_name, check_status, severity, observed_value, 
 FROM run_row run CROSS JOIN (
     VALUES
       ('wdi_smoke_expected_rows', CASE WHEN (SELECT count(*) FROM staging.wdi_observation swo JOIN run_row rr ON swo.pipeline_run_id = rr.pipeline_run_id) = {normalized.get('expected_row_count', 8)} THEN 'pass' ELSE 'fail' END, 'error', (SELECT count(*)::numeric FROM staging.wdi_observation swo JOIN run_row rr ON swo.pipeline_run_id = rr.pipeline_run_id), {normalized.get('expected_row_count', 8)}::numeric, {json_literal({'scope': 'staging'})}),
-      ('wdi_smoke_fact_rows', CASE WHEN (SELECT count(*) FROM curated.fact_observation) = {normalized.get('expected_row_count', 8)} THEN 'pass' ELSE 'fail' END, 'error', (SELECT count(*)::numeric FROM curated.fact_observation), {normalized.get('expected_row_count', 8)}::numeric, {json_literal({'scope': 'curated'})})
+      ('wdi_smoke_fact_rows', CASE WHEN (SELECT count(*) FROM curated.fact_observation fo JOIN source_row s ON fo.source_id = s.source_id) = {normalized.get('expected_row_count', 8)} THEN 'pass' ELSE 'fail' END, 'error', (SELECT count(*)::numeric FROM curated.fact_observation fo JOIN source_row s ON fo.source_id = s.source_id), {normalized.get('expected_row_count', 8)}::numeric, {json_literal({'scope': 'curated_source'})})
 ) AS v(check_name, check_status, severity, observed_value, expected_value, details)
 WHERE NOT EXISTS (
     SELECT 1 FROM meta.quality_check qc

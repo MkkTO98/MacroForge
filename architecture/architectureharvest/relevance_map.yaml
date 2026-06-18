@@ -1,0 +1,22 @@
+schema_version: 1
+kind: architectureharvest_relevance_map
+project_id: macroforge
+status: active
+staleness_status: active
+last_reviewed: 2026-06-08
+consult_required_during:
+  - canonicalization_architecture_changes
+  - source_contract_design_changes
+  - lineage_or_validation_registry_changes
+  - orchestration_or_runtime_adoption_decisions
+  - generalized_ingestion_framework_decisions
+active_recommendations:
+  - id: MF-AH-REV-001
+    status: adopted_narrowly
+    local_record: artifacts/manifests/canonical_assets.json
+    source_review: /home/mkkto/srv/EIP/projects/MetaHarvest/reviews/R-20260608-macroforge-first-architectureharvest-review.md
+    boundary: file_backed_manifest_only_no_runtime_adoption
+references:
+  projectforge_relevance_map: /home/mkkto/srv/EIP/projects/MetaHarvest/relevance_maps/macroforge/macroforge-relevance-map.yaml
+  dbt_relevance_map: /home/mkkto/srv/EIP/projects/MetaHarvest/relevance_maps/macroforge/dbt-relevance-map.yaml
+  dagster_relevance_map: /home/mkkto/srv/EIP/projects/MetaHarvest/relevance_maps/macroforge/dagster-relevance-map.yaml

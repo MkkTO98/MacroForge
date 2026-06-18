@@ -9,7 +9,7 @@ Schema reference and diagrams.
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `v0_schema_foundation.md` documents TASK-004 tables, natural keys, and deferred hardening.
+- `v0_schema_foundation.md` documents migrations 001-004, including WDI, OECD/SDMX, canonical-domain mapping, and Eurostat staging tables.
 
 ## Needs Attention
 - No folder-specific issues recorded.

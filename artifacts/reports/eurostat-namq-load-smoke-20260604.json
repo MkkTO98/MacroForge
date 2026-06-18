@@ -1,0 +1,32 @@
+{
+  "canonical_periods": [
+    "2023 Q1",
+    "2023 Q2"
+  ],
+  "canonical_territories": [
+    "DEU",
+    "FRA"
+  ],
+  "fact_rows": 4,
+  "lineage_events": 2,
+  "provider_code_dimensions": [
+    "freq",
+    "geo",
+    "na_item",
+    "s_adj",
+    "time",
+    "unit"
+  ],
+  "provider_periods": [
+    "2023-Q1",
+    "2023-Q2"
+  ],
+  "provider_territories": [
+    "DE",
+    "FR"
+  ],
+  "quality_checks": 4,
+  "staging_rows": 4,
+  "status": "succeeded",
+  "task": "TASK-024"
+}

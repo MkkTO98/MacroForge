@@ -7,8 +7,10 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
 - `.gitkeep`
 - `analyze_metrics.py`
+- `architecture_reality_audit.py`
 - `build_context.py`
 - `check_coherence.py`
+- `context_health.py`
 - `create_question.py`
 - `detect_hardware.py`
 - `dry_run.py`
@@ -17,6 +19,7 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 - `install.sh`
 - `log_run.py`
 - `record_metric.py`
+- `recover_session.py`
 - `register_project.py`
 - `review_metrics.py`
 - `run.py`
@@ -28,7 +31,7 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- No folder-specific active work recorded.
+- `tools/recover_session.py` provides bounded fresh-session recovery; `tools/check_coherence.py` now treats the continuity framework files as generated-project requirements.
 
 ## Needs Attention
 - No folder-specific issues recorded.

@@ -1,20 +1,46 @@
 logging_policy:
-  purpose: raw_operational_record_for_audit_debugging_only
+  purpose: optional_raw_operational_record_for_debugging_only
+
+  primary_audit_trail:
+    source_of_truth:
+      - task_artifacts
+      - decision_artifacts
+      - handoff_artifacts
+      - state_artifacts
+      - report_artifacts
+    rule: >
+      Normal MacroForge governance is recorded in file-backed task, decision,
+      handoff, state, and report artifacts. These artifacts are the source of
+      truth for audit and continuity.
+
+  operational_logs:
+    required_for_normal_governance: false
+    source_of_truth: false
+    stored_for: debugging_and_optional_operational_audit
+    examples:
+      - logs/agents/runs.jsonl
+      - logs/derived/session_summaries.jsonl
+    rule: >
+      Operational logs are optional debugging records. Agents do not need to
+      populate JSONL logs for ordinary task closeout, and future agents should
+      not treat empty operational logs as missing project state.
 
   non_context_rule: >
     Raw logs, full session JSONL files, full tool outputs, and previous agent
     conversations must never be included in normal task context. Use compact
-    summaries first. Read raw logs only for failure_investigation, forensic, or
-    incident work when summaries are insufficient.
+    state, task, decision, handoff, summary, and report artifacts first. Read raw
+    logs only for failure_investigation, forensic, or incident work when those
+    artifacts are insufficient.
 
   levels:
     minimal:
+      optional: true
       records:
         - run_summary
         - errors
         - decisions_created
     standard:
-      default: true
+      optional: true
       records:
         - run_summary
         - commands_executed
@@ -23,6 +49,7 @@ logging_policy:
         - escalations
         - compact_session_summary
     forensic:
+      optional: true
       records:
         - full_tool_outputs
         - model_routing_decisions
@@ -30,15 +57,8 @@ logging_policy:
         - failure_traces
       context_warning: forensic logs remain excluded from normal context
 
-  derived_summaries:
-    each_task_or_session_updates:
-      - context/latest_handoff.md
-      - logs/derived/session_summaries.jsonl
-      - folder_level_state_summaries
-      - project_level_state_summary
-    summarization_model_policy: local_model_first
-
   separation_rule: >
-    Logs contain raw events and operational records. Derived performance
+    Logs contain optional raw or operational records. Derived performance
     analysis, success-rate calculations, and recommendations belong in metrics/.
-    Derived compact summaries belong in logs/derived/ and context/latest_handoff.md.
+    Durable governance continuity belongs in state, task, decision, handoff, and
+    report artifacts.

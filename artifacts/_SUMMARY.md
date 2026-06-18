@@ -7,6 +7,7 @@ This folder is part of the ProjectForge file-backed operating system for `artifa
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
 - `decisions/`
 - `handoffs/`
+- `manifests/`
 - `reports/`
 - `reviews/`
 - `tasks/`
