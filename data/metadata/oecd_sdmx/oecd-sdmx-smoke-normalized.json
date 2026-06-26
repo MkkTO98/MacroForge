@@ -1,0 +1,249 @@
+{
+  "filters": {
+    "measure_codes": [
+      "B1GQ"
+    ],
+    "territory_codes": [
+      "AUS",
+      "USA"
+    ]
+  },
+  "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+  "raw_metadata": {
+    "bytes": 1002311,
+    "content_type": "application/vnd.sdmx.genericdata+xml; version=2.1; charset=utf-8",
+    "endpoint": "https://sdmx.oecd.org/public/rest/v1/data/OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I/.?startPeriod=2020&endPeriod=2021",
+    "raw_artifact_path": "data/raw/oecd_sdmx/oecd_sdmx_naag_2020_2021_raw.xml",
+    "sha256": "d81d56186d66adddf487a08389d75607af3d9da4fccfd08c690f810337d76a31"
+  },
+  "row_count": 8,
+  "rows": [
+    {
+      "attributes": {
+        "CONF_STATUS": "F",
+        "DECIMALS": "2",
+        "OBS_STATUS": "A"
+      },
+      "frequency": "A",
+      "indicator_code": "B1GQ",
+      "period": "2020",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "source_code": "OECD_NAAG",
+      "source_payload": {
+        "obs_dimension": {
+          "TIME_PERIOD": "2020"
+        },
+        "obs_value": "1439.0230643897",
+        "series_dimensions": {
+          "CHAPTER": "NAAG_I",
+          "FREQ": "A",
+          "MEASURE": "B1GQ",
+          "REF_AREA": "AUS",
+          "UNIT_MEASURE": "USD_EXC"
+        }
+      },
+      "territory_code": "AUS",
+      "unit": "USD_EXC",
+      "value": 1439.0230643897
+    },
+    {
+      "attributes": {
+        "CONF_STATUS": "F",
+        "DECIMALS": "2",
+        "OBS_STATUS": "A"
+      },
+      "frequency": "A",
+      "indicator_code": "B1GQ",
+      "period": "2020",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "source_code": "OECD_NAAG",
+      "source_payload": {
+        "obs_dimension": {
+          "TIME_PERIOD": "2020"
+        },
+        "obs_value": "21375.281",
+        "series_dimensions": {
+          "CHAPTER": "NAAG_I",
+          "FREQ": "A",
+          "MEASURE": "B1GQ",
+          "REF_AREA": "USA",
+          "UNIT_MEASURE": "USD_EXC"
+        }
+      },
+      "territory_code": "USA",
+      "unit": "USD_EXC",
+      "value": 21375.281
+    },
+    {
+      "attributes": {
+        "CONF_STATUS": "F",
+        "DECIMALS": "2",
+        "OBS_STATUS": "A"
+      },
+      "frequency": "A",
+      "indicator_code": "B1GQ",
+      "period": "2021",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "source_code": "OECD_NAAG",
+      "source_payload": {
+        "obs_dimension": {
+          "TIME_PERIOD": "2021"
+        },
+        "obs_value": "1755.45328534911",
+        "series_dimensions": {
+          "CHAPTER": "NAAG_I",
+          "FREQ": "A",
+          "MEASURE": "B1GQ",
+          "REF_AREA": "AUS",
+          "UNIT_MEASURE": "USD_EXC"
+        }
+      },
+      "territory_code": "AUS",
+      "unit": "USD_EXC",
+      "value": 1755.45328534911
+    },
+    {
+      "attributes": {
+        "CONF_STATUS": "F",
+        "DECIMALS": "2",
+        "OBS_STATUS": "A"
+      },
+      "frequency": "A",
+      "indicator_code": "B1GQ",
+      "period": "2021",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "source_code": "OECD_NAAG",
+      "source_payload": {
+        "obs_dimension": {
+          "TIME_PERIOD": "2021"
+        },
+        "obs_value": "23725.645",
+        "series_dimensions": {
+          "CHAPTER": "NAAG_I",
+          "FREQ": "A",
+          "MEASURE": "B1GQ",
+          "REF_AREA": "USA",
+          "UNIT_MEASURE": "USD_EXC"
+        }
+      },
+      "territory_code": "USA",
+      "unit": "USD_EXC",
+      "value": 23725.645
+    },
+    {
+      "attributes": {
+        "CONF_STATUS": "F",
+        "DECIMALS": "2",
+        "OBS_STATUS": "A"
+      },
+      "frequency": "A",
+      "indicator_code": "B1GQ",
+      "period": "2020",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "source_code": "OECD_NAAG",
+      "source_payload": {
+        "obs_dimension": {
+          "TIME_PERIOD": "2020"
+        },
+        "obs_value": "1461.06600664252",
+        "series_dimensions": {
+          "CHAPTER": "NAAG_I",
+          "FREQ": "A",
+          "MEASURE": "B1GQ",
+          "REF_AREA": "AUS",
+          "UNIT_MEASURE": "USD_PPP"
+        }
+      },
+      "territory_code": "AUS",
+      "unit": "USD_PPP",
+      "value": 1461.06600664252
+    },
+    {
+      "attributes": {
+        "CONF_STATUS": "F",
+        "DECIMALS": "2",
+        "OBS_STATUS": "A"
+      },
+      "frequency": "A",
+      "indicator_code": "B1GQ",
+      "period": "2020",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "source_code": "OECD_NAAG",
+      "source_payload": {
+        "obs_dimension": {
+          "TIME_PERIOD": "2020"
+        },
+        "obs_value": "21375.281",
+        "series_dimensions": {
+          "CHAPTER": "NAAG_I",
+          "FREQ": "A",
+          "MEASURE": "B1GQ",
+          "REF_AREA": "USA",
+          "UNIT_MEASURE": "USD_PPP"
+        }
+      },
+      "territory_code": "USA",
+      "unit": "USD_PPP",
+      "value": 21375.281
+    },
+    {
+      "attributes": {
+        "CONF_STATUS": "F",
+        "DECIMALS": "2",
+        "OBS_STATUS": "A"
+      },
+      "frequency": "A",
+      "indicator_code": "B1GQ",
+      "period": "2021",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "source_code": "OECD_NAAG",
+      "source_payload": {
+        "obs_dimension": {
+          "TIME_PERIOD": "2021"
+        },
+        "obs_value": "1674.32946449161",
+        "series_dimensions": {
+          "CHAPTER": "NAAG_I",
+          "FREQ": "A",
+          "MEASURE": "B1GQ",
+          "REF_AREA": "AUS",
+          "UNIT_MEASURE": "USD_PPP"
+        }
+      },
+      "territory_code": "AUS",
+      "unit": "USD_PPP",
+      "value": 1674.32946449161
+    },
+    {
+      "attributes": {
+        "CONF_STATUS": "F",
+        "DECIMALS": "2",
+        "OBS_STATUS": "A"
+      },
+      "frequency": "A",
+      "indicator_code": "B1GQ",
+      "period": "2021",
+      "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "source_code": "OECD_NAAG",
+      "source_payload": {
+        "obs_dimension": {
+          "TIME_PERIOD": "2021"
+        },
+        "obs_value": "23725.645",
+        "series_dimensions": {
+          "CHAPTER": "NAAG_I",
+          "FREQ": "A",
+          "MEASURE": "B1GQ",
+          "REF_AREA": "USA",
+          "UNIT_MEASURE": "USD_PPP"
+        }
+      },
+      "territory_code": "USA",
+      "unit": "USD_PPP",
+      "value": 23725.645
+    }
+  ],
+  "source_code": "OECD_NAAG",
+  "source_home_url": "https://sdmx.oecd.org/",
+  "source_name": "OECD annual national accounts / NAAG Chapter 1 GDP dataflow"
+}

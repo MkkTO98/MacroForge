@@ -17,4 +17,4 @@ Checksums, source metadata, run manifests, and compact data evidence.
 - Contains TASK-020 Eurostat normalized architecture-spike evidence at `eurostat/eurostat-namq-10-gdp-architecture-spike-normalized.json`.
 
 ## Needs Attention
-- Metadata files are ignored by git by default unless explicitly force-added later.
+- Metadata files remain ignored by git by default, except the bounded OECD/Eurostat fixture evidence explicitly unignored for clean-clone reconstruction.

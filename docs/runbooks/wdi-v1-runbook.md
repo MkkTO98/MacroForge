@@ -7,7 +7,7 @@ This runbook lets a future agent rerun and verify the current WDI vertical-slice
 It covers:
 
 1. Generate raw/metadata artifacts from the live support bundle.
-2. Apply the v0 PostgreSQL schema to an isolated local database.
+2. Apply the current WDI-required migrations to an isolated local database.
 3. Load WDI smoke rows into staging and curated tables.
 4. Rerun the loader to prove idempotency.
 5. Generate validation reports.
@@ -55,7 +55,7 @@ Single-command TASK-009 rerun:
 PYTHONPATH=src python3 -m macroforge.wdi_smoke --project-root .
 ```
 
-This command creates a unique isolated `macroforge_wdi_smoke_*` database, applies `db/migrations/001_v0_schema_foundation.sql`, loads WDI rows twice with the same run key, validates the database state, writes `artifacts/reports/wdi-isolated-smoke-rerun-20260603.json`, and drops the isolated database in a cleanup step.
+This command creates a unique isolated `macroforge_wdi_smoke_*` database, applies the current WDI-required migrations (`001_v0_schema_foundation.sql` and `003_canonical_domain_dimensions.sql`), loads WDI rows twice with the same run key, validates the database state, writes `artifacts/reports/wdi-isolated-smoke-rerun-20260603.json`, and drops the isolated database in a cleanup step.
 
 The command refuses `--db macro` to prevent accidental live database writes.
 
@@ -68,6 +68,7 @@ createdb "$DB"
 trap 'dropdb --if-exists "$DB" >/dev/null 2>&1 || true' EXIT
 
 psql -v ON_ERROR_STOP=1 -d "$DB" -f db/migrations/001_v0_schema_foundation.sql
+psql -v ON_ERROR_STOP=1 -d "$DB" -f db/migrations/003_canonical_domain_dimensions.sql
 
 PYTHONPATH=src python3 -m macroforge.wdi_loader   --db "$DB"   --normalized data/metadata/wdi/wdi-smoke-normalized.json   --run-key wdi-smoke-rerun   --report artifacts/reports/wdi-load-smoke-20260602.json
 

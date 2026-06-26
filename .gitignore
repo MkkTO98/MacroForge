@@ -32,18 +32,37 @@ context/context_audit.md
 context/context_manifest.json
 
 # MacroForge data artifacts (keep only summaries/placeholders by default)
+# Exception: bounded OECD/Eurostat fixture evidence required for clean-clone reconstruction.
 data/raw/*
 data/staging/*
 data/curated/*
 data/metadata/*
 !data/raw/.gitkeep
 !data/raw/_SUMMARY.md
+!data/raw/oecd_sdmx/
+data/raw/oecd_sdmx/*
+!data/raw/oecd_sdmx/_SUMMARY.md
+!data/raw/oecd_sdmx/oecd_sdmx_naag_2020_2021_raw.xml
+!data/raw/oecd_sdmx/oecd_sdmx_naag_structure_20260604.xml
+!data/raw/eurostat/
+data/raw/eurostat/*
+!data/raw/eurostat/_SUMMARY.md
+!data/raw/eurostat/eurostat-namq-10-gdp-2023q1-2023q2-raw.json
 !data/staging/.gitkeep
 !data/staging/_SUMMARY.md
 !data/curated/.gitkeep
 !data/curated/_SUMMARY.md
 !data/metadata/.gitkeep
 !data/metadata/_SUMMARY.md
+!data/metadata/oecd_sdmx/
+data/metadata/oecd_sdmx/*
+!data/metadata/oecd_sdmx/_SUMMARY.md
+!data/metadata/oecd_sdmx/oecd-sdmx-smoke-normalized.json
+!data/metadata/oecd_sdmx/oecd-sdmx-codelist-labels-20260604.json
+!data/metadata/eurostat/
+data/metadata/eurostat/*
+!data/metadata/eurostat/_SUMMARY.md
+!data/metadata/eurostat/eurostat-namq-10-gdp-architecture-spike-normalized.json
 
 # Historical exports/scaffold archives are recovery evidence, not normal project context
 *.zip

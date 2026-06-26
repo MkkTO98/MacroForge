@@ -22,7 +22,10 @@ def test_isolated_smoke_plan_uses_unique_non_live_database_and_required_steps(tm
 
     assert plan.db_name == "macroforge_wdi_smoke_test"
     assert plan.db_name != "macro"
-    assert plan.migration_path == tmp_path / "db" / "migrations" / "001_v0_schema_foundation.sql"
+    assert plan.migration_paths == (
+        tmp_path / "db" / "migrations" / "001_v0_schema_foundation.sql",
+        tmp_path / "db" / "migrations" / "003_canonical_domain_dimensions.sql",
+    )
     assert plan.normalized_path == tmp_path / "data" / "metadata" / "wdi" / "wdi-smoke-normalized.json"
     assert plan.run_key.startswith("wdi-smoke-rerun-")
 
@@ -39,6 +42,9 @@ def test_run_isolated_smoke_executes_create_migrate_double_load_validate_and_cle
     command_text = [" ".join(command) for command in runner.commands]
     assert command_text[0] == "createdb macroforge_wdi_smoke_test"
     assert "psql -v ON_ERROR_STOP=1 -d macroforge_wdi_smoke_test -f" in command_text[1]
+    assert "001_v0_schema_foundation.sql" in command_text[1]
+    assert "psql -v ON_ERROR_STOP=1 -d macroforge_wdi_smoke_test -f" in command_text[2]
+    assert "003_canonical_domain_dimensions.sql" in command_text[2]
     assert sum("macroforge.wdi_loader" in text for text in command_text) == 2
     assert any("macroforge.wdi_validation" in text for text in command_text)
     assert runner.dropped == ["macroforge_wdi_smoke_test"]

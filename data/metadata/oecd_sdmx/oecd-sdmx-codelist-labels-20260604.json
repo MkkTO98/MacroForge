@@ -1,0 +1,88 @@
+{
+  "codelists": {
+    "CONF_STATUS": {
+      "codelist_id": "CL_CONF_STATUS",
+      "codelist_name": "Confidentiality status",
+      "codes": {
+        "F": {
+          "description": null,
+          "label": "Free for publication"
+        }
+      }
+    },
+    "DECIMALS": {
+      "codelist_id": null,
+      "codelist_name": null,
+      "codes": {
+        "2": {
+          "description": "No codelist label found in bounded structure fixture.",
+          "label": null
+        }
+      }
+    },
+    "MEASURE": {
+      "codelist_id": "CL_MEASURE",
+      "codelist_name": "Measure",
+      "codes": {
+        "B1GQ": {
+          "description": "GDP, expenditure approach, current prices.",
+          "label": "Gross domestic product"
+        }
+      }
+    },
+    "OBS_STATUS": {
+      "codelist_id": "CL_OBS_STATUS",
+      "codelist_name": "Observation status",
+      "codes": {
+        "A": {
+          "description": null,
+          "label": "Normal value"
+        }
+      }
+    },
+    "REF_AREA": {
+      "codelist_id": "CL_REF_AREA",
+      "codelist_name": "Reference area",
+      "codes": {
+        "AUS": {
+          "description": null,
+          "label": "Australia"
+        },
+        "USA": {
+          "description": null,
+          "label": "United States"
+        }
+      }
+    },
+    "UNIT_MEASURE": {
+      "codelist_id": "CL_UNIT_MEASURE",
+      "codelist_name": "Unit of measure",
+      "codes": {
+        "USD_EXC": {
+          "description": null,
+          "label": "US dollars, exchange rate converted"
+        },
+        "USD_PPP": {
+          "description": null,
+          "label": "US dollars, PPP converted"
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Bounded to currently observed OECD/SDMX smoke-slice codes; not a broad codelist harvest.",
+    "DECIMALS is preserved as an observed attribute value when no codelist entry is present.",
+    "No PostgreSQL schema change or live macro write is implied by this metadata evidence."
+  ],
+  "provider_dataset_code": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+  "raw_metadata": {
+    "bytes": 2516,
+    "content_type": "application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8",
+    "endpoint": "https://sdmx.oecd.org/public/rest/v1/dataflow/OECD.SDD.NAD/all/latest",
+    "raw_artifact_path": "data/raw/oecd_sdmx/oecd_sdmx_naag_structure_20260604.xml",
+    "sha256": "fd0fd040345fed0de31cd9db8f968bf536e2a50e05e661a1d53636493d6dfda2"
+  },
+  "source_code": "OECD_NAAG",
+  "source_home_url": "https://sdmx.oecd.org/",
+  "source_name": "OECD annual national accounts / NAAG Chapter 1 GDP dataflow"
+}

@@ -13,10 +13,12 @@ Architecture documentation for MacroForge data/research platform.
 - `historical-architecture-reconciliation.md`
 - `minimal-ai-assisted-canonicalization-layer.md`
 - `minimal-canonical-domain-schema-design.md`
+- `metaharvest-trigger-gated-consultation.md`
 - `overview.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `metaharvest-trigger-gated-consultation.md` documents the implemented Phase 1 helper at `tools/consult_metaharvest.py`: scoped task/governance preflight only, separate Consultation/Retrieval Contracts, versioned internal taxonomy, bounded advisory retrieval, non-blocking failure, and mandatory Authority note.
 - `overview.md` now records the doctrine-aligned architecture purpose: MacroForge is the system for reducing recurring effort to build, maintain, validate, canonicalize, and use trusted macroeconomic data; trusted databases/datasets are outputs.
 - `minimal-ai-assisted-canonicalization-layer.md` remains the accepted TASK-030 design for provider evidence, canonicalization runs, mapping/canonical-creation proposals, confidence/provenance/review state, accepted mappings, unit/comparability profiles, and re-canonicalization lineage.
 - Historical decision-analysis notes remain evidence for the bounded sequencing through TASK-037.

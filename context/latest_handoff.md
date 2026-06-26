@@ -1,69 +1,59 @@
 # Latest Handoff — MacroForge
 
-Updated: 2026-06-18T12:20:00Z
+Updated: 2026-06-26T18:51:23Z
 
 ## Current status
 
-TASK-040 is fully complete and locally committed.
+MacroForge v1 is freeze-ready after TASK-045, and the post-freeze v1.1 architectural assessment is complete.
 
-- Task: `artifacts/tasks/TASK-040-implement-oecd-unit-basis-comparability-split.md`
-- Commit: `58492f7 Add OECD unit-basis comparability evidence`
-- Working tree at closeout before this handoff update was clean.
-- No push was performed.
+No implementation task is open. The recommended next implementation task, if explicitly opened by the user, is:
 
-## Context used
+```text
+TASK-046 — Define and validate NormalizedObservationPackage v1 for existing WDI/OECD/Eurostat evidence
+```
 
-- `recovery/continuity_framework.md`
-- `context/latest_handoff.md`
-- `artifacts/tasks/TASK-040-implement-oecd-unit-basis-comparability-split.md`
-- Git status/log for MacroForge
+## Completed in this closeout window
 
-## Files changed in TASK-040
+- Completed TASK-044 WDI isolated smoke repair.
+- Completed TASK-045 OECD/Eurostat clean-clone fixture persistence hardening.
+- Completed the post-freeze v1.1 architectural assessment.
+- Prepared the repository for GitHub push.
 
-Created:
+## Main artifacts
 
-- `artifacts/tasks/TASK-040-implement-oecd-unit-basis-comparability-split.md`
-- `simulation/dry_runs/20260618_120000-task-040-oecd-unit-basis-comparability.md`
-- `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json`
-- `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.md`
+- `artifacts/tasks/TASK-044-repair-wdi-isolated-smoke-workflow.md`
+- `artifacts/tasks/TASK-045-make-oecd-eurostat-fixtures-clean-clone-safe.md`
+- `artifacts/reports/R-20260626-post-freeze-v11-architectural-assessment.md`
+- `tools/consult_metaharvest.py`
+- `tests/test_consult_metaharvest.py`
+- `tests/test_fixture_persistence.py`
+- `src/macroforge/wdi_smoke.py`
+- `.gitignore`
 
-Modified:
+## Verification run
 
-- `src/macroforge/canonicalization_state.py`
-- `tests/test_canonicalization_proposal_workflow.py`
-- `artifacts/reports/_SUMMARY.md`
-- `artifacts/tasks/_SUMMARY.md`
-- `artifacts/tasks/backlog.md`
-- `state/active_goal.md`
-- `state/project_state.md`
-- `state/architecture.md`
-- `state/recent_changes.md`
-- `context/latest_handoff.md`
+```text
+git diff --check
+<no output; exit 0>
 
-## Verification already run for TASK-040
+python3 tools/check_coherence.py --project .
+coherence: 0 block(s), 0 warning(s)
 
-- `uvx --from pytest --with pyyaml pytest tests -q` -> `70 passed in 4.84s`
-- `python3 tools/check_coherence.py --project . --json` -> no blocks; warnings only for `state/project_state.md` approaching context-health limit and `context/latest_handoff.md` preferred-size warning.
-- `python3 tools/context_health.py --project . --json` -> no blocks; same warnings.
-- `python3 tools/recover_session.py --project . --json` -> no blockers and no pending questions.
-- `git diff --check` -> clean.
-- Deterministic report churn in `artifacts/reports/canonical-gdp-snapshot-20260604.json` and `artifacts/reports/combined-source-canonical-smoke-20260604.json` was restored; both were unchanged post-restore.
+uvx --from pytest --with pyyaml pytest tests -q
+84 passed in 5.15s
+```
 
-## Decisions/tasks updated
+Generated report diffs from test execution were restored for:
 
-- Created and completed TASK-040.
-- Updated task backlog, affected summaries, active goal, project state, architecture state, recent changes, and handoff.
-- No new decision artifact was created.
+- `artifacts/reports/canonical-gdp-snapshot-20260604.json`
+- `artifacts/reports/combined-source-canonical-smoke-20260604.json`
 
-## Remaining risks / next recommended action
+## Current recommendation
 
-No blocker. No open implementation task remains after TASK-040.
-
-If future work resumes, use the bounded recovery command below and do not mutate accepted/base mapping state, manifests, or GDP reports without an explicit review/decision artifact.
+Do not add or deepen datasets next. Refactor the emerged ingestion contract first. Start with TASK-046 only if the user explicitly opens v1.1 implementation work.
 
 ## Resume command
 
 ```bash
-cd /home/mkkto/srv/EIP/projects/MacroForge
-python3 tools/recover_session.py --project . --json
+cd /home/mkkto/srv/EIP/projects/MacroForge && python3 tools/recover_session.py --project . --json
 ```

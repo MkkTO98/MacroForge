@@ -47,15 +47,25 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-038-simulate-bounded-canonicalization-review-lifecycle.md`
 - `TASK-039-persist-deferred-mapping-advancement-requirements.md`
 - `TASK-040-implement-oecd-unit-basis-comparability-split.md`
+- `TASK-041-comparability-research-readiness-assessment.md`
+- `TASK-042-gdp-eligibility-classification-artifact.md`
+- `TASK-043-implement-trigger-gated-metaharvest-consultation.md`
+- `TASK-044-repair-wdi-isolated-smoke-workflow.md`
+- `TASK-045-make-oecd-eurostat-fixtures-clean-clone-safe.md`
 - `TASK-PF-20260614-continuity-recovery-adoption.md`
 - `backlog.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- TASK-001 through TASK-040 are complete; TASK-031 was an Architecture-to-Reality remediation hygiene interruption and TASK-035 was a narrow ArchitectureHarvest integration interruption.
+- TASK-045 is complete and made the bounded OECD/Eurostat fixture evidence required for combined reconstruction unignored/commit-eligible while keeping generated `data/` artifacts ignored by default; see `TASK-045-make-oecd-eurostat-fixtures-clean-clone-safe.md`.
+- TASK-044 is complete and repaired the WDI-only isolated smoke workflow so it applies both `001_v0_schema_foundation.sql` and `003_canonical_domain_dimensions.sql` before loading/validation; see `TASK-044-repair-wdi-isolated-smoke-workflow.md`.
+- TASK-001 through TASK-045 are complete; TASK-031 was an Architecture-to-Reality remediation hygiene interruption and TASK-035 was a narrow ArchitectureHarvest integration interruption.
+- TASK-043 is complete and implemented the Phase 1 trigger-gated MetaHarvest consultation helper at `tools/consult_metaharvest.py`; it is advisory-only, scoped to task/governance classification, and preserves no startup consultation, no automatic adoption/task creation, no runtime/orchestration framework, no MetaHarvest authority, and no retrieval when no trigger matches.
 - TASK-040 implemented deterministic OECD unit-basis comparability split evidence for `USD_EXC` exchange-rate versus `USD_PPP` PPP candidates; see `TASK-040-implement-oecd-unit-basis-comparability-split.md`.
 - TASK-039 persisted concrete deferred mapping advancement requirements for OECD/Eurostat; see `TASK-039-persist-deferred-mapping-advancement-requirements.md`.
 - `TASK-PF-20260614-continuity-recovery-adoption.md` is complete and records operating-system adoption only.
 
 ## Needs Attention
-- No implementation task is open. Future OECD/Eurostat mapping advancement work should start from TASK-039 requirements and preserve TASK-038/TASK-039 boundaries unless a new decision explicitly changes them: no model calls, prompt/provider setup, migrations, new sources, live fetches without approval, live `macro` writes, unit conversion, frequency aggregation, report integration, generalized metadata/source framework, provider-specific fact columns, accepted mapping auto-apply, direct lifecycle/base-state mutation, or git push.
+- No known operational pre-freeze blockers remain after TASK-044/TASK-045, but final v1 freeze should still run fresh full verification from the current worktree and ensure all commit-eligible fixture files are included in the final commit.
+- Future OECD/Eurostat mapping advancement work should start from TASK-039 requirements and preserve TASK-038/TASK-039 boundaries unless a new decision explicitly changes them: no model calls, prompt/provider setup, migrations, new sources, live fetches without approval, live `macro` writes, unit conversion, frequency aggregation, report integration, generalized metadata/source framework, provider-specific fact columns, accepted mapping auto-apply, direct lifecycle/base-state mutation, or git push.
+- `tools/consult_metaharvest.py` may be used only after a scoped task/user request is known; do not run it as startup behavior or treat its advisory output as MacroForge authority.

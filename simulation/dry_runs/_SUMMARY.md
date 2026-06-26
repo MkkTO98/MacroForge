@@ -30,6 +30,8 @@ This folder is part of the ProjectForge file-backed operating system for `simula
 - `20260613_172928-task-037-wdi-unit-metadata-enrichment.md`
 - `20260614_151206-task-038-review-lifecycle-validation.md`
 - `20260618_084552-task-039-deferred-mapping-advancement-requirements.md`
+- `20260618_120000-task-040-oecd-unit-basis-comparability.md`
+- `20260618_223001-oecd-mapping-status-review.md`
 - `README.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 

@@ -17,4 +17,4 @@ Immutable raw source artifacts and checksums from pipeline runs.
 - Contains TASK-020 Eurostat raw JSON architecture-spike evidence at `eurostat/eurostat-namq-10-gdp-2023q1-2023q2-raw.json`.
 
 ## Needs Attention
-- Raw files are ignored by git by default.
+- Raw files remain ignored by git by default, except the bounded OECD/Eurostat fixture evidence explicitly unignored for clean-clone reconstruction.

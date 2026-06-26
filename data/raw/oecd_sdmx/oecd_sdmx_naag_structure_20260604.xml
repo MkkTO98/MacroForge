@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure
+  xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+  xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+  xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Structures>
+    <structure:Codelists>
+      <structure:Codelist id="CL_MEASURE" agencyID="OECD.SDD.NAD">
+        <common:Name xml:lang="en">Measure</common:Name>
+        <structure:Code id="B1GQ">
+          <common:Name xml:lang="en">Gross domestic product</common:Name>
+          <common:Description xml:lang="en">GDP, expenditure approach, current prices.</common:Description>
+        </structure:Code>
+        <structure:Code id="P3">
+          <common:Name xml:lang="en">Final consumption expenditure</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_REF_AREA" agencyID="OECD.SDD.NAD">
+        <common:Name xml:lang="en">Reference area</common:Name>
+        <structure:Code id="AUS">
+          <common:Name xml:lang="en">Australia</common:Name>
+        </structure:Code>
+        <structure:Code id="USA">
+          <common:Name xml:lang="en">United States</common:Name>
+        </structure:Code>
+        <structure:Code id="DNK">
+          <common:Name xml:lang="en">Denmark</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_UNIT_MEASURE" agencyID="OECD.SDD.NAD">
+        <common:Name xml:lang="en">Unit of measure</common:Name>
+        <structure:Code id="USD_EXC">
+          <common:Name xml:lang="en">US dollars, exchange rate converted</common:Name>
+        </structure:Code>
+        <structure:Code id="USD_PPP">
+          <common:Name xml:lang="en">US dollars, PPP converted</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_CONF_STATUS" agencyID="OECD.SDD.NAD">
+        <common:Name xml:lang="en">Confidentiality status</common:Name>
+        <structure:Code id="F">
+          <common:Name xml:lang="en">Free for publication</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+      <structure:Codelist id="CL_OBS_STATUS" agencyID="OECD.SDD.NAD">
+        <common:Name xml:lang="en">Observation status</common:Name>
+        <structure:Code id="A">
+          <common:Name xml:lang="en">Normal value</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+    </structure:Codelists>
+  </message:Structures>
+</message:Structure>

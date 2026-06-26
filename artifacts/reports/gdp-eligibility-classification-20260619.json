@@ -1,0 +1,343 @@
+{
+  "artifact_id": "macroforge-gdp-eligibility-classification-20260619",
+  "artifact_type": "deterministic_gdp_research_report_eligibility_classification",
+  "schema_version": 1,
+  "created_at_utc": "2026-06-19T20:47:06Z",
+  "status": "completed",
+  "scope": {
+    "domain": "GDP evidence only",
+    "sources": [
+      "WDI",
+      "OECD_NAAG",
+      "EUROSTAT_NAMQ_GDP"
+    ],
+    "source_evidence_universe": "Existing MacroForge bounded GDP evidence and existing MacroForge/InsightForge review artifacts only.",
+    "non_goals": [
+      "no_new_data_ingestion",
+      "no_new_sources",
+      "no_conversion_policy",
+      "no_aggregation_policy",
+      "no_reporting_framework",
+      "no_dashboard",
+      "no_pipeline",
+      "no_agent",
+      "no_postgresql_write",
+      "no_canonical_gdp_evidence_modification",
+      "no_accepted_manifest_mutation",
+      "no_canonical_observation_mutation",
+      "no_scope_beyond_gdp"
+    ]
+  },
+  "classification_model": {
+    "categories": {
+      "eligible": {
+        "meaning": "Existing evidence may be used for the explicitly stated bounded use without additional upstream semantic policy.",
+        "permitted_use": "Same-source, same-frequency, same-unit/profile descriptive findings over existing bounded rows, with lineage and caveats cited.",
+        "prohibited_use": "Accepted truth claims, causal claims, investment signals, forecasting, cross-source level comparison, conversion, aggregation, or comparable-GDP report approval."
+      },
+      "profile_specific": {
+        "meaning": "Evidence may be used only inside an explicit unit/frequency/source profile; the profile boundary is part of the conclusion.",
+        "permitted_use": "Descriptive findings that preserve the profile boundary, such as OECD USD_EXC versus USD_PPP profile-boundary findings or Eurostat quarterly CP_MEUR same-profile findings.",
+        "prohibited_use": "Mixing profiles, treating profile equality in one territory as interchangeability, or placing profile-specific rows into a common comparable GDP group."
+      },
+      "deferred": {
+        "meaning": "GDP-like evidence exists, but current MacroForge review artifacts require additional policy/evidence before the proposed broader research/report use is allowed.",
+        "permitted_use": "Citing the deferral, producing boundary findings, and using the rows only for narrower eligible/profile-specific descriptive uses listed in this artifact.",
+        "prohibited_use": "Advancing mapping/report eligibility, report integration, comparable GDP outputs, or accepted conclusions without a later review-approved policy."
+      },
+      "unsupported": {
+        "meaning": "The current evidence contract does not support the proposed conclusion even though relevant rows may exist.",
+        "permitted_use": "A boundary finding stating that the conclusion is not supported under current evidence.",
+        "prohibited_use": "Treating row existence, matching values, or provider indicator labels as proof of comparability."
+      },
+      "blocked": {
+        "meaning": "An explicit missing policy or semantic blocker prevents a proposed use until resolved by future governance/evidence.",
+        "permitted_use": "Citing the blocker and stopping the proposed use.",
+        "prohibited_use": "Working around the blocker through silent conversion, aggregation, confidence scores, manual interpretation, or downstream assumptions."
+      }
+    },
+    "status_fields": {
+      "primary_category": "Current compact status for downstream routing.",
+      "governance_status": "Current MacroForge review/lifecycle status from existing evidence.",
+      "same_source_descriptive_use": "Whether bounded descriptive findings are allowed over existing rows.",
+      "cross_source_comparable_use": "Whether the evidence is currently eligible for direct cross-source comparable GDP use.",
+      "profile_specific": "Whether the row must remain inside a separate unit/frequency/profile boundary.",
+      "blocked_uses": "Specific proposed uses that are explicitly blocked or unsupported."
+    }
+  },
+  "evidence_summary": {
+    "wdi": "WDI NY.GDP.MKTP.CD reached governed provisional status after WDI unit metadata enrichment and lifecycle review. It supports bounded WDI-only descriptive findings, but remains not accepted truth and does not approve cross-source comparability.",
+    "oecd": "OECD B1GQ has distinguishable USD_EXC and USD_PPP unit-basis candidates. Existing review concludes both remain deferred today; the profiles must remain separate and are not eligible for comparable GDP report integration.",
+    "eurostat": "Eurostat B1GQ CP_MEUR quarterly evidence supports same-source/same-frequency descriptive findings, but broader annual/current-USD comparison is deferred/blocked by missing frequency, currency, and scale policy.",
+    "insightforge": "InsightForge findings validated bounded same-source/profile findings and independently confirmed that direct WDI/OECD cross-source USA GDP comparison is unsupported under current MacroForge evidence."
+  },
+  "classifications": [
+    {
+      "classification_id": "gdp_eligibility:WDI:NY.GDP.MKTP.CD:A:source_current_usd_metadata:v1",
+      "source_code": "WDI",
+      "dataset_or_release": "WDI",
+      "provider_indicator_code": "NY.GDP.MKTP.CD",
+      "canonical_concept_candidate": "MACRO_GDP_OUTPUT",
+      "frequency_scope": [
+        "A"
+      ],
+      "unit_or_profile_scope": "source_metadata_current_usd_after_TASK_037; older GDP snapshot rows expose unit_code unknown",
+      "primary_category": "eligible",
+      "governance_status": "governed_provisional_candidate_not_accepted_truth",
+      "same_source_descriptive_use": "eligible",
+      "profile_specific": false,
+      "cross_source_comparable_use": "unsupported",
+      "comparable_report_integration": "deferred",
+      "permitted_uses": [
+        "bounded WDI-only descriptive direction or row-value findings over existing annual rows",
+        "lineage-backed caveat-aware findings that cite governed provisional status",
+        "boundary findings stating that WDI is not yet approved for direct cross-source GDP comparison"
+      ],
+      "prohibited_uses": [
+        "accepted GDP truth claims",
+        "direct comparison to OECD or Eurostat GDP levels",
+        "conversion, aggregation, inflation adjustment, forecasting, investment signals, or causal explanations",
+        "treating TASK_037 source metadata as canonical truth"
+      ],
+      "missing_evidence_or_policy": [
+        "review-approved cross-source current-USD comparability policy",
+        "downstream report-impact decision reconciling WDI enriched unit metadata with the older GDP snapshot interface",
+        "accepted truth or production ontology approval"
+      ],
+      "evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json#WDI_rows",
+        "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+        "artifacts/reports/canonicalization-review-lifecycle-20260614.json#WDI_decision",
+        "artifacts/manifests/canonical_assets.json#mapping.wdi.gdp_to_macro_gdp_output",
+        "/home/mkkto/srv/EIP/projects/InsightForge/artifacts/analytical/IF-A-20260619-001-wdi-usa-dnk-gdp-direction.md",
+        "/home/mkkto/srv/EIP/projects/InsightForge/artifacts/analytical/IF-A-20260619-004-cross-source-usa-comparability-boundary.md"
+      ]
+    },
+    {
+      "classification_id": "gdp_eligibility:OECD_NAAG:B1GQ:A:USD_EXC:v1",
+      "source_code": "OECD_NAAG",
+      "dataset_or_release": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "provider_indicator_code": "B1GQ",
+      "canonical_concept_candidate": "MACRO_GDP_OUTPUT",
+      "frequency_scope": [
+        "A"
+      ],
+      "unit_or_profile_scope": "USD_EXC exchange-rate USD basis candidate",
+      "primary_category": "deferred",
+      "governance_status": "basis_distinguished_but_mapping_and_report_eligibility_deferred",
+      "same_source_descriptive_use": "eligible_when_profile_preserved",
+      "profile_specific": true,
+      "cross_source_comparable_use": "deferred",
+      "comparable_report_integration": "deferred_not_eligible_today",
+      "permitted_uses": [
+        "bounded OECD-only descriptive findings that explicitly preserve USD_EXC as a separate profile",
+        "comparability-boundary findings that distinguish USD_EXC from USD_PPP",
+        "future review input as an exchange-rate current-USD candidate"
+      ],
+      "prohibited_uses": [
+        "collapsing USD_EXC with USD_PPP",
+        "treating USD_EXC as report-safe comparable with WDI current-USD evidence",
+        "mixing USD_EXC into accepted comparable GDP outputs",
+        "conversion, aggregation, report integration, or state/manifest mutation without later review approval"
+      ],
+      "missing_evidence_or_policy": [
+        "review-approved exchange-rate basis policy for OECD B1GQ",
+        "stable evidence link for USD_EXC unit metadata interpretation",
+        "explicit report-impact decision preserving no-conversion/no-aggregation boundaries",
+        "future approved state/manifest deltas if advancement is accepted"
+      ],
+      "evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json#OECD_NAAG_USD_EXC_rows",
+        "artifacts/reports/canonicalization-review-lifecycle-20260614.json#OECD_decision",
+        "artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json#OECD_NAAG",
+        "artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json#USD_EXC",
+        "artifacts/reports/canonicalization-oecd-mapping-status-review-20260618.json#USD_EXC",
+        "/home/mkkto/srv/EIP/projects/InsightForge/artifacts/analytical/IF-A-20260619-003-oecd-unit-profile-comparison.md",
+        "/home/mkkto/srv/EIP/projects/InsightForge/artifacts/analytical/IF-A-20260619-004-cross-source-usa-comparability-boundary.md"
+      ]
+    },
+    {
+      "classification_id": "gdp_eligibility:OECD_NAAG:B1GQ:A:USD_PPP:v1",
+      "source_code": "OECD_NAAG",
+      "dataset_or_release": "OECD.SDD.NAD,DSD_NAAG@DF_NAAG_I",
+      "provider_indicator_code": "B1GQ",
+      "canonical_concept_candidate": "MACRO_GDP_OUTPUT",
+      "frequency_scope": [
+        "A"
+      ],
+      "unit_or_profile_scope": "USD_PPP purchasing-power-parity USD basis candidate",
+      "primary_category": "deferred",
+      "governance_status": "basis_distinguished_but_mapping_and_report_eligibility_deferred",
+      "same_source_descriptive_use": "eligible_when_profile_preserved",
+      "profile_specific": true,
+      "cross_source_comparable_use": "deferred_for_ppp_specific_treatment_and_unsupported_for_exchange_rate_current_usd_outputs",
+      "comparable_report_integration": "deferred_not_eligible_today",
+      "permitted_uses": [
+        "bounded OECD-only descriptive findings that explicitly preserve USD_PPP as a separate profile",
+        "comparability-boundary findings that distinguish USD_PPP from USD_EXC",
+        "future review input as a possible PPP-specific profile or exclusion candidate"
+      ],
+      "prohibited_uses": [
+        "collapsing USD_PPP with USD_EXC",
+        "placing USD_PPP into exchange-rate/current-USD GDP outputs",
+        "treating identical USA USD_EXC and USD_PPP row values as a general comparability rule",
+        "conversion, aggregation, report integration, or state/manifest mutation without later review approval"
+      ],
+      "missing_evidence_or_policy": [
+        "review-approved PPP basis policy for OECD B1GQ",
+        "stable evidence link for USD_PPP unit metadata interpretation",
+        "explicit decision on PPP-specific report eligibility versus continued exclusion",
+        "future approved state/manifest deltas if advancement is accepted"
+      ],
+      "evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json#OECD_NAAG_USD_PPP_rows",
+        "artifacts/reports/canonicalization-review-lifecycle-20260614.json#OECD_decision",
+        "artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json#OECD_NAAG",
+        "artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json#USD_PPP",
+        "artifacts/reports/canonicalization-oecd-mapping-status-review-20260618.json#USD_PPP",
+        "/home/mkkto/srv/EIP/projects/InsightForge/artifacts/analytical/IF-A-20260619-003-oecd-unit-profile-comparison.md",
+        "/home/mkkto/srv/EIP/projects/InsightForge/artifacts/analytical/IF-A-20260619-004-cross-source-usa-comparability-boundary.md"
+      ]
+    },
+    {
+      "classification_id": "gdp_eligibility:EUROSTAT_NAMQ_GDP:B1GQ:Q:CP_MEUR:v1",
+      "source_code": "EUROSTAT_NAMQ_GDP",
+      "dataset_or_release": "namq_10_gdp",
+      "provider_indicator_code": "B1GQ",
+      "canonical_concept_candidate": "MACRO_GDP_OUTPUT",
+      "frequency_scope": [
+        "Q"
+      ],
+      "unit_or_profile_scope": "CP_MEUR quarterly current-price million euro profile",
+      "primary_category": "deferred",
+      "governance_status": "mapping_and_report_eligibility_deferred_pending_frequency_currency_scale_policy",
+      "same_source_descriptive_use": "eligible_when_same_frequency_same_unit_profile_preserved",
+      "profile_specific": true,
+      "cross_source_comparable_use": "blocked_by_frequency_currency_scale_policy_absence",
+      "comparable_report_integration": "deferred_not_eligible_today",
+      "permitted_uses": [
+        "bounded Eurostat-only quarterly descriptive findings over existing CP_MEUR rows",
+        "boundary findings citing frequency/currency/scale deferral",
+        "future review input for possible separate quarterly/euro profile or continued deferral"
+      ],
+      "prohibited_uses": [
+        "annualizing or aggregating quarterly values",
+        "currency conversion from EUR to USD",
+        "scale conversion from million EUR into direct USD-level comparison",
+        "comparing directly to WDI or OECD GDP rows",
+        "report integration or state/manifest mutation without later review approval"
+      ],
+      "missing_evidence_or_policy": [
+        "review-approved frequency policy for quarterly-to-annual treatment or separate quarterly treatment",
+        "review-approved currency conversion or explicit no-conversion policy for broader comparison",
+        "scale/price-basis treatment for current-price million-euro values",
+        "explicit report-impact decision"
+      ],
+      "evidence_pointers": [
+        "artifacts/reports/canonical-gdp-snapshot-20260604.json#EUROSTAT_NAMQ_GDP_rows",
+        "artifacts/reports/canonicalization-review-lifecycle-20260614.json#EUROSTAT_decision",
+        "artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json#EUROSTAT_NAMQ_GDP",
+        "artifacts/manifests/canonical_assets.json#mapping.eurostat_namq_gdp.to_macro_gdp_output",
+        "/home/mkkto/srv/EIP/projects/InsightForge/artifacts/analytical/IF-A-20260619-002-eurostat-deu-fra-quarterly-direction.md"
+      ]
+    }
+  ],
+  "downstream_decision_rules": [
+    {
+      "question": "Is this evidence currently eligible for descriptive findings?",
+      "answer_rule": "Allowed only when same_source_descriptive_use starts with eligible and the finding preserves the listed source/frequency/unit/profile scope and caveats."
+    },
+    {
+      "question": "Is this evidence profile-specific?",
+      "answer_rule": "If profile_specific is true, downstream artifacts must name the profile and must not mix it with other profiles."
+    },
+    {
+      "question": "Is this evidence deferred?",
+      "answer_rule": "If primary_category is deferred or comparable_report_integration is deferred_not_eligible_today, broader cross-source/report use must stop and cite missing_evidence_or_policy."
+    },
+    {
+      "question": "Is this evidence blocked?",
+      "answer_rule": "If cross_source_comparable_use or blocked_uses mention a policy absence, the proposed use is blocked until a later review artifact resolves that absence."
+    },
+    {
+      "question": "Can WDI, OECD, and Eurostat GDP levels be directly compared today?",
+      "answer_rule": "No. Current evidence supports same-source/profile-specific descriptive findings and boundary findings only; direct cross-source comparable GDP levels remain unsupported or blocked."
+    }
+  ],
+  "artifact_evidence": [
+    {
+      "path": "artifacts/reports/canonical-gdp-snapshot-20260604.json",
+      "sha256": "c86d29fc24a2b14a86fec2f8e9d0e7ddb23d4d128bb19ca037574df10d8d5e77"
+    },
+    {
+      "path": "artifacts/reports/canonical-gdp-snapshot-20260604.md",
+      "sha256": "ebe1193336bbaf65f74acfe5c5c04ea08f669e4cb6df334215a9f014846952d5"
+    },
+    {
+      "path": "artifacts/manifests/canonical_assets.json",
+      "sha256": "21a2bbdb05cd98be9b58099ce7a98ddf97f4fb998297680a80b7fdd3b2775768"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-wdi-unit-metadata-enrichment-20260613.json",
+      "sha256": "e038a5f0a19f0299541b885bdc7592018fb1ab274f6069dac1ca2e1c18dc22a9"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+      "sha256": "34b2b8882677478b92904fb64e5bed559f49970f008725fef49346ef63509f16"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json",
+      "sha256": "0b3c4b09bad8cced64f95305a696bc748c92756e69e58ada32bf8d2d049266d8"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json",
+      "sha256": "806c1c6e141b0b6d6ed52583fe712f501398107ce941125eb8f5cba8dbfd7937"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-oecd-mapping-status-review-20260618.json",
+      "sha256": "6d58bf18383a6b04e9cf3f6e95009cf48e00f52d268304f18787d45547ad71fd"
+    },
+    {
+      "path": "artifacts/reports/R-20260619-comparability-research-readiness-assessment.md",
+      "sha256": "223a8cc6bb1eb327dcd91fdf3012a006cffcaa2efde2bb1ddaa29894eda06466"
+    }
+  ],
+  "validation_expectations": {
+    "classification_count": 4,
+    "required_classification_ids": [
+      "gdp_eligibility:WDI:NY.GDP.MKTP.CD:A:source_current_usd_metadata:v1",
+      "gdp_eligibility:OECD_NAAG:B1GQ:A:USD_EXC:v1",
+      "gdp_eligibility:OECD_NAAG:B1GQ:A:USD_PPP:v1",
+      "gdp_eligibility:EUROSTAT_NAMQ_GDP:B1GQ:Q:CP_MEUR:v1"
+    ],
+    "must_preserve": [
+      "no_cross_source_comparable_gdp_approval",
+      "no_conversion",
+      "no_aggregation",
+      "no_report_integration",
+      "no_manifest_or_accepted_state_mutation",
+      "lineage_evidence_pointers_present"
+    ]
+  },
+  "v1_readiness_reassessment": {
+    "blockers_remaining": [
+      "OECD exchange-rate-vs-PPP treatment policy remains unresolved.",
+      "WDI current-USD metadata still needs downstream/report-interface reconciliation before cross-source use.",
+      "Eurostat frequency/currency/scale policy remains absent.",
+      "No accepted conversion or aggregation policy exists.",
+      "Eligibility is file-backed, not PostgreSQL-queryable, by design for this task."
+    ],
+    "inside_current_macroforge_scope": [
+      "The deterministic eligibility classification blocker is now solved for current bounded GDP evidence.",
+      "Future OECD/WDI/Eurostat treatment policies are inside MacroForge only if downstream work demonstrates they are actual blockers."
+    ],
+    "outside_or_not_current_scope": [
+      "Conversion engines or policies beyond explicit review decision.",
+      "Aggregation policy and implementation.",
+      "Dashboards, reporting frameworks, agents, new sources, and broader research products."
+    ],
+    "v1_stopping_point_recommendation": "MacroForge can reasonably stop at v1 for current EIP needs after this artifact is reviewed and cited by InsightForge: current bounded GDP evidence is reproducible, lineage-backed, and now has a compact deterministic eligibility surface. Further work should wait for a concrete downstream blocker rather than expanding scope proactively.",
+    "next_task_if_work_continues": "A bounded OECD basis-treatment review, not implementation, only if InsightForge or another consumer needs OECD exchange-rate/PPP eligibility beyond current boundary findings.",
+    "continued_work_assessment": "Without a concrete downstream blocker, continued MacroForge work after this task would mostly expand scope rather than solve the immediate blocker identified by TASK-041."
+  }
+}

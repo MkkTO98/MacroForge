@@ -31,7 +31,7 @@ class SmokePlan:
     project_root: Path
     db_name: str
     run_key: str
-    migration_path: Path
+    migration_paths: tuple[Path, ...]
     normalized_path: Path
     load_report_path: Path
     validation_json_path: Path
@@ -64,7 +64,10 @@ def build_smoke_plan(
         project_root=project,
         db_name=chosen_db,
         run_key=chosen_run_key,
-        migration_path=project / "db" / "migrations" / "001_v0_schema_foundation.sql",
+        migration_paths=(
+            project / "db" / "migrations" / "001_v0_schema_foundation.sql",
+            project / "db" / "migrations" / "003_canonical_domain_dimensions.sql",
+        ),
         normalized_path=project / "data" / "metadata" / "wdi" / "wdi-smoke-normalized.json",
         load_report_path=project / "artifacts" / "reports" / "wdi-load-smoke-20260602.json",
         validation_json_path=project / "artifacts" / "reports" / "wdi-validation-smoke-20260602.json",
@@ -113,7 +116,8 @@ def run_isolated_smoke(
 
     try:
         command_runner.run(["createdb", plan.db_name], cwd=cwd)
-        command_runner.run(["psql", "-v", "ON_ERROR_STOP=1", "-d", plan.db_name, "-f", str(plan.migration_path)], cwd=cwd)
+        for migration_path in plan.migration_paths:
+            command_runner.run(["psql", "-v", "ON_ERROR_STOP=1", "-d", plan.db_name, "-f", str(migration_path)], cwd=cwd)
         command_runner.run(loader_command, cwd=cwd)
         command_runner.run(loader_command, cwd=cwd)
         command_runner.run(validation_command, cwd=cwd)

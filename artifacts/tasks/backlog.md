@@ -194,3 +194,33 @@ TASK-039 created `artifacts/reports/canonicalization-deferred-mapping-advancemen
 40. TASK-040 — Implement OECD unit-basis comparability split for canonicalization evidence. Complete.
 
 TASK-040 implemented the first TASK-039 advancement requirement for OECD `B1GQ`: deterministic separation of `USD_EXC` exchange-rate and `USD_PPP` PPP comparability basis candidates. It added tested helper/writer functions in `src/macroforge/canonicalization_state.py` and generated `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json` and `.md`. It preserved no accepted/base mapping mutation, no manifest base mutation, no report integration, no auto-apply, no model calls, no live fetches, no migrations, no live/default `macro` writes, no unit/currency conversion, and no frequency aggregation.
+
+## Completed comparability/research-readiness assessment
+
+41. TASK-041 — Bounded MacroForge comparability and research-readiness assessment. Complete.
+
+TASK-041 produced `artifacts/reports/R-20260619-comparability-research-readiness-assessment.md` and `artifacts/tasks/TASK-041-comparability-research-readiness-assessment.md`. It found MacroForge partially research-ready for same-source descriptive and boundary findings, but not yet ready for trustworthy cross-source GDP research because deterministic eligibility/comparability classification and conversion/aggregation policy remain absent. It recommended TASK-042: create a deterministic GDP research/report eligibility classification artifact over existing evidence only. It preserved no implementation, no new data, no schemas, no pipelines, no agents, no dashboards, no report-generation systems, no architecture redesign, no manifest/base-state mutation, no PostgreSQL writes, no conversion, and no aggregation.
+
+## Completed GDP eligibility classification task
+
+42. TASK-042 — Deterministic GDP research/report eligibility classification artifact. Complete.
+
+TASK-042 produced `artifacts/reports/gdp-eligibility-classification-20260619.json`, `artifacts/reports/R-20260619-gdp-eligibility-classification-validation.md`, and `artifacts/tasks/TASK-042-gdp-eligibility-classification-artifact.md`. It created a compact downstream-consumable contract for current GDP evidence: WDI is eligible only for bounded WDI-only descriptive findings with governed provisional caveats; OECD `USD_EXC` and `USD_PPP` remain deferred/profile-specific; Eurostat `CP_MEUR` remains deferred/profile-specific with cross-source annual/current-USD comparison blocked by missing frequency/currency/scale policy. It recommends treating MacroForge as a reasonable v1 stopping point for current EIP needs unless a concrete downstream blocker appears. It preserved no new data, new sources, conversion, aggregation, reporting framework, dashboard, pipeline, agent, PostgreSQL write, canonical evidence mutation, accepted manifest mutation, or canonical observation mutation.
+
+## Completed trigger-gated MetaHarvest consultation implementation
+
+43. TASK-043 — Implement trigger-gated MetaHarvest consultation helper. Complete.
+
+TASK-043 implemented the approved Phase 1 trigger-gated MetaHarvest consultation helper at `tools/consult_metaharvest.py`, with versioned structured task classification, a Consultation Contract that only returns `consult`/`do_not_consult`, a separate Retrieval Contract that only runs after consultation is requested, bounded primary/keyword/adjacent retrieval, mandatory Authority note, confidence semantics, non-blocking failure behavior, tests, and minimal documentation at `docs/architecture/metaharvest-trigger-gated-consultation.md`. It preserved no startup consultation, no eager retrieval, no automatic adoption/task creation, no runtime/orchestration framework, no MetaHarvest authority, no MetaHarvest mutation, and unchanged behavior when no trigger matches.
+
+## Completed WDI operational hardening
+
+44. TASK-044 — Repair WDI isolated smoke workflow. Complete.
+
+TASK-044 resolved the first operational pre-freeze blocker from the operational capability validation report. The WDI-only isolated smoke now applies both `001_v0_schema_foundation.sql` and `003_canonical_domain_dimensions.sql` before loading/validation, matching the current WDI loader's canonical-domain schema requirements. It updated the WDI smoke tests and WDI runbook, preserved isolated temporary PostgreSQL execution and live `macro` refusal, and did not change WDI loader semantics, schemas, sources, reports, conversion, aggregation, frameworks, or model behavior.
+
+## Completed fixture-persistence operational hardening
+
+45. TASK-045 — Make OECD/Eurostat fixtures clean-clone safe. Complete.
+
+TASK-045 resolved the remaining operational pre-freeze blocker from the operational capability validation report. It updated `.gitignore` so generated `data/` artifacts remain ignored by default while the bounded OECD/Eurostat fixture evidence required for combined reconstruction is explicitly unignored and commit-eligible. It added a fixture-persistence test, preserved current loader paths and behavior, and did not fetch live data, add sources, change schemas/migrations, mutate canonical state, introduce frameworks, or write to live/default `macro`.

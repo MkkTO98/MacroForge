@@ -9,7 +9,7 @@ Operational runbooks for safe reproducible pipeline execution.
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- WDI runbook placeholder exists; implementation details pending TASK-005 through TASK-007.
+- WDI runbook documents the repaired TASK-044 isolated smoke workflow: unique temporary database, migrations `001` and `003`, double WDI load, validation, report write, and cleanup.
 
 ## Needs Attention
-- No folder-specific issues recorded.
+- Keep WDI smoke runs isolated; do not use live/default `macro` without explicit approval and fresh dry-run.

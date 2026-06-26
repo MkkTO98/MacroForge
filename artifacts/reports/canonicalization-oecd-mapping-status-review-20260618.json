@@ -1,0 +1,174 @@
+{
+  "artifact_id": "canonicalization-oecd-mapping-status-review-20260618",
+  "created_at_utc": "2026-06-18T22:30:01Z",
+  "purpose": "Bounded review of whether existing OECD GDP unit-basis evidence supports mapping status advancement, separate provisional treatments, or continued deferral.",
+  "scope": {
+    "mode": "review_artifact_only",
+    "source_evidence": "existing TASK-038, TASK-039, and TASK-040 artifacts only",
+    "approves_mappings": false,
+    "accepted_mapping_state_mutated": false,
+    "canonical_asset_manifest_mutated": false,
+    "new_sources_added": false,
+    "migrations_added": false,
+    "unit_or_currency_conversion_implemented": false,
+    "frequency_aggregation_implemented": false,
+    "report_integration_implemented": false,
+    "model_calls": "none",
+    "live_fetches": "none",
+    "database_writes": "none"
+  },
+  "input_artifacts": [
+    {
+      "path": "artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json",
+      "sha256": "0b3c4b09bad8cced64f95305a696bc748c92756e69e58ada32bf8d2d049266d8"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.md",
+      "sha256": "796937b77c4689a94acf4b0d47912972edb192cd909edd85b9ccb0d99c65bd7c"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json",
+      "sha256": "806c1c6e141b0b6d6ed52583fe712f501398107ce941125eb8f5cba8dbfd7937"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.md",
+      "sha256": "2302557032b46c166d8d6ab15002254f5ec4b9b7d2ee50ed33154fbb105ce5fc"
+    },
+    {
+      "path": "artifacts/decisions/DEC-018-minimal-ai-assisted-canonicalization-layer.md",
+      "sha256": "04618aebd3cb7055b60dd5196e2df4a9d073372ae3e8e5d33fbbdf88f9c30151"
+    },
+    {
+      "path": "artifacts/tasks/TASK-038-simulate-bounded-canonicalization-review-lifecycle.md",
+      "sha256": "ea3c53139beeed0c9f146d268c2278600b2973771ca94894252cab8a2ba4ac76"
+    },
+    {
+      "path": "artifacts/reports/canonicalization-review-lifecycle-20260614.json",
+      "sha256": "34b2b8882677478b92904fb64e5bed559f49970f008725fef49346ef63509f16"
+    }
+  ],
+  "governing_doctrine": [
+    {
+      "source": "DEC-018",
+      "constraint": "High-impact GDP mappings require review; confidence or provider-code match is routing metadata, not truth."
+    },
+    {
+      "source": "TASK-038 lifecycle validation",
+      "constraint": "OECD B1GQ remained deferred because USD_EXC and USD_PPP unit-basis caveats were material and report integration was deferred."
+    },
+    {
+      "source": "TASK-039 deferred advancement requirements",
+      "constraint": "Advancement requires a review-approved unit-basis policy distinguishing exchange-rate USD and PPP USD and documenting downstream report eligibility."
+    },
+    {
+      "source": "TASK-040 OECD unit-basis split",
+      "constraint": "Existing evidence now separates USD_EXC and USD_PPP basis candidates but does not approve accepted/provisional mapping status."
+    }
+  ],
+  "overall_conclusion": {
+    "status": "remain_deferred_with_separate_provisional_treatment_candidates",
+    "summary": "TASK-040 satisfies the evidentiary precondition that OECD USD_EXC and USD_PPP must be separated. It does not, by itself, supply the review-approved basis/report policy required to advance either candidate to governed provisional status. Both candidates should remain deferred today, while being treated as distinct future provisional-treatment candidates rather than one combined OECD GDP mapping.",
+    "supports_remaining_deferred": true,
+    "supports_separate_provisional_treatments_now": false,
+    "supports_future_separate_provisional_treatment_path": true,
+    "reason_not_approved": "No explicit review decision has selected exchange-rate-vs-PPP policy, report eligibility semantics, caveat representation in accepted/provisional state, or comparability relationship to WDI/current-USD outputs."
+  },
+  "treatments": [
+    {
+      "provider": "OECD_NAAG",
+      "provider_indicator_id": "B1GQ",
+      "provider_unit_code": "USD_EXC",
+      "basis": "exchange_rate",
+      "current_evidence_status": "basis_distinguished_by_TASK_040",
+      "recommended_mapping_status": "remain_deferred",
+      "future_treatment_candidate": "separate_governed_provisional_exchange_rate_usd_treatment",
+      "not_approved": true,
+      "auto_apply": false,
+      "comparability_implications": [
+        "USD_EXC is an exchange-rate current-USD basis and must not be merged with PPP-basis USD evidence.",
+        "It may be closer to WDI current-USD metadata than USD_PPP, but current evidence still does not prove report-safe comparability without an explicit policy and caveat model.",
+        "It should be evaluated as a basis-specific candidate, not as generic OECD GDP truth."
+      ],
+      "report_eligibility": {
+        "current_status": "not_eligible_for_comparable_gdp_reports",
+        "reason": "Report integration remains deferred; no accepted report policy says exchange-rate OECD values can enter comparable GDP outputs alongside WDI or PPP-basis values.",
+        "minimum_future_condition": "A review decision must define exchange-rate current-USD report semantics, required caveats, and whether outputs are same-basis comparable, side-by-side only, or excluded."
+      },
+      "remaining_uncertainty": [
+        "Whether current exchange-rate USD is acceptable as a provisional comparator to WDI current-USD metadata.",
+        "Whether OECD USD_EXC scale/metadata and coverage are sufficiently explicit for provisional report use.",
+        "How accepted/provisional state should encode basis caveats and report exclusion/eligibility."
+      ],
+      "minimum_future_evidence_required": [
+        "Review-approved exchange-rate basis policy for OECD B1GQ.",
+        "Evidence link showing USD_EXC unit metadata source and stable interpretation.",
+        "Explicit report-impact decision preserving no-conversion/no-aggregation boundaries.",
+        "State/manifest deltas only after review approval; no direct base-state mutation."
+      ]
+    },
+    {
+      "provider": "OECD_NAAG",
+      "provider_indicator_id": "B1GQ",
+      "provider_unit_code": "USD_PPP",
+      "basis": "ppp",
+      "current_evidence_status": "basis_distinguished_by_TASK_040",
+      "recommended_mapping_status": "remain_deferred",
+      "future_treatment_candidate": "separate_governed_provisional_ppp_usd_treatment",
+      "not_approved": true,
+      "auto_apply": false,
+      "comparability_implications": [
+        "USD_PPP is a PPP-basis current-USD profile and must not be compared as if it were exchange-rate current USD.",
+        "PPP-basis GDP may be useful for separate analytical views, but it requires a separate report treatment or canonical comparability profile.",
+        "Combining USD_PPP with USD_EXC/WDI current-USD outputs without labeling would create misleading cross-country/time comparisons."
+      ],
+      "report_eligibility": {
+        "current_status": "not_eligible_for_current_usd_exchange_rate_gdp_reports",
+        "reason": "Report integration remains deferred and PPP-basis semantics differ materially from exchange-rate current-USD semantics.",
+        "minimum_future_condition": "A review decision must define a PPP-specific report treatment or explicitly exclude PPP values from current-USD exchange-rate GDP outputs."
+      },
+      "remaining_uncertainty": [
+        "Whether MacroForge wants a separate PPP GDP canonical/report profile at this stage.",
+        "Whether PPP-basis evidence should become a distinct provisional treatment or remain excluded until a PPP-specific report exists.",
+        "How downstream reports should prevent accidental mixing of PPP and exchange-rate basis values."
+      ],
+      "minimum_future_evidence_required": [
+        "Review-approved PPP basis policy for OECD B1GQ.",
+        "Evidence link showing USD_PPP unit metadata source and stable interpretation.",
+        "Explicit decision on separate PPP report eligibility versus continued exclusion.",
+        "State/manifest deltas only after review approval; no direct base-state mutation."
+      ]
+    }
+  ],
+  "comparability_implications": [
+    "The existing evidence supports separating comparability profiles, not collapsing them into one OECD GDP mapping.",
+    "Exchange-rate USD and PPP USD must remain disjoint comparability groups unless a later policy explicitly models their relationship.",
+    "Basis distinction reduces ambiguity but does not resolve semantic acceptance for high-impact GDP mappings.",
+    "A future governed provisional path is plausible for each basis only as separate treatments with explicit caveats."
+  ],
+  "report_eligibility_implications": [
+    "No OECD B1GQ basis candidate is currently eligible for comparable GDP report integration from this review alone.",
+    "USD_EXC could become eligible for an exchange-rate/current-USD report only after a review-approved policy and explicit caveat/state representation.",
+    "USD_PPP should require either a PPP-specific report/profile or explicit exclusion from exchange-rate GDP reports.",
+    "Existing GDP reports should remain unchanged."
+  ],
+  "future_advancement_conditions": [
+    "Record a review decision that selects separate basis-specific treatment rather than one combined OECD mapping.",
+    "Define accepted/provisional state fields or caveat conventions sufficient to prevent mixing USD_EXC and USD_PPP outputs.",
+    "Define report eligibility policy for exchange-rate current-USD and PPP-basis GDP separately.",
+    "Re-run successor check gates preserving proposal existence, auto_apply=false, evidence links, caveat preservation, no conversion/aggregation, proposal immutability, allowed status, report-impact flag, and replay inputs.",
+    "Represent any movement as explicit state and manifest deltas before any future base-state or manifest mutation is considered."
+  ],
+  "checks": {
+    "usd_exc_evaluated": "pass",
+    "usd_ppp_evaluated": "pass",
+    "basis_profiles_remain_separate": "pass",
+    "supports_future_separate_treatment_path_without_current_approval": "pass",
+    "no_mapping_approval_claimed": "pass",
+    "no_accepted_state_mutation": "pass",
+    "no_manifest_mutation": "pass",
+    "no_conversion_or_aggregation": "pass",
+    "no_report_integration": "pass",
+    "minimum_future_evidence_recorded": "pass"
+  },
+  "recommended_next_action": "Create a future, separate review-decision task only if MacroForge is ready to choose basis-specific report eligibility policy; otherwise keep OECD B1GQ deferred with the two basis candidates available for consultation."
+}
