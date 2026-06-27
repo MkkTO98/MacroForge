@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 from pathlib import Path
 from typing import Any
 
 from macroforge.db_helpers import jsonb_literal, parse_pipe_counts, psql_scalar, run_psql_file, sql_literal, write_json_report
+from macroforge.observed_ingestion import build_eurostat_observed_package, canonical_attribute_hash
 
 SOURCE_CODE = "EUROSTAT_NAMQ_GDP"
 SOURCE_NAME = "Eurostat quarterly national accounts GDP"
@@ -24,16 +24,8 @@ def json_literal(value: Any) -> str:
     return jsonb_literal(value)
 
 
-def canonical_attribute_hash(attributes: dict[str, Any]) -> str:
-    canonical = json.dumps(attributes, sort_keys=True, separators=(",", ":"))
-    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
-
-
 def _release_key(normalized: dict[str, Any]) -> str:
-    raw_sha = normalized.get("raw_sha256", "unknown")
-    periods = sorted({str(row["period"]) for row in normalized["rows"]})
-    period_range = f"{periods[0]}-{periods[-1]}" if periods else "unknown"
-    return f"EUROSTAT_NAMQ_GDP:{normalized['provider_dataset_code']}:{period_range}:{raw_sha[:12]}"
+    return build_eurostat_observed_package(normalized).release_key
 
 
 def _quarter_start_month(quarter: int) -> int:
@@ -138,8 +130,9 @@ def build_load_sql(
     run_key: str = "eurostat-namq-smoke-20260604",
     as_of_date: str = DEFAULT_AS_OF_DATE,
 ) -> str:
-    provider_dataset_code = normalized["provider_dataset_code"]
-    release_key = _release_key(normalized)
+    package = build_eurostat_observed_package(normalized)
+    provider_dataset_code = package.provider_dataset_code
+    release_key = package.release_key
     metadata = {
         "access_method": normalized.get("access_method"),
         "content_type": normalized.get("content_type"),

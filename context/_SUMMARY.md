@@ -15,10 +15,10 @@ Curated project context, context policy, latest handoff, and compact source-of-t
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `latest_handoff.md` records the latest durable handoff; current execution should start from relocated project path `/home/mkkto/srv/EIP/projects/MacroForge`.
-- `context_policy.yaml` includes concise MacroForge doctrine for recurring effort reduction and deferring components that do not improve trust, reproducibility, maintainability, semantic correctness, or future effort reduction.
+- `latest_handoff.md` records implementation-driven development mode and Deterministic Change Verification as Verified after isolated PostgreSQL WDI/OECD/Eurostat package equivalence proof.
+- `context_policy.yaml` remains the context discipline policy; `CONSTITUTION.md` now carries the governing optimization objective.
 - Generated context bundles are task/model-target artifacts and should be regenerated when needed, not treated as mandatory startup context.
 
 ## Needs Attention
 - Keep raw exports out of normal context.
-- Fresh work should start from bounded recovery. No implementation task is open after TASK-039; future OECD/Eurostat mapping advancement should begin from `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json`.
+- Fresh work should start from bounded recovery. Current next transition is Deterministic Change Verification Verified -> Adopted, requiring the verified path to become required for relevant ingestion/package changes.

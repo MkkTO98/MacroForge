@@ -52,20 +52,18 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-043-implement-trigger-gated-metaharvest-consultation.md`
 - `TASK-044-repair-wdi-isolated-smoke-workflow.md`
 - `TASK-045-make-oecd-eurostat-fixtures-clean-clone-safe.md`
+- `TASK-046-extract-observed-common-ingestion-representation.md`
 - `TASK-PF-20260614-continuity-recovery-adoption.md`
 - `backlog.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- TASK-045 is complete and made the bounded OECD/Eurostat fixture evidence required for combined reconstruction unignored/commit-eligible while keeping generated `data/` artifacts ignored by default; see `TASK-045-make-oecd-eurostat-fixtures-clean-clone-safe.md`.
-- TASK-044 is complete and repaired the WDI-only isolated smoke workflow so it applies both `001_v0_schema_foundation.sql` and `003_canonical_domain_dimensions.sql` before loading/validation; see `TASK-044-repair-wdi-isolated-smoke-workflow.md`.
-- TASK-001 through TASK-045 are complete; TASK-031 was an Architecture-to-Reality remediation hygiene interruption and TASK-035 was a narrow ArchitectureHarvest integration interruption.
-- TASK-043 is complete and implemented the Phase 1 trigger-gated MetaHarvest consultation helper at `tools/consult_metaharvest.py`; it is advisory-only, scoped to task/governance classification, and preserves no startup consultation, no automatic adoption/task creation, no runtime/orchestration framework, no MetaHarvest authority, and no retrieval when no trigger matches.
-- TASK-040 implemented deterministic OECD unit-basis comparability split evidence for `USD_EXC` exchange-rate versus `USD_PPP` PPP candidates; see `TASK-040-implement-oecd-unit-basis-comparability-split.md`.
-- TASK-039 persisted concrete deferred mapping advancement requirements for OECD/Eurostat; see `TASK-039-persist-deferred-mapping-advancement-requirements.md`.
-- `TASK-PF-20260614-continuity-recovery-adoption.md` is complete and records operating-system adoption only.
+- TASK-001 through TASK-046 are complete.
+- `backlog.md` now records Deterministic Change Verification as Verified after isolated PostgreSQL WDI/OECD/Eurostat package equivalence proof; next transition is Verified -> Adopted.
+- Future shared infrastructure extraction should follow the Constitution sequence: discover repeated implementation, identify evidence, prove equivalence, extract shared contract, validate deterministically, then extract shared implementation.
+- Governance is complete/frozen for v1.1. The active ArchitectureHarvest trigger for implementation expected to become a reusable dependency of multiple future capabilities is `foundational_capability_extraction`.
 
 ## Needs Attention
-- No known operational pre-freeze blockers remain after TASK-044/TASK-045, but final v1 freeze should still run fresh full verification from the current worktree and ensure all commit-eligible fixture files are included in the final commit.
-- Future OECD/Eurostat mapping advancement work should start from TASK-039 requirements and preserve TASK-038/TASK-039 boundaries unless a new decision explicitly changes them: no model calls, prompt/provider setup, migrations, new sources, live fetches without approval, live `macro` writes, unit conversion, frequency aggregation, report integration, generalized metadata/source framework, provider-specific fact columns, accepted mapping auto-apply, direct lifecycle/base-state mutation, or git push.
-- `tools/consult_metaharvest.py` may be used only after a scoped task/user request is known; do not run it as startup behavior or treat its advisory output as MacroForge authority.
+- Before advancing Deterministic Change Verification to Adopted, require the verified path to become the required change-verification path for relevant ingestion/package changes.
+- Before foundational capability extraction, perform deep ArchitectureHarvest consultation using `foundational_capability_extraction`.
+- Dataset expansion should remain behind reusable diagnostics/replay infrastructure unless a concrete downstream blocker justifies earlier work.

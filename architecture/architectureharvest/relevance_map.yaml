@@ -3,13 +3,14 @@ kind: architectureharvest_relevance_map
 project_id: macroforge
 status: active
 staleness_status: active
-last_reviewed: 2026-06-08
+last_reviewed: 2026-06-27
 consult_required_during:
   - canonicalization_architecture_changes
   - source_contract_design_changes
   - lineage_or_validation_registry_changes
   - orchestration_or_runtime_adoption_decisions
   - generalized_ingestion_framework_decisions
+  - foundational_capability_extraction
 active_recommendations:
   - id: MF-AH-REV-001
     status: adopted_narrowly

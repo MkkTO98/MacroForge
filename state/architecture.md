@@ -2,34 +2,49 @@
 
 ## Current architecture
 
-MacroForge is a ProjectForge-managed data/research project whose governing purpose is to reduce recurring effort in trusted macroeconomic data work for investment-relevant research. The project OS is file-backed and summary-first. Domain implementation currently combines source-specific WDI/OECD/Eurostat evidence paths, a canonical-domain PostgreSQL substrate, deterministic file-backed canonicalization state/proposal mechanics, bounded review-lifecycle artifacts, and OECD unit-basis/status review evidence.
+MacroForge is a ProjectForge-managed data/research project governed by Strategic Constitution v1.1. Its strategic asset is reusable deterministic ingestion capability for transforming heterogeneous public economic evidence into canonical, auditable observations. PostgreSQL databases and datasets are outputs, not the primary asset.
 
-Trusted databases and datasets are outputs of MacroForge, not the whole project. Trust requires source evidence, reproducibility evidence, lineage, quality checks, canonical mapping status, validation, replay/rerun paths, and human review for high-impact economic meaning.
+The implementation currently combines source-specific WDI/OECD/Eurostat evidence paths, `ObservedIngestionPackage` v1 as a narrow shared handoff contract, a canonical-domain PostgreSQL substrate, deterministic file-backed canonicalization state/proposal mechanics, bounded review-lifecycle artifacts, and OECD unit-basis/status review evidence.
 
-## Target v1 flow
+Trust requires source evidence, reproducibility evidence, lineage, quality checks, canonical mapping status, validation, replay/rerun paths, and human review for high-impact economic meaning.
 
-WDI source payload -> immutable raw artifact + checksum -> staging observation rows -> curated dimensions/facts -> lineage/quality checks -> query/report output.
+## Current ingestion flow
 
-## Database schemas
+```text
+Source-specific acquisition
+-> Source-specific normalization
+-> ObservedIngestionPackage v1
+-> Existing source-specific staging/canonical load SQL
+-> Validation
+-> Canonical PostgreSQL
+```
 
-TASK-004 created the first raw SQL migration for:
+## Strategic extraction doctrine
 
-- `meta`
-- `staging`
-- `curated`
+Shared deterministic infrastructure should progressively own post-observed-boundary mechanics only when evidence shows convergence. A repeated behavior becomes eligible for shared infrastructure only when the contract, algorithm, and implementation have converged. Textual similarity is insufficient.
 
-`mart` remains documented for later analytical/reporting use.
+Shared infrastructure must not depend on source-specific conditionals such as `if source == WDI`. Source-specific behavior belongs in adapters that produce the shared contract.
+
+Before foundational capability extraction, increase ArchitectureHarvest consultation intensity to identify mature patterns, failure modes, blind spots, alternatives, and reasons not to extract. The active trigger is `foundational_capability_extraction`, applying when proposed implementation is expected to become a reusable dependency of multiple future capabilities.
 
 ## Current implementation state
 
-MacroForge implementation is currently capability-complete through TASK-045 OECD/Eurostat fixture-persistence hardening. No open implementation task is active.
+MacroForge implementation is capability-complete through TASK-046 observed ingestion representation extraction. No open implementation task is active.
 
 ### Source-specific substrate
 
-- WDI has raw evidence, loading, validation, isolated smoke checks repaired for the current canonical-domain schema state, and first vertical-slice proof.
-- OECD/SDMX has recorded/live-smoke evidence, codelist/label metadata, staging observation support, loader behavior, bounded comparability artifacts, and unignored bounded fixture files for clean-clone reconstruction.
-- Eurostat `namq_10_gdp` has recorded fixture evidence, staging observation support, loader behavior, provider mappings/dictionaries, isolated load smoke evidence, and unignored bounded fixture files for clean-clone reconstruction.
-- Source-specific-first remains the governing posture; generalized ingestion/source frameworks remain deferred until repeated proven duplication justifies them.
+- WDI has raw evidence, loading, validation, isolated smoke checks repaired for the current canonical-domain schema state, first vertical-slice proof, and an `ObservedIngestionPackage` adapter.
+- OECD/SDMX has recorded/live-smoke evidence, codelist/label metadata, staging observation support, loader behavior, bounded comparability artifacts, unignored bounded fixture files, and an `ObservedIngestionPackage` adapter.
+- Eurostat `namq_10_gdp` has recorded fixture evidence, staging observation support, loader behavior, provider mappings/dictionaries, isolated load smoke evidence, unignored bounded fixture files, and an `ObservedIngestionPackage` adapter.
+- Source-specific acquisition, parsing, source metadata, and staging remain source-specific.
+
+### ObservedIngestionPackage v1
+
+`ObservedIngestionPackage` v1 is documented in `docs/architecture/observed-ingestion-representation.md` and implemented in `src/macroforge/observed_ingestion.py`.
+
+It is a public internal architectural contract extracted from current WDI/OECD/Eurostat behavior. It contains source identity, provider dataset identity, source-specific release key, raw evidence, input filters, row counts, and canonical-load-ready observations. It deliberately leaves source-specific acquisition, normalized artifacts, staging schemas, provider mappings, lineage, validation, canonicalization review, conversion/aggregation, and AI/model behavior outside the contract.
+
+Changes to this representation should be treated as contract evolution requiring equivalence verification, not ordinary refactoring.
 
 ### Canonical-domain substrate
 
@@ -41,42 +56,42 @@ MacroForge implementation is currently capability-complete through TASK-045 OECD
 
 ### Canonicalization lifecycle
 
-- DEC-018 accepts a minimal AI-assisted canonicalization/comparability design: provider indicators are evidence, automated output is proposal state, accepted/provisional mapping state gates curated/report use, and confidence is review-routing metadata rather than truth.
-- Implemented lifecycle mechanics remain deterministic and file-backed. They cover provider evidence, proposal state, unit/comparability profiles, review routing, supersession, no-auto-apply mapping proposals, WDI unit metadata enrichment, and bounded proposal -> review -> accepted/provisional validation.
+- DEC-018 accepts a minimal AI-assisted canonicalization/comparability design conceptually; implemented lifecycle mechanics remain deterministic and file-backed.
 - The canonical asset manifest exists as a narrow file-backed pointer registry in `artifacts/manifests/canonical_assets.json`.
-
-### Current governance helper
-
-- TASK-043 added `tools/consult_metaharvest.py` as a bounded preflight helper for scoped governance/design tasks. It classifies task text with `task_classification_version: 1`, applies the existing `architecture/architectureharvest/relevance_map.yaml` through a Consultation Contract, and only then runs a separate Retrieval Contract for compact advisory MetaHarvest context.
-- The helper is advisory-only: no startup consultation, no routine-task retrieval, no automatic adoption, no task creation, no MetaHarvest authority, no runtime/orchestration adoption, and non-blocking failure if MetaHarvest is unavailable.
-
-### Current review status
-
-- WDI GDP evidence has a governed provisional lifecycle outcome from bounded review evidence.
-- OECD and Eurostat GDP mappings remain deferred unless future review decisions explicitly advance them.
-- OECD `B1GQ` evidence is now split into `USD_EXC` exchange-rate and `USD_PPP` PPP basis candidates, but the bounded mapping-status review keeps both deferred and not report-eligible from that review alone.
-- Future OECD advancement starts from `artifacts/reports/canonicalization-oecd-mapping-status-review-20260618.json` plus `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.json`.
-- Future Eurostat advancement starts from `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.json`.
-- TASK-041 found MacroForge partially research-ready: same-source descriptive and boundary findings were supported, while trustworthy cross-source GDP research remained blocked by missing deterministic eligibility/comparability classification and absent conversion/aggregation policy.
-- TASK-042 created `artifacts/reports/gdp-eligibility-classification-20260619.json`, the compact deterministic eligibility contract for current GDP evidence. WDI is eligible only for bounded WDI-only descriptive findings with governed provisional caveats; OECD `USD_EXC`/`USD_PPP` remain deferred and profile-specific; Eurostat `CP_MEUR` remains deferred/profile-specific with cross-source annual/current-USD use blocked by missing frequency/currency/scale policy.
+- WDI GDP evidence has a governed provisional lifecycle outcome; OECD and Eurostat GDP mappings remain deferred unless future review decisions explicitly advance them.
 
 ## Current architecture decisions
 
-DEC-005 keeps the immediate architecture intentionally minimal: raw SQL migrations, PostgreSQL, psql/Python loaders, CLI runbooks, and tests. Alembic, SQLAlchemy, orchestration platforms, Docker, and broad source frameworks remain deferred until real schema evolution, multiple manual source pipelines, or repeated non-semantic duplication prove that abstraction would reduce recurring effort without weakening trust.
+DEC-005 through DEC-021 remain as recorded. Strategic Constitution v1.1 now governs optimization. Governance is complete/frozen for v1.1; Deterministic Change Verification is Verified through isolated PostgreSQL end-to-end WDI/OECD/Eurostat package equivalence proof.
 
-DEC-006 through DEC-021 remain as recorded. DEC-018 governs canonicalization/comparability design; DEC-019 selected the tiny deterministic proposal workflow; DEC-020 accepted the narrow canonical asset manifest registry; DEC-021 selected bounded WDI unit metadata enrichment. TASK-042 provides a file-backed eligibility classification artifact but does not accept production canonicalization persistence, model use, report integration, direct base-state mutation, direct manifest mutation, conversion, aggregation, or OECD mapping advancement.
+## Capability maturity
+
+Lifecycle: Discovered -> Specified -> Verified -> Adopted -> Shared -> Stable -> Mature.
+
+- Observed Boundary and Contract Stability: Specified. Target: Adopted, then Stable. Next transition: Specified -> Verified.
+- Deterministic Change Verification: Verified. Target: Stable. Next transition: Verified -> Adopted.
+- Contract Validation and Drift Detection: Discovered. Target: Verified. Next transition: Discovered -> Specified.
+- Ingestion Diagnostics and Recovery Evidence: Discovered. Target: Verified. Next transition: Discovered -> Specified.
+- Shared Post-Boundary Infrastructure Extraction: Discovered. Target: Verified readiness, not immediate Shared. Next transition: Discovered -> Specified after change-verification evidence and consultation.
+- Canonicalization Governance and Mapping Advancement: Stable for file-backed lifecycle; Discovered/Specified for OECD/Eurostat advancement. Target: preserve Stable lifecycle; verify targeted advancement only when needed.
+- Knowledge-Accumulating Source Expansion: Discovered. Target: Specified only after verification/diagnostics capabilities mature.
 
 ## Deferred areas
 
 The following remain deferred unless a new accepted decision changes scope:
 
+- new datasets or dataset deepening;
 - production PostgreSQL persistence for canonicalization state;
 - AI/model calls for canonicalization proposals;
 - report integration of lifecycle-derived mappings;
 - unit/currency conversion or frequency aggregation;
-- generalized ingestion, metadata, source, orchestration, dbt/Dagster, Alembic, SQLAlchemy, Docker, or mart-layer expansion;
+- generalized ingestion, plugin/source, metadata, orchestration, dbt/Dagster, Alembic, SQLAlchemy, Docker, or mart-layer expansion;
 - direct mutation of accepted/base mapping state or canonical manifests without explicit review artifact approval.
 
 ## Next architecture work
 
-No next architecture task is open. MacroForge should stop expanding after TASK-042 unless a downstream consumer produces a concrete evidence-backed blocker. Any future architecture or canonicalization task should start from current recovery anchors rather than re-reading full task chronology: `state/active_goal.md`, `artifacts/reports/_SUMMARY.md`, `artifacts/tasks/backlog.md`, the GDP eligibility classification artifact, and the latest OECD/Eurostat canonicalization reports named above.
+No next architecture task is open. Governance is complete for v1.1 and frozen pending implementation-driven discoveries. The final freeze report is `artifacts/reports/R-20260627-final-governance-refinement-and-freeze.md`.
+
+Recommended next transition: Deterministic Change Verification Verified -> Adopted. Do this by making the verified end-to-end path the required change-verification path for relevant ingestion/package changes; do not claim Shared until repeated implementation demonstrates extraction is justified and `foundational_capability_extraction` consultation has been performed if required.
+
+Future architectural reports should only be produced when implementation uncovers uncertainty that cannot be resolved from the Constitution, capability graph, contracts, dependency graph, existing reports, or deterministic verification outputs.

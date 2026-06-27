@@ -1,44 +1,48 @@
 # Latest Handoff — MacroForge
 
-Updated: 2026-06-26T18:52:28Z
+Updated: 2026-06-27T05:55:06Z
 
 ## Current status
 
-MacroForge v1 is freeze-ready after TASK-045, and the post-freeze v1.1 architectural assessment is complete.
+MacroForge is in implementation-driven development. Governance is complete/frozen for v1.1. Future architectural reports should only be created when implementation exposes uncertainty that cannot be resolved from the Constitution, contracts, capability model, dependency graph, or deterministic verification evidence.
 
-Repository push completed to GitHub remote `origin` on `main`:
+No active task artifact is open for the latest capability transition; the work is tracked through the capability maturity model, state files, backlog, and this handoff.
+
+## Completed transition
+
+Capability: Deterministic Change Verification
+
+Completed maturity transition: Specified -> Verified
+
+Evidence: `src/macroforge/deterministic_change_verification.py` reconstructs loaded observed packages from isolated PostgreSQL staging/canonical outputs, and `tests/test_deterministic_change_verification.py` proves deterministic equivalence after real WDI/OECD/Eurostat loader execution.
+
+Supported sources verified: WDI, OECD_NAAG, EUROSTAT_NAMQ_GDP.
+
+Not claimed: Adopted, Shared, Stable, or Mature.
+
+## Development mode
 
 ```text
-5381c88 chore: freeze MacroForge v1 and assess v1.1
-origin: git@github.com:MkkTO98/MacroForge.git
-push: b8edd3b..5381c88 main -> main
+Implement capability transition -> Verify deterministically -> Update capability maturity -> Select next capability transition -> Implement
 ```
 
-No implementation task is open. The recommended next implementation task, if explicitly opened by the user, is:
+Next target: Deterministic Change Verification Verified -> Adopted.
 
-```text
-TASK-046 — Define and validate NormalizedObservationPackage v1 for existing WDI/OECD/Eurostat evidence
-```
+Focus: make the verified end-to-end path the required change-verification path for relevant ingestion/package changes before claiming Adopted.
 
-## Completed in this closeout window
+## Context used
 
-- Completed TASK-044 WDI isolated smoke repair.
-- Completed TASK-045 OECD/Eurostat clean-clone fixture persistence hardening.
-- Completed the post-freeze v1.1 architectural assessment.
-- Committed and pushed MacroForge to GitHub.
+`recovery/continuity_framework.md`, startup state files, capability maturity model, current git status, and bounded recovery output.
 
-## Main artifacts
+## Key files changed
 
-- `artifacts/tasks/TASK-044-repair-wdi-isolated-smoke-workflow.md`
-- `artifacts/tasks/TASK-045-make-oecd-eurostat-fixtures-clean-clone-safe.md`
-- `artifacts/reports/R-20260626-post-freeze-v11-architectural-assessment.md`
-- `tools/consult_metaharvest.py`
-- `tests/test_consult_metaharvest.py`
-- `tests/test_fixture_persistence.py`
-- `src/macroforge/wdi_smoke.py`
-- `.gitignore`
+Implementation/tests: observed ingestion, deterministic change verification, WDI/OECD/Eurostat loaders, and matching tests.
 
-## Verification run
+State/continuity: Constitution, capability maturity model, observed-ingestion contract doc, TASK-046 artifact, backlog, state files, summaries, and governance reports.
+
+## Verification
+
+Latest verification before push:
 
 ```text
 git diff --check
@@ -48,17 +52,25 @@ python3 tools/check_coherence.py --project .
 coherence: 0 block(s), 0 warning(s)
 
 uvx --from pytest --with pyyaml pytest tests -q
-84 passed in 5.15s
+94 passed in 6.68s
 ```
 
-Generated report diffs from test execution were restored for:
+Pytest changed only isolated temporary database identifiers in deterministic report JSONs; those report JSONs were restored. Final post-restore check:
 
-- `artifacts/reports/canonical-gdp-snapshot-20260604.json`
-- `artifacts/reports/combined-source-canonical-smoke-20260604.json`
+```text
+git diff --check
+<no output; exit 0>
 
-## Current recommendation
+python3 tools/check_coherence.py --project .
+coherence: 0 block(s), 0 warning(s)
 
-Do not add or deepen datasets next. Refactor the emerged ingestion contract first. Start with TASK-046 only if the user explicitly opens v1.1 implementation work.
+git diff -- artifacts/reports/canonical-gdp-snapshot-20260604.json artifacts/reports/combined-source-canonical-smoke-20260604.json
+<no output; exit 0>
+```
+
+## Blockers / open questions
+
+None.
 
 ## Resume command
 

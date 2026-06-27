@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 from pathlib import Path
 from typing import Any
 
 from macroforge.db_helpers import jsonb_literal, parse_pipe_counts, psql_scalar, run_psql_file, sql_literal, write_json_report
+from macroforge.observed_ingestion import build_oecd_observed_package, canonical_attribute_hash
 
 SOURCE_CODE = "OECD_NAAG"
 SOURCE_NAME = "OECD annual national accounts / NAAG Chapter 1 GDP dataflow"
@@ -19,17 +19,8 @@ def json_literal(value: Any) -> str:
     return jsonb_literal(value)
 
 
-def canonical_attribute_hash(attributes: dict[str, Any]) -> str:
-    canonical = json.dumps(attributes, sort_keys=True, separators=(",", ":"))
-    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
-
-
 def _release_key(normalized: dict[str, Any]) -> str:
-    provider_dataset_code = normalized["provider_dataset_code"]
-    periods = sorted({str(row["period"]) for row in normalized["rows"]})
-    period_range = f"{periods[0]}-{periods[-1]}" if periods else "unknown"
-    raw_sha = normalized.get("raw_metadata", {}).get("sha256", "unknown")
-    return f"OECD_NAAG:{provider_dataset_code}:{period_range}:{raw_sha[:12]}"
+    return build_oecd_observed_package(normalized).release_key
 
 
 def _observation_status(attributes: dict[str, Any], value: Any) -> str:
@@ -56,13 +47,14 @@ def build_load_sql(
     run_key: str = "oecd-sdmx-smoke-20260603",
     as_of_date: str = DEFAULT_AS_OF_DATE,
 ) -> str:
+    package = build_oecd_observed_package(normalized)
     rows = normalized["rows"]
-    release_key = _release_key(normalized)
-    provider_dataset_code = normalized["provider_dataset_code"]
+    release_key = package.release_key
+    provider_dataset_code = package.provider_dataset_code
     raw_metadata = normalized.get("raw_metadata", {})
-    source_url = raw_metadata.get("endpoint")
-    raw_artifact_path = raw_metadata.get("raw_artifact_path")
-    raw_sha256 = raw_metadata.get("sha256")
+    source_url = package.raw_evidence["source_url"]
+    raw_artifact_path = package.raw_evidence["raw_artifact_path"]
+    raw_sha256 = package.raw_evidence["raw_sha256"]
     metadata = {
         "filters": normalized.get("filters"),
         "raw_metadata": raw_metadata,
@@ -71,25 +63,24 @@ def build_load_sql(
     }
 
     values = []
-    for row in rows:
-        attributes = dict(row.get("attributes") or {})
-        series_dimensions = dict(row.get("source_payload", {}).get("series_dimensions") or {})
+    for observation in package.observations:
+        series_dimensions = dict(observation.source_payload.get("series_dimensions") or {})
         values.append(
             "(" + ", ".join(
                 [
-                    sql_literal(row["provider_dataset_code"]),
-                    sql_literal(row["indicator_code"]),
-                    sql_literal(row["territory_code"]),
-                    sql_literal(int(row["period"])),
-                    sql_literal(row["frequency"]),
-                    sql_literal(row["unit"]),
-                    sql_literal(row.get("value")),
-                    sql_literal(_observation_status(attributes, row.get("value"))),
-                    sql_literal(_decimal_precision(attributes)),
-                    json_literal(attributes),
+                    sql_literal(provider_dataset_code),
+                    sql_literal(observation.provider_indicator_code),
+                    sql_literal(observation.provider_territory_code),
+                    sql_literal(observation.period_year),
+                    sql_literal(observation.frequency),
+                    sql_literal(observation.unit_code),
+                    sql_literal(observation.value),
+                    sql_literal(observation.observation_status),
+                    sql_literal(observation.decimal_precision),
+                    json_literal(observation.attributes),
                     json_literal(series_dimensions),
-                    json_literal(row.get("source_payload", {})),
-                    sql_literal(canonical_attribute_hash(attributes)),
+                    json_literal(observation.source_payload),
+                    sql_literal(observation.attribute_hash),
                 ]
             ) + ")"
         )

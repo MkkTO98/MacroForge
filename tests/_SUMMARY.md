@@ -1,7 +1,7 @@
 # Folder Summary: tests
 
 ## Purpose
-This folder is part of the ProjectForge file-backed operating system for `tests`.
+Tests for MacroForge source evidence, loaders, database schema, canonical-domain behavior, canonicalization helpers, reports, fixture persistence, and ProjectForge integration.
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
@@ -12,9 +12,12 @@ This folder is part of the ProjectForge file-backed operating system for `tests`
 - `test_canonicalization_proposal_workflow.py`
 - `test_canonicalization_state.py`
 - `test_combined_source_smoke.py`
+- `test_consult_metaharvest.py`
 - `test_db_helpers.py`
+- `test_deterministic_change_verification.py`
 - `test_eurostat_namq_loader.py`
 - `test_fixture_persistence.py`
+- `test_observed_ingestion.py`
 - `test_oecd_sdmx.py`
 - `test_oecd_sdmx_codelists.py`
 - `test_oecd_sdmx_loader.py`
@@ -27,11 +30,14 @@ This folder is part of the ProjectForge file-backed operating system for `tests`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `test_fixture_persistence.py` covers TASK-045's clean-clone fixture-persistence guard: bounded OECD/Eurostat fixture files must exist and must not be ignored by git.
-- `test_canonicalization_proposal_workflow.py` covers TASK-034's deterministic proposal workflow and TASK-037's WDI unit metadata enrichment: provider-evidence-derived proposal generation, proposal/accepted-state separation, review routing, WDI unknown-unit caveat reduction through fixture metadata evidence, non-WDI unchanged behavior, annual/quarterly non-aggregation, no unit conversion, no-auto-apply mapping update proposals, and deterministic audit writing.
-- `test_architectureharvest_integration.py` covers TASK-035's ArchitectureHarvest placeholder retrofit and canonical asset manifest registry shape/path/provider-truth boundaries.
-- `test_canonicalization_state.py` covers TASK-032's deterministic canonicalization state foundation: proposal-vs-accepted-state separation, unit comparability caveats, annual/quarterly non-aggregation, high-impact review routing, supersession lineage, and deterministic audit writing.
-- `test_canonical_gdp_snapshot.py` covers TASK-028 isolated canonical report generation, canonical/meta-only SQL boundary, deterministic JSON/Markdown writers, and real PostgreSQL report output.
+- `test_observed_ingestion.py` covers `ObservedIngestionPackage` v1 WDI/OECD/Eurostat semantics plus deterministic package fingerprinting, equivalent package comparison, changed-observation diagnostics, and anti-framework constraints.
+- `test_deterministic_change_verification.py` proves the Specified -> Verified transition by loading WDI/OECD/Eurostat into isolated PostgreSQL, reconstructing observed packages from staging/canonical outputs, and comparing them with expected fixture-backed packages.
+- WDI/OECD/Eurostat loader tests preserve source-specific SQL/staging/provider mapping/lineage/quality behavior while loaders consume the extracted representation.
+- `test_combined_source_smoke.py` verifies combined isolated PostgreSQL behavior for all supported sources.
+- `test_fixture_persistence.py` covers TASK-045's clean-clone fixture-persistence guard.
+- `test_consult_metaharvest.py` covers trigger-gated MetaHarvest consultation, including the v2 `foundational_capability_extraction` trigger and diagnostic-only replay non-trigger behavior.
+- Canonicalization tests cover deterministic file-backed proposal/review mechanics and remain separate from ingestion runtime.
 
 ## Needs Attention
-- Preserve fixture-backed and isolated-PostgreSQL TDD coverage if OECD/SDMX, Eurostat, combined-source validation, canonical report generation, canonicalization state mechanics, proposal workflow mechanics, or WDI metadata enrichment are later broadened.
+- Any future `ObservedIngestionPackage` contract evolution must run `test_observed_ingestion.py`, relevant loader tests, combined-source smoke tests, and full pytest.
+- Preserve fixture-backed and isolated-PostgreSQL coverage if OECD/SDMX, Eurostat, combined-source validation, canonical report generation, canonicalization state mechanics, proposal workflow mechanics, or WDI metadata enrichment are later broadened.

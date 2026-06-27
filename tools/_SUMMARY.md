@@ -32,7 +32,7 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `tools/consult_metaharvest.py` implements the Phase 1 trigger-gated MetaHarvest consultation preflight helper. It is advisory-only and runs only for scoped task/governance classification, with versioned structured classification, separate Consultation/Retrieval Contracts, bounded retrieval, non-blocking failure, and mandatory Authority note.
+- `tools/consult_metaharvest.py` implements the trigger-gated MetaHarvest consultation preflight helper. It is advisory-only and runs only for scoped task/governance classification, with versioned structured classification, separate Consultation/Retrieval Contracts, bounded retrieval, non-blocking failure, and mandatory Authority note. Classification v2 includes `foundational_capability_extraction` for proposed implementation expected to become a reusable dependency of multiple future capabilities.
 - `tools/recover_session.py` provides bounded fresh-session recovery; `tools/check_coherence.py` now treats the continuity framework files as generated-project requirements.
 
 ## Needs Attention

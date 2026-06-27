@@ -6,14 +6,13 @@ from pathlib import Path
 from typing import Any
 
 from macroforge.db_helpers import jsonb_literal, parse_pipe_counts, psql_scalar, run_psql_file, sql_literal, write_json_report
+from macroforge.observed_ingestion import EMPTY_ATTRIBUTE_HASH, UNKNOWN_UNIT_CODE, build_wdi_observed_package
 
 SOURCE_CODE = "WDI"
 SOURCE_NAME = "World Bank World Development Indicators"
 DEFAULT_PROVIDER_DATASET = "WDI"
 DEFAULT_PIPELINE_NAME = "wdi_smoke_slice"
-UNKNOWN_UNIT_CODE = "unknown"
 UNKNOWN_UNIT_NAME = "Unknown / source unspecified"
-EMPTY_ATTRIBUTE_HASH = "empty"
 
 
 def json_literal(value: Any) -> str:
@@ -21,18 +20,16 @@ def json_literal(value: Any) -> str:
 
 
 def _release_key(normalized: dict[str, Any]) -> str:
-    last_updated = None
-    if normalized.get("raw_artifacts"):
-        last_updated = normalized["raw_artifacts"][0].get("source_metadata", {}).get("lastupdated")
-    return f"WDI:{last_updated or 'unknown'}:{normalized.get('date_range', 'unknown')}"
+    return build_wdi_observed_package(normalized).release_key
 
 
 def build_load_sql(normalized: dict[str, Any], *, run_key: str = "wdi-smoke-20260602") -> str:
+    package = build_wdi_observed_package(normalized)
     rows = normalized["rows"]
-    release_key = _release_key(normalized)
-    source_url = "; ".join(a["url"] for a in normalized.get("raw_artifacts", []))
-    raw_sha256 = ";".join(a["sha256"] for a in normalized.get("raw_artifacts", []))
-    raw_artifact_path = normalized.get("support_bundle")
+    release_key = package.release_key
+    source_url = package.raw_evidence["source_url"]
+    raw_sha256 = package.raw_evidence["raw_sha256"]
+    raw_artifact_path = package.raw_evidence["raw_artifact_path"]
     metadata = {
         "countries": normalized.get("countries"),
         "indicators": normalized.get("indicators"),
@@ -41,22 +38,20 @@ def build_load_sql(normalized: dict[str, Any], *, run_key: str = "wdi-smoke-2026
     }
 
     values = []
-    for row in rows:
-        unit_code = row.get("unit") or UNKNOWN_UNIT_CODE
-        observation_status = "missing" if row.get("value") is None else "observed"
+    for observation in package.observations:
         values.append(
             "(" + ", ".join(
                 [
-                    sql_literal(row["countryiso3code"]),
-                    sql_literal(row.get("country_name")),
-                    sql_literal(row["indicator_id"]),
-                    sql_literal(row.get("indicator_name")),
-                    sql_literal(int(row["date"])),
-                    sql_literal(row.get("value")),
-                    sql_literal(unit_code),
-                    sql_literal(row.get("decimal")),
-                    json_literal(row),
-                    sql_literal(observation_status),
+                    sql_literal(observation.provider_territory_code),
+                    sql_literal(observation.provider_territory_label),
+                    sql_literal(observation.provider_indicator_code),
+                    sql_literal(observation.provider_indicator_label),
+                    sql_literal(observation.period_year),
+                    sql_literal(observation.value),
+                    sql_literal(observation.unit_code),
+                    sql_literal(observation.decimal_precision),
+                    json_literal(observation.source_payload),
+                    sql_literal(observation.observation_status),
                 ]
             ) + ")"
         )

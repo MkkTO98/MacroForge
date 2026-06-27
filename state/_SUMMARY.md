@@ -1,7 +1,7 @@
 # Folder Summary: state
 
 ## Purpose
-This folder is part of the ProjectForge file-backed operating system for `state`.
+Current project state files: active goal, architecture posture, project state, issues, lessons, and recent changes.
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
@@ -15,10 +15,10 @@ This folder is part of the ProjectForge file-backed operating system for `state`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- Doctrine alignment is complete: MacroForge exists to progressively reduce recurring effort required to build, maintain, validate, canonicalize, and use trusted macroeconomic data for investment-relevant research.
-- TASK-038 is complete. State now points to the recommended next bounded task: persist deferred mapping advancement requirements from TASK-038.
-- `TASK-PF-20260614-continuity-recovery-adoption.md` records ProjectForge continuity/recovery adoption; fresh sessions can run `python3 tools/recover_session.py --project . --json` for bounded recovery.
+- `active_goal.md` is now compact and identifies only the single active capability transition.
+- `project_state.md` and `architecture.md` record implementation-driven development mode and Deterministic Change Verification as Verified after isolated PostgreSQL WDI/OECD/Eurostat package equivalence proof.
+- TASK-046 is complete and `ObservedIngestionPackage` v1 is a public internal contract.
 
 ## Needs Attention
-- Await user approval before creating or starting the next bounded task.
-- Recommended next task should persist TASK-038 deferred mapping rationale, missing evidence, semantic blockers, minimum advancement conditions, and evidence/replay pointers; do not enrich metadata, redesign lifecycle, add models, conversion/aggregation, report integration, or canonicalization logic without separate approval.
+- Future tasks should be evaluated by reduction in deterministic engineering, human effort, LLM reasoning, and uncertainty; confidence increase; knowledge accumulated; leverage; complexity; and maintenance burden.
+- Perform deep ArchitectureHarvest consultation before foundational capability extraction using the active `foundational_capability_extraction` trigger.

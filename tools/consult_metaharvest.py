@@ -21,7 +21,7 @@ try:
 except ModuleNotFoundError:  # pragma: no cover - fallback for minimal stdlib use
     yaml = None
 
-CLASSIFICATION_VERSION = 1
+CLASSIFICATION_VERSION = 2
 DEFAULT_METAHARVEST_ROOT = Path("/home/mkkto/srv/EIP/projects/MetaHarvest")
 RELEVANCE_MAP_RELATIVE = Path("architecture/architectureharvest/relevance_map.yaml")
 AUTHORITY_NOTE = (
@@ -135,6 +135,9 @@ def classify_task_text(text: str) -> TaskClassification:
         "schema",
         "model evolution",
         "adoption",
+        "capability extraction",
+        "reusable dependency",
+        "shared infrastructure",
     ]
     negated_semantic_change = any(
         phrase in lowered
@@ -166,6 +169,26 @@ def classify_task_text(text: str) -> TaskClassification:
     lineage_terms = ["lineage", "validation registry", "check-contract", "check contract", "replay evidence"]
     runtime_terms = ["dagster", "dbt", "airflow", "prefect", "openmetadata", "orchestration", "runtime", "scheduler"]
     framework_terms = ["generalized ingestion", "plugin system", "shared source abstraction", "ingestion framework"]
+    foundational_capability_terms = [
+        "foundational capability extraction",
+        "capability extraction",
+        "reusable dependency of multiple future capabilities",
+        "reusable dependency for multiple future capabilities",
+        "reusable dependency across capabilities",
+        "shared deterministic infrastructure",
+        "foundational shared infrastructure",
+        "shared validation infrastructure",
+        "shared replay infrastructure",
+        "deterministic replay infrastructure",
+        "shared diagnostics infrastructure",
+        "shared canonical loading infrastructure",
+        "canonical load helper extraction",
+        "canonical upsert helper extraction",
+        "shared lineage infrastructure",
+        "shared quality-check infrastructure",
+        "extracted from multiple implementations",
+        "post-observed-boundary shared infrastructure",
+    ]
     governance_terms = ["governance", "decision", "authority", "policy", "review lifecycle"]
     architecture_terms = ["architecture", "subsystem boundary", "operating model", "design report"]
     cross_project_terms = ["metaharvest", "projectforge", "cross-project", "project boundary"]
@@ -185,6 +208,9 @@ def classify_task_text(text: str) -> TaskClassification:
     if any(term in lowered for term in framework_terms):
         add_category("architecture_modification")
         add_trigger("generalized_ingestion_framework_decisions")
+    if any(term in lowered for term in foundational_capability_terms):
+        add_category("architecture_modification")
+        add_trigger("foundational_capability_extraction")
     if any(term in lowered for term in governance_terms):
         add_category("governance_decision")
     if any(term in lowered for term in architecture_terms):
@@ -283,6 +309,12 @@ QUERY_MAPPING: list[tuple[set[str], str, str, list[str]]] = [
         ["metadata_catalog_lineage_governance"],
     ),
     (
+        {"architecture_modification", "foundational_capability_extraction"},
+        "transformation_lineage_asset_orchestration",
+        "shared deterministic infrastructure",
+        ["metadata_catalog_lineage_governance", "canonicalization_lifecycle_comparability_eligibility_check_gates"],
+    ),
+    (
         {"architecture_modification", "generalized_ingestion_framework_decisions"},
         "generalized_ingestion_framework_decisions",
         "framework",
@@ -294,7 +326,10 @@ QUERY_MAPPING: list[tuple[set[str], str, str, list[str]]] = [
 def _query_plan(classification: TaskClassification, decision: ConsultationDecision) -> tuple[str, str, list[str]]:
     labels = {classification.primary_category, *classification.secondary_categories, *decision.matched_triggers}
     for required, problem, keyword, adjacent in QUERY_MAPPING:
-        has_trigger = any(label.endswith("_changes") or label.endswith("_decisions") for label in required & labels)
+        has_trigger = any(
+            label.endswith("_changes") or label.endswith("_decisions") or label.endswith("_extraction")
+            for label in required & labels
+        )
         has_category = any(label in MEANINGFUL_CATEGORIES for label in required & labels)
         if has_trigger and has_category and (required & labels):
             return problem, keyword, adjacent[:2]

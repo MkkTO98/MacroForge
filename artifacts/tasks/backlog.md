@@ -224,3 +224,56 @@ TASK-044 resolved the first operational pre-freeze blocker from the operational 
 45. TASK-045 — Make OECD/Eurostat fixtures clean-clone safe. Complete.
 
 TASK-045 resolved the remaining operational pre-freeze blocker from the operational capability validation report. It updated `.gitignore` so generated `data/` artifacts remain ignored by default while the bounded OECD/Eurostat fixture evidence required for combined reconstruction is explicitly unignored and commit-eligible. It added a fixture-persistence test, preserved current loader paths and behavior, and did not fetch live data, add sources, change schemas/migrations, mutate canonical state, introduce frameworks, or write to live/default `macro`.
+
+## Completed observed-ingestion representation extraction
+
+46. TASK-046 — Extract observed common ingestion representation. Complete.
+
+TASK-046 extracted `ObservedIngestionPackage` v1 from current WDI/OECD/Eurostat behavior as an equivalence-first implementation. It added the package/observation contract, source-specific adapters, package tests, contract documentation, and loader integration while preserving source-specific acquisition, normalization, staging, SQL loading, provider mappings, lineage, quality checks, canonical facts, validation semantics, dataset scope, no-model behavior, no-conversion/no-aggregation policy, and no framework/plugin/runtime redesign.
+
+## Current capability-oriented backlog after Constitution v1.1
+
+The active backlog is governed by `CONSTITUTION.md`, `artifacts/reports/R-20260626-strategic-constitution-v11-backlog-reassessment.md`, `artifacts/reports/R-20260627-governance-alignment-after-strategic-constitution-v11.md`, and `artifacts/reports/R-20260627-final-governance-refinement-and-freeze.md`. Treat the roadmap as capability-oriented and evidence-derived, not as a fixed sequential task list. Governance is frozen for v1.1 pending implementation-driven discoveries.
+
+Recommended next transition: Deterministic Change Verification Verified -> Adopted.
+
+Completed implementation: deterministic change verification was proven end-to-end for WDI/OECD/Eurostat through isolated PostgreSQL load, reconstructed observed packages, and deterministic comparison.
+
+Capability maturity lifecycle:
+
+```text
+Discovered -> Specified -> Verified -> Adopted -> Shared -> Stable -> Mature
+```
+
+Capability maturity snapshot:
+
+- Observed Boundary and Contract Stability: Specified. Target: Adopted, then Stable. Next transition: Specified -> Verified.
+- Deterministic Change Verification: Verified. Target: Stable. Next transition: Verified -> Adopted.
+- Contract Validation and Drift Detection: Discovered. Target: Verified. Next transition: Discovered -> Specified.
+- Ingestion Diagnostics and Recovery Evidence: Discovered. Target: Verified. Next transition: Discovered -> Specified.
+- Shared Post-Boundary Infrastructure Extraction: Discovered. Target: Verified readiness, not immediate Shared. Next transition: Discovered -> Specified after change-verification evidence and consultation.
+- Canonicalization Governance and Mapping Advancement: Stable for file-backed lifecycle; Discovered/Specified for OECD/Eurostat advancement. Target: preserve Stable lifecycle; verify targeted advancement only when needed.
+- Knowledge-Accumulating Source Expansion: Discovered. Target: Specified only after verification/diagnostics capabilities mature.
+
+Capability backlog:
+
+1. Deterministic Change Verification.
+   - Completed transitions: Discovered -> Specified -> Verified.
+   - Evidence: isolated PostgreSQL WDI/OECD/Eurostat load, reconstructed observed packages from staging/canonical outputs, deterministic comparison equivalence.
+   - Next transition: Verified -> Adopted by making this path required for relevant ingestion/package changes.
+   - Replay, fingerprints, equivalence, drift detection, and diagnostics are mechanisms inside this capability.
+2. Observed Boundary and Contract Stability.
+   - Next transition: Specified -> Verified through package replay/equivalence diagnostics.
+   - Later transition to Adopted only when MacroForge uses the verified package boundary as the canonical implementation path for relevant ingestion/package changes.
+3. Contract Validation and Drift Detection.
+   - Continue after replay diagnostics if validation needs exceed narrow invariant checks in the first task.
+4. Ingestion Diagnostics and Recovery Evidence.
+   - Produce compact deterministic diagnostics/report artifacts after replay shape is proven.
+5. Shared Post-Boundary Infrastructure Extraction.
+   - Shared lineage/quality, provider metadata, and canonical loading/upsert helpers remain deferred until change-verification/diagnostics exist and deep ArchitectureHarvest consultation has been performed.
+6. Canonicalization Governance and Mapping Advancement.
+   - Advance OECD/Eurostat mappings only after explicit evidence/review prerequisites or a concrete downstream blocker.
+7. Knowledge-Accumulating Source Expansion.
+   - Add/deepen datasets only after reusable diagnostics/replay/shared infrastructure make each source leave durable ingestion knowledge.
+
+Governance freeze: the active ArchitectureHarvest trigger for proposed implementation expected to become a reusable dependency of multiple future capabilities is `foundational_capability_extraction`. Diagnostic-only replay can proceed without deep consultation unless it expands into foundational capability extraction.

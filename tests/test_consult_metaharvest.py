@@ -27,6 +27,7 @@ RELEVANCE_MAP = {
         "lineage_or_validation_registry_changes",
         "orchestration_or_runtime_adoption_decisions",
         "generalized_ingestion_framework_decisions",
+        "foundational_capability_extraction",
     ]
 }
 
@@ -36,7 +37,7 @@ def test_routine_work_does_not_consult_metaharvest():
 
     decision = ConsultationContract().evaluate(classification, RELEVANCE_MAP)
 
-    assert classification.task_classification_version == 1
+    assert classification.task_classification_version == 2
     assert classification.primary_category == "routine_operation"
     assert decision.action == "do_not_consult"
     assert decision.matched_triggers == []
@@ -51,6 +52,29 @@ def test_valid_canonicalization_trigger_requests_consultation():
 
     assert decision.action == "consult"
     assert "canonicalization_architecture_changes" in decision.matched_triggers
+
+
+def test_foundational_capability_extraction_requests_consultation():
+    classification = classify_task_text(
+        "Extract shared canonical loading infrastructure as a reusable dependency of multiple future capabilities."
+    )
+
+    decision = ConsultationContract().evaluate(classification, RELEVANCE_MAP)
+
+    assert classification.primary_category == "architecture_modification"
+    assert decision.action == "consult"
+    assert decision.matched_triggers == ["foundational_capability_extraction"]
+
+
+def test_diagnostic_only_replay_does_not_trigger_foundational_capability_consultation():
+    classification = classify_task_text(
+        "Implement deterministic ObservedIngestionPackage replay diagnostics without shared infrastructure extraction."
+    )
+
+    decision = ConsultationContract().evaluate(classification, RELEVANCE_MAP)
+
+    assert "foundational_capability_extraction" not in classification.proposed_trigger_matches
+    assert decision.action == "do_not_consult"
 
 
 def test_consultation_contract_never_performs_retrieval():
