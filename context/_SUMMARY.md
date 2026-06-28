@@ -15,10 +15,11 @@ Curated project context, context policy, latest handoff, and compact source-of-t
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `latest_handoff.md` records implementation-driven development mode and Deterministic Change Verification as Verified after isolated PostgreSQL WDI/OECD/Eurostat package equivalence proof.
-- `context_policy.yaml` remains the context discipline policy; `CONSTITUTION.md` now carries the governing optimization objective.
+- `latest_handoff.md` records completed TASK-054 bounded U.S. Treasury Fiscal Data implementation, verification, one durable Implementation Lesson, and next-ten-source continuation guidance.
+- `context_policy.yaml` remains the context discipline policy; `CONSTITUTION.md` carries the governing optimization objective.
 - Generated context bundles are task/model-target artifacts and should be regenerated when needed, not treated as mandatory startup context.
 
 ## Needs Attention
 - Keep raw exports out of normal context.
-- Fresh work should start from bounded recovery. Current next transition is Deterministic Change Verification Verified -> Adopted, requiring the verified path to become required for relevant ingestion/package changes.
+- Fresh work should start from bounded recovery. TASK-054 is implemented and verified; before selecting TASK-055, review TASK-054 Implementation Lessons and optimize for making the next source cheaper or more predictable.
+- Observed Boundary and Contract Stability, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback remain Verified; do not advance them without separate evidence-backed adoption tasks.

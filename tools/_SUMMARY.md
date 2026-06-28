@@ -10,8 +10,8 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 - `architecture_reality_audit.py`
 - `build_context.py`
 - `check_coherence.py`
-- `context_health.py`
 - `consult_metaharvest.py`
+- `context_health.py`
 - `create_question.py`
 - `detect_hardware.py`
 - `dry_run.py`

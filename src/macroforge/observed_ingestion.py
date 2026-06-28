@@ -27,6 +27,7 @@ class ObservedObservation:
     attribute_hash: str
     period_year: int | None = None
     period_quarter: int | None = None
+    period_month: int | None = None
     unit_label: str | None = None
     decimal_precision: int | None = None
 

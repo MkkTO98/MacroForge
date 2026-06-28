@@ -32,7 +32,7 @@ context/context_audit.md
 context/context_manifest.json
 
 # MacroForge data artifacts (keep only summaries/placeholders by default)
-# Exception: bounded OECD/Eurostat fixture evidence required for clean-clone reconstruction.
+# Exception: bounded OECD/Eurostat/BLS/BEA/Treasury fixture evidence required for clean-clone reconstruction.
 data/raw/*
 data/staging/*
 data/curated/*
@@ -48,6 +48,18 @@ data/raw/oecd_sdmx/*
 data/raw/eurostat/*
 !data/raw/eurostat/_SUMMARY.md
 !data/raw/eurostat/eurostat-namq-10-gdp-2023q1-2023q2-raw.json
+!data/raw/bls/
+data/raw/bls/*
+!data/raw/bls/_SUMMARY.md
+!data/raw/bls/bls-cpi-cuur0000sa0-2023-raw.json
+!data/raw/bea/
+data/raw/bea/*
+!data/raw/bea/_SUMMARY.md
+!data/raw/bea/bea-nipa-t10101-itablecore-20260625-raw.json
+!data/raw/treasury/
+data/raw/treasury/*
+!data/raw/treasury/_SUMMARY.md
+!data/raw/treasury/treasury-avg-interest-rates-2026-05-31-raw.json
 !data/staging/.gitkeep
 !data/staging/_SUMMARY.md
 !data/curated/.gitkeep

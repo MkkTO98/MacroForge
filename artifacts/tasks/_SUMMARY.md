@@ -53,17 +53,25 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-044-repair-wdi-isolated-smoke-workflow.md`
 - `TASK-045-make-oecd-eurostat-fixtures-clean-clone-safe.md`
 - `TASK-046-extract-observed-common-ingestion-representation.md`
+- `TASK-047-select-first-foundational-extraction-candidate.md`
+- `TASK-048-verify-canonical-lineage-event-generation.md`
+- `TASK-049-specify-contract-validation-drift-detection.md`
+- `TASK-050-verify-contract-validation-drift-detection.md`
+- `TASK-051-bounded-bls-monthly-evidence-slice.md`
+- `TASK-052-deterministic-ingestion-feedback.md`
+- `TASK-053-bounded-bea-nipa-evidence-slice.md`
+- `TASK-054-bounded-us-treasury-fiscal-data-evidence-slice.md`
 - `TASK-PF-20260614-continuity-recovery-adoption.md`
 - `backlog.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- TASK-001 through TASK-046 are complete.
-- `backlog.md` now records Deterministic Change Verification as Verified after isolated PostgreSQL WDI/OECD/Eurostat package equivalence proof; next transition is Verified -> Adopted.
-- Future shared infrastructure extraction should follow the Constitution sequence: discover repeated implementation, identify evidence, prove equivalence, extract shared contract, validate deterministically, then extract shared implementation.
-- Governance is complete/frozen for v1.1. The active ArchitectureHarvest trigger for implementation expected to become a reusable dependency of multiple future capabilities is `foundational_capability_extraction`.
+- TASK-001 through TASK-054 are complete.
+- `backlog.md` records Observed Boundary and Contract Stability, Deterministic Change Verification, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback as Verified for current scopes.
+- TASK-054 completed bounded U.S. Treasury Fiscal Data through `ObservedIngestionPackage` without contract evolution or substrate redesign, adding row-oriented government JSON/API metadata evidence.
+- Future foundational shared infrastructure extraction should use the standardized checklist in `docs/architecture/capability-maturity-model.md`: contract/algorithm/implementation convergence, deterministic verification, consultation, acceptable coupling, and satisfied prerequisites.
 
 ## Needs Attention
-- Before advancing Deterministic Change Verification to Adopted, require the verified path to become the required change-verification path for relevant ingestion/package changes.
-- Before foundational capability extraction, perform deep ArchitectureHarvest consultation using `foundational_capability_extraction`.
-- Dataset expansion should remain behind reusable diagnostics/replay infrastructure unless a concrete downstream blocker justifies earlier work.
+- Observed Boundary and Contract Stability, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback remain Verified; do not advance them beyond Verified without separate adoption tasks.
+- TASK-054 is complete. Select TASK-055 only after reviewing TASK-054 lessons and optimizing for architectural learning per unit of implementation effort.
+- Do not extract quality checks, provider metadata frameworks, canonical dimensions, canonical fact upserts, graph/catalog/runtime systems, recovery automation, or source frameworks without a new evidence threshold and consultation.

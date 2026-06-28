@@ -8,7 +8,10 @@ import uuid
 from pathlib import Path
 
 from macroforge import eurostat_namq_loader, oecd_sdmx_loader, wdi_loader
-from macroforge.deterministic_change_verification import verify_loaded_observed_package
+from macroforge.deterministic_change_verification import (
+    verify_loaded_observed_package,
+    verify_loaded_observed_package_contracts,
+)
 from macroforge.observed_ingestion import (
     build_eurostat_observed_package,
     build_oecd_observed_package,
@@ -78,8 +81,13 @@ def test_loaded_canonical_ingestion_matches_observed_packages_for_all_supported_
             package.source_code: verify_loaded_observed_package(db_name, package)
             for package in expected_packages
         }
+        contract_verifications = {
+            package.source_code: verify_loaded_observed_package_contracts(db_name, package)
+            for package in expected_packages
+        }
 
         assert set(comparisons) == {"WDI", "OECD_NAAG", "EUROSTAT_NAMQ_GDP"}
+        assert set(contract_verifications) == {"WDI", "OECD_NAAG", "EUROSTAT_NAMQ_GDP"}
         for source_code, comparison in comparisons.items():
             assert comparison.equivalent is True, source_code
             assert comparison.left_fingerprint == comparison.right_fingerprint
@@ -87,5 +95,13 @@ def test_loaded_canonical_ingestion_matches_observed_packages_for_all_supported_
             assert comparison.expected_row_count_match is True
             assert comparison.observation_count_match is True
             assert comparison.differing_observations == ()
+
+        for source_code, verification in contract_verifications.items():
+            assert verification.expected_contract_report.valid is True, source_code
+            assert verification.expected_contract_report.issues == ()
+            assert verification.loaded_contract_report.valid is True, source_code
+            assert verification.loaded_contract_report.issues == ()
+            assert verification.comparison.equivalent is True, source_code
+            assert verification.expected_contract_report.fingerprint == verification.loaded_contract_report.fingerprint
     finally:
         subprocess.run(["dropdb", "--if-exists", db_name], capture_output=True, text=True)

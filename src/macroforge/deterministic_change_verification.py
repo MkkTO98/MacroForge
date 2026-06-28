@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import json
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from typing import Any
 
+from macroforge.contract_drift import ContractDriftReport, validate_observed_package_contract
 from macroforge.db_helpers import psql_scalar
 from macroforge.observed_ingestion import (
     ObservedIngestionPackage,
@@ -11,6 +12,15 @@ from macroforge.observed_ingestion import (
     ObservedPackageComparison,
     compare_observed_packages,
 )
+
+
+@dataclass(frozen=True)
+class LoadedObservedPackageContractVerification:
+    """Deterministic verification evidence for one expected and reconstructed package."""
+
+    expected_contract_report: ContractDriftReport
+    loaded_contract_report: ContractDriftReport
+    comparison: ObservedPackageComparison
 
 
 def verify_loaded_observed_package(
@@ -25,6 +35,20 @@ def verify_loaded_observed_package(
 
     observed_package = _loaded_observed_package(db_name, expected_package)
     return compare_observed_packages(expected_package, observed_package)
+
+
+def verify_loaded_observed_package_contracts(
+    db_name: str,
+    expected_package: ObservedIngestionPackage,
+) -> LoadedObservedPackageContractVerification:
+    """Validate expected and reconstructed packages, then compare them deterministically."""
+
+    loaded_package = _loaded_observed_package(db_name, expected_package)
+    return LoadedObservedPackageContractVerification(
+        expected_contract_report=validate_observed_package_contract(expected_package),
+        loaded_contract_report=validate_observed_package_contract(loaded_package),
+        comparison=compare_observed_packages(expected_package, loaded_package),
+    )
 
 
 def _loaded_observed_package(db_name: str, expected_package: ObservedIngestionPackage) -> ObservedIngestionPackage:

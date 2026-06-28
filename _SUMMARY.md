@@ -44,13 +44,21 @@ This folder is the relocated MacroForge project root at `/home/mkkto/srv/EIP/pro
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `CONSTITUTION.md` now contains MacroForge Strategic Constitution v1.1: optimize for decreasing marginal cost of trustworthy economic-data ingestion while preserving determinism, auditability, provenance, and canonical consistency.
-- TASK-046 is complete and extracted `ObservedIngestionPackage` v1 from current WDI/OECD/Eurostat behavior.
+- `CONSTITUTION.md` contains MacroForge Strategic Constitution v1.1: optimize for decreasing marginal cost of trustworthy economic-data ingestion while preserving determinism, auditability, provenance, and canonical consistency.
+- TASK-054 is implemented and verified. `artifacts/reports/L-20260628-task-054-implementation-lessons.md` records the one durable implementation lesson and confirms the previous estimation model remains valid.
+- DEC-022 accepts the next-ten-source optimization target: make future heterogeneous trustworthy source implementations progressively cheaper and assume the current post-boundary architecture is correct unless repeated implementation evidence falsifies it.
+- `artifacts/reports/R-20260627-deterministic-ingestion-substrate-effort-assessment.md` records that the Deterministic Ingestion Substrate is already measurably reducing future post-boundary engineering/human/LLM effort, but source-specific acquisition/parsing/SQL/mapping remain substantial and should not be extracted yet.
+- TASK-050 completed Contract Validation and Drift Detection Specified -> Verified by validating expected and reconstructed WDI/OECD/Eurostat package contracts inside the deterministic verification path.
+- TASK-049 completed Contract Validation and Drift Detection Discovered -> Specified through narrow deterministic `ObservedIngestionPackage` invariant checks.
+- `artifacts/reports/R-20260627-deterministic-ingestion-substrate-emergence-assessment.md` recognizes an emerging Deterministic Ingestion Substrate architectural layer after `ObservedIngestionPackage`; this is not a new framework and did not change capability maturity.
+- `artifacts/reports/R-20260627-deterministic-ingestion-substrate-execution-model.md` documents the substrate's canonical execution order, capability interfaces, extension points, and low-priority state/history technical debt.
+- TASK-048 completed Canonical Lineage Event Generation Specified -> Verified through narrow behavior-preserving extraction and final closeout verification.
+- Evidence-based consistency review promoted Observed Boundary and Contract Stability from Specified to Verified without production implementation.
 - Governance is complete for v1.1 and frozen pending implementation-driven discoveries; final freeze report is `artifacts/reports/R-20260627-final-governance-refinement-and-freeze.md`.
-- `docs/architecture/capability-maturity-model.md` is the active implementation-planning model: Discovered -> Specified -> Verified -> Adopted -> Shared -> Stable -> Mature.
-- MacroForge has entered implementation-driven development; Deterministic Change Verification is Verified via isolated PostgreSQL WDI/OECD/Eurostat package equivalence proof.
+- `docs/architecture/capability-maturity-model.md` is the active implementation-planning model: Discovered -> Specified -> Verified -> Adopted -> Shared -> Stable -> Mature, with lightweight Verified prerequisites, evidence-based maturity interpretation, and the standard foundational extraction checklist.
+- MacroForge remains in implementation-driven development; Observed Boundary and Contract Stability, Deterministic Change Verification, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback are Verified.
 
 ## Needs Attention
-- Evaluate future work by reduction in future deterministic engineering, human effort, LLM reasoning, future uncertainty; increase in confidence; knowledge accumulated; architectural leverage; complexity; and maintenance burden.
+- Evaluate every proposed implementation task by whether it permanently reduces future deterministic engineering, human effort, or LLM reasoning for trustworthy economic datasets.
 - Extract shared infrastructure only after contract, algorithm, and implementation converge from evidence. Shared infrastructure must not contain source-specific conditionals; source-specific behavior belongs in adapters.
-- Before foundational capability extraction, use the active `foundational_capability_extraction` trigger for deep ArchitectureHarvest consultation. Routine implementation and diagnostic-only replay continue using bounded consultation policy.
+- TASK-054 is implemented and verified: bounded U.S. Treasury Fiscal Data average-interest-rates evidence slice through `ObservedIngestionPackage`; substrate evolution remains reactive to implementation evidence, not designed ahead of it.

@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from macroforge.db_helpers import jsonb_literal, parse_pipe_counts, psql_scalar, run_psql_file, sql_literal, write_json_report
+from macroforge.lineage_generation import canonical_lineage_events, lineage_values_sql
 from macroforge.observed_ingestion import EMPTY_ATTRIBUTE_HASH, UNKNOWN_UNIT_CODE, build_wdi_observed_package
 
 SOURCE_CODE = "WDI"
@@ -36,6 +37,14 @@ def build_load_sql(normalized: dict[str, Any], *, run_key: str = "wdi-smoke-2026
         "date_range": normalized.get("date_range"),
         "raw_artifacts": normalized.get("raw_artifacts", []),
     }
+    lineage_events = canonical_lineage_events(
+        raw_artifact_path=raw_artifact_path,
+        staging_artifact="staging.wdi_observation",
+        staging_row_count_sql="(SELECT count(*)::bigint FROM staging.wdi_observation swo JOIN run_row rr ON swo.pipeline_run_id = rr.pipeline_run_id)",
+        curated_row_count_sql="(SELECT count(*)::bigint FROM curated.fact_observation)",
+        details={"task": "TASK-006"},
+    )
+    lineage_values = lineage_values_sql(lineage_events, include_checksum=False)
 
     values = []
     for observation in package.observations:
@@ -245,9 +254,7 @@ WITH source_row AS (
 INSERT INTO meta.lineage_event (pipeline_run_id, source_id, event_type, from_artifact, to_artifact, row_count, details)
 SELECT run.pipeline_run_id, s.source_id, event_type, from_artifact, to_artifact, row_count, details
 FROM source_row s CROSS JOIN run_row run CROSS JOIN (
-    VALUES
-      ('raw_to_staging', {sql_literal(raw_artifact_path)}, 'staging.wdi_observation', (SELECT count(*)::bigint FROM staging.wdi_observation swo JOIN run_row rr ON swo.pipeline_run_id = rr.pipeline_run_id), {json_literal({'task': 'TASK-006'})}),
-      ('staging_to_curated', 'staging.wdi_observation', 'curated.fact_observation', (SELECT count(*)::bigint FROM curated.fact_observation), {json_literal({'task': 'TASK-006'})})
+    {lineage_values}
 ) AS v(event_type, from_artifact, to_artifact, row_count, details)
 WHERE NOT EXISTS (
     SELECT 1 FROM meta.lineage_event le

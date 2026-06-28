@@ -55,6 +55,7 @@ The package does not replace source-specific acquisition, source-specific normal
 | `frequency` | Source/provider frequency code. | Source adapter. | Annual and quarterly periods must remain distinct; no aggregation is performed. | Required. |
 | `period_year` | Parsed year used by current loaders for canonical period insertion. | Source adapter. | Existing WDI/OECD annual and Eurostat quarterly loaders already compute/load year. | Optional for future sources, required for current supported observations. |
 | `period_quarter` | Parsed quarter for quarterly observations. | Source adapter. | Eurostat quarterly loader requires quarter; annual WDI/OECD do not. | Optional; source-specific. |
+| `period_month` | Parsed month for monthly observations. | Source adapter. | TASK-051 BLS CPI evidence proved that monthly series-oriented sources need a minimal month field after the observed boundary without adding a pre-boundary framework. | Optional; source-specific. |
 | `unit_code` | Provider/source unit code loaded into unit dimension. | Source adapter. | All loaders load/preserve unit identity; WDI uses `unknown` when source row lacks unit. | Required. |
 | `unit_label` | Provider/source unit label when available. | Source adapter. | Eurostat provides labels; WDI/OECD current loader behavior does not. | Optional; source-specific. |
 | `value` | Numeric observation value or missing value. | Source adapter. | All current loaders load facts from source observation values. | Required field; value may be null. |
@@ -73,7 +74,8 @@ The package does not replace source-specific acquisition, source-specific normal
 - Attribute hashing must remain stable: JSON canonicalization with sorted keys and compact separators, then SHA-256.
 - WDI empty attributes must continue to use the existing `empty` attribute-hash sentinel unless a migration/task explicitly changes existing facts/tests.
 - Missing unit handling must preserve existing WDI behavior: absent source unit becomes `unknown`.
-- Annual/quarterly distinctions must be preserved. The contract must not aggregate frequency or convert units/currencies.
+- Annual/quarterly/monthly distinctions must be preserved. The contract must not aggregate frequency or convert units/currencies.
+- Monthly observations may set `period_month` to 1-12 and must not set `period_quarter`; annual and quarterly observations must not set `period_month`.
 - `raw_evidence` and `input_filters` are source-specific dictionaries. Their presence is shared; their key sets are not v1-shared.
 
 ## Compatibility expectations

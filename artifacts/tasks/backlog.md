@@ -231,13 +231,33 @@ TASK-045 resolved the remaining operational pre-freeze blocker from the operatio
 
 TASK-046 extracted `ObservedIngestionPackage` v1 from current WDI/OECD/Eurostat behavior as an equivalence-first implementation. It added the package/observation contract, source-specific adapters, package tests, contract documentation, and loader integration while preserving source-specific acquisition, normalization, staging, SQL loading, provider mappings, lineage, quality checks, canonical facts, validation semantics, dataset scope, no-model behavior, no-conversion/no-aggregation policy, and no framework/plugin/runtime redesign.
 
+## Completed foundational extraction candidate selection
+
+47. TASK-047 — Select first foundational post-boundary extraction candidate. Complete.
+
+TASK-047 performed the required deep ArchitectureHarvest/MetaHarvest consultation for `foundational_capability_extraction`, compared candidate post-boundary behaviors against converged contract/algorithm/implementation evidence, and selected `Deterministic Lineage Event Emission` as the recommended first shared foundational capability. It produced `artifacts/reports/R-20260627-foundational-capability-extraction-candidate.md` and preserved no implementation, no schema change, no runtime/catalog adoption, no source expansion, and no extraction beyond planning.
+
+## Completed first foundational capability extraction
+
+48. TASK-048 — Verify canonical lineage event generation extraction. Complete.
+
+TASK-048 refined the durable capability name from `Deterministic Lineage Event Emission` to `Canonical Lineage Event Generation`, then completed the Specified -> Verified transition by extracting only the shared two-event lineage generation algorithm into `src/macroforge/lineage_generation.py`. WDI/OECD/Eurostat now consume generated lineage event specs while keeping persistence SQL loader-owned. It produced `artifacts/reports/R-20260627-canonical-lineage-generation-verification.md` and preserved no storage/persistence/orchestration extraction, schema change, source expansion, graph/catalog/runtime system, quality-check extraction, provider-metadata extraction, canonical-dimension extraction, or fact-upsert extraction.
+
 ## Current capability-oriented backlog after Constitution v1.1
 
 The active backlog is governed by `CONSTITUTION.md`, `artifacts/reports/R-20260626-strategic-constitution-v11-backlog-reassessment.md`, `artifacts/reports/R-20260627-governance-alignment-after-strategic-constitution-v11.md`, and `artifacts/reports/R-20260627-final-governance-refinement-and-freeze.md`. Treat the roadmap as capability-oriented and evidence-derived, not as a fixed sequential task list. Governance is frozen for v1.1 pending implementation-driven discoveries.
 
-Recommended next transition: Deterministic Change Verification Verified -> Adopted.
+Recommended next implementation direction: next-ten-source Evidence-Accumulating Source Expansion. TASK-053 showed a fifth materially different source required no meaningful post-boundary architectural evolution. The next higher-leverage work is making future heterogeneous trustworthy source implementations progressively cheaper while using each implementation to attempt to falsify the current substrate-stability assumption.
 
-Completed implementation: deterministic change verification was proven end-to-end for WDI/OECD/Eurostat through isolated PostgreSQL load, reconstructed observed packages, and deterministic comparison.
+Completed implementation: TASK-054 implemented a bounded U.S. Treasury Fiscal Data average-interest-rates evidence slice. It added `src/macroforge/treasury_fiscal_data.py`, `tests/test_treasury_fiscal_data.py`, and one raw fixture under `data/raw/treasury/`, producing 16 monthly observed observations without substrate evolution, contract evolution, broad Treasury support, generalized acquisition, pagination framework, canonical loading, or live writes. Evidence: `artifacts/tasks/TASK-054-bounded-us-treasury-fiscal-data-evidence-slice.md` and `artifacts/reports/L-20260628-task-054-implementation-lessons.md`.
+
+Completed implementation: TASK-052 implemented Deterministic Ingestion Feedback from existing deterministic verification evidence. It added `src/macroforge/ingestion_feedback.py` and `tests/test_ingestion_feedback.py`, producing deterministic explanations for contract failures, package comparison drift, lineage event evidence, and qualitative engineering-effort distribution. It did not add orchestration, recovery automation, source frameworks, runtime monitoring, graph systems, new sources, migrations, live fetches, or canonical loader changes. Evidence: `artifacts/tasks/TASK-052-deterministic-ingestion-feedback.md` and `artifacts/reports/R-20260627-deterministic-ingestion-feedback.md`.
+
+Completed implementation: TASK-050 verified Contract Validation and Drift Detection by validating expected and reconstructed WDI/OECD/Eurostat packages inside the isolated PostgreSQL deterministic verification path. Contract Validation and Drift Detection is now Verified, not Adopted.
+
+Completed implementation: TASK-051 implemented a bounded BLS monthly CPI architectural experiment, not BLS support. It added one recorded raw fixture for `CUUR0000SA0` in 2023, a source-specific normalizer/package builder, optional `ObservedObservation.period_month`, A/Q/M contract drift checks, and tests proving WDI/OECD/Eurostat regressions still pass. It did not add canonical BLS loading, migrations, live fetches, framework extraction, provider metadata infrastructure, or dataset expansion. Evidence: `artifacts/tasks/TASK-051-bounded-bls-monthly-evidence-slice.md` and `artifacts/reports/R-20260627-bounded-bls-monthly-evidence-slice.md`.
+
+Completed implementation: TASK-049 specified Contract Validation and Drift Detection through TDD, deterministic issue codes/paths/messages, package/observation invariant checks, targeted tests, cross-source deterministic regression, and full verification.
 
 Capability maturity lifecycle:
 
@@ -247,33 +267,60 @@ Discovered -> Specified -> Verified -> Adopted -> Shared -> Stable -> Mature
 
 Capability maturity snapshot:
 
-- Observed Boundary and Contract Stability: Specified. Target: Adopted, then Stable. Next transition: Specified -> Verified.
-- Deterministic Change Verification: Verified. Target: Stable. Next transition: Verified -> Adopted.
-- Contract Validation and Drift Detection: Discovered. Target: Verified. Next transition: Discovered -> Specified.
-- Ingestion Diagnostics and Recovery Evidence: Discovered. Target: Verified. Next transition: Discovered -> Specified.
-- Shared Post-Boundary Infrastructure Extraction: Discovered. Target: Verified readiness, not immediate Shared. Next transition: Discovered -> Specified after change-verification evidence and consultation.
-- Canonicalization Governance and Mapping Advancement: Stable for file-backed lifecycle; Discovered/Specified for OECD/Eurostat advancement. Target: preserve Stable lifecycle; verify targeted advancement only when needed.
-- Knowledge-Accumulating Source Expansion: Discovered. Target: Specified only after verification/diagnostics capabilities mature.
+- Observed Boundary and Contract Stability: Verified. Target: Adopted, then Stable. Next transition: Verified -> Adopted only when the verified package boundary becomes the required path for relevant ingestion changes. Prerequisites: None.
+- Deterministic Change Verification: Verified. Target: Stable. Next transition: Verified -> Adopted only after it is required for relevant ingestion/package changes; do not expand it now. Prerequisites before safe advancement: Observed Boundary and Contract Stability (Verified).
+- `Canonical Lineage Event Generation`: Verified. Target: Adopted only after a future task explicitly makes the generated lineage path required for relevant loaders or source work; do not advance beyond Verified now. Prerequisites before safe advancement: Deterministic Change Verification (Verified).
+- Contract Validation and Drift Detection: Verified. Target: Verified for v1.1; Adopted only after a future required-use task. Next transition: Verified -> Adopted only if future ingestion work makes contract validation a required gate. Prerequisites before safe advancement: Observed Boundary and Contract Stability (Verified); Deterministic Change Verification (Verified).
+- Deterministic Ingestion Feedback: Verified for current v1.1 scope. Target: Adopted only if a future task makes feedback a required report surface for deterministic verification. Next transition: Verified -> Adopted. Prerequisites before safe advancement: Deterministic Change Verification (Verified); Contract Validation and Drift Detection (Verified).
+- Shared Post-Boundary Infrastructure Extraction: Discovered. Target: Verified readiness, not immediate Shared. Next transition: Discovered -> Specified after change-verification evidence and consultation. Prerequisites before safe advancement: Deterministic Change Verification (Verified).
+- Canonicalization Governance and Mapping Advancement: Stable for file-backed lifecycle; Discovered/Specified for OECD/Eurostat advancement. Target: preserve Stable lifecycle; verify targeted advancement only when needed. Prerequisites before output-affecting advancement: Deterministic Change Verification (Verified).
+- Evidence-Accumulating Source Expansion: Specified through TASK-053 bounded BEA NIPA evidence. Prerequisites before safe advancement: Deterministic Change Verification (Verified); Deterministic Ingestion Feedback (Verified).
 
 Capability backlog:
 
-1. Deterministic Change Verification.
+1. Canonical Lineage Event Generation.
+   - Completed transitions: Discovered -> Specified -> Verified.
+   - Evidence: WDI/OECD/Eurostat all required two post-boundary lineage events (`raw_to_staging`, `staging_to_curated`); TASK-048 extracted the shared generation algorithm and verified unchanged behavior with targeted tests, combined-source smoke, Deterministic Change Verification, and the full test suite.
+   - Next transition: Adopted only after a future task explicitly makes this generated lineage path required for relevant loaders or source work; do not advance beyond Verified now.
+   - Boundaries: persistence remains loader-owned; no source-specific conditionals in shared helper; no quality checks, provider metadata, canonical dimensions, canonical fact upserts, validation helpers, graph APIs, catalogs, runtime frameworks, source registries, or plugins.
+2. Deterministic Change Verification.
    - Completed transitions: Discovered -> Specified -> Verified.
    - Evidence: isolated PostgreSQL WDI/OECD/Eurostat load, reconstructed observed packages from staging/canonical outputs, deterministic comparison equivalence.
-   - Next transition: Verified -> Adopted by making this path required for relevant ingestion/package changes.
+   - Next transition: Verified -> Adopted later by making this path required for relevant ingestion/package changes; do not expand now.
    - Replay, fingerprints, equivalence, drift detection, and diagnostics are mechanisms inside this capability.
-2. Observed Boundary and Contract Stability.
-   - Next transition: Specified -> Verified through package replay/equivalence diagnostics.
-   - Later transition to Adopted only when MacroForge uses the verified package boundary as the canonical implementation path for relevant ingestion/package changes.
-3. Contract Validation and Drift Detection.
-   - Continue after replay diagnostics if validation needs exceed narrow invariant checks in the first task.
-4. Ingestion Diagnostics and Recovery Evidence.
-   - Produce compact deterministic diagnostics/report artifacts after replay shape is proven.
-5. Shared Post-Boundary Infrastructure Extraction.
-   - Shared lineage/quality, provider metadata, and canonical loading/upsert helpers remain deferred until change-verification/diagnostics exist and deep ArchitectureHarvest consultation has been performed.
-6. Canonicalization Governance and Mapping Advancement.
+3. Observed Boundary and Contract Stability.
+   - Completed transitions: Discovered -> Specified -> Verified.
+   - Evidence: TASK-046 extracted `ObservedIngestionPackage` v1 from WDI/OECD/Eurostat; deterministic fingerprints/comparison and end-to-end isolated PostgreSQL package equivalence now prove boundary behavior for all supported sources; TASK-048 lineage regression adds downstream evidence.
+   - Next transition: Verified -> Adopted only when MacroForge uses the verified package boundary as the required path for relevant ingestion/package changes.
+4. Contract Validation and Drift Detection.
+   - Completed transitions: Discovered -> Specified -> Verified.
+   - Evidence: TASK-049 added deterministic `ObservedIngestionPackage` invariant checks and issue codes/paths/messages for WDI/OECD/Eurostat packages; TASK-050 verified expected and reconstructed package contract reports inside the accepted deterministic verification path.
+   - Next transition: Adopted only after a future task explicitly makes contract validation a required gate for relevant ingestion/package changes.
+   - Do not implement a generalized validation framework or economic correctness rules.
+5. Deterministic Ingestion Feedback.
+   - Completed transitions: Discovered -> Specified -> Verified for current v1.1 scope.
+   - Evidence: TASK-052 added deterministic feedback builders for contract reports, package comparisons, lineage events, and qualitative source effort profiles.
+   - Next transition: Adopted only after a future task explicitly makes feedback a required report surface for deterministic verification.
+6. Shared Post-Boundary Infrastructure Extraction.
+   - TASK-047 advanced this to Specified-readiness for lineage event emission only; quality checks, provider metadata, canonical loading/upsert helpers, and broader validation extraction remain rejected/deferred until evidence converges.
+7. Canonicalization Governance and Mapping Advancement.
    - Advance OECD/Eurostat mappings only after explicit evidence/review prerequisites or a concrete downstream blocker.
-7. Knowledge-Accumulating Source Expansion.
-   - Add/deepen datasets only after reusable diagnostics/replay/shared infrastructure make each source leave durable ingestion knowledge.
+8. Evidence-Accumulating Source Expansion.
+   - Completed transition: Discovered -> Specified through TASK-053 bounded BEA NIPA evidence.
+   - Evidence: TASK-053 implemented one bounded BEA NIPA iTableCore Table 1.1.1 evidence slice through `ObservedIngestionPackage`, producing 252 quarterly observations without substrate redesign, broad BEA support, canonical loading, or contract evolution.
+   - Purpose: use repeated implementation to validate, strengthen, and selectively evolve the substrate while preserving determinism, auditability, provenance, reproducibility, and canonical consistency.
+   - Next planning step: select another bounded heterogeneous source only after reviewing TASK-053 evidence in `artifacts/reports/R-20260627-bounded-bea-nipa-evidence-slice.md`.
+   - Do not add substrate-first capabilities, source frameworks, broad source support, conversion/aggregation policy, or architectural extraction unless new implementation evidence justifies it.
 
-Governance freeze: the active ArchitectureHarvest trigger for proposed implementation expected to become a reusable dependency of multiple future capabilities is `foundational_capability_extraction`. Diagnostic-only replay can proceed without deep consultation unless it expands into foundational capability extraction.
+
+## Accepted source-expansion optimization after TASK-053
+
+DEC-022 accepts the next-ten-source optimization target: MacroForge should now make the next ten heterogeneous trustworthy source implementations progressively cheaper. Future implementation tasks must first answer whether they permanently reduce future engineering, human, or LLM effort for trustworthy economic datasets.
+
+Default assumption: the current post-boundary architecture is correct. Future source work should attempt to falsify this assumption rather than proactively redesigning the substrate or `ObservedIngestionPackage` boundary.
+
+After every heterogeneous source implementation, add a short `Implementation Lessons` artifact. If three consecutive heterogeneous source implementations complete without meaningful post-boundary architectural evolution, record future technical debt to perform one bounded Deterministic Ingestion Substrate Stability Review; do not perform that review now.
+
+TASK-054 is complete: bounded U.S. Treasury Fiscal Data evidence slice through `ObservedIngestionPackage`. It confirmed row-oriented API metadata and categorical row identity fit before the boundary without substrate evolution. Before selecting TASK-055, review `artifacts/reports/L-20260628-task-054-implementation-lessons.md`.
+
+Governance freeze: the active ArchitectureHarvest trigger for proposed implementation expected to become a reusable dependency of multiple future capabilities is `foundational_capability_extraction`. Feedback/report-surface work derived from existing deterministic evidence can proceed without deep consultation unless it expands into foundational capability extraction.

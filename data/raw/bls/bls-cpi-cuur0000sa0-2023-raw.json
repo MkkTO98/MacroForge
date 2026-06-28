@@ -1,0 +1,122 @@
+{
+  "Results": {
+    "series": [
+      {
+        "data": [
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M12",
+            "periodName": "December",
+            "value": "306.746",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M11",
+            "periodName": "November",
+            "value": "307.051",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M10",
+            "periodName": "October",
+            "value": "307.671",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M09",
+            "periodName": "September",
+            "value": "307.789",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M08",
+            "periodName": "August",
+            "value": "307.026",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M07",
+            "periodName": "July",
+            "value": "305.691",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M06",
+            "periodName": "June",
+            "value": "305.109",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M05",
+            "periodName": "May",
+            "value": "304.127",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M04",
+            "periodName": "April",
+            "value": "303.363",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M03",
+            "periodName": "March",
+            "value": "301.836",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M02",
+            "periodName": "February",
+            "value": "300.840",
+            "year": "2023"
+          },
+          {
+            "footnotes": [
+              {}
+            ],
+            "period": "M01",
+            "periodName": "January",
+            "value": "299.170",
+            "year": "2023"
+          }
+        ],
+        "seriesID": "CUUR0000SA0"
+      }
+    ]
+  },
+  "message": [],
+  "responseTime": 116,
+  "status": "REQUEST_SUCCEEDED"
+}

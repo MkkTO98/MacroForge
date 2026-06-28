@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from macroforge.db_helpers import jsonb_literal, parse_pipe_counts, psql_scalar, run_psql_file, sql_literal, write_json_report
+from macroforge.lineage_generation import canonical_lineage_events, lineage_values_sql
 from macroforge.observed_ingestion import build_eurostat_observed_package, canonical_attribute_hash
 
 SOURCE_CODE = "EUROSTAT_NAMQ_GDP"
@@ -150,6 +151,15 @@ def build_load_sql(
     row_values_sql = _row_values(normalized)
     code_values_sql = _provider_code_values(normalized)
     expected_rows = int(normalized.get("row_count", len(normalized.get("rows", []))))
+    lineage_events = canonical_lineage_events(
+        raw_artifact_path=normalized.get("raw_artifact_path"),
+        raw_checksum_sha256=normalized.get("raw_sha256"),
+        staging_artifact="staging.eurostat_namq_observation",
+        staging_row_count_sql="(SELECT count(*)::bigint FROM staging.eurostat_namq_observation eno JOIN run_row rr ON eno.pipeline_run_id = rr.pipeline_run_id)",
+        curated_row_count_sql="(SELECT count(*)::bigint FROM curated.fact_observation)",
+        details={"task": "TASK-024"},
+    )
+    lineage_values = lineage_values_sql(lineage_events, include_checksum=True)
 
     return f"""
 BEGIN;
@@ -431,9 +441,7 @@ WITH source_row AS (
 INSERT INTO meta.lineage_event (pipeline_run_id, source_id, event_type, from_artifact, to_artifact, checksum_sha256, row_count, details)
 SELECT run.pipeline_run_id, s.source_id, event_type, from_artifact, to_artifact, checksum_sha256, row_count, details
 FROM source_row s CROSS JOIN run_row run CROSS JOIN (
-    VALUES
-      ('raw_to_staging', {sql_literal(normalized.get('raw_artifact_path'))}, 'staging.eurostat_namq_observation', {sql_literal(normalized.get('raw_sha256'))}, (SELECT count(*)::bigint FROM staging.eurostat_namq_observation eno JOIN run_row rr ON eno.pipeline_run_id = rr.pipeline_run_id), {json_literal({'task': 'TASK-024'})}),
-      ('staging_to_curated', 'staging.eurostat_namq_observation', 'curated.fact_observation', NULL, (SELECT count(*)::bigint FROM curated.fact_observation), {json_literal({'task': 'TASK-024'})})
+    {lineage_values}
 ) AS v(event_type, from_artifact, to_artifact, checksum_sha256, row_count, details)
 WHERE NOT EXISTS (
     SELECT 1 FROM meta.lineage_event le

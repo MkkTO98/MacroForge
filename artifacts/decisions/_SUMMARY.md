@@ -52,13 +52,15 @@ This folder is part of the ProjectForge file-backed operating system for `artifa
 - `DEC-019-next-scope-deterministic-canonicalization-proposal-workflow.md`
 - `DEC-020-architectureharvest-canonical-asset-manifest-registry.md`
 - `DEC-021-next-scope-after-deterministic-canonicalization-proposal-workflow.md`
+- `DEC-022-next-ten-source-expansion-optimization.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- DEC-022 is accepted: MacroForge now optimizes for making the next ten heterogeneous trustworthy source implementations progressively cheaper, assumes the current post-boundary architecture is correct unless repeated evidence falsifies it, requires short Implementation Lessons after heterogeneous source work, and records future stability-review debt only.
 - DEC-021 is accepted and TASK-037 implemented its bounded WDI unit metadata enrichment scope.
 - DEC-020 is accepted: MacroForge adopted MF-AH-REV-001 in modified/narrow form as a file-backed canonical asset manifest registry.
 - DEC-019 is accepted and TASK-034 implemented its deterministic proposal workflow.
 - TASK-038 and TASK-039 executed bounded lifecycle/requirements artifact work under existing decisions and explicit user-approved task scope; no new decision changed architecture or authority.
 
 ## Needs Attention
-- No decision currently approves production accepted-state persistence, base manifest mutation, model-assisted canonicalization execution, report integration, conversion/aggregation policy, new sources, migrations, generalized metadata/framework extraction, accepted mapping auto-apply, or git push.
+- TASK-054 is complete as a bounded evidence slice only. No decision currently approves production accepted-state persistence, base manifest mutation, model-assisted canonicalization execution, report integration, conversion/aggregation policy, migrations, generalized metadata/framework extraction, accepted mapping auto-apply, broad source support, or git push.
