@@ -321,6 +321,10 @@ Default assumption: the current post-boundary architecture is correct. Future so
 
 After every heterogeneous source implementation, add a short `Implementation Lessons` artifact. If three consecutive heterogeneous source implementations complete without meaningful post-boundary architectural evolution, record future technical debt to perform one bounded Deterministic Ingestion Substrate Stability Review; do not perform that review now.
 
-TASK-054 is complete: bounded U.S. Treasury Fiscal Data evidence slice through `ObservedIngestionPackage`. It confirmed row-oriented API metadata and categorical row identity fit before the boundary without substrate evolution. Before selecting TASK-055, review `artifacts/reports/L-20260628-task-054-implementation-lessons.md`.
+TASK-054 is complete: bounded U.S. Treasury Fiscal Data evidence slice through `ObservedIngestionPackage`. It confirmed row-oriented API metadata and categorical row identity fit before the boundary without substrate evolution.
+
+TASK-055 is accepted in principle but not approved for implementation. It is framed as a bounded ECB SDW architectural experiment testing whether SDMX is becoming an architectural boundary or remains an acquisition protocol whose commonality ends before `ObservedIngestionPackage`. See `artifacts/tasks/TASK-055-bounded-ecb-sdw-architectural-experiment.md`, `docs/architecture/architectural-confidence-ledger.md`, and `docs/architecture/architectural-surprise-log.md`.
+
+Implementation methodology is now sufficiently mature for subsequent work to focus almost entirely on heterogeneous source implementation. Every heterogeneous implementation should evaluate predictions, record only material architectural surprises, and calibrate architectural confidence. Architectural extraction should eliminate recurring architectural surprises, not merely recurring code.
 
 Governance freeze: the active ArchitectureHarvest trigger for proposed implementation expected to become a reusable dependency of multiple future capabilities is `foundational_capability_extraction`. Feedback/report-surface work derived from existing deterministic evidence can proceed without deep consultation unless it expands into foundational capability extraction.

@@ -12,6 +12,7 @@ This folder contains MacroForge implementation modules for source evidence, sour
 - `canonicalization_state.py`
 - `combined_source_smoke.py`
 - `contract_drift.py`
+- `ecb_sdw.py`
 - `db_helpers.py`
 - `deterministic_change_verification.py`
 - `eurostat_namq_loader.py`
@@ -28,6 +29,7 @@ This folder contains MacroForge implementation modules for source evidence, sour
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `ecb_sdw.py` implements TASK-055's bounded ECB SDW architectural experiment: source-specific EXR monthly EUR/USD SDMX GenericData fixture normalization and `ObservedIngestionPackage` construction, with no broad ECB support, canonical loading, SDMX Interpretation Layer, source framework, or substrate extraction.
 - `treasury_fiscal_data.py` implements TASK-054's bounded U.S. Treasury Fiscal Data evidence slice: source-specific average-interest-rates JSON fixture normalization and `ObservedIngestionPackage` construction for one endpoint/date, with no broad Treasury support, canonical loading, generalized acquisition, pagination framework, or substrate extraction.
 - `bea_nipa.py` implements TASK-053's bounded BEA NIPA evidence slice: source-specific iTableCore table normalization and `ObservedIngestionPackage` construction for NIPA Table 1.1.1, with no broad BEA support, canonical loading, or framework extraction.
 - `contract_drift.py` implements TASK-049/TASK-050's narrow Contract Validation and Drift Detection capability: deterministic `ObservedIngestionPackage` v1 package/observation invariant checks, issue codes/paths/messages, and fingerprint reproducibility. It does not validate economic correctness or introduce a generalized validation framework.
@@ -43,4 +45,4 @@ This folder contains MacroForge implementation modules for source evidence, sour
 ## Needs Attention
 - Treat `ObservedIngestionPackage` changes as contract evolution requiring equivalence verification across WDI/OECD/Eurostat, not ordinary refactoring.
 - Keep `contract_drift.py` limited to deterministic contract drift detection; do not let it absorb economic validation, provider-specific semantic rules, repair behavior, or generalized validation framework concerns.
-- Keep WDI/OECD/Eurostat work source-specific unless a future decision justifies broader ingestion abstractions. Generalized frameworks/plugins, source registries, conversion, aggregation, and model calls remain out of scope.
+- Keep WDI/OECD/Eurostat/ECB work source-specific unless repeated implementation evidence justifies broader ingestion abstractions. Generalized frameworks/plugins, source registries, SDMX Interpretation Layers, conversion, aggregation, and model calls remain out of scope.

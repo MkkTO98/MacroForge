@@ -117,6 +117,72 @@ Evidence must come from existing implementations.
 
 Extraction should reduce future work while preserving correctness.
 
+Architectural extraction should eliminate recurring architectural surprises, not merely recurring code.
+
+MacroForge is not optimizing for producing reusable code. It is optimizing for producing increasingly accurate architectural understanding. Reusable code is an outcome of understanding, not the primary objective.
+
+Architectural extraction should eliminate recurring implementation uncertainty before eliminating recurring implementation code.
+
+## Implementation methodology freeze and decision-gate cadence
+
+MacroForge's implementation methodology is considered frozen and should be treated as stable infrastructure rather than an actively evolving design.
+
+Future modifications to the implementation methodology itself require the same standard of evidence as architectural extraction: repeated implementation evidence, measurable improvement, deterministic verification where applicable, and a clear reduction in future engineering, human, or LLM effort.
+
+Methodology should evolve only when repeated implementation evidence demonstrates measurable improvement. Organizational elegance, consistency, theoretical appeal, or documentation neatness are not sufficient justification for changing the methodology.
+
+Outside the scheduled retrospective gate, MacroForge follows the default execution loop:
+
+```text
+Select heterogeneous source
+-> Predict
+-> Implement
+-> Verify
+-> Implementation Lessons
+-> Architectural Surprise Log
+-> Architectural Confidence calibration
+-> Marginal Source Cost Index update
+-> Recurring Implementation Pain update
+-> Continue with the next heterogeneous source
+```
+
+Do not pause for architectural discussion unless:
+
+- implementation evidence contradicts this Constitution;
+- deterministic verification fails unexpectedly;
+- repeated implementation pain suggests a possible future extraction candidate;
+- or the scheduled five-source Retrospective Review is reached.
+
+After every five heterogeneous source implementations, perform exactly one bounded Retrospective Review as a decision gate.
+
+The review must answer only:
+
+1. Should MacroForge continue implementing heterogeneous sources without architectural change?
+   - Answer Yes or No.
+   - If No, recommend exactly one architectural extraction.
+2. Has exactly one architectural hypothesis accumulated sufficient implementation evidence to justify extraction?
+   - If none, explicitly state that no extraction is justified.
+3. Has the marginal engineering effort for new heterogeneous sources decreased during the last five implementations?
+   - Evaluate engineering effort.
+   - Evaluate human effort.
+   - Evaluate LLM reasoning effort.
+   - Support conclusions using accumulated implementation evidence.
+
+The review must not:
+
+- redesign MacroForge;
+- create new capability systems;
+- broaden governance;
+- propose speculative architecture;
+- introduce framework-first thinking;
+- create a roadmap beyond the single continue/extract gate decision.
+
+If no architectural extraction is justified, that is an acceptable outcome.
+
+The review exists only to calibrate source implementation methodology and decide whether accumulated implementation pain/evidence now justifies exactly one extraction.
+
+Repeated implementation pain, not repeated code, is the primary evidence for future architectural extraction candidates.
+
 ## Shared infrastructure invariant
 
 Shared infrastructure must never depend on source-specific conditionals.
@@ -130,6 +196,19 @@ If generic infrastructure requires logic such as:
 then the abstraction is likely incorrect.
 
 Source-specific behavior belongs in adapters that produce the shared contract.
+
+## Prediction quality before prediction theater
+
+The quality of MacroForge's architectural predictions should improve over time. Repeatedly inaccurate predictions indicate missing understanding and should be treated as stronger architectural evidence than repeated implementation effort.
+
+Prediction is not valuable because correctness is aesthetically satisfying. Prediction exists to:
+
+- expose hidden assumptions;
+- measure understanding;
+- improve future architectural decisions;
+- reduce future engineering, human, and LLM effort.
+
+Repeated prediction failures should increase architectural attention even if implementation succeeds.
 
 ## Confidence before convenience
 
@@ -171,17 +250,7 @@ Use a lightweight capability maturity lifecycle:
 
 Track maturity only in state/backlog/handoff artifacts and the lightweight capability model document. Do not create a heavy portfolio-management subsystem.
 
-Default development workflow after governance freeze:
-
-```text
-Implement
-  -> Verify
-  -> Update capability maturity
-  -> Select next capability/task from evidence
-  -> Implement
-```
-
-Future architectural reports should only be created when implementation exposes uncertainty that cannot be resolved from the Constitution, capability graph, contracts, dependency graph, or deterministic verification evidence.
+Default development workflow after governance freeze is the source-expansion execution loop defined above. Future architectural reports should only be created when implementation exposes uncertainty that cannot be resolved from the Constitution, capability graph, contracts, dependency graph, deterministic verification evidence, the Marginal Source Cost Index, or the recurring implementation pain record.
 
 ## ArchitectureHarvest consultation
 

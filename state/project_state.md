@@ -9,15 +9,15 @@ Last updated UTC: 2026-06-28T03:20:00Z
 
 MacroForge is governed by Strategic Constitution v1.1. Its strategic asset is reusable deterministic ingestion capability for transforming heterogeneous public economic evidence into canonical, auditable observations. PostgreSQL databases and datasets are outputs of that capability, not the source of truth by themselves.
 
-TASK-004 through TASK-054 are complete. Current source evidence includes WDI, OECD_NAAG, EUROSTAT_NAMQ_GDP, bounded BLS_CPI monthly evidence, bounded BEA_NIPA table evidence, and bounded TREASURY_FISCAL_DATA row-oriented government JSON evidence.
+TASK-004 through TASK-055 are complete. Current source evidence includes WDI, OECD_NAAG, EUROSTAT_NAMQ_GDP, bounded BLS_CPI monthly evidence, bounded BEA_NIPA table evidence, bounded TREASURY_FISCAL_DATA row-oriented government JSON evidence, and bounded ECB_SDW monthly exchange-rate SDMX evidence.
 
-MacroForge is now optimizing Evidence-Accumulating Source Expansion for making the next ten heterogeneous trustworthy source implementations progressively cheaper. New bounded source implementations should generate implementation evidence that attempts to falsify the default assumption that the current post-boundary architecture is correct. Architecture evolves only when repeated implementation evidence demonstrates insufficiency.
+MacroForge is now optimizing Evidence-Accumulating Source Expansion for building a progressively broader corpus of trustworthy economic data while continuously reducing marginal engineering, human, and LLM reasoning effort. New bounded source implementations should generate implementation evidence that attempts to falsify the default assumption that the current post-boundary architecture is correct. Architecture evolves only when repeated implementation pain and evidence demonstrate insufficiency. The implementation methodology is now frozen and treated as stable infrastructure; methodology changes require extraction-grade repeated implementation evidence and measurable improvement, not organizational elegance, consistency, or theoretical appeal.
 
 ## Current capability summary
 
 - `ObservedIngestionPackage` is the public internal handoff boundary after source-specific acquisition and normalization.
 - Deterministic post-boundary mechanics include package fingerprinting/comparison, Deterministic Change Verification, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback.
-- WDI/OECD/Eurostat are canonical-loaded source paths. BLS_CPI, BEA_NIPA, and TREASURY_FISCAL_DATA are bounded architectural/evidence slices only; they are not broad provider support and do not have canonical PostgreSQL loaders.
+- WDI/OECD/Eurostat are canonical-loaded source paths. BLS_CPI, BEA_NIPA, TREASURY_FISCAL_DATA, and ECB_SDW are bounded architectural/evidence slices only; they are not broad provider support and do not have canonical PostgreSQL loaders.
 - TASK-053 confirmed BEA NIPA table/line metadata fits the current observed-package contract without additive evolution.
 - DEC-022 records the accepted next-ten-source optimization target, Implementation Lessons requirement, evidence-gated extraction rule, and future stability-review technical debt.
 - TASK-054 confirmed Treasury Fiscal Data row-oriented API metadata fits the current observed-package contract without additive evolution.
@@ -33,7 +33,7 @@ Lifecycle: Discovered -> Specified -> Verified -> Adopted -> Shared -> Stable ->
 - Deterministic Ingestion Feedback: Verified for current v1.1 scope.
 - Shared Post-Boundary Infrastructure Extraction: Discovered.
 - Canonicalization Governance and Mapping Advancement: Stable for file-backed lifecycle; targeted mapping advancement remains evidence-gated.
-- Evidence-Accumulating Source Expansion: Specified through TASK-054.
+- Evidence-Accumulating Source Expansion: Specified through TASK-055.
 
 ## Current implementation result
 
@@ -45,6 +45,8 @@ TASK-053 Implementation Lessons were recorded in `artifacts/reports/L-20260628-t
 
 TASK-054 implemented the bounded U.S. Treasury Fiscal Data average-interest-rates evidence slice selected for architectural learning per unit of implementation effort. It produced 16 monthly observed observations and confirmed the previous estimation model remains valid.
 
+TASK-055 implemented the bounded ECB SDW monthly EUR/USD exchange-rate evidence slice. It produced one monthly observed observation from SDMX GenericData XML and confirmed the existing observed boundary and deterministic post-boundary substrate still require no evolution. It recorded future SDMX extraction evidence around repeated GenericData mechanics, but no SDMX Interpretation Layer is justified by TASK-055 alone.
+
 Detailed evidence:
 
 - `artifacts/tasks/TASK-053-bounded-bea-nipa-evidence-slice.md`
@@ -52,16 +54,26 @@ Detailed evidence:
 - `artifacts/reports/L-20260628-task-053-implementation-lessons.md`
 - `artifacts/decisions/DEC-022-next-ten-source-expansion-optimization.md`
 - `artifacts/reports/R-20260628-task-054-candidate-source-selection.md`
+- `artifacts/reports/R-20260629-task-055-source-selection-review.md`
+- `artifacts/tasks/TASK-055-bounded-ecb-sdw-architectural-experiment.md`
+- `artifacts/reports/L-20260629-task-055-implementation-lessons.md`
+- `docs/architecture/architectural-confidence-ledger.md`
+- `docs/architecture/architectural-surprise-log.md`
+- `docs/architecture/marginal-source-cost-index.md`
+- `docs/architecture/recurring-implementation-pain.md`
 - `artifacts/tasks/TASK-054-bounded-us-treasury-fiscal-data-evidence-slice.md`
 - `artifacts/reports/L-20260628-task-054-implementation-lessons.md`
 
 ## Current governance posture
 
-- Optimize for decreasing marginal source implementation effort across the next ten heterogeneous trustworthy sources without sacrificing determinism, auditability, provenance, reproducibility, or canonical consistency.
-- Every proposed implementation task must first answer whether it permanently reduces future engineering, human, or LLM effort for trustworthy economic datasets.
-- Keep source-specific acquisition, parsing, provider metadata interpretation, staging/loading, and mapping decisions source-specific until repeated implementation evidence justifies extraction.
-- Do not extract source frameworks, provider metadata frameworks, runtime orchestration, recovery automation, graph/catalog systems, semantic economic validation, conversion, aggregation, or broad provider support from intuition.
-- Extract shared infrastructure only when multiple independent implementations demonstrate contract convergence, algorithm convergence, implementation convergence, deterministic verification, acceptable coupling, and measurable future effort reduction.
+- TASK-055 is implemented and verified in the current worktree; it strengthened the source-specific-first and no-SDMX-Interpretation-Layer posture.
+- Implementation methodology is frozen as stable infrastructure. Changes require extraction-grade repeated implementation evidence and measurable improvement, not elegance, consistency, or theory.
+- Standard heterogeneous-source loop: prediction ledger, implementation, verification, lessons, surprise log, confidence calibration with Prediction Quality, cost-index update, and recurring-pain update.
+- Five-source Retrospective Review is a decision gate only: continue unchanged or recommend exactly one evidence-justified extraction.
+- Primary methodology artifacts: `docs/architecture/architectural-confidence-ledger.md`, `docs/architecture/architectural-surprise-log.md`, `docs/architecture/marginal-source-cost-index.md`, and `docs/architecture/recurring-implementation-pain.md`.
+- Optimize for broader trustworthy economic data while reducing marginal engineering, human, and LLM effort without sacrificing determinism, auditability, provenance, reproducibility, or canonical consistency.
+- Keep source-specific acquisition/parsing/provider interpretation/staging/mapping source-specific until repeated implementation evidence justifies extraction.
+- Do not extract frameworks, orchestration, provider metadata systems, semantic validation, conversion/aggregation, broad provider support, or shared infrastructure from intuition.
 - Treat `ObservedIngestionPackage` field/semantic changes as contract evolution requiring deterministic verification.
 - Do not push without explicit approval.
 

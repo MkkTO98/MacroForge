@@ -61,17 +61,19 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-052-deterministic-ingestion-feedback.md`
 - `TASK-053-bounded-bea-nipa-evidence-slice.md`
 - `TASK-054-bounded-us-treasury-fiscal-data-evidence-slice.md`
+- `TASK-055-bounded-ecb-sdw-architectural-experiment.md`
 - `TASK-PF-20260614-continuity-recovery-adoption.md`
 - `backlog.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- TASK-001 through TASK-054 are complete.
+- TASK-001 through TASK-055 are complete.
+- `TASK-055-bounded-ecb-sdw-architectural-experiment.md` is implemented and verified; it framed ECB SDW as an architectural experiment testing whether SDMX is becoming an architectural boundary or remains only a pre-observed-boundary acquisition protocol. Its closeout includes prediction evaluation, no material surprise-log entry, and confidence calibration.
 - `backlog.md` records Observed Boundary and Contract Stability, Deterministic Change Verification, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback as Verified for current scopes.
 - TASK-054 completed bounded U.S. Treasury Fiscal Data through `ObservedIngestionPackage` without contract evolution or substrate redesign, adding row-oriented government JSON/API metadata evidence.
 - Future foundational shared infrastructure extraction should use the standardized checklist in `docs/architecture/capability-maturity-model.md`: contract/algorithm/implementation convergence, deterministic verification, consultation, acceptable coupling, and satisfied prerequisites.
 
 ## Needs Attention
 - Observed Boundary and Contract Stability, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback remain Verified; do not advance them beyond Verified without separate adoption tasks.
-- TASK-054 is complete. Select TASK-055 only after reviewing TASK-054 lessons and optimizing for architectural learning per unit of implementation effort.
+- TASK-055 confirmed that ECB SDW fits the existing observed boundary and post-boundary substrate while recording future SDMX extraction evidence. Do not extract an SDMX Interpretation Layer until later implementation evidence satisfies the extraction gate.
 - Do not extract quality checks, provider metadata frameworks, canonical dimensions, canonical fact upserts, graph/catalog/runtime systems, recovery automation, or source frameworks without a new evidence threshold and consultation.

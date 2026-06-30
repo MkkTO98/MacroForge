@@ -7,6 +7,7 @@ Immutable raw source artifacts and checksums from pipeline runs.
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
 - `bea/`
 - `bls/`
+- `ecb_sdw/`
 - `eurostat/`
 - `oecd_sdmx/`
 - `treasury/`
@@ -21,6 +22,7 @@ Immutable raw source artifacts and checksums from pipeline runs.
 - Contains TASK-051 bounded BLS monthly CPI architectural experiment evidence under `bls/`.
 - Contains TASK-053 bounded BEA NIPA iTableCore evidence under `bea/`.
 - Contains TASK-054 bounded U.S. Treasury Fiscal Data average-interest-rates evidence under `treasury/`.
+- Contains TASK-055 bounded ECB SDW EXR monthly EUR/USD SDMX evidence under `ecb_sdw/`.
 
 ## Needs Attention
-- Raw files remain ignored by git by default, except the bounded OECD/Eurostat/BLS/BEA/Treasury fixture evidence explicitly unignored for clean-clone reconstruction.
+- Raw files remain ignored by git by default, except the bounded OECD/Eurostat/BLS/BEA/Treasury/ECB fixture evidence explicitly unignored for clean-clone reconstruction.

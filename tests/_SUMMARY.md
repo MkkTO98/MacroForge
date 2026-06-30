@@ -17,6 +17,7 @@ Tests for MacroForge source evidence, loaders, database schema, canonical-domain
 - `test_consult_metaharvest.py`
 - `test_contract_drift.py`
 - `test_db_helpers.py`
+- `test_ecb_sdw.py`
 - `test_deterministic_change_verification.py`
 - `test_eurostat_namq_loader.py`
 - `test_fixture_persistence.py`
@@ -36,6 +37,7 @@ Tests for MacroForge source evidence, loaders, database schema, canonical-domain
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `test_ecb_sdw.py` verifies TASK-055 bounded ECB SDW fixture normalization, ECB metadata/provenance preservation, observed-package contract validity, deterministic replay, and anti-framework boundaries.
 - `test_treasury_fiscal_data.py` verifies TASK-054 bounded Treasury Fiscal Data fixture normalization, query/endpoint/pagination metadata preservation, observed-package contract validity, deterministic replay, and anti-framework boundaries.
 - `test_bea_nipa.py` verifies TASK-053 bounded BEA NIPA fixture normalization, observed-package contract validity, deterministic replay, and anti-framework boundaries.
 - `test_ingestion_feedback.py` verifies TASK-052 Deterministic Ingestion Feedback: contract-failure explanations, package-comparison changed-observation explanations, lineage event explanations, and qualitative engineering-effort profiles for WDI/OECD/Eurostat/BLS.
@@ -50,4 +52,4 @@ Tests for MacroForge source evidence, loaders, database schema, canonical-domain
 
 ## Needs Attention
 - Any future `ObservedIngestionPackage` contract evolution must run `test_contract_drift.py`, `test_observed_ingestion.py`, relevant loader tests, combined-source smoke tests, and full pytest.
-- Preserve fixture-backed and isolated-PostgreSQL coverage if OECD/SDMX, Eurostat, combined-source validation, canonical report generation, canonicalization state mechanics, proposal workflow mechanics, or WDI metadata enrichment are later broadened.
+- Preserve fixture-backed and isolated-PostgreSQL coverage if OECD/SDMX, ECB SDW, Eurostat, combined-source validation, canonical report generation, canonicalization state mechanics, proposal workflow mechanics, or WDI metadata enrichment are later broadened.

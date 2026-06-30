@@ -24,6 +24,8 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 - `L-20260628-task-053-implementation-lessons.md`
 - `L-20260628-task-054-implementation-lessons.md`
 - `R-20260628-task-054-candidate-source-selection.md`
+- `R-20260629-task-055-source-selection-review.md`
+- `L-20260629-task-055-implementation-lessons.md`
 - `R-20260627-bounded-bls-monthly-evidence-slice.md`
 - `R-20260627-canonical-lineage-generation-verification.md`
 - `R-20260627-contract-validation-drift-detection-specification.md`
@@ -68,6 +70,8 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `L-20260629-task-055-implementation-lessons.md` records TASK-055's bounded ECB SDW implementation lessons, prediction review, confidence-calibration evidence, and conclusion that repeated SDMX GenericData mechanics are future extraction evidence but do not justify an SDMX Interpretation Layer yet.
+- `R-20260629-task-055-source-selection-review.md` records the post-TASK-054 evidence-based candidate review and recommended bounded ECB SDW for TASK-055, with explicit pre-implementation predictions.
 - `L-20260628-task-054-implementation-lessons.md` records TASK-054's one durable implementation lesson, prediction review, source-family retrospective, and unchanged future-estimation model.
 - `L-20260628-task-053-implementation-lessons.md` records the short TASK-053 lessons artifact required after heterogeneous source work.
 - `L-20260628-task-054-implementation-lessons.md`
@@ -90,4 +94,5 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 ## Needs Attention
 - Observed Boundary and Contract Stability, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback remain Verified; do not advance them beyond Verified without separate adoption tasks.
 - DEC-022/TASK-053 confirm the next-ten-source optimization target; future source choices should be evidence-driven, bounded, and judged by permanent reduction in future implementation effort.
+- TASK-055 is implemented and verified; future source selection should use its evidence, confidence calibration, and no-surprise result rather than reopen methodology design.
 - Do not treat roadmap reports as implementation approval. Open a bounded task before building a source slice, adopting feedback/reporting, or extracting helpers.
