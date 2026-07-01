@@ -53,9 +53,11 @@ This folder is part of the ProjectForge file-backed operating system for `artifa
 - `DEC-020-architectureharvest-canonical-asset-manifest-registry.md`
 - `DEC-021-next-scope-after-deterministic-canonicalization-proposal-workflow.md`
 - `DEC-022-next-ten-source-expansion-optimization.md`
+- `DEC-023-long-term-domain-vision-and-knowledgeforge-boundary.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- DEC-023 is accepted: MacroForge's long-term world-economy observation-domain direction is a non-binding architectural vision only. It preserves DEC-022, the frozen heterogeneous-source loop, source-specific-first discipline, and MacroForge/KnowledgeForge boundaries; it does not authorize source priorities, implementation tasks, canonical entity infrastructure, graph/catalog systems, source frameworks, or provider metadata frameworks.
 - DEC-022 is accepted: MacroForge now optimizes for making the next ten heterogeneous trustworthy source implementations progressively cheaper, assumes the current post-boundary architecture is correct unless repeated evidence falsifies it, requires short Implementation Lessons after heterogeneous source work, and records future stability-review debt only.
 - DEC-021 is accepted and TASK-037 implemented its bounded WDI unit metadata enrichment scope.
 - DEC-020 is accepted: MacroForge adopted MF-AH-REV-001 in modified/narrow form as a file-backed canonical asset manifest registry.

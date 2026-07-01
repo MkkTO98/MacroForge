@@ -32,7 +32,7 @@ context/context_audit.md
 context/context_manifest.json
 
 # MacroForge data artifacts (keep only summaries/placeholders by default)
-# Exception: bounded OECD/Eurostat/BLS/BEA/Treasury/ECB fixture evidence required for clean-clone reconstruction.
+# Exception: bounded OECD/Eurostat/BLS/BEA/Treasury/ECB/IMF/BIS/ALFRED/ILOSTAT/UN Comtrade/WDI demographic/Eurostat input-output/IMF BOP financial-account/Eurostat energy-balance/FRED yield-curve fixture evidence required for clean-clone reconstruction.
 data/raw/*
 data/staging/*
 data/curated/*
@@ -64,6 +64,48 @@ data/raw/treasury/*
 data/raw/ecb_sdw/*
 !data/raw/ecb_sdw/_SUMMARY.md
 !data/raw/ecb_sdw/ecb-exr-usd-eur-2026-05-raw.xml
+!data/raw/imf_mfs_ir/
+data/raw/imf_mfs_ir/*
+!data/raw/imf_mfs_ir/_SUMMARY.md
+!data/raw/imf_mfs_ir/imf-mfs-ir-usa-jpn-mfs166-2024m01-2024m03-raw.xml
+!data/raw/imf_mfs_ir/imf-mfs-ir-dataflow-references-20260630.xml
+!data/raw/bis_cbpol/
+data/raw/bis_cbpol/*
+!data/raw/bis_cbpol/_SUMMARY.md
+!data/raw/bis_cbpol/bis-cbpol-us-jp-2024m01-2024m03-raw.xml
+!data/raw/alfred_gdp_vintage/
+data/raw/alfred_gdp_vintage/*
+!data/raw/alfred_gdp_vintage/_SUMMARY.md
+!data/raw/alfred_gdp_vintage/alfred-gdp-20260528-20260625-2025q4-2026q1.csv
+!data/raw/ilostat_unemployment/
+data/raw/ilostat_unemployment/*
+!data/raw/ilostat_unemployment/_SUMMARY.md
+!data/raw/ilostat_unemployment/ilostat-unemployment-usa-jpn-total-age15plus-2023-2024.json
+!data/raw/un_comtrade_trade/
+data/raw/un_comtrade_trade/*
+!data/raw/un_comtrade_trade/_SUMMARY.md
+!data/raw/un_comtrade_trade/un-comtrade-usa-jpn-total-goods-2023-import-export.json
+!data/raw/wdi_demographics/
+data/raw/wdi_demographics/*
+!data/raw/wdi_demographics/_SUMMARY.md
+!data/raw/wdi_demographics/wdi-demographic-foundation-usa-jpn-2022-2023.json
+!data/raw/eurostat_input_output/
+data/raw/eurostat_input_output/*
+!data/raw/eurostat_input_output/_SUMMARY.md
+!data/raw/eurostat_input_output/eurostat-naio-10-cp1700-de-fr-2020-dom-imp-cpa-a01-cpa-c10-12.json
+!data/raw/imf_bop_financial_account/
+data/raw/imf_bop_financial_account/*
+!data/raw/imf_bop_financial_account/_SUMMARY.md
+!data/raw/imf_bop_financial_account/imf-bop-financial-account-usa-jpn-2022-2023.xml
+!data/raw/imf_bop_financial_account/imf-bop-dataflow-references-20260701.xml
+!data/raw/eurostat_energy_balance/
+data/raw/eurostat_energy_balance/*
+!data/raw/eurostat_energy_balance/_SUMMARY.md
+!data/raw/eurostat_energy_balance/eurostat-nrg-bal-c-de-fr-2022-2023-ktoe-pprd-imp-exp-fce-total-ra000.json
+!data/raw/fred_yield_curve/
+data/raw/fred_yield_curve/*
+!data/raw/fred_yield_curve/_SUMMARY.md
+!data/raw/fred_yield_curve/fred-monthly-yield-curve-gs1m-gs1-gs10-gs30.csv
 !data/staging/.gitkeep
 !data/staging/_SUMMARY.md
 !data/curated/.gitkeep

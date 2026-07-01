@@ -4,26 +4,33 @@ Project: MacroForge
 
 ## Purpose
 
-If development resumed tomorrow, this file identifies the active implementation phase and safest next action.
+If development resumed tomorrow, this file identifies the active implementation phase, current posture, and safest next action.
 
 ## Active implementation phase
 
-Capability: Evidence-Accumulating Source Expansion
+Capability: Evidence-Accumulating Source Expansion.
 
-Current maturity: Specified through TASK-054 bounded U.S. Treasury Fiscal Data evidence slice.
+Current maturity: specified through TASK-065 bounded FRED U.S. Treasury yield-curve evidence slice.
 
-Objective: make the next ten heterogeneous trustworthy source implementations progressively cheaper while preserving determinism, auditability, provenance, reproducibility, and canonical consistency.
+## Current posture
 
-Default assumption: the current source-specific pre-boundary -> `ObservedIngestionPackage` -> deterministic post-boundary substrate architecture is correct. Future implementation should attempt to falsify this assumption, not proactively replace it. Architecture evolves only when repeated implementation evidence demonstrates insufficiency.
+MacroForge is in Domain Expansion Mode. No implementation task is active.
 
-## Current result
+The current source-specific pre-boundary -> `ObservedIngestionPackage` -> deterministic post-boundary substrate architecture remains validated by recent bounded source evidence. Future source work should try to falsify that assumption through small heterogeneous implementations, not redesign the substrate in advance.
 
-TASK-054 implemented a bounded U.S. Treasury Fiscal Data average-interest-rates evidence slice through `ObservedIngestionPackage` without substrate redesign, observed-boundary redesign, broad Treasury support, generalized acquisition, pagination framework extraction, canonical loading, or live writes.
+Current governance posture:
 
-The Treasury implementation confirmed that row-oriented public government JSON API evidence can preserve query provenance, endpoint metadata, pagination metadata, fiscal record dates, and categorical row identity before the observed boundary. Post-boundary deterministic substrate effort remained Very Low.
+- Continue bounded heterogeneous source implementation.
+- Keep acquisition, parsing, provider interpretation, staging, and mapping source-specific until repeated evidence satisfies the extraction gate.
+- Do not create broad provider support, generic frameworks, canonical loading, KnowledgeForge logic, or infrastructure abstractions from one source slice.
+- Treat `ObservedIngestionPackage` field or semantic changes as contract evolution requiring deterministic verification.
 
-One durable implementation lesson: prefer the bounded source slice that exercises the most new pre-boundary provider shape while staying inside the existing observed contract.
+## Recent result summary
+
+TASK-059 through TASK-065 expanded direct labor, bilateral trade, demographic foundation, input-output matrix, international financial-flow, energy-accounting, and financial-market curve evidence. All behaved as normal Domain Expansion: no observed-boundary, deterministic-substrate, lineage, replay, or validation evolution was needed.
+
+Detailed implementation evidence lives in task artifacts, implementation lessons, domain coverage, confidence, surprise, cost, and pain ledgers. This file intentionally keeps only current operating state.
 
 ## Next action
 
-TASK-055 is implemented and verified in the current uncommitted worktree, but no further TASK-055 implementation should begin from methodology-only work. The implementation methodology is frozen and treated as stable infrastructure until repeated implementation evidence meets the same standard as architectural extraction. Every heterogeneous implementation must evaluate its prediction ledger, record material prediction mismatches in `docs/architecture/architectural-surprise-log.md`, calibrate tracked assumptions and Prediction Quality in `docs/architecture/architectural-confidence-ledger.md`, update `docs/architecture/marginal-source-cost-index.md`, and update `docs/architecture/recurring-implementation-pain.md`. After every five heterogeneous source implementations, perform exactly one bounded Retrospective Review decision gate: continue source implementation without architectural change, or recommend exactly one evidence-justified extraction. The safest next action is to return to implementation-driven development, not further methodology refinement.
+Perform no further architecture review unless new evidence triggers it. If continuing Domain Expansion Mode, select one smallest useful bounded source slice from the least-developed major domain in `docs/architecture/long-term-domain-vision.md` and follow the standard workflow: prediction ledger, RED tests, deterministic fixture, source-specific parser, observed package construction, replay verification, lessons, domain coverage update, architectural monitoring, verification, and closeout.

@@ -15,13 +15,11 @@ Current project state files: active goal, architecture posture, project state, i
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `active_goal.md` identifies the current direction: Evidence-Accumulating Source Expansion after the current uncommitted TASK-055 worktree. Methodology is frozen as stable infrastructure until extraction-grade repeated implementation evidence demonstrates measurable improvement, and now requires prediction evaluation, surprise logging, confidence calibration with Prediction Quality, Marginal Source Cost Index updates, Recurring Implementation Pain updates, and exactly one bounded Retrospective Review decision gate after every five heterogeneous implementations.
-- `project_state.md` and `architecture.md` record Observed Boundary and Contract Stability, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback as Verified, plus an emerging Deterministic Ingestion Substrate architectural layer/execution model after `ObservedIngestionPackage`.
-- DEC-022 records the accepted default assumption: the current post-boundary architecture is correct unless repeated heterogeneous implementations falsify it; future tasks should reduce engineering, human, or LLM effort for future trustworthy datasets.
-- `known_issues.md` records low-priority technical debt that `project_state.md` and `architecture.md` are increasingly mixing operational state with accumulated architectural history.
-- Deterministic Change Verification remains Verified; TASK-046's `ObservedIngestionPackage` v1 remains the public internal contract.
+- `active_goal.md` is the concise startup pointer: MacroForge is in Evidence-Accumulating Source Expansion / Domain Expansion Mode after completed TASK-065, with no active implementation task.
+- `project_state.md` is the compact current-state artifact: source coverage summary, current governance posture, durable recovery anchors, and explicit direction to keep implementation histories in task/report/domain artifacts.
+- `architecture.md` is the compact architecture posture: source-specific pre-boundary work, `ObservedIngestionPackage v1`, deterministic post-boundary substrate, current capability maturity, and deferred areas.
+- `known_issues.md`, `lessons.md`, and `recent_changes.md` remain supporting state artifacts.
 
 ## Needs Attention
-- Future tasks should be evaluated by reduction in deterministic engineering, human effort, LLM reasoning, and uncertainty; confidence increase; knowledge accumulated; leverage; complexity; and maintenance burden.
-- Do not advance Observed Boundary and Contract Stability, Canonical Lineage Event Generation, Contract Validation and Drift Detection, or Deterministic Ingestion Feedback beyond Verified without separate adoption tasks.
-- Use TASK-055 lessons, no-surprise log, confidence calibration, Prediction Quality, cost-index entry, and pain record for the next source selection; do not reopen methodology refinement unless repeated implementation evidence meets the same standard as architectural extraction.
+- Keep primary state files concise. Do not re-add task-by-task implementation history to `project_state.md` or `architecture.md`; use task artifacts, implementation lessons, domain coverage, ledgers, summaries, and handoffs instead.
+- MacroForge is safe to continue Domain Expansion Mode. Do not redesign architecture, extract frameworks, or advance verified capabilities without separate evidence-backed authorization.

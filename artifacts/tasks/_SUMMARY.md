@@ -62,13 +62,23 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-053-bounded-bea-nipa-evidence-slice.md`
 - `TASK-054-bounded-us-treasury-fiscal-data-evidence-slice.md`
 - `TASK-055-bounded-ecb-sdw-architectural-experiment.md`
+- `TASK-056-bounded-imf-mfs-ir-sdmx-evidence-slice.md`
+- `TASK-057-bounded-bis-cbpol-sdmx-evidence-slice.md`
+- `TASK-058-bounded-alfred-revision-vintage-evidence-slice.md`
+- `TASK-059-bounded-ilostat-unemployment-rate-evidence-slice.md`
+- `TASK-060-bounded-un-comtrade-bilateral-total-goods-trade-evidence-slice.md`
+- `TASK-061-bounded-demographic-foundation-evidence-slice.md`
+- `TASK-062-bounded-eurostat-input-output-matrix-evidence-slice.md`
+- `TASK-063-bounded-imf-bop-financial-account-evidence-slice.md`
+- `TASK-064-bounded-eurostat-energy-balance-evidence-slice.md`
+- `TASK-065-bounded-fred-yield-curve-evidence-slice.md`
 - `TASK-PF-20260614-continuity-recovery-adoption.md`
 - `backlog.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- TASK-001 through TASK-055 are complete.
-- `TASK-055-bounded-ecb-sdw-architectural-experiment.md` is implemented and verified; it framed ECB SDW as an architectural experiment testing whether SDMX is becoming an architectural boundary or remains only a pre-observed-boundary acquisition protocol. Its closeout includes prediction evaluation, no material surprise-log entry, and confidence calibration.
+- TASK-001 through TASK-065 are complete.
+- `TASK-065-bounded-fred-yield-curve-evidence-slice.md` is implemented and verified; it added first financial-market curve observation-family evidence through FRED monthly U.S. Treasury constant-maturity yields without contract evolution, broad FRED support, generic market-data infrastructure, or yield-curve analytics.
 - `backlog.md` records Observed Boundary and Contract Stability, Deterministic Change Verification, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback as Verified for current scopes.
 - TASK-054 completed bounded U.S. Treasury Fiscal Data through `ObservedIngestionPackage` without contract evolution or substrate redesign, adding row-oriented government JSON/API metadata evidence.
 - Future foundational shared infrastructure extraction should use the standardized checklist in `docs/architecture/capability-maturity-model.md`: contract/algorithm/implementation convergence, deterministic verification, consultation, acceptable coupling, and satisfied prerequisites.

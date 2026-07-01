@@ -1,45 +1,76 @@
 # Latest Handoff — MacroForge
 
-Updated: 2026-06-30
+Updated: 2026-07-01
 
 ## Status
 
-TASK-055 is complete and verified: bounded ECB SDW monthly EUR/USD exchange-rate evidence passes through the existing `ObservedIngestionPackage` boundary with no substrate redesign, canonical loading, broad ECB support, or SDMX Interpretation Layer.
+Standard ProjectForge closeout completed after TASK-065. No implementation task is active.
 
-Implementation methodology is frozen as stable infrastructure. Future methodology changes require extraction-grade repeated implementation evidence and measurable improvement.
+TASK-056 through TASK-065 are complete. MacroForge remains in Domain Expansion Mode with the validated source-specific pre-boundary -> `ObservedIngestionPackage` -> deterministic post-boundary posture.
 
 ## Context used
 
-`CONSTITUTION.md`, state files, `context/latest_handoff.md`, continuity framework, TASK-055 artifact, ProjectForge closeout/push reference.
+- `recovery/continuity_framework.md`
+- `state/active_goal.md`
+- `state/project_state.md`
+- `context/latest_handoff.md`
+- `artifacts/tasks/TASK-065-bounded-fred-yield-curve-evidence-slice.md`
+- `python3 tools/recover_session.py --project . --json`
 
-## Key changed areas
+## Recent completed work
 
-- TASK-055 implementation/evidence: `src/macroforge/ecb_sdw.py`, `tests/test_ecb_sdw.py`, `data/raw/ecb_sdw/`, `.gitignore`.
-- Methodology: `CONSTITUTION.md`, architectural confidence/surprise/cost/pain docs.
-- Continuity: TASK/report artifacts, state files, folder summaries, this handoff.
+TASK-065 added a bounded FRED monthly U.S. Treasury yield-curve evidence slice:
+
+- USA, 2024-01 and 2024-02.
+- Tenors: `GS1M`, `GS1`, `GS10`, `GS30`.
+- 8 monthly percent-yield observations.
+- Raw fixture SHA-256: `0870977a6dc92d4eb841235ed1335c32ad88914387fe7588ffeeb851e3411a2f`.
+- Package fingerprint: `d7646c4ce18dfacf430fe66cfe170694d18a9aa2af97fcd13251e47276778633`.
+
+The official Treasury daily XML candidate was rejected because daily frequency is outside the current validated contract envelope; FRED monthly data preserved the observation-family evidence without contract evolution.
 
 ## Verification
 
-- `PYTHONPATH=src uvx --from pytest --with pyyaml pytest tests -q` -> `123 passed in 7.74s`
-- `git diff --check` -> passed with no output
-- `python3 tools/check_coherence.py --project .` -> `coherence: 0 block(s), 0 warning(s)`
-- `python3 tools/context_health.py --project .` -> `context health: 0 block(s), 0 warning(s)`
+Already run before closeout:
 
-Full tests regenerated only temporary database IDs in deterministic report JSONs; those JSONs were restored before final verification.
+```text
+uvx pytest tests/test_fred_yield_curve.py tests/test_contract_drift.py tests/test_observed_ingestion.py -q
+17 passed in 0.07s
+
+uvx pytest -q
+174 passed in 7.32s
+
+python3 tools/check_coherence.py --project .
+coherence: 0 block(s), 0 warning(s)
+
+python3 tools/context_health.py --project .
+context health: 0 block(s), 0 warning(s)
+
+python3 tools/architecture_reality_audit.py --project .
+architecture-reality-audit: 0 block(s), 0 warning(s)
+
+git diff --check
+passed with no output
+```
+
+After this handoff edit, rerun coherence, context health, architecture audit, `git diff --check`, and `git status --short` before commit/push.
 
 ## Decisions/tasks updated
 
-- TASK-055 complete.
-- Prediction Quality added to the Architectural Confidence Ledger.
-- Marginal Source Cost Index and Recurring Implementation Pain are now part of heterogeneous-source closeout.
-- Repeated prediction failure and implementation uncertainty carry more architectural weight than repeated code.
+- TASK-056 through TASK-065 complete.
+- DEC-023 accepted long-term domain vision and KnowledgeForge boundary.
+- No architecture redesign, broad provider framework, canonical loader, or KnowledgeForge logic was introduced.
+
+## Blockers/open questions
+
+None.
 
 ## Next action
 
-No blockers or pending questions. Select the next heterogeneous source implementation from accumulated evidence and follow the frozen execution loop. Do not reopen methodology refinement unless repeated evidence meets the extraction standard.
+Wait for a new user instruction. If continuing Domain Expansion, select one bounded source slice and classify it as candidate new observation family / extension of existing family / domain-coverage expansion using an existing family.
 
-## Resume command
+## Exact resume command
 
-```bash
-cd /home/mkkto/srv/EIP/projects/MacroForge && python3 tools/recover_session.py --project . --json && git status --short
+```text
+Recover project state and continue work.
 ```

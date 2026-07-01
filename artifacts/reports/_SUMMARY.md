@@ -6,6 +6,7 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
 - `.gitkeep`
+- `R-20260701-architecture-reality-audit.md`
 - `R-20260605-architecture-reality-audit.md`
 - `R-20260613-architecture-reality-audit.md`
 - `R-20260613-largest-canonicalization-uncertainty.md`
@@ -70,7 +71,11 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `L-20260701-task-065-implementation-lessons.md` records TASK-065's bounded FRED monthly U.S. Treasury yield-curve implementation lessons, observation-family selection rationale, daily-frequency contract-compatibility note, prediction review, and conclusion that the selected monthly curve slice behaved as normal Domain Expansion without architecture evolution.
+- `L-20260701-task-064-implementation-lessons.md`
+- `L-20260701-task-065-implementation-lessons.md` records TASK-064's bounded Eurostat energy balance implementation lessons, prediction review, energy-accounting domain evidence, and conclusion that it behaved as normal Domain Expansion without architecture evolution.
 - `L-20260629-task-055-implementation-lessons.md` records TASK-055's bounded ECB SDW implementation lessons, prediction review, confidence-calibration evidence, and conclusion that repeated SDMX GenericData mechanics are future extraction evidence but do not justify an SDMX Interpretation Layer yet.
+- `R-20260701-architecture-reality-audit.md` records the bounded post-TASK-063 Architecture-to-Reality Audit maintenance checkpoint used to reset the completed-task audit cadence.
 - `R-20260629-task-055-source-selection-review.md` records the post-TASK-054 evidence-based candidate review and recommended bounded ECB SDW for TASK-055, with explicit pre-implementation predictions.
 - `L-20260628-task-054-implementation-lessons.md` records TASK-054's one durable implementation lesson, prediction review, source-family retrospective, and unchanged future-estimation model.
 - `L-20260628-task-053-implementation-lessons.md` records the short TASK-053 lessons artifact required after heterogeneous source work.
