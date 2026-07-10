@@ -5,42 +5,201 @@ Immutable raw source artifacts and checksums from pipeline runs.
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
+- `alfred_gdp_vintage/`
 - `bea/`
 - `bis_cbpol/`
 - `bls/`
+- `bls_cpi_categories/`
+- `bls_cpi_major_categories_operational/`
+- `bls_jolts_labor_demand/`
+- `bls_labor_core_operational/`
+- `bls_payroll_employment/`
+- `bls_state_labor_force/`
+- `bls_wages_hours/`
+- `census_housing_construction/`
+- `demographic_structure_task178/`
+- `demographic_structure_task180/`
+- `domain_bulk_expansion_task174/`
 - `ecb_sdw/`
 - `eurostat/`
 - `eurostat_energy_balance/`
-- `fred_yield_curve/`
 - `eurostat_input_output/`
+- `fdic_bank_certifications/`
+- `fdic_branch_locations/`
+- `fred_bank_credit/`
+- `fred_business_applications/`
+- `fred_business_confidence/`
+- `fred_business_inventories/`
+- `fred_consumer_sentiment_expectations/`
+- `fred_corporate_profits/`
+- `fred_crude_oil_prices/`
+- `fred_federal_debt_interest/`
+- `fred_federal_fiscal_flows/`
+- `fred_foreign_exchange_rates/`
+- `fred_household_balance_sheet/`
+- `fred_household_credit_quality/`
+- `fred_household_debt_service/`
+- `fred_housing_construction/`
+- `fred_housing_prices/`
+- `fred_industrial_production_capacity/`
+- `fred_manufacturers_orders/`
+- `fred_monetary_aggregates/`
+- `fred_personal_consumption_expenditures/`
+- `fred_personal_income_saving/`
+- `fred_producer_prices/`
+- `fred_productivity_unit_labor_cost/`
+- `fred_retail_sales/`
+- `fred_state_unemployment/`
+- `fred_vehicle_sales/`
+- `fred_yield_curve/`
+- `ilostat_unemployment/`
 - `imf_bop_financial_account/`
+- `imf_bop_g7_financial_account/`
+- `imf_fas_payment_cards/`
+- `imf_gdd_g7_sector_debt/`
+- `imf_gdd_sector_debt/`
+- `imf_iip_g7_positions/`
+- `imf_iip_positions/`
+- `imf_imts/`
+- `imf_imts_g7_trade/`
+- `imf_irfcl_reserve_assets/`
 - `imf_mfs_ir/`
+- `imf_weo_projections/`
 - `oecd_sdmx/`
+- `repository_growth_task176/`
+- `sec_13f_stock_positions/`
+- `sec_company_capital_structure/`
+- `sec_company_cash_flow/`
+- `sec_company_facts/`
+- `sec_company_financial_statement_panel/`
+- `sec_company_income_statement/`
+- `sec_exchange_listings/`
+- `sec_filing_events/`
+- `sec_magnificent7_income_statement/`
+- `task189_wdi_external_vulnerability/`
+- `task190_wdi_human_capital/`
+- `task191_wdi_energy_transition/`
+- `task192_wdi_financial_system/`
+- `task193_wdi_labor_closure/`
+- `task194_wdi_education_attainment_closure/`
+- `task194_wdi_energy_climate_closure/`
+- `task196_wdi_health_population_expansion/`
+- `task197_wdi_environment_climate_expansion/`
+- `task198_wdi_economy_growth_chunked_expansion/`
+- `task199_wdi_external_debt_chunked_expansion/`
+- `task200_wdi_poverty_inequality_chunked_expansion/`
+- `task201_wdi_public_sector_fiscal_governance_chunked_expansion/`
+- `task202_wdi_private_sector_business_environment_chunked_expansion/`
+- `task203_wdi_infrastructure_connectivity_chunked_expansion/`
+- `task204_wdi_gender_equality_chunked_expansion/`
+- `task205_wdi_agriculture_rural_development_chunked_expansion/`
+- `task206_wdi_social_protection_all_programs_chunked_expansion/`
+- `task207_bls_us_labor_monthly_phase2_campaign/`
+- `task207_fred_us_macro_monthly_phase2_campaign/`
 - `treasury/`
+- `un_comtrade_product_trade/`
 - `un_comtrade_trade/`
 - `wdi/`
+- `wdi_agriculture_food/`
 - `wdi_demographics/`
+- `wdi_demographics_phase1/`
+- `wdi_dependency_ratios/`
+- `wdi_education_human_capital/`
+- `wdi_energy_phase1/`
+- `wdi_energy_use_coal_electricity/`
+- `wdi_environment_climate_exposure/`
+- `wdi_financial_accounts_core_operational/`
+- `wdi_fixed_broadband/`
+- `wdi_health_system_resources/`
+- `wdi_high_technology_exports/`
+- `wdi_implemented_compatible_campaign/`
+- `wdi_innovation_rd/`
+- `wdi_logistics_performance/`
+- `wdi_macro_indicators/`
+- `wdi_migration_remittances/`
+- `wdi_operational_phase1/`
+- `wdi_poverty_inequality/`
+- `wdi_services_trade_intensity/`
+- `wdi_tourism_travel_flows/`
+- `wdi_trade_core_operational/`
+- `worldbank_country_classifications/`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- Contains TASK-005 WDI raw payload copies from the live support bundle.
-- Contains TASK-012 fixture-backed OECD/SDMX raw XML evidence at `oecd_sdmx/oecd_sdmx_naag_2020_2021_raw.xml`.
-- Contains TASK-019 bounded OECD/SDMX structure/codelist XML evidence at `oecd_sdmx/oecd_sdmx_naag_structure_20260604.xml`.
-- Contains TASK-020 Eurostat raw JSON architecture-spike evidence at `eurostat/eurostat-namq-10-gdp-2023q1-2023q2-raw.json`.
-- Contains TASK-051 bounded BLS monthly CPI architectural experiment evidence under `bls/`.
-- Contains TASK-053 bounded BEA NIPA iTableCore evidence under `bea/`.
-- Contains TASK-054 bounded U.S. Treasury Fiscal Data average-interest-rates evidence under `treasury/`.
-- Contains TASK-055 bounded ECB SDW EXR monthly EUR/USD SDMX evidence under `ecb_sdw/`.
-- Contains TASK-056 bounded IMF MFS_IR interest-rate SDMX evidence under `imf_mfs_ir/`.
-- Contains TASK-057 bounded BIS WS_CBPOL central-bank-policy-rate SDMX evidence under `bis_cbpol/`.
-- Contains TASK-058 bounded ALFRED GDP revision-vintage CSV evidence under `alfred_gdp_vintage/`.
-- Contains TASK-059 bounded ILOSTAT unemployment-rate JSON evidence under `ilostat_unemployment/`.
-- Contains TASK-060 bounded UN Comtrade bilateral total-goods trade JSON evidence under `un_comtrade_trade/`.
-- Contains TASK-061 bounded WDI demographic foundation JSON evidence under `wdi_demographics/`.
-- Contains TASK-062 bounded Eurostat input-output matrix JSON-stat evidence under `eurostat_input_output/`.
-- Contains TASK-063 bounded IMF BOP financial-account SDMX XML evidence under `imf_bop_financial_account/`.
-- Contains TASK-064 bounded Eurostat energy balance JSON-stat evidence under `eurostat_energy_balance/`.
-- Contains TASK-065 bounded FRED monthly U.S. Treasury yield-curve CSV evidence under `fred_yield_curve/`.
+- `task206_wdi_social_protection_all_programs_chunked_expansion/` contains corrected TASK-206 per-indicator checkpoints, per-chunk raw WDI Social Protection & Labor all-program evidence, and a dated audit archive preserving the invalid original generated evidence.
+- `task205_wdi_agriculture_rural_development_chunked_expansion/` contains TASK-205 per-indicator checkpoints and per-chunk raw WDI Agriculture & Rural Development evidence.
+- `task204_wdi_gender_equality_chunked_expansion/` contains TASK-204 per-indicator checkpoints, per-chunk raw artifacts, and archived timeout-placeholder correction evidence.
+- `task203_wdi_infrastructure_connectivity_chunked_expansion/` preserves TASK-203 per-indicator checkpoints and per-chunk raw WDI Infrastructure evidence.
+- `task202_wdi_private_sector_business_environment_chunked_expansion/` preserves TASK-202 per-indicator checkpoints and per-chunk raw WDI Private Sector evidence.
+- `task201_wdi_public_sector_fiscal_governance_chunked_expansion/` preserves TASK-201 per-indicator checkpoints and per-chunk raw WDI Public Sector evidence.
+- `task200_wdi_poverty_inequality_chunked_expansion/` preserves TASK-200 per-indicator checkpoints and per-chunk raw WDI Poverty/Inequality evidence.
+- `task199_wdi_external_debt_chunked_expansion/` preserves TASK-199 per-indicator checkpoints and per-chunk raw WDI External Debt evidence.
+- `task198_wdi_economy_growth_chunked_expansion/` preserves TASK-198 per-indicator checkpoints and per-chunk raw WDI evidence.
+- `task197_wdi_environment_climate_expansion/` preserves selected-campaign raw evidence and 155 per-indicator WDI environment checkpoints.
+- `task196_wdi_health_population_expansion/` preserves selected-campaign raw evidence and 575 per-indicator WDI health-topic checkpoints from the broad acquisition preflight.
+- `task194_wdi_education_attainment_closure/` contains the TASK-194 WDI/Barro-Lee education-attainment raw acquisition artifact retained as permanent evidence.
+- `task193_wdi_labor_closure/` contains the TASK-193 WDI/ILO raw labor acquisition artifact retained as permanent evidence.
+- `task192_wdi_financial_system/` contains the TASK-192 WDI/GFDD raw financial-system acquisition artifact retained as permanent evidence.
+- `task191_wdi_energy_transition/` contains the TASK-191 WDI raw energy-transition/access campaign fixture.
+- `task190_wdi_human_capital/` contains the TASK-190 WDI raw human-capital foundations campaign fixture.
+- `task189_wdi_external_vulnerability/` contains the TASK-189 WDI raw external-vulnerability/financial-openness campaign fixture.
+- `alfred_gdp_vintage/` includes TASK-187 GDI sparse-vintage raw fixture alongside prior GDP/GDPC1 ALFRED fixtures.
+- `alfred_gdp_vintage/` contains bounded ALFRED vintage CSV fixtures, including the TASK-185 GDPC1 companion fixture for GDP+GDPC1 multi-series validation.
+- `alfred_gdp_vintage/` contains bounded ALFRED GDP vintage CSV fixtures, including the TASK-184 three-vintage 2025-Q4/2026-Q1 slice.
+- `demographic_structure_task180/` contains the TASK-180 raw WDI age-sex cohort closure artifact for 68 five-year female/male cohort indicators, 217 countries, and 1990-2024.
+- `demographic_structure_task178/` contains the TASK-178 raw WDI demographic-structure/human-capital campaign artifact for 28 included indicators, 217 countries, and 1990-2024.
+- `un_comtrade_product_trade/` contains the TASK-172 bounded UN Comtrade product-level USA-Japan 2023 three-HS-code raw fixture and checksum evidence.
+- `fred_business_applications/` contains the TASK-123 FRED business applications CSV fixture and summary.
+- `fred_household_balance_sheet/` contains the TASK-122 FRED household balance-sheet CSV fixture and summary.
+- `sec_company_capital_structure/` contains the TASK-121 SEC company capital-structure JSON fixture and summary.
+- `sec_company_cash_flow/` contains the TASK-120 SEC company cash-flow JSON fixture and summary.
+- `fdic_branch_locations/` contains the TASK-119 FDIC branch-location JSON fixture and summary.
+- `fdic_bank_certifications/` contains the TASK-118 FDIC bank certification JSON fixture and summary.
+- `sec_exchange_listings/` contains the TASK-117 SEC exchange-listing JSON fixture and summary.
+- `worldbank_country_classifications/` contains the TASK-116 World Bank country-classification JSON fixture and summary.
+- `sec_13f_stock_positions/` contains the TASK-115 SEC 13F stock-position JSON fixture and summary.
+- `sec_filing_events/` contains the TASK-114 SEC filing-event JSON fixture and summary.
+- `imf_weo_projections/` contains the TASK-113 IMF WEO projection JSON fixture and summary.
+- `wdi_high_technology_exports/` contains the TASK-112 WDI high-technology export JSON fixture and summary.
+- `wdi_tourism_travel_flows/` contains the TASK-111 WDI tourism/travel-flow JSON fixture and summary.
+- `wdi_agriculture_food/` contains the TASK-110 WDI agriculture/food JSON fixture and summary.
+- `wdi_migration_remittances/` contains the TASK-109 WDI migration/remittances JSON fixture and summary.
+- `wdi_innovation_rd/` contains the TASK-108 WDI innovation/R&D JSON fixture and summary.
+- `wdi_poverty_inequality/` contains the TASK-107 WDI poverty/inequality JSON fixture and summary.
+- `wdi_environment_climate_exposure/` contains the TASK-106 WDI environment/climate exposure JSON fixture and summary.
+- `wdi_health_system_resources/` contains the TASK-105 WDI health-system resources JSON fixture and summary.
+- `wdi_education_human_capital/` contains the TASK-104 WDI education/human-capital JSON fixture and summary.
+- `imf_fas_payment_cards/` contains the TASK-103 IMF FAS payment-card XML fixture and summary.
+- `imf_irfcl_reserve_assets/` contains the TASK-102 IMF IRFCL reserve-assets XML fixture and summary.
+- `imf_gdd_sector_debt/` contains the TASK-101 IMF GDD sector-debt XML fixture and summary.
+- Contains TASK-099 bounded WDI services-trade intensity JSON evidence under `wdi_services_trade_intensity/`.
+- Contains TASK-098 bounded WDI fixed-broadband JSON evidence under `wdi_fixed_broadband/`.
+- Contains TASK-097 bounded WDI Logistics Performance Index JSON evidence under `wdi_logistics_performance/`.
+- Contains TASK-096 bounded WDI energy use / coal-electricity JSON evidence under `wdi_energy_use_coal_electricity/`.
+- Contains TASK-095 bounded FRED federal debt/interest-cost CSV evidence under `fred_federal_debt_interest/`.
+- Contains TASK-094 bounded FRED federal fiscal-flow CSV evidence under `fred_federal_fiscal_flows/`.
+- Contains TASK-093 bounded FRED corporate-profits CSV evidence under `fred_corporate_profits/`.
+- Contains TASK-092 bounded FRED productivity/unit-labor-cost CSV evidence under `fred_productivity_unit_labor_cost/`.
+- Contains TASK-091 bounded FRED/OECD business-confidence CSV evidence under `fred_business_confidence/`.
+- Contains TASK-090 bounded FRED housing-price CSV evidence under `fred_housing_prices/`.
+- Contains TASK-089 bounded BLS CES wage/hour JSON evidence under `bls_wages_hours/`.
+- Contains TASK-088 bounded IMF IIP position XML and metadata evidence under `imf_iip_positions/`.
+- Contains TASK-087 bounded FRED manufacturers' orders CSV evidence under `fred_manufacturers_orders/`.
+- Contains TASK-086 bounded FRED bank-credit CSV evidence under `fred_bank_credit/`.
+- Contains TASK-085 bounded FRED business-inventories CSV evidence under `fred_business_inventories/`.
+- Contains TASK-084 bounded BLS JOLTS labor-demand JSON evidence under `bls_jolts_labor_demand/`.
+- Contains earlier bounded source fixture evidence for WDI/OECD/Eurostat/BLS/BEA/Treasury/ECB/IMF/BIS/ALFRED/ILOSTAT/UN Comtrade/WDI demographics/Eurostat input-output/IMF BOP financial-account/Eurostat energy-balance/FRED yield-curve/Census housing-construction/SEC company-facts/FRED crude-oil/FRED state-unemployment/BLS payroll-employment/FRED monetary-aggregates/FRED household-debt-service and other completed bounded slices.
 
 ## Needs Attention
-- Raw files remain ignored by git by default, except the bounded OECD/Eurostat/BLS/BEA/Treasury/ECB/IMF/BIS/ALFRED/ILOSTAT/UN Comtrade/WDI demographic/Eurostat input-output/IMF BOP financial-account/Eurostat energy-balance/FRED yield-curve fixture evidence explicitly unignored for clean-clone reconstruction.
+- Raw files remain ignored by git by default, except bounded fixture evidence explicitly unignored for clean-clone reconstruction, including TASK-095 FRED federal debt/interest cost under `fred_federal_debt_interest/`, TASK-094 FRED federal fiscal flows under `fred_federal_fiscal_flows/`, TASK-093 FRED corporate profits under `fred_corporate_profits/`, TASK-092 FRED productivity/unit labor cost under `fred_productivity_unit_labor_cost/`, TASK-091 FRED/OECD business confidence under `fred_business_confidence/`, TASK-090 FRED housing prices under `fred_housing_prices/`, and TASK-089 BLS CES wages/hours under `bls_wages_hours/`.
+- `bls_cpi_categories/` — TASK-131 BLS CPI major-category raw fixture.
+- `wdi_operational_phase1/` — TASK-132 WDI Phase 1 all-non-aggregate-country raw fixture.
+- `wdi_demographics_phase1/` — TASK-133 WDI demographics all-non-aggregate-country raw fixture.
+- `wdi_energy_phase1/` — TASK-134 WDI energy all-non-aggregate-country raw fixture.
+- `imf_iip_g7_positions/` — TASK-135 IMF IIP G7 external-position raw and metadata fixtures.
+- `imf_bop_g7_financial_account/` — TASK-136 IMF BOP G7 financial-account raw and metadata fixtures.
+- `imf_gdd_g7_sector_debt/` — TASK-137 IMF GDD G7 sector-debt raw fixture.
+- `sec_company_financial_statement_panel/` — TASK-138 deterministic SEC AAPL/MSFT integrated financial statement panel fixture.
+- `bls_cpi_major_categories_operational/` preserves TASK-140 BLS CPI operational raw fixture, 480 rows.
+- TASK-142 added raw WDI trade core fixture under `wdi_trade_core_operational/`.
+- `domain_bulk_expansion_task174/` stores the TASK-174 raw WDI bulk domain expansion response bundle for clean replay.

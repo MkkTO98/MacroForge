@@ -5,7 +5,6 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
-- `.gitkeep`
 - `T-001-initial-validation.md`
 - `TASK-001-rebuild-macroforge-scaffold-with-current-projectforge.md`
 - `TASK-002-import-curated-reconstruction-context.md`
@@ -72,18 +71,171 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-063-bounded-imf-bop-financial-account-evidence-slice.md`
 - `TASK-064-bounded-eurostat-energy-balance-evidence-slice.md`
 - `TASK-065-bounded-fred-yield-curve-evidence-slice.md`
-- `TASK-PF-20260614-continuity-recovery-adoption.md`
-- `backlog.md`
+- `TASK-066-bounded-census-housing-construction-evidence-slice.md`
+- `TASK-067-bounded-imf-imts-bilateral-trade-evidence-slice.md`
+- `TASK-068-bounded-sec-company-facts-evidence-slice.md`
+- `TASK-069-bounded-fred-crude-oil-price-evidence-slice.md`
+- `TASK-070-bounded-fred-state-unemployment-evidence-slice.md`
+- `TASK-071-bounded-bls-payroll-employment-evidence-slice.md`
+- `TASK-072-bounded-fred-monetary-aggregates-evidence-slice.md`
+- `TASK-073-bounded-fred-household-debt-service-evidence-slice.md`
+- `TASK-074-bounded-fred-foreign-exchange-rate-evidence-slice.md`
+- `TASK-075-bounded-fred-consumer-sentiment-expectations-evidence-slice.md`
+- `TASK-076-bounded-fred-industrial-production-capacity-evidence-slice.md`
+- `TASK-077-bounded-fred-retail-sales-evidence-slice.md`
+- `TASK-078-bounded-fred-personal-consumption-expenditures-evidence-slice.md`
+- `TASK-079-bounded-fred-personal-income-saving-evidence-slice.md`
+- `TASK-080-bounded-fred-producer-price-evidence-slice.md`
+- `TASK-081-bounded-fred-household-credit-quality-evidence-slice.md`
+- `TASK-082-observed-boundary-implementation-architecture-migration.md`
+- `TASK-083-deterministic-verification-boundary-migration.md`
+- `TASK-084-bounded-bls-jolts-labor-demand-evidence-slice.md`
+- `TASK-085-bounded-fred-business-inventories-evidence-slice.md`
+- `TASK-086-bounded-fred-bank-credit-evidence-slice.md`
+- `TASK-087-bounded-fred-manufacturers-orders-evidence-slice.md`
+- `TASK-088-bounded-imf-iip-position-evidence-slice.md`
+- `TASK-089-bounded-bls-wages-hours-evidence-slice.md`
+- `TASK-090-bounded-fred-housing-price-evidence-slice.md`
+- `TASK-091-bounded-fred-business-confidence-evidence-slice.md`
+- `TASK-092-bounded-fred-productivity-unit-labor-cost-evidence-slice.md`
+- `TASK-093-bounded-fred-corporate-profits-evidence-slice.md`
+- `TASK-094-bounded-fred-federal-fiscal-flows-evidence-slice.md`
+- `TASK-095-bounded-fred-federal-debt-interest-evidence-slice.md`
+- `TASK-096-bounded-wdi-energy-use-coal-electricity-evidence-slice.md`
+- `TASK-097-bounded-wdi-logistics-performance-evidence-slice.md`
+- `TASK-098-bounded-wdi-fixed-broadband-evidence-slice.md`
+- `TASK-099-bounded-wdi-services-trade-intensity-evidence-slice.md`
+- `TASK-100-strategic-retrospective-after-domain-expansion-run.md`
+- `TASK-101-bounded-imf-gdd-sector-debt-evidence-slice.md`
+- `TASK-102-bounded-imf-irfcl-reserve-assets-evidence-slice.md`
+- `TASK-103-bounded-imf-fas-payment-cards-evidence-slice.md`
+- `TASK-104-bounded-wdi-education-human-capital-evidence-slice.md`
+- `TASK-105-bounded-wdi-health-system-resources-evidence-slice.md`
+- `TASK-106-bounded-wdi-environment-climate-exposure-evidence-slice.md`
+- `TASK-107-bounded-wdi-poverty-inequality-evidence-slice.md`
+- `TASK-108-bounded-wdi-innovation-rd-evidence-slice.md`
+- `TASK-109-bounded-wdi-migration-remittances-evidence-slice.md`
+- `TASK-110-bounded-wdi-agriculture-food-evidence-slice.md`
+- `TASK-111-bounded-wdi-tourism-travel-flows-evidence-slice.md`
+- `TASK-112-bounded-wdi-high-technology-exports-evidence-slice.md`
+- `TASK-113-bounded-imf-weo-projection-evidence-slice.md`
+- `TASK-114-bounded-sec-filing-events-evidence-slice.md`
+- `TASK-115-bounded-sec-13f-stock-positions-evidence-slice.md`
+- `TASK-116-bounded-worldbank-country-classifications-evidence-slice.md`
+- `TASK-117-bounded-sec-exchange-listings-evidence-slice.md`
+- `TASK-118-bounded-fdic-bank-regulatory-certification-evidence-slice.md`
+- `TASK-119-bounded-fdic-branch-locations-evidence-slice.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- TASK-001 through TASK-065 are complete.
-- `TASK-065-bounded-fred-yield-curve-evidence-slice.md` is implemented and verified; it added first financial-market curve observation-family evidence through FRED monthly U.S. Treasury constant-maturity yields without contract evolution, broad FRED support, generic market-data infrastructure, or yield-curve analytics.
-- `backlog.md` records Observed Boundary and Contract Stability, Deterministic Change Verification, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback as Verified for current scopes.
-- TASK-054 completed bounded U.S. Treasury Fiscal Data through `ObservedIngestionPackage` without contract evolution or substrate redesign, adding row-oriented government JSON/API metadata evidence.
+- `TASK-206-operational-repository-expansion-social-protection-all-programs.md` is complete after correction; it preserved invalid original evidence, fixed ASPIRE blank-`countryiso3code` territory fallback, and loaded 30,380 WDI aggregate social-protection all-program facts across 4 compatible annual-scalar indicators after attempting 135 coherent candidates, with 131 `non_annual_periods` exclusions and 0 unresolved acquisition errors. It is evidence that residual bulk WDI Phase 1 has reached a transition gate for the mature annual-scalar path.
+- `TASK-205-operational-repository-expansion-agriculture-rural-development.md` is complete; it loaded 98,735 WDI agriculture/food systems/rural-development facts across 13 compatible indicators after attempting 26 unloaded WDI Agriculture & Rural Development topic candidates, with 13 provider exclusions and 0 unresolved acquisition errors.
+- `TASK-204-operational-repository-expansion-gender-equality.md` is complete; it audit-corrected TASK-204 loaded 1,410,500 WDI gender equality/sex-disaggregated facts across 186 compatible indicators after attempting 220 candidates, and remediation-safety closeout verified acquisition-error completion blocking plus run-scoped WDI loader rerun safety.
+- `TASK-203-operational-repository-expansion-infrastructure-connectivity.md` is complete; it loaded 212,660 WDI infrastructure/connectivity facts across 28 compatible indicators after attempting 56 candidates.
+- `TASK-202-operational-repository-expansion-private-sector-business-environment.md` is complete; it loaded 812,245 WDI private-sector/business-environment facts across 107 compatible indicators after attempting 169 candidates.
+- `TASK-201-operational-repository-expansion-public-sector-fiscal-governance.md` is complete; it loaded 659,633 WDI public-sector fiscal/governance facts across 91 compatible indicators after attempting 149 candidates.
+- `TASK-200-operational-repository-expansion-poverty-inequality.md` is complete; it loaded 136,710 WDI poverty/inequality facts across 18 compatible indicators after attempting 142 candidates.
+- `TASK-199-operational-repository-expansion-external-debt.md` is complete; it loaded 288,610 WDI external-debt facts across 38 compatible indicators after attempting 493 candidates.
+- `TASK-198-large-campaign-execution-optimization.md` is complete; it implemented source-specific WDI chunked execution and loaded 1,587,355 economy/growth facts across 209 indicators.
+- `TASK-197-repository-expansion-with-operationally-optimal-campaign-sizing.md` is complete; it loaded 843,045 WDI environment/climate facts and established 120-160 indicators as the current operational sizing range.
+- `TASK-196-repository-expansion-campaign-with-execution-resilience.md` is complete; it loaded 910,063 WDI health/population-health facts and added checkpoint-based acquisition resilience.
+- `TASK-195-repository-execution-excellence-assessment-and-implementation.md` is complete; it implements deterministic campaign closeout verification without reopening frozen architecture.
+- `TASK-194-repository-expansion-domain-completion-prioritization.md` is complete; it loaded 539,245 WDI/Barro-Lee education-attainment facts, advanced education/human-capital attainment toward domain completion, preserved raw evidence, and found no architecture challenge.
+- `TASK-193-repository-expansion-capability-closure-optimization.md` is complete; it loaded 364,525 WDI/ILO labor facts, advanced global annual labor status/utilization/structure monitoring toward closure, preserved raw evidence, and found no architecture challenge.
+- `TASK-192-repository-expansion-evidence-preservation-provider-classification.md` is complete; it loaded 685,568 WDI/GFDD financial-system facts, preserved raw evidence, classified one provider-unavailable invalid-indicator exclusion, and found no architecture challenge.
+- `TASK-191-repository-expansion-domain-completion-preference.md` is complete; it loaded 167,090 WDI energy-transition/access facts and found no architecture challenge.
+- `TASK-190-next-repository-expansion-campaign.md` is complete; it loaded 300,325 WDI human-capital foundations facts and found no architecture challenge.
+- `TASK-189-repository-expansion-campaign-selection-and-implementation.md` is complete; it loaded 129,115 WDI external-vulnerability facts and found no architecture challenge.
+- `TASK-188-architecture-maturity-declaration-and-freeze-assessment.md` is complete and records architecture maturity/freeze governance.
+- `TASK-187-sparse-vintage-alfred-validation-and-revision-aware-workstream-completion-assessment.md` is complete and closes the bounded revision-aware scalar workstream as operationally mature for intended scope.
+- `TASK-186-bounded-asynchronous-vintage-alfred-revision-aware-planning-assessment.md` is complete and records the planning-only asynchronous-vintage boundary assessment; it recommends TASK-187 bounded sparse-vintage ALFRED GDP+GDI quarterly validation and proposes no generic revision subsystem.
+- `TASK-185-bounded-multi-series-alfred-revision-aware-convention-assessment.md` is complete and records the bounded ALFRED GDP+GDPC1 multi-series revision-aware validation: 12 facts, 2 series, 3 vintages, 4 series-period multi-vintage groups, 0 added fact rows on rerun, 0 duplicate canonical key groups, and no schema/framework extraction.
+- `TASK-184-bounded-alfred-gdp-three-vintage-quarterly-validation-campaign.md` is complete and records the bounded ALFRED GDP three-vintage validation: 6 facts, 3 vintages, changed 2026-Q1, unchanged 2025-Q4 control, 0 added fact rows on rerun, 0 duplicate canonical key groups, and no schema/framework extraction.
+- `TASK-183-bounded-revision-aware-scale-up-planning-assessment.md` is complete and records the planning-only recommendation for TASK-184: bounded ALFRED GDP three-vintage quarterly validation, no subsystem extraction.
+- `TASK-182-bounded-revision-aware-time-series-architecture-validation-campaign.md` is complete and records the bounded ALFRED GDP revision-aware validation campaign: 4 source-backed facts, 2 vintages, 2 economic periods with multiple vintages, 0 failed checks, 0 duplicate canonical key groups after rerun, and current architecture sufficient with a minor source-specific convention.
+- `TASK-181-cross-repository-class-architecture-generalization-assessment.md` is complete and records the architecture-only cross-repository-class generalization assessment: WDI annual-scalar scale proven, full repository-class generality not yet proven, no redesign justified, and revision-aware time series recommended as TASK-182 stress class.
+- `TASK-180-demographic-structure-capability-closure-campaign.md` is complete and records the WDI age-sex cohort closure campaign: 68 five-year female/male cohort indicators selected and included, 516,460 curated facts added, WDI coverage 114 -> 182 indicators, idempotent rerun verified, and Demographic Structure classified operationally complete within the WDI annual-scalar confidence cell for historical national five-year age-sex cohort analysis.
+- `TASK-179-demographics-capability-closure-assessment.md` is complete and records the planning-only demographics closure assessment: 46 loaded demographic/human-capital indicators reviewed, remaining first-order gaps classified, repository sufficiency/quality assessed, provider onboarding kept conditional, and TASK-180 WDI Detailed Age-Sex Cohort Structure Preflight and Compatible Ingestion Campaign recommended as the next implementation step.
+- `TASK-178-demographic-structure-human-capital-core-expansion.md` is complete and records the WDI Demographic Structure and Human Capital Core campaign: 30 candidates assessed, 28 included, 2 excluded with API evidence, 212,660 curated facts added, WDI coverage 86 -> 114 indicators, and idempotent rerun verified.
+- `TASK-177-demographics-domain-capability-gap-assessment.md` is complete and records Demographics/Human Capital planning: current loaded demographic-related WDI coverage before TASK-178 was 18 indicators, 217 countries, 1990-2024, with TASK-178 recommended as the next implementation.
+- `TASK-173-acpf-trade-mirror-reliability-planning.md` is complete and records the next Trade capability scope: bounded bilateral trade mirror-reliability monitoring, with TASK-174 recommended as a UN Comtrade reciprocal USA/Japan reporter-perspective preflight/implementation slice.
+- `TASK-172-un-comtrade-product-level-trade-exposure-slice.md` is complete and records deterministic UN Comtrade product-level trade exposure implementation: USA-Japan 2023 import/export rows for HS codes 3004, 8542, and 8703; 6 observations; package fingerprint `fc71def46b5acb2f3174419345cd21a2ba7ef40539f318051e39fba5e28b6c47`; isolated PostgreSQL load shape `6|6|1|1|2`.
+- `TASK-171-acpf-product-level-trade-exposure-planning.md` is complete and records the Trade capability scope that TASK-172 implemented: bounded bilateral product-level goods trade exposure monitoring.
+- `TASK-170-wdi-trade-balance-capability-package.md` is complete and records deterministic WDI trade-balance package implementation over existing TASK-142 evidence: 5,208 country-years, package fingerprint `8be899d4df21a4383ce5d7ba18564562a6ff354ab755f2347de3f219f1133be9`, no new ingestion/schema/canonical mutation.
+- `TASK-169-acpf-trade-balance-capability-planning.md` is complete and records the first post-ACPF planning application: International Trade / annual WDI country-level goods-and-services trade-balance monitoring selected as next capability scope.
+- `TASK-168-analytical-capability-planning-framework.md` is complete and records ACPF acceptance as lightweight planning/governance between DRDF domains and CEF confidence cells.
+- `TASK-167-domain-centric-repository-development-framework.md` is complete and records DRDF acceptance as domain-level repository-development planning policy.
+- `TASK-167-repository-governance-remediation-inventory.md` is complete and records implementation of the two localized governance fixes: WDI campaign dependency direction and stale FRED monetary-aggregates test expectation.
+- `TASK-165A-wdi-cef-scope-optimization-review.md` is complete and records the reversed-burden CEF review that replaced TASK-164's 12-20 indicator cap with all not-yet-operational implemented-compatible WDI annual scalar indicators, expected candidate universe 27 indicators.
+- `TASK-164-cef-operational-expansion-planning.md` is complete and records the first operational application of CEF, selecting WDI annual country-indicator provider-capability expansion as the next largest evidence-supported repository-growth campaign.
+- `backlog.md` now records completed TASK-165A and proposed TASK-165 WDI Implemented-Compatible Annual Scalar Expansion Campaign.
+- `TASK-121-bounded-sec-company-balance-sheet-capital-structure-evidence-slice.md` is complete and adds bounded SEC company capital-structure observations.
+- `TASK-120-bounded-sec-company-cash-flow-statement-evidence-slice.md` is complete and adds bounded SEC company cash-flow statement observations through `ObservedIngestionPackage`.
+- `TASK-119-bounded-fdic-branch-locations-evidence-slice.md` is complete and adds bounded FDIC physical branch-location relationship observations through `ObservedIngestionPackage`.
+- `TASK-155-imf-irfcl-reserve-assets-operational-evolution.md` is complete and adds bounded IMF IRFCL reserve-assets operationalized observations for 2023-01 through 2023-02.
+- `TASK-157-imf-mfs-ir-operational-evolution.md` is complete and adds IMF MFS IR operationalized monthly policy-rate observations for USA/JPN through 2024-M03.
+- `TASK-158-imf-bop-financial-account-operational-evolution.md` is complete and adds IMF BOP financial-account operationalized annual observations for USA/JPN through 2023.
+- `TASK-159-imf-iip-positions-operational-evolution.md` is complete and adds IMF IIP USA/JPN operationalized annual position observations for 2022-2023.
+- `TASK-160-fred-monetary-aggregates-operational-evolution.md` is complete and adds bounded FRED monetary-aggregates operationalized USA/JPN observations through `ObservedIngestionPackage`.
+- `TASK-161-fred-business-confidence-operational-evolution.md` is complete and adds bounded FRED business-confidence operationalized USA/JPN observations for 2023-11 and 2023-12 with deterministic operational artifacts.
+- `TASK-162-fred-foreign-exchange-rates-operational-evolution.md` is complete and adds bounded FRED FX quote operationalized EUR/USD and USD/JPY observations for 2024-01 and 2024-02 with deterministic operational artifacts.
+- `TASK-163-confidence-escalation-framework.md` is complete and accepts CEF as repository-expansion orchestration policy for evidence-based promotion, stratified sampling, and localized regression of ingestion scope.
+- `TASK-156-imf-imts-bilateral-trade-operational-evolution.md` is complete and adds IMF IMTS bilateral trade operationalized observations for USA/JPN annual 2022-2025.
+- `TASK-118-bounded-fdic-bank-regulatory-certification-evidence-slice.md` is complete and adds bounded FDIC regulated-bank certification relationship observations through `ObservedIngestionPackage`.
+- `TASK-117-bounded-sec-exchange-listings-evidence-slice.md` is complete and adds bounded SEC exchange-listing relationship observations through `ObservedIngestionPackage`.
+- `TASK-116-bounded-worldbank-country-classifications-evidence-slice.md` is complete and adds bounded World Bank country-classification observations through `ObservedIngestionPackage`.
+- `TASK-115-bounded-sec-13f-stock-positions-evidence-slice.md` is complete and adds bounded SEC 13F stock-position observations through `ObservedIngestionPackage`.
+- `TASK-114-bounded-sec-filing-events-evidence-slice.md` is complete and adds bounded SEC filing-event observations through `ObservedIngestionPackage`.
+- `TASK-113-bounded-imf-weo-projection-evidence-slice.md` is complete and adds bounded IMF WEO projection observations through `ObservedIngestionPackage`.
+- `TASK-112-bounded-wdi-high-technology-exports-evidence-slice.md` is complete and adds bounded WDI high-technology export observations through `ObservedIngestionPackage`.
+- `TASK-111-bounded-wdi-tourism-travel-flows-evidence-slice.md` is complete and adds bounded WDI tourism/travel-flow observations through `ObservedIngestionPackage`.
+- `TASK-110-bounded-wdi-agriculture-food-evidence-slice.md` is complete and adds bounded WDI agriculture/food observations through `ObservedIngestionPackage`.
+- `TASK-109-bounded-wdi-migration-remittances-evidence-slice.md` is complete and adds bounded WDI migration/remittance observations through `ObservedIngestionPackage`.
+- `TASK-108-bounded-wdi-innovation-rd-evidence-slice.md` is complete and adds bounded WDI innovation/R&D observations through `ObservedIngestionPackage`.
+- `TASK-107-bounded-wdi-poverty-inequality-evidence-slice.md` is complete and adds bounded WDI poverty/inequality observations through `ObservedIngestionPackage`.
+- `TASK-106-bounded-wdi-environment-climate-exposure-evidence-slice.md` is complete and adds bounded WDI environment/climate exposure observations through `ObservedIngestionPackage`.
+- `TASK-105-bounded-wdi-health-system-resources-evidence-slice.md` is complete and adds bounded WDI health-system resource observations through `ObservedIngestionPackage`.
+- `TASK-104-bounded-wdi-education-human-capital-evidence-slice.md` is complete and adds bounded WDI education/human-capital observations through `ObservedIngestionPackage`.
+- `TASK-100-strategic-retrospective-after-domain-expansion-run.md`
+- `TASK-101-bounded-imf-gdd-sector-debt-evidence-slice.md`
+- `TASK-102-bounded-imf-irfcl-reserve-assets-evidence-slice.md`
+- `TASK-103-bounded-imf-fas-payment-cards-evidence-slice.md` is complete and records the no-gate/no-extraction retrospective outcome after TASK-099.
+- `TASK-099-bounded-wdi-services-trade-intensity-evidence-slice.md` is complete and adds bounded WDI services-trade intensity observations through `ObservedIngestionPackage`.
+- `TASK-098-bounded-wdi-fixed-broadband-evidence-slice.md` is complete and adds bounded WDI fixed-broadband digital-connectivity observations through `ObservedIngestionPackage`.
+- `TASK-097-bounded-wdi-logistics-performance-evidence-slice.md` is complete and adds bounded WDI logistics-performance survey observations through `ObservedIngestionPackage`.
+- `TASK-096-bounded-wdi-energy-use-coal-electricity-evidence-slice.md` is complete and adds bounded WDI energy-use/electricity-mix observations through `ObservedIngestionPackage`.
+- `TASK-095-bounded-fred-federal-debt-interest-evidence-slice.md` is complete and adds bounded FRED federal debt-stock and interest-cost observations through `ObservedIngestionPackage`.
+- `TASK-094-bounded-fred-federal-fiscal-flows-evidence-slice.md` is complete and adds bounded FRED federal fiscal-flow observations through `ObservedIngestionPackage`.
+- `TASK-093-bounded-fred-corporate-profits-evidence-slice.md` is complete and adds bounded FRED aggregate corporate-profit observations through `ObservedIngestionPackage`.
+- `TASK-092-bounded-fred-productivity-unit-labor-cost-evidence-slice.md` is complete and adds bounded FRED productivity and unit-labor-cost observations through `ObservedIngestionPackage`.
+- `TASK-091-bounded-fred-business-confidence-evidence-slice.md` is complete and adds bounded FRED/OECD business-confidence survey index observations through `ObservedIngestionPackage`.
+- `TASK-090-bounded-fred-housing-price-evidence-slice.md` is complete and adds bounded FRED residential housing sales price observations through `ObservedIngestionPackage`.
+- `TASK-089-bounded-bls-wages-hours-evidence-slice.md` is complete and adds bounded BLS CES wage/hour labor compensation observations through `ObservedIngestionPackage`.
+- `TASK-088-bounded-imf-iip-position-evidence-slice.md` is complete and adds bounded IMF IIP external financial-position stock observations through `ObservedIngestionPackage`.
+- `TASK-087-bounded-fred-manufacturers-orders-evidence-slice.md` is complete and adds bounded FRED manufacturers' orders / goods-demand pipeline observations through `ObservedIngestionPackage`.
+- `TASK-086-bounded-fred-bank-credit-evidence-slice.md` is complete and adds bounded FRED bank-credit / commercial-bank loan-stock observations through `ObservedIngestionPackage`.
+- `TASK-085-bounded-fred-business-inventories-evidence-slice.md` is complete and adds bounded FRED business-inventory / inventory-to-sales ratio observations through `ObservedIngestionPackage`.
+- `TASK-084-bounded-bls-jolts-labor-demand-evidence-slice.md` is complete and adds bounded BLS JOLTS labor-demand/turnover observations through `ObservedIngestionPackage`.
+- TASK-001 through TASK-121 are complete.
+- `backlog.md` records the current capability and governance posture through TASK-101.
 - Future foundational shared infrastructure extraction should use the standardized checklist in `docs/architecture/capability-maturity-model.md`: contract/algorithm/implementation convergence, deterministic verification, consultation, acceptable coupling, and satisfied prerequisites.
 
 ## Needs Attention
 - Observed Boundary and Contract Stability, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback remain Verified; do not advance them beyond Verified without separate adoption tasks.
 - TASK-055 confirmed that ECB SDW fits the existing observed boundary and post-boundary substrate while recording future SDMX extraction evidence. Do not extract an SDMX Interpretation Layer until later implementation evidence satisfies the extraction gate.
 - Do not extract quality checks, provider metadata frameworks, canonical dimensions, canonical fact upserts, graph/catalog/runtime systems, recovery automation, or source frameworks without a new evidence threshold and consultation.
+- `TASK-130-wdi-macro-indicators-refresh-verification-maturation.md` — completed WDI macro operational refresh verification.
+- `TASK-131-bls-cpi-major-categories-deepening.md` — completed BLS CPI major-category capability deepening.
+- `TASK-132-wdi-phase1-operational-capability-expansion.md` — completed WDI Phase 1 bounded operational expansion.
+- `TASK-133-wdi-demographics-phase1-knowledge-leverage.md` — completed WDI demographics Phase 1 Knowledge Leverage expansion.
+- `TASK-134-wdi-energy-phase1-knowledge-leverage.md` — completed WDI energy Phase 1 Knowledge Leverage expansion.
+- `TASK-135-imf-iip-g7-position-deepening.md` — completed IMF IIP G7 external-position panel deepening.
+- `TASK-136-imf-bop-g7-financial-account-deepening.md` — completed IMF BOP G7 financial-account flow panel deepening.
+- `TASK-137-imf-gdd-g7-sector-debt-deepening.md` — completed IMF GDD G7 sector-debt panel deepening.
+- `TASK-138-sec-company-financial-statement-panel.md` — completed SEC AAPL/MSFT integrated company financial statement panel.
+- `TASK-139-wdi-foundational-operational-bundle.md` — WDI macro + demographics + energy operational bundle; 67,704 rows across 12 indicators, 217 territories, 2000–2023.
+- `TASK-140-bls-cpi-major-categories-operational-dataset.md` — BLS CPI major-category operational dataset, 480 monthly observations over 2015-M01 through 2024-M12.
+- TASK-142 WDI Trade Core Operational Dataset is complete; it moves Trade from Initial bounded evidence to Developing repository section.
+- `TASK-174-domain-bulk-expansion-wdi-trade-finance.md` is complete and records the domain bulk expansion campaign that added 251,815 curated WDI fact rows across Trade/Tourism/Supply-Chain and Monetary/Banking/Credit domains.
+- `TASK-175-architectural-scaling-validation-campaign.md` is complete and records archived-evidence scaling validation after TASK-165/TASK-174 plus the TASK-176 next-campaign recommendation.
+- `TASK-176-repository-growth-historical-scaling-campaign.md` is complete and records the combined WDI repository growth/historical scaling campaign: 86 indicators, 217 countries, 1990-2024, +256,044 curated facts, deterministic rerun with 0 duplicate key groups.

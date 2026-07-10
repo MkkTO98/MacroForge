@@ -3,77 +3,51 @@
 Project: MacroForge
 Template: python_data_project
 Canonical path: `/home/mkkto/srv/EIP/projects/MacroForge`
-Last updated: 2026-07-01
+Last updated: 2026-07-10
 
-## Current state
+MacroForge is in Operational Repository Evolution mode under Strategic Constitution v1.1. Architecture is frozen/evidence-maintained: source-specific pre-boundary work, `ObservedIngestionPackage` v1, deterministic post-boundary substrate, scoped canonical SQL, and evidence-gated extraction.
 
-MacroForge is governed by Strategic Constitution v1.1. Its strategic asset is reusable deterministic ingestion capability for transforming heterogeneous public economic evidence into canonical, auditable observations. PostgreSQL databases and datasets are outputs of that capability, not sources of truth by themselves.
+## Current phase
 
-TASK-004 through TASK-065 are complete. Recent work contains completed bounded source slices and governance artifacts for TASK-056 through TASK-065. Preserve those artifacts; they are the durable evidence trail.
+Phase 2 diverse-source macroeconomic enrichment is active.
 
-## Source coverage summary
+Accepted transition:
 
-Canonical-loaded paths:
+- Bulk WDI annual-scalar Phase 1 is no longer the default.
+- WDI may still be used later for a specific coherent target with clear material gain, but no residual WDI campaign should be scheduled automatically.
+- Trade, company, and financial-asset construction remain deferred.
 
-- WDI.
-- OECD_NAAG.
-- EUROSTAT_NAMQ_GDP.
+## Repository state after TASK-207
 
-Bounded evidence-only slices with no broad provider support or canonical PostgreSQL loaders:
+PostgreSQL `macroforge` currently records:
 
-- BLS_CPI.
-- BEA_NIPA.
-- TREASURY_FISCAL_DATA.
-- ECB_SDW.
-- IMF_MFS_IR.
-- BIS_CBPOL.
-- ALFRED_GDP_VINTAGE.
-- ILOSTAT_UNEMPLOYMENT.
-- UN_COMTRADE_TRADE.
-- WDI_DEMOGRAPHICS.
-- EUROSTAT_INPUT_OUTPUT.
-- IMF_BOP_FINANCIAL_ACCOUNT.
-- EUROSTAT_ENERGY_BALANCE.
-- FRED_YIELD_CURVE.
+- curated facts: 10,555,773;
+- indicators: 1,423;
+- sources: 2;
+- pipeline runs: 39;
+- lineage events: 78;
+- quality checks: 79.
 
-## Current capability summary
+TASK-207 added the first Phase 2 diverse-source campaign:
 
-- `ObservedIngestionPackage` is the public internal handoff boundary after source-specific acquisition and normalization.
-- Deterministic post-boundary mechanics include package fingerprinting/comparison, Deterministic Change Verification, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback.
-- DEC-022 records the next-ten-source optimization target, Implementation Lessons requirement, evidence-gated extraction rule, and stability-review technical debt.
-- DEC-023 records the accepted long-term world-economy observation-domain direction as non-binding scope clarification, not implementation authorization.
-- `docs/architecture/domain-coverage-assessment.md` tracks compact domain coverage state.
+- source: BLS public API v2;
+- domain: U.S. monthly labor market;
+- repository class: monthly scalar time-series observations;
+- run key: `task-207-bls-us-labor-monthly-phase2`;
+- run-scoped facts: 2,374;
+- series: 12;
+- monthly periods: 198;
+- coverage: 2010-M01 through 2026-M06;
+- duplicate canonical key groups: 0;
+- failed quality checks: 0;
+- idempotence: same-scope rerun produced zero net growth.
 
-## Current governance posture
+## Architecture posture
 
-- Evidence-Accumulating Source Expansion remains the active phase.
-- TASK-059 through TASK-065 expanded labor, trade, demographics, input-output, financial-flow, energy, and financial-market curve coverage without architecture evolution.
-- Decision gate: no architectural action is currently recommended; continue bounded Domain Expansion Mode unless implementation evidence triggers an exception.
-- Architecture reviews should remain exception-triggered by repeated implementation surprises, extraction-threshold evidence, fundamentally new source-family uncertainty, or contradiction of current architectural beliefs.
-- Methodology is stable infrastructure. Changes require extraction-grade repeated implementation evidence and measurable improvement, not elegance, consistency, or theory.
-- Do not push without explicit approval.
+Architecture remains frozen / evidence-maintained. TASK-207 did not reveal canonical ambiguity, repository-class mismatch, provider-semantic preservation failure, scaling failure, or repeated operational friction requiring redesign.
 
-## Durable recovery anchors
+The existing substrate supports monthly scalar observations when source-specific semantics are preserved in provider payloads and attribute sets.
 
-- Constitution: `CONSTITUTION.md`
-- Active goal: `state/active_goal.md`
-- Architecture state: `state/architecture.md`
-- Latest handoff: `context/latest_handoff.md`
-- Backlog/task chronology: `artifacts/tasks/backlog.md`
-- DEC-022: `artifacts/decisions/DEC-022-next-ten-source-expansion-optimization.md`
-- DEC-023: `artifacts/decisions/DEC-023-long-term-domain-vision-and-knowledgeforge-boundary.md`
-- Observed package contract: `docs/architecture/observed-ingestion-representation.md`
-- Domain coverage: `docs/architecture/domain-coverage-assessment.md`
-- Confidence ledger: `docs/architecture/architectural-confidence-ledger.md`
-- Surprise log: `docs/architecture/architectural-surprise-log.md`
-- Marginal source cost index: `docs/architecture/marginal-source-cost-index.md`
-- Recurring implementation pain: `docs/architecture/recurring-implementation-pain.md`
+## Active continuity note
 
-## Historical detail location
-
-Implementation histories, row counts, fixture hashes, prediction reviews, verification outputs, and source-specific lessons belong in task/report/domain artifacts, not in primary state:
-
-- TASK artifacts: `artifacts/tasks/`
-- Implementation lessons: `artifacts/reports/L-*.md`
-- Architecture/audit reports: `artifacts/reports/R-*.md`
-- Folder summaries: `_SUMMARY.md` files
+A failed FRED live-acquisition detour from the same session produced untracked TASK-207 FRED files. Cleanup was blocked by command policy; those files are not the accepted TASK-207 result. Preserve or remove them only with explicit user-approved cleanup scope.

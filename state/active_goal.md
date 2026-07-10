@@ -1,36 +1,31 @@
 # Active Goal
 
-Project: MacroForge
+Current strategic objective: construct MacroForge as an independent operational economic repository under evidence-maintained architecture.
 
-## Purpose
+MacroForge Operational Repository v1.0 is accepted. Bulk WDI annual-scalar Phase 1 is no longer the default after corrected TASK-206. Current work is Phase 2 diverse-source macroeconomic enrichment: add material non-WDI macroeconomic capability using already proven bounded source paths where possible, while keeping architecture frozen unless implementation evidence forces change.
 
-If development resumed tomorrow, this file identifies the active implementation phase, current posture, and safest next action.
+Completed Phase 2 start:
 
-## Active implementation phase
+- TASK-207 selected BLS public API v2 U.S. monthly labor-market evidence as the first Phase 2 diverse-source campaign.
+- TASK-207 loaded 2,374 monthly observations / facts across 12 BLS labor, payroll, wage, hours, and JOLTS series for USA, 2010-M01 through 2026-M06.
+- TASK-207 preserved raw provider evidence, provider messages, unit/frequency/period/source payload semantics, lineage, quality checks, and idempotence evidence.
+- PostgreSQL run key: `task-207-bls-us-labor-monthly-phase2`.
 
-Capability: Evidence-Accumulating Source Expansion.
+Repository state after TASK-207:
 
-Current maturity: specified through TASK-065 bounded FRED U.S. Treasury yield-curve evidence slice.
+- 10,555,773 curated facts;
+- 1,423 indicators;
+- 2 sources;
+- 39 pipeline runs;
+- 78 lineage events;
+- 79 quality checks.
 
-## Current posture
+Current strategic boundary:
 
-MacroForge is in Domain Expansion Mode. No implementation task is active.
+- Do not resume residual WDI bulk campaigns automatically.
+- Do not advance to trade, company, or financial-asset construction yet.
+- Continue Phase 2 with another material diverse-source macroeconomic enrichment campaign only when it adds capability not adequately supplied by WDI annual-scalar coverage.
 
-The current source-specific pre-boundary -> `ObservedIngestionPackage` -> deterministic post-boundary substrate architecture remains validated by recent bounded source evidence. Future source work should try to falsify that assumption through small heterogeneous implementations, not redesign the substrate in advance.
+Recommended next action:
 
-Current governance posture:
-
-- Continue bounded heterogeneous source implementation.
-- Keep acquisition, parsing, provider interpretation, staging, and mapping source-specific until repeated evidence satisfies the extraction gate.
-- Do not create broad provider support, generic frameworks, canonical loading, KnowledgeForge logic, or infrastructure abstractions from one source slice.
-- Treat `ObservedIngestionPackage` field or semantic changes as contract evolution requiring deterministic verification.
-
-## Recent result summary
-
-TASK-059 through TASK-065 expanded direct labor, bilateral trade, demographic foundation, input-output matrix, international financial-flow, energy-accounting, and financial-market curve evidence. All behaved as normal Domain Expansion: no observed-boundary, deterministic-substrate, lineage, replay, or validation evolution was needed.
-
-Detailed implementation evidence lives in task artifacts, implementation lessons, domain coverage, confidence, surprise, cost, and pain ledgers. This file intentionally keeps only current operating state.
-
-## Next action
-
-Perform no further architecture review unless new evidence triggers it. If continuing Domain Expansion Mode, select one smallest useful bounded source slice from the least-developed major domain in `docs/architecture/long-term-domain-vision.md` and follow the standard workflow: prediction ledger, RED tests, deterministic fixture, source-specific parser, observed package construction, replay verification, lessons, domain coverage update, architectural monitoring, verification, and closeout.
+Select the next Phase 2 diverse-source macroeconomic campaign from already proven bounded source paths, with a preference for IMF external-sector/accounting depth or ALFRED/FRED-style revision/vintage/timeliness evidence. Record a frozen prediction before execution, then execute and compare prediction versus results.

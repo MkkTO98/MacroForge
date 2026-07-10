@@ -1,0 +1,23 @@
+{
+  "discrepancy_classification": "provider variability/limits, not missing source understanding",
+  "explanation_of_errors": "Scale landed inside the predicted range; BLS emitted system-allowed-limit messages but chunking avoided unresolved acquisition errors.",
+  "predicted_vs_actual_compatible_coverage": {
+    "actual": 12,
+    "predicted": "12 requested BLS monthly series with possible current-year edge variation"
+  },
+  "predicted_vs_actual_implementation_friction": {
+    "actual": "moderate: BLS 10-year limit required chunking, but architecture and source-specific loader sufficed",
+    "predicted": "low to moderate"
+  },
+  "predicted_vs_actual_observation_scale": {
+    "actual": 2374,
+    "predicted": "about 1,900-2,050"
+  },
+  "predicted_vs_actual_provider_exclusions": {
+    "actual_acquisition_errors": [],
+    "actual_provider_exclusions": [],
+    "predicted": "possible non-monthly/edge messages only"
+  },
+  "prediction_quality_verdict": "Mostly Accurate",
+  "task": "TASK-207"
+}

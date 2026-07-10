@@ -1,0 +1,128 @@
+{
+  "after_counts": {
+    "facts": 10555773,
+    "indicators": 1423,
+    "lineage": 78,
+    "periods": 233,
+    "quality": 79,
+    "runs": 39,
+    "sources": 2
+  },
+  "before_counts": {
+    "facts": 10555773,
+    "indicators": 1423,
+    "lineage": 78,
+    "periods": 233,
+    "quality": 79,
+    "runs": 39,
+    "sources": 2
+  },
+  "duplicate_canonical_key_groups": 0,
+  "fact_rows": 2374,
+  "failed_quality_checks": 0,
+  "idempotence": {
+    "after_second_load": {
+      "facts": 10555773,
+      "indicators": 1423,
+      "lineage": 78,
+      "periods": 233,
+      "quality": 79,
+      "runs": 39,
+      "sources": 2
+    },
+    "before_second_load": {
+      "facts": 10555773,
+      "indicators": 1423,
+      "lineage": 78,
+      "periods": 233,
+      "quality": 79,
+      "runs": 39,
+      "sources": 2
+    },
+    "idempotent": true,
+    "second_load_report": {
+      "after_counts": {
+        "facts": 10555773,
+        "indicators": 1423,
+        "lineage": 78,
+        "periods": 233,
+        "quality": 79,
+        "runs": 39,
+        "sources": 2
+      },
+      "before_counts": {
+        "facts": 10555773,
+        "indicators": 1423,
+        "lineage": 78,
+        "periods": 233,
+        "quality": 79,
+        "runs": 39,
+        "sources": 2
+      },
+      "duplicate_canonical_key_groups": 0,
+      "fact_rows": 2374,
+      "failed_quality_checks": 0,
+      "indicator_count": 12,
+      "lineage_events": 2,
+      "period_count": 198,
+      "quality_checks": 3,
+      "repository_growth": {
+        "facts": 0,
+        "indicators": 0,
+        "lineage": 0,
+        "periods": 0,
+        "quality": 0,
+        "runs": 0,
+        "sources": 0
+      },
+      "run_key": "task-207-bls-us-labor-monthly-phase2",
+      "staging_rows": 2374,
+      "task": "TASK-207"
+    }
+  },
+  "indicator_count": 12,
+  "initial_campaign_after_counts": {
+    "facts": 10555773,
+    "indicators": 1423,
+    "lineage": 78,
+    "periods": 233,
+    "quality": 79,
+    "runs": 39,
+    "sources": 2
+  },
+  "initial_campaign_before_counts": {
+    "facts": 10553399,
+    "indicators": 1411,
+    "lineage": 76,
+    "periods": 35,
+    "quality": 76,
+    "runs": 38,
+    "sources": 1
+  },
+  "initial_campaign_repository_growth": {
+    "facts": 2374,
+    "indicators": 12,
+    "lineage": 2,
+    "periods": 198,
+    "quality": 3,
+    "runs": 1,
+    "sources": 1
+  },
+  "lineage_events": 2,
+  "period_count": 198,
+  "quality_checks": 3,
+  "repository_growth": {
+    "facts": 0,
+    "indicators": 0,
+    "lineage": 0,
+    "periods": 0,
+    "quality": 0,
+    "runs": 0,
+    "sources": 0
+  },
+  "repository_growth_note": "before_counts/repository_growth above reflect the final idempotence rerun; initial_campaign_* preserves the first TASK-207 load growth from the pre-campaign repository state.",
+  "run_key": "task-207-bls-us-labor-monthly-phase2",
+  "staging_rows": 2374,
+  "status": "succeeded",
+  "task": "TASK-207"
+}

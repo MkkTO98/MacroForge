@@ -1,0 +1,15 @@
+{
+  "existing_architecture_predicted_to_suffice": true,
+  "expected_analytical_capability_gain": "Adds timely monthly U.S. labor-market monitoring not supplied by WDI annual country-year coverage.",
+  "expected_approximate_observation_scale": "about 1,900-2,050 observations: 12 monthly series over 2010-2026, with JOLTS/CES/CPS availability variation and current-year edge limits",
+  "expected_implementation_friction": "low to moderate: BLS bounded source paths already exist; campaign needs chunked live acquisition and one source-specific loader, not a new framework",
+  "expected_principal_provider_risks": [
+    "unregistered BLS API 10-year request limit requiring deterministic year-window chunking",
+    "series-specific missing or unavailable current-year months",
+    "provider messages that are warnings rather than fatal acquisition failures"
+  ],
+  "expected_repository_class": "source-specific monthly scalar time-series observations in existing curated fact substrate",
+  "selected_domain": "U.S. monthly labor-market level, rate, payroll, wages, hours, and labor-demand indicators",
+  "selected_source": "BLS public API v2",
+  "task": "TASK-207"
+}

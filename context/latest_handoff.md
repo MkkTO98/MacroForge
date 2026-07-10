@@ -1,76 +1,46 @@
-# Latest Handoff — MacroForge
+# Latest Handoff
 
-Updated: 2026-07-01
+Date: 2026-07-10
+Status: TASK-207 complete; closeout verification passed; push requested
 
-## Status
+## Completed
 
-Standard ProjectForge closeout completed after TASK-065. No implementation task is active.
+TASK-207 began MacroForge Phase 2 with BLS public API v2 U.S. monthly labor-market evidence.
 
-TASK-056 through TASK-065 are complete. MacroForge remains in Domain Expansion Mode with the validated source-specific pre-boundary -> `ObservedIngestionPackage` -> deterministic post-boundary posture.
+Accepted result:
 
-## Context used
+- Task: `artifacts/tasks/TASK-207-phase-2-diverse-source-bls-us-labor-monthly-campaign.md`.
+- Tool/test: `tools/task207_bls_us_labor_monthly_phase2_campaign.py`, `tests/test_task207_bls_us_labor_monthly_phase2_campaign.py`.
+- Raw/processed evidence under `data/raw/task207_bls_us_labor_monthly_phase2_campaign/` and `data/processed/task207_bls_us_labor_monthly_phase2_campaign/`.
+- Reports: `artifacts/reports/task-207-bls-us-labor-monthly-*.json` and checksum txt.
+- PostgreSQL run key: `task-207-bls-us-labor-monthly-phase2`.
 
-- `recovery/continuity_framework.md`
-- `state/active_goal.md`
-- `state/project_state.md`
-- `context/latest_handoff.md`
-- `artifacts/tasks/TASK-065-bounded-fred-yield-curve-evidence-slice.md`
-- `python3 tools/recover_session.py --project . --json`
-
-## Recent completed work
-
-TASK-065 added a bounded FRED monthly U.S. Treasury yield-curve evidence slice:
-
-- USA, 2024-01 and 2024-02.
-- Tenors: `GS1M`, `GS1`, `GS10`, `GS30`.
-- 8 monthly percent-yield observations.
-- Raw fixture SHA-256: `0870977a6dc92d4eb841235ed1335c32ad88914387fe7588ffeeb851e3411a2f`.
-- Package fingerprint: `d7646c4ce18dfacf430fe66cfe170694d18a9aa2af97fcd13251e47276778633`.
-
-The official Treasury daily XML candidate was rejected because daily frequency is outside the current validated contract envelope; FRED monthly data preserved the observation-family evidence without contract evolution.
-
-## Verification
-
-Already run before closeout:
+Run-scoped DB verification:
 
 ```text
-uvx pytest tests/test_fred_yield_curve.py tests/test_contract_drift.py tests/test_observed_ingestion.py -q
-17 passed in 0.07s
-
-uvx pytest -q
-174 passed in 7.32s
-
-python3 tools/check_coherence.py --project .
-coherence: 0 block(s), 0 warning(s)
-
-python3 tools/context_health.py --project .
-context health: 0 block(s), 0 warning(s)
-
-python3 tools/architecture_reality_audit.py --project .
-architecture-reality-audit: 0 block(s), 0 warning(s)
-
-git diff --check
-passed with no output
+staging|facts|indicators|periods|lineage|quality|failed_quality
+2374|2374|12|198|2|3|0
 ```
 
-After this handoff edit, rerun coherence, context health, architecture audit, `git diff --check`, and `git status --short` before commit/push.
+Repository after TASK-207: 10,555,773 facts, 1,423 indicators, 2 sources, 39 runs, 78 lineage events, 79 quality checks.
 
-## Decisions/tasks updated
+Prediction evaluation: Mostly Accurate. Architecture verdict: frozen/evidence-maintained; existing monthly scalar substrate sufficed.
 
-- TASK-056 through TASK-065 complete.
-- DEC-023 accepted long-term domain vision and KnowledgeForge boundary.
-- No architecture redesign, broad provider framework, canonical loader, or KnowledgeForge logic was introduced.
+Closeout verification passed:
 
-## Blockers/open questions
+- focused TASK-207 test: `5 passed in 0.08s`;
+- full suite: `736 passed in 517.45s (0:08:37)`;
+- TASK-207 JSON reports valid: 4;
+- coherence/context/architecture/git checks: 0 blocks, 0 warnings/errors before final compact handoff; rerun after this handoff is required before final response.
 
-None.
+Note: a failed FRED live-acquisition detour produced untracked `task207_fred...` files/reports. Cleanup was blocked by command policy; they are not accepted TASK-207 evidence.
 
-## Next action
+## Next recommended action
 
-Wait for a new user instruction. If continuing Domain Expansion, select one bounded source slice and classify it as candidate new observation family / extension of existing family / domain-coverage expansion using an existing family.
+Continue Phase 2 with another diverse-source macroeconomic enrichment campaign from an already proven bounded source path, preferably IMF external-sector/accounting depth or ALFRED/FRED revision/vintage/timeliness evidence. Do not advance to trade, companies, or financial assets yet.
 
-## Exact resume command
+## Resume command
 
-```text
-Recover project state and continue work.
+```bash
+cd /home/mkkto/srv/EIP/projects/MacroForge && python3 tools/recover_session.py --project . --json
 ```

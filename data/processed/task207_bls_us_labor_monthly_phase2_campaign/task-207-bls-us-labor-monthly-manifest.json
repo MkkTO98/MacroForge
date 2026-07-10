@@ -1,0 +1,17 @@
+{
+  "acquisition_errors": [],
+  "candidate_series_count": 12,
+  "compatible_series_count": 12,
+  "explicit_missing_value_count": 6,
+  "normalized_artifact_path": "data/processed/task207_bls_us_labor_monthly_phase2_campaign/task-207-bls-us-labor-monthly-normalized.json",
+  "observed_value_count": 2368,
+  "period_count": 198,
+  "period_range": "2010-M01:2026-M06",
+  "provider_dataset_code": "BLS_PUBLIC_API_V2_US_LABOR_MONTHLY_PHASE2",
+  "provider_exclusions": [],
+  "repository_class": "monthly_scalar_time_series",
+  "row_count": 2374,
+  "source_code": "BLS_US_LABOR_MONTHLY_PHASE2",
+  "task": "TASK-207",
+  "unit_count": 5
+}

@@ -6,68 +6,206 @@ Tests for MacroForge source evidence, loaders, database schema, canonical-domain
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
 - `fixtures/`
-- `invariants/`
 - `test_alfred_gdp_vintage.py`
-- `test_architectureharvest_integration.py`
+- `test_alfred_gdp_vintage_loader.py`
+- `test_alfred_gdp_vintage_task184.py`
+- `test_alfred_multi_series_task185.py`
+- `test_alfred_sparse_vintage_task187.py`
+- `test_architectural_governance.py`
 - `test_bea_nipa.py`
 - `test_bis_cbpol.py`
 - `test_bls_cpi.py`
+- `test_bls_cpi_categories.py`
+- `test_bls_cpi_major_categories_operational.py`
+- `test_bls_jolts_labor_demand.py`
+- `test_bls_labor_core_operational.py`
+- `test_bls_payroll_employment.py`
+- `test_bls_state_labor_force.py`
+- `test_bls_wages_hours.py`
 - `test_canonical_gdp_snapshot.py`
 - `test_canonicalization_proposal_workflow.py`
 - `test_canonicalization_state.py`
+- `test_census_housing_construction.py`
+- `test_census_housing_pipeline_operational.py`
 - `test_combined_source_smoke.py`
 - `test_consult_metaharvest.py`
 - `test_contract_drift.py`
 - `test_db_helpers.py`
+- `test_deterministic_change_verification.py`
 - `test_ecb_sdw.py`
 - `test_eurostat_energy_balance.py`
 - `test_eurostat_input_output.py`
-- `test_deterministic_change_verification.py`
 - `test_eurostat_namq_loader.py`
+- `test_fdic_bank_certifications.py`
+- `test_fdic_branch_locations.py`
 - `test_fixture_persistence.py`
+- `test_fred_bank_credit.py`
+- `test_fred_business_applications.py`
+- `test_fred_business_confidence.py`
+- `test_fred_business_confidence_operational.py`
+- `test_fred_business_inventories.py`
+- `test_fred_consumer_sentiment_expectations.py`
+- `test_fred_corporate_profits.py`
+- `test_fred_crude_oil_prices.py`
+- `test_fred_federal_debt_interest.py`
+- `test_fred_federal_fiscal_flows.py`
+- `test_fred_foreign_exchange_rates.py`
+- `test_fred_foreign_exchange_rates_operational.py`
+- `test_fred_household_balance_sheet.py`
+- `test_fred_household_credit_quality.py`
+- `test_fred_household_debt_service.py`
+- `test_fred_housing_construction.py`
+- `test_fred_housing_construction_core_operational.py`
+- `test_fred_housing_prices.py`
+- `test_fred_housing_prices_operational.py`
+- `test_fred_industrial_production_capacity.py`
+- `test_fred_manufacturers_orders.py`
+- `test_fred_monetary_aggregates.py`
+- `test_fred_monetary_aggregates_operational.py`
+- `test_fred_personal_consumption_expenditures.py`
+- `test_fred_personal_income_saving.py`
+- `test_fred_producer_prices.py`
+- `test_fred_productivity_unit_labor_cost.py`
+- `test_fred_retail_sales.py`
+- `test_fred_state_unemployment.py`
+- `test_fred_vehicle_sales.py`
+- `test_fred_yield_curve.py`
 - `test_ilostat_unemployment.py`
+- `test_imf_bop_financial_account.py`
+- `test_imf_bop_financial_account_operational.py`
+- `test_imf_bop_g7_financial_account.py`
+- `test_imf_bop_g7_operational.py`
+- `test_imf_fas_payment_cards.py`
+- `test_imf_fas_payment_cards_operational.py`
+- `test_imf_gdd_g7_sector_debt.py`
+- `test_imf_gdd_g7_sector_debt_operational.py`
+- `test_imf_gdd_sector_debt.py`
+- `test_imf_iip_g7_operational.py`
+- `test_imf_iip_g7_positions.py`
+- `test_imf_iip_positions.py`
+- `test_imf_iip_positions_operational.py`
+- `test_imf_imts_bilateral_trade.py`
+- `test_imf_imts_bilateral_trade_operational.py`
+- `test_imf_irfcl_reserve_assets.py`
+- `test_imf_irfcl_reserve_assets_operational.py`
 - `test_imf_mfs_ir.py`
+- `test_imf_mfs_ir_operational.py`
+- `test_imf_weo_projections.py`
 - `test_ingestion_feedback.py`
 - `test_lineage_generation.py`
+- `test_metaharvest_integration.py`
 - `test_observed_ingestion.py`
 - `test_oecd_sdmx.py`
 - `test_oecd_sdmx_codelists.py`
 - `test_oecd_sdmx_loader.py`
-- `test_placeholder.py`
-- `test_treasury_fiscal_data.py`
-- `test_un_comtrade_trade.py`
+- `test_operational_repository_v1_readiness.py`
+- `test_repository_execution_verifier.py`
 - `test_schema_foundation.py`
+- `test_sec_13f_stock_positions.py`
+- `test_sec_company_capital_structure.py`
+- `test_sec_company_cash_flow.py`
+- `test_sec_company_core_operational.py`
+- `test_sec_company_facts.py`
+- `test_sec_company_financial_statement_panel.py`
+- `test_sec_company_income_statement.py`
+- `test_sec_exchange_listings.py`
+- `test_sec_filing_events.py`
+- `test_task204_provider_exclusion_classification.py`
+- `test_task205_acquisition_completion_semantics.py`
+- `test_task206_acquisition_completion_semantics.py`
+- `test_task207_bls_us_labor_monthly_phase2_campaign.py`
+- `test_task207_fred_us_macro_monthly_phase2_campaign.py`
+- `test_treasury_fiscal_data.py`
+- `test_un_comtrade_product_trade_operational.py`
+- `test_un_comtrade_trade.py`
+- `test_un_comtrade_trade_operational.py`
 - `test_wdi.py`
+- `test_wdi_agriculture_food.py`
 - `test_wdi_demographics.py`
-- `test_wdi_loader.py`
-- `test_wdi_smoke.py`
-- `test_wdi_validation.py`
+- `test_wdi_demographics_phase1.py`
+- `test_wdi_dependency_ratios.py`
+- `test_wdi_education_human_capital.py`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `test_fred_yield_curve.py` verifies TASK-065 bounded FRED yield-curve fixture normalization, same-period tenor curve metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
-- `test_eurostat_energy_balance.py` verifies TASK-064 bounded Eurostat energy balance fixture normalization, energy balance component and fuel/product metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
-- `test_imf_bop_financial_account.py` verifies TASK-063 bounded IMF BOP financial-account fixture normalization, asset/liability accounting-entry and direct/portfolio investment-category metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
-- `test_eurostat_input_output.py` verifies TASK-062 bounded Eurostat input-output matrix fixture normalization, product-by-product matrix-cell shape, stock-flow/product-role/CPA metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
-- `test_wdi_demographics.py` verifies TASK-061 bounded WDI demographic foundation fixture normalization, required foundation concepts, unit/concept metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
-- `test_un_comtrade_trade.py` verifies TASK-060 bounded UN Comtrade bilateral total-goods trade fixture normalization, reporter/partner/flow/product/value-basis metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
-- `test_ilostat_unemployment.py` verifies TASK-059 bounded ILOSTAT unemployment-rate fixture normalization, labor classification/status/source metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
-- `test_alfred_gdp_vintage.py` verifies TASK-058 bounded ALFRED GDP revision-vintage fixture normalization, provider-backed vintage identity, changed and unchanged overlapping values, observed-package contract validity, deterministic replay, and anti-framework boundaries.
-- `test_bis_cbpol.py` verifies TASK-057 bounded BIS WS_CBPOL fixture normalization, BIS policy-rate metadata preservation, observed-package contract validity, deterministic replay, and anti-framework boundaries.
-- `test_imf_mfs_ir.py` verifies TASK-056 bounded IMF MFS_IR fixture normalization, IMF dataflow/DSD/dimension/codelist/attribute metadata preservation, observed-package contract validity, deterministic replay, and anti-framework boundaries.
-- `test_ecb_sdw.py` verifies TASK-055 bounded ECB SDW fixture normalization, ECB metadata/provenance preservation, observed-package contract validity, deterministic replay, and anti-framework boundaries.
-- `test_treasury_fiscal_data.py` verifies TASK-054 bounded Treasury Fiscal Data fixture normalization, query/endpoint/pagination metadata preservation, observed-package contract validity, deterministic replay, and anti-framework boundaries.
-- `test_bea_nipa.py` verifies TASK-053 bounded BEA NIPA fixture normalization, observed-package contract validity, deterministic replay, and anti-framework boundaries.
-- `test_ingestion_feedback.py` verifies TASK-052 Deterministic Ingestion Feedback: contract-failure explanations, package-comparison changed-observation explanations, lineage event explanations, and qualitative engineering-effort profiles for WDI/OECD/Eurostat/BLS.
-- `test_contract_drift.py` covers TASK-049's specified contract drift model: all supported packages satisfy invariant checks, and package/observation drift emits deterministic issue codes, paths, and messages.
-- `test_observed_ingestion.py` covers `ObservedIngestionPackage` v1 WDI/OECD/Eurostat semantics plus deterministic package fingerprinting, equivalent package comparison, changed-observation diagnostics, and anti-framework constraints.
-- `test_deterministic_change_verification.py` proves the Specified -> Verified transition by loading WDI/OECD/Eurostat into isolated PostgreSQL, reconstructing observed packages from staging/canonical outputs, validating expected/reconstructed package contract reports, and comparing them with expected fixture-backed packages.
-- WDI/OECD/Eurostat loader tests preserve source-specific SQL/staging/provider mapping/lineage/quality behavior while loaders consume the extracted representation.
-- `test_combined_source_smoke.py` verifies combined isolated PostgreSQL behavior for all supported sources.
-- `test_fixture_persistence.py` covers TASK-045's clean-clone fixture-persistence guard.
-- `test_consult_metaharvest.py` covers trigger-gated MetaHarvest consultation, including the v2 `foundational_capability_extraction` trigger and diagnostic-only replay non-trigger behavior.
-- Canonicalization tests cover deterministic file-backed proposal/review mechanics and remain separate from ingestion runtime.
+- `test_task206_acquisition_completion_semantics.py` verifies corrected TASK-206 territory fallback and completion invariants: valid `countryiso3code` remains authoritative; blank `countryiso3code` can fall back to accepted non-aggregate `country.id`; aggregate/unknown IDs are rejected; provider fields are preserved; duplicate canonical keys are avoided; acquisition errors remain distinct from provider exclusions and block completion/candidate-exhaustion/capability-closure claims.
+- `test_task205_acquisition_completion_semantics.py` verifies the TASK-205 copy-forward campaign carries the TASK-204 acquisition-error completion invariant: acquisition errors are not provider exclusions and unresolved acquisition errors block completion/candidate-exhaustion/capability-closure claims.
+- `test_task204_provider_exclusion_classification.py` verifies TASK-204 acquisition-error classification and executable completion semantics: unresolved acquisition errors block successful-completion, candidate-set-exhaustion, and capability-closure claims.
+- `test_wdi_loader.py` verifies WDI loader behavior including corrected same-run reload scope, staging `as_of_date` refresh, stale same-run fact replacement, lineage/quality refresh without duplication, idempotence, and transaction/run-scoped SQL shape.
+- `test_repository_execution_verifier.py` covers the TASK-195 execution verifier, including provider-exclusion classification completeness and no-database verification behavior.
+- TASK-190 reused the existing WDI implemented-compatible campaign loader tests; targeted test command is recorded in latest handoff.
+- TASK-189 reused the existing WDI implemented-compatible campaign loader tests; targeted test command is recorded in latest handoff.
+- `test_alfred_multi_series_task185.py` verifies TASK-185 multi-series artifact determinism, source-specific SQL boundaries, isolated PostgreSQL revision preservation, rerun idempotence, series/vintage identity separation, and canonical uniqueness.
+- `test_alfred_gdp_vintage_task184.py` verifies TASK-184 three-vintage artifact determinism, source-specific SQL boundaries, isolated PostgreSQL revision preservation, rerun idempotence, and canonical uniqueness.
+- `test_alfred_gdp_vintage_loader.py` verifies TASK-182 artifact determinism, source-specific SQL boundaries, isolated PostgreSQL revision preservation, rerun idempotence, lineage/quality checks, and no duplicate canonical key groups.
+- `test_wdi_trade_balance_capability.py` verifies TASK-170 package shape, derived balance arithmetic/status, coverage/missingness summary, caveats/non-goals, deterministic JSON/Markdown artifacts, checked-in artifact freshness, and forbidden mutation/framework boundaries.
+- `test_architectural_governance.py`, `test_wdi_implemented_compatible_campaign.py`, and `test_fred_monetary_aggregates.py` cover TASK-167 remediation: WDI source/campaign modules do not import canonical loaders, TASK-165 loading is imported from `wdi_loader.py`, and the FRED anti-framework guard no longer rejects the TASK-160-authorized operational loader.
+- `test_wdi_macro_indicators_operational.py` verifies TASK-129 WDI operational refresh, replay, and isolated PostgreSQL loading.
+- `test_bls_state_labor_force.py` verifies TASK-128 bounded BLS LAUS state labor-force evidence.
+- `test_fred_housing_construction.py` verifies TASK-127 bounded FRED housing construction evidence.
+- `test_wdi_dependency_ratios.py` verifies TASK-126 bounded WDI dependency-ratios evidence.
+- `test_sec_company_income_statement.py` verifies TASK-125 bounded SEC income-statement evidence.
+- `test_fred_vehicle_sales.py` verifies TASK-124 bounded FRED vehicle-sales evidence.
+- `test_fred_business_applications.py` verifies TASK-123 bounded FRED business applications fixture persistence, normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_fred_household_balance_sheet.py` verifies TASK-122 bounded FRED household balance-sheet fixture persistence, normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_sec_company_capital_structure.py` verifies TASK-121 bounded SEC capital-structure fixture, observed package, replay, and forbidden-framework boundaries.
+- `test_sec_company_cash_flow.py` verifies TASK-120 bounded SEC company cash-flow fixture persistence, normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_fdic_branch_locations.py` verifies TASK-119 bounded FDIC branch-location fixture persistence, normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_fdic_bank_certifications.py` verifies TASK-118 bounded FDIC fixture persistence, certification normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_sec_exchange_listings.py` verifies TASK-117 bounded SEC exchange-listing fixture persistence, listing normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_worldbank_country_classifications.py` verifies TASK-116 bounded World Bank country-classification fixture persistence, membership normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_sec_13f_stock_positions.py` verifies TASK-115 bounded SEC 13F fixture persistence, stock-position normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_sec_filing_events.py` verifies TASK-114 bounded SEC filing-event fixture persistence, event normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_imf_weo_projections.py` verifies TASK-113 bounded IMF WEO projection fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_imf_iip_positions_operational.py` verifies TASK-159 bounded IMF IIP USA/JPN position operational artifact loading and PostgreSQL load/report verification.
+- `test_fred_monetary_aggregates_operational.py` verifies TASK-160 bounded FRED monetary aggregates operational artifact loading and PostgreSQL load/report verification.
+- `test_fred_business_confidence_operational.py` verifies TASK-161 bounded FRED business-confidence operational artifact loading, contract validity, and deterministic replay.
+- `test_fred_foreign_exchange_rates_operational.py` verifies TASK-162 bounded FRED FX quote operational artifact loading, contract validity, deterministic replay, and forbidden-framework boundaries.
+- `test_wdi_high_technology_exports.py` verifies TASK-112 bounded WDI high-technology export fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_tourism_travel_flows.py` verifies TASK-111 bounded WDI tourism/travel-flow fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_agriculture_food.py` verifies TASK-110 bounded WDI agriculture/food fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_migration_remittances.py` verifies TASK-109 bounded WDI migration/remittances fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_innovation_rd.py` verifies TASK-108 bounded WDI innovation/R&D fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_poverty_inequality.py` verifies TASK-107 bounded WDI poverty/inequality fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_environment_climate_exposure.py` verifies TASK-106 bounded WDI environment/climate fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_health_system_resources.py` verifies TASK-105 bounded WDI health-system resource fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_education_human_capital.py` verifies TASK-104 bounded WDI education/human-capital fixture persistence, row normalization, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_imf_fas_payment_cards.py` verifies TASK-103 bounded IMF FAS payment-card fixture normalization, financial-access/payment-card metadata preservation, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_imf_irfcl_reserve_assets.py`
+- `test_imf_fas_payment_cards.py` verifies TASK-102 bounded IMF IRFCL reserve-assets fixture normalization, reserve/liquidity metadata preservation, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_imf_gdd_sector_debt.py` verifies TASK-101 bounded IMF GDD sector-debt fixture normalization, sector debt burden metadata preservation, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_services_trade_intensity.py` verifies TASK-099 bounded WDI services-trade intensity fixture normalization, services-trade concept/country/unit metadata preservation, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_fixed_broadband.py` verifies TASK-098 bounded WDI fixed-broadband fixture normalization, connectivity concept/country/unit metadata preservation, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_logistics_performance.py` verifies TASK-097 bounded WDI logistics-performance fixture normalization, logistics dimension/country/score-scale metadata preservation, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_wdi_energy_use_coal_electricity.py` verifies TASK-096 bounded WDI energy/electricity fixture normalization, energy concept/country/unit metadata preservation, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_fred_federal_debt_interest.py` verifies TASK-095 bounded FRED federal debt/interest-cost fixture normalization, public-finance role/government-sector/unit metadata preservation, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_fred_federal_fiscal_flows.py` verifies TASK-094 bounded FRED federal fiscal-flow fixture normalization, fiscal-flow/government-sector/unit metadata preservation, observed-package contract validation, deterministic replay fingerprinting, and forbidden-framework boundaries.
+- `test_fred_corporate_profits.py` verifies TASK-093 bounded FRED corporate-profits fixture normalization, profit-measure/sector/unit metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_fred_productivity_unit_labor_cost.py` verifies TASK-092 bounded FRED productivity/unit-labor-cost fixture normalization, sector/measure-role/index-basis metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_fred_business_confidence.py` verifies TASK-091 bounded FRED/OECD business-confidence fixture normalization, country/survey-context/index-basis metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_fred_business_confidence_operational.py` verifies TASK-161 bounded FRED business-confidence operationalization, operational metadata/scoping, contract validity, deterministic replay, refresh artifact writing, and anti-framework boundaries.
+- `test_fred_housing_prices.py` verifies TASK-090 bounded FRED housing-price fixture normalization, median/average price-statistic metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_bls_wages_hours.py` verifies TASK-089 bounded BLS CES wages/hours fixture normalization, wage/hour metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_imf_iip_positions.py` verifies TASK-088 bounded IMF IIP position fixture normalization, position-side/stock-basis metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_fred_manufacturers_orders.py` verifies TASK-087 bounded FRED manufacturers' orders fixture normalization, order-scope/goods-scope/exclusion metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_fred_bank_credit.py` verifies TASK-086 bounded FRED bank-credit fixture normalization, lender-scope/loan-scope/credit-stock metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_fred_business_inventories.py` verifies TASK-085 bounded FRED business-inventories fixture normalization, stock-vs-ratio/denominator metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_bls_jolts_labor_demand.py` verifies TASK-084 bounded BLS JOLTS labor-demand fixture normalization, labor-demand/turnover metadata preservation, observed-package contract validity, deterministic replay, fixture persistence, and anti-framework boundaries.
+- `test_observed_ingestion.py`, `test_contract_drift.py`, `test_deterministic_change_verification.py`, and `test_ingestion_feedback.py` verify observed-boundary and deterministic-substrate behavior.
 
 ## Needs Attention
 - Any future `ObservedIngestionPackage` contract evolution must run `test_contract_drift.py`, `test_observed_ingestion.py`, relevant source evidence tests, relevant loader tests, combined-source smoke tests, and full pytest.
 - Preserve fixture-backed and isolated-PostgreSQL coverage if OECD/SDMX, ECB SDW, Eurostat, combined-source validation, canonical report generation, canonicalization state mechanics, proposal workflow mechanics, or WDI metadata enrichment are later broadened.
+- `test_wdi_macro_indicators_refresh_verification.py` — TASK-130 refresh-delta verification tests.
+- `test_bls_cpi_categories.py` — TASK-131 BLS CPI category-deepening tests.
+- `test_wdi_operational_phase1.py` — TASK-132 WDI Phase 1 operational expansion tests.
+- `test_wdi_demographics_phase1.py` — TASK-133 WDI demographics Phase 1 operational expansion tests.
+- `test_wdi_energy_phase1.py` — TASK-134 WDI energy Phase 1 operational expansion tests.
+- `test_imf_iip_g7_positions.py` — TASK-135 IMF IIP G7 position deepening tests.
+- `test_imf_bop_g7_financial_account.py` — TASK-136 IMF BOP G7 financial-account flow deepening tests.
+- `test_imf_bop_financial_account_operational.py` — TASK-158 IMF BOP financial-account operational evolution tests.
+- `test_imf_gdd_g7_sector_debt.py` — TASK-137 IMF GDD G7 sector-debt deepening tests.
+- `test_sec_company_financial_statement_panel.py` — TASK-138 SEC AAPL/MSFT integrated financial statement panel tests.
+- `test_wdi_foundational_operational_bundle.py` verifies TASK-139 WDI foundational operational bundle manifest, deterministic fingerprint, PostgreSQL load, and forbidden-scope boundaries.
+- `test_bls_cpi_major_categories_operational.py` verifies TASK-140 CPI operational fixture, observed package, manifest, PostgreSQL load, and anti-framework boundaries.
+- TASK-142 added `test_wdi_trade_core_operational.py` covering fixture, normalization, deterministic package, refresh artifacts, PostgreSQL load, and non-goals.

@@ -5,8 +5,101 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
-- `.gitkeep`
-- `R-20260701-architecture-reality-audit.md`
+- `L-20260628-task-053-implementation-lessons.md`
+- `L-20260628-task-054-implementation-lessons.md`
+- `L-20260629-task-055-implementation-lessons.md`
+- `L-20260630-task-056-implementation-lessons.md`
+- `L-20260630-task-057-implementation-lessons.md`
+- `L-20260630-task-058-implementation-lessons.md`
+- `L-20260630-task-059-implementation-lessons.md`
+- `L-20260630-task-060-implementation-lessons.md`
+- `L-20260630-task-061-implementation-lessons.md`
+- `L-20260701-task-062-implementation-lessons.md`
+- `L-20260701-task-063-implementation-lessons.md`
+- `L-20260701-task-064-implementation-lessons.md`
+- `L-20260701-task-065-implementation-lessons.md`
+- `L-20260701-task-066-implementation-lessons.md`
+- `L-20260701-task-067-implementation-lessons.md`
+- `L-20260701-task-068-implementation-lessons.md`
+- `L-20260701-task-069-implementation-lessons.md`
+- `L-20260701-task-070-implementation-lessons.md`
+- `L-20260701-task-071-implementation-lessons.md`
+- `L-20260701-task-072-implementation-lessons.md`
+- `L-20260701-task-073-implementation-lessons.md`
+- `L-20260701-task-074-implementation-lessons.md`
+- `L-20260701-task-075-implementation-lessons.md`
+- `L-20260701-task-076-implementation-lessons.md`
+- `L-20260701-task-077-implementation-lessons.md`
+- `L-20260701-task-078-implementation-lessons.md`
+- `L-20260701-task-079-implementation-lessons.md`
+- `L-20260701-task-080-implementation-lessons.md`
+- `L-20260701-task-081-implementation-lessons.md`
+- `L-20260701-task-084-implementation-lessons.md`
+- `L-20260701-task-085-implementation-lessons.md`
+- `L-20260701-task-086-implementation-lessons.md`
+- `L-20260701-task-087-implementation-lessons.md`
+- `L-20260702-task-088-implementation-lessons.md`
+- `L-20260702-task-089-implementation-lessons.md`
+- `L-20260702-task-090-implementation-lessons.md`
+- `L-20260702-task-091-implementation-lessons.md`
+- `L-20260702-task-092-implementation-lessons.md`
+- `L-20260702-task-093-implementation-lessons.md`
+- `L-20260702-task-094-implementation-lessons.md`
+- `L-20260702-task-095-implementation-lessons.md`
+- `L-20260702-task-096-implementation-lessons.md`
+- `L-20260702-task-097-implementation-lessons.md`
+- `L-20260702-task-098-implementation-lessons.md`
+- `L-20260702-task-099-implementation-lessons.md`
+- `L-20260702-task-101-implementation-lessons.md`
+- `L-20260702-task-102-implementation-lessons.md`
+- `L-20260702-task-103-implementation-lessons.md`
+- `L-20260702-task-104-implementation-lessons.md`
+- `L-20260702-task-105-implementation-lessons.md`
+- `L-20260702-task-106-implementation-lessons.md`
+- `L-20260702-task-107-implementation-lessons.md`
+- `L-20260702-task-108-implementation-lessons.md`
+- `L-20260702-task-109-implementation-lessons.md`
+- `L-20260702-task-110-implementation-lessons.md`
+- `L-20260702-task-111-implementation-lessons.md`
+- `L-20260702-task-112-implementation-lessons.md`
+- `L-20260702-task-113-implementation-lessons.md`
+- `L-20260702-task-114-implementation-lessons.md`
+- `L-20260702-task-115-implementation-lessons.md`
+- `L-20260702-task-116-implementation-lessons.md`
+- `L-20260702-task-117-implementation-lessons.md`
+- `L-20260702-task-118-implementation-lessons.md`
+- `L-20260702-task-119-implementation-lessons.md`
+- `L-20260702-task-120-implementation-lessons.md`
+- `L-20260702-task-121-implementation-lessons.md`
+- `L-20260702-task-122-implementation-lessons.md`
+- `L-20260702-task-123-implementation-lessons.md`
+- `L-20260702-task-124-implementation-lessons.md`
+- `L-20260702-task-125-implementation-lessons.md`
+- `L-20260702-task-126-implementation-lessons.md`
+- `L-20260702-task-127-implementation-lessons.md`
+- `L-20260702-task-128-implementation-lessons.md`
+- `L-20260703-task-129-operational-wdi-macro-indicators.md`
+- `L-20260703-task-130-wdi-refresh-verification.md`
+- `L-20260703-task-131-bls-cpi-categories.md`
+- `L-20260703-task-132-wdi-phase1-operational-expansion.md`
+- `L-20260703-task-133-wdi-demographics-phase1-knowledge-leverage.md`
+- `L-20260703-task-134-wdi-energy-phase1-knowledge-leverage.md`
+- `L-20260703-task-135-imf-iip-g7-position-deepening.md`
+- `L-20260703-task-136-imf-bop-g7-financial-account-deepening.md`
+- `L-20260703-task-137-imf-gdd-g7-sector-debt-deepening.md`
+- `L-20260703-task-138-sec-company-financial-statement-panel.md`
+- `L-20260703-task-139-wdi-foundational-operational-bundle.md`
+- `L-20260703-task-140-bls-cpi-major-categories-operational-dataset.md`
+- `L-20260703-task-141-bls-labor-core-operational-dataset.md`
+- `L-20260703-task-142-wdi-trade-core-operational-dataset.md`
+- `L-20260703-task-143-wdi-financial-accounts-core-operational-dataset.md`
+- `L-20260703-task-144-sec-company-core-operational-dataset.md`
+- `L-20260703-task-145-fred-housing-construction-core-operational-dataset.md`
+- `L-20260703-task-147-census-housing-pipeline-operational-evolution.md`
+- `L-20260703-task-148-imf-iip-g7-operational-evolution.md`
+- `L-20260703-task-149-un-comtrade-trade-operational-evolution.md`
+- `L-20260703-task-150-fred-housing-prices-operational-evolution.md`
+- `M-20260703-operational-repository-v1-readiness-review.md`
 - `R-20260605-architecture-reality-audit.md`
 - `R-20260613-architecture-reality-audit.md`
 - `R-20260613-largest-canonicalization-uncertainty.md`
@@ -22,11 +115,6 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 - `R-20260626-strategic-constitution-v11-backlog-reassessment.md`
 - `R-20260626-v11-roadmap-reassessment-after-observed-ingestion-package.md`
 - `R-20260627-bounded-bea-nipa-evidence-slice.md`
-- `L-20260628-task-053-implementation-lessons.md`
-- `L-20260628-task-054-implementation-lessons.md`
-- `R-20260628-task-054-candidate-source-selection.md`
-- `R-20260629-task-055-source-selection-review.md`
-- `L-20260629-task-055-implementation-lessons.md`
 - `R-20260627-bounded-bls-monthly-evidence-slice.md`
 - `R-20260627-canonical-lineage-generation-verification.md`
 - `R-20260627-contract-validation-drift-detection-specification.md`
@@ -37,67 +125,112 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 - `R-20260627-deterministic-ingestion-substrate-execution-model.md`
 - `R-20260627-final-governance-refinement-and-freeze.md`
 - `R-20260627-foundational-capability-extraction-candidate.md`
-- `R-20260627-governance-alignment-after-strategic-constitution-v11.md`
-- `R-20260627-observed-boundary-contract-stability-verification-review.md`
-- `TASK-037-closeout-report-20260613.md`
-- `canonical-gdp-snapshot-20260604.json`
-- `canonical-gdp-snapshot-20260604.md`
-- `canonicalization-deferred-mapping-advancement-requirements-20260618.json`
-- `canonicalization-deferred-mapping-advancement-requirements-20260618.md`
-- `canonicalization-oecd-mapping-status-review-20260618.json`
-- `canonicalization-oecd-mapping-status-review-20260618.md`
-- `canonicalization-oecd-unit-basis-comparability-20260618.json`
-- `canonicalization-oecd-unit-basis-comparability-20260618.md`
-- `canonicalization-proposal-workflow-20260613.json`
-- `canonicalization-review-lifecycle-20260614.json`
-- `canonicalization-review-lifecycle-20260614.md`
-- `canonicalization-state-foundation-20260605.json`
-- `canonicalization-wdi-unit-metadata-enrichment-20260613.json`
-- `combined-source-canonical-smoke-20260604.json`
-- `eurostat-namq-load-smoke-20260604.json`
-- `eurostat-third-source-architecture-spike-20260604.md`
-- `gdp-eligibility-classification-20260619.json`
-- `oecd-sdmx-codelist-labels-20260604.md`
-- `oecd-sdmx-live-smoke-20260603.md`
-- `oecd-sdmx-load-smoke-20260603.json`
-- `oecd-sdmx-second-source-spike-20260603.md`
-- `oecd-sdmx-smoke-20260603.md`
-- `project-state-history-before-architecture-reality-remediation-20260605.md`
-- `wdi-isolated-smoke-rerun-20260603.json`
-- `wdi-load-smoke-20260602.json`
-- `wdi-smoke-20260602.md`
-- `wdi-validation-smoke-20260602.json`
-- `wdi-validation-smoke-20260602.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `L-20260701-task-065-implementation-lessons.md` records TASK-065's bounded FRED monthly U.S. Treasury yield-curve implementation lessons, observation-family selection rationale, daily-frequency contract-compatibility note, prediction review, and conclusion that the selected monthly curve slice behaved as normal Domain Expansion without architecture evolution.
-- `L-20260701-task-064-implementation-lessons.md`
-- `L-20260701-task-065-implementation-lessons.md` records TASK-064's bounded Eurostat energy balance implementation lessons, prediction review, energy-accounting domain evidence, and conclusion that it behaved as normal Domain Expansion without architecture evolution.
-- `L-20260629-task-055-implementation-lessons.md` records TASK-055's bounded ECB SDW implementation lessons, prediction review, confidence-calibration evidence, and conclusion that repeated SDMX GenericData mechanics are future extraction evidence but do not justify an SDMX Interpretation Layer yet.
-- `R-20260701-architecture-reality-audit.md` records the bounded post-TASK-063 Architecture-to-Reality Audit maintenance checkpoint used to reset the completed-task audit cadence.
-- `R-20260629-task-055-source-selection-review.md` records the post-TASK-054 evidence-based candidate review and recommended bounded ECB SDW for TASK-055, with explicit pre-implementation predictions.
-- `L-20260628-task-054-implementation-lessons.md` records TASK-054's one durable implementation lesson, prediction review, source-family retrospective, and unchanged future-estimation model.
-- `L-20260628-task-053-implementation-lessons.md` records the short TASK-053 lessons artifact required after heterogeneous source work.
-- `L-20260628-task-054-implementation-lessons.md`
-- `R-20260628-task-054-candidate-source-selection.md` records why bounded U.S. Treasury Fiscal Data was selected for TASK-054 by architectural learning per unit of implementation effort.
-- `R-20260627-bounded-bea-nipa-evidence-slice.md` records TASK-053: bounded BEA NIPA iTableCore evidence normalization into an `ObservedIngestionPackage`, confirmed predictions, and no justified architecture evolution.
-- `R-20260627-deterministic-ingestion-feedback.md` records TASK-052's verified Deterministic Ingestion Feedback implementation: deterministic explanations from contract reports, package comparisons, lineage events, and source-effort profiles without creating a diagnostics platform.
-- `R-20260627-deterministic-ingestion-substrate-effort-assessment.md` records the implementation-driven assessment that the substrate is already measurably reducing future post-boundary engineering/human/LLM effort, while source-specific acquisition/parsing/SQL/mapping remain substantial and should not be extracted yet.
-- `R-20260627-contract-validation-drift-detection-verification.md` records TASK-050's Contract Validation and Drift Detection Specified -> Verified transition through expected/reconstructed package contract reports in the deterministic verification path.
-- `R-20260627-deterministic-ingestion-substrate-execution-model.md` records the canonical execution model and capability interfaces for the emerging Deterministic Ingestion Substrate, including expected/reconstructed package drift-check placement and low-priority state/history technical debt.
-- `R-20260627-deterministic-ingestion-substrate-emergence-assessment.md` records the implementation-oriented assessment that a Deterministic Ingestion Substrate has emerged as an architectural layer after `ObservedIngestionPackage`, while deferring capability-model grouping and introducing no framework.
-- `R-20260627-contract-validation-drift-detection-specification.md` records TASK-049's Contract Validation and Drift Detection Discovered -> Specified transition, deterministic invariant drift model, tests, and architectural substrate-convergence assessment.
-- `R-20260627-observed-boundary-contract-stability-verification-review.md` records the evidence-based consistency review that promoted Observed Boundary and Contract Stability from Specified to Verified without production implementation, and recommends Contract Validation and Drift Detection as the next genuine implementation target.
-- `R-20260627-canonical-lineage-generation-verification.md` records TASK-048's Verified Canonical Lineage Event Generation extraction, final verification results, and the future foundational extraction checklist now standardized in `docs/architecture/capability-maturity-model.md`.
-- `R-20260627-foundational-capability-extraction-candidate.md` records TASK-047's consultation-backed selection of lineage as the first foundational post-boundary extraction candidate.
-- `R-20260627-final-governance-refinement-and-freeze.md` completes the final planned v1.1 governance refinement: `foundational_capability_extraction` trigger, capability maturity tracking, and governance freeze pending implementation-driven discoveries.
-- `R-20260627-governance-alignment-after-strategic-constitution-v11.md` remains supporting evidence for capability-oriented planning; `docs/architecture/capability-maturity-model.md` tracks capability maturity.
-- `R-20260626-observed-common-ingestion-representation-discovery.md` justified TASK-046's narrow observed common ingestion representation extraction while rejecting generalized frameworks/runtime redesign.
-- Canonicalization review/comparability/eligibility reports remain file-backed governance evidence; they do not represent live `macro` database writes, accepted production ontology mutation, conversion, aggregation, or model canonicalization.
+- `task-206-*.json` reports document corrected TASK-206 provider-empty audit findings, ASPIRE blank-`countryiso3code` territory fallback correction, PostgreSQL same-run replacement/idempotence, provider classifications, wider ASPIRE/source-29 impact, repository verification, and Phase 1 transition-gate evidence.
+- `R-20260710-task-205-*` reports document agriculture/rural-development campaign selection, repository expansion, PostgreSQL growth, capability progress, provider classifications, repository verification, and architecture observation.
+- `R-20260710-task-204-*` reports document gender equality campaign selection, audit-corrected repository expansion, PostgreSQL growth, capability progress, provider classifications, provider-exclusion integrity audit, remediation-safety closeout, and architecture observation.
+- `R-20260710-task-203-*` reports document infrastructure/connectivity campaign selection, repository expansion, PostgreSQL growth, capability progress, provider classifications, and architecture observation.
+- `R-20260710-task-202-*` reports document private-sector/business-environment campaign selection, repository expansion, PostgreSQL growth, capability progress, provider classifications, and architecture observation.
+- `R-20260710-task-201-*` reports document public-sector fiscal/governance campaign selection, repository expansion, PostgreSQL growth, capability progress, provider classifications, and architecture observation.
+- `R-20260710-task-200-*` reports document poverty/inequality campaign selection, repository expansion, PostgreSQL growth, capability progress, provider classifications, and architecture observation.
+- `R-20260710-task-199-*` reports document campaign selection, repository expansion, PostgreSQL growth, capability progress, provider classifications, and architecture observation.
+- `R-20260709-task-198-*` reports document bottleneck review, implemented execution improvements, repository expansion, PostgreSQL growth, benchmark evidence, and architecture observation.
+- `R-20260709-task-197-*` reports document campaign selection, operational sizing, environment/climate expansion, PostgreSQL growth, provider classification, operational evidence review, and architecture observation.
+- `R-20260709-task-196-*` reports document the health/population-health campaign, PostgreSQL growth, provider classification, execution resilience, and architecture observation; `task-196-execution-verifier-benchmark.json` is the closeout verifier output.
+- `R-20260709-task-195-*` reports document execution review, friction inventory, selected execution improvement, implementation evidence, and construction readiness; `task-195-execution-verifier-task194-benchmark.json` is the real benchmark output.
+- `R-20260709-task-194-*` reports document domain completion review, campaign selection, repository expansion, PostgreSQL growth, domain completion assessment, Repository Atlas update, provider evidence classification, and architecture observation.
+- `R-20260709-task-193-*` reports document labor closure campaign selection, repository expansion, PostgreSQL growth, capability closure, domain progress, Repository Atlas update, provider evidence classification, and architecture observation.
+- `R-20260709-task-192-*` reports document financial-system campaign selection, repository expansion, PostgreSQL growth, domain progress, provider evidence classification, and architecture-to-reality observation.
+- `R-20260709-task-191-*` reports document domain-completion campaign selection, WDI energy/access repository expansion, PostgreSQL growth, domain progress, and architecture-to-reality observation.
+- `R-20260709-task-190-*` reports document campaign selection, WDI human-capital repository expansion, PostgreSQL growth, capability improvement, exclusions, and architecture-to-reality observation.
+- `R-20260709-task-189-*` reports document campaign selection, WDI repository expansion, PostgreSQL growth, capability improvement, and architecture-to-reality observation.
+- `R-20260709-task-188-*` reports and `task-188-*.json` declare mature/frozen architecture capabilities, remaining uncertainties, and future architecture governance policy.
+- `R-20260709-task-187-*` reports and `task-187-*.json` record sparse GDP+GDI validation, architecture assessment, and the recommendation to freeze the bounded revision-aware scalar workstream.
+- `R-20260709-task-186-*` reports and `task-186-*.json` record the prior revision-aware evidence review, asynchronous-vintage risk definition, candidate campaign matrix, architecture boundary assessment, and recommended TASK-187 sparse-vintage GDP+GDI campaign.
+- `R-20260709-task-185-*` reports and `task-185-*.json` record the bounded ALFRED GDP+GDPC1 multi-series validation: candidate assessment, campaign, validation/idempotence, architecture result, and next-step recommendation; current bounded convention supports aligned multi-series revision-aware evidence in this confidence cell.
+- `R-20260709-task-184-*` reports and `task-184-*.json` record the bounded ALFRED GDP three-vintage validation: campaign, validation, rerun/idempotence, architecture result, and next-step recommendation; current bounded convention supports >2 vintages in this confidence cell.
+- `R-20260709-task-183-*` reports and `task-183-scale-up-candidate-matrix.json` record the planning-only bounded revision-aware scale-up assessment: select TASK-184 bounded ALFRED GDP three-vintage quarterly validation, defer subsystem extraction.
+- `R-20260709-task-182-*` reports and `task-182-*.json` record the bounded revision-aware ALFRED GDP validation campaign: candidate/boundary/campaign/validation/architecture-result reports, 4 facts, 2 vintages, 2 periods with multiple vintages, and 0 duplicate canonical key groups after rerun.
+- `R-20260709-task-181-architecture-generalization-assessment.md` and companion TASK-181 reports record the architecture-only cross-repository-class generalization assessment: taxonomy, WDI assumption audit, compatibility matrix, evolution recommendations, and TASK-182 revision-aware time-series recommendation.
+- `R-20260709-task-180-demographic-structure-campaign.md` and companion TASK-180 reports record the WDI Demographic Structure closure campaign: 68 compatible five-year female/male age-band cohort indicators, 516,460 curated facts added, WDI coverage 182 indicators / 1,377,595 facts, idempotent rerun verified, and WDI provider boundary determined for historical national five-year age-sex cohort structure.
+- `R-20260709-task-179-demographics-capability-closure-assessment.md` and companion TASK-179 reports record the planning-only Demographics closure assessment: current capability review, remaining gaps, repository sufficiency, repository quality, provider justification, campaign priority matrix, and TASK-180 recommendation.
+- `R-20260708-task-178-demographic-structure-human-capital-campaign.md`, `R-20260708-task-178-postgresql-growth-report.md`, `R-20260708-task-178-capability-improvement-report.md`, `R-20260708-task-178-architectural-scaling-report.md`, `R-20260708-task-178-capability-maturity-assessment.md`, and `task-178-*.json` record TASK-178 implementation evidence: 28 included WDI demographic/human-capital indicators, 212,660 curated facts added, 217 countries, 1990-2024, idempotent rerun and no architectural redesign.
+- `R-20260708-task-177-demographics-domain-capability-gap-assessment.md` records TASK-177 planning: Demographics/Human Capital current capability inventory, maturity gaps, implemented-provider assessment, candidate campaigns, and TASK-178 recommendation.
+- `R-20260708-task-173-acpf-trade-mirror-reliability-plan.md` records TASK-173 planning: bounded bilateral trade mirror-reliability monitoring selected as the next Trade capability scope; TASK-174 recommended as a bounded UN Comtrade reciprocal USA/Japan reporter-perspective preflight/implementation slice.
+- `R-20260708-task-172-un-comtrade-product-trade-exposure-slice.md` records TASK-172 implementation: bounded UN Comtrade USA-Japan 2023 product-level import/export evidence for HS codes 3004, 8542, and 8703; package fingerprint `fc71def46b5acb2f3174419345cd21a2ba7ef40539f318051e39fba5e28b6c47`; load shape `6|6|1|1|2`.
+- `task-172-un-comtrade-product-trade-operational-load-report.json` records TASK-172 isolated PostgreSQL load evidence.
+- `R-20260708-task-171-acpf-product-level-trade-exposure-plan.md` records TASK-171 planning: bounded bilateral product-level goods trade exposure monitoring selected as the next Trade capability scope; TASK-172 recommended as a bounded UN Comtrade USA-Japan 2023 HS product-level preflight/implementation slice.
+- `R-20260708-task-170-wdi-trade-balance-capability-package.md` records TASK-170 implementation of the deterministic WDI trade-balance capability package: 5,208 country-years, 4,275 complete country-years, source fingerprint `8fbd0ad54db70fa31159b199d0fbb7c1c9194eb471b026b4a8465080549cd114`, package fingerprint `8be899d4df21a4383ce5d7ba18564562a6ff354ab755f2347de3f219f1133be9`, and no canonical derived-fact insertion.
+- `R-20260708-task-169-acpf-trade-balance-capability-plan.md` records TASK-169 application of DRDF + ACPF + CEF: Trade domain selected, annual WDI goods-and-services trade-balance monitoring selected, and TASK-170 recommended as a deterministic no-new-ingestion capability package over existing WDI evidence.
+- `R-20260708-analytical-capability-planning-framework.md` records TASK-168 investigation and acceptance of ACPF as the planning layer between macroeconomic domain and confidence cell; no ingestion/schema/provider/downstream implementation was authorized.
+- `R-20260708-domain-centric-repository-development-framework.md` records TASK-167 investigation and acceptance of DRDF as domain-level repository-development planning policy; TASK-168 refines its hierarchy with analytical capability.
+- `R-20260708-repository-governance-remediation-implementation.md` records TASK-167 implementation and verification: architecture audit green, targeted governance/FRED/WDI tests pass, and full pytest passes.
+- `R-20260708-repository-governance-remediation-inventory.md` records the preceding inventory proving the remaining blockers were localized rather than broad loader-architecture failure.
+- `R-20260708-task-165a-wdi-cef-scope-optimization-review.md` records the WDI reversed-burden CEF scope optimization review and recommends TASK-165 as all not-yet-operational implemented-compatible WDI annual scalar indicators, expected 27 candidates, with final inclusion by deterministic preflight evidence.
+- `R-20260708-cef-operational-expansion-planning.md` records the first CEF operational planning application: repository confidence inventory, promotion/falsification assessment, priority matrix, selected WDI expansion campaign, repository-centric metrics, and localized regression plan.
+- `L-20260702-task-123-implementation-lessons.md` records TASK-123 FRED business applications implementation lessons, replay evidence, relationship evidence answer, Controlled Expansion readiness evidence, and selection retrospective.
+- `L-20260702-task-122-implementation-lessons.md` records TASK-122 FRED household balance-sheet implementation lessons, replay evidence, relationship evidence answer, Controlled Expansion readiness evidence, and selection retrospective.
+- `L-20260702-task-121-implementation-lessons.md` records TASK-121 capital-structure lessons and replay evidence.
+- `L-20260702-task-120-implementation-lessons.md` records TASK-120 SEC company cash-flow lessons, replay evidence, relationship evidence monitoring answer, verification, and no-gate conclusion.
+- `L-20260702-task-119-implementation-lessons.md` records TASK-119 FDIC branch-location lessons, replay evidence, relationship evidence monitoring, verification, and no-gate conclusion.
+- `L-20260702-task-118-implementation-lessons.md` records TASK-118 FDIC bank certification lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-117-implementation-lessons.md` records TASK-117 SEC exchange-listing lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-116-implementation-lessons.md` records TASK-116 World Bank country-classification lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-115-implementation-lessons.md` records TASK-115 SEC 13F stock-position lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-114-implementation-lessons.md` records TASK-114 SEC filing-event lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-113-implementation-lessons.md` records TASK-113 IMF WEO projection lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-112-implementation-lessons.md` records TASK-112 WDI high-technology export lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-111-implementation-lessons.md` records TASK-111 WDI tourism/travel-flow lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-110-implementation-lessons.md` records TASK-110 WDI agriculture/food lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-109-implementation-lessons.md` records TASK-109 WDI migration/remittances lessons, replay evidence, verification, and no-gate conclusion.
+- `L-20260702-task-108-implementation-lessons.md` records TASK-108 WDI innovation/R&D lessons, replay evidence, final verification, and no-gate conclusion.
+- `L-20260702-task-107-implementation-lessons.md` records TASK-107 WDI poverty/inequality lessons, replay evidence, final verification, and no-gate conclusion.
+- `L-20260702-task-106-implementation-lessons.md` records TASK-106 WDI environment/climate exposure lessons, replay evidence, final verification, and no-gate conclusion.
+- `L-20260702-task-105-implementation-lessons.md` records TASK-105 WDI health-system resources lessons, replay evidence, final verification, and no-gate conclusion.
+- `L-20260702-task-104-implementation-lessons.md` records TASK-104 WDI education/human-capital lessons, replay evidence, final verification, and no-gate conclusion.
+- `L-20260702-task-103-implementation-lessons.md` records TASK-103 IMF FAS payment-card lessons, replay evidence, final verification, empty-series note, and no-gate conclusion.
+- `L-20260702-task-102-implementation-lessons.md` records TASK-102 IMF IRFCL reserve-assets lessons, replay evidence, final verification, and no-gate conclusion.
+- `L-20260702-task-101-implementation-lessons.md` records TASK-101 IMF GDD sector-debt lessons, replay evidence, final verification, and no-gate conclusion.
+- `R-20260702-task-100-strategic-retrospective.md` records the TASK-100 no-gate/no-extraction strategic retrospective.
+- `L-20260702-task-098-implementation-lessons.md` records TASK-098 bounded WDI fixed-broadband implementation lessons, selection retrospective, deterministic replay evidence, and closeout verification.
+- `L-20260702-task-097-implementation-lessons.md` records TASK-097 bounded WDI logistics-performance implementation lessons, selection retrospective, deterministic replay evidence, and closeout verification.
+- `L-20260702-task-096-implementation-lessons.md` records TASK-096 bounded WDI energy-use/coal-electricity implementation lessons, selection retrospective, deterministic replay evidence, and closeout verification.
+- `L-20260702-task-095-implementation-lessons.md` records TASK-095 bounded FRED federal debt/interest-cost implementation lessons, selection retrospective, deterministic replay evidence, and closeout verification.
+- `L-20260702-task-094-implementation-lessons.md` records TASK-094 bounded FRED federal fiscal-flow implementation lessons, selection retrospective, deterministic replay evidence, and closeout verification.
+- `L-20260702-task-093-implementation-lessons.md` records TASK-093 bounded FRED corporate-profits implementation lessons, selection retrospective, deterministic replay evidence, and conclusion that quarterly corporate-profit aggregate evidence fits without contract, architecture, or methodology expansion.
+- `L-20260702-task-092-implementation-lessons.md` records TASK-092 bounded FRED productivity/unit-labor-cost implementation lessons, selection retrospective, deterministic replay evidence, and conclusion that quarterly productivity and unit-labor-cost index evidence fits without contract, architecture, or methodology expansion.
+- `L-20260702-task-091-implementation-lessons.md` records TASK-091 bounded FRED/OECD business-confidence implementation lessons, selection retrospective, deterministic replay evidence, and conclusion that monthly business confidence survey-index evidence fits without contract, architecture, or methodology expansion.
+- `L-20260702-task-090-implementation-lessons.md` records TASK-090 bounded FRED housing-price implementation lessons, selection retrospective, deterministic replay evidence, and conclusion that quarterly residential housing sales price-level evidence fits without contract, architecture, or methodology expansion.
+- `L-20260702-task-089-implementation-lessons.md` records TASK-089 bounded BLS CES wages/hours implementation lessons, selection retrospective, deterministic replay evidence, and conclusion that monthly wage/hour labor compensation evidence fits without contract, architecture, or methodology expansion.
+- `L-20260702-task-088-implementation-lessons.md` records TASK-088 bounded IMF IIP position implementation lessons, selection retrospective, deterministic replay evidence, and conclusion that annual external financial-position stock evidence fits without contract, architecture, or methodology expansion.
+- `L-20260701-task-087-implementation-lessons.md` records TASK-087 bounded FRED manufacturers' orders implementation lessons, order-pipeline prediction review, deterministic replay evidence, and conclusion that monthly manufacturers' orders evidence fits without contract, architecture, or methodology expansion.
+- `L-20260701-task-086-implementation-lessons.md` records TASK-086 bounded FRED bank-credit implementation lessons, credit-intermediation prediction review, deterministic replay evidence, and conclusion that monthly bank-credit loan-stock evidence fits without contract, architecture, or methodology expansion.
+- `L-20260701-task-085-implementation-lessons.md` records TASK-085 bounded FRED business-inventories implementation lessons, inventory stock-cycle prediction review, deterministic replay evidence, and conclusion that monthly business-inventory evidence fits without contract, architecture, or methodology expansion.
+- `L-20260701-task-084-implementation-lessons.md` records TASK-084 bounded BLS JOLTS labor-demand implementation lessons, provider-diversity selection review, deterministic replay evidence, and conclusion that monthly JOLTS labor-demand/turnover evidence fits without contract or architecture expansion.
+- `R-20260702-architecture-reality-audit.md` records the latest generated architecture-to-reality audit.
 
 ## Needs Attention
 - Observed Boundary and Contract Stability, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback remain Verified; do not advance them beyond Verified without separate adoption tasks.
 - DEC-022/TASK-053 confirm the next-ten-source optimization target; future source choices should be evidence-driven, bounded, and judged by permanent reduction in future implementation effort.
 - TASK-055 is implemented and verified; future source selection should use its evidence, confidence calibration, and no-surprise result rather than reopen methodology design.
 - Do not treat roadmap reports as implementation approval. Open a bounded task before building a source slice, adopting feedback/reporting, or extracting helpers.
+- `L-20260703-task-130-wdi-refresh-verification.md` — implementation lessons for WDI macro refresh verification.
+- `L-20260703-task-131-bls-cpi-categories.md` — implementation lessons for BLS CPI category deepening.
+- `L-20260703-task-132-wdi-phase1-operational-expansion.md` — implementation lessons for WDI Phase 1 Operational Capability Expansion.
+- `task-132-wdi-phase1-load-report.json` — deterministic TASK-132 operational load report.
+- `L-20260703-task-133-wdi-demographics-phase1-knowledge-leverage.md` — implementation lessons for WDI Demographics Phase 1.
+- `task-133-wdi-demographics-phase1-load-report.json` — deterministic TASK-133 operational load report.
+- `L-20260703-task-134-wdi-energy-phase1-knowledge-leverage.md` — implementation lessons for WDI Energy Phase 1.
+- `task-134-wdi-energy-phase1-load-report.json` — deterministic TASK-134 operational load report.
+- `L-20260703-task-135-imf-iip-g7-position-deepening.md` — implementation lessons for IMF IIP G7 position deepening.
+- `L-20260703-task-136-imf-bop-g7-financial-account-deepening.md` — implementation lessons for IMF BOP G7 financial-account flow deepening.
+- `L-20260703-task-137-imf-gdd-g7-sector-debt-deepening.md` — implementation lessons for IMF GDD G7 sector-debt deepening.
+- `L-20260703-task-138-sec-company-financial-statement-panel.md` — implementation lessons for SEC AAPL/MSFT integrated company financial statement panel.
+- `L-20260703-task-139-wdi-foundational-operational-bundle.md` and TASK-139 manifest/load reports — operational WDI foundational bundle evidence.
+- `L-20260703-task-140-bls-cpi-major-categories-operational-dataset.md` and TASK-140 load report — BLS CPI operational dataset evidence.
+- TASK-142 report and load evidence record WDI trade core operational construction, 20,832 rows, and PostgreSQL shape `20832|4|217|24|2`.
+- `R-20260708-task-174-domain-bulk-expansion.md` and `task-174-domain-bulk-*.json` record TASK-174 inventory, preflight, classification, load, exclusion, coverage, and final PostgreSQL growth evidence.
+- `R-20260708-architectural-scaling-validation-campaign.md` plus TASK-175 exclusion/readiness/lessons reports record archived-evidence scaling validation and classify TASK-174 exclusions without live provider retry.
+- TASK-176 reports (`task-176-final-campaign-report.json`, `task-176-idempotence-validation-report.json`, and `R-20260708-task-176-*`) record WDI repository growth/historical scaling: 86 indicators, 648,475 curated facts, passing rerun/idempotence validation, and architecture stress observations.

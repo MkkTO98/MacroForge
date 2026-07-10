@@ -1,0 +1,14 @@
+{
+  "acquisition_errors": [],
+  "candidate_series_count": 12,
+  "compatible_series_count": 12,
+  "provider_exclusions": [],
+  "provider_messages": [
+    "Unable to get Catalog Data for series JTS000000000000000JOL",
+    "Unable to get Catalog Data for series JTS000000000000000HIR",
+    "Unable to get Catalog Data for series JTS000000000000000JOL",
+    "Unable to get Catalog Data for series JTS000000000000000HIR"
+  ],
+  "status": "complete",
+  "task": "TASK-207"
+}

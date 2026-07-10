@@ -1,16 +1,20 @@
 # Recent Changes
 
-- 2026-06-26: Completed TASK-045 OECD/Eurostat fixture-persistence hardening. Bounded OECD/Eurostat raw/metadata fixture evidence under `data/` is now explicitly unignored and commit-eligible while generated data remains ignored by default; fixture-persistence test added.
-- 2026-06-26: Completed TASK-044 WDI isolated smoke operational hardening. `src/macroforge/wdi_smoke.py` now applies `001_v0_schema_foundation.sql` plus `003_canonical_domain_dimensions.sql`, matching current WDI loader schema requirements; the WDI runbook and tests were updated, and isolated smoke succeeded.
-- 2026-06-26: Completed TASK-043 trigger-gated MetaHarvest consultation helper at `tools/consult_metaharvest.py`, with versioned structured task classification, separate Consultation/Retrieval Contracts, bounded advisory retrieval, non-blocking failure, mandatory Authority note, tests, and minimal documentation. It must run only after scoped task/governance classification, never during startup or routine work.
-- 2026-06-19: Completed bounded operational capability validation at `artifacts/reports/R-20260619-operational-capability-validation.md`. Combined WDI/OECD/Eurostat reconstruction and canonical GDP snapshot generation succeeded in isolated PostgreSQL; TASK-044 and TASK-045 later resolved the two named operational blockers.
-- 2026-06-19: Completed bounded MacroForge v1 closure review at `artifacts/reports/R-20260619-v1-closure-review.md`. Verdict: MacroForge has achieved its current analytical v1 purpose and should freeze pending concrete downstream pressure after operational blockers are resolved.
-- 2026-06-19: Completed TASK-042 deterministic GDP research/report eligibility classification. Created `artifacts/reports/gdp-eligibility-classification-20260619.json` plus validation/reassessment report `artifacts/reports/R-20260619-gdp-eligibility-classification-validation.md`. The artifact gives downstream consumers a compact file-backed contract: WDI is eligible only for bounded WDI-only descriptive findings with governed provisional caveats; OECD `USD_EXC`/`USD_PPP` remain deferred/profile-specific; Eurostat remains deferred/profile-specific and blocked for cross-source annual/current-USD comparison by missing frequency/currency/scale policy. MacroForge should stop expanding until concrete downstream pressure appears.
-- 2026-06-18: Closed out bounded trusted-GDP eligibility and database-state reviews. Current next implementation candidate is a deterministic GDP report eligibility classification artifact using existing canonical GDP inputs and review artifacts only; PostgreSQL persistence of current canonical metadata should follow deterministic eligibility semantics rather than precede them.
-- 2026-06-18: Compressed active-state context files into current-capability and recovery-anchor oriented form; no architecture, governance, canonicalization, code, manifest, task, commit, or push change was made.
-- 2026-06-18: Recorded bounded OECD mapping-status review; OECD `USD_EXC` and `USD_PPP` remain deferred and separate future provisional-treatment candidates. See `artifacts/reports/canonicalization-oecd-mapping-status-review-20260618.md`.
-- 2026-06-18: Completed TASK-040 OECD unit-basis comparability split. See `artifacts/reports/canonicalization-oecd-unit-basis-comparability-20260618.md`.
-- 2026-06-18: Completed bounded EIP relocation reality audit/synchronization and TASK-039 deferred OECD/Eurostat mapping advancement requirements. See `artifacts/reports/canonicalization-deferred-mapping-advancement-requirements-20260618.md`.
-- 2026-06-14: Completed TASK-038 bounded canonicalization review lifecycle validation; WDI reached governed provisional state while OECD/Eurostat remained deferred in bounded evidence.
-- 2026-06-14: Aligned MacroForge doctrine around recurring trusted macro data effort reduction without code/schema/pipeline changes.
-- 2026-06-02: Project initialized by ProjectForge using `python_data_project`.
+## 2026-07-10 — TASK-207 Phase 2 BLS monthly labor campaign
+
+- Accepted Phase 2 transition away from automatic residual WDI bulk campaigns.
+- Selected BLS public API v2 U.S. monthly labor-market evidence as the first diverse-source macroeconomic enrichment target.
+- Recorded frozen selection prediction in `artifacts/reports/task-207-bls-us-labor-monthly-frozen-selection-prediction.json`.
+- Implemented `tools/task207_bls_us_labor_monthly_phase2_campaign.py` with deterministic BLS acquisition chunks, raw evidence preservation, normalization, provider classification, PostgreSQL load, lineage/quality evidence, idempotence check, and prediction evaluation.
+- Added `tests/test_task207_bls_us_labor_monthly_phase2_campaign.py`.
+- Loaded 2,374 facts across 12 BLS monthly labor/payroll/wage/hours/JOLTS series for USA, 2010-M01 through 2026-M06.
+- Verified run-scoped PostgreSQL counts: `2374|2374|12|198|2|3|0` for staging, facts, indicators, periods, lineage, quality, failed quality.
+- Duplicate canonical key groups: 0.
+- Prediction-quality verdict: Mostly Accurate.
+- Architecture verdict: frozen/evidence-maintained; existing monthly scalar substrate sufficed.
+
+## 2026-07-10 — TASK-206 corrected Phase 1 transition gate
+
+- Corrected WDI/ASPIRE blank-`countryiso3code` handling with bounded `country.id` fallback for accepted non-aggregate territories.
+- Regenerated and reloaded corrected social-protection all-programs evidence.
+- Established Phase 1 transition gate: bulk WDI annual-scalar is no longer the default.
