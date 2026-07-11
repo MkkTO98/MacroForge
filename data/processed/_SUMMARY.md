@@ -34,11 +34,15 @@ This folder is part of the ProjectForge file-backed operating system for `data/p
 - `task205_wdi_agriculture_rural_development_chunked_expansion/`
 - `task206_wdi_social_protection_all_programs_chunked_expansion/`
 - `task207_bls_us_labor_monthly_phase2_campaign/`
+- `task208_bls_us_labor_breadth_monthly_phase2_campaign/`
+- `task209_imf_weo_g20_projection_phase2_campaign/`
 - `wdi_foundational_operational_bundle/`
 - `wdi_implemented_compatible_campaign/`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `task209_imf_weo_g20_projection_phase2_campaign/` contains TASK-209 normalized IMF WEO G20 projection artifacts and manifest: 342 candidate cells, 339 provider-valued facts, 3 explicit-missing Saudi Arabia LUR facts, 0 provider exclusions/acquisition errors.
+- `task208_bls_us_labor_breadth_monthly_phase2_campaign/` contains TASK-208 normalized BLS monthly labor breadth artifacts; TASK-208 remains deferred until clean BLS regeneration.
 - `task206_wdi_social_protection_all_programs_chunked_expansion/` contains corrected TASK-206 per-chunk normalized artifacts and campaign manifest: 4 compatible annual-scalar indicators / 30,380 rows, with 131 non-annual-period exclusions.
 - `task205_wdi_agriculture_rural_development_chunked_expansion/` contains TASK-205 per-chunk normalized artifacts and campaign manifest.
 - `task204_wdi_gender_equality_chunked_expansion/` contains TASK-204 per-chunk normalized artifacts and campaign manifest.

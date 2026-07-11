@@ -1,53 +1,26 @@
 # Project State
 
-Project: MacroForge
-Template: python_data_project
-Canonical path: `/home/mkkto/srv/EIP/projects/MacroForge`
-Last updated: 2026-07-10
+MacroForge remains in Phase 2 diverse-source repository expansion.
 
-MacroForge is in Operational Repository Evolution mode under Strategic Constitution v1.1. Architecture is frozen/evidence-maintained: source-specific pre-boundary work, `ObservedIngestionPackage` v1, deterministic post-boundary substrate, scoped canonical SQL, and evidence-gated extraction.
+Current state: TASK-209 is complete. It added a substantive non-BLS, non-trade, non-company, non-asset macroeconomic campaign from the proven IMF provider path: IMF WEO DataMapper API v1 G20 macroeconomic projections.
 
-## Current phase
+TASK-209 PostgreSQL evidence:
 
-Phase 2 diverse-source macroeconomic enrichment is active.
-
-Accepted transition:
-
-- Bulk WDI annual-scalar Phase 1 is no longer the default.
-- WDI may still be used later for a specific coherent target with clear material gain, but no residual WDI campaign should be scheduled automatically.
-- Trade, company, and financial-asset construction remain deferred.
-
-## Repository state after TASK-207
-
-PostgreSQL `macroforge` currently records:
-
-- curated facts: 10,555,773;
-- indicators: 1,423;
-- sources: 2;
-- pipeline runs: 39;
-- lineage events: 78;
-- quality checks: 79.
-
-TASK-207 added the first Phase 2 diverse-source campaign:
-
-- source: BLS public API v2;
-- domain: U.S. monthly labor market;
-- repository class: monthly scalar time-series observations;
-- run key: `task-207-bls-us-labor-monthly-phase2`;
-- run-scoped facts: 2,374;
-- series: 12;
-- monthly periods: 198;
-- coverage: 2010-M01 through 2026-M06;
-- duplicate canonical key groups: 0;
+- canonical source: `IMF_WEO_DATAMAPPER_API_V1`;
+- run key: `task-209-imf-weo-g20-projection-phase2-world-economic-outlook-april-2026`;
+- staging rows: 342;
+- curated facts: 342;
+- indicators: 6;
+- territories: 19;
+- annual projection periods: 3 (`2026:2028`);
+- lineage events: 2;
+- quality checks: 2;
 - failed quality checks: 0;
-- idempotence: same-scope rerun produced zero net growth.
+- duplicate canonical-key groups: 0;
+- observed/provider-valued facts: 339;
+- explicit-missing facts: 3;
+- idempotent rerun: true.
 
-## Architecture posture
+Provider evidence: 342 candidate observation cells were attempted. IMF DataMapper returned 339 provider-valued facts, no acquisition errors, and 3 explicit-missing Saudi Arabia `LUR` facts for 2026-2028. A bounded forecast-vintage audit corrected TASK-209 to use deterministic release key `world-economic-outlook-april-2026` and release-specific run key `task-209-imf-weo-g20-projection-phase2-world-economic-outlook-april-2026`.
 
-Architecture remains frozen / evidence-maintained. TASK-207 did not reveal canonical ambiguity, repository-class mismatch, provider-semantic preservation failure, scaling failure, or repeated operational friction requiring redesign.
-
-The existing substrate supports monthly scalar observations when source-specific semantics are preserved in provider payloads and attribute sets.
-
-## Active continuity note
-
-A failed FRED live-acquisition detour from the same session produced untracked TASK-207 FRED files. Cleanup was blocked by command policy; those files are not the accepted TASK-207 result. Preserve or remove them only with explicit user-approved cleanup scope.
+TASK-208 remains deferred. Do not run or report TASK-208 again before the scheduled return time. Do not touch the four TASK-207 FRED-detour files or unrelated working-tree changes.

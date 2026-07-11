@@ -96,6 +96,8 @@ Immutable raw source artifacts and checksums from pipeline runs.
 - `task206_wdi_social_protection_all_programs_chunked_expansion/`
 - `task207_bls_us_labor_monthly_phase2_campaign/`
 - `task207_fred_us_macro_monthly_phase2_campaign/`
+- `task208_bls_us_labor_breadth_monthly_phase2_campaign/`
+- `task209_imf_weo_g20_projection_phase2_campaign/`
 - `treasury/`
 - `un_comtrade_product_trade/`
 - `un_comtrade_trade/`
@@ -126,6 +128,8 @@ Immutable raw source artifacts and checksums from pipeline runs.
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `task209_imf_weo_g20_projection_phase2_campaign/` contains the canonical TASK-209 IMF WEO DataMapper API v1 raw artifact for the April 2026 WEO G20 projection campaign; it is ignored by `data/raw/*`, so commit-time reproducibility requires explicit force-add or equivalent durable evidence storage.
+- `task208_bls_us_labor_breadth_monthly_phase2_campaign/` contains TASK-208 BLS monthly labor breadth raw evidence; TASK-208 remains deferred until clean regeneration.
 - `task206_wdi_social_protection_all_programs_chunked_expansion/` contains corrected TASK-206 per-indicator checkpoints, per-chunk raw WDI Social Protection & Labor all-program evidence, and a dated audit archive preserving the invalid original generated evidence.
 - `task205_wdi_agriculture_rural_development_chunked_expansion/` contains TASK-205 per-indicator checkpoints and per-chunk raw WDI Agriculture & Rural Development evidence.
 - `task204_wdi_gender_equality_chunked_expansion/` contains TASK-204 per-indicator checkpoints, per-chunk raw artifacts, and archived timeout-placeholder correction evidence.

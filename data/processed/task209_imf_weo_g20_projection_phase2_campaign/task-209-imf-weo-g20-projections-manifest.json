@@ -1,0 +1,40 @@
+{
+  "acquisition_errors": [],
+  "candidate_observation_count": 342,
+  "completion_status": "complete",
+  "country_count": 19,
+  "expected_row_count": 342,
+  "indicator_count": 6,
+  "normalized_artifact_path": "data/processed/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-normalized.json",
+  "period_count": 3,
+  "period_range": "2026:2028",
+  "provider_dataset_code": "IMF:WEO:DATAMAPPER:PROJECTIONS",
+  "provider_exclusions": [],
+  "release_identity": {
+    "acquired_at_utc": "2026-07-11T13:29:29+00:00",
+    "api_exposes_edition_metadata_directly": true,
+    "api_exposes_row_level_value_status": false,
+    "api_identity": {
+      "surface": "IMF DataMapper API",
+      "versions": [
+        "1"
+      ]
+    },
+    "indicator_last_modified_values": [
+      "2026-04-08 16:07:34",
+      "2026-04-08 16:07:35",
+      "2026-04-08 16:07:39",
+      "2026-04-08 16:07:42",
+      "2026-04-08 16:07:43",
+      "2026-04-08 16:07:44"
+    ],
+    "provider_publication_date": null,
+    "provider_release_source": "World Economic Outlook (April 2026)",
+    "release_key": "world-economic-outlook-april-2026"
+  },
+  "repository_class": "annual_projection_scalar_time_series",
+  "row_count": 342,
+  "run_key": "task-209-imf-weo-g20-projection-phase2-world-economic-outlook-april-2026",
+  "source_code": "IMF_WEO_DATAMAPPER_API_V1",
+  "task": "TASK-209"
+}

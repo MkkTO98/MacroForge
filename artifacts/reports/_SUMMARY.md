@@ -125,9 +125,16 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 - `R-20260627-deterministic-ingestion-substrate-execution-model.md`
 - `R-20260627-final-governance-refinement-and-freeze.md`
 - `R-20260627-foundational-capability-extraction-candidate.md`
+- `task-209-forecast-vintage-decision-evidence-integrity-audit.md`
+- `task-209-final-closeout-consistency-check.md`
+- `task-209-imf-weo-g20-projections-artifact-checksums.txt`
+- `task-209-imf-weo-g20-projections-campaign-report.json`
+- `task-209-imf-weo-g20-projections-postgresql-load-report.json`
+- `task-209-imf-weo-g20-projections-provider-evidence-report.json`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- TASK-209 reports document IMF WEO April 2026 release/vintage evidence, Saudi Arabia LUR explicit-missing semantics, final 342-fact PostgreSQL accounting, checksum reconciliation, and architecture verdict that the existing revision-aware scalar substrate is sufficient.
 - `task-206-*.json` reports document corrected TASK-206 provider-empty audit findings, ASPIRE blank-`countryiso3code` territory fallback correction, PostgreSQL same-run replacement/idempotence, provider classifications, wider ASPIRE/source-29 impact, repository verification, and Phase 1 transition-gate evidence.
 - `R-20260710-task-205-*` reports document agriculture/rural-development campaign selection, repository expansion, PostgreSQL growth, capability progress, provider classifications, repository verification, and architecture observation.
 - `R-20260710-task-204-*` reports document gender equality campaign selection, audit-corrected repository expansion, PostgreSQL growth, capability progress, provider classifications, provider-exclusion integrity audit, remediation-safety closeout, and architecture observation.

@@ -1,0 +1,6 @@
+d9817f3fbf6cbaf3f58caaf438e20f0077c4cd1785db9505e49791925eebec5c  data/raw/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-2026-2028.json
+e7a015a47d8c7a6250f131b6fca5d43759e811f46764907b3ed53464f9156f09  data/processed/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-normalized.json
+a4fe196f352e63b58d1f9a225b12ceb8e64a196f47074cbc46e4931e10bebcb4  data/processed/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-manifest.json
+65280309b50733fd2603e84aba16a7eca32057719ce2482a3913053bd0e7356d  artifacts/reports/task-209-imf-weo-g20-projections-provider-evidence-report.json
+986045a1418e16c8c79b54afe73f8e371d86a3b1f6b790a2f72f1d57bbd658fd  artifacts/reports/task-209-imf-weo-g20-projections-postgresql-load-report.json
+1f3b91aa69e07b91e213f5bab790b8f943b8244e1d166825c81c3cf8bb4a842e  artifacts/reports/task-209-imf-weo-g20-projections-campaign-report.json

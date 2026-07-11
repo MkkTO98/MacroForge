@@ -2,30 +2,21 @@
 
 Current strategic objective: construct MacroForge as an independent operational economic repository under evidence-maintained architecture.
 
-MacroForge Operational Repository v1.0 is accepted. Bulk WDI annual-scalar Phase 1 is no longer the default after corrected TASK-206. Current work is Phase 2 diverse-source macroeconomic enrichment: add material non-WDI macroeconomic capability using already proven bounded source paths where possible, while keeping architecture frozen unless implementation evidence forces change.
+MacroForge is in Phase 2 diverse-source macroeconomic enrichment. Bulk WDI annual-scalar Phase 1 is no longer the default; WDI can return only for a specific coherent target with clear material gain. Trade, company, and financial-asset construction remain deferred.
 
-Completed Phase 2 start:
+Completed Phase 2 campaigns:
 
-- TASK-207 selected BLS public API v2 U.S. monthly labor-market evidence as the first Phase 2 diverse-source campaign.
-- TASK-207 loaded 2,374 monthly observations / facts across 12 BLS labor, payroll, wage, hours, and JOLTS series for USA, 2010-M01 through 2026-M06.
-- TASK-207 preserved raw provider evidence, provider messages, unit/frequency/period/source payload semantics, lineage, quality checks, and idempotence evidence.
-- PostgreSQL run key: `task-207-bls-us-labor-monthly-phase2`.
-
-Repository state after TASK-207:
-
-- 10,555,773 curated facts;
-- 1,423 indicators;
-- 2 sources;
-- 39 pipeline runs;
-- 78 lineage events;
-- 79 quality checks.
+- TASK-207: BLS public API v2 U.S. monthly labor proof campaign, 2,374 facts across 12 series.
+- TASK-208: BLS U.S. labor breadth monthly campaign; correction accepted but commit remains deferred until clean BLS artifact regeneration.
+- TASK-209: IMF WEO DataMapper API v1 G20 projection campaign, 342 facts across 6 indicators, 19 countries, and 3 projection years, with 0 acquisition errors, 339 provider-valued facts, and 3 explicit-missing Saudi Arabia LUR facts.
 
 Current strategic boundary:
 
+- Do not touch the four untracked failed FRED-detour files unless explicitly instructed.
+- Do not resume TASK-208 before the scheduled BLS return time.
 - Do not resume residual WDI bulk campaigns automatically.
 - Do not advance to trade, company, or financial-asset construction yet.
-- Continue Phase 2 with another material diverse-source macroeconomic enrichment campaign only when it adds capability not adequately supplied by WDI annual-scalar coverage.
 
 Recommended next action:
 
-Select the next Phase 2 diverse-source macroeconomic campaign from already proven bounded source paths, with a preference for IMF external-sector/accounting depth or ALFRED/FRED-style revision/vintage/timeliness evidence. Record a frozen prediction before execution, then execute and compare prediction versus results.
+After TASK-209 closeout, continue Phase 2 only with another material non-trade/non-company/non-asset macroeconomic capability, or return to TASK-208 only at the scheduled provider-quota window.

@@ -1,0 +1,20 @@
+{
+  "architecture_verdict": "existing revision-aware scalar substrate sufficient after using deterministic dataset_release and release-specific run identity; no new forecast architecture",
+  "capability": "bounded IMF WEO G20 projection capability proof",
+  "explicit_missing_fact_count": 3,
+  "frozen_prediction": {
+    "expected_architectural_compatibility": "existing scalar fact substrate plus dataset_release should represent one WEO forecast vintage without redesign",
+    "expected_coverage": "19 G20 countries excluding EU aggregate, 6 WEO indicators, projection years 2026-2028",
+    "expected_implementation_friction": "low to moderate; source-specific normalization and loader required",
+    "expected_observation_scale": "approximately 342 candidate cells",
+    "expected_provider_risks": "possible missing country/indicator/year values or sparse WEO coverage; low transport risk from proven IMF DataMapper path"
+  },
+  "observed_provider_value_count": 339,
+  "prediction_quality_notes": "Scale, coverage, provider risk, and architecture compatibility held; implementation needed a post-run release/vintage integrity correction and missing-cell semantics reconciliation before commit.",
+  "prediction_quality_verdict": "Mostly Accurate",
+  "provider_exclusion_count": 0,
+  "row_count": 342,
+  "source_selection_rationale": "IMF WEO was selected over remaining Phase 2 options because it added official macroeconomic projection/release evidence from a proven non-BLS provider while staying outside deferred trade, company, and asset scopes.",
+  "status": "complete",
+  "task": "TASK-209"
+}

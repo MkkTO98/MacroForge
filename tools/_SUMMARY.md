@@ -52,6 +52,8 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 - `task206_wdi_social_protection_all_programs_chunked_expansion.py`
 - `task207_bls_us_labor_monthly_phase2_campaign.py`
 - `task207_fred_us_macro_monthly_phase2_campaign.py`
+- `task208_bls_us_labor_breadth_monthly_phase2_campaign.py`
+- `task209_imf_weo_g20_projection_phase2_campaign.py`
 - `telegram_notifier_stub.py`
 - `update_context_summaries.py`
 - `update_state.py`
@@ -59,6 +61,8 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `task209_imf_weo_g20_projection_phase2_campaign.py` builds/loads the release-aware IMF WEO April 2026 G20 projection campaign with explicit-missing semantics for absent requested year keys inside valid country-indicator series.
+- `task208_bls_us_labor_breadth_monthly_phase2_campaign.py` remains deferred pending clean BLS regeneration.
 - `task206_wdi_social_protection_all_programs_chunked_expansion.py` executes the corrected TASK-206 WDI aggregate social-protection all-program campaign with per-indicator checkpoints, per-chunk raw/normalized artifacts, bounded ASPIRE blank-`countryiso3code` territory fallback, provider classification, and acquisition-error completion semantics.
 - `task205_wdi_agriculture_rural_development_chunked_expansion.py` executes the TASK-205 WDI Agriculture & Rural Development campaign with per-indicator checkpoints, per-chunk raw/normalized artifacts, provider classification, and acquisition-error completion semantics inherited from the corrected TASK-204 pattern.
 - `task204_wdi_gender_equality_chunked_expansion.py` executes the TASK-204 WDI Gender Equality chunked campaign with checkpoints and per-chunk artifacts; it now records acquisition-error completion semantics and blocks completion claims when unresolved acquisition errors remain.

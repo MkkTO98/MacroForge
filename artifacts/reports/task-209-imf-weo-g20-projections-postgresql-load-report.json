@@ -1,0 +1,14 @@
+{
+  "fact_rows": 342,
+  "failed_quality_checks": 0,
+  "indicator_count": 6,
+  "lineage_events": 2,
+  "missing_facts": 3,
+  "observed_facts": 339,
+  "period_count": 3,
+  "quality_checks": 2,
+  "run_key": "task-209-imf-weo-g20-projection-phase2-world-economic-outlook-april-2026",
+  "staging_rows": 342,
+  "task": "TASK-209",
+  "territory_count": 19
+}

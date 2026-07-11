@@ -1,46 +1,55 @@
 # Latest Handoff
 
-Date: 2026-07-10
-Status: TASK-207 complete; closeout verification passed; push requested
+Date: 2026-07-11
+Status: TASK-209 complete; standard ProjectForge closeout complete; no commit/push
 
-## Completed
+## Context used
 
-TASK-207 began MacroForge Phase 2 with BLS public API v2 U.S. monthly labor-market evidence.
+- `recovery/continuity_framework.md`
+- `context/context_policy.yaml`
+- `state/active_goal.md`
+- `state/project_state.md`
+- `context/latest_handoff.md`
+- `artifacts/tasks/TASK-209-imf-weo-g20-projection-phase2-campaign.md`
+- affected `_SUMMARY.md` files for `artifacts/tasks`, `artifacts/reports`, `data/raw`, `data/processed`, `tools`, `tests`
 
-Accepted result:
+## Current state
 
-- Task: `artifacts/tasks/TASK-207-phase-2-diverse-source-bls-us-labor-monthly-campaign.md`.
-- Tool/test: `tools/task207_bls_us_labor_monthly_phase2_campaign.py`, `tests/test_task207_bls_us_labor_monthly_phase2_campaign.py`.
-- Raw/processed evidence under `data/raw/task207_bls_us_labor_monthly_phase2_campaign/` and `data/processed/task207_bls_us_labor_monthly_phase2_campaign/`.
-- Reports: `artifacts/reports/task-207-bls-us-labor-monthly-*.json` and checksum txt.
-- PostgreSQL run key: `task-207-bls-us-labor-monthly-phase2`.
+TASK-209 is complete and verified. TASK-210 was not started. No commit or push was performed.
 
-Run-scoped DB verification:
+Final TASK-209 accounting:
 
-```text
-staging|facts|indicators|periods|lineage|quality|failed_quality
-2374|2374|12|198|2|3|0
-```
+- source: `IMF_WEO_DATAMAPPER_API_V1`
+- edition evidence: `World Economic Outlook (April 2026)`
+- release key: `world-economic-outlook-april-2026`
+- run key: `task-209-imf-weo-g20-projection-phase2-world-economic-outlook-april-2026`
+- facts: 342 total = 339 observed/provider-valued + 3 explicit-missing Saudi Arabia `LUR` cells for 2026-2028
+- provider exclusions: 0; acquisition errors: 0
+- PostgreSQL tuple: `342|342|6|19|3|2|2|0|0|339|3`
 
-Repository after TASK-207: 10,555,773 facts, 1,423 indicators, 2 sources, 39 runs, 78 lineage events, 79 quality checks.
+Canonical raw artifact: `data/raw/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-2026-2028.json`, SHA-256 `d9817f3fbf6cbaf3f58caaf438e20f0077c4cd1785db9505e49791925eebec5c`. This path is ignored by `data/raw/*`; force-add it or establish equivalent durable storage before claiming Git-based reproducibility.
 
-Prediction evaluation: Mostly Accurate. Architecture verdict: frozen/evidence-maintained; existing monthly scalar substrate sufficed.
+## Files changed for closeout continuity
 
-Closeout verification passed:
+- `artifacts/tasks/TASK-209-imf-weo-g20-projection-phase2-campaign.md`
+- `context/latest_handoff.md`
+- `state/project_state.md`
+- affected summaries: `artifacts/tasks/_SUMMARY.md`, `artifacts/reports/_SUMMARY.md`, `data/raw/_SUMMARY.md`, `data/processed/_SUMMARY.md`, `tools/_SUMMARY.md`, `tests/_SUMMARY.md`
 
-- focused TASK-207 test: `5 passed in 0.08s`;
-- full suite: `736 passed in 517.45s (0:08:37)`;
-- TASK-207 JSON reports valid: 4;
-- coherence/context/architecture/git checks: 0 blocks, 0 warnings/errors before final compact handoff; rerun after this handoff is required before final response.
+Previously produced TASK-209 implementation/artifacts/reports remain the commit-ready task set, including the raw artifact if force-added.
 
-Note: a failed FRED live-acquisition detour produced untracked `task207_fred...` files/reports. Cleanup was blocked by command policy; they are not accepted TASK-207 evidence.
+## Verification
 
-## Next recommended action
+Before this handoff: focused/relevant tests `41 passed in 4.93s`; full suite `752 passed, 1 skipped in 816.69s`; idempotence/source-release/duplicate checks passed.
 
-Continue Phase 2 with another diverse-source macroeconomic enrichment campaign from an already proven bounded source path, preferably IMF external-sector/accounting depth or ALFRED/FRED revision/vintage/timeliness evidence. Do not advance to trade, companies, or financial assets yet.
+After closeout edits: TASK-209 JSON valid 5; checksum mismatches 0; PostgreSQL tuple `342|342|6|19|3|2|2|0|0|339|3`; architecture audit `0 block(s), 0 warning(s)`; `git diff --check` passed. Re-run coherence/context-health after this shortened handoff.
 
-## Resume command
+## Blockers / approval needs
 
-```bash
-cd /home/mkkto/srv/EIP/projects/MacroForge && python3 tools/recover_session.py --project . --json
-```
+Commit remains blocked on explicit user authorization. If committing with reproducibility, include the ignored raw artifact with `git add -f data/raw/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-2026-2028.json`. Do not touch TASK-208/BLS or FRED-detour files unless explicitly instructed.
+
+## Resume
+
+Recommended next action: await authorization to stage/commit bounded TASK-209, or choose the next Phase 2 non-trade/non-company/non-asset macroeconomic capability. Do not begin another campaign automatically.
+
+Exact resume command: `Recover project state and continue work.`

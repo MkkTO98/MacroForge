@@ -115,6 +115,8 @@ Tests for MacroForge source evidence, loaders, database schema, canonical-domain
 - `test_task206_acquisition_completion_semantics.py`
 - `test_task207_bls_us_labor_monthly_phase2_campaign.py`
 - `test_task207_fred_us_macro_monthly_phase2_campaign.py`
+- `test_task208_bls_us_labor_breadth_monthly_phase2_campaign.py`
+- `test_task209_imf_weo_g20_projection_phase2_campaign.py`
 - `test_treasury_fiscal_data.py`
 - `test_un_comtrade_product_trade_operational.py`
 - `test_un_comtrade_trade.py`
@@ -128,6 +130,8 @@ Tests for MacroForge source evidence, loaders, database schema, canonical-domain
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `test_task209_imf_weo_g20_projection_phase2_campaign.py` covers TASK-209 normalization, release/vintage identity, explicit-missing Saudi Arabia LUR semantics, SQL quality checks, and simulated later-release coexistence.
+- `test_task207_bls_us_labor_monthly_phase2_campaign.py` contains the narrow accepted BLS source-identity regression alignment to `BLS_PUBLIC_API_V2`.
 - `test_task206_acquisition_completion_semantics.py` verifies corrected TASK-206 territory fallback and completion invariants: valid `countryiso3code` remains authoritative; blank `countryiso3code` can fall back to accepted non-aggregate `country.id`; aggregate/unknown IDs are rejected; provider fields are preserved; duplicate canonical keys are avoided; acquisition errors remain distinct from provider exclusions and block completion/candidate-exhaustion/capability-closure claims.
 - `test_task205_acquisition_completion_semantics.py` verifies the TASK-205 copy-forward campaign carries the TASK-204 acquisition-error completion invariant: acquisition errors are not provider exclusions and unresolved acquisition errors block completion/candidate-exhaustion/capability-closure claims.
 - `test_task204_provider_exclusion_classification.py` verifies TASK-204 acquisition-error classification and executable completion semantics: unresolved acquisition errors block successful-completion, candidate-set-exhaustion, and capability-closure claims.

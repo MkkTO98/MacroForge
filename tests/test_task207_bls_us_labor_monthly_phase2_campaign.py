@@ -124,7 +124,8 @@ def test_load_sql_stays_source_specific_and_uses_monthly_periods(tmp_path):
         task207.RAW_PATH, task207.NORM_PATH = original_raw, original_norm
 
     assert "staging.bls_us_labor_monthly_phase2_observation" in sql
-    assert "BLS_US_LABOR_MONTHLY_PHASE2" in sql
+    assert "BLS_PUBLIC_API_V2" in sql
+    assert "BLS_US_LABOR_MONTHLY_PHASE2" not in sql
     assert "frequency='M'" in sql or "frequency = 'M'" in sql
     assert "make_date(staged.period_year,staged.period_month,1)" in sql
     assert "trade" not in sql.lower()

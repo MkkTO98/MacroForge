@@ -1,0 +1,118 @@
+{
+  "acquisition_errors": [],
+  "candidate_observation_count": 342,
+  "candidate_series_count": 6,
+  "country_count": 19,
+  "explicit_missing_fact_count": 3,
+  "indicator_semantics": {
+    "GGXCNL_NGDP": {
+      "frequency": "annual",
+      "measure_type": "ratio",
+      "scale": "percent_of_gdp",
+      "subject": "General government net lending/borrowing as percent of GDP."
+    },
+    "GGXWDG_NGDP": {
+      "frequency": "annual",
+      "measure_type": "ratio",
+      "scale": "percent_of_gdp",
+      "subject": "General government gross debt as percent of GDP."
+    },
+    "LUR": {
+      "frequency": "annual",
+      "measure_type": "percentage_rate",
+      "scale": "percent",
+      "subject": "Unemployed persons as a percentage of total labor force."
+    },
+    "NGDPD": {
+      "frequency": "annual",
+      "measure_type": "currency_amount",
+      "scale": "billions_of_us_dollars",
+      "subject": "GDP at current prices in billions of U.S. dollars."
+    },
+    "NGDP_RPCH": {
+      "frequency": "annual",
+      "measure_type": "percentage_change",
+      "scale": "annual_percent_change",
+      "subject": "Real GDP growth; gross domestic product at constant prices, annual percent change."
+    },
+    "PCPIPCH": {
+      "frequency": "annual",
+      "measure_type": "percentage_change",
+      "scale": "annual_percent_change",
+      "subject": "Average consumer price inflation rate, annual percent change."
+    }
+  },
+  "missing_semantics_rule": "When the requested country-indicator series exists in a valid provider response but a deterministic requested projection-year key is absent or null, MacroForge preserves the candidate cell as an explicit missing fact; whole-series absence/provider errors remain provider exclusions.",
+  "observed_provider_value_count": 339,
+  "provider": "IMF",
+  "provider_exclusions": [],
+  "provider_messages": [
+    {
+      "api": {
+        "output-method": "json",
+        "version": "1"
+      },
+      "indicator_code": "NGDP_RPCH"
+    },
+    {
+      "api": {
+        "output-method": "json",
+        "version": "1"
+      },
+      "indicator_code": "NGDPD"
+    },
+    {
+      "api": {
+        "output-method": "json",
+        "version": "1"
+      },
+      "indicator_code": "PCPIPCH"
+    },
+    {
+      "api": {
+        "output-method": "json",
+        "version": "1"
+      },
+      "indicator_code": "LUR"
+    },
+    {
+      "api": {
+        "output-method": "json",
+        "version": "1"
+      },
+      "indicator_code": "GGXCNL_NGDP"
+    },
+    {
+      "api": {
+        "output-method": "json",
+        "version": "1"
+      },
+      "indicator_code": "GGXWDG_NGDP"
+    }
+  ],
+  "release_identity": {
+    "acquired_at_utc": "2026-07-11T13:29:29+00:00",
+    "api_exposes_edition_metadata_directly": true,
+    "api_exposes_row_level_value_status": false,
+    "api_identity": {
+      "surface": "IMF DataMapper API",
+      "versions": [
+        "1"
+      ]
+    },
+    "indicator_last_modified_values": [
+      "2026-04-08 16:07:34",
+      "2026-04-08 16:07:35",
+      "2026-04-08 16:07:39",
+      "2026-04-08 16:07:42",
+      "2026-04-08 16:07:43",
+      "2026-04-08 16:07:44"
+    ],
+    "provider_publication_date": null,
+    "provider_release_source": "World Economic Outlook (April 2026)",
+    "release_key": "world-economic-outlook-april-2026"
+  },
+  "row_count": 342,
+  "status": "complete",
+  "task": "TASK-209"
+}

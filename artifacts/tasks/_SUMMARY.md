@@ -125,9 +125,14 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-117-bounded-sec-exchange-listings-evidence-slice.md`
 - `TASK-118-bounded-fdic-bank-regulatory-certification-evidence-slice.md`
 - `TASK-119-bounded-fdic-branch-locations-evidence-slice.md`
+- `TASK-207-phase-2-diverse-source-bls-us-labor-monthly-campaign.md`
+- `TASK-208-phase-2-bls-us-labor-breadth-monthly-campaign.md`
+- `TASK-209-imf-weo-g20-projection-phase2-campaign.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `TASK-209-imf-weo-g20-projection-phase2-campaign.md` is complete: IMF WEO DataMapper API v1 April 2026 G20 projections, 342 facts (339 provider-valued, 3 explicit-missing Saudi Arabia LUR), 0 provider exclusions/acquisition errors, release-aware/idempotent load.
+- `TASK-208-phase-2-bls-us-labor-breadth-monthly-campaign.md` remains deferred until clean BLS regeneration; do not rerun before the scheduled provider-quota window.
 - `TASK-206-operational-repository-expansion-social-protection-all-programs.md` is complete after correction; it preserved invalid original evidence, fixed ASPIRE blank-`countryiso3code` territory fallback, and loaded 30,380 WDI aggregate social-protection all-program facts across 4 compatible annual-scalar indicators after attempting 135 coherent candidates, with 131 `non_annual_periods` exclusions and 0 unresolved acquisition errors. It is evidence that residual bulk WDI Phase 1 has reached a transition gate for the mature annual-scalar path.
 - `TASK-205-operational-repository-expansion-agriculture-rural-development.md` is complete; it loaded 98,735 WDI agriculture/food systems/rural-development facts across 13 compatible indicators after attempting 26 unloaded WDI Agriculture & Rural Development topic candidates, with 13 provider exclusions and 0 unresolved acquisition errors.
 - `TASK-204-operational-repository-expansion-gender-equality.md` is complete; it audit-corrected TASK-204 loaded 1,410,500 WDI gender equality/sex-disaggregated facts across 186 compatible indicators after attempting 220 candidates, and remediation-safety closeout verified acquisition-error completion blocking plus run-scoped WDI loader rerun safety.
