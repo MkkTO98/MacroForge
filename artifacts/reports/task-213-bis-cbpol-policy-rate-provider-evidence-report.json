@@ -1,0 +1,51 @@
+{
+  "acquisition_errors": [],
+  "candidate_cells": 5106,
+  "explicit_missing": 24,
+  "provider_exclusions": [],
+  "provider_metadata": {
+    "acquired_at_utc": "2026-07-12T11:45:53+00:00",
+    "content_type": null,
+    "dataflow": {
+      "agency_id": "BIS",
+      "id": "WS_CBPOL",
+      "version": "1.0"
+    },
+    "dataset_action": "Information",
+    "dataset_attributes": {
+      "UNIT_MEASURE": "368",
+      "UNIT_MULT": "0"
+    },
+    "dimension_at_observation": "TIME_PERIOD",
+    "http_status": 200,
+    "message_id": "IDREF09770ee1-0359-403b-ac1c-c28ad81bc42a",
+    "prepared": "2026-07-12T11:45:54Z",
+    "sender": "UNKNOWN",
+    "structure_id": "BIS_WS_CBPOL_1_0",
+    "structure_namespace": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=BIS:WS_CBPOL(1.0):ObsLevelDim:TIME_PERIOD"
+  },
+  "provider_valued_observations": 5082,
+  "raw_evidence": {
+    "raw_artifact_path": "data/raw/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-2015m01-2026m06-raw.xml",
+    "raw_bytes": 410879,
+    "raw_metadata_path": "data/raw/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-2015m01-2026m06-raw-metadata.json",
+    "raw_sha256": "fc99baf519a2a1ff206f517183a6b77c080e367f99ac15f80ec1010e8125b2f6",
+    "request_parameters": {
+      "dataflow": "WS_CBPOL",
+      "endPeriod": "2026-06",
+      "key": "M.AU+BR+CA+CH+CL+CN+CO+CZ+DK+GB+HU+HK+ID+IL+IN+IS+JP+KR+KW+MA+MK+MX+MY+NO+NZ+PE+PH+PL+RO+RS+RU+SA+SE+TH+TR+US+ZA",
+      "startPeriod": "2015-01",
+      "version": "1.0"
+    },
+    "source_url": "https://stats.bis.org/api/v2/data/dataflow/BIS/WS_CBPOL/1.0/M.AU+BR+CA+CH+CL+CN+CO+CZ+DK+GB+HU+HK+ID+IL+IN+IS+JP+KR+KW+MA+MK+MX+MY+NO+NZ+PE+PH+PL+RO+RS+RU+SA+SE+TH+TR+US+ZA?startPeriod=2015-01&endPeriod=2026-06"
+  },
+  "selection_exclusions": [
+    {
+      "category": "aggregate_selection_exclusion",
+      "label": "Euro area / euro area aggregate in BIS WS_CBPOL; deliberately outside country candidate grid",
+      "provider_code": "XM"
+    }
+  ],
+  "status": "complete",
+  "task": "TASK-213"
+}

@@ -1,24 +1,37 @@
 # Latest Handoff
 
-Status: TASK-208 BLS U.S. labor-market breadth monthly retry-and-closeout complete. No active implementation remains.
+Status: TASK-213 BIS WS_CBPOL policy-rate Phase 2 expansion is complete, corrected, bounded obsolete metadata cleanup was performed with authorization, final verification passed, and no commit/push/staging was performed.
 
-Completed:
-- Clean BLS public API v2 retry regenerated active TASK-208 raw/processed/report/checksum artifacts after the daily-threshold blocker reset.
-- Corrected JOLTS identifiers: `JTS230000000000000JOL` construction openings and `JTS510000000000000JOL` information openings.
-- Preserved failed threshold attempts under `data/raw/task208_bls_us_labor_breadth_monthly_phase2_campaign/_attempts/`.
-- Reused canonical source `BLS_PUBLIC_API_V2`; campaign scope remains dataset/release/run metadata.
-- Loaded and reran TASK-208 idempotently.
+Cleanup performed:
+- Pre-delete reference audit artifact: `artifacts/reports/task-213-bis-cbpol-metadata-cleanup-reference-audit.json`.
+- Deleted exactly one obsolete dataset-release row: `BIS:WS_CBPOL` / `bis-ws-cbpol-current-snapshot-2015m01-2026m06`.
+- Deleted exactly 36 obsolete country-encoded indicators matching `BIS:WS_CBPOL:M.%`.
+- No curated facts, staging rows, canonical source, canonical snapshot, canonical indicator, run, lineage, or quality rows were deleted.
 
-Results:
-- 36 candidates, 36 compatible, 0 provider exclusions, 0 acquisition errors.
-- 7,116 facts/staging rows; 7,112 observed; 4 explicit missing.
-- 198 monthly periods, 2010-M01 through 2026-M06.
-- PostgreSQL verification tuple: `7116|7116|36|198|2|3|0|0|1` = staging, facts, indicators, periods, lineage, quality, failed quality, duplicate key groups, canonical BLS source rows.
+Current corrected accounting:
+- Canonical source: `BIS_PUBLIC_SDMX_API` rows `1`.
+- Canonical dataset/snapshot: `BIS:WS_CBPOL` / `bis-ws-cbpol-snapshot-prepared-20260712t114554z` rows `1`.
+- Obsolete window-bound snapshot rows `0`; obsolete country-encoded indicators `0`.
+- TASK-213 staging rows/facts: `5,106` / `5,106`; provider-valued `5,082`; explicit-missing `24`; territories `37`; periods `138`; HK facts `138`.
+- Duplicate canonical-key groups `0`; failed quality checks `0`; same-run idempotence repository growth `0`; repository total facts unchanged at `10,599,411`.
 
-Verification before final report:
-- Clean retry/load: `{"acquisition_errors": 0, "loaded": true, "row_count": 7116, "series": 36, "source": "BLS", "task": "TASK-208"}`.
-- JSON validation: 7 TASK-208 JSON artifacts parsed.
-- Focused tests: `10 passed in 0.13s`.
-- Full suite: `788 passed in 828.43s`. Governance: context health 0/0, coherence 0/0, architecture audit 0/0, `git diff --check` passed.
+Snapshot terminology:
+- `bis-ws-cbpol-snapshot-prepared-20260712t114554z` is an acquired BIS response snapshot/as-of identity based on the SDMX message `Prepared` timestamp, not an official BIS publication release.
+- Preserve provider Prepared timestamp, acquisition timestamp, query parameters, raw checksum, and `release_date = NULL`.
 
-Commit-ready bounded file set: TASK-208 script/test/task/report artifacts, TASK-207 source-identity compatibility patch, TASK-208 raw and processed artifact directories, state files, `artifacts/tasks/_SUMMARY.md`, and this handoff. Do not stage unrelated working-tree changes or failed TASK-207/FRED-detour files.
+Verification completed:
+- Focused TASK-213 + TASK-057 BIS compatibility + cleanup invariant tests: `19 passed in 0.57s`.
+- Full suite: `802 passed in 845.70s (0:14:05)`.
+- JSON/checksum reconciliation: `json_validated=9 checksum_entries=9 checksum_mismatches=0`.
+- Coherence: `0 block(s), 0 warning(s)`.
+- Context health: `0 block(s), 0 warning(s)`.
+- Architecture-reality audit: `0 block(s), 0 warning(s)`.
+- `git diff --check`: exit `0`.
+
+Post-cleanup verification artifact:
+- `artifacts/reports/task-213-bis-cbpol-metadata-cleanup-post-verification.json`.
+
+Guardrails:
+- TASK-208, TASK-209/TASK-211 WEO, BLS, and FRED-detour files were not reopened.
+- Working tree still contains many unrelated pre-existing changes; preserve them.
+- Publication boundary should include only the bounded TASK-213 implementation/artifact/state files plus explicitly approved active raw XML/raw metadata if staging is later authorized. Do not include `_attempts/`, caches, unrelated raw data, or unrelated working-tree changes.

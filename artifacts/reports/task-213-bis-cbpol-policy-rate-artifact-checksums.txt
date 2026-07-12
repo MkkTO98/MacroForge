@@ -1,0 +1,9 @@
+ac63420b4dba576266469f1c1220d4b6df16445da8623da3e1c958e515627ed4  artifacts/reports/task-213-bis-cbpol-policy-rate-frozen-pre-execution-prediction.json
+675686dfa7ff817e11e8e8f504922199ecc24f70fd0e438c09220164b7908a82  artifacts/reports/task-213-bis-cbpol-policy-rate-load.sql
+58ed9a64086d3443547324063ebc4db950640604ca1c5e9533ffa061e29b5e9b  artifacts/reports/task-213-bis-cbpol-policy-rate-postgresql-load-report.json
+892ae4afc140ca13227fdd0ee7a29e944895c89a5feb8be32b4f01a71c76e9dd  artifacts/reports/task-213-bis-cbpol-policy-rate-prediction-evaluation.json
+0301f8c5e94ef374151340ecbae4704aaa4dfcbd7ae64437c2161c1e6cc5bae8  artifacts/reports/task-213-bis-cbpol-policy-rate-provider-evidence-report.json
+e9c51eef58c5afd94135ff453362f5c1c76fbfb96f70221fa392ad594fd9a73c  data/processed/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-manifest.json
+185026ae4bbbed58ad2a30f6b2b1b09860514997883b97705af1abf1e87e4b78  data/processed/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-normalized.json
+31ddadc128d9a0f9bd54a1ded9a3d23edc5812ffda270bd1b2a0088eaa1b88a0  data/raw/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-2015m01-2026m06-raw-metadata.json
+fc99baf519a2a1ff206f517183a6b77c080e367f99ac15f80ec1010e8125b2f6  data/raw/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-2015m01-2026m06-raw.xml

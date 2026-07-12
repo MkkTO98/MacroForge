@@ -1,0 +1,1274 @@
+{
+  "canonical_indicator": {
+    "resolved_count": 1,
+    "resolved_rows": [
+      {
+        "indicator_id": "7b794150-54a1-41d2-a58f-c60a47a23471",
+        "indicator_name": "Central bank policy rate",
+        "source_indicator_code": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "topic": "central_bank_policy_rate"
+      }
+    ]
+  },
+  "canonical_release": {
+    "resolved_count": 1,
+    "resolved_rows": [
+      {
+        "dataset_release_id": "895c17cc-fc17-463e-b257-614f4342b64e",
+        "metadata": {
+          "candidate_cell_count": 5106,
+          "explicit_missing_value_count": 24,
+          "observed_value_count": 5082,
+          "provider_metadata": {
+            "acquired_at_utc": "2026-07-12T11:45:53+00:00",
+            "content_type": null,
+            "dataflow": {
+              "agency_id": "BIS",
+              "id": "WS_CBPOL",
+              "version": "1.0"
+            },
+            "dataset_action": "Information",
+            "dataset_attributes": {
+              "UNIT_MEASURE": "368",
+              "UNIT_MULT": "0"
+            },
+            "dimension_at_observation": "TIME_PERIOD",
+            "http_status": 200,
+            "message_id": "IDREF09770ee1-0359-403b-ac1c-c28ad81bc42a",
+            "prepared": "2026-07-12T11:45:54Z",
+            "sender": "UNKNOWN",
+            "structure_id": "BIS_WS_CBPOL_1_0",
+            "structure_namespace": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=BIS:WS_CBPOL(1.0):ObsLevelDim:TIME_PERIOD"
+          },
+          "task": "TASK-213"
+        },
+        "provider_dataset_code": "BIS:WS_CBPOL",
+        "raw_artifact_path": "data/raw/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-2015m01-2026m06-raw.xml",
+        "raw_sha256": "fc99baf519a2a1ff206f517183a6b77c080e367f99ac15f80ec1010e8125b2f6",
+        "release_date": null,
+        "release_key": "bis-ws-cbpol-snapshot-prepared-20260712t114554z",
+        "source_code": "BIS_PUBLIC_SDMX_API"
+      }
+    ]
+  },
+  "catalogue_discovery": {
+    "dataset_release_id_columns": [
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "fact_observation",
+        "table_schema": "curated"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "dataset_release",
+        "table_schema": "meta"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "pipeline_run",
+        "table_schema": "meta"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "provider_code_list",
+        "table_schema": "meta"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "bis_cbpol_policy_rate_phase2_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "bls_us_labor_breadth_monthly_phase2_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "bls_us_labor_monthly_phase2_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "task209_imf_weo_g20_projection_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "task211_imf_weo_broad_macro_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "table_name": "wdi_observation",
+        "table_schema": "staging"
+      }
+    ],
+    "foreign_keys": [
+      {
+        "column_name": "dataset_release_id",
+        "constraint_name": "fact_observation_dataset_release_id_fkey",
+        "referenced_schema": "meta",
+        "referenced_table": "dataset_release",
+        "table_name": "fact_observation",
+        "table_schema": "curated"
+      },
+      {
+        "column_name": "indicator_id",
+        "constraint_name": "fact_observation_indicator_id_fkey",
+        "referenced_schema": "curated",
+        "referenced_table": "dim_indicator",
+        "table_name": "fact_observation",
+        "table_schema": "curated"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "constraint_name": "pipeline_run_dataset_release_id_fkey",
+        "referenced_schema": "meta",
+        "referenced_table": "dataset_release",
+        "table_name": "pipeline_run",
+        "table_schema": "meta"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "constraint_name": "provider_code_list_dataset_release_id_fkey",
+        "referenced_schema": "meta",
+        "referenced_table": "dataset_release",
+        "table_name": "provider_code_list",
+        "table_schema": "meta"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "constraint_name": "bis_cbpol_policy_rate_phase2_observatio_dataset_release_id_fkey",
+        "referenced_schema": "meta",
+        "referenced_table": "dataset_release",
+        "table_name": "bis_cbpol_policy_rate_phase2_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "constraint_name": "bls_us_labor_breadth_monthly_phase2_obs_dataset_release_id_fkey",
+        "referenced_schema": "meta",
+        "referenced_table": "dataset_release",
+        "table_name": "bls_us_labor_breadth_monthly_phase2_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "constraint_name": "bls_us_labor_monthly_phase2_observation_dataset_release_id_fkey",
+        "referenced_schema": "meta",
+        "referenced_table": "dataset_release",
+        "table_name": "bls_us_labor_monthly_phase2_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "constraint_name": "task209_imf_weo_g20_projection_observat_dataset_release_id_fkey",
+        "referenced_schema": "meta",
+        "referenced_table": "dataset_release",
+        "table_name": "task209_imf_weo_g20_projection_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "constraint_name": "task211_imf_weo_broad_macro_observation_dataset_release_id_fkey",
+        "referenced_schema": "meta",
+        "referenced_table": "dataset_release",
+        "table_name": "task211_imf_weo_broad_macro_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "constraint_name": "wdi_observation_dataset_release_id_fkey",
+        "referenced_schema": "meta",
+        "referenced_table": "dataset_release",
+        "table_name": "wdi_observation",
+        "table_schema": "staging"
+      }
+    ],
+    "indicator_code_columns": [
+      {
+        "column_name": "source_indicator_code",
+        "table_name": "dim_indicator",
+        "table_schema": "curated"
+      },
+      {
+        "column_name": "indicator_code",
+        "table_name": "bis_cbpol_policy_rate_phase2_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "indicator_code",
+        "table_name": "bls_us_labor_breadth_monthly_phase2_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "indicator_code",
+        "table_name": "bls_us_labor_monthly_phase2_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "indicator_code",
+        "table_name": "task209_imf_weo_g20_projection_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "indicator_code",
+        "table_name": "task211_imf_weo_broad_macro_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "indicator_code",
+        "table_name": "wdi_observation",
+        "table_schema": "staging"
+      }
+    ],
+    "indicator_id_columns": [
+      {
+        "column_name": "indicator_id",
+        "table_name": "dim_indicator",
+        "table_schema": "curated"
+      },
+      {
+        "column_name": "indicator_id",
+        "table_name": "fact_observation",
+        "table_schema": "curated"
+      }
+    ]
+  },
+  "database": "macroforge",
+  "delete_preconditions": {
+    "canonical_indicator_resolved_exactly_one": true,
+    "canonical_release_resolved_exactly_one": true,
+    "obsolete_indicator_external_exact_code_occurrences_zero": true,
+    "obsolete_indicators_external_indicator_id_references_zero": true,
+    "obsolete_indicators_resolved_exactly_36": true,
+    "obsolete_release_external_references_zero": true,
+    "obsolete_release_resolved_exactly_one": true
+  },
+  "generated_at_utc": "2026-07-12T13:04:36.751606+00:00",
+  "obsolete_indicators": {
+    "exact_code_occurrence_counts_by_table": [
+      {
+        "column": "source_indicator_code",
+        "count": 36,
+        "table": "curated.dim_indicator"
+      },
+      {
+        "column": "indicator_code",
+        "count": 0,
+        "table": "staging.bis_cbpol_policy_rate_phase2_observation"
+      },
+      {
+        "column": "indicator_code",
+        "count": 0,
+        "table": "staging.bls_us_labor_breadth_monthly_phase2_observation"
+      },
+      {
+        "column": "indicator_code",
+        "count": 0,
+        "table": "staging.bls_us_labor_monthly_phase2_observation"
+      },
+      {
+        "column": "indicator_code",
+        "count": 0,
+        "table": "staging.task209_imf_weo_g20_projection_observation"
+      },
+      {
+        "column": "indicator_code",
+        "count": 0,
+        "table": "staging.task211_imf_weo_broad_macro_observation"
+      },
+      {
+        "column": "indicator_code",
+        "count": 0,
+        "table": "staging.wdi_observation"
+      }
+    ],
+    "external_exact_code_occurrence_total_excluding_target_table": 0,
+    "external_indicator_id_reference_total_excluding_target_table": 0,
+    "per_indicator": [
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.AU",
+        "indicator_id": "67d68107-b1f0-44a2-b983-7ff48c76c59c",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.BR",
+        "indicator_id": "93fa2aca-27ba-40b0-b282-29495f79207c",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.CA",
+        "indicator_id": "d450617e-8201-46cb-adcf-33b23c6151f7",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.CH",
+        "indicator_id": "c404b9a9-4e7e-4fbc-bbb4-aa9daa54f52d",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.CL",
+        "indicator_id": "d4b239eb-2fd4-4f44-b8ca-b8f70a0bd0fc",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.CN",
+        "indicator_id": "623131d5-48e1-4c6f-bd6e-f7daddc32ae2",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.CO",
+        "indicator_id": "f1fbc08d-eeb5-4c32-add8-8be94e8bf6f8",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.CZ",
+        "indicator_id": "40791f2f-be1c-4b79-9aef-20157d27f2e6",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.DK",
+        "indicator_id": "8ec22e25-bbdd-4d4f-adc2-cb00c4faa0fe",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.GB",
+        "indicator_id": "cd9140a5-56d4-4519-ac5f-7849e2b9d46d",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.HU",
+        "indicator_id": "abbda294-6d0f-4620-b4ba-4207be2a9acc",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.ID",
+        "indicator_id": "6dc8e231-6ff0-4595-b075-9e5e8ed0b758",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.IL",
+        "indicator_id": "b5cab907-8fbe-4512-8725-58fc3a414523",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.IN",
+        "indicator_id": "602db7bd-e8c6-46ba-b63c-b2b2194df57a",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.IS",
+        "indicator_id": "b24a9463-e2b7-4ed1-ac64-7b1671206ac5",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.JP",
+        "indicator_id": "3ac89271-6b85-4176-8d0f-ecd50e01c452",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.KR",
+        "indicator_id": "34791bd5-1b3c-4fae-8f68-d6c6aa95db3c",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.KW",
+        "indicator_id": "b5fd2c85-7430-45f3-ad30-fbb4079b42b3",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.MA",
+        "indicator_id": "6fc0b5ae-f231-4434-b9a9-fff3de250ec1",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.MK",
+        "indicator_id": "e11d9072-74ce-4000-916c-620f35cfb9e6",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.MX",
+        "indicator_id": "0b22d7f4-8684-4c46-ad4a-d5b6e6055706",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.MY",
+        "indicator_id": "bbc83ee5-fa7a-4f5d-8dad-0f97e7618dd8",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.NO",
+        "indicator_id": "691bbd07-25da-4768-a521-3db499631bc4",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.NZ",
+        "indicator_id": "45981a93-2a81-4c7b-9deb-6f4c13afa1bb",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.PE",
+        "indicator_id": "30ca8f9b-0418-4edc-9486-c56c6c395c05",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.PH",
+        "indicator_id": "db051770-7ff9-475c-8bb7-7c73398e3326",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.PL",
+        "indicator_id": "646b365f-f630-4d02-ae3f-8a8c8522c449",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.RO",
+        "indicator_id": "9ce89dab-6494-42e9-93b3-1045b5704b98",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.RS",
+        "indicator_id": "52c58e2c-ca0c-418c-bc93-df96bf77500d",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.RU",
+        "indicator_id": "eed1b795-21ad-4edb-b82c-91bbf74535cf",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.SA",
+        "indicator_id": "4b2d38a0-b249-4181-9a30-478b10505697",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.SE",
+        "indicator_id": "56e81dc8-b6bf-4172-9f92-5d389e269e36",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.TH",
+        "indicator_id": "83a43bdd-52cf-4ba3-aff9-e07eed12609c",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.TR",
+        "indicator_id": "39229aec-57d5-43ab-8a98-39c903b22c9b",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.US",
+        "indicator_id": "3208c435-fa05-45d5-98c8-a6fcb38b6875",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      },
+      {
+        "canonical_replacement": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+        "indicator_code": "BIS:WS_CBPOL:M.ZA",
+        "indicator_id": "46110857-d2b2-42cc-a285-d1e263387eb8",
+        "reference_counts_by_table": [
+          {
+            "column": "indicator_id",
+            "count": 1,
+            "table": "curated.dim_indicator"
+          },
+          {
+            "column": "indicator_id",
+            "count": 0,
+            "table": "curated.fact_observation"
+          }
+        ],
+        "total_indicator_id_external_references": 0
+      }
+    ],
+    "reference_counts_by_indicator_id_table": [
+      {
+        "column": "indicator_id",
+        "count": 36,
+        "table": "curated.dim_indicator"
+      },
+      {
+        "column": "indicator_id",
+        "count": 0,
+        "table": "curated.fact_observation"
+      }
+    ],
+    "resolved_count": 36,
+    "resolved_rows": [
+      {
+        "indicator_id": "67d68107-b1f0-44a2-b983-7ff48c76c59c",
+        "indicator_name": "Central bank policy rates - Australia - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.AU",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "93fa2aca-27ba-40b0-b282-29495f79207c",
+        "indicator_name": "Central bank policy rates - Brazil - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.BR",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "d450617e-8201-46cb-adcf-33b23c6151f7",
+        "indicator_name": "Central bank policy rates - Canada - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.CA",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "c404b9a9-4e7e-4fbc-bbb4-aa9daa54f52d",
+        "indicator_name": "Central bank policy rates - Switzerland - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.CH",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "d4b239eb-2fd4-4f44-b8ca-b8f70a0bd0fc",
+        "indicator_name": "Central bank policy rates - Chile - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.CL",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "623131d5-48e1-4c6f-bd6e-f7daddc32ae2",
+        "indicator_name": "Central bank policy rates - China - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.CN",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "f1fbc08d-eeb5-4c32-add8-8be94e8bf6f8",
+        "indicator_name": "Central bank policy rates - Colombia - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.CO",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "40791f2f-be1c-4b79-9aef-20157d27f2e6",
+        "indicator_name": "Central bank policy rates - Czechia - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.CZ",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "8ec22e25-bbdd-4d4f-adc2-cb00c4faa0fe",
+        "indicator_name": "Central bank policy rates - Denmark - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.DK",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "cd9140a5-56d4-4519-ac5f-7849e2b9d46d",
+        "indicator_name": "Central bank policy rates - United Kingdom - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.GB",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "abbda294-6d0f-4620-b4ba-4207be2a9acc",
+        "indicator_name": "Central bank policy rates - Hungary - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.HU",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "6dc8e231-6ff0-4595-b075-9e5e8ed0b758",
+        "indicator_name": "Central bank policy rates - Indonesia - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.ID",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "b5cab907-8fbe-4512-8725-58fc3a414523",
+        "indicator_name": "Central bank policy rates - Israel - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.IL",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "602db7bd-e8c6-46ba-b63c-b2b2194df57a",
+        "indicator_name": "Central bank policy rates - India - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.IN",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "b24a9463-e2b7-4ed1-ac64-7b1671206ac5",
+        "indicator_name": "Central bank policy rates - Iceland - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.IS",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "3ac89271-6b85-4176-8d0f-ecd50e01c452",
+        "indicator_name": "Central bank policy rates - Japan - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.JP",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "34791bd5-1b3c-4fae-8f68-d6c6aa95db3c",
+        "indicator_name": "Central bank policy rates - Korea - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.KR",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "b5fd2c85-7430-45f3-ad30-fbb4079b42b3",
+        "indicator_name": "Central bank policy rates - Kuwait - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.KW",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "6fc0b5ae-f231-4434-b9a9-fff3de250ec1",
+        "indicator_name": "Central bank policy rates - Morocco - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.MA",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "e11d9072-74ce-4000-916c-620f35cfb9e6",
+        "indicator_name": "Central bank policy rates - North Macedonia - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.MK",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "0b22d7f4-8684-4c46-ad4a-d5b6e6055706",
+        "indicator_name": "Central bank policy rates - Mexico - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.MX",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "bbc83ee5-fa7a-4f5d-8dad-0f97e7618dd8",
+        "indicator_name": "Central bank policy rates - Malaysia - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.MY",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "691bbd07-25da-4768-a521-3db499631bc4",
+        "indicator_name": "Central bank policy rates - Norway - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.NO",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "45981a93-2a81-4c7b-9deb-6f4c13afa1bb",
+        "indicator_name": "Central bank policy rates - New Zealand - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.NZ",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "30ca8f9b-0418-4edc-9486-c56c6c395c05",
+        "indicator_name": "Central bank policy rates - Peru - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.PE",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "db051770-7ff9-475c-8bb7-7c73398e3326",
+        "indicator_name": "Central bank policy rates - Philippines - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.PH",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "646b365f-f630-4d02-ae3f-8a8c8522c449",
+        "indicator_name": "Central bank policy rates - Poland - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.PL",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "9ce89dab-6494-42e9-93b3-1045b5704b98",
+        "indicator_name": "Central bank policy rates - Romania - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.RO",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "52c58e2c-ca0c-418c-bc93-df96bf77500d",
+        "indicator_name": "Central bank policy rates - Serbia - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.RS",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "eed1b795-21ad-4edb-b82c-91bbf74535cf",
+        "indicator_name": "Central bank policy rates - Russia - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.RU",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "4b2d38a0-b249-4181-9a30-478b10505697",
+        "indicator_name": "Central bank policy rates - Saudi Arabia - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.SA",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "56e81dc8-b6bf-4172-9f92-5d389e269e36",
+        "indicator_name": "Central bank policy rates - Sweden - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.SE",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "83a43bdd-52cf-4ba3-aff9-e07eed12609c",
+        "indicator_name": "Central bank policy rates - Thailand - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.TH",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "39229aec-57d5-43ab-8a98-39c903b22c9b",
+        "indicator_name": "Central bank policy rates - T\u00fcrkiye - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.TR",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "3208c435-fa05-45d5-98c8-a6fcb38b6875",
+        "indicator_name": "Central bank policy rates - United States - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.US",
+        "topic": "central_bank_policy_rate"
+      },
+      {
+        "indicator_id": "46110857-d2b2-42cc-a285-d1e263387eb8",
+        "indicator_name": "Central bank policy rates - South Africa - Monthly - End of period",
+        "source_indicator_code": "BIS:WS_CBPOL:M.ZA",
+        "topic": "central_bank_policy_rate"
+      }
+    ]
+  },
+  "obsolete_release": {
+    "external_reference_total_excluding_target_table": 0,
+    "reference_counts_by_table": [
+      {
+        "column": "dataset_release_id",
+        "count": 0,
+        "table": "curated.fact_observation"
+      },
+      {
+        "column": "dataset_release_id",
+        "count": 1,
+        "table": "meta.dataset_release"
+      },
+      {
+        "column": "dataset_release_id",
+        "count": 0,
+        "table": "meta.pipeline_run"
+      },
+      {
+        "column": "dataset_release_id",
+        "count": 0,
+        "table": "meta.provider_code_list"
+      },
+      {
+        "column": "dataset_release_id",
+        "count": 0,
+        "table": "staging.bis_cbpol_policy_rate_phase2_observation"
+      },
+      {
+        "column": "dataset_release_id",
+        "count": 0,
+        "table": "staging.bls_us_labor_breadth_monthly_phase2_observation"
+      },
+      {
+        "column": "dataset_release_id",
+        "count": 0,
+        "table": "staging.bls_us_labor_monthly_phase2_observation"
+      },
+      {
+        "column": "dataset_release_id",
+        "count": 0,
+        "table": "staging.task209_imf_weo_g20_projection_observation"
+      },
+      {
+        "column": "dataset_release_id",
+        "count": 0,
+        "table": "staging.task211_imf_weo_broad_macro_observation"
+      },
+      {
+        "column": "dataset_release_id",
+        "count": 0,
+        "table": "staging.wdi_observation"
+      }
+    ],
+    "resolved_count": 1,
+    "resolved_rows": [
+      {
+        "dataset_release_id": "c0ed8f8c-c982-4218-8a9a-6843655c55ec",
+        "metadata": {
+          "candidate_cell_count": 4968,
+          "explicit_missing_value_count": 24,
+          "observed_value_count": 4944,
+          "provider_metadata": {
+            "acquired_at_utc": "2026-07-12T10:47:36+00:00",
+            "content_type": null,
+            "dataflow": {
+              "agency_id": "BIS",
+              "id": "WS_CBPOL",
+              "version": "1.0"
+            },
+            "dataset_action": "Information",
+            "dataset_attributes": {
+              "UNIT_MEASURE": "368",
+              "UNIT_MULT": "0"
+            },
+            "dimension_at_observation": "TIME_PERIOD",
+            "http_status": 200,
+            "message_id": "IDREFbd1dcfbf-aa06-407a-8f02-8b5d0aff3abb",
+            "prepared": "2026-07-12T10:42:14Z",
+            "sender": "UNKNOWN",
+            "structure_id": "BIS_WS_CBPOL_1_0",
+            "structure_namespace": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=BIS:WS_CBPOL(1.0):ObsLevelDim:TIME_PERIOD"
+          },
+          "task": "TASK-213"
+        },
+        "provider_dataset_code": "BIS:WS_CBPOL",
+        "raw_artifact_path": "data/raw/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-2015m01-2026m06-raw.xml",
+        "raw_sha256": "a14ddd14593ed77ca346014254c8003c0057cf4edd00b99f33e176469a9fa8d4",
+        "release_date": "2026-07-12",
+        "release_key": "bis-ws-cbpol-current-snapshot-2015m01-2026m06",
+        "source_code": "BIS_PUBLIC_SDMX_API"
+      }
+    ]
+  },
+  "scope": {
+    "canonical_indicator_code": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+    "canonical_release_key": "bis-ws-cbpol-snapshot-prepared-20260712t114554z",
+    "dataset_code": "BIS:WS_CBPOL",
+    "obsolete_indicator_pattern": "BIS:WS_CBPOL:M.%",
+    "obsolete_release_key": "bis-ws-cbpol-current-snapshot-2015m01-2026m06",
+    "source_code": "BIS_PUBLIC_SDMX_API"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "dimensional_complexity_verdict": "WS_CBPOL remained scalar-compatible: provider dimensions were FREQ, REF_AREA, TIME_PERIOD plus series/observation attributes, not a repository-class mismatch.",
+  "implementation_friction_error": "Higher than first pass: corrected identity required de-countrying indicator identity, deriving snapshot identity from provider prepared timestamp, adding HK mapping, and auditing obsolete metadata references. Still source-specific; no broad BIS/SDMX framework was needed.",
+  "missing_bis_understanding_revealed": true,
+  "prediction_quality_verdict": "Mixed",
+  "provider_behavior_surprises": "No unresolved provider or transport errors. The selected broad WS_CBPOL key returned valid StructureSpecificData.",
+  "scale_prediction_error": {
+    "actual_candidate_cells": 5106,
+    "actual_explicit_missing": 24,
+    "actual_loaded_cells": 5106,
+    "actual_provider_valued": 5082,
+    "explanation": "Scale prediction missed accepted Hong Kong mapping; corrected grid is 37 territories x 138 months = 5106 cells.",
+    "predicted": "4968 candidate cells and 4900-4968 provider-valued or explicit-missing cells"
+  },
+  "task": "TASK-213",
+  "territory_mapping_error": "Original prediction incorrectly treated HK as a non-sovereign exclusion. PostgreSQL already had canonical HKG/Hong Kong SAR, so HK was corrected into the accepted candidate grid. XM remains an aggregate selection exclusion, not a provider exclusion.",
+  "unit_frequency_surprises": "None. Dataset-level UNIT_MEASURE=368 and UNIT_MULT=0 remained stable; frequency was monthly."
+}

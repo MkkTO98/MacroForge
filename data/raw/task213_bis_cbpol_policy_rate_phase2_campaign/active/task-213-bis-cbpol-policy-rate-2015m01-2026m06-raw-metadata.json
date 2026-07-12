@@ -1,0 +1,28 @@
+{
+  "acquired_at_utc": "2026-07-12T11:45:53+00:00",
+  "attempt_id": "attempt-20260712T114553Z",
+  "content_type": null,
+  "headers": {
+    "cache-control": "private",
+    "connection": "close",
+    "content-disposition": "inline; filename=\"data.xml\"",
+    "content-type": "application/xml;charset=UTF-8",
+    "date": "Sun, 12 Jul 2026 11:45:53 GMT",
+    "etag": "6ad8c637-451d-47b3-b1a4-b30b5aeae619",
+    "set-cookie": "c7433a849bcd78486014ee1ceaae0775=bf9ebcd8695604f3d11996e1b46fc2bf; path=/; HttpOnly; Secure; SameSite=None",
+    "transfer-encoding": "chunked"
+  },
+  "http_status": 200,
+  "raw_bytes": 410879,
+  "raw_sha256": "fc99baf519a2a1ff206f517183a6b77c080e367f99ac15f80ec1010e8125b2f6",
+  "request_parameters": {
+    "dataflow": "WS_CBPOL",
+    "endPeriod": "2026-06",
+    "key": "M.AU+BR+CA+CH+CL+CN+CO+CZ+DK+GB+HU+HK+ID+IL+IN+IS+JP+KR+KW+MA+MK+MX+MY+NO+NZ+PE+PH+PL+RO+RS+RU+SA+SE+TH+TR+US+ZA",
+    "startPeriod": "2015-01",
+    "version": "1.0"
+  },
+  "source_url": "https://stats.bis.org/api/v2/data/dataflow/BIS/WS_CBPOL/1.0/M.AU+BR+CA+CH+CL+CN+CO+CZ+DK+GB+HU+HK+ID+IL+IN+IS+JP+KR+KW+MA+MK+MX+MY+NO+NZ+PE+PH+PL+RO+RS+RU+SA+SE+TH+TR+US+ZA?startPeriod=2015-01&endPeriod=2026-06",
+  "status": "acquired",
+  "task": "TASK-213"
+}

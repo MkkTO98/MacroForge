@@ -1,0 +1,57 @@
+{
+  "task": "TASK-213",
+  "status": "frozen_before_campaign_acquisition",
+  "recorded_at_utc": "2026-07-12T10:43:20Z",
+  "selected_bis_dataset": "BIS:WS_CBPOL",
+  "provider_identifier": "dataflow/BIS/WS_CBPOL/1.0",
+  "analytical_capability": "Broad cross-country monthly central-bank policy-rate repository capability for monetary-policy stance and financial-condition analysis.",
+  "candidate_population": {
+    "frequency": "M",
+    "territories": ["AU", "BR", "CA", "CH", "CL", "CN", "CO", "CZ", "DK", "GB", "HU", "ID", "IL", "IN", "IS", "JP", "KR", "KW", "MA", "MK", "MX", "MY", "NO", "NZ", "PE", "PH", "PL", "RO", "RS", "RU", "SA", "SE", "TH", "TR", "US", "ZA"],
+    "excluded_aggregate_entities": ["XM"],
+    "excluded_non_sovereign_entities": ["HK"],
+    "indicator_family": "central_bank_policy_rates",
+    "periods": "2015-M01 through 2026-M06 inclusive",
+    "expected_period_count": 138,
+    "expected_candidate_cells": 4968
+  },
+  "expected_territories": 36,
+  "expected_indicators_or_series": 36,
+  "expected_frequency_or_frequencies": ["M"],
+  "expected_period_coverage": "2015-M01 through 2026-M06",
+  "expected_observations": "4900-4968 provider-valued or explicit-missing monthly scalar cells; all candidate cells must reconcile.",
+  "expected_units_and_dimensions": {
+    "unit": "Percent",
+    "unit_multiplier": "0",
+    "core_provider_dimensions": ["FREQ", "REF_AREA", "TIME_PERIOD"],
+    "series_attributes_expected": ["SOURCE_REF", "COMPILATION", "DECIMALS", "TITLE"],
+    "observation_attributes_expected": ["OBS_VALUE", "OBS_STATUS", "OBS_CONF"]
+  },
+  "expected_provider_exclusions": {
+    "aggregate_entities": 1,
+    "non_sovereign_entities": 1,
+    "whole_series_absence": "0 expected for selected countries after preflight; explicit missing periods may occur inside valid series."
+  },
+  "expected_acquisition_and_transport_risks": [
+    "BIS SDMX API may reject overly broad keys or large requests.",
+    "Provider may return StructureSpecificData with sparse country histories.",
+    "BIS may use ISO2-like area codes requiring source-specific territory reconciliation.",
+    "Header prepared timestamps may be provider-generation timestamps rather than release vintages."
+  ],
+  "expected_implementation_friction": "Moderate: existing TASK-057 parser is bounded to US/JP and must be scaled source-specifically without creating generic BIS/SDMX infrastructure; PostgreSQL load must preserve full series-key attributes and idempotence.",
+  "expected_postgresql_growth": {
+    "facts": "about 4968 minus sparse explicit missing already loaded as facts",
+    "source_rows": "1 new canonical BIS public SDMX source if none exists",
+    "dataset_release_rows": "1 BIS:WS_CBPOL monthly policy-rate release/as-of identity",
+    "pipeline_run_rows": "1 run key"
+  },
+  "expected_architectural_compatibility": "Existing monthly scalar substrate should be compatible because each complete BIS series key maps to a stable source-scoped indicator identity plus attribute set; no multidimensional schema expected for WS_CBPOL.",
+  "structural_assumptions_pressure_tested": [
+    "BIS source identity can be separated from BIS WS_CBPOL dataset identity and campaign run identity.",
+    "BIS ISO2 reference areas can reconcile to existing country territory identities without canonical expansion for selected countries.",
+    "The complete WS_CBPOL series key M.<REF_AREA> can be represented without semantic loss as a source-scoped indicator identity plus attributes for policy-rate metadata.",
+    "Monthly period and percent unit identities prevent collisions across future BIS datasets.",
+    "Absent months inside valid BIS series can be represented as explicit missing facts only when the candidate grid makes them expected.",
+    "Same-run and same-dataset reruns update provenance without duplicate source/dataset/fact rows."
+  ]
+}

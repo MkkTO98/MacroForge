@@ -1,0 +1,27 @@
+{
+  "acquisition_errors": [],
+  "candidate_cell_count": 5106,
+  "candidate_period_count": 138,
+  "candidate_territory_count": 37,
+  "explicit_missing_value_count": 24,
+  "normalized_artifact_path": "data/processed/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-normalized.json",
+  "normalized_sha256": "185026ae4bbbed58ad2a30f6b2b1b09860514997883b97705af1abf1e87e4b78",
+  "observed_value_count": 5082,
+  "provider_dataset_code": "BIS:WS_CBPOL",
+  "provider_exclusions": [],
+  "raw_artifact_path": "data/raw/task213_bis_cbpol_policy_rate_phase2_campaign/active/task-213-bis-cbpol-policy-rate-2015m01-2026m06-raw.xml",
+  "raw_sha256": "fc99baf519a2a1ff206f517183a6b77c080e367f99ac15f80ec1010e8125b2f6",
+  "release_key": "bis-ws-cbpol-snapshot-prepared-20260712t114554z",
+  "repository_class": "monthly_scalar_policy_rate_time_series",
+  "row_count": 5106,
+  "run_key": "task-213-bis-cbpol-policy-rate-phase2",
+  "selection_exclusions": [
+    {
+      "category": "aggregate_selection_exclusion",
+      "label": "Euro area / euro area aggregate in BIS WS_CBPOL; deliberately outside country candidate grid",
+      "provider_code": "XM"
+    }
+  ],
+  "source_code": "BIS_PUBLIC_SDMX_API",
+  "task": "TASK-213"
+}

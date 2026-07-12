@@ -1,0 +1,35 @@
+{
+  "database": "macroforge",
+  "generated_at_utc": "2026-07-12T13:58:12.157541+00:00",
+  "scope": {
+    "canonical_indicator_code": "BIS:WS_CBPOL:CENTRAL_BANK_POLICY_RATE:PERCENT:M",
+    "canonical_release_key": "bis-ws-cbpol-snapshot-prepared-20260712t114554z",
+    "dataset_code": "BIS:WS_CBPOL",
+    "run_key": "task-213-bis-cbpol-policy-rate-phase2",
+    "source_code": "BIS_PUBLIC_SDMX_API"
+  },
+  "snapshot_terminology": {
+    "canonical_snapshot_description": "acquired BIS response snapshot/as-of identity based on SDMX message Prepared timestamp, not an official BIS publication release",
+    "release_date_expected": null
+  },
+  "verification": {
+    "canonical_bis_source_rows": 1,
+    "canonical_policy_rate_indicator_rows": 1,
+    "canonical_snapshot_rows": 1,
+    "duplicate_canonical_key_groups": 0,
+    "explicit_missing": 24,
+    "failed_quality_checks": 0,
+    "hk_facts": 138,
+    "obsolete_country_encoded_indicators": 0,
+    "obsolete_window_snapshot_rows": 0,
+    "periods": 138,
+    "provider_valued": 5082,
+    "repository_total_facts": 10599411,
+    "same_run_idempotence_after_total_facts": 10599411,
+    "same_run_idempotence_before_total_facts": 10599411,
+    "same_run_idempotence_repository_growth": 0,
+    "task213_facts": 5106,
+    "task213_staging_rows": 5106,
+    "territories": 37
+  }
+}
