@@ -1,4 +1,18 @@
 {
+  "artifact_format_correction": {
+    "corrected_json_paths": [
+      "artifacts/reports/task-211-weo-dataset-release-cleanup-audit.json",
+      "artifacts/reports/task-211-weo-dataset-release-cleanup-audit-after-loader.json",
+      "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-audit.json"
+    ],
+    "status": "original transcript preserved and structured JSON reconstructed",
+    "transcript_paths": [
+      "artifacts/reports/task-211-weo-dataset-release-cleanup-audit.original-psql-transcript.log",
+      "artifacts/reports/task-211-weo-dataset-release-cleanup-audit-after-loader.original-psql-transcript.log",
+      "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-audit.original-psql-transcript.log"
+    ]
+  },
+  "corrected_structured_audit": "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-audit.json",
   "deleted_rows": [
     {
       "dataset_release_id": "be368384-0d63-4f92-82ec-d469c0967f03",
@@ -29,7 +43,7 @@
     "script_excludes_helper_tables": true,
     "script_excludes_pg_temp_schemas": true
   },
-  "raw_psql_audit": "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-audit.json",
+  "raw_psql_audit": "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-audit.original-psql-transcript.log",
   "script": "artifacts/reports/task-211-weo-dataset-release-cleanup.sql",
   "status": "deleted_exactly_approved_rows"
 }

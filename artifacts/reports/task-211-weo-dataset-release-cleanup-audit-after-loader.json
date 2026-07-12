@@ -1,2 +1,119 @@
-BEGIN
-SELECT 2
+{
+  "audit_identity": "task-211-weo-dataset-release-cleanup-audit-after-loader.json",
+  "canonical_dataset": "IMF:WEO:DATAMAPPER",
+  "canonical_release": "world-economic-outlook-april-2026",
+  "canonical_source": "IMF_WEO_DATAMAPPER_API_V1",
+  "correction": "artifact-format-correction",
+  "current_read_only_verification_evidence": {
+    "canonical_release_rows": 1,
+    "duplicate_canonical_key_groups": 0,
+    "failed_quality_weo": 0,
+    "obsolete_rows": 0,
+    "task209_facts": [
+      "342",
+      "339",
+      "3"
+    ],
+    "task209_staging": 342,
+    "task211_facts": [
+      "31074",
+      "30539",
+      "535"
+    ],
+    "task211_staging": 31074
+  },
+  "evidence_classification": "original psql transcript contained no JSON payload; structured values are linked from existing TASK-211 audit/summary artifacts and current read-only verification only",
+  "execution_phase": "cleanup-audit-after-loader-original-transcript-only",
+  "obsolete_release_identities_targeted": [
+    "IMF:WEO:DATAMAPPER:BROAD_MACRO_ANNUAL",
+    "IMF:WEO:DATAMAPPER:PROJECTIONS"
+  ],
+  "original_execution_evidence": {
+    "transcript": {
+      "bytes": 15,
+      "original_path": "artifacts/reports/task-211-weo-dataset-release-cleanup-audit-after-loader.json",
+      "path": "artifacts/reports/task-211-weo-dataset-release-cleanup-audit-after-loader.original-psql-transcript.log",
+      "sha256": "26df7cbdea6c0e23162e2eb1cfe4cd356533f9cc6e291f081953e2575d8112c0"
+    },
+    "transcript_line_count": 2,
+    "transcript_preview": "BEGIN\nSELECT 2\n",
+    "transcript_text_sha256": "26df7cbdea6c0e23162e2eb1cfe4cd356533f9cc6e291f081953e2575d8112c0"
+  },
+  "provenance_links": {
+    "execution_summary": "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-summary.json",
+    "generating_sql": "artifacts/reports/task-211-weo-dataset-release-cleanup.sql",
+    "preserved_transcript": "artifacts/reports/task-211-weo-dataset-release-cleanup-audit-after-loader.original-psql-transcript.log"
+  },
+  "provenance_policy": "Corrected JSON is reconstructed from preserved transcript evidence, committed TASK-211 JSON/SQL reports, and current read-only PostgreSQL verification. It does not claim current verification is the original execution.",
+  "related_committed_structured_evidence": {
+    "approved_target_count": 2,
+    "operation": "task-211-weo-obsolete-dataset-release-cleanup-predelete-audit",
+    "reference_audit": [
+      {
+        "column_name": "dataset_release_id",
+        "reference_count": 0,
+        "table_name": "fact_observation",
+        "table_schema": "curated"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "reference_count": 0,
+        "table_name": "pipeline_run",
+        "table_schema": "meta"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "reference_count": 0,
+        "table_name": "task209_imf_weo_g20_projection_observation",
+        "table_schema": "staging"
+      },
+      {
+        "column_name": "dataset_release_id",
+        "reference_count": 0,
+        "table_name": "task211_imf_weo_broad_macro_observation",
+        "table_schema": "staging"
+      }
+    ],
+    "references_by_target": [
+      {
+        "curated_fact_observation_refs": 0,
+        "meta_pipeline_run_refs": 0,
+        "provider_dataset_code": "IMF:WEO:DATAMAPPER:BROAD_MACRO_ANNUAL",
+        "release_key": "world-economic-outlook-april-2026",
+        "source_code": "IMF_WEO_DATAMAPPER_API_V1",
+        "staging_task209_refs": 0,
+        "staging_task211_refs": 0
+      },
+      {
+        "curated_fact_observation_refs": 0,
+        "meta_pipeline_run_refs": 0,
+        "provider_dataset_code": "IMF:WEO:DATAMAPPER:PROJECTIONS",
+        "release_key": "world-economic-outlook-april-2026",
+        "source_code": "IMF_WEO_DATAMAPPER_API_V1",
+        "staging_task209_refs": 0,
+        "staging_task211_refs": 0
+      }
+    ],
+    "status": "eligible_for_deletion",
+    "target_rows": [
+      {
+        "dataset_release_id": "be368384-0d63-4f92-82ec-d469c0967f03",
+        "provider_dataset_code": "IMF:WEO:DATAMAPPER:BROAD_MACRO_ANNUAL",
+        "raw_artifact_path": "data/raw/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-raw.json",
+        "raw_sha256": "3672b28bf4d92b941de90269e8ea50b737345d7489b506402a062afaa63d1f33",
+        "release_key": "world-economic-outlook-april-2026",
+        "source_code": "IMF_WEO_DATAMAPPER_API_V1"
+      },
+      {
+        "dataset_release_id": "b3d29966-8c4c-4f3f-b337-d2422cdf5d96",
+        "provider_dataset_code": "IMF:WEO:DATAMAPPER:PROJECTIONS",
+        "raw_artifact_path": "data/raw/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-2026-2028.json",
+        "raw_sha256": "d9817f3fbf6cbaf3f58caaf438e20f0077c4cd1785db9505e49791925eebec5c",
+        "release_key": "world-economic-outlook-april-2026",
+        "source_code": "IMF_WEO_DATAMAPPER_API_V1"
+      }
+    ],
+    "total_non_self_references": 0
+  },
+  "task": "TASK-211"
+}
