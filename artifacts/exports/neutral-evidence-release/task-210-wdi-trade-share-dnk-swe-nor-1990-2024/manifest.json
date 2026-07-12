@@ -1,0 +1,17 @@
+{
+  "contract_identity": "macroforge.neutral_evidence_release_export.v1",
+  "contract_version": "1.0",
+  "export_path": "artifacts/exports/neutral-evidence-release/task-210-wdi-trade-share-dnk-swe-nor-1990-2024/macroforge-wdi-trade-share-dnk-swe-nor-1990-2024.neutral-release.json",
+  "export_sha256": "1906821add91de87538f29bbbc254c8d52d5f6734ba7f00aced45fe2c5358f86",
+  "item_count": 210,
+  "release_fingerprint": "sha256:def8c318100cf14526cbdac87335e6b1646681b2176fd684c66ac7cc9d7add67",
+  "release_identity": "macroforge-wdi-1990-2024-2b1a1c3d9e65b182",
+  "selection_fingerprint": "sha256:2b1a1c3d9e65b182f073e0171c59627c8298740ee9cb7c1418dfbae3ae196e0a",
+  "valid": true,
+  "validation": {
+    "errors": [],
+    "item_count": 210,
+    "release_fingerprint": "sha256:def8c318100cf14526cbdac87335e6b1646681b2176fd684c66ac7cc9d7add67",
+    "valid": true
+  }
+}
