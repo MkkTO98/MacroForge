@@ -1,0 +1,6923 @@
+{
+  "accepted_territories": [
+    {
+      "canonical_code": "ABW",
+      "label": "Aruba",
+      "provider_code": "ABW"
+    },
+    {
+      "canonical_code": "AFG",
+      "label": "Afghanistan",
+      "provider_code": "AFG"
+    },
+    {
+      "canonical_code": "AGO",
+      "label": "Angola",
+      "provider_code": "AGO"
+    },
+    {
+      "canonical_code": "ALB",
+      "label": "Albania",
+      "provider_code": "ALB"
+    },
+    {
+      "canonical_code": "AND",
+      "label": "Andorra",
+      "provider_code": "AND"
+    },
+    {
+      "canonical_code": "ARE",
+      "label": "United Arab Emirates",
+      "provider_code": "ARE"
+    },
+    {
+      "canonical_code": "ARG",
+      "label": "Argentina",
+      "provider_code": "ARG"
+    },
+    {
+      "canonical_code": "ARM",
+      "label": "Armenia",
+      "provider_code": "ARM"
+    },
+    {
+      "canonical_code": "ASM",
+      "label": "American Samoa",
+      "provider_code": "ASM"
+    },
+    {
+      "canonical_code": "ATG",
+      "label": "Antigua and Barbuda",
+      "provider_code": "ATG"
+    },
+    {
+      "canonical_code": "AUS",
+      "label": "Australia",
+      "provider_code": "AUS"
+    },
+    {
+      "canonical_code": "AUT",
+      "label": "Austria",
+      "provider_code": "AUT"
+    },
+    {
+      "canonical_code": "AZE",
+      "label": "Azerbaijan",
+      "provider_code": "AZE"
+    },
+    {
+      "canonical_code": "BDI",
+      "label": "Burundi",
+      "provider_code": "BDI"
+    },
+    {
+      "canonical_code": "BEL",
+      "label": "Belgium",
+      "provider_code": "BEL"
+    },
+    {
+      "canonical_code": "BEN",
+      "label": "Benin",
+      "provider_code": "BEN"
+    },
+    {
+      "canonical_code": "BFA",
+      "label": "Burkina Faso",
+      "provider_code": "BFA"
+    },
+    {
+      "canonical_code": "BGD",
+      "label": "Bangladesh",
+      "provider_code": "BGD"
+    },
+    {
+      "canonical_code": "BGR",
+      "label": "Bulgaria",
+      "provider_code": "BGR"
+    },
+    {
+      "canonical_code": "BHR",
+      "label": "Bahrain",
+      "provider_code": "BHR"
+    },
+    {
+      "canonical_code": "BHS",
+      "label": "Bahamas, The",
+      "provider_code": "BHS"
+    },
+    {
+      "canonical_code": "BIH",
+      "label": "Bosnia and Herzegovina",
+      "provider_code": "BIH"
+    },
+    {
+      "canonical_code": "BLR",
+      "label": "Belarus",
+      "provider_code": "BLR"
+    },
+    {
+      "canonical_code": "BLZ",
+      "label": "Belize",
+      "provider_code": "BLZ"
+    },
+    {
+      "canonical_code": "BMU",
+      "label": "Bermuda",
+      "provider_code": "BMU"
+    },
+    {
+      "canonical_code": "BOL",
+      "label": "Bolivia",
+      "provider_code": "BOL"
+    },
+    {
+      "canonical_code": "BRA",
+      "label": "Brazil",
+      "provider_code": "BRA"
+    },
+    {
+      "canonical_code": "BRB",
+      "label": "Barbados",
+      "provider_code": "BRB"
+    },
+    {
+      "canonical_code": "BRN",
+      "label": "Brunei Darussalam",
+      "provider_code": "BRN"
+    },
+    {
+      "canonical_code": "BTN",
+      "label": "Bhutan",
+      "provider_code": "BTN"
+    },
+    {
+      "canonical_code": "BWA",
+      "label": "Botswana",
+      "provider_code": "BWA"
+    },
+    {
+      "canonical_code": "CAF",
+      "label": "Central African Republic",
+      "provider_code": "CAF"
+    },
+    {
+      "canonical_code": "CAN",
+      "label": "Canada",
+      "provider_code": "CAN"
+    },
+    {
+      "canonical_code": "CHE",
+      "label": "Switzerland",
+      "provider_code": "CHE"
+    },
+    {
+      "canonical_code": "CHL",
+      "label": "Chile",
+      "provider_code": "CHL"
+    },
+    {
+      "canonical_code": "CHN",
+      "label": "China",
+      "provider_code": "CHN"
+    },
+    {
+      "canonical_code": "CIV",
+      "label": "C\u00f4te d'Ivoire",
+      "provider_code": "CIV"
+    },
+    {
+      "canonical_code": "CMR",
+      "label": "Cameroon",
+      "provider_code": "CMR"
+    },
+    {
+      "canonical_code": "COD",
+      "label": "Congo, Dem. Rep. of the",
+      "provider_code": "COD"
+    },
+    {
+      "canonical_code": "COG",
+      "label": "Congo, Republic of ",
+      "provider_code": "COG"
+    },
+    {
+      "canonical_code": "COL",
+      "label": "Colombia",
+      "provider_code": "COL"
+    },
+    {
+      "canonical_code": "COM",
+      "label": "Comoros",
+      "provider_code": "COM"
+    },
+    {
+      "canonical_code": "CPV",
+      "label": "Cabo Verde",
+      "provider_code": "CPV"
+    },
+    {
+      "canonical_code": "CRI",
+      "label": "Costa Rica",
+      "provider_code": "CRI"
+    },
+    {
+      "canonical_code": "CUB",
+      "label": "Cuba",
+      "provider_code": "CUB"
+    },
+    {
+      "canonical_code": "CUW",
+      "label": "Curacao",
+      "provider_code": "CUW"
+    },
+    {
+      "canonical_code": "CYM",
+      "label": "Cayman Islands",
+      "provider_code": "CYM"
+    },
+    {
+      "canonical_code": "CYP",
+      "label": "Cyprus",
+      "provider_code": "CYP"
+    },
+    {
+      "canonical_code": "CZE",
+      "label": "Czechia",
+      "provider_code": "CZE"
+    },
+    {
+      "canonical_code": "DEU",
+      "label": "Germany",
+      "provider_code": "DEU"
+    },
+    {
+      "canonical_code": "DJI",
+      "label": "Djibouti",
+      "provider_code": "DJI"
+    },
+    {
+      "canonical_code": "DMA",
+      "label": "Dominica",
+      "provider_code": "DMA"
+    },
+    {
+      "canonical_code": "DNK",
+      "label": "Denmark",
+      "provider_code": "DNK"
+    },
+    {
+      "canonical_code": "DOM",
+      "label": "Dominican Republic",
+      "provider_code": "DOM"
+    },
+    {
+      "canonical_code": "DZA",
+      "label": "Algeria",
+      "provider_code": "DZA"
+    },
+    {
+      "canonical_code": "ECU",
+      "label": "Ecuador",
+      "provider_code": "ECU"
+    },
+    {
+      "canonical_code": "EGY",
+      "label": "Egypt",
+      "provider_code": "EGY"
+    },
+    {
+      "canonical_code": "ERI",
+      "label": "Eritrea",
+      "provider_code": "ERI"
+    },
+    {
+      "canonical_code": "ESP",
+      "label": "Spain",
+      "provider_code": "ESP"
+    },
+    {
+      "canonical_code": "EST",
+      "label": "Estonia",
+      "provider_code": "EST"
+    },
+    {
+      "canonical_code": "ETH",
+      "label": "Ethiopia",
+      "provider_code": "ETH"
+    },
+    {
+      "canonical_code": "FIN",
+      "label": "Finland",
+      "provider_code": "FIN"
+    },
+    {
+      "canonical_code": "FJI",
+      "label": "Fiji",
+      "provider_code": "FJI"
+    },
+    {
+      "canonical_code": "FRA",
+      "label": "France",
+      "provider_code": "FRA"
+    },
+    {
+      "canonical_code": "FRO",
+      "label": "Faroe Islands",
+      "provider_code": "FRO"
+    },
+    {
+      "canonical_code": "FSM",
+      "label": "Micronesia, Fed. States of",
+      "provider_code": "FSM"
+    },
+    {
+      "canonical_code": "GAB",
+      "label": "Gabon",
+      "provider_code": "GAB"
+    },
+    {
+      "canonical_code": "GBR",
+      "label": "United Kingdom",
+      "provider_code": "GBR"
+    },
+    {
+      "canonical_code": "GEO",
+      "label": "Georgia",
+      "provider_code": "GEO"
+    },
+    {
+      "canonical_code": "GHA",
+      "label": "Ghana",
+      "provider_code": "GHA"
+    },
+    {
+      "canonical_code": "GIB",
+      "label": "Gibraltar",
+      "provider_code": "GIB"
+    },
+    {
+      "canonical_code": "GIN",
+      "label": "Guinea",
+      "provider_code": "GIN"
+    },
+    {
+      "canonical_code": "GMB",
+      "label": "Gambia, The",
+      "provider_code": "GMB"
+    },
+    {
+      "canonical_code": "GNB",
+      "label": "Guinea-Bissau",
+      "provider_code": "GNB"
+    },
+    {
+      "canonical_code": "GNQ",
+      "label": "Equatorial Guinea",
+      "provider_code": "GNQ"
+    },
+    {
+      "canonical_code": "GRC",
+      "label": "Greece",
+      "provider_code": "GRC"
+    },
+    {
+      "canonical_code": "GRD",
+      "label": "Grenada",
+      "provider_code": "GRD"
+    },
+    {
+      "canonical_code": "GRL",
+      "label": "Greenland",
+      "provider_code": "GRL"
+    },
+    {
+      "canonical_code": "GTM",
+      "label": "Guatemala",
+      "provider_code": "GTM"
+    },
+    {
+      "canonical_code": "GUM",
+      "label": "Guam",
+      "provider_code": "GUM"
+    },
+    {
+      "canonical_code": "GUY",
+      "label": "Guyana",
+      "provider_code": "GUY"
+    },
+    {
+      "canonical_code": "HKG",
+      "label": "Hong Kong SAR",
+      "provider_code": "HKG"
+    },
+    {
+      "canonical_code": "HND",
+      "label": "Honduras",
+      "provider_code": "HND"
+    },
+    {
+      "canonical_code": "HRV",
+      "label": "Croatia",
+      "provider_code": "HRV"
+    },
+    {
+      "canonical_code": "HTI",
+      "label": "Haiti",
+      "provider_code": "HTI"
+    },
+    {
+      "canonical_code": "HUN",
+      "label": "Hungary",
+      "provider_code": "HUN"
+    },
+    {
+      "canonical_code": "IDN",
+      "label": "Indonesia",
+      "provider_code": "IDN"
+    },
+    {
+      "canonical_code": "IMN",
+      "label": "Isle of Man",
+      "provider_code": "IMN"
+    },
+    {
+      "canonical_code": "IND",
+      "label": "India",
+      "provider_code": "IND"
+    },
+    {
+      "canonical_code": "IRL",
+      "label": "Ireland",
+      "provider_code": "IRL"
+    },
+    {
+      "canonical_code": "IRN",
+      "label": "Iran",
+      "provider_code": "IRN"
+    },
+    {
+      "canonical_code": "IRQ",
+      "label": "Iraq",
+      "provider_code": "IRQ"
+    },
+    {
+      "canonical_code": "ISL",
+      "label": "Iceland",
+      "provider_code": "ISL"
+    },
+    {
+      "canonical_code": "ISR",
+      "label": "Israel",
+      "provider_code": "ISR"
+    },
+    {
+      "canonical_code": "ITA",
+      "label": "Italy",
+      "provider_code": "ITA"
+    },
+    {
+      "canonical_code": "JAM",
+      "label": "Jamaica",
+      "provider_code": "JAM"
+    },
+    {
+      "canonical_code": "JOR",
+      "label": "Jordan",
+      "provider_code": "JOR"
+    },
+    {
+      "canonical_code": "JPN",
+      "label": "Japan",
+      "provider_code": "JPN"
+    },
+    {
+      "canonical_code": "KAZ",
+      "label": "Kazakhstan",
+      "provider_code": "KAZ"
+    },
+    {
+      "canonical_code": "KEN",
+      "label": "Kenya",
+      "provider_code": "KEN"
+    },
+    {
+      "canonical_code": "KGZ",
+      "label": "Kyrgyz Republic",
+      "provider_code": "KGZ"
+    },
+    {
+      "canonical_code": "KHM",
+      "label": "Cambodia",
+      "provider_code": "KHM"
+    },
+    {
+      "canonical_code": "KIR",
+      "label": "Kiribati",
+      "provider_code": "KIR"
+    },
+    {
+      "canonical_code": "KNA",
+      "label": "Saint Kitts and Nevis",
+      "provider_code": "KNA"
+    },
+    {
+      "canonical_code": "KOR",
+      "label": "Korea",
+      "provider_code": "KOR"
+    },
+    {
+      "canonical_code": "KWT",
+      "label": "Kuwait",
+      "provider_code": "KWT"
+    },
+    {
+      "canonical_code": "LAO",
+      "label": "Lao P.D.R.",
+      "provider_code": "LAO"
+    },
+    {
+      "canonical_code": "LBN",
+      "label": "Lebanon",
+      "provider_code": "LBN"
+    },
+    {
+      "canonical_code": "LBR",
+      "label": "Liberia",
+      "provider_code": "LBR"
+    },
+    {
+      "canonical_code": "LBY",
+      "label": "Libya",
+      "provider_code": "LBY"
+    },
+    {
+      "canonical_code": "LCA",
+      "label": "Saint Lucia",
+      "provider_code": "LCA"
+    },
+    {
+      "canonical_code": "LIE",
+      "label": "Liechtenstein",
+      "provider_code": "LIE"
+    },
+    {
+      "canonical_code": "LKA",
+      "label": "Sri Lanka",
+      "provider_code": "LKA"
+    },
+    {
+      "canonical_code": "LSO",
+      "label": "Lesotho",
+      "provider_code": "LSO"
+    },
+    {
+      "canonical_code": "LTU",
+      "label": "Lithuania",
+      "provider_code": "LTU"
+    },
+    {
+      "canonical_code": "LUX",
+      "label": "Luxembourg",
+      "provider_code": "LUX"
+    },
+    {
+      "canonical_code": "LVA",
+      "label": "Latvia",
+      "provider_code": "LVA"
+    },
+    {
+      "canonical_code": "MAC",
+      "label": "Macao SAR",
+      "provider_code": "MAC"
+    },
+    {
+      "canonical_code": "MAF",
+      "label": "St. Martin (French part)",
+      "provider_code": "MAF"
+    },
+    {
+      "canonical_code": "MAR",
+      "label": "Morocco",
+      "provider_code": "MAR"
+    },
+    {
+      "canonical_code": "MCO",
+      "label": "Monaco",
+      "provider_code": "MCO"
+    },
+    {
+      "canonical_code": "MDA",
+      "label": "Moldova",
+      "provider_code": "MDA"
+    },
+    {
+      "canonical_code": "MDG",
+      "label": "Madagascar",
+      "provider_code": "MDG"
+    },
+    {
+      "canonical_code": "MDV",
+      "label": "Maldives",
+      "provider_code": "MDV"
+    },
+    {
+      "canonical_code": "MEX",
+      "label": "Mexico",
+      "provider_code": "MEX"
+    },
+    {
+      "canonical_code": "MHL",
+      "label": "Marshall Islands",
+      "provider_code": "MHL"
+    },
+    {
+      "canonical_code": "MKD",
+      "label": "North Macedonia",
+      "provider_code": "MKD"
+    },
+    {
+      "canonical_code": "MLI",
+      "label": "Mali",
+      "provider_code": "MLI"
+    },
+    {
+      "canonical_code": "MLT",
+      "label": "Malta",
+      "provider_code": "MLT"
+    },
+    {
+      "canonical_code": "MMR",
+      "label": "Myanmar",
+      "provider_code": "MMR"
+    },
+    {
+      "canonical_code": "MNE",
+      "label": "Montenegro",
+      "provider_code": "MNE"
+    },
+    {
+      "canonical_code": "MNG",
+      "label": "Mongolia",
+      "provider_code": "MNG"
+    },
+    {
+      "canonical_code": "MNP",
+      "label": "Northern Mariana Islands",
+      "provider_code": "MNP"
+    },
+    {
+      "canonical_code": "MOZ",
+      "label": "Mozambique",
+      "provider_code": "MOZ"
+    },
+    {
+      "canonical_code": "MRT",
+      "label": "Mauritania",
+      "provider_code": "MRT"
+    },
+    {
+      "canonical_code": "MUS",
+      "label": "Mauritius",
+      "provider_code": "MUS"
+    },
+    {
+      "canonical_code": "MWI",
+      "label": "Malawi",
+      "provider_code": "MWI"
+    },
+    {
+      "canonical_code": "MYS",
+      "label": "Malaysia",
+      "provider_code": "MYS"
+    },
+    {
+      "canonical_code": "NAM",
+      "label": "Namibia",
+      "provider_code": "NAM"
+    },
+    {
+      "canonical_code": "NCL",
+      "label": "New Caledonia",
+      "provider_code": "NCL"
+    },
+    {
+      "canonical_code": "NER",
+      "label": "Niger",
+      "provider_code": "NER"
+    },
+    {
+      "canonical_code": "NGA",
+      "label": "Nigeria",
+      "provider_code": "NGA"
+    },
+    {
+      "canonical_code": "NIC",
+      "label": "Nicaragua",
+      "provider_code": "NIC"
+    },
+    {
+      "canonical_code": "NLD",
+      "label": "Netherlands",
+      "provider_code": "NLD"
+    },
+    {
+      "canonical_code": "NOR",
+      "label": "Norway",
+      "provider_code": "NOR"
+    },
+    {
+      "canonical_code": "NPL",
+      "label": "Nepal",
+      "provider_code": "NPL"
+    },
+    {
+      "canonical_code": "NRU",
+      "label": "Nauru",
+      "provider_code": "NRU"
+    },
+    {
+      "canonical_code": "NZL",
+      "label": "New Zealand",
+      "provider_code": "NZL"
+    },
+    {
+      "canonical_code": "OMN",
+      "label": "Oman",
+      "provider_code": "OMN"
+    },
+    {
+      "canonical_code": "PAK",
+      "label": "Pakistan",
+      "provider_code": "PAK"
+    },
+    {
+      "canonical_code": "PAN",
+      "label": "Panama",
+      "provider_code": "PAN"
+    },
+    {
+      "canonical_code": "PER",
+      "label": "Peru",
+      "provider_code": "PER"
+    },
+    {
+      "canonical_code": "PHL",
+      "label": "Philippines",
+      "provider_code": "PHL"
+    },
+    {
+      "canonical_code": "PLW",
+      "label": "Palau",
+      "provider_code": "PLW"
+    },
+    {
+      "canonical_code": "PNG",
+      "label": "Papua New Guinea",
+      "provider_code": "PNG"
+    },
+    {
+      "canonical_code": "POL",
+      "label": "Poland",
+      "provider_code": "POL"
+    },
+    {
+      "canonical_code": "PRI",
+      "label": "Puerto Rico",
+      "provider_code": "PRI"
+    },
+    {
+      "canonical_code": "PRK",
+      "label": "Korea, Dem. People's Rep.",
+      "provider_code": "PRK"
+    },
+    {
+      "canonical_code": "PRT",
+      "label": "Portugal",
+      "provider_code": "PRT"
+    },
+    {
+      "canonical_code": "PRY",
+      "label": "Paraguay",
+      "provider_code": "PRY"
+    },
+    {
+      "canonical_code": "PYF",
+      "label": "French Polynesia",
+      "provider_code": "PYF"
+    },
+    {
+      "canonical_code": "QAT",
+      "label": "Qatar",
+      "provider_code": "QAT"
+    },
+    {
+      "canonical_code": "ROU",
+      "label": "Romania",
+      "provider_code": "ROU"
+    },
+    {
+      "canonical_code": "RUS",
+      "label": "Russia",
+      "provider_code": "RUS"
+    },
+    {
+      "canonical_code": "RWA",
+      "label": "Rwanda",
+      "provider_code": "RWA"
+    },
+    {
+      "canonical_code": "SAU",
+      "label": "Saudi Arabia",
+      "provider_code": "SAU"
+    },
+    {
+      "canonical_code": "SDN",
+      "label": "Sudan",
+      "provider_code": "SDN"
+    },
+    {
+      "canonical_code": "SEN",
+      "label": "Senegal",
+      "provider_code": "SEN"
+    },
+    {
+      "canonical_code": "SGP",
+      "label": "Singapore",
+      "provider_code": "SGP"
+    },
+    {
+      "canonical_code": "SLB",
+      "label": "Solomon Islands",
+      "provider_code": "SLB"
+    },
+    {
+      "canonical_code": "SLE",
+      "label": "Sierra Leone",
+      "provider_code": "SLE"
+    },
+    {
+      "canonical_code": "SLV",
+      "label": "El Salvador",
+      "provider_code": "SLV"
+    },
+    {
+      "canonical_code": "SMR",
+      "label": "San Marino",
+      "provider_code": "SMR"
+    },
+    {
+      "canonical_code": "SOM",
+      "label": "Somalia",
+      "provider_code": "SOM"
+    },
+    {
+      "canonical_code": "SRB",
+      "label": "Serbia",
+      "provider_code": "SRB"
+    },
+    {
+      "canonical_code": "SSD",
+      "label": "South Sudan, Republic of",
+      "provider_code": "SSD"
+    },
+    {
+      "canonical_code": "STP",
+      "label": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+      "provider_code": "STP"
+    },
+    {
+      "canonical_code": "SUR",
+      "label": "Suriname",
+      "provider_code": "SUR"
+    },
+    {
+      "canonical_code": "SVK",
+      "label": "Slovak Republic",
+      "provider_code": "SVK"
+    },
+    {
+      "canonical_code": "SVN",
+      "label": "Slovenia",
+      "provider_code": "SVN"
+    },
+    {
+      "canonical_code": "SWE",
+      "label": "Sweden",
+      "provider_code": "SWE"
+    },
+    {
+      "canonical_code": "SWZ",
+      "label": "Eswatini",
+      "provider_code": "SWZ"
+    },
+    {
+      "canonical_code": "SXM",
+      "label": "Sint Maarten (Dutch part)",
+      "provider_code": "SXM"
+    },
+    {
+      "canonical_code": "SYC",
+      "label": "Seychelles",
+      "provider_code": "SYC"
+    },
+    {
+      "canonical_code": "SYR",
+      "label": "Syria",
+      "provider_code": "SYR"
+    },
+    {
+      "canonical_code": "TCA",
+      "label": "Turks and Caicos Islands",
+      "provider_code": "TCA"
+    },
+    {
+      "canonical_code": "TCD",
+      "label": "Chad",
+      "provider_code": "TCD"
+    },
+    {
+      "canonical_code": "TGO",
+      "label": "Togo",
+      "provider_code": "TGO"
+    },
+    {
+      "canonical_code": "THA",
+      "label": "Thailand",
+      "provider_code": "THA"
+    },
+    {
+      "canonical_code": "TJK",
+      "label": "Tajikistan",
+      "provider_code": "TJK"
+    },
+    {
+      "canonical_code": "TKM",
+      "label": "Turkmenistan",
+      "provider_code": "TKM"
+    },
+    {
+      "canonical_code": "TLS",
+      "label": "Timor-Leste",
+      "provider_code": "TLS"
+    },
+    {
+      "canonical_code": "TON",
+      "label": "Tonga",
+      "provider_code": "TON"
+    },
+    {
+      "canonical_code": "TTO",
+      "label": "Trinidad and Tobago",
+      "provider_code": "TTO"
+    },
+    {
+      "canonical_code": "TUN",
+      "label": "Tunisia",
+      "provider_code": "TUN"
+    },
+    {
+      "canonical_code": "TUR",
+      "label": "Turkiye",
+      "provider_code": "TUR"
+    },
+    {
+      "canonical_code": "TUV",
+      "label": "Tuvalu",
+      "provider_code": "TUV"
+    },
+    {
+      "canonical_code": "TZA",
+      "label": "Tanzania",
+      "provider_code": "TZA"
+    },
+    {
+      "canonical_code": "UGA",
+      "label": "Uganda",
+      "provider_code": "UGA"
+    },
+    {
+      "canonical_code": "UKR",
+      "label": "Ukraine",
+      "provider_code": "UKR"
+    },
+    {
+      "canonical_code": "URY",
+      "label": "Uruguay",
+      "provider_code": "URY"
+    },
+    {
+      "canonical_code": "USA",
+      "label": "United States",
+      "provider_code": "USA"
+    },
+    {
+      "canonical_code": "UZB",
+      "label": "Uzbekistan",
+      "provider_code": "UZB"
+    },
+    {
+      "canonical_code": "VCT",
+      "label": "Saint Vincent and the Grenadines",
+      "provider_code": "VCT"
+    },
+    {
+      "canonical_code": "VEN",
+      "label": "Venezuela",
+      "provider_code": "VEN"
+    },
+    {
+      "canonical_code": "VGB",
+      "label": "British Virgin Islands",
+      "provider_code": "VGB"
+    },
+    {
+      "canonical_code": "VIR",
+      "label": "Virgin Islands (U.S.)",
+      "provider_code": "VIR"
+    },
+    {
+      "canonical_code": "VNM",
+      "label": "Vietnam",
+      "provider_code": "VNM"
+    },
+    {
+      "canonical_code": "VUT",
+      "label": "Vanuatu",
+      "provider_code": "VUT"
+    },
+    {
+      "canonical_code": "WSM",
+      "label": "Samoa",
+      "provider_code": "WSM"
+    },
+    {
+      "canonical_code": "YEM",
+      "label": "Yemen",
+      "provider_code": "YEM"
+    },
+    {
+      "canonical_code": "ZAF",
+      "label": "South Africa",
+      "provider_code": "ZAF"
+    },
+    {
+      "canonical_code": "ZMB",
+      "label": "Zambia",
+      "provider_code": "ZMB"
+    },
+    {
+      "canonical_code": "ZWE",
+      "label": "Zimbabwe",
+      "provider_code": "ZWE"
+    }
+  ],
+  "canonical_provider_dataset_identity": "IMF:IIP",
+  "canonical_source_identity": "IMF_SDMX_IIP_API_V1",
+  "distinct_run_identity": "task-217-imf-iip-external-position-phase2",
+  "exact_provider_advertised_series": [
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ABW",
+      "series_key": "ABW.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ABW",
+      "series_key": "ABW.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ABW",
+      "series_key": "ABW.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "AFG",
+      "series_key": "AFG.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "AFG",
+      "series_key": "AFG.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "AFG",
+      "series_key": "AFG.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "AGO",
+      "series_key": "AGO.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "AGO",
+      "series_key": "AGO.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "AGO",
+      "series_key": "AGO.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ALB",
+      "series_key": "ALB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ALB",
+      "series_key": "ALB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ALB",
+      "series_key": "ALB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "AND",
+      "series_key": "AND.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "AND",
+      "series_key": "AND.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "AND",
+      "series_key": "AND.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ARE",
+      "series_key": "ARE.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ARE",
+      "series_key": "ARE.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ARE",
+      "series_key": "ARE.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ARG",
+      "series_key": "ARG.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ARG",
+      "series_key": "ARG.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ARG",
+      "series_key": "ARG.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ARM",
+      "series_key": "ARM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ARM",
+      "series_key": "ARM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ARM",
+      "series_key": "ARM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ASM",
+      "series_key": "ASM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ASM",
+      "series_key": "ASM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ASM",
+      "series_key": "ASM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ATG",
+      "series_key": "ATG.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ATG",
+      "series_key": "ATG.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ATG",
+      "series_key": "ATG.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "AUS",
+      "series_key": "AUS.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "AUS",
+      "series_key": "AUS.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "AUS",
+      "series_key": "AUS.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "AUT",
+      "series_key": "AUT.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "AUT",
+      "series_key": "AUT.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "AUT",
+      "series_key": "AUT.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "AZE",
+      "series_key": "AZE.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "AZE",
+      "series_key": "AZE.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "AZE",
+      "series_key": "AZE.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BDI",
+      "series_key": "BDI.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BDI",
+      "series_key": "BDI.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BDI",
+      "series_key": "BDI.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BEL",
+      "series_key": "BEL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BEL",
+      "series_key": "BEL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BEL",
+      "series_key": "BEL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BEN",
+      "series_key": "BEN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BEN",
+      "series_key": "BEN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BEN",
+      "series_key": "BEN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BFA",
+      "series_key": "BFA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BFA",
+      "series_key": "BFA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BFA",
+      "series_key": "BFA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BGD",
+      "series_key": "BGD.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BGD",
+      "series_key": "BGD.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BGD",
+      "series_key": "BGD.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BGR",
+      "series_key": "BGR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BGR",
+      "series_key": "BGR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BGR",
+      "series_key": "BGR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BHR",
+      "series_key": "BHR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BHR",
+      "series_key": "BHR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BHR",
+      "series_key": "BHR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BHS",
+      "series_key": "BHS.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BHS",
+      "series_key": "BHS.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BHS",
+      "series_key": "BHS.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BIH",
+      "series_key": "BIH.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BIH",
+      "series_key": "BIH.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BIH",
+      "series_key": "BIH.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BLR",
+      "series_key": "BLR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BLR",
+      "series_key": "BLR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BLR",
+      "series_key": "BLR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BLZ",
+      "series_key": "BLZ.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BLZ",
+      "series_key": "BLZ.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BLZ",
+      "series_key": "BLZ.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BMU",
+      "series_key": "BMU.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BMU",
+      "series_key": "BMU.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BMU",
+      "series_key": "BMU.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BOL",
+      "series_key": "BOL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BOL",
+      "series_key": "BOL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BOL",
+      "series_key": "BOL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BRA",
+      "series_key": "BRA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BRA",
+      "series_key": "BRA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BRA",
+      "series_key": "BRA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BRB",
+      "series_key": "BRB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BRB",
+      "series_key": "BRB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BRB",
+      "series_key": "BRB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BRN",
+      "series_key": "BRN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BRN",
+      "series_key": "BRN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BRN",
+      "series_key": "BRN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BTN",
+      "series_key": "BTN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BTN",
+      "series_key": "BTN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BTN",
+      "series_key": "BTN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "BWA",
+      "series_key": "BWA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "BWA",
+      "series_key": "BWA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "BWA",
+      "series_key": "BWA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CAF",
+      "series_key": "CAF.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CAF",
+      "series_key": "CAF.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CAF",
+      "series_key": "CAF.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CAN",
+      "series_key": "CAN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CAN",
+      "series_key": "CAN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CAN",
+      "series_key": "CAN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CHE",
+      "series_key": "CHE.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CHE",
+      "series_key": "CHE.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CHE",
+      "series_key": "CHE.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CHL",
+      "series_key": "CHL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CHL",
+      "series_key": "CHL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CHL",
+      "series_key": "CHL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CHN",
+      "series_key": "CHN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CHN",
+      "series_key": "CHN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CHN",
+      "series_key": "CHN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CIV",
+      "series_key": "CIV.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CIV",
+      "series_key": "CIV.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CIV",
+      "series_key": "CIV.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CMR",
+      "series_key": "CMR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CMR",
+      "series_key": "CMR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CMR",
+      "series_key": "CMR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "COD",
+      "series_key": "COD.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "COD",
+      "series_key": "COD.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "COD",
+      "series_key": "COD.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "COG",
+      "series_key": "COG.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "COG",
+      "series_key": "COG.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "COG",
+      "series_key": "COG.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "COL",
+      "series_key": "COL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "COL",
+      "series_key": "COL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "COL",
+      "series_key": "COL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "COM",
+      "series_key": "COM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "COM",
+      "series_key": "COM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "COM",
+      "series_key": "COM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CPV",
+      "series_key": "CPV.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CPV",
+      "series_key": "CPV.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CPV",
+      "series_key": "CPV.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CRI",
+      "series_key": "CRI.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CRI",
+      "series_key": "CRI.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CRI",
+      "series_key": "CRI.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CUB",
+      "series_key": "CUB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CUB",
+      "series_key": "CUB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CUB",
+      "series_key": "CUB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CUW",
+      "series_key": "CUW.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CUW",
+      "series_key": "CUW.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CUW",
+      "series_key": "CUW.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CYM",
+      "series_key": "CYM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CYM",
+      "series_key": "CYM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CYM",
+      "series_key": "CYM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CYP",
+      "series_key": "CYP.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CYP",
+      "series_key": "CYP.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CYP",
+      "series_key": "CYP.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "CZE",
+      "series_key": "CZE.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "CZE",
+      "series_key": "CZE.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "CZE",
+      "series_key": "CZE.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "DEU",
+      "series_key": "DEU.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "DEU",
+      "series_key": "DEU.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "DEU",
+      "series_key": "DEU.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "DJI",
+      "series_key": "DJI.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "DJI",
+      "series_key": "DJI.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "DJI",
+      "series_key": "DJI.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "DMA",
+      "series_key": "DMA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "DMA",
+      "series_key": "DMA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "DMA",
+      "series_key": "DMA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "DNK",
+      "series_key": "DNK.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "DNK",
+      "series_key": "DNK.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "DNK",
+      "series_key": "DNK.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "DOM",
+      "series_key": "DOM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "DOM",
+      "series_key": "DOM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "DOM",
+      "series_key": "DOM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "DZA",
+      "series_key": "DZA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "DZA",
+      "series_key": "DZA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "DZA",
+      "series_key": "DZA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ECU",
+      "series_key": "ECU.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ECU",
+      "series_key": "ECU.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ECU",
+      "series_key": "ECU.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "EGY",
+      "series_key": "EGY.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "EGY",
+      "series_key": "EGY.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "EGY",
+      "series_key": "EGY.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ERI",
+      "series_key": "ERI.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ERI",
+      "series_key": "ERI.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ERI",
+      "series_key": "ERI.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ESP",
+      "series_key": "ESP.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ESP",
+      "series_key": "ESP.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ESP",
+      "series_key": "ESP.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "EST",
+      "series_key": "EST.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "EST",
+      "series_key": "EST.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "EST",
+      "series_key": "EST.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ETH",
+      "series_key": "ETH.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ETH",
+      "series_key": "ETH.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ETH",
+      "series_key": "ETH.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "FIN",
+      "series_key": "FIN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "FIN",
+      "series_key": "FIN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "FIN",
+      "series_key": "FIN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "FJI",
+      "series_key": "FJI.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "FJI",
+      "series_key": "FJI.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "FJI",
+      "series_key": "FJI.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "FRA",
+      "series_key": "FRA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "FRA",
+      "series_key": "FRA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "FRA",
+      "series_key": "FRA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "FRO",
+      "series_key": "FRO.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "FRO",
+      "series_key": "FRO.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "FRO",
+      "series_key": "FRO.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "FSM",
+      "series_key": "FSM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "FSM",
+      "series_key": "FSM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "FSM",
+      "series_key": "FSM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GAB",
+      "series_key": "GAB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GAB",
+      "series_key": "GAB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GAB",
+      "series_key": "GAB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GBR",
+      "series_key": "GBR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GBR",
+      "series_key": "GBR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GBR",
+      "series_key": "GBR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GEO",
+      "series_key": "GEO.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GEO",
+      "series_key": "GEO.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GEO",
+      "series_key": "GEO.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GHA",
+      "series_key": "GHA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GHA",
+      "series_key": "GHA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GHA",
+      "series_key": "GHA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GIB",
+      "series_key": "GIB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GIB",
+      "series_key": "GIB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GIB",
+      "series_key": "GIB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GIN",
+      "series_key": "GIN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GIN",
+      "series_key": "GIN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GIN",
+      "series_key": "GIN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GMB",
+      "series_key": "GMB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GMB",
+      "series_key": "GMB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GMB",
+      "series_key": "GMB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GNB",
+      "series_key": "GNB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GNB",
+      "series_key": "GNB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GNB",
+      "series_key": "GNB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GNQ",
+      "series_key": "GNQ.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GNQ",
+      "series_key": "GNQ.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GNQ",
+      "series_key": "GNQ.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GRC",
+      "series_key": "GRC.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GRC",
+      "series_key": "GRC.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GRC",
+      "series_key": "GRC.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GRD",
+      "series_key": "GRD.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GRD",
+      "series_key": "GRD.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GRD",
+      "series_key": "GRD.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GRL",
+      "series_key": "GRL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GRL",
+      "series_key": "GRL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GRL",
+      "series_key": "GRL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GTM",
+      "series_key": "GTM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GTM",
+      "series_key": "GTM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GTM",
+      "series_key": "GTM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GUM",
+      "series_key": "GUM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GUM",
+      "series_key": "GUM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GUM",
+      "series_key": "GUM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "GUY",
+      "series_key": "GUY.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "GUY",
+      "series_key": "GUY.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "GUY",
+      "series_key": "GUY.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "HKG",
+      "series_key": "HKG.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "HKG",
+      "series_key": "HKG.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "HKG",
+      "series_key": "HKG.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "HND",
+      "series_key": "HND.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "HND",
+      "series_key": "HND.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "HND",
+      "series_key": "HND.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "HRV",
+      "series_key": "HRV.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "HRV",
+      "series_key": "HRV.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "HRV",
+      "series_key": "HRV.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "HTI",
+      "series_key": "HTI.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "HTI",
+      "series_key": "HTI.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "HTI",
+      "series_key": "HTI.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "HUN",
+      "series_key": "HUN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "HUN",
+      "series_key": "HUN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "HUN",
+      "series_key": "HUN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "IDN",
+      "series_key": "IDN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "IDN",
+      "series_key": "IDN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "IDN",
+      "series_key": "IDN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "IMN",
+      "series_key": "IMN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "IMN",
+      "series_key": "IMN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "IMN",
+      "series_key": "IMN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "IND",
+      "series_key": "IND.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "IND",
+      "series_key": "IND.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "IND",
+      "series_key": "IND.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "IRL",
+      "series_key": "IRL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "IRL",
+      "series_key": "IRL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "IRL",
+      "series_key": "IRL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "IRN",
+      "series_key": "IRN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "IRN",
+      "series_key": "IRN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "IRN",
+      "series_key": "IRN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "IRQ",
+      "series_key": "IRQ.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "IRQ",
+      "series_key": "IRQ.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "IRQ",
+      "series_key": "IRQ.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ISL",
+      "series_key": "ISL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ISL",
+      "series_key": "ISL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ISL",
+      "series_key": "ISL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ISR",
+      "series_key": "ISR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ISR",
+      "series_key": "ISR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ISR",
+      "series_key": "ISR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ITA",
+      "series_key": "ITA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ITA",
+      "series_key": "ITA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ITA",
+      "series_key": "ITA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "JAM",
+      "series_key": "JAM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "JAM",
+      "series_key": "JAM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "JAM",
+      "series_key": "JAM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "JOR",
+      "series_key": "JOR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "JOR",
+      "series_key": "JOR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "JOR",
+      "series_key": "JOR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "JPN",
+      "series_key": "JPN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "JPN",
+      "series_key": "JPN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "JPN",
+      "series_key": "JPN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "KAZ",
+      "series_key": "KAZ.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "KAZ",
+      "series_key": "KAZ.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "KAZ",
+      "series_key": "KAZ.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "KEN",
+      "series_key": "KEN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "KEN",
+      "series_key": "KEN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "KEN",
+      "series_key": "KEN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "KGZ",
+      "series_key": "KGZ.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "KGZ",
+      "series_key": "KGZ.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "KGZ",
+      "series_key": "KGZ.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "KHM",
+      "series_key": "KHM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "KHM",
+      "series_key": "KHM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "KHM",
+      "series_key": "KHM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "KIR",
+      "series_key": "KIR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "KIR",
+      "series_key": "KIR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "KIR",
+      "series_key": "KIR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "KNA",
+      "series_key": "KNA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "KNA",
+      "series_key": "KNA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "KNA",
+      "series_key": "KNA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "KOR",
+      "series_key": "KOR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "KOR",
+      "series_key": "KOR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "KOR",
+      "series_key": "KOR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "KWT",
+      "series_key": "KWT.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "KWT",
+      "series_key": "KWT.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "KWT",
+      "series_key": "KWT.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LAO",
+      "series_key": "LAO.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LAO",
+      "series_key": "LAO.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LAO",
+      "series_key": "LAO.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LBN",
+      "series_key": "LBN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LBN",
+      "series_key": "LBN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LBN",
+      "series_key": "LBN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LBR",
+      "series_key": "LBR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LBR",
+      "series_key": "LBR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LBR",
+      "series_key": "LBR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LBY",
+      "series_key": "LBY.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LBY",
+      "series_key": "LBY.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LBY",
+      "series_key": "LBY.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LCA",
+      "series_key": "LCA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LCA",
+      "series_key": "LCA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LCA",
+      "series_key": "LCA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LIE",
+      "series_key": "LIE.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LIE",
+      "series_key": "LIE.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LIE",
+      "series_key": "LIE.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LKA",
+      "series_key": "LKA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LKA",
+      "series_key": "LKA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LKA",
+      "series_key": "LKA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LSO",
+      "series_key": "LSO.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LSO",
+      "series_key": "LSO.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LSO",
+      "series_key": "LSO.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LTU",
+      "series_key": "LTU.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LTU",
+      "series_key": "LTU.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LTU",
+      "series_key": "LTU.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LUX",
+      "series_key": "LUX.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LUX",
+      "series_key": "LUX.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LUX",
+      "series_key": "LUX.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "LVA",
+      "series_key": "LVA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "LVA",
+      "series_key": "LVA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "LVA",
+      "series_key": "LVA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MAC",
+      "series_key": "MAC.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MAC",
+      "series_key": "MAC.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MAC",
+      "series_key": "MAC.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MAF",
+      "series_key": "MAF.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MAF",
+      "series_key": "MAF.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MAF",
+      "series_key": "MAF.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MAR",
+      "series_key": "MAR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MAR",
+      "series_key": "MAR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MAR",
+      "series_key": "MAR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MCO",
+      "series_key": "MCO.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MCO",
+      "series_key": "MCO.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MCO",
+      "series_key": "MCO.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MDA",
+      "series_key": "MDA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MDA",
+      "series_key": "MDA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MDA",
+      "series_key": "MDA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MDG",
+      "series_key": "MDG.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MDG",
+      "series_key": "MDG.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MDG",
+      "series_key": "MDG.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MDV",
+      "series_key": "MDV.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MDV",
+      "series_key": "MDV.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MDV",
+      "series_key": "MDV.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MEX",
+      "series_key": "MEX.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MEX",
+      "series_key": "MEX.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MEX",
+      "series_key": "MEX.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MHL",
+      "series_key": "MHL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MHL",
+      "series_key": "MHL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MHL",
+      "series_key": "MHL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MKD",
+      "series_key": "MKD.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MKD",
+      "series_key": "MKD.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MKD",
+      "series_key": "MKD.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MLI",
+      "series_key": "MLI.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MLI",
+      "series_key": "MLI.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MLI",
+      "series_key": "MLI.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MLT",
+      "series_key": "MLT.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MLT",
+      "series_key": "MLT.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MLT",
+      "series_key": "MLT.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MMR",
+      "series_key": "MMR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MMR",
+      "series_key": "MMR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MMR",
+      "series_key": "MMR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MNE",
+      "series_key": "MNE.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MNE",
+      "series_key": "MNE.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MNE",
+      "series_key": "MNE.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MNG",
+      "series_key": "MNG.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MNG",
+      "series_key": "MNG.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MNG",
+      "series_key": "MNG.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MNP",
+      "series_key": "MNP.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MNP",
+      "series_key": "MNP.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MNP",
+      "series_key": "MNP.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MOZ",
+      "series_key": "MOZ.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MOZ",
+      "series_key": "MOZ.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MOZ",
+      "series_key": "MOZ.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MRT",
+      "series_key": "MRT.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MRT",
+      "series_key": "MRT.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MRT",
+      "series_key": "MRT.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MUS",
+      "series_key": "MUS.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MUS",
+      "series_key": "MUS.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MUS",
+      "series_key": "MUS.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MWI",
+      "series_key": "MWI.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MWI",
+      "series_key": "MWI.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MWI",
+      "series_key": "MWI.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "MYS",
+      "series_key": "MYS.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "MYS",
+      "series_key": "MYS.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "MYS",
+      "series_key": "MYS.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NAM",
+      "series_key": "NAM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NAM",
+      "series_key": "NAM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NAM",
+      "series_key": "NAM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NCL",
+      "series_key": "NCL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NCL",
+      "series_key": "NCL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NCL",
+      "series_key": "NCL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NER",
+      "series_key": "NER.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NER",
+      "series_key": "NER.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NER",
+      "series_key": "NER.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NGA",
+      "series_key": "NGA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NGA",
+      "series_key": "NGA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NGA",
+      "series_key": "NGA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NIC",
+      "series_key": "NIC.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NIC",
+      "series_key": "NIC.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NIC",
+      "series_key": "NIC.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NLD",
+      "series_key": "NLD.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NLD",
+      "series_key": "NLD.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NLD",
+      "series_key": "NLD.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NOR",
+      "series_key": "NOR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NOR",
+      "series_key": "NOR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NOR",
+      "series_key": "NOR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NPL",
+      "series_key": "NPL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NPL",
+      "series_key": "NPL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NPL",
+      "series_key": "NPL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NRU",
+      "series_key": "NRU.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NRU",
+      "series_key": "NRU.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NRU",
+      "series_key": "NRU.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "NZL",
+      "series_key": "NZL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "NZL",
+      "series_key": "NZL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "NZL",
+      "series_key": "NZL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "OMN",
+      "series_key": "OMN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "OMN",
+      "series_key": "OMN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "OMN",
+      "series_key": "OMN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PAK",
+      "series_key": "PAK.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PAK",
+      "series_key": "PAK.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PAK",
+      "series_key": "PAK.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PAN",
+      "series_key": "PAN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PAN",
+      "series_key": "PAN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PAN",
+      "series_key": "PAN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PER",
+      "series_key": "PER.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PER",
+      "series_key": "PER.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PER",
+      "series_key": "PER.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PHL",
+      "series_key": "PHL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PHL",
+      "series_key": "PHL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PHL",
+      "series_key": "PHL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PLW",
+      "series_key": "PLW.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PLW",
+      "series_key": "PLW.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PLW",
+      "series_key": "PLW.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PNG",
+      "series_key": "PNG.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PNG",
+      "series_key": "PNG.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PNG",
+      "series_key": "PNG.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "POL",
+      "series_key": "POL.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "POL",
+      "series_key": "POL.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "POL",
+      "series_key": "POL.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PRI",
+      "series_key": "PRI.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PRI",
+      "series_key": "PRI.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PRI",
+      "series_key": "PRI.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PRK",
+      "series_key": "PRK.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PRK",
+      "series_key": "PRK.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PRK",
+      "series_key": "PRK.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PRT",
+      "series_key": "PRT.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PRT",
+      "series_key": "PRT.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PRT",
+      "series_key": "PRT.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PRY",
+      "series_key": "PRY.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PRY",
+      "series_key": "PRY.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PRY",
+      "series_key": "PRY.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "PYF",
+      "series_key": "PYF.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "PYF",
+      "series_key": "PYF.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "PYF",
+      "series_key": "PYF.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "QAT",
+      "series_key": "QAT.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "QAT",
+      "series_key": "QAT.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "QAT",
+      "series_key": "QAT.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ROU",
+      "series_key": "ROU.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ROU",
+      "series_key": "ROU.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ROU",
+      "series_key": "ROU.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "RUS",
+      "series_key": "RUS.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "RUS",
+      "series_key": "RUS.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "RUS",
+      "series_key": "RUS.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "RWA",
+      "series_key": "RWA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "RWA",
+      "series_key": "RWA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "RWA",
+      "series_key": "RWA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SAU",
+      "series_key": "SAU.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SAU",
+      "series_key": "SAU.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SAU",
+      "series_key": "SAU.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SDN",
+      "series_key": "SDN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SDN",
+      "series_key": "SDN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SDN",
+      "series_key": "SDN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SEN",
+      "series_key": "SEN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SEN",
+      "series_key": "SEN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SEN",
+      "series_key": "SEN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SGP",
+      "series_key": "SGP.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SGP",
+      "series_key": "SGP.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SGP",
+      "series_key": "SGP.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SLB",
+      "series_key": "SLB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SLB",
+      "series_key": "SLB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SLB",
+      "series_key": "SLB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SLE",
+      "series_key": "SLE.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SLE",
+      "series_key": "SLE.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SLE",
+      "series_key": "SLE.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SLV",
+      "series_key": "SLV.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SLV",
+      "series_key": "SLV.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SLV",
+      "series_key": "SLV.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SMR",
+      "series_key": "SMR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SMR",
+      "series_key": "SMR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SMR",
+      "series_key": "SMR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SOM",
+      "series_key": "SOM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SOM",
+      "series_key": "SOM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SOM",
+      "series_key": "SOM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SRB",
+      "series_key": "SRB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SRB",
+      "series_key": "SRB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SRB",
+      "series_key": "SRB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SSD",
+      "series_key": "SSD.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SSD",
+      "series_key": "SSD.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SSD",
+      "series_key": "SSD.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "STP",
+      "series_key": "STP.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "STP",
+      "series_key": "STP.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "STP",
+      "series_key": "STP.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SUR",
+      "series_key": "SUR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SUR",
+      "series_key": "SUR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SUR",
+      "series_key": "SUR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SVK",
+      "series_key": "SVK.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SVK",
+      "series_key": "SVK.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SVK",
+      "series_key": "SVK.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SVN",
+      "series_key": "SVN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SVN",
+      "series_key": "SVN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SVN",
+      "series_key": "SVN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SWE",
+      "series_key": "SWE.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SWE",
+      "series_key": "SWE.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SWE",
+      "series_key": "SWE.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SWZ",
+      "series_key": "SWZ.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SWZ",
+      "series_key": "SWZ.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SWZ",
+      "series_key": "SWZ.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SXM",
+      "series_key": "SXM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SXM",
+      "series_key": "SXM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SXM",
+      "series_key": "SXM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SYC",
+      "series_key": "SYC.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SYC",
+      "series_key": "SYC.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SYC",
+      "series_key": "SYC.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "SYR",
+      "series_key": "SYR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "SYR",
+      "series_key": "SYR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "SYR",
+      "series_key": "SYR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TCA",
+      "series_key": "TCA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TCA",
+      "series_key": "TCA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TCA",
+      "series_key": "TCA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TCD",
+      "series_key": "TCD.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TCD",
+      "series_key": "TCD.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TCD",
+      "series_key": "TCD.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TGO",
+      "series_key": "TGO.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TGO",
+      "series_key": "TGO.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TGO",
+      "series_key": "TGO.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "THA",
+      "series_key": "THA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "THA",
+      "series_key": "THA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "THA",
+      "series_key": "THA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TJK",
+      "series_key": "TJK.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TJK",
+      "series_key": "TJK.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TJK",
+      "series_key": "TJK.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TKM",
+      "series_key": "TKM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TKM",
+      "series_key": "TKM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TKM",
+      "series_key": "TKM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TLS",
+      "series_key": "TLS.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TLS",
+      "series_key": "TLS.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TLS",
+      "series_key": "TLS.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TON",
+      "series_key": "TON.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TON",
+      "series_key": "TON.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TON",
+      "series_key": "TON.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TTO",
+      "series_key": "TTO.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TTO",
+      "series_key": "TTO.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TTO",
+      "series_key": "TTO.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TUN",
+      "series_key": "TUN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TUN",
+      "series_key": "TUN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TUN",
+      "series_key": "TUN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TUR",
+      "series_key": "TUR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TUR",
+      "series_key": "TUR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TUR",
+      "series_key": "TUR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TUV",
+      "series_key": "TUV.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TUV",
+      "series_key": "TUV.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TUV",
+      "series_key": "TUV.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "TZA",
+      "series_key": "TZA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "TZA",
+      "series_key": "TZA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "TZA",
+      "series_key": "TZA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "UGA",
+      "series_key": "UGA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "UGA",
+      "series_key": "UGA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "UGA",
+      "series_key": "UGA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "UKR",
+      "series_key": "UKR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "UKR",
+      "series_key": "UKR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "UKR",
+      "series_key": "UKR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "URY",
+      "series_key": "URY.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "URY",
+      "series_key": "URY.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "URY",
+      "series_key": "URY.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "USA",
+      "series_key": "USA.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "USA",
+      "series_key": "USA.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "USA",
+      "series_key": "USA.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "UZB",
+      "series_key": "UZB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "UZB",
+      "series_key": "UZB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "UZB",
+      "series_key": "UZB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "VCT",
+      "series_key": "VCT.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "VCT",
+      "series_key": "VCT.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "VCT",
+      "series_key": "VCT.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "VEN",
+      "series_key": "VEN.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "VEN",
+      "series_key": "VEN.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "VEN",
+      "series_key": "VEN.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "VGB",
+      "series_key": "VGB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "VGB",
+      "series_key": "VGB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "VGB",
+      "series_key": "VGB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "VIR",
+      "series_key": "VIR.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "VIR",
+      "series_key": "VIR.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "VIR",
+      "series_key": "VIR.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "VNM",
+      "series_key": "VNM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "VNM",
+      "series_key": "VNM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "VNM",
+      "series_key": "VNM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "VUT",
+      "series_key": "VUT.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "VUT",
+      "series_key": "VUT.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "VUT",
+      "series_key": "VUT.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "WSM",
+      "series_key": "WSM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "WSM",
+      "series_key": "WSM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "WSM",
+      "series_key": "WSM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "YEM",
+      "series_key": "YEM.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "YEM",
+      "series_key": "YEM.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "YEM",
+      "series_key": "YEM.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ZAF",
+      "series_key": "ZAF.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ZAF",
+      "series_key": "ZAF.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ZAF",
+      "series_key": "ZAF.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ZMB",
+      "series_key": "ZMB.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ZMB",
+      "series_key": "ZMB.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ZMB",
+      "series_key": "ZMB.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "A_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions",
+      "provider_territory_code": "ZWE",
+      "series_key": "ZWE.A_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "L_P",
+      "frequency": "A",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions",
+      "provider_territory_code": "ZWE",
+      "series_key": "ZWE.L_P.IIP.USD.A",
+      "unit": "USD"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "frequency": "A",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position",
+      "provider_territory_code": "ZWE",
+      "series_key": "ZWE.NETAL_P.NIIP.USD.A",
+      "unit": "USD"
+    }
+  ],
+  "exact_provider_advertised_series_count": 642,
+  "expected_candidate_cells": 9630,
+  "expected_dimensional_complexity": "moderate: IIP uses the BOP SDMX dimensions COUNTRY, BOP_ACCOUNTING_ENTRY, INDICATOR, UNIT, FREQUENCY; scalar identity is compatible if only COUNTRY is removed and all other dimensions are retained.",
+  "expected_exclusions": {
+    "acquisition_errors": 0,
+    "incompatible_series": 0,
+    "mapping_failures": 0,
+    "provider_aggregates": 5,
+    "provider_non_sovereign_or_unsupported": 13,
+    "unsupported_canonical_territories": 3
+  },
+  "expected_explicit_missing_facts": 481,
+  "expected_implementation_friction": "moderate-high due to existing IIP task-local constants using campaign-specific source identities and because missing/whole-series distinctions must be made explicitly",
+  "expected_postgresql_growth": {
+    "dataset_releases": 1,
+    "facts": "observed plus explicit-missing rows only",
+    "indicators": 3,
+    "pipeline_runs": 1,
+    "staging_rows": "observed plus explicit-missing rows only"
+  },
+  "expected_provider_valued_facts": 8667,
+  "expected_scalar_compatibility": "compatible for selected aggregate annual USD IIP stock scalar series",
+  "expected_territory_coverage": 214,
+  "expected_transport_behavior": "metadata response large but stable; value acquisition likely requires country chunking to avoid long URLs/timeouts",
+  "expected_whole_series_absence": 482,
+  "frequency": "A",
+  "frozen_before_value_acquisition": true,
+  "period_range": {
+    "end": "2024",
+    "periods": 15,
+    "start": "2010"
+  },
+  "release_identity_rule": "derive acquired IIP as-of key from provider dataset UPDATE_DATE/PUBLICATION_DATE/Prepared evidence; do not use query-window bounds as release identity and do not invent official release semantics",
+  "selected_capability": "Annual external asset, liability, and net international investment position stocks by country in USD, preserving IMF IIP accounting-entry, position measure, unit, scale, frequency, status, and as-of evidence.",
+  "selected_position_series": [
+    {
+      "accounting_entry": "A_P",
+      "indicator": "IIP",
+      "indicator_label": "External asset positions"
+    },
+    {
+      "accounting_entry": "L_P",
+      "indicator": "IIP",
+      "indicator_label": "External liability positions"
+    },
+    {
+      "accounting_entry": "NETAL_P",
+      "indicator": "NIIP",
+      "indicator_label": "Net international investment position"
+    }
+  ],
+  "selected_sectors_counterparts": "Aggregate external-position components; no selected sector/counterpart split beyond component labels.",
+  "structural_assumptions_pressure_tested": [
+    "source identity must be API/dataset not campaign",
+    "release/as-of identity must come from provider metadata",
+    "IIP position-stock dimensions can be source-scoped scalar indicators",
+    "missing years inside returned series are explicit missing",
+    "whole-series absence remains distinct from missing observations"
+  ],
+  "task": "TASK-217",
+  "units_and_scale": {
+    "scale": "6",
+    "unit": "USD",
+    "unit_label": "US dollar"
+  },
+  "why_stronger_than_another_bis_or_small_proof": "The repository already has three recent BIS Phase 2 campaigns; broad IMF IIP closes a named external-sector stock gap and directly complements TASK-216 BOP current-account flows, existing WDI external debt, reserves, and older G7 IIP evidence. This is higher marginal macroeconomic value than another BIS extension or small provider proof because external asset/liability/NIIP stocks are first-order external-vulnerability inputs."
+}

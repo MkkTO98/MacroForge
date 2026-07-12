@@ -1,0 +1,21 @@
+{
+  "after_source_fact_count": 7695,
+  "before_source_fact_count": 0,
+  "counts": {
+    "dataset_release_rows": 1,
+    "fact_rows": 7695,
+    "failed_quality_checks": 0,
+    "missing_facts": 726,
+    "observed_facts": 6969,
+    "staging_rows": 7695
+  },
+  "duplicate_canonical_key_groups": 0,
+  "idempotence_note": "same run key deletes/reloads run-scoped facts before canonical upsert; same-release identity preserved by source/dataset/release natural key",
+  "postgresql_growth": 7695,
+  "provider_dataset_code": "IMF:IIP",
+  "release_key": "imf-iip-asof-20260711t233032958933600z",
+  "run_key": "task-217-imf-iip-external-position-phase2",
+  "source_code": "IMF_SDMX_IIP_API_V1",
+  "status": "succeeded",
+  "task": "TASK-217"
+}

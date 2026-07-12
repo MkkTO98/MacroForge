@@ -90,9 +90,9 @@ Maintenance rule: update this atlas only when a completed implementation materia
 
 ### 11. International investment-position stock observations
 
-- Representative implementations: `TASK-088` IMF IIP positions, `TASK-135` IMF IIP G7 position panel, `TASK-148` IMF IIP G7 operational dataset.
-- Observational structure represented: annual external asset, liability, and net position stock observations with position-side and stock-basis metadata, now operationalized for G7 countries across 2015-2023.
-- Current maturity: Developing.
+- Representative implementations: `TASK-088` IMF IIP positions, `TASK-135` IMF IIP G7 position panel, `TASK-148` IMF IIP G7 operational dataset, `TASK-217` IMF IIP Phase 2 broad external-position stocks.
+- Observational structure represented: annual external asset, liability, and net position stock observations with position-side and stock-basis metadata; now broadened from G7-only evidence to 214 accepted canonical countries across 2010-2024, with 7,695 loaded observed/explicit-missing facts from 642 provider-advertised annual USD position series.
+- Current maturity: Operationally Useful for broad annual country-level aggregate IIP stock monitoring; Developing for detailed instrument, counterparty, currency, maturity, valuation, and higher-frequency IIP analysis.
 - Important limitations: no currency composition, counterparty breakdown, instrument maturity, valuation framework, or general IIP ontology.
 
 ### 12. Matrix observations

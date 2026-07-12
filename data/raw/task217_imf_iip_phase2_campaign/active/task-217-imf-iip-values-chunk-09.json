@@ -1,0 +1,80 @@
+{
+  "acquired_at_utc": "2026-07-12T20:50:47+00:00",
+  "attempt_id": "attempt-20260712T205035Z",
+  "chunk_count": 9,
+  "chunk_index": 9,
+  "content_type": "application/xml",
+  "countries": [
+    "URY",
+    "USA",
+    "UZB",
+    "VCT",
+    "VEN",
+    "VGB",
+    "VIR",
+    "VNM",
+    "VUT",
+    "WSM",
+    "YEM",
+    "ZAF",
+    "ZMB",
+    "ZWE"
+  ],
+  "headers": {
+    "Connection": "close",
+    "Content-Type": "application/xml",
+    "Date": "Sun, 12 Jul 2026 20:50:48 GMT",
+    "Request-Context": "appId=cid-v1:e4518baf-f7f4-42d7-900e-7dd820548dc8",
+    "Set-Cookie": "ApplicationGatewayAffinity=dca9138616203b0df55300d07b8e6a61; Path=/",
+    "Transfer-Encoding": "chunked",
+    "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+    "expires": "0",
+    "pragma": "no-cache",
+    "server": "istio-envoy",
+    "strict-transport-security": "max-age=31536000 ; includeSubDomains",
+    "vary": "accept-encoding",
+    "x-content-type-options": "nosniff",
+    "x-correlation-id": "ce559db39d8e24e4020023132af8e1e2",
+    "x-envoy-upstream-service-time": "314",
+    "x-frame-options": "DENY",
+    "x-xss-protection": "0"
+  },
+  "http_status": 200,
+  "raw_bytes": 60028,
+  "raw_sha256": "8fae3f36d33cc29afbb28fe6d3fdc4cb4ed896ac4f01f3203d551ebb0c921cf3",
+  "request_parameters": {
+    "accounting_entries": [
+      "A_P",
+      "L_P",
+      "NETAL_P"
+    ],
+    "countries": [
+      "URY",
+      "USA",
+      "UZB",
+      "VCT",
+      "VEN",
+      "VGB",
+      "VIR",
+      "VNM",
+      "VUT",
+      "WSM",
+      "YEM",
+      "ZAF",
+      "ZMB",
+      "ZWE"
+    ],
+    "dataflow": "IIP",
+    "endPeriod": "2024",
+    "frequency": "A",
+    "indicators": [
+      "IIP",
+      "NIIP"
+    ],
+    "startPeriod": "2010",
+    "unit": "USD"
+  },
+  "source_url": "https://api.imf.org/external/sdmx/2.1/data/IIP/URY+USA+UZB+VCT+VEN+VGB+VIR+VNM+VUT+WSM+YEM+ZAF+ZMB+ZWE.A_P+L_P+NETAL_P.IIP+NIIP.USD.A?startPeriod=2010&endPeriod=2024",
+  "status": "value_chunk_acquired",
+  "task": "TASK-217"
+}

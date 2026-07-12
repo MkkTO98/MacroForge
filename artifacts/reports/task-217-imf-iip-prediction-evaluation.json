@@ -1,0 +1,14 @@
+{
+  "actual_candidate_cells": 9630,
+  "actual_provider_valued_facts": 6969,
+  "architecture_compatibility": "compatible",
+  "expected_candidate_cells": 9630,
+  "expected_provider_valued_facts": 8667,
+  "implementation_friction_error": "High but expected: release/as-of and whole-series absence separation required task-local code; no schema contradiction.",
+  "missingness_prediction_error": 245,
+  "prediction_verdict": "Mixed",
+  "provider_behavior_surprises": "Country chunking worked; provider returned whole-series absences for some country/component pairs rather than explicit null observations.",
+  "scale_prediction_error": 0,
+  "task": "TASK-217",
+  "territory_or_unit_surprises": "No unit incompatibility for selected USD annual external-position series; unsupported provider territories remained outside canonical country catalogue."
+}

@@ -1,0 +1,12 @@
+{
+  "explicit_missing_value_count": 726,
+  "normalized_path": "data/processed/task217_imf_iip_phase2_campaign/active/task-217-imf-iip-normalized.json",
+  "normalized_sha256": "e431f495d9403873bf15dfffd91378277b60cf20da1433e1ea2ef4b5125f984c",
+  "observed_value_count": 6969,
+  "raw_active_dir": "data/raw/task217_imf_iip_phase2_campaign/active",
+  "release_key": "imf-iip-asof-20260711t233032958933600z",
+  "row_count": 7695,
+  "status": "active_artifacts_promoted",
+  "task": "TASK-217",
+  "whole_series_absence_count": 129
+}

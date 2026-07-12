@@ -226,6 +226,7 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 - `L-20260701-task-085-implementation-lessons.md` records TASK-085 bounded FRED business-inventories implementation lessons, inventory stock-cycle prediction review, deterministic replay evidence, and conclusion that monthly business-inventory evidence fits without contract, architecture, or methodology expansion.
 - `L-20260701-task-084-implementation-lessons.md` records TASK-084 bounded BLS JOLTS labor-demand implementation lessons, provider-diversity selection review, deterministic replay evidence, and conclusion that monthly JOLTS labor-demand/turnover evidence fits without contract or architecture expansion.
 - `R-20260702-architecture-reality-audit.md` records the latest generated architecture-to-reality audit.
+- TASK-217 reports (`task-217-imf-iip-*.json`, checksum file, and load SQL) record the IMF IIP Phase 2 external-position stock expansion: 214 accepted countries, 642 series, 9,630 candidate cells, 7,695 loaded facts, 6,969 provider-valued facts, 726 explicit-missing facts, 129 whole-series absences, 0 acquisition errors/incompatible series/failed quality checks/duplicate groups, source `IMF_SDMX_IIP_API_V1`, dataset `IMF:IIP`, as-of `imf-iip-asof-20260711t233032958933600z`.
 
 ## Needs Attention
 - Observed Boundary and Contract Stability, Canonical Lineage Event Generation, Contract Validation and Drift Detection, and Deterministic Ingestion Feedback remain Verified; do not advance them beyond Verified without separate adoption tasks.
