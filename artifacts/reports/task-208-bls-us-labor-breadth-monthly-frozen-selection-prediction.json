@@ -1,0 +1,22 @@
+{
+  "bounded_candidate_population": "36 additional monthly seasonally-adjusted BLS series selected from CPS/LNS, CES supersector/industry payroll and wages/hours, and JOLTS total/industry labor-demand organization; excludes the 12 TASK-207 proof series from this incremental campaign.",
+  "existing_architecture_predicted_to_suffice": true,
+  "expected_architectural_compatibility": "Existing source-specific BLS monthly scalar path should suffice; no new schema/framework/orchestration expected.",
+  "expected_observation_range": "about 6,500-7,100 monthly observations over 2010-2026 after provider exclusions and current-year edge availability",
+  "expected_provider_or_execution_difficulties": [
+    "unregistered BLS API 25-series request cap requiring deterministic series chunking",
+    "unregistered BLS API 10-year request-window cap requiring deterministic year chunking",
+    "JOLTS catalog warnings and possible invalid sector series",
+    "current-year observations may be incomplete"
+  ],
+  "expected_repository_class": "source-specific monthly scalar time-series observations in existing curated fact substrate",
+  "expected_series_count": {
+    "candidate_series": 36,
+    "expected_compatible_series_range": "34-36",
+    "expected_provider_exclusions": "0-2 invalid or unavailable JOLTS industry series; audit later corrected two candidate-construction errors"
+  },
+  "expected_temporal_coverage": "2010-M01 through approximately 2026-M06 for compatible monthly series",
+  "selected_domain": "U.S. monthly labor-market breadth beyond the TASK-207 proof: participation margins, unemployment duration, industry payrolls, sector wages/hours, and JOLTS turnover/openings.",
+  "selected_source": "BLS public API v2",
+  "task": "TASK-208"
+}

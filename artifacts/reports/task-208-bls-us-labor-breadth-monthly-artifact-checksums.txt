@@ -1,0 +1,7 @@
+a8b067917168b061c44db12f41c2e455cb6ae67b6b8f8e5293c57aaea71c9b26  artifacts/reports/task-208-bls-us-labor-breadth-monthly-frozen-selection-prediction.json
+eee8cc464db7c4ef65e6fb0396f8d86bc6fba74675235627c403b14a35894079  artifacts/reports/task-208-bls-us-labor-breadth-monthly-postgresql-load-report.json
+ed300007d0d6539ac2233ca415b535caada0837650d3327656513423525c80df  artifacts/reports/task-208-bls-us-labor-breadth-monthly-prediction-evaluation.json
+3ee1dfcf69e40750f3948551fe9bb5e2f17f1ef7a43b12241cede92e590ed094  artifacts/reports/task-208-bls-us-labor-breadth-monthly-provider-evidence-report.json
+259671758bb5cf4b80c205823260819beb6947fed8b5ab1ab97c838e63350190  data/processed/task208_bls_us_labor_breadth_monthly_phase2_campaign/task-208-bls-us-labor-breadth-monthly-manifest.json
+a02acfe54810f8fe1a4f769cb2510f8a0c55c991239edc9ab24a3620351ea71a  data/processed/task208_bls_us_labor_breadth_monthly_phase2_campaign/task-208-bls-us-labor-breadth-monthly-normalized.json
+4716073084485705852444d70a39d2e71ea939de1fa3130f49deb77fda63e547  data/raw/task208_bls_us_labor_breadth_monthly_phase2_campaign/task-208-bls-us-labor-breadth-monthly-2010-2026.json

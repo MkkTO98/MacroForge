@@ -1,0 +1,25 @@
+{
+  "acquisition_errors": [],
+  "candidate_series_count": 36,
+  "compatible_series_count": 36,
+  "provider_exclusions": [],
+  "provider_messages": [
+    "Unable to get Catalog Data for series JTS000000000000000TSR",
+    "Unable to get Catalog Data for series JTS000000000000000QUR",
+    "Unable to get Catalog Data for series JTS000000000000000LDR",
+    "Unable to get Catalog Data for series JTS000000000000000OSR",
+    "Unable to get Catalog Data for series JTS000000000000000TSR",
+    "Unable to get Catalog Data for series JTS000000000000000QUR",
+    "Unable to get Catalog Data for series JTS000000000000000LDR",
+    "Unable to get Catalog Data for series JTS000000000000000OSR",
+    "Unable to get Catalog Data for series JTS100000000000000JOL",
+    "Unable to get Catalog Data for series JTS230000000000000JOL",
+    "Unable to get Catalog Data for series JTS300000000000000JOL",
+    "Unable to get Catalog Data for series JTS510000000000000JOL",
+    "Unable to get Catalog Data for series JTS600000000000000JOL",
+    "Unable to get Catalog Data for series JTS700000000000000JOL",
+    "Unable to get Catalog Data for series JTS900000000000000JOL"
+  ],
+  "status": "complete",
+  "task": "TASK-208"
+}

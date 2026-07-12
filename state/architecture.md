@@ -71,6 +71,12 @@ TASK-165 through TASK-204 scaled the WDI implemented-compatible annual-scalar ce
 
 Architecture verdict: overlapping WDI campaigns require run-scoped validation, checkpoint/resume hygiene, correction reloads that remove obsolete facts and refresh lineage/quality, and bounded chunking. They still do not justify schema redesign, provider mirrors, generic source frameworks, canonical identity changes, or production scheduling.
 
+## BLS monthly scalar Phase 2 evidence
+
+TASK-208 completed a corrected BLS public API v2 U.S. labor-market breadth campaign: 36 seasonally adjusted monthly series, 7,116 facts, 198 monthly periods from 2010-M01 through 2026-M06, 0 provider exclusions, 0 acquisition errors, and 0 duplicate canonical-key groups. TASK-207 and TASK-208 now share canonical source identity `BLS_PUBLIC_API_V2`; campaign differences live in dataset/release/run metadata.
+
+Architecture verdict: reaffirmed. The existing source-specific monthly scalar path, monthly periods, canonical source/dataset/run separation, lineage, quality checks, missing-value handling, atomic artifact publication, and same-run idempotence were sufficient. The exposed defects were implementation hygiene: campaign-specific source identities, two malformed JOLTS candidate identifiers, and a temporary BLS unregistered daily-threshold blocker. None require schema redesign, provider framework extraction, or source-independent time-series architecture.
+
 ## Cross-repository-class generalization posture
 
 TASK-181 through TASK-188 validated source-specific acquisition/normalization, deterministic file-backed evidence, scalar observed-package handoff, source-neutral run/release/lineage/quality metadata, DRDF/ACPF/CEF governance, and bounded ALFRED revision-aware scalar conventions. The current architecture preserved changed/unchanged vintages and expected absences without schema redesign.
@@ -94,12 +100,6 @@ Core methodology artifacts:
 - `docs/architecture/confidence-escalation-framework.md`
 
 ## Deferred areas
-
-## TASK-211 IMF WEO broad macro pressure test
-
-TASK-211 and its remediation consolidated IMF WEO/DataMapper around one canonical provider dataset identity: `IMF:WEO:DATAMAPPER`, with April 2026 as shared release identity and TASK-209/TASK-211 as distinct runs. The bounded WEO-specific substrate now owns only repeated source-specific responsibilities: source/dataset constants, release-key parsing, run-key construction, value-status convention, indicator IDs, explicit-missing classification, 25-country chunk default, and indicator partition read/write/checksum mechanics.
-
-Architecture verdict: reaffirmed. Scalar facts, units, attributes, dataset releases, runs, lineage, and quality checks preserved WEO release/vintage identity without schema redesign. TASK-211's 35,442-cell grid reconciled to 31,074 loaded facts and 4,368 provider-excluded cells. Large normalized evidence is now deterministic indicator partitions rather than a monolith. DataMapper chunk behavior and WEO artifact partitioning are source-specific operational constraints, not generic framework evidence.
 
 Unless accepted task/decision changes scope, defer broad source support, generic provider/source/domain frameworks, runtime orchestration, semantic graph/catalog systems, live production writes, generic revision/SDMX infrastructure, issuer/entity registries, KnowledgeForge semantics, downstream-system implementation, relationship frameworks, graph models, and canonical identity extraction.
 

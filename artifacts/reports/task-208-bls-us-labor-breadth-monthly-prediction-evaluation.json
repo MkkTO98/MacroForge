@@ -1,0 +1,28 @@
+{
+  "discrepancy_classification": "candidate-construction error corrected inside TASK-208; architecture/source path remained valid",
+  "explanation_of_errors": "The analytical family and architecture compatibility prediction were right, but the original candidate construction for two JOLTS industry identifiers was wrong. Corrected identifiers loaded as real compatible series, so the provider-exclusion prediction was misclassified.",
+  "predicted_vs_actual_compatible_coverage": {
+    "actual": "36 compatible series from 36 candidates",
+    "predicted": "34-36 compatible series from 36 candidates"
+  },
+  "predicted_vs_actual_implementation_friction": {
+    "actual": "moderate: deterministic 24-series by 10-year chunks succeeded for the corrected campaign",
+    "predicted": "moderate: 25-series and 10-year BLS public API caps require deterministic chunking"
+  },
+  "predicted_vs_actual_observation_scale": {
+    "actual": 7116,
+    "note": "Corrected candidate identifiers produced a slightly higher compatible row count than the original upper bound.",
+    "predicted": "about 6,500-7,100"
+  },
+  "predicted_vs_actual_provider_exclusions": {
+    "actual_acquisition_errors": [],
+    "actual_provider_exclusions": [],
+    "candidate_construction_errors_corrected": [
+      "JTS200000000000000JOL was corrected to JTS230000000000000JOL for construction job openings",
+      "JTS500000000000000JOL was corrected to JTS510000000000000JOL for information job openings"
+    ],
+    "predicted": "0-2 invalid or unavailable JOLTS industry series, plus non-fatal JOLTS catalog warnings"
+  },
+  "prediction_quality_verdict": "Mixed",
+  "task": "TASK-208"
+}

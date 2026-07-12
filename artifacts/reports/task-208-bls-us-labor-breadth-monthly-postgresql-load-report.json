@@ -1,0 +1,99 @@
+{
+  "after_counts": {
+    "facts": 10594305,
+    "indicators": 1471,
+    "lineage": 84,
+    "periods": 237,
+    "quality": 87,
+    "runs": 42,
+    "sources": 3
+  },
+  "before_counts": {
+    "facts": 10594305,
+    "indicators": 1471,
+    "lineage": 84,
+    "periods": 237,
+    "quality": 87,
+    "runs": 42,
+    "sources": 3
+  },
+  "duplicate_canonical_key_groups": 0,
+  "fact_rows": 7116,
+  "failed_quality_checks": 0,
+  "idempotence": {
+    "after_second_load": {
+      "facts": 10594305,
+      "indicators": 1471,
+      "lineage": 84,
+      "periods": 237,
+      "quality": 87,
+      "runs": 42,
+      "sources": 3
+    },
+    "before_second_load": {
+      "facts": 10594305,
+      "indicators": 1471,
+      "lineage": 84,
+      "periods": 237,
+      "quality": 87,
+      "runs": 42,
+      "sources": 3
+    },
+    "idempotent": true,
+    "second_load_report": {
+      "after_counts": {
+        "facts": 10594305,
+        "indicators": 1471,
+        "lineage": 84,
+        "periods": 237,
+        "quality": 87,
+        "runs": 42,
+        "sources": 3
+      },
+      "before_counts": {
+        "facts": 10594305,
+        "indicators": 1471,
+        "lineage": 84,
+        "periods": 237,
+        "quality": 87,
+        "runs": 42,
+        "sources": 3
+      },
+      "duplicate_canonical_key_groups": 0,
+      "fact_rows": 7116,
+      "failed_quality_checks": 0,
+      "indicator_count": 36,
+      "lineage_events": 2,
+      "period_count": 198,
+      "quality_checks": 3,
+      "repository_growth": {
+        "facts": 0,
+        "indicators": 0,
+        "lineage": 0,
+        "periods": 0,
+        "quality": 0,
+        "runs": 0,
+        "sources": 0
+      },
+      "run_key": "task-208-bls-us-labor-breadth-monthly-phase2",
+      "staging_rows": 7116,
+      "task": "TASK-208"
+    }
+  },
+  "indicator_count": 36,
+  "lineage_events": 2,
+  "period_count": 198,
+  "quality_checks": 3,
+  "repository_growth": {
+    "facts": 0,
+    "indicators": 0,
+    "lineage": 0,
+    "periods": 0,
+    "quality": 0,
+    "runs": 0,
+    "sources": 0
+  },
+  "run_key": "task-208-bls-us-labor-breadth-monthly-phase2",
+  "staging_rows": 7116,
+  "task": "TASK-208"
+}

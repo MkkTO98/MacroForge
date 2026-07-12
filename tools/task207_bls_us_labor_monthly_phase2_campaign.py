@@ -10,8 +10,8 @@ from macroforge.db_helpers import jsonb_literal, parse_pipe_counts, psql_scalar,
 
 TASK_ID='TASK-207'
 SLUG='task207_bls_us_labor_monthly_phase2_campaign'
-SOURCE_CODE='BLS_US_LABOR_MONTHLY_PHASE2'
-SOURCE_NAME='BLS U.S. Labor Monthly Phase 2 Campaign'
+SOURCE_CODE='BLS_PUBLIC_API_V2'
+SOURCE_NAME='BLS Public API v2'
 SOURCE_HOME_URL='https://www.bls.gov/'
 PROVIDER_DATASET_CODE='BLS_PUBLIC_API_V2_US_LABOR_MONTHLY_PHASE2'
 RUN_KEY='task-207-bls-us-labor-monthly-phase2'
