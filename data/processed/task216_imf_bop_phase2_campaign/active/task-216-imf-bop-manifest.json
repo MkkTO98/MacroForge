@@ -1,0 +1,12 @@
+{
+  "explicit_missing_value_count": 875,
+  "normalized_path": "data/processed/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-normalized.json",
+  "normalized_sha256": "76bdad1138c6c5c6f20c3f5435536f044fd6cf2896869733fffdc378b1af6ab5",
+  "observed_value_count": 13600,
+  "raw_active_dir": "data/raw/task216_imf_bop_phase2_campaign/active",
+  "release_key": "imf-bop-asof-20260711t231424302015100z",
+  "row_count": 14475,
+  "status": "active_artifacts_promoted",
+  "task": "TASK-216",
+  "whole_series_absence_count": 105
+}

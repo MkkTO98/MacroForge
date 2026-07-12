@@ -9,34 +9,34 @@ Current ingestion architecture:
 ```text
 Source-specific acquisition
 -> Source-specific normalization
--> ObservedIngestionPackage v1
+-> ObservedIngestionPackage v1 where applicable
 -> Deterministic post-boundary substrate
--> Existing source-specific staging/canonical load SQL where scoped
+-> Source-specific staging/canonical load SQL where scoped
 -> Validation
 -> Canonical PostgreSQL where scoped
 ```
 
-## Strategic extraction doctrine
+## Active doctrine
 
-Shared deterministic infrastructure owns post-boundary mechanics only after independent implementations show convergence, deterministic verification, acceptable coupling, and measurable future effort reduction. Source-specific behavior belongs before the boundary. Generic shared infrastructure must not contain source-specific conditionals.
+The default architecture posture remains evidence-first and source-specific-first. Shared deterministic infrastructure owns post-boundary mechanics only after independent implementations show convergence, deterministic verification, acceptable coupling, and measurable future effort reduction. Source acquisition, provider interpretation, source semantics, candidate selection, and normalization remain source-specific before the boundary.
 
-After TASK-053 and DEC-022, the default assumption is that the current post-boundary architecture is correct. Future implementation should attempt to falsify this assumption through bounded heterogeneous sources, not proactively redesign the substrate or observed boundary.
+After TASK-053 and DEC-022, assume the current post-boundary architecture is correct until bounded heterogeneous implementation evidence falsifies it. Do not redesign the substrate, observed boundary, schema, provider identities, source registry, runtime orchestration, production scheduling, semantic graph, or generic provider framework without concrete implementation evidence: repository-class mismatch, canonical ambiguity, source-boundary contradiction, release/vintage loss, provider-semantics loss, scaling/performance failure, or repeated downstream query pain.
 
-DEC-023 and `docs/architecture/long-term-domain-vision.md` record MacroForge's observation-domain boundary: MacroForge owns source-backed observations, provenance, reproducibility, lineage, validation, and observational identity; KnowledgeForge owns reusable meaning, semantic identities, claims, hypotheses, relationship interpretation, evidence evaluation, confidence, uncertainty, contradictions, and epistemic state.
+DEC-023 and `docs/architecture/long-term-domain-vision.md` define the observation-domain boundary: MacroForge owns source-backed observations, provenance, reproducibility, lineage, validation, and observational identity. KnowledgeForge owns reusable meaning, semantic identities, claims, hypotheses, relationship interpretation, evidence evaluation, confidence, uncertainty, contradictions, and epistemic state.
 
-## Source implementation posture
+## Accepted source-specific boundaries
 
-Canonical-loaded paths: WDI, OECD_NAAG, EUROSTAT_NAMQ_GDP.
+Canonical-loaded and operational paths include WDI annual-scalar campaigns, OECD_NAAG, EUROSTAT_NAMQ_GDP, BLS monthly scalar campaigns, IMF WEO/DataMapper forecast-vintage scalar evidence, IMF BOP/IIP/reserves operational slices, BIS SDMX scalar campaigns, and neutral evidence-release/outbox capability where explicitly implemented.
 
-Bounded evidence-only and operational slices span many official/public providers through TASK-165. Evidence-only slices do not imply broad provider support, canonical loading, generic frameworks, or capability registries.
+Bounded evidence-only and operational slices remain source-specific evidence, not broad provider support. Evidence-only slices do not imply canonical loading, generic frameworks, production authority, or capability registries.
 
 ## Observed boundary and deterministic substrate
 
 `ObservedIngestionPackage` is documented in `docs/architecture/observed-ingestion-representation.md` and implemented in `src/macroforge/observed_ingestion.py`. Source-specific observed-package construction lives in explicit source-owned modules where extracted; compatibility wrappers remain narrow.
 
-Current post-boundary components: package fingerprinting/comparison, contract validation, source-specific loaded package reconstruction, lineage-event generation, quality/drift checks, and deterministic feedback.
+Current post-boundary components: package fingerprinting/comparison, contract validation, source-specific loaded-package reconstruction, lineage-event generation, quality/drift checks, deterministic feedback, source/release/run metadata recording, and source-specific loader verification.
 
-Post-boundary substrate effort is currently low. Source acquisition, provider interpretation, normalization, capability-level planning/selection, and repository-class validation remain the main effort centers.
+Post-boundary substrate effort is currently low. The main effort centers remain source acquisition, provider interpretation, normalization, capability-level planning/selection, repository-class validation, artifact publication discipline, and closeout verification.
 
 ## Capability maturity
 
@@ -53,9 +53,7 @@ TASK-188 declares the following constitutionally mature for stated scopes and fr
 
 Shared Post-Boundary Infrastructure Extraction remains Discovered and negatively frozen: do not extract generic shared frameworks without repeated convergent implementation evidence.
 
-## Current planning architecture
-
-TASK-163 accepted CEF as file-backed orchestration policy over confidence cells. TASK-167 accepted DRDF for domain portfolio selection. TASK-168 accepted ACPF between domain and confidence cell. These are governance layers only: no runtime framework, ontology/schema change, semantic system, canonical identity work, production/live authority, source registry, or scoring engine.
+## Planning architecture
 
 Accepted planning hierarchy:
 
@@ -65,44 +63,24 @@ Strategic objective -> macroeconomic domain -> analytical capability -> maturity
 
 DRDF selects/governs the macroeconomic domain. ACPF specifies analytical capability, dependencies, gap, and stopping criteria. CEF selects the largest safe evidence-backed ingestion scope. Existing source-specific workstreams execute implementation.
 
-## WDI annual-scalar scaling evidence
+## Evidence-backed maturation highlights
 
-TASK-165 through TASK-204 scaled the WDI implemented-compatible annual-scalar cell across major macro/development domains. Current WDI/GFDD/ILO/Barro-Lee annual-scalar coverage: 1,394 indicators, 217 non-aggregate countries, 1990-2024 annual periods, and 10,424,284 curated facts.
+WDI annual-scalar scaling evidence: TASK-165 through TASK-206 scaled the implemented-compatible annual-scalar cell across major macro/development domains. Architecture verdict: overlapping WDI campaigns require run-scoped validation, checkpoint/resume hygiene, correction reloads that remove obsolete same-run facts and refresh lineage/quality, and bounded chunking; they still do not justify schema redesign, provider mirrors, generic source frameworks, canonical identity changes, or production scheduling.
 
-Architecture verdict: overlapping WDI campaigns require run-scoped validation, checkpoint/resume hygiene, correction reloads that remove obsolete facts and refresh lineage/quality, and bounded chunking. They still do not justify schema redesign, provider mirrors, generic source frameworks, canonical identity changes, or production scheduling.
+BLS monthly scalar evidence: TASK-207 and TASK-208 share canonical source identity `BLS_PUBLIC_API_V2`; campaign differences belong in dataset/release/run metadata. Architecture verdict: monthly periods, source/dataset/run separation, lineage, quality checks, missing-value handling, atomic publication, and same-run idempotence were sufficient. Exposed defects were implementation hygiene, not schema contradictions.
 
-## BLS monthly scalar Phase 2 evidence
+WEO/DataMapper forecast-vintage evidence: TASK-209 proved WEO release/vintage identity must be evidence-derived and release-specific. Source identity `IMF_WEO_DATAMAPPER_API_V1` is separate from WEO dataset/release identity. Provider-supplied forecast scalars must not be described as observed economic outcomes, and actual/estimate/projection status must not be inferred from calendar year alone.
 
-TASK-208 completed a corrected BLS public API v2 U.S. labor-market breadth campaign: 36 seasonally adjusted monthly series, 7,116 facts, 198 monthly periods from 2010-M01 through 2026-M06, 0 provider exclusions, 0 acquisition errors, and 0 duplicate canonical-key groups. TASK-207 and TASK-208 now share canonical source identity `BLS_PUBLIC_API_V2`; campaign differences live in dataset/release/run metadata.
+BIS SDMX Phase 2 evidence: TASK-213 through TASK-215 reaffirmed scalar compatibility when the complete provider series key is audited and only territory is removed while material non-territory dimensions remain in indicator identity/attributes. `Prepared` timestamp is snapshot evidence, not official release semantics. Narrow BIS helpers may exist only where repeated stable contracts are proven; no universal SDMX/provider framework is justified.
 
-Architecture verdict: reaffirmed. The existing source-specific monthly scalar path, monthly periods, canonical source/dataset/run separation, lineage, quality checks, missing-value handling, atomic artifact publication, and same-run idempotence were sufficient. The exposed defects were implementation hygiene: campaign-specific source identities, two malformed JOLTS candidate identifiers, and a temporary BLS unregistered daily-threshold blocker. None require schema redesign, provider framework extraction, or source-independent time-series architecture.
+TASK-216 IMF BOP evidence: TASK-216 scaled IMF BOP annual current-account monitoring using source `IMF_SDMX_BOP_API_V1`, dataset `IMF:BOP`, dataflow `BOP` v21.0.0 / DSD v24.0.0, provider dataset `UPDATE_DATE` as-of key `imf-bop-asof-20260711t231424302015100z`, run `task-216-imf-bop-current-account-phase2`, selected accounting entry `NETCD_T`, components `CAB/G/S/IN1/IN2`, `USD_SCALE_6`, and annual periods 2010-2024. It froze 214 accepted countries, 1,070 provider-advertised series, and 16,050 candidate cells, then loaded 14,475 facts: 13,600 provider-valued and 875 explicit-missing, with 105 whole-series absences, 0 acquisition errors, 0 incompatible series, 0 failed quality checks, 0 duplicate canonical-key groups, same-run idempotence, and simulated later-as-of coexistence.
 
-## Cross-repository-class generalization posture
+TASK-216 architecture verdict: reaffirmed. The selected BOP family remained scalar-compatible because only territory was removed from the complete provider series key; accounting entry, component, unit, scale, frequency, provider attributes, source/dataset/as-of/run identity, lineage, and quality evidence were preserved. Whole-series absence remained distinct from explicit missing facts and acquisition failure. `IMF_SDMX_BOP_API_V1` denotes the IMF external SDMX 2.1 BOP API/source boundary, not TASK-216 scope and not WEO/DataMapper. No BOP/IMF generic framework, universal SDMX adapter, accounting ontology, campaign engine, multidimensional schema, or canonical identity change is justified. Revisit only if another BOP/IIP relationship campaign shows repeated stable source-specific responsibilities without freezing earlier campaign-specific identity drift.
 
-TASK-181 through TASK-188 validated source-specific acquisition/normalization, deterministic file-backed evidence, scalar observed-package handoff, source-neutral run/release/lineage/quality metadata, DRDF/ACPF/CEF governance, and bounded ALFRED revision-aware scalar conventions. The current architecture preserved changed/unchanged vintages and expected absences without schema redesign.
+## Neutral evidence outbox
 
-Still unvalidated outside this workstream: relationship/matrix roles, event identity, entity filing/accounting contexts, and whether attributes/source_payload remain sufficient when non-WDI classes scale.
-
-No revision/vintage subsystem, schema redesign, provider mirror, production scheduling, or generic time-series framework is justified. Future architecture work requires concrete implementation evidence: new repository class pressure, observed operational limitation, repeated implementation friction, canonical ambiguity, scale/performance failure, or repeated downstream query pain.
-
-## Methodology evidence artifacts
-
-Core methodology artifacts:
-- `docs/architecture/domain-coverage-assessment.md`
-- `docs/capability-atlas.md`
-- `docs/architecture/architectural-confidence-ledger.md`
-- `docs/architecture/architectural-surprise-log.md`
-- `docs/architecture/marginal-source-cost-index.md`
-- `docs/architecture/recurring-implementation-pain.md`
-- `docs/architecture/long-term-domain-vision.md`
-- `docs/architecture/domain-centric-repository-development-framework.md`
-- `docs/architecture/analytical-capability-planning-framework.md`
-- `docs/architecture/confidence-escalation-framework.md`
+TASK-212 validates a MacroForge-owned, consumer-neutral outbox for canonical closeout. MacroForge may publish immutable observed-evidence artifacts after durable canonical facts, succeeded run, release/run lineage, passing quality checks, and complete subscription selection. It must not write into consumer inboxes, import/query consumer systems, or encode consumer derivations.
 
 ## Deferred areas
 
 Unless accepted task/decision changes scope, defer broad source support, generic provider/source/domain frameworks, runtime orchestration, semantic graph/catalog systems, live production writes, generic revision/SDMX infrastructure, issuer/entity registries, KnowledgeForge semantics, downstream-system implementation, relationship frameworks, graph models, and canonical identity extraction.
-
-## Neutral evidence outbox boundary
-
-TASK-212 validates a MacroForge-owned producer outbox for neutral evidence releases. The accepted trigger is successful canonical release closeout: transactionally durable canonical facts, succeeded pipeline run, dataset release identity, zero failed quality checks, and complete subscription selection. The outbox is producer-owned and consumer-neutral; consumers copy/poll immutable artifacts and validate independently. MacroForge must not write into consumer inboxes, import consumer code, query consumer databases, or encode consumer derivations. Scheduling/event buses remain out of scope until repeated producer-side generation evidence justifies automation.

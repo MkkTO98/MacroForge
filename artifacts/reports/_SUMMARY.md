@@ -131,9 +131,18 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 - `task-209-imf-weo-g20-projections-campaign-report.json`
 - `task-209-imf-weo-g20-projections-postgresql-load-report.json`
 - `task-209-imf-weo-g20-projections-provider-evidence-report.json`
+- `task-216-imf-bop-artifact-checksums.txt`
+- `task-216-imf-bop-extraction-decision.json`
+- `task-216-imf-bop-frozen-pre-execution-prediction.json`
+- `task-216-imf-bop-identity-artifact-governance-closeout.json`
+- `task-216-imf-bop-load.sql`
+- `task-216-imf-bop-postgresql-load-report.json`
+- `task-216-imf-bop-prediction-evaluation.json`
+- `task-216-imf-bop-provider-structure-and-evidence-report.json`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- TASK-216 reports document IMF BOP annual current-account Phase 2 evidence: provider-structure investigation, frozen candidate universe/prediction, raw/processed checksum reconciliation, PostgreSQL load/idempotence/later-snapshot coexistence, prediction evaluation, and IMF-BOP extraction decision.
 - TASK-209 reports document IMF WEO April 2026 release/vintage evidence, Saudi Arabia LUR explicit-missing semantics, final 342-fact PostgreSQL accounting, checksum reconciliation, and architecture verdict that the existing revision-aware scalar substrate is sufficient.
 - `task-206-*.json` reports document corrected TASK-206 provider-empty audit findings, ASPIRE blank-`countryiso3code` territory fallback correction, PostgreSQL same-run replacement/idempotence, provider classifications, wider ASPIRE/source-29 impact, repository verification, and Phase 1 transition-gate evidence.
 - `R-20260710-task-205-*` reports document agriculture/rural-development campaign selection, repository expansion, PostgreSQL growth, capability progress, provider classifications, repository verification, and architecture observation.
@@ -241,3 +250,5 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 - `R-20260708-task-174-domain-bulk-expansion.md` and `task-174-domain-bulk-*.json` record TASK-174 inventory, preflight, classification, load, exclusion, coverage, and final PostgreSQL growth evidence.
 - `R-20260708-architectural-scaling-validation-campaign.md` plus TASK-175 exclusion/readiness/lessons reports record archived-evidence scaling validation and classify TASK-174 exclusions without live provider retry.
 - TASK-176 reports (`task-176-final-campaign-report.json`, `task-176-idempotence-validation-report.json`, and `R-20260708-task-176-*`) record WDI repository growth/historical scaling: 86 indicators, 648,475 curated facts, passing rerun/idempotence validation, and architecture stress observations.
+- 2026-07-11: TASK-210 added MacroForge-owned neutral evidence-release export compatibility report/exporter/tests for bounded WDI trade-share scope.
+- `neutral-evidence-closeout-outbox-v1-20260711/` — report and verification evidence for closeout-triggered neutral evidence outbox v1.

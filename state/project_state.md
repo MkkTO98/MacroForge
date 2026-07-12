@@ -2,39 +2,40 @@
 
 ## Current status
 
-TASK-215 BIS credit-to-GDP-gap Phase 2 repository expansion is complete and uncommitted. Do not stage, commit, push, clean, restore, delete, or move files without explicit authorization.
+TASK-216 IMF BOP Phase 2 current-account repository expansion is complete, verified, and uncommitted. Focused verification, full suite, JSON/checksum validation, PostgreSQL verification, same-run idempotence, later-snapshot coexistence, and governance closeout are complete.
 
-TASK-214 BIS WS_DSR debt-service-ratio expansion was previously published to `origin/main` in commit `7f190e2d534333914c2cb40f4600aae270173ed5`.
+Do not stage, commit, push, clean, restore, delete, or move files without explicit authorization.
 
 ## Recent completed work
 
-- TASK-215 selected BIS quarterly credit-to-GDP gaps (`BIS:WS_CREDIT_GAP`) for private non-financial sector credit from all lenders because it fills the leverage-cycle/excessive-credit monitoring gap and pressure-tests BIS five-dimension series keys without ingesting unrelated credit measures.
-- Provider structure investigation found dataflow `WS_CREDIT_GAP` v1.0 with series-key dimensions `FREQ`, `BORROWERS_CTY`, `TC_BORROWERS`, `TC_LENDERS`, `CG_DTYPE`; `BORROWERS_CTY` is the territory dimension, `TC_BORROWERS` and `TC_LENDERS` are sector dimensions, and `CG_DTYPE` is the credit-gap measure dimension.
-- Frozen candidate universe: 43 accepted territories, 43 exact provider-advertised series, selected dimensions `Q/P/A/C`, 64 quarters from 2010-Q1 through 2025-Q4, 2,752 candidate cells, and `XM` Euro area aggregate excluded.
-- Preserved request URL/parameters, raw SDMX XML, raw HTTP/acquisition metadata, SDMX header/dataset metadata, normalized artifact, manifest, reports, checksums, and load SQL.
-- Loaded canonical PostgreSQL facts through source `BIS_PUBLIC_SDMX_API`, provider dataset `BIS:WS_CREDIT_GAP`, snapshot/as-of key `bis-ws-credit-gap-snapshot-prepared-20260712t162752z`, run key `task-215-bis-credit-gap-phase2`.
-- Snapshot/as-of identity is derived from BIS SDMX `Prepared` timestamp and is not an official BIS publication release.
-- Canonical credit-gap indicator identity removes only territory and preserves borrower sector, lender sector, measure, unit, and frequency:
-  - `BIS:WS_CREDIT_GAP:CREDIT_TO_GDP_GAP_ACTUAL_MINUS_TREND:PRIVATE_NONFINANCIAL_SECTOR:ALL_SECTORS:PERCENTAGE_POINTS:Q`
+- TASK-216 selected IMF BOP annual current-account monitoring rather than another BIS campaign or small proof because it fills a first-order external-sector capability gap and complements existing BOP financial-account/IIP/reserves/WDI external evidence.
+- Provider structure investigation found IMF external SDMX 2.1 BOP dataflow `BOP` v21.0.0 / DSD v24.0.0 with selected series-key dimensions `COUNTRY`, `BOP_ACCOUNTING_ENTRY`, `INDICATOR`, `UNIT`, `FREQUENCY`. Territory is `COUNTRY`; material non-territory dimensions are preserved in indicator identity/attributes.
+- Frozen candidate universe: 214 accepted canonical countries, 5 current-account components (`CAB`, `G`, `S`, `IN1`, `IN2`), annual frequency, USD scale 6, 2010-2024, 1,070 exact provider-advertised series, 16,050 expected cells.
+- Preserved request URLs/parameters, metadata response, raw SDMX XML chunks, raw HTTP/acquisition metadata, response headers, timestamps, checksums, normalized artifact, manifest, reports, and load SQL.
+- Loaded canonical PostgreSQL facts through source `IMF_SDMX_BOP_API_V1`, provider dataset `IMF:BOP`, as-of key `imf-bop-asof-20260711t231424302015100z`, run key `task-216-imf-bop-current-account-phase2`.
+- Actual result: 14,475 loaded facts = 13,600 provider-valued + 875 explicit-missing; 105 whole-series absences; 0 acquisition errors; 0 incompatible series.
+
+TASK-215 BIS credit-to-GDP-gap Phase 2 was previously completed and remains uncommitted; do not mix TASK-215 publication boundary with TASK-216 unless explicitly authorized.
 
 ## Verification snapshot
 
-- Loaded facts: 2,752; provider-valued: 2,752; explicit-missing: 0.
-- PostgreSQL verification: staging/facts 2,752/2,752; observed/missing 2,752/0; indicators/territories/periods 1/43/64; failed quality 0; duplicate canonical-key groups 0.
-- Same-run idempotence rerun: zero repository growth; repository total fact count after TASK-215: 10,605,067.
-- Net fact growth relative to completed TASK-214 baseline: +2,752 facts.
-- Later-snapshot coexistence simulation inserted one hypothetical later snapshot in a transaction and rolled back.
-- Focused TASK-215 + BIS/TASK-213/TASK-214 compatibility tests: `32 passed in 0.57s`.
-- Artifact/checksum reconciliation: `checksum_entries=10 checksum_failures=[]`.
-- Final full suite/governance verification is recorded in `context/latest_handoff.md`.
-- Prediction-quality verdict: Accurate.
+TASK-216 completed verification:
+
+- Focused TASK-216 + existing IMF BOP compatibility tests after closeout regressions: `32 passed in 4.19s`.
+- Full suite: `838 passed in 828.83s (0:13:48)`.
+- JSON/checksum reconciliation: `json_validated=6 checksum_entries=29 checksum_mismatches=0`.
+- PostgreSQL verification: source/release/staging/facts/observed/missing/indicators/territories/periods/failed-quality/duplicate-groups/BOP-as-of-coexistence-rows = `1|1|14475|14475|13600|875|5|193|15|0|0|2`.
+- Same-run idempotence: second load growth 0 and facts remained 14,475.
+- Later-snapshot coexistence: simulated release key `imf-bop-asof-simulated-later-snapshot-task216` coexists with active BOP as-of key.
+- Prediction-quality verdict: Mostly Accurate.
+- Final context health, coherence, architecture-reality audit, and `git diff --check`: clean with 0 warnings.
 
 ## Architecture verdict
 
-Reaffirmed. The existing scalar substrate preserved BIS credit-gap semantics because each complete provider series key can become a stable source-scoped scalar indicator after removing only territory. `TC_BORROWERS`, `TC_LENDERS`, `CG_DTYPE`, unit, and frequency participate in indicator identity; provider-native dimensions and attributes are preserved in attributes/source payload.
+TASK-216 reaffirms current architecture. The existing scalar/revision-aware substrate preserved BOP as-of/release evidence, source/dataset/run separation, unit semantics, annual periods, explicit-missing facts, lineage/quality evidence, duplicate prevention, and idempotent loads. No canonical ambiguity, repository-class mismatch, release/vintage loss, provider-semantics loss, scaling failure, or repeated operational friction justified schema redesign.
 
-TASK-215 extracted a narrow BIS-specific helper substrate in `src/macroforge/bis_sdmx.py` based on repeated evidence across TASK-057, TASK-213, TASK-214, and TASK-215. The extraction is intentionally limited to stable BIS evidence-handling responsibilities and does not create a universal SDMX adapter, generic provider framework, universal campaign engine, generic financial ontology, or speculative multidimensional schema.
+No IMF-BOP shared substrate was extracted. Revisit only after another BOP/IIP relationship campaign confirms stable, source-specific responsibilities without freezing earlier campaign-specific identity drift.
 
 ## Guardrails
 
-TASK-208 BLS, TASK-209/TASK-211 WEO, completed TASK-213/TASK-214 published files, FRED-detour files, and unrelated working-tree changes must not be reopened or included except narrowly required shared BIS compatibility work. Do not begin another ingestion campaign. Do not stage, commit, clean, restore, delete, or push without explicit authorization.
+Do not reopen BIS, BLS, WEO, FRED-detour files, completed campaigns, trade, companies, or financial assets. Do not stage, commit, clean, restore, delete, move, or push without explicit authorization. Preserve unrelated working-tree changes.

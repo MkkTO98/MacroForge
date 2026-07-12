@@ -1,0 +1,33 @@
+{
+  "counts": {
+    "dataset_release_rows": 1,
+    "fact_rows": 14475,
+    "failed_quality_checks": 0,
+    "missing_facts": 875,
+    "observed_facts": 13600,
+    "staging_rows": 14475
+  },
+  "current_reload_after_source_fact_count": 14475,
+  "current_reload_before_source_fact_count": 14475,
+  "duplicate_canonical_key_groups": 0,
+  "idempotence_note": "same run key deletes/reloads run-scoped facts before canonical upsert; same-release identity preserved by source/dataset/release natural key",
+  "initial_load_evidence": "First successful TASK-216 load returned growth 14475 with staging/fact/observed/missing = 14475/14475/13600/875; subsequent same-run idempotence reload returned growth 0.",
+  "initial_load_postgresql_growth": 14475,
+  "later_snapshot_coexistence": {
+    "bop_dataset_release_rows_for_source": 2,
+    "simulated_release_key": "imf-bop-asof-simulated-later-snapshot-task216",
+    "verified": true
+  },
+  "postgresql_growth": 14475,
+  "provider_dataset_code": "IMF:BOP",
+  "release_key": "imf-bop-asof-20260711t231424302015100z",
+  "run_key": "task-216-imf-bop-current-account-phase2",
+  "same_run_idempotence": {
+    "fact_rows_after_second_load": 14475,
+    "second_load_postgresql_growth": 0,
+    "verified": true
+  },
+  "source_code": "IMF_SDMX_BOP_API_V1",
+  "status": "succeeded",
+  "task": "TASK-216"
+}

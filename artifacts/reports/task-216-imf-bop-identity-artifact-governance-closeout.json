@@ -1,0 +1,590 @@
+{
+  "architecture_compaction": "state/architecture.md compacted below context-health warning threshold; detailed campaign narration remains in task/report artifacts.",
+  "artifact_scale": {
+    "active_artifacts": [
+      {
+        "bytes": 1307,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-metadata.json",
+        "role": "active raw evidence",
+        "sha256": "1d152884504b15afd79fbc8f9165b36c41cc0931578659fce7c1da8edfc294ff"
+      },
+      {
+        "bytes": 3957327,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-metadata.xml",
+        "role": "active raw evidence",
+        "sha256": "3bc77d1af3ffa156aad7957c59a1f7f7d2ff3435f4e16ebefa63bb54d4cf9668"
+      },
+      {
+        "bytes": 27007,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-raw-values-manifest.json",
+        "role": "active raw evidence",
+        "sha256": "99ee0050503490d1e7d73b3d747dbc4ef70fdbe04a065abe06ab0cabccb88e57"
+      },
+      {
+        "bytes": 2289,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-01.json",
+        "role": "active raw evidence",
+        "sha256": "ff0db811056bc04cffe36153c86243ff67580f2441280b86ea0261d4f7ba6ae2"
+      },
+      {
+        "bytes": 272420,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-01.xml",
+        "role": "active raw evidence",
+        "sha256": "828801dcaeddec1666daeaad93c89575e11a7294727d7d323698d01ed266d2bb"
+      },
+      {
+        "bytes": 2289,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-02.json",
+        "role": "active raw evidence",
+        "sha256": "75a832e207056410ba9026baf7369258b0c658768b3db4d9caf385be8c6f4250"
+      },
+      {
+        "bytes": 265208,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-02.xml",
+        "role": "active raw evidence",
+        "sha256": "80cc4dc6878d902220c88ce158c1a00f789357c1baba88df1540d809b4c250bb"
+      },
+      {
+        "bytes": 2289,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-03.json",
+        "role": "active raw evidence",
+        "sha256": "218e7ed758b32701788e571b190fd1f44a88226aff1795e0399e3cc37bb3ca83"
+      },
+      {
+        "bytes": 245254,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-03.xml",
+        "role": "active raw evidence",
+        "sha256": "d7110ec340d0da7c732320355c89e5206a2a6b11025bd30a7a466d4052ee3e2c"
+      },
+      {
+        "bytes": 2289,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-04.json",
+        "role": "active raw evidence",
+        "sha256": "28fb929ea27b42100ba3a2648d391bb54e91bc18a775ef4d727a4d27145b33e5"
+      },
+      {
+        "bytes": 258115,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-04.xml",
+        "role": "active raw evidence",
+        "sha256": "839e350c2c660bfaad68823aceccde4e9ac5ae5f5d497afad4ef5e3a019565ee"
+      },
+      {
+        "bytes": 2289,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-05.json",
+        "role": "active raw evidence",
+        "sha256": "58ee3af597fe89a4e3cc72b4b1a705a926ee079d7c3c7b16953f3ca4e86526b1"
+      },
+      {
+        "bytes": 268049,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-05.xml",
+        "role": "active raw evidence",
+        "sha256": "c01143f2deb22c6211768eb6657554bc107e25e367fa23b7b4a7273e2f3da75c"
+      },
+      {
+        "bytes": 2289,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-06.json",
+        "role": "active raw evidence",
+        "sha256": "776a7c6bcc67affb1faaeb2a441adc011a043773143649387752fc8b762f6323"
+      },
+      {
+        "bytes": 283316,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-06.xml",
+        "role": "active raw evidence",
+        "sha256": "543148fd1df9dbdb4d8f7f517c8c4b10251232ae02723e6a0487feb57bcaf95c"
+      },
+      {
+        "bytes": 2289,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-07.json",
+        "role": "active raw evidence",
+        "sha256": "ced3e06bf014f915466f6149acd6ca55b29c8b70f0c92a9a4a8ed938d54a88b2"
+      },
+      {
+        "bytes": 253926,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-07.xml",
+        "role": "active raw evidence",
+        "sha256": "49f98a3e97aa48216451f2efb0fd38bfa2a8e17f696dbc3ba328b57fefdd1682"
+      },
+      {
+        "bytes": 2289,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-08.json",
+        "role": "active raw evidence",
+        "sha256": "cc03c7eea4d655c0366fc6e4596e89dc75db54516ff398b4c03cd33798793d20"
+      },
+      {
+        "bytes": 253069,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-08.xml",
+        "role": "active raw evidence",
+        "sha256": "aa51c3f1ae8255e7530667e9cca88e2cb9cbd29c610e3183dd5250d2a36dcc6c"
+      },
+      {
+        "bytes": 1981,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-09.json",
+        "role": "active raw evidence",
+        "sha256": "4a75ab68847419188bcbef7bc32bb954b60ae2a6f07a6bb2b3f53052ea416d0f"
+      },
+      {
+        "bytes": 132918,
+        "git_ignored": true,
+        "git_status": "!! data/raw/task216_imf_bop_phase2_campaign/",
+        "git_tracked": false,
+        "path": "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-09.xml",
+        "role": "active raw evidence",
+        "sha256": "66eee8ba24fe2511d1dc5c36081d66dad51c3866233d3f1c78503e18301e4983"
+      },
+      {
+        "bytes": 529,
+        "git_ignored": false,
+        "git_status": "?? data/processed/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-manifest.json",
+        "git_tracked": false,
+        "path": "data/processed/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-manifest.json",
+        "role": "active processed artifact",
+        "sha256": "57ae31ccba46c7d891f34991a28f76ea4b58af64da4e0ebcf5fe4ede4c7aa925"
+      },
+      {
+        "bytes": 27843926,
+        "git_ignored": false,
+        "git_status": "?? data/processed/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-normalized.json",
+        "git_tracked": false,
+        "path": "data/processed/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-normalized.json",
+        "role": "active processed artifact",
+        "sha256": "76bdad1138c6c5c6f20c3f5435536f044fd6cf2896869733fffdc378b1af6ab5"
+      },
+      {
+        "bytes": 4252,
+        "git_ignored": false,
+        "git_status": "?? artifacts/reports/task-216-imf-bop-artifact-checksums.txt",
+        "git_tracked": false,
+        "path": "artifacts/reports/task-216-imf-bop-artifact-checksums.txt",
+        "role": "task report/checksum/load",
+        "sha256": "479f96182f07b84cf16f24ca3887e826c02012f6f87330ea4864bec55a2fe252"
+      },
+      {
+        "bytes": 1161,
+        "git_ignored": false,
+        "git_status": "?? artifacts/reports/task-216-imf-bop-extraction-decision.json",
+        "git_tracked": false,
+        "path": "artifacts/reports/task-216-imf-bop-extraction-decision.json",
+        "role": "task report/checksum/load",
+        "sha256": "d2708cd9a00a66f6376af6395405c134e18ca67ff6ebefb23c2dd017290a6ede"
+      },
+      {
+        "bytes": 243720,
+        "git_ignored": false,
+        "git_status": "?? artifacts/reports/task-216-imf-bop-frozen-pre-execution-prediction.json",
+        "git_tracked": false,
+        "path": "artifacts/reports/task-216-imf-bop-frozen-pre-execution-prediction.json",
+        "role": "task report/checksum/load",
+        "sha256": "29f4132bbc2a01dbbefa7d1c426ac6a529fd9a37d3ea265dddd3fc1fe46b109a"
+      },
+      {
+        "bytes": 23434,
+        "git_ignored": false,
+        "git_status": "?? artifacts/reports/task-216-imf-bop-identity-artifact-governance-closeout.json",
+        "git_tracked": false,
+        "path": "artifacts/reports/task-216-imf-bop-identity-artifact-governance-closeout.json",
+        "role": "task report/checksum/load",
+        "sha256": "44d12af8186b41ed69808d8b13d950fff67fdad3d5d52823f643ce5347fd22a4"
+      },
+      {
+        "bytes": 17844558,
+        "git_ignored": false,
+        "git_status": "?? artifacts/reports/task-216-imf-bop-load.sql",
+        "git_tracked": false,
+        "path": "artifacts/reports/task-216-imf-bop-load.sql",
+        "role": "task report/checksum/load",
+        "sha256": "f4646d4d3c78205da2102094f75204d3ce3638bb2bb099027bcf8eb02182f417"
+      },
+      {
+        "bytes": 1332,
+        "git_ignored": false,
+        "git_status": "?? artifacts/reports/task-216-imf-bop-postgresql-load-report.json",
+        "git_tracked": false,
+        "path": "artifacts/reports/task-216-imf-bop-postgresql-load-report.json",
+        "role": "task report/checksum/load",
+        "sha256": "d3d0f56f5eea184976f79f012193784e1ec19d51a58f381beff2e89e7f36f819"
+      },
+      {
+        "bytes": 858,
+        "git_ignored": false,
+        "git_status": "?? artifacts/reports/task-216-imf-bop-prediction-evaluation.json",
+        "git_tracked": false,
+        "path": "artifacts/reports/task-216-imf-bop-prediction-evaluation.json",
+        "role": "task report/checksum/load",
+        "sha256": "dead97305b6ed9d5efa668c95d9583974cf9b999d1cf38e2a91eec2d10e1427f"
+      },
+      {
+        "bytes": 13225,
+        "git_ignored": false,
+        "git_status": "?? artifacts/reports/task-216-imf-bop-provider-structure-and-evidence-report.json",
+        "git_tracked": false,
+        "path": "artifacts/reports/task-216-imf-bop-provider-structure-and-evidence-report.json",
+        "role": "task report/checksum/load",
+        "sha256": "fb31966f637dd21884726a10a98cb91eef09d8e54b3f55956ef46baf92cd91e4"
+      }
+    ],
+    "git_hosting_assessment": "largest file is below ordinary GitHub hard limit of 100 MB and below common 50 MB warning threshold; normalized artifact is large (~27.8 MB) but not too large for safe bounded publication, so no partitioning performed.",
+    "largest_individual_file": {
+      "bytes": 27843926,
+      "git_ignored": false,
+      "git_status": "?? data/processed/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-normalized.json",
+      "git_tracked": false,
+      "path": "data/processed/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-normalized.json",
+      "role": "active processed artifact",
+      "sha256": "76bdad1138c6c5c6f20c3f5435536f044fd6cf2896869733fffdc378b1af6ab5"
+    },
+    "normalized_artifact_bytes": 27843926,
+    "proposed_publication_total_bytes": 52363970,
+    "task_report_bytes": 18132540,
+    "total_active_processed_bytes": 27844455,
+    "total_active_raw_bytes": 6238209
+  },
+  "asof_identity_audit": {
+    "coherent_across_chunks": true,
+    "evidence_source": "DataSet UPDATE_DATE attribute in all nine preserved value-chunk XML responses; PUBLICATION_DATE is also preserved and Prepared differs per response.",
+    "later_asof_coexistence": {
+      "bop_dataset_release_rows_for_source": 2,
+      "simulated_release_key": "imf-bop-asof-simulated-later-snapshot-task216",
+      "verified": true
+    },
+    "official_release_semantics": "not proven; treat as provider dataset snapshot/as-of event, not official publication release.",
+    "original_timestamp_string": "2026-07-11T23:14:24.302015100Z",
+    "parsed_utc_timestamp": "2026-07-11T23:14:24.302015100Z",
+    "prepared_strings": [
+      "2026-07-12T18:44:36Z",
+      "2026-07-12T18:44:37Z",
+      "2026-07-12T18:44:38Z",
+      "2026-07-12T18:44:39Z",
+      "2026-07-12T18:44:41Z",
+      "2026-07-12T18:44:42Z",
+      "2026-07-12T18:44:43Z",
+      "2026-07-12T18:44:44Z",
+      "2026-07-12T18:44:46Z"
+    ],
+    "provider_supplied": true,
+    "publication_date_string": "2026-07-11T23:14:24.269092200Z",
+    "release_key": "imf-bop-asof-20260711t231424302015100z",
+    "same_asof_idempotence": {
+      "fact_rows_after_second_load": 14475,
+      "second_load_postgresql_growth": 0,
+      "verified": true
+    },
+    "semantic_meaning": "provider-supplied dataset UPDATE_DATE snapshot/as-of timestamp for returned IMF BOP dataset content; not query-window, campaign, or acquisition timestamp.",
+    "transformation": "remove hyphens, colons, dot, lowercase T/Z, truncate stable token, prefix imf-bop-asof- -> imf-bop-asof-20260711t231424302015100z"
+  },
+  "candidate_reconciliation": {
+    "acquisition_errors": 0,
+    "candidate_cells": 16050,
+    "explicit_missing_facts": 875,
+    "formula_check": "13600 + 875 + 1575 = 16050",
+    "incompatible_series": 0,
+    "loaded_facts": 14475,
+    "provider_valued_facts": 13600,
+    "whole_series_absence_distribution": {
+      "absence_series_count_by_territory": {
+        "ASM": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "CAF": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "CUB": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "ERI": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "GIB": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "GNQ": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "GRL": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "GUM": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "IMN": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "IRN": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "LIE": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "MAF": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "MCO": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "MNP": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "PRI": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "PRK": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "SOM": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "TCD": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "TKM": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "VGB": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ],
+        "VIR": [
+          "CAB",
+          "G",
+          "IN1",
+          "IN2",
+          "S"
+        ]
+      },
+      "territories_with_all_five_series_absent": [
+        "ASM",
+        "CAF",
+        "CUB",
+        "ERI",
+        "GIB",
+        "GNQ",
+        "GRL",
+        "GUM",
+        "IMN",
+        "IRN",
+        "LIE",
+        "MAF",
+        "MCO",
+        "MNP",
+        "PRI",
+        "PRK",
+        "SOM",
+        "TCD",
+        "TKM",
+        "VGB",
+        "VIR"
+      ]
+    },
+    "whole_series_absent_cells": 1575
+  },
+  "generated_at_utc": "2026-07-12T20:08:28+00:00",
+  "no_repo_data_change_note": "audit did not rerun acquisition; final PostgreSQL checks were read-only, and same-run idempotence/later-as-of coexistence were verified from preserved load report plus current DB identities.",
+  "publication_boundary": [
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-metadata.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-metadata.xml",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-raw-values-manifest.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-01.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-01.xml",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-02.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-02.xml",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-03.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-03.xml",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-04.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-04.xml",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-05.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-05.xml",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-06.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-06.xml",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-07.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-07.xml",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-08.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-08.xml",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-09.json",
+    "data/raw/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-values-chunk-09.xml",
+    "data/processed/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-manifest.json",
+    "data/processed/task216_imf_bop_phase2_campaign/active/task-216-imf-bop-normalized.json",
+    "artifacts/reports/task-216-imf-bop-artifact-checksums.txt",
+    "artifacts/reports/task-216-imf-bop-extraction-decision.json",
+    "artifacts/reports/task-216-imf-bop-frozen-pre-execution-prediction.json",
+    "artifacts/reports/task-216-imf-bop-identity-artifact-governance-closeout.json",
+    "artifacts/reports/task-216-imf-bop-load.sql",
+    "artifacts/reports/task-216-imf-bop-postgresql-load-report.json",
+    "artifacts/reports/task-216-imf-bop-prediction-evaluation.json",
+    "artifacts/reports/task-216-imf-bop-provider-structure-and-evidence-report.json",
+    "tools/task216_imf_bop_phase2_campaign.py",
+    "tests/test_task216_imf_bop_phase2_campaign.py",
+    "artifacts/tasks/TASK-216-imf-bop-phase2-current-account-expansion.md",
+    "artifacts/tasks/_SUMMARY.md",
+    "artifacts/reports/_SUMMARY.md",
+    "state/active_goal.md",
+    "state/project_state.md",
+    "state/architecture.md",
+    "context/latest_handoff.md"
+  ],
+  "source_identity_audit": {
+    "base_endpoint": "https://api.imf.org/external/sdmx/2.1/",
+    "data_endpoint_pattern": "https://api.imf.org/external/sdmx/2.1/data/BOP/{countries}.NETCD_T.{indicators}.USD.A?startPeriod=2010&endPeriod=2024",
+    "data_structure": {
+      "agency_id": "IMF.STA",
+      "id": "DSD_BOP",
+      "version": "24.0.0"
+    },
+    "dataflow": {
+      "agency_id": "IMF.STA",
+      "id": "BOP",
+      "name": "Balance of Payments (BOP)",
+      "version": "21.0.0"
+    },
+    "metadata_endpoint": "https://api.imf.org/external/sdmx/2.1/dataflow/all/BOP/latest?references=all",
+    "protocol_version": "IMF external SDMX 2.1 API; metadata content type application/vnd.sdmx.structure+xml;version=2.1; value content type application/xml",
+    "relationship_to_earlier_bop": "Same IMF BOP SDMX provider family as earlier bounded BOP financial-account/G7/operational implementations; TASK-216 uses canonical API-level source identity rather than campaign-specific source identities.",
+    "source_code": "IMF_SDMX_BOP_API_V1",
+    "verdict": "correct canonical source designation for IMF SDMX BOP API/source boundary; represents API/dataset source, not TASK-216 campaign scope, and remains separate from IMF WEO DataMapper and unrelated IMF APIs."
+  },
+  "task": "TASK-216",
+  "verification_latest": {
+    "focused_tests": "32 passed in 4.19s",
+    "full_suite": "838 passed in 828.83s (0:13:48)",
+    "governance": "context health 0 warnings; coherence 0 warnings; architecture-reality-audit 0 warnings; git diff --check clean",
+    "json_checksum": "json_validated=6 checksum_entries=29 checksum_mismatches=0",
+    "postgresql_tuple": "1|1|14475|14475|13600|875|5|193|15|0|0|2"
+  }
+}

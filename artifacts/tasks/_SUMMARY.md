@@ -128,9 +128,11 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-207-phase-2-diverse-source-bls-us-labor-monthly-campaign.md`
 - `TASK-208-phase-2-bls-us-labor-breadth-monthly-campaign.md`
 - `TASK-209-imf-weo-g20-projection-phase2-campaign.md`
+- `TASK-216-imf-bop-phase2-current-account-expansion.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `TASK-216-imf-bop-phase2-current-account-expansion.md` is implemented and pending final full-suite/governance closeout: IMF BOP annual current-account monitoring, 214 accepted countries, 1,070 provider-advertised series, 16,050 candidate cells, 14,475 loaded facts (13,600 provider-valued, 875 explicit-missing), 105 whole-series absences, 0 acquisition errors/incompatible series/duplicates, source `IMF_SDMX_BOP_API_V1`, dataset `IMF:BOP`, as-of `imf-bop-asof-20260711t231424302015100z`.
 - `TASK-209-imf-weo-g20-projection-phase2-campaign.md` is complete: IMF WEO DataMapper API v1 April 2026 G20 projections, 342 facts (339 provider-valued, 3 explicit-missing Saudi Arabia LUR), 0 provider exclusions/acquisition errors, release-aware/idempotent load.
 - `TASK-208-phase-2-bls-us-labor-breadth-monthly-campaign.md` remains deferred until clean BLS regeneration; do not rerun before the scheduled provider-quota window.
 - `TASK-206-operational-repository-expansion-social-protection-all-programs.md` is complete after correction; it preserved invalid original evidence, fixed ASPIRE blank-`countryiso3code` territory fallback, and loaded 30,380 WDI aggregate social-protection all-program facts across 4 compatible annual-scalar indicators after attempting 135 coherent candidates, with 131 `non_annual_periods` exclusions and 0 unresolved acquisition errors. It is evidence that residual bulk WDI Phase 1 has reached a transition gate for the mature annual-scalar path.

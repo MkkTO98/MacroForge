@@ -1,0 +1,24 @@
+{
+  "decision": "No IMF-BOP-specific shared substrate extracted",
+  "evidence_compared": [
+    "TASK-063 bounded BOP financial-account proof",
+    "TASK-136 G7 BOP financial-account deepening",
+    "TASK-158 BOP operational evolution",
+    "TASK-216 current-account Phase 2"
+  ],
+  "explicitly_not_created": [
+    "generic IMF framework",
+    "universal SDMX adapter",
+    "generic accounting ontology",
+    "universal campaign engine",
+    "multidimensional schema"
+  ],
+  "rejected_extraction_reason": "Duplication is visible, but TASK-216 corrected identity semantics and broadened component family without stable enough repeated implementation surface to justify an IMF-BOP substrate now. The earlier bounded implementations used campaign-specific source identities; extracting before reconciling those would freeze drift. Keep source-specific task-local code and revisit after one more BOP/IIP relationship campaign.",
+  "repeated_responsibilities": [
+    "IMF BOP SDMX metadata parsing",
+    "series-key dimension preservation",
+    "BOP accounting-entry and indicator labels",
+    "source/dataset/release identity discipline"
+  ],
+  "task": "TASK-216"
+}
