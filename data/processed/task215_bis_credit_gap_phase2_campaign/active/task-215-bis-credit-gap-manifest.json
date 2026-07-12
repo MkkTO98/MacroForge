@@ -1,0 +1,35 @@
+{
+  "acquisition_errors": [],
+  "candidate_cell_count": 2752,
+  "candidate_measure_count": 1,
+  "candidate_period_count": 64,
+  "candidate_series_count": 43,
+  "candidate_territory_count": 43,
+  "dimensional_compatibility_gate": {
+    "canonical_indicator_count": 1,
+    "rule": "removed only BORROWERS_CTY; remaining dimensions Q/P/A/C define one stable scalar percentage-point credit-gap indicator",
+    "status": "pass"
+  },
+  "explicit_missing_value_count": 0,
+  "incompatible_series": [],
+  "normalized_artifact_path": "data/processed/task215_bis_credit_gap_phase2_campaign/active/task-215-bis-credit-gap-normalized.json",
+  "normalized_sha256": "29169f3f6b59bd074c1acf420ffff32ed04ebff9474eb7fc091cb0f6622b5112",
+  "observed_value_count": 2752,
+  "provider_dataset_code": "BIS:WS_CREDIT_GAP",
+  "provider_exclusions": [],
+  "raw_artifact_path": "data/raw/task215_bis_credit_gap_phase2_campaign/active/task-215-bis-credit-gap-2010q1-2025q4-raw.xml",
+  "raw_sha256": "7fca4147df031b1913a65887c22527408cf8724b6d312da2e59aeb7d5ac6267f",
+  "release_key": "bis-ws-credit-gap-snapshot-prepared-20260712t162752z",
+  "repository_class": "quarterly_scalar_credit_to_gdp_gap_time_series",
+  "row_count": 2752,
+  "run_key": "task-215-bis-credit-gap-phase2",
+  "selection_exclusions": [
+    {
+      "category": "provider_aggregate_selection_exclusion",
+      "provider_code": "XM",
+      "reason": "Euro area aggregate"
+    }
+  ],
+  "source_code": "BIS_PUBLIC_SDMX_API",
+  "task": "TASK-215"
+}

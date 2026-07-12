@@ -1,0 +1,106 @@
+{
+  "acquisition_errors": [],
+  "candidate_cells": 2752,
+  "explicit_missing": 0,
+  "incompatible_series": [],
+  "provider_exclusions": [],
+  "provider_metadata": {
+    "acquired_at_utc": "2026-07-12T16:27:52+00:00",
+    "content_type": null,
+    "dataflow": {
+      "agency_id": "BIS",
+      "id": "WS_CREDIT_GAP",
+      "version": "1.0"
+    },
+    "dataset_action": "Information",
+    "dataset_attributes": {
+      "COLLECTION": "E",
+      "DECIMALS": "1",
+      "UNIT_MEASURE": "770",
+      "UNIT_MULT": "0"
+    },
+    "dataset_id": "850b71ca-e034-4203-994c-31d7e1d029d8",
+    "dimension_at_observation": "TIME_PERIOD",
+    "extracted": "2026-07-12T16:27:52",
+    "http_status": 200,
+    "message_id": "IDREF3478f56b-57df-40a8-a7de-c23e211df9b2",
+    "prepared": "2026-07-12T16:27:52Z",
+    "reporting_begin": "2010-01-01T00:00:00",
+    "reporting_end": "2025-10-01T23:59:59",
+    "sender": "UNKNOWN",
+    "structure_id": "BIS_WS_CREDIT_GAP_1_0",
+    "structure_namespace": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=BIS:WS_CREDIT_GAP(1.0):ObsLevelDim:TIME_PERIOD"
+  },
+  "provider_structure_investigation": {
+    "borrower_sector_dimensions": [
+      "TC_BORROWERS"
+    ],
+    "codelist_labels": {
+      "CG_DTYPE.C": "Credit-to-GDP gaps (actual-trend)",
+      "TC_BORROWERS.P": "Private non-financial sector",
+      "TC_LENDERS.A": "All sectors",
+      "UNIT_MEASURE.770": "Percentage points"
+    },
+    "dataflow_code": "WS_CREDIT_GAP",
+    "dataflow_version": "1.0",
+    "frequency": "Q",
+    "lender_sector_dimensions": [
+      "TC_LENDERS"
+    ],
+    "measure_dimensions": [
+      "CG_DTYPE"
+    ],
+    "provider_aggregate_exclusions": {
+      "XM": "Euro area aggregate"
+    },
+    "provider_area_count": 44,
+    "provider_dataset_code": "BIS:WS_CREDIT_GAP",
+    "provider_series_count_all_dtypes": 132,
+    "provider_temporal_coverage_all": {
+      "end": "2025-Q4",
+      "start": "1947-Q4"
+    },
+    "selected_area_count": 43,
+    "selected_provider_advertised_series_count": 43,
+    "selected_window": {
+      "end": "2025-Q4",
+      "quarters": 64,
+      "start": "2010-Q1"
+    },
+    "series_key_dimensions": [
+      "FREQ",
+      "BORROWERS_CTY",
+      "TC_BORROWERS",
+      "TC_LENDERS",
+      "CG_DTYPE"
+    ],
+    "territory_dimension": "BORROWERS_CTY",
+    "unit_measure_label": "Percentage points",
+    "unit_measure_provider_code": "770",
+    "unit_mult": "0"
+  },
+  "provider_valued_observations": 2752,
+  "raw_evidence": {
+    "raw_artifact_path": "data/raw/task215_bis_credit_gap_phase2_campaign/active/task-215-bis-credit-gap-2010q1-2025q4-raw.xml",
+    "raw_bytes": 233909,
+    "raw_metadata_path": "data/raw/task215_bis_credit_gap_phase2_campaign/active/task-215-bis-credit-gap-2010q1-2025q4-raw-metadata.json",
+    "raw_sha256": "7fca4147df031b1913a65887c22527408cf8724b6d312da2e59aeb7d5ac6267f",
+    "request_parameters": {
+      "dataflow": "WS_CREDIT_GAP",
+      "endPeriod": "2025-Q4",
+      "key": "Q..P.A.C",
+      "startPeriod": "2010-Q1",
+      "version": "1.0"
+    },
+    "source_url": "https://stats.bis.org/api/v2/data/dataflow/BIS/WS_CREDIT_GAP/1.0/Q..P.A.C?startPeriod=2010-Q1&endPeriod=2025-Q4"
+  },
+  "selection_exclusions": [
+    {
+      "category": "provider_aggregate_selection_exclusion",
+      "provider_code": "XM",
+      "reason": "Euro area aggregate"
+    }
+  ],
+  "status": "complete",
+  "task": "TASK-215"
+}

@@ -118,10 +118,10 @@ Maintenance rule: update this atlas only when a completed implementation materia
 
 ### 15. Monetary aggregates, bank credit, household finance, credit quality, and household balance sheets
 
-- Representative implementations: `TASK-072` monetary aggregates, `TASK-073` household debt-service burden, `TASK-081` household credit-quality/delinquency, `TASK-086` bank credit, `TASK-122` household balance-sheet stocks, `TASK-214` BIS cross-country debt-service ratios by borrower sector.
-- Observational structure represented: scalar monetary stock, household credit burden, delinquency-rate, commercial-bank loan-stock, household/nonprofit balance-sheet stock, and quarterly BIS country-sector debt-service-ratio observations with source-specific borrower-sector, unit, frequency, provider-series-key, observation-status, and snapshot/as-of metadata.
-- Current maturity: Operationally Useful for cross-country BIS debt-service-ratio monitoring; Established for earlier bounded monetary/household-finance evidence.
-- Important limitations: no broad household-finance framework, sector-balance-sheet framework, wealth model, leverage analytics, consumer-credit ontology, banking-risk model, lender registry, loan hierarchy, monetary framework, or general credit-cycle analytics. TASK-214 deliberately avoids a general BIS/SDMX substrate and covers DSR only, not credit-to-GDP gaps or full leverage decomposition.
+- Representative implementations: `TASK-072` monetary aggregates, `TASK-073` household debt-service burden, `TASK-081` household credit-quality/delinquency, `TASK-086` bank credit, `TASK-122` household balance-sheet stocks, `TASK-214` BIS cross-country debt-service ratios by borrower sector, `TASK-215` BIS cross-country credit-to-GDP gaps.
+- Observational structure represented: scalar monetary stock, household credit burden, delinquency-rate, commercial-bank loan-stock, household/nonprofit balance-sheet stock, quarterly BIS country-sector debt-service-ratio observations, and quarterly BIS country credit-to-GDP-gap observations with source-specific borrower-sector/lender-sector/measure, unit, frequency, provider-series-key, observation-status, and snapshot/as-of metadata.
+- Current maturity: Operationally Useful for cross-country BIS debt-service-ratio and credit-gap monitoring; Established for earlier bounded monetary/household-finance evidence.
+- Important limitations: no broad household-finance framework, sector-balance-sheet framework, wealth model, leverage analytics, consumer-credit ontology, banking-risk model, lender registry, loan hierarchy, monetary framework, or general credit-cycle analytics. TASK-215 adds a narrow BIS-specific helper substrate for repeated BIS evidence-handling invariants but not a universal SDMX adapter, general provider framework, or multidimensional credit ontology.
 
 ### 16. Housing construction and housing-price observations
 

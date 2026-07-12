@@ -1,0 +1,17 @@
+{
+  "architecture_to_reality_verdict": "Reaffirmed: credit-gap CG_DTYPE=C series are scalar percentage-point observations after removing only territory and preserving P/A/C/unit/frequency semantics.",
+  "bis_substrate_extraction_report": "artifacts/reports/task-215-bis-substrate-extraction-decision.json",
+  "implementation_friction_error": "Moderate and expected: the fourth BIS campaign justified narrow BIS helper extraction but no scalar contradiction appeared.",
+  "prediction_quality_verdict": "Accurate",
+  "provider_behavior_surprises": "None material if all 43 selected provider-advertised C series loaded with zero acquisition errors.",
+  "scale_prediction_error": {
+    "actual_candidate_cells": 2752,
+    "actual_explicit_missing": 0,
+    "actual_provider_valued": 2752,
+    "predicted_candidate_cells": 2752,
+    "predicted_explicit_missing": 0,
+    "predicted_provider_valued": 2752
+  },
+  "task": "TASK-215",
+  "territory_or_unit_surprises": "None material: 43 selected territories mapped, XM excluded as Euro area aggregate, UNIT_MEASURE=770 percentage points stayed stable."
+}

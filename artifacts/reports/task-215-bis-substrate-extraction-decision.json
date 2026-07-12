@@ -1,0 +1,28 @@
+{
+  "decision": "Extracted narrow BIS-specific substrate helpers",
+  "evidence_tasks": [
+    "TASK-057",
+    "TASK-213",
+    "TASK-214",
+    "TASK-215"
+  ],
+  "explicitly_not_implemented": [
+    "universal SDMX adapter",
+    "generic provider framework",
+    "universal campaign engine",
+    "generic financial ontology",
+    "speculative multidimensional schema"
+  ],
+  "implemented_boundary": "src/macroforge/bis_sdmx.py",
+  "reason": "Four BIS campaigns now repeat source identity, Prepared snapshot identity, response metadata, attempt publication, and territory-removal indicator logic. Keeping these task-local would risk drift like TASK-213's earlier country-encoded identity and HK exclusion mistake. The extracted module remains BIS-specific and does not own dataflow-specific semantics.",
+  "stable_contracts": [
+    "canonical BIS public API source constants",
+    "Prepared-derived acquired-response snapshot key that excludes query windows and campaign scope",
+    "SDMX Header/DataSet response metadata extraction",
+    "attempt-specific fetch evidence plus atomic active raw promotion",
+    "quarterly period helper",
+    "series-key helper that removes only the territory dimension for scalar indicator compatibility checks",
+    "shared hashing/path helpers for artifact manifests and attribute identity"
+  ],
+  "task": "TASK-215"
+}

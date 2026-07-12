@@ -1,0 +1,10 @@
+0def21a6a4360ab78287cb5b75af5ff7aa736d3ec5e8f846d123f87df5d80afe  artifacts/reports/task-215-bis-credit-gap-frozen-pre-execution-prediction.json
+c8465326c9fcd4f59d5d12cf094431ff99c7a158be1a75356110af42011c6e2a  artifacts/reports/task-215-bis-credit-gap-load.sql
+7f296fdc7eda6f165e885b00a160691cf8d4df8c00995d1378bff04fd421a71f  artifacts/reports/task-215-bis-credit-gap-postgresql-load-report.json
+5580814c2c364962dc1499a972efa2653baf9ba6c75bb6487ec04bbaa6d5d320  artifacts/reports/task-215-bis-credit-gap-prediction-evaluation.json
+c34376f62ebd078fdaf290a5f357d4cbce5c01178e96d8a9f4252f94cb257a6e  artifacts/reports/task-215-bis-credit-gap-provider-structure-and-evidence-report.json
+13607caf64596e9b897226aa2b9fd5149c70c712ca732ff0d1308ef9da770790  artifacts/reports/task-215-bis-substrate-extraction-decision.json
+3211af177e6aac1e99312768e1784380a694bf3d5eeaa44080354251bb29d87e  data/processed/task215_bis_credit_gap_phase2_campaign/active/task-215-bis-credit-gap-manifest.json
+29169f3f6b59bd074c1acf420ffff32ed04ebff9474eb7fc091cb0f6622b5112  data/processed/task215_bis_credit_gap_phase2_campaign/active/task-215-bis-credit-gap-normalized.json
+3091770344180f181878880233676cdf556b0caea48c339059f2aa655811c96d  data/raw/task215_bis_credit_gap_phase2_campaign/active/task-215-bis-credit-gap-2010q1-2025q4-raw-metadata.json
+7fca4147df031b1913a65887c22527408cf8724b6d312da2e59aeb7d5ac6267f  data/raw/task215_bis_credit_gap_phase2_campaign/active/task-215-bis-credit-gap-2010q1-2025q4-raw.xml

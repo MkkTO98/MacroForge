@@ -1,0 +1,28 @@
+{
+  "acquired_at_utc": "2026-07-12T16:27:52+00:00",
+  "attempt_id": "attempt-20260712T162752Z",
+  "content_type": null,
+  "headers": {
+    "cache-control": "private",
+    "connection": "close",
+    "content-disposition": "inline; filename=\"data.xml\"",
+    "content-type": "application/xml;charset=UTF-8",
+    "date": "Sun, 12 Jul 2026 16:27:53 GMT",
+    "etag": "c5cb0022-df4c-4237-b3ec-670809450528",
+    "set-cookie": "c7433a849bcd78486014ee1ceaae0775=b1f8a3584f3d1e3864b21ea82a069114; path=/; HttpOnly; Secure; SameSite=None",
+    "transfer-encoding": "chunked"
+  },
+  "http_status": 200,
+  "raw_bytes": 233909,
+  "raw_sha256": "7fca4147df031b1913a65887c22527408cf8724b6d312da2e59aeb7d5ac6267f",
+  "request_parameters": {
+    "dataflow": "WS_CREDIT_GAP",
+    "endPeriod": "2025-Q4",
+    "key": "Q..P.A.C",
+    "startPeriod": "2010-Q1",
+    "version": "1.0"
+  },
+  "source_url": "https://stats.bis.org/api/v2/data/dataflow/BIS/WS_CREDIT_GAP/1.0/Q..P.A.C?startPeriod=2010-Q1&endPeriod=2025-Q4",
+  "status": "acquired",
+  "task": "TASK-215"
+}
