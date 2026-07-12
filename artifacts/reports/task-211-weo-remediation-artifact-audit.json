@@ -1,0 +1,161 @@
+{
+  "duplicate_candidate_keys": 0,
+  "manifest_bytes": 540588,
+  "manifest_path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-manifest.json",
+  "max_partition_bytes": 12002505,
+  "partition_count": 12,
+  "partition_totals": {
+    "explicit_missing_fact_count": 535,
+    "observed_provider_value_count": 30539,
+    "row_count": 31074
+  },
+  "partitions": [
+    {
+      "bytes": 10396323,
+      "missing": 45,
+      "observed": 2657,
+      "partition": "BCA",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA.json",
+      "period_count": 14,
+      "rows": 2702,
+      "sha256": "298b9df8e0dd40dcbafd6bd355d24ec86129800e9f34d6b815310f4cec98d6b5",
+      "territory_count": 193
+    },
+    {
+      "bytes": 10468910,
+      "missing": 42,
+      "observed": 2660,
+      "partition": "BCA_NGDPD",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA_NGDPD.json",
+      "period_count": 14,
+      "rows": 2702,
+      "sha256": "3e6d48828c2445d476879f4df9bae6f7ef6a7869850e9a666e569cb31f3c1260",
+      "territory_count": 193
+    },
+    {
+      "bytes": 11571284,
+      "missing": 44,
+      "observed": 2615,
+      "partition": "GGXCNL_NGDP",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXCNL_NGDP.json",
+      "period_count": 14,
+      "rows": 2659,
+      "sha256": "b7d20e7b658a0902d0269f304d97a65bba036bed0ab917317caf4cc91105f3e4",
+      "territory_count": 194
+    },
+    {
+      "bytes": 11099353,
+      "missing": 44,
+      "observed": 2573,
+      "partition": "GGXWDG_NGDP",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXWDG_NGDP.json",
+      "period_count": 14,
+      "rows": 2617,
+      "sha256": "6c2cb4b90780567b2c2b0724bd96104475b2f7ee3b57399660d2c04e2c3d51c7",
+      "territory_count": 191
+    },
+    {
+      "bytes": 9698995,
+      "missing": 36,
+      "observed": 2680,
+      "partition": "LP",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LP.json",
+      "period_count": 14,
+      "rows": 2716,
+      "sha256": "88c488f34332123a83ebfc6da5dd48329243732b51126ca367a3e300f923b787",
+      "territory_count": 194
+    },
+    {
+      "bytes": 5786914,
+      "missing": 100,
+      "observed": 1453,
+      "partition": "LUR",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LUR.json",
+      "period_count": 14,
+      "rows": 1553,
+      "sha256": "68c7f0949b9c8b74bb94fb95059a08f1ae5ccdff4f515ab32d923e93dd5a9b8a",
+      "territory_count": 115
+    },
+    {
+      "bytes": 10282347,
+      "missing": 39,
+      "observed": 2620,
+      "partition": "NGDPD",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPD.json",
+      "period_count": 14,
+      "rows": 2659,
+      "sha256": "3a907248daaa5442710229b4240901a6255933aff62b45fae51de429b46f774d",
+      "territory_count": 194
+    },
+    {
+      "bytes": 10744231,
+      "missing": 39,
+      "observed": 2677,
+      "partition": "NGDPDPC",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPDPC.json",
+      "period_count": 14,
+      "rows": 2716,
+      "sha256": "7312b6ec693d27eea9b11789856732c6d0fd84b803facbe1d89de5cb1cc18d09",
+      "territory_count": 194
+    },
+    {
+      "bytes": 10359110,
+      "missing": 36,
+      "observed": 2623,
+      "partition": "NGDP_RPCH",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDP_RPCH.json",
+      "period_count": 14,
+      "rows": 2659,
+      "sha256": "541001fa5d5cf3e3fc120e1577e031e938b0c76b859af978db6fdb69fac72ea0",
+      "territory_count": 194
+    },
+    {
+      "bytes": 10369895,
+      "missing": 38,
+      "observed": 2621,
+      "partition": "PCPIPCH",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PCPIPCH.json",
+      "period_count": 14,
+      "rows": 2659,
+      "sha256": "7860a8c4a61f0ab9f4b13e35515e94f799a8672da61ec9be444329fee68493d8",
+      "territory_count": 194
+    },
+    {
+      "bytes": 11754888,
+      "missing": 36,
+      "observed": 2680,
+      "partition": "PPPGDP",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPGDP.json",
+      "period_count": 14,
+      "rows": 2716,
+      "sha256": "3d9dd23f5d6b0694d35581b59e66bcc73371f0b4360fae7158a90333a86573b0",
+      "territory_count": 194
+    },
+    {
+      "bytes": 12002505,
+      "missing": 36,
+      "observed": 2680,
+      "partition": "PPPPC",
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPPC.json",
+      "period_count": 14,
+      "rows": 2716,
+      "sha256": "78fb940cc5d060f3dc1e7617f86d946677b838a62499409ae58130098f5e4e3c",
+      "territory_count": 194
+    }
+  ],
+  "raw_evidence": [
+    {
+      "bytes": 32393261,
+      "gitignored": true,
+      "path": "data/raw/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-raw.json",
+      "sha256": "3672b28bf4d92b941de90269e8ea50b737345d7489b506402a062afaa63d1f33"
+    },
+    {
+      "bytes": 1580394,
+      "gitignored": false,
+      "path": "data/raw/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-2026-2028.json",
+      "sha256": "d9817f3fbf6cbaf3f58caaf438e20f0077c4cd1785db9505e49791925eebec5c"
+    }
+  ],
+  "rows_loaded_from_partitions": 31074
+}

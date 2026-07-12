@@ -1,0 +1,7 @@
+9825fa38d7fe165ba84c091e09b49180ef508c84665b8d592c4228643e535c3a  artifacts/reports/task-211-imf-weo-broad-macro-frozen-pre-execution-prediction.json
+3672b28bf4d92b941de90269e8ea50b737345d7489b506402a062afaa63d1f33  data/raw/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-raw.json
+dedb2d30952de9de26383562dd8d92c62319c489bdf5a5922387c802e1bfbdcf  data/processed/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-manifest.json
+5179df5f15a57fd9e2a117a95ce412e68f29afb47c29844df4c2083e947a0189  artifacts/reports/task-211-imf-weo-broad-macro-provider-evidence-report.json
+b832a9f4beb99eb79ba3824a69ba34c342790bb0ffb288af6a4171e8e90c48a8  artifacts/reports/task-211-imf-weo-broad-macro-campaign-report.json
+2c82d02a7bfe42595e3218cd53bc8a5cc5f063e372c6b5d60c658f519d4aa69a  artifacts/reports/task-211-imf-weo-broad-macro-postgresql-load-report.json
+0957126aaff16c40dc0c76659899ac101555cec77ef0c833d2baf68f318911b5  artifacts/reports/task-211-imf-weo-broad-macro-prediction-evaluation.json

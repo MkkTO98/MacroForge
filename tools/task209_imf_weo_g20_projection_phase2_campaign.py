@@ -11,14 +11,15 @@ from pathlib import Path
 from typing import Any
 
 from macroforge.db_helpers import jsonb_literal, run_psql_file, sql_literal
+from macroforge import imf_weo_datamapper as weo
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 TASK_ID = "TASK-209"
 SLUG = "task209_imf_weo_g20_projection_phase2_campaign"
-SOURCE_CODE = "IMF_WEO_DATAMAPPER_API_V1"
-SOURCE_NAME = "IMF WEO DataMapper API v1"
-SOURCE_HOME_URL = "https://www.imf.org/en/Publications/WEO"
-PROVIDER_DATASET_CODE = "IMF:WEO:DATAMAPPER:PROJECTIONS"
+SOURCE_CODE = weo.SOURCE_CODE
+SOURCE_NAME = weo.SOURCE_NAME
+SOURCE_HOME_URL = weo.SOURCE_HOME_URL
+PROVIDER_DATASET_CODE = weo.PROVIDER_DATASET_CODE
 PIPELINE_NAME = "task209_imf_weo_g20_projection_phase2"
 RUN_KEY_PREFIX = "task-209-imf-weo-g20-projection-phase2"
 LEGACY_RUN_KEYS = ("task-209-imf-weo-g20-projection-phase2",)
@@ -72,40 +73,19 @@ def rel_or_str(path: Path) -> str:
 
 
 
-def slug_text(text: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+slug_text = weo.slug_text
+slug_unit = weo.slug_unit
+decimal_precision = weo.decimal_precision
 
 
 def release_evidence(raw: dict[str, Any]) -> dict[str, Any]:
     indicators = raw.get("metadata", {}).get("indicators", {})
-    sources = sorted({v.get("source") for v in indicators.values() if isinstance(v, dict) and v.get("source")})
-    last_modified = sorted({v.get("last-modified") for v in indicators.values() if isinstance(v, dict) and v.get("last-modified")})
-    api_versions = sorted({str((req.get("payload") or {}).get("api", {}).get("version")) for req in raw.get("requests", []) if (req.get("payload") or {}).get("api", {}).get("version") is not None})
-    release_source = sources[0] if len(sources) == 1 else "unknown-weo-release"
-    release_key = slug_text(release_source) if release_source != "unknown-weo-release" else "unknown-weo-release-" + hashlib.sha256(json.dumps(sources, sort_keys=True).encode()).hexdigest()[:12]
-    return {
-        "provider_release_source": release_source,
-        "release_key": release_key,
-        "provider_publication_date": None,
-        "indicator_last_modified_values": last_modified,
-        "api_identity": {"surface": "IMF DataMapper API", "versions": api_versions or ["1"]},
-        "api_exposes_edition_metadata_directly": bool(sources),
-        "api_exposes_row_level_value_status": False,
-        "acquired_at_utc": raw.get("accessed_at_utc"),
-    }
+    api_payloads = [(req.get("payload") or {}).get("api") for req in raw.get("requests", [])]
+    return weo.release_evidence_from_indicator_meta(indicators, raw.get("accessed_at_utc"), api_payloads)
 
 
 def run_key_for_release(release_key: str) -> str:
-    return f"{RUN_KEY_PREFIX}-{release_key}"
-
-def slug_unit(unit: str) -> str:
-    s = re.sub(r"[^A-Za-z0-9]+", "_", unit.strip().upper()).strip("_")
-    return s or "UNSPECIFIED"
-
-
-def decimal_precision(value: Any) -> int:
-    text = str(value)
-    return len(text.split(".", 1)[1]) if "." in text else 0
+    return weo.run_key_for_release(RUN_KEY_PREFIX, release_key)
 
 
 def fetch_json(url: str) -> dict[str, Any]:
@@ -187,7 +167,7 @@ def normalize(raw: dict[str, Any]) -> dict[str, Any]:
                 value = cvals.get(year)
                 missing_reason = None
                 if value is None:
-                    missing_reason = "year_key_absent_from_otherwise_valid_country_indicator_series" if not year_present else "explicit_null_or_missing_value_in_country_indicator_series"
+                    missing_reason = weo.explicit_missing_reason(year_present, value)
                 attrs = {
                     "source_provider": "IMF WEO",
                     "api_surface": "IMF DataMapper API v1",
@@ -195,18 +175,18 @@ def normalize(raw: dict[str, Any]) -> dict[str, Any]:
                     "projection_family": "macroeconomic_projection",
                     "provider_release_source": release["provider_release_source"],
                     "provider_release_key": release["release_key"],
-                    "value_status": "provider_current_weo_value_status_unspecified",
+                    "value_status": weo.VALUE_STATUS_UNSPECIFIED,
                     "missing_reason": missing_reason,
                     "projection_horizon_year": year,
                     "indicator_group": INDICATOR_GROUP[ind],
                     "indicator_description": meta.get("description", ""),
                     "indicator_last_modified": meta.get("last-modified", ""),
                     "provider_indicator_id": ind,
-                    "canonical_indicator_id": f"IMF_WEO:{ind}",
+                    "canonical_indicator_id": weo.canonical_indicator_id(ind),
                     "indicator_semantics": semantics,
                     "g20_scope": "G20 countries excluding EU aggregate",
                 }
-                attr_hash = hashlib.sha256(json.dumps(attrs, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+                attr_hash = weo.attribute_hash(attrs)
                 rows.append({
                     "indicator_code": ind,
                     "indicator_name": meta.get("label", ind),
@@ -279,7 +259,7 @@ INSERT INTO _task209_rows VALUES
 {vals};
 WITH upsert_source AS (INSERT INTO meta.source (source_code, source_name, source_home_url, license_note) VALUES ({sql_literal(SOURCE_CODE)}, {sql_literal(SOURCE_NAME)}, {sql_literal(SOURCE_HOME_URL)}, 'IMF WEO DataMapper public API evidence') ON CONFLICT (source_code) DO UPDATE SET source_name=EXCLUDED.source_name, source_home_url=EXCLUDED.source_home_url RETURNING source_id), source_row AS (SELECT source_id FROM upsert_source UNION ALL SELECT source_id FROM meta.source WHERE source_code={sql_literal(SOURCE_CODE)} LIMIT 1), upsert_release AS (INSERT INTO meta.dataset_release (source_id, provider_dataset_code, release_key, release_date, source_url, raw_artifact_path, raw_sha256, metadata) SELECT source_id, {sql_literal(PROVIDER_DATASET_CODE)}, {sql_literal(norm["release_identity"]["release_key"])}, NULL, {sql_literal('https://www.imf.org/external/datamapper/api/v1/')}, {sql_literal(raw['raw_artifact_path'])}, {sql_literal(raw['raw_sha256'])}, {jsonb_literal(meta)} FROM source_row ON CONFLICT (source_id, provider_dataset_code, release_key) DO UPDATE SET raw_artifact_path=EXCLUDED.raw_artifact_path, raw_sha256=EXCLUDED.raw_sha256, metadata=EXCLUDED.metadata RETURNING dataset_release_id), release_row AS (SELECT dataset_release_id FROM upsert_release UNION ALL SELECT dr.dataset_release_id FROM meta.dataset_release dr JOIN source_row s USING(source_id) WHERE dr.provider_dataset_code={sql_literal(PROVIDER_DATASET_CODE)} AND dr.release_key={sql_literal(norm["release_identity"]["release_key"])} LIMIT 1), upsert_run AS (INSERT INTO meta.pipeline_run (run_key, source_id, dataset_release_id, pipeline_name, finished_at, status, input_parameters, artifact_manifest) SELECT {sql_literal(norm["run_key"])}, s.source_id, r.dataset_release_id, {sql_literal(PIPELINE_NAME)}, now(), 'succeeded', {jsonb_literal(norm['input_filters'])}, {jsonb_literal({'row_count': norm['row_count'], 'raw_evidence': raw})} FROM source_row s CROSS JOIN release_row r ON CONFLICT (run_key) DO UPDATE SET source_id=EXCLUDED.source_id, dataset_release_id=EXCLUDED.dataset_release_id, finished_at=EXCLUDED.finished_at, status=EXCLUDED.status, input_parameters=EXCLUDED.input_parameters, artifact_manifest=EXCLUDED.artifact_manifest RETURNING pipeline_run_id), run_row AS (SELECT pipeline_run_id FROM upsert_run UNION ALL SELECT pipeline_run_id FROM meta.pipeline_run WHERE run_key={sql_literal(norm["run_key"])} LIMIT 1)
 INSERT INTO staging.task209_imf_weo_g20_projection_observation (pipeline_run_id, source_id, dataset_release_id, territory_code, territory_label, indicator_code, indicator_name, provider_period_code, period_year, value, unit_code, unit_label, decimal_precision, observation_status, attribute_hash, attributes, source_payload)
-SELECT run.pipeline_run_id, s.source_id, rel.dataset_release_id, r.* FROM _task209_rows r CROSS JOIN source_row s CROSS JOIN release_row rel CROSS JOIN run_row run ON CONFLICT (pipeline_run_id, territory_code, indicator_code, provider_period_code) DO UPDATE SET value=EXCLUDED.value, unit_code=EXCLUDED.unit_code, unit_label=EXCLUDED.unit_label, decimal_precision=EXCLUDED.decimal_precision, observation_status=EXCLUDED.observation_status, attribute_hash=EXCLUDED.attribute_hash, attributes=EXCLUDED.attributes, source_payload=EXCLUDED.source_payload;
+SELECT run.pipeline_run_id, s.source_id, rel.dataset_release_id, r.* FROM _task209_rows r CROSS JOIN source_row s CROSS JOIN release_row rel CROSS JOIN run_row run ON CONFLICT (pipeline_run_id, territory_code, indicator_code, provider_period_code) DO UPDATE SET source_id=EXCLUDED.source_id, dataset_release_id=EXCLUDED.dataset_release_id, territory_label=EXCLUDED.territory_label, indicator_name=EXCLUDED.indicator_name, period_year=EXCLUDED.period_year, value=EXCLUDED.value, unit_code=EXCLUDED.unit_code, unit_label=EXCLUDED.unit_label, decimal_precision=EXCLUDED.decimal_precision, observation_status=EXCLUDED.observation_status, attribute_hash=EXCLUDED.attribute_hash, attributes=EXCLUDED.attributes, source_payload=EXCLUDED.source_payload;
 WITH source_row AS (SELECT source_id FROM meta.source WHERE source_code={sql_literal(SOURCE_CODE)}) INSERT INTO curated.dim_indicator (source_id, source_indicator_code, indicator_name, topic) SELECT DISTINCT s.source_id, indicator_code, indicator_name, 'macroeconomic_projections' FROM _task209_rows CROSS JOIN source_row s ON CONFLICT (source_id, source_indicator_code) DO UPDATE SET indicator_name=EXCLUDED.indicator_name, topic=EXCLUDED.topic;
 INSERT INTO curated.dim_territory (territory_type, iso3_code, canonical_territory_code, territory_name, metadata) SELECT DISTINCT 'country', territory_code, territory_code, territory_label, {jsonb_literal({'source': 'IMF WEO TASK-209'})} FROM _task209_rows ON CONFLICT (canonical_territory_code) DO UPDATE SET territory_name=EXCLUDED.territory_name;
 INSERT INTO curated.dim_period (frequency, period_year, period_start_date, period_end_date, period_label) SELECT DISTINCT 'A', period_year, make_date(period_year,1,1), make_date(period_year,12,31), provider_period_code FROM _task209_rows ON CONFLICT (frequency, period_start_date, period_end_date) DO UPDATE SET period_label=EXCLUDED.period_label;

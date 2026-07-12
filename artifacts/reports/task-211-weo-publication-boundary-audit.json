@@ -1,0 +1,266 @@
+{
+  "bounded_publication_paths": [
+    "tools/task209_imf_weo_g20_projection_phase2_campaign.py",
+    "src/macroforge/imf_weo_datamapper.py",
+    "tools/task211_imf_weo_broad_macro_repository_expansion.py",
+    "tests/test_imf_weo_datamapper_substrate.py",
+    "tests/test_task211_imf_weo_broad_macro_repository_expansion.py",
+    "tests/test_task211_weo_dataset_release_cleanup_script.py",
+    "artifacts/tasks/TASK-211-imf-weo-broad-macro-repository-expansion.md",
+    "artifacts/tasks/_SUMMARY.md",
+    "state/active_goal.md",
+    "state/project_state.md",
+    "state/architecture.md",
+    "context/latest_handoff.md",
+    "artifacts/reports/task-211-full-suite.log",
+    "artifacts/reports/task-211-imf-weo-broad-macro-artifact-checksums.txt",
+    "artifacts/reports/task-211-imf-weo-broad-macro-campaign-report.json",
+    "artifacts/reports/task-211-imf-weo-broad-macro-frozen-pre-execution-prediction.json",
+    "artifacts/reports/task-211-imf-weo-broad-macro-postgresql-load-report.json",
+    "artifacts/reports/task-211-imf-weo-broad-macro-prediction-evaluation.json",
+    "artifacts/reports/task-211-imf-weo-broad-macro-provider-evidence-report.json",
+    "artifacts/reports/task-211-publication-boundary-full-suite.log",
+    "artifacts/reports/task-211-remediation-full-suite.log",
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-audit-after-loader.json",
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-audit.json",
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-diagnostic.md",
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-audit.json",
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-summary.json",
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-predelete-audit-after-loader.json",
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-predelete-audit.json",
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-predelete-audit.sql",
+    "artifacts/reports/task-211-weo-dataset-release-cleanup.sql",
+    "artifacts/reports/task-211-weo-remediation-artifact-audit.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA_NGDPD.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXCNL_NGDP.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXWDG_NGDP.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LP.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LUR.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPD.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPDPC.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDP_RPCH.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PCPIPCH.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPGDP.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPPC.json",
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-manifest.json",
+    "data/raw/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-2026-2028.json",
+    "data/raw/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-raw.json"
+  ],
+  "branch": "main",
+  "database_verification": {
+    "canonical_release_count": 1,
+    "canonical_staging_references": 31416,
+    "dataset": "IMF:WEO:DATAMAPPER",
+    "duplicate_canonical_key_groups": 0,
+    "obsolete_release_count": 0,
+    "release": "world-economic-outlook-april-2026",
+    "source": "IMF_WEO_DATAMAPPER_API_V1",
+    "task209": {
+      "facts": 342,
+      "missing": 3,
+      "observed": 339
+    },
+    "task211": {
+      "facts": 31074,
+      "missing": 535,
+      "observed": 30539
+    },
+    "total_repository_facts": 10594305
+  },
+  "excluded_path_violations": [],
+  "head": "0082d007e408db7762413f1fcb29c3f132b16dd3",
+  "head_presence": {
+    "artifacts/reports/task-211-full-suite.log": false,
+    "artifacts/reports/task-211-imf-weo-broad-macro-artifact-checksums.txt": false,
+    "artifacts/reports/task-211-imf-weo-broad-macro-campaign-report.json": false,
+    "artifacts/reports/task-211-imf-weo-broad-macro-frozen-pre-execution-prediction.json": false,
+    "artifacts/reports/task-211-imf-weo-broad-macro-postgresql-load-report.json": false,
+    "artifacts/reports/task-211-imf-weo-broad-macro-prediction-evaluation.json": false,
+    "artifacts/reports/task-211-imf-weo-broad-macro-provider-evidence-report.json": false,
+    "artifacts/reports/task-211-publication-boundary-full-suite.log": false,
+    "artifacts/reports/task-211-remediation-full-suite.log": false,
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-audit-after-loader.json": false,
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-audit.json": false,
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-diagnostic.md": false,
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-audit.json": false,
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-summary.json": false,
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-predelete-audit-after-loader.json": false,
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-predelete-audit.json": false,
+    "artifacts/reports/task-211-weo-dataset-release-cleanup-predelete-audit.sql": false,
+    "artifacts/reports/task-211-weo-dataset-release-cleanup.sql": false,
+    "artifacts/reports/task-211-weo-remediation-artifact-audit.json": false,
+    "artifacts/tasks/TASK-211-imf-weo-broad-macro-repository-expansion.md": false,
+    "artifacts/tasks/_SUMMARY.md": true,
+    "context/latest_handoff.md": true,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA_NGDPD.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXCNL_NGDP.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXWDG_NGDP.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LP.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LUR.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPD.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPDPC.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDP_RPCH.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PCPIPCH.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPGDP.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPPC.json": false,
+    "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-manifest.json": false,
+    "data/raw/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-2026-2028.json": true,
+    "data/raw/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-raw.json": false,
+    "src/macroforge/imf_weo_datamapper.py": false,
+    "state/active_goal.md": true,
+    "state/architecture.md": true,
+    "state/project_state.md": true,
+    "tests/test_imf_weo_datamapper_substrate.py": false,
+    "tests/test_task211_imf_weo_broad_macro_repository_expansion.py": false,
+    "tests/test_task211_weo_dataset_release_cleanup_script.py": false,
+    "tools/task209_imf_weo_g20_projection_phase2_campaign.py": true,
+    "tools/task211_imf_weo_broad_macro_repository_expansion.py": false
+  },
+  "large_files_over_10mb": [
+    {
+      "bytes": 10396323,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA.json"
+    },
+    {
+      "bytes": 10468910,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA_NGDPD.json"
+    },
+    {
+      "bytes": 11571284,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXCNL_NGDP.json"
+    },
+    {
+      "bytes": 11099353,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXWDG_NGDP.json"
+    },
+    {
+      "bytes": 10282347,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPD.json"
+    },
+    {
+      "bytes": 10744231,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPDPC.json"
+    },
+    {
+      "bytes": 10359110,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDP_RPCH.json"
+    },
+    {
+      "bytes": 10369895,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PCPIPCH.json"
+    },
+    {
+      "bytes": 11754888,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPGDP.json"
+    },
+    {
+      "bytes": 12002505,
+      "path": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPPC.json"
+    },
+    {
+      "bytes": 32393261,
+      "path": "data/raw/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-raw.json"
+    }
+  ],
+  "notes": [
+    "TASK-211 raw force-add is bounded evidence preservation, not general raw-storage architecture.",
+    "Excluded .gitignore, TASK-208, TASK-207 FRED-detour, failed WEO attempt dirs, superseded monolith, caches, and unrelated changes."
+  ],
+  "overlap_retrieval": {
+    "max_fact_count": 1,
+    "retrievable_by_release": 342,
+    "same_release_duplicate_cells": 0,
+    "task209_cells": 342
+  },
+  "partition_reconciliation": {
+    "checksum_mismatches": [],
+    "duplicate_candidate_keys": 0,
+    "explicit_missing": 535,
+    "max_partition_bytes": 12002505,
+    "monolith_exists": false,
+    "observed": 30539,
+    "partition_count": 12,
+    "partition_files": [
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA_NGDPD.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXCNL_NGDP.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXWDG_NGDP.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LP.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LUR.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPD.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPDPC.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDP_RPCH.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PCPIPCH.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPGDP.json",
+      "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPPC.json"
+    ],
+    "row_count": 31074
+  },
+  "raw_checksums": {
+    "data/raw/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-2026-2028.json": {
+      "actual": "d9817f3fbf6cbaf3f58caaf438e20f0077c4cd1785db9505e49791925eebec5c",
+      "bytes": 1580394,
+      "expected": "d9817f3fbf6cbaf3f58caaf438e20f0077c4cd1785db9505e49791925eebec5c",
+      "gitignored": false,
+      "match": true,
+      "tracked": true
+    },
+    "data/raw/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-raw.json": {
+      "actual": "3672b28bf4d92b941de90269e8ea50b737345d7489b506402a062afaa63d1f33",
+      "bytes": 32393261,
+      "expected": "3672b28bf4d92b941de90269e8ea50b737345d7489b506402a062afaa63d1f33",
+      "gitignored": true,
+      "match": true,
+      "tracked": false
+    }
+  },
+  "sensitive_scan_hits": [],
+  "status_short_for_set": [
+    "M artifacts/tasks/_SUMMARY.md",
+    " M context/latest_handoff.md",
+    " M state/active_goal.md",
+    " M state/architecture.md",
+    " M state/project_state.md",
+    " M tools/task209_imf_weo_g20_projection_phase2_campaign.py",
+    "?? artifacts/reports/task-211-full-suite.log",
+    "?? artifacts/reports/task-211-imf-weo-broad-macro-artifact-checksums.txt",
+    "?? artifacts/reports/task-211-imf-weo-broad-macro-campaign-report.json",
+    "?? artifacts/reports/task-211-imf-weo-broad-macro-frozen-pre-execution-prediction.json",
+    "?? artifacts/reports/task-211-imf-weo-broad-macro-postgresql-load-report.json",
+    "?? artifacts/reports/task-211-imf-weo-broad-macro-prediction-evaluation.json",
+    "?? artifacts/reports/task-211-imf-weo-broad-macro-provider-evidence-report.json",
+    "?? artifacts/reports/task-211-publication-boundary-full-suite.log",
+    "?? artifacts/reports/task-211-remediation-full-suite.log",
+    "?? artifacts/reports/task-211-weo-dataset-release-cleanup-audit-after-loader.json",
+    "?? artifacts/reports/task-211-weo-dataset-release-cleanup-audit.json",
+    "?? artifacts/reports/task-211-weo-dataset-release-cleanup-diagnostic.md",
+    "?? artifacts/reports/task-211-weo-dataset-release-cleanup-execution-audit.json",
+    "?? artifacts/reports/task-211-weo-dataset-release-cleanup-execution-summary.json",
+    "?? artifacts/reports/task-211-weo-dataset-release-cleanup-predelete-audit-after-loader.json",
+    "?? artifacts/reports/task-211-weo-dataset-release-cleanup-predelete-audit.json",
+    "?? artifacts/reports/task-211-weo-dataset-release-cleanup-predelete-audit.sql",
+    "?? artifacts/reports/task-211-weo-dataset-release-cleanup.sql",
+    "?? artifacts/reports/task-211-weo-remediation-artifact-audit.json",
+    "?? artifacts/tasks/TASK-211-imf-weo-broad-macro-repository-expansion.md",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/BCA_NGDPD.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXCNL_NGDP.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/GGXWDG_NGDP.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LP.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/LUR.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPD.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDPDPC.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/NGDP_RPCH.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PCPIPCH.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPGDP.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/partitions/PPPPC.json",
+    "?? data/processed/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-manifest.json",
+    "?? src/macroforge/imf_weo_datamapper.py",
+    "?? tests/test_imf_weo_datamapper_substrate.py",
+    "?? tests/test_task211_imf_weo_broad_macro_repository_expansion.py",
+    "?? tests/test_task211_weo_dataset_release_cleanup_script.py",
+    "?? tools/task211_imf_weo_broad_macro_repository_expansion.py"
+  ]
+}

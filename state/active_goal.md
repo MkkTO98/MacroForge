@@ -1,22 +1,22 @@
 # Active Goal
 
-Current strategic objective: construct MacroForge as an independent operational economic repository under evidence-maintained architecture.
+## Current active goal
+No active implementation in progress.
 
-MacroForge is in Phase 2 diverse-source macroeconomic enrichment. Bulk WDI annual-scalar Phase 1 is no longer the default; WDI can return only for a specific coherent target with clear material gain. Trade, company, and financial-asset construction remain deferred.
+## Most recent completed task
+TASK-211 WEO substrate and artifact-scaling remediation.
 
-Completed Phase 2 campaigns:
+## Outcome
+TASK-211 is pre-acceptance remediation complete: canonical WEO dataset identity consolidated to `IMF:WEO:DATAMAPPER`, TASK-209/TASK-211 rerun under shared April 2026 release, obsolete campaign-specific dataset-release rows deleted after zero-reference audit, TASK-211 normalized artifact partitioned by indicator, and verification passed.
 
-- TASK-207: BLS public API v2 U.S. monthly labor proof campaign, 2,374 facts across 12 series.
-- TASK-208: BLS U.S. labor breadth monthly campaign; correction accepted but commit remains deferred until clean BLS artifact regeneration.
-- TASK-209: IMF WEO DataMapper API v1 G20 projection campaign, 342 facts across 6 indicators, 19 countries, and 3 projection years, with 0 acquisition errors, 339 provider-valued facts, and 3 explicit-missing Saudi Arabia LUR facts.
+## Final verification
+- Focused tests: `21 passed in 0.49s`.
+- Full suite: `787 passed, 1 skipped in 849.60s`.
+- JSON validation: passed.
+- Context health: 0 blocks, 0 warnings.
+- Coherence: 0 blocks, 0 warnings.
+- Architecture reality audit: 0 blocks, 0 warnings.
+- `git diff --check`: passed.
 
-Current strategic boundary:
-
-- Do not touch the four untracked failed FRED-detour files unless explicitly instructed.
-- Do not resume TASK-208 before the scheduled BLS return time.
-- Do not resume residual WDI bulk campaigns automatically.
-- Do not advance to trade, company, or financial-asset construction yet.
-
-Recommended next action:
-
-After TASK-209 closeout, continue Phase 2 only with another material non-trade/non-company/non-asset macroeconomic capability, or return to TASK-208 only at the scheduled provider-quota window.
+## Guardrails
+No commit or push has been performed. Do not call BLS, resume TASK-208, touch TASK-207 FRED-detour files, or modify unrelated working-tree changes.

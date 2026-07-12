@@ -1,0 +1,49 @@
+{
+  "architecture_verdict_preload": "Existing scalar source/dataset_release/run substrate remains compatible; PostgreSQL verification required for final verdict.",
+  "artifact_publication": {
+    "normalized_artifact_format": "indicator_partitions",
+    "partition_count": 12,
+    "partition_manifest": "data/processed/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-manifest.json"
+  },
+  "candidate_population": {
+    "candidate_cells": 35442,
+    "countries": 194,
+    "indicators": 12,
+    "task209_overlap_excluded_cells": 342,
+    "years": "2015:2028"
+  },
+  "capability": "Broad annual IMF WEO first-order macroeconomic current-release scalar repository capability",
+  "facts": {
+    "explicit_missing": 535,
+    "provider_valued": 30539
+  },
+  "provider_dataset_code": "IMF:WEO:DATAMAPPER",
+  "release_identity": {
+    "acquired_at_utc": "2026-07-11T16:34:48+00:00",
+    "api_exposes_edition_metadata_directly": true,
+    "api_exposes_row_level_value_status": false,
+    "api_identity": {
+      "surface": "IMF DataMapper API",
+      "versions": [
+        "1"
+      ]
+    },
+    "indicator_last_modified_values": [
+      "2026-04-08 16:07:34",
+      "2026-04-08 16:07:35",
+      "2026-04-08 16:07:36",
+      "2026-04-08 16:07:37",
+      "2026-04-08 16:07:39",
+      "2026-04-08 16:07:40",
+      "2026-04-08 16:07:41",
+      "2026-04-08 16:07:42",
+      "2026-04-08 16:07:43",
+      "2026-04-08 16:07:44"
+    ],
+    "provider_publication_date": null,
+    "provider_release_source": "World Economic Outlook (April 2026)",
+    "release_key": "world-economic-outlook-april-2026"
+  },
+  "status": "normalized_complete",
+  "task": "TASK-211"
+}

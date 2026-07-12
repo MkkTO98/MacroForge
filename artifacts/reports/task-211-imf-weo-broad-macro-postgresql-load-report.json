@@ -1,0 +1,18 @@
+{
+  "duplicate_canonical_key_groups": 0,
+  "fact_rows": 31074,
+  "failed_quality_checks": 0,
+  "indicator_count": 12,
+  "lineage_events": 2,
+  "missing_facts": 535,
+  "observed_facts": 30539,
+  "period_count": 14,
+  "postgresql_after_fact_count": 10594305,
+  "postgresql_before_fact_count": 10594305,
+  "quality_checks": 3,
+  "release_identity_rows": 1,
+  "run_key": "task-211-imf-weo-broad-macro-repository-expansion-world-economic-outlook-april-2026",
+  "staging_rows": 31074,
+  "task": "TASK-211",
+  "territory_count": 194
+}

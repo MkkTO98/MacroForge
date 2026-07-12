@@ -1,0 +1,15 @@
+{
+  "actual_candidate_cells": 35442,
+  "actual_explicit_missing_facts": 535,
+  "actual_explicit_missing_rate": 0.015095084927487162,
+  "actual_provider_valued_facts": 30539,
+  "architecture_compatibility": "Supported by load/idempotence/duplicate/release checks.",
+  "expected_candidate_cells": 35442,
+  "expected_provider_valued_facts": "roughly 30000-35000 of selected candidate cells",
+  "implementation_friction_error": "Moderate friction as predicted; TASK-209/TASK-211 repetition justified WEO-specific helper reuse inside this script but not a generic provider framework.",
+  "prediction_quality": "Mixed",
+  "provider_behavior_surprises": "None blocking; sparse cells represented as explicit missing, no unresolved acquisition errors.",
+  "provider_dataset_code": "IMF:WEO:DATAMAPPER",
+  "task": "TASK-211",
+  "territory_or_unit_surprises": "No accepted-country mapping contradiction; unsupported IMF entities remained classified outside canonical country substrate."
+}

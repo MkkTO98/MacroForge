@@ -1,0 +1,154 @@
+BEGIN
+SELECT 2
+DO
+SELECT 2
+DO
+                                                                     jsonb_pretty
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ {                                                                                                                                                   +
+     "status": "deleted_exactly_approved_rows",                                                                                                      +
+     "operation": "task-211-weo-obsolete-dataset-release-cleanup",                                                                                   +
+     "deleted_rows": [                                                                                                                               +
+         {                                                                                                                                           +
+             "metadata": {                                                                                                                           +
+                 "task": "TASK-211",                                                                                                                 +
+                 "row_count": 31074,                                                                                                                 +
+                 "period_range": "2015:2028",                                                                                                        +
+                 "release_identity": {                                                                                                               +
+                     "release_key": "world-economic-outlook-april-2026",                                                                             +
+                     "api_identity": {                                                                                                               +
+                         "surface": "IMF DataMapper API",                                                                                            +
+                         "versions": [                                                                                                               +
+                             "1"                                                                                                                     +
+                         ]                                                                                                                           +
+                     },                                                                                                                              +
+                     "acquired_at_utc": "2026-07-11T16:34:48+00:00",                                                                                 +
+                     "provider_release_source": "World Economic Outlook (April 2026)",                                                               +
+                     "provider_publication_date": null,                                                                                              +
+                     "indicator_last_modified_values": [                                                                                             +
+                         "2026-04-08 16:07:34",                                                                                                      +
+                         "2026-04-08 16:07:35",                                                                                                      +
+                         "2026-04-08 16:07:36",                                                                                                      +
+                         "2026-04-08 16:07:37",                                                                                                      +
+                         "2026-04-08 16:07:39",                                                                                                      +
+                         "2026-04-08 16:07:40",                                                                                                      +
+                         "2026-04-08 16:07:41",                                                                                                      +
+                         "2026-04-08 16:07:42",                                                                                                      +
+                         "2026-04-08 16:07:43",                                                                                                      +
+                         "2026-04-08 16:07:44"                                                                                                       +
+                     ],                                                                                                                              +
+                     "api_exposes_row_level_value_status": false,                                                                                    +
+                     "api_exposes_edition_metadata_directly": true                                                                                   +
+                 },                                                                                                                                  +
+                 "repository_section": "Broad IMF WEO macroeconomic repository expansion",                                                           +
+                 "explicit_missing_fact_count": 535,                                                                                                 +
+                 "observed_provider_value_count": 30539                                                                                              +
+             },                                                                                                                                      +
+             "raw_sha256": "3672b28bf4d92b941de90269e8ea50b737345d7489b506402a062afaa63d1f33",                                                       +
+             "release_key": "world-economic-outlook-april-2026",                                                                                     +
+             "source_code": "IMF_WEO_DATAMAPPER_API_V1",                                                                                             +
+             "raw_artifact_path": "data/raw/task211_imf_weo_broad_macro_repository_expansion/active/task-211-imf-weo-broad-macro-2015-2028-raw.json",+
+             "provider_dataset_code": "IMF:WEO:DATAMAPPER:BROAD_MACRO_ANNUAL"                                                                        +
+         },                                                                                                                                          +
+         {                                                                                                                                           +
+             "metadata": {                                                                                                                           +
+                 "task": "TASK-209",                                                                                                                 +
+                 "row_count": 342,                                                                                                                   +
+                 "period_range": "2026:2028",                                                                                                        +
+                 "release_identity": {                                                                                                               +
+                     "release_key": "world-economic-outlook-april-2026",                                                                             +
+                     "api_identity": {                                                                                                               +
+                         "surface": "IMF DataMapper API",                                                                                            +
+                         "versions": [                                                                                                               +
+                             "1"                                                                                                                     +
+                         ]                                                                                                                           +
+                     },                                                                                                                              +
+                     "acquired_at_utc": "2026-07-11T13:29:29+00:00",                                                                                 +
+                     "provider_release_source": "World Economic Outlook (April 2026)",                                                               +
+                     "provider_publication_date": null,                                                                                              +
+                     "indicator_last_modified_values": [                                                                                             +
+                         "2026-04-08 16:07:34",                                                                                                      +
+                         "2026-04-08 16:07:35",                                                                                                      +
+                         "2026-04-08 16:07:39",                                                                                                      +
+                         "2026-04-08 16:07:42",                                                                                                      +
+                         "2026-04-08 16:07:43",                                                                                                      +
+                         "2026-04-08 16:07:44"                                                                                                       +
+                     ],                                                                                                                              +
+                     "api_exposes_row_level_value_status": false,                                                                                    +
+                     "api_exposes_edition_metadata_directly": true                                                                                   +
+                 },                                                                                                                                  +
+                 "repository_section": "Phase 2 bounded IMF WEO G20 projection capability proof"                                                     +
+             },                                                                                                                                      +
+             "raw_sha256": "d9817f3fbf6cbaf3f58caaf438e20f0077c4cd1785db9505e49791925eebec5c",                                                       +
+             "release_key": "world-economic-outlook-april-2026",                                                                                     +
+             "source_code": "IMF_WEO_DATAMAPPER_API_V1",                                                                                             +
+             "raw_artifact_path": "data/raw/task209_imf_weo_g20_projection_phase2_campaign/task-209-imf-weo-g20-projections-2026-2028.json",         +
+             "provider_dataset_code": "IMF:WEO:DATAMAPPER:PROJECTIONS"                                                                               +
+         }                                                                                                                                           +
+     ],                                                                                                                                              +
+     "reference_audit": [                                                                                                                            +
+         {                                                                                                                                           +
+             "table_name": "fact_observation",                                                                                                       +
+             "column_name": "dataset_release_id",                                                                                                    +
+             "table_schema": "curated",                                                                                                              +
+             "reference_count": 0                                                                                                                    +
+         },                                                                                                                                          +
+         {                                                                                                                                           +
+             "table_name": "dataset_release",                                                                                                        +
+             "column_name": "dataset_release_id",                                                                                                    +
+             "table_schema": "meta",                                                                                                                 +
+             "reference_count": 2                                                                                                                    +
+         },                                                                                                                                          +
+         {                                                                                                                                           +
+             "table_name": "pipeline_run",                                                                                                           +
+             "column_name": "dataset_release_id",                                                                                                    +
+             "table_schema": "meta",                                                                                                                 +
+             "reference_count": 0                                                                                                                    +
+         },                                                                                                                                          +
+         {                                                                                                                                           +
+             "table_name": "provider_code_list",                                                                                                     +
+             "column_name": "dataset_release_id",                                                                                                    +
+             "table_schema": "meta",                                                                                                                 +
+             "reference_count": 0                                                                                                                    +
+         },                                                                                                                                          +
+         {                                                                                                                                           +
+             "table_name": "bls_us_labor_breadth_monthly_phase2_observation",                                                                        +
+             "column_name": "dataset_release_id",                                                                                                    +
+             "table_schema": "staging",                                                                                                              +
+             "reference_count": 0                                                                                                                    +
+         },                                                                                                                                          +
+         {                                                                                                                                           +
+             "table_name": "bls_us_labor_monthly_phase2_observation",                                                                                +
+             "column_name": "dataset_release_id",                                                                                                    +
+             "table_schema": "staging",                                                                                                              +
+             "reference_count": 0                                                                                                                    +
+         },                                                                                                                                          +
+         {                                                                                                                                           +
+             "table_name": "task209_imf_weo_g20_projection_observation",                                                                             +
+             "column_name": "dataset_release_id",                                                                                                    +
+             "table_schema": "staging",                                                                                                              +
+             "reference_count": 0                                                                                                                    +
+         },                                                                                                                                          +
+         {                                                                                                                                           +
+             "table_name": "task211_imf_weo_broad_macro_observation",                                                                                +
+             "column_name": "dataset_release_id",                                                                                                    +
+             "table_schema": "staging",                                                                                                              +
+             "reference_count": 0                                                                                                                    +
+         },                                                                                                                                          +
+         {                                                                                                                                           +
+             "table_name": "wdi_observation",                                                                                                        +
+             "column_name": "dataset_release_id",                                                                                                    +
+             "table_schema": "staging",                                                                                                              +
+             "reference_count": 0                                                                                                                    +
+         }                                                                                                                                           +
+     ],                                                                                                                                              +
+     "remaining_weo_dataset_releases": [                                                                                                             +
+         {                                                                                                                                           +
+             "release_key": "world-economic-outlook-april-2026",                                                                                     +
+             "provider_dataset_code": "IMF:WEO:DATAMAPPER"                                                                                           +
+         }                                                                                                                                           +
+     ]                                                                                                                                               +
+ }
+(1 row)
+
+COMMIT

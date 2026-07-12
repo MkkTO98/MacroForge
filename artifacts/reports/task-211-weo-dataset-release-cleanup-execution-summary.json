@@ -1,0 +1,35 @@
+{
+  "deleted_rows": [
+    {
+      "dataset_release_id": "be368384-0d63-4f92-82ec-d469c0967f03",
+      "provider_dataset_code": "IMF:WEO:DATAMAPPER:BROAD_MACRO_ANNUAL",
+      "release_key": "world-economic-outlook-april-2026",
+      "source_code": "IMF_WEO_DATAMAPPER_API_V1"
+    },
+    {
+      "dataset_release_id": "b3d29966-8c4c-4f3f-b337-d2422cdf5d96",
+      "provider_dataset_code": "IMF:WEO:DATAMAPPER:PROJECTIONS",
+      "release_key": "world-economic-outlook-april-2026",
+      "source_code": "IMF_WEO_DATAMAPPER_API_V1"
+    }
+  ],
+  "operation": "task-211-weo-obsolete-dataset-release-cleanup",
+  "postconditions": {
+    "canonical_release_rows_remaining": 1,
+    "canonical_task209_task211_staging_refs": 31416,
+    "duplicate_canonical_key_groups": 0,
+    "obsolete_rows_remaining": 0,
+    "repository_fact_total_after": 10594305,
+    "task209_facts": "342|339|3",
+    "task211_facts": "31074|30539|535"
+  },
+  "preconditions": {
+    "canonical_release_existed_before_delete": true,
+    "external_references_before_delete": 0,
+    "script_excludes_helper_tables": true,
+    "script_excludes_pg_temp_schemas": true
+  },
+  "raw_psql_audit": "artifacts/reports/task-211-weo-dataset-release-cleanup-execution-audit.json",
+  "script": "artifacts/reports/task-211-weo-dataset-release-cleanup.sql",
+  "status": "deleted_exactly_approved_rows"
+}
