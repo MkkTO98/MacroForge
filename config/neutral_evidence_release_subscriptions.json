@@ -1,0 +1,30 @@
+{
+  "registry_identity": "macroforge.neutral_evidence_release_subscription_registry.v1",
+  "registry_version": "1.0",
+  "subscriptions": [
+    {
+      "subscription_id": "macroforge-wdi-trade-share-dnk-swe-nor-annual-v1",
+      "subscription_version": "1.0",
+      "provider_source": "WDI",
+      "dataset": "WDI",
+      "indicators": ["NE.EXP.GNFS.ZS", "NE.IMP.GNFS.ZS"],
+      "entities": ["DNK", "SWE", "NOR"],
+      "period_policy": {
+        "type": "available_canonical_scope",
+        "minimum_period": 1990
+      },
+      "frequency": "annual",
+      "include_observed": true,
+      "include_missing": true,
+      "required_metadata": ["unit", "definition", "source_release_keys", "source_run_keys", "run_statuses"],
+      "release_eligibility": {
+        "run_status": "succeeded",
+        "failed_quality_checks": 0,
+        "complete_rectangular_selection": true
+      },
+      "output_format": "single_json",
+      "consumer_neutral_purpose": "Publish bounded observed WDI trade-share evidence for independent downstream consumers without derivation or consumer-schema coupling.",
+      "enabled": true
+    }
+  ]
+}
