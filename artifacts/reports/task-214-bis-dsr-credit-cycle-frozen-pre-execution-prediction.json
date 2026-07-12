@@ -1,0 +1,559 @@
+{
+  "accepted_frequency": "Q",
+  "accepted_territories": [
+    {
+      "iso3_code": "AUS",
+      "label": "Australia",
+      "provider_code": "AU"
+    },
+    {
+      "iso3_code": "BEL",
+      "label": "Belgium",
+      "provider_code": "BE"
+    },
+    {
+      "iso3_code": "BRA",
+      "label": "Brazil",
+      "provider_code": "BR"
+    },
+    {
+      "iso3_code": "CAN",
+      "label": "Canada",
+      "provider_code": "CA"
+    },
+    {
+      "iso3_code": "CHE",
+      "label": "Switzerland",
+      "provider_code": "CH"
+    },
+    {
+      "iso3_code": "CHN",
+      "label": "China",
+      "provider_code": "CN"
+    },
+    {
+      "iso3_code": "CZE",
+      "label": "Czechia",
+      "provider_code": "CZ"
+    },
+    {
+      "iso3_code": "DEU",
+      "label": "Germany",
+      "provider_code": "DE"
+    },
+    {
+      "iso3_code": "DNK",
+      "label": "Denmark",
+      "provider_code": "DK"
+    },
+    {
+      "iso3_code": "ESP",
+      "label": "Spain",
+      "provider_code": "ES"
+    },
+    {
+      "iso3_code": "FIN",
+      "label": "Finland",
+      "provider_code": "FI"
+    },
+    {
+      "iso3_code": "FRA",
+      "label": "France",
+      "provider_code": "FR"
+    },
+    {
+      "iso3_code": "GBR",
+      "label": "United Kingdom",
+      "provider_code": "GB"
+    },
+    {
+      "iso3_code": "HKG",
+      "label": "Hong Kong SAR",
+      "provider_code": "HK"
+    },
+    {
+      "iso3_code": "HUN",
+      "label": "Hungary",
+      "provider_code": "HU"
+    },
+    {
+      "iso3_code": "IDN",
+      "label": "Indonesia",
+      "provider_code": "ID"
+    },
+    {
+      "iso3_code": "IND",
+      "label": "India",
+      "provider_code": "IN"
+    },
+    {
+      "iso3_code": "ITA",
+      "label": "Italy",
+      "provider_code": "IT"
+    },
+    {
+      "iso3_code": "JPN",
+      "label": "Japan",
+      "provider_code": "JP"
+    },
+    {
+      "iso3_code": "KOR",
+      "label": "Korea, Rep.",
+      "provider_code": "KR"
+    },
+    {
+      "iso3_code": "MEX",
+      "label": "Mexico",
+      "provider_code": "MX"
+    },
+    {
+      "iso3_code": "MYS",
+      "label": "Malaysia",
+      "provider_code": "MY"
+    },
+    {
+      "iso3_code": "NLD",
+      "label": "Netherlands",
+      "provider_code": "NL"
+    },
+    {
+      "iso3_code": "NOR",
+      "label": "Norway",
+      "provider_code": "NO"
+    },
+    {
+      "iso3_code": "POL",
+      "label": "Poland",
+      "provider_code": "PL"
+    },
+    {
+      "iso3_code": "PRT",
+      "label": "Portugal",
+      "provider_code": "PT"
+    },
+    {
+      "iso3_code": "RUS",
+      "label": "Russian Federation",
+      "provider_code": "RU"
+    },
+    {
+      "iso3_code": "SWE",
+      "label": "Sweden",
+      "provider_code": "SE"
+    },
+    {
+      "iso3_code": "THA",
+      "label": "Thailand",
+      "provider_code": "TH"
+    },
+    {
+      "iso3_code": "TUR",
+      "label": "Turkiye",
+      "provider_code": "TR"
+    },
+    {
+      "iso3_code": "USA",
+      "label": "United States",
+      "provider_code": "US"
+    },
+    {
+      "iso3_code": "ZAF",
+      "label": "South Africa",
+      "provider_code": "ZA"
+    }
+  ],
+  "borrower_sectors": [
+    {
+      "canonical_dimension": "HOUSEHOLDS_NPISHS",
+      "label": "Households and NPISHs",
+      "provider_code": "H"
+    },
+    {
+      "canonical_dimension": "NONFINANCIAL_CORPORATIONS",
+      "label": "Non-financial corporations",
+      "provider_code": "N"
+    },
+    {
+      "canonical_dimension": "PRIVATE_NONFINANCIAL_SECTOR",
+      "label": "Private non-financial sector",
+      "provider_code": "P"
+    }
+  ],
+  "candidate_series": [
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "AU",
+      "series_key": "Q.AU.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "AU",
+      "series_key": "Q.AU.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "AU",
+      "series_key": "Q.AU.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "BE",
+      "series_key": "Q.BE.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "BE",
+      "series_key": "Q.BE.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "BE",
+      "series_key": "Q.BE.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "BR",
+      "series_key": "Q.BR.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "CA",
+      "series_key": "Q.CA.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "CA",
+      "series_key": "Q.CA.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "CA",
+      "series_key": "Q.CA.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "CH",
+      "series_key": "Q.CH.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "CN",
+      "series_key": "Q.CN.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "CZ",
+      "series_key": "Q.CZ.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "DE",
+      "series_key": "Q.DE.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "DE",
+      "series_key": "Q.DE.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "DE",
+      "series_key": "Q.DE.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "DK",
+      "series_key": "Q.DK.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "DK",
+      "series_key": "Q.DK.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "DK",
+      "series_key": "Q.DK.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "ES",
+      "series_key": "Q.ES.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "ES",
+      "series_key": "Q.ES.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "ES",
+      "series_key": "Q.ES.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "FI",
+      "series_key": "Q.FI.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "FI",
+      "series_key": "Q.FI.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "FI",
+      "series_key": "Q.FI.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "FR",
+      "series_key": "Q.FR.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "FR",
+      "series_key": "Q.FR.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "FR",
+      "series_key": "Q.FR.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "GB",
+      "series_key": "Q.GB.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "GB",
+      "series_key": "Q.GB.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "GB",
+      "series_key": "Q.GB.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "HK",
+      "series_key": "Q.HK.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "HU",
+      "series_key": "Q.HU.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "ID",
+      "series_key": "Q.ID.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "IN",
+      "series_key": "Q.IN.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "IT",
+      "series_key": "Q.IT.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "IT",
+      "series_key": "Q.IT.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "IT",
+      "series_key": "Q.IT.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "JP",
+      "series_key": "Q.JP.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "JP",
+      "series_key": "Q.JP.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "JP",
+      "series_key": "Q.JP.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "KR",
+      "series_key": "Q.KR.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "KR",
+      "series_key": "Q.KR.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "KR",
+      "series_key": "Q.KR.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "MX",
+      "series_key": "Q.MX.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "MY",
+      "series_key": "Q.MY.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "NL",
+      "series_key": "Q.NL.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "NL",
+      "series_key": "Q.NL.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "NL",
+      "series_key": "Q.NL.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "NO",
+      "series_key": "Q.NO.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "NO",
+      "series_key": "Q.NO.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "NO",
+      "series_key": "Q.NO.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "PL",
+      "series_key": "Q.PL.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "PT",
+      "series_key": "Q.PT.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "PT",
+      "series_key": "Q.PT.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "PT",
+      "series_key": "Q.PT.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "RU",
+      "series_key": "Q.RU.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "SE",
+      "series_key": "Q.SE.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "SE",
+      "series_key": "Q.SE.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "SE",
+      "series_key": "Q.SE.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "TH",
+      "series_key": "Q.TH.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "TR",
+      "series_key": "Q.TR.P"
+    },
+    {
+      "borrower_sector": "H",
+      "provider_territory_code": "US",
+      "series_key": "Q.US.H"
+    },
+    {
+      "borrower_sector": "N",
+      "provider_territory_code": "US",
+      "series_key": "Q.US.N"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "US",
+      "series_key": "Q.US.P"
+    },
+    {
+      "borrower_sector": "P",
+      "provider_territory_code": "ZA",
+      "series_key": "Q.ZA.P"
+    }
+  ],
+  "canonical_indicator_rule": "remove only BORROWERS_CTY/territory; include DSR_BORROWERS sector, unit, and frequency in source-scoped scalar indicator identity",
+  "dataflow_code": "WS_DSR",
+  "expected_architecture_compatibility": "existing scalar substrate should hold if sector is encoded in indicator identity and provider-native dimensions/attributes are preserved in attributes/source payload",
+  "expected_candidate_cells": 2904,
+  "expected_candidate_series": 66,
+  "expected_dimensional_complexity": "quarterly scalar-compatible if each full series key becomes one indicator after removing only BORROWERS_CTY; expected 3 canonical indicators by DSR_BORROWERS sector",
+  "expected_explicit_missing_facts": 0,
+  "expected_missingness": "low/zero inside provider-advertised series for 2015-Q1 through 2025-Q4; absent sector-country combinations are outside the exact provider-advertised candidate series universe, not explicit missing cells",
+  "expected_postgresql_growth": {
+    "dataset_releases": 1,
+    "facts": 2904,
+    "indicators": 3,
+    "pipeline_runs": 1
+  },
+  "expected_provider_valued_facts": 2904,
+  "expected_territory_coverage": "32 accepted non-aggregate territories, including HK/HKG",
+  "expected_units": {
+    "provider_unit_measure": "367",
+    "unit_code": "PERCENT",
+    "unit_multiplier": "0"
+  },
+  "implementation_friction": "moderate: DSR adds borrower-sector dimensions and quarterly periods but can reuse source-specific BIS lessons without generic SDMX extraction",
+  "period_range": {
+    "end": "2025-Q4",
+    "quarters": 44,
+    "start": "2015-Q1"
+  },
+  "provider_dataset": "BIS:WS_DSR",
+  "selected_capability": "BIS quarterly cross-country debt-service ratios by borrower sector",
+  "selection_rationale": "Debt-service ratios were selected over credit-to-GDP gaps because they directly fill the Capability Atlas gap for debt-service burden integration, add cross-country quarterly vulnerability and monetary-transmission monitoring, and pressure-test BIS non-territory dimensions through borrower-sector semantics without combining unrelated dataflows.",
+  "series_key_dimensions": [
+    "FREQ",
+    "BORROWERS_CTY",
+    "DSR_BORROWERS"
+  ],
+  "structural_assumptions_pressure_tested": [
+    "BIS source identity reused",
+    "dataflow identity separate from run",
+    "snapshot key from Prepared timestamp",
+    "series-key dimensions become stable scalar indicators after removing only territory",
+    "quarterly scalar periods load idempotently",
+    "later snapshot coexists"
+  ],
+  "task": "TASK-214",
+  "transport_risks": "low: pre-acquisition metadata probe returned one compact StructureSpecificData response; remaining risk is transport timeout or provider Prepared timestamp churn"
+}

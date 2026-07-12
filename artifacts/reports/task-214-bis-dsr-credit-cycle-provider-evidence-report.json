@@ -1,0 +1,46 @@
+{
+  "acquisition_errors": [],
+  "candidate_cells": 2904,
+  "explicit_missing": 0,
+  "incompatible_series": [],
+  "provider_exclusions": [],
+  "provider_metadata": {
+    "acquired_at_utc": "2026-07-12T15:07:28+00:00",
+    "content_type": null,
+    "dataflow": {
+      "agency_id": "BIS",
+      "id": "WS_DSR",
+      "version": "1.0"
+    },
+    "dataset_action": "Information",
+    "dataset_attributes": {
+      "UNIT_MEASURE": "367",
+      "UNIT_MULT": "0"
+    },
+    "dimension_at_observation": "TIME_PERIOD",
+    "http_status": 200,
+    "message_id": "IDREFd5ec809d-a4fc-49a4-8e32-eb3f0acd7e38",
+    "prepared": "2026-07-12T15:07:28Z",
+    "sender": "UNKNOWN",
+    "structure_id": "BIS_WS_DSR_1_0",
+    "structure_namespace": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=BIS:WS_DSR(1.0):ObsLevelDim:TIME_PERIOD"
+  },
+  "provider_valued_observations": 2904,
+  "raw_evidence": {
+    "raw_artifact_path": "data/raw/task214_bis_dsr_credit_cycle_phase2_campaign/active/task-214-bis-dsr-credit-cycle-2015q1-2025q4-raw.xml",
+    "raw_bytes": 235315,
+    "raw_metadata_path": "data/raw/task214_bis_dsr_credit_cycle_phase2_campaign/active/task-214-bis-dsr-credit-cycle-2015q1-2025q4-raw-metadata.json",
+    "raw_sha256": "00a8dbd8f27e0c8424e9d1c4bf77b423229faeb3df2ec04732270091dbb03317",
+    "request_parameters": {
+      "dataflow": "WS_DSR",
+      "endPeriod": "2025-Q4",
+      "key": "Q.AU+BE+BR+CA+CH+CN+CZ+DE+DK+ES+FI+FR+GB+HK+HU+ID+IN+IT+JP+KR+MX+MY+NL+NO+PL+PT+RU+SE+TH+TR+US+ZA.H+N+P",
+      "startPeriod": "2015-Q1",
+      "version": "1.0"
+    },
+    "source_url": "https://stats.bis.org/api/v2/data/dataflow/BIS/WS_DSR/1.0/Q.AU+BE+BR+CA+CH+CN+CZ+DE+DK+ES+FI+FR+GB+HK+HU+ID+IN+IT+JP+KR+MX+MY+NL+NO+PL+PT+RU+SE+TH+TR+US+ZA.H+N+P?startPeriod=2015-Q1&endPeriod=2025-Q4"
+  },
+  "selection_exclusions": [],
+  "status": "complete",
+  "task": "TASK-214"
+}

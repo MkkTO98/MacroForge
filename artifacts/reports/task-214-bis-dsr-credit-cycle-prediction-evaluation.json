@@ -1,0 +1,18 @@
+{
+  "architecture_to_reality_verdict": "Reaffirmed: complete series keys become stable source-scoped scalar indicators after removing only territory, with DSR borrower sector retained in indicator identity and provider-native dimensions preserved in attributes/source payload.",
+  "bis_substrate_extraction_verdict": "Rejected for this task: TASK-057, TASK-213, and TASK-214 repeat BIS source/snapshot/series-key concepts, but dataflow-specific dimensions differ enough that a shared substrate would risk premature generic SDMX behavior. Keep source-specific helpers until another BIS family proves the exact contract.",
+  "implementation_friction_error": "Moderate but expected: DSR required sector-aware indicator identity and quarterly period loading, but no scalar-substrate contradiction appeared.",
+  "missing_source_understanding_revealed": false,
+  "prediction_quality_verdict": "Accurate",
+  "provider_behavior_surprises": "None material if acquisition errors remain zero and all provider-advertised DSR series loaded.",
+  "scale_prediction_error": {
+    "actual_candidate_cells": 2904,
+    "actual_explicit_missing": 0,
+    "actual_provider_valued": 2904,
+    "predicted_candidate_cells": 2904,
+    "predicted_explicit_missing": 0,
+    "predicted_provider_valued": 2904
+  },
+  "task": "TASK-214",
+  "territory_or_unit_surprises": "None material: all 32 selected borrower countries mapped to canonical territories; UNIT_MEASURE=367 and UNIT_MULT=0 stayed stable."
+}
