@@ -1,6 +1,6 @@
 # TASK-219 — IMF DIP direct-investment counterpart expansion
 
-Status: Implemented and locally verified; not staged, committed, or pushed.
+Status: Completed, verified, committed, and pushed as `a4404481ecd61767b330b2ba4fba6d0038916cde`.
 
 ## Baseline
 
