@@ -1,5 +1,5 @@
 40ac6d5133c5a0b668aeee752d3d9d6c78be91aa3bc88af0850e827985dd2c31  artifacts/reports/task-207-bls-us-labor-monthly-frozen-selection-prediction.json
-446bffad8298ff1a66ad2fd66fa068ed9fe169ba0c676dc3989002ef30dff052  artifacts/reports/task-207-bls-us-labor-monthly-postgresql-load-report.json
+22a17cbff3ef0d8800c34eab1f520282b7a988ca4167f29d8f957dcf3605b30c  artifacts/reports/task-207-bls-us-labor-monthly-postgresql-load-report.json
 63d4e6f98c90f20bc34083a825cdd9c5e1195c31005d8729d3a982eefc3ac7e6  artifacts/reports/task-207-bls-us-labor-monthly-prediction-evaluation.json
 11849ef13df682bfc6c2364eba7fe1aee3e2907a3bda44202fa0ae352ddc56b9  artifacts/reports/task-207-bls-us-labor-monthly-provider-evidence-report.json
 cd3957bbd80677fed5832062d029df809046ca942a50f9d8940b18a0425980fa  data/processed/task207_bls_us_labor_monthly_phase2_campaign/task-207-bls-us-labor-monthly-manifest.json
