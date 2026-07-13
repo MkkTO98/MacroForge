@@ -1,0 +1,15 @@
+{
+  "actual_candidate_cells": 17280,
+  "actual_explicit_missing_facts": 1460,
+  "actual_provider_valued_facts": 14755,
+  "architecture_compatibility": "compatible for bounded reporter-territory plus counterpart-in-indicator scalar representation",
+  "expected_candidate_cells": 17280,
+  "expected_explicit_missing_facts": 3456,
+  "expected_provider_valued_facts": 10368,
+  "missingness_prediction_error": -1996,
+  "prediction_verdict": "Mixed",
+  "provider_behavior_surprises": "DIP returns whole-series absences for many reporter/counterpart/instrument pairs; successful returned series usually have dense annual values.",
+  "scale_prediction_error": 0,
+  "task": "TASK-219",
+  "whole_series_absence_count": 213
+}

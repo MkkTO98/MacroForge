@@ -1,0 +1,29 @@
+{
+  "decision": "No shared IMF relationship-position substrate extracted during TASK-219",
+  "evidence_compared": [
+    "TASK-218 IMF PIP/CPIS reporter-counterpart portfolio positions",
+    "TASK-219 IMF DIP/CDIS reporter-counterpart direct-investment positions",
+    "TASK-216 IMF BOP current-account flows",
+    "TASK-217 IMF IIP aggregate stocks"
+  ],
+  "explicitly_not_created": [
+    "universal SDMX adapter",
+    "generic IMF framework",
+    "generic campaign engine",
+    "counterpart ontology",
+    "relationship dimension",
+    "schema redesign",
+    "migration framework"
+  ],
+  "extraction_rejected_reason": "TASK-218 and TASK-219 establish that the representation pattern repeats and remains operationally sufficient, but the stable contract is still narrow and source-specific semantics differ: PIP has accounting/sector/counterpart-sector portfolio instrument semantics; DIP has DV_TYPE, inward/outward direction, net assets/liabilities basis, instrument, entity, and official-vs-counterparty-derived data semantics. A helper extracted now would likely become generic IMF SDMX/relationship machinery rather than a small proven source-specific boundary.",
+  "future_extraction_gate": "Consider only a narrow IMF counterpart-position helper after another relationship campaign or a maintenance pass shows repeated non-semantic duplication with a testable contract for metadata acquisition, active artifact promotion, raw manifest inventories, release/as-of derivation, and relationship accounting reports. Keep provider-series semantics task-local.",
+  "measurable_friction_observed": "Campaign implementation reused the PIP pattern mechanically, but required task-local changes to key dimensions, selected indicator families, value-status attributes, and metadata interpretation. No canonical collision, source identity ambiguity, or idempotence failure occurred.",
+  "repeated_relationship_responsibilities": [
+    "reporter economy as canonical territory",
+    "counterpart economy preserved in source-scoped indicator identity and attributes",
+    "provider-derived as-of identity used as fact as_of_date",
+    "explicit missing cells distinguished from whole-series absence",
+    "same-run idempotence and rolled-back later-as-of coexistence checks"
+  ],
+  "task": "TASK-219"
+}

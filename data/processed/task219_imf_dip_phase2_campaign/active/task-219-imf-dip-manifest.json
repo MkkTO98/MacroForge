@@ -1,0 +1,70 @@
+{
+  "explicit_missing_value_count": 1460,
+  "normalized_path": "data/processed/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-normalized.json",
+  "normalized_sha256": "075f6507612a6a9e98383a5dff51583e521d2a9659e8cf3faba0c15e850b76c8",
+  "observed_value_count": 14755,
+  "raw_active_dir": "data/raw/task219_imf_dip_phase2_campaign/active",
+  "raw_active_files": [
+    {
+      "bytes": 1306,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-metadata.json",
+      "sha256": "9dd662b38a774321b56da706ad6c8b30fb18b09d26eb769fc4d996993c599260"
+    },
+    {
+      "bytes": 3107393,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-metadata.xml",
+      "sha256": "8e097ba9c36169bc203af73186951a79c72576b787f33415b5d48fd1adc03bc7"
+    },
+    {
+      "bytes": 14121,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-raw-values-manifest.json",
+      "sha256": "1834e41b1a986a4f83c9bf7edb13759f55675fdcd771723ea2b9b5a00ac9bf4f"
+    },
+    {
+      "bytes": 2666,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-values-chunk-01.json",
+      "sha256": "d6af1cd19909222766f585f4b3f4aee4b7a146bdde71e8351297b48cd35423b6"
+    },
+    {
+      "bytes": 411434,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-values-chunk-01.xml",
+      "sha256": "a66841424b1ef8bc3b4f6a5dce226c1fdfda5ef6c09185ec495a020b8a9bc515"
+    },
+    {
+      "bytes": 2666,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-values-chunk-02.json",
+      "sha256": "81cc0bac3f66dda7fa3f3685a97f99eadfd85033d3adcd5e4fd74919c976419d"
+    },
+    {
+      "bytes": 413722,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-values-chunk-02.xml",
+      "sha256": "1f59e0356a39447576fbde1c0d72920a27ed26f71201b3dd53ff911d4610d464"
+    },
+    {
+      "bytes": 2666,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-values-chunk-03.json",
+      "sha256": "216c7967420fd65dd21170504bfc17ad42873f84f1f4bd511496bb552a272b65"
+    },
+    {
+      "bytes": 410459,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-values-chunk-03.xml",
+      "sha256": "1c5d81586fa6d9e421d509e857cc5b97d47abd35f6cdfb0b985fd4883be469ff"
+    },
+    {
+      "bytes": 2666,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-values-chunk-04.json",
+      "sha256": "e2ee3e6a33852bcf2611a44c27f395963ccdc54a0d68fafae7c0b51596e7dcbf"
+    },
+    {
+      "bytes": 379207,
+      "path": "data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-values-chunk-04.xml",
+      "sha256": "557b2a646be821569b3f59bd1a5963bb72a35fb2e5742d7ca1659c9e30154e70"
+    }
+  ],
+  "release_as_of_date": "2025-12-10",
+  "release_key": "imf-dip-asof-20251210t162520656782100z",
+  "row_count": 16215,
+  "status": "active_artifacts_promoted",
+  "task": "TASK-219",
+  "whole_series_absence_count": 213
+}

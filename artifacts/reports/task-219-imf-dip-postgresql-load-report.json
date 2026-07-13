@@ -1,0 +1,20 @@
+{
+  "after_source_fact_count": 16215,
+  "before_source_fact_count": 0,
+  "counts": {
+    "dataset_release_rows": 1,
+    "fact_rows": 16215,
+    "failed_quality_checks": 0,
+    "missing_facts": 1460,
+    "observed_facts": 14755,
+    "staging_rows": 16215
+  },
+  "duplicate_canonical_key_groups": 0,
+  "postgresql_growth": 16215,
+  "provider_dataset_code": "IMF:DIP",
+  "release_key": "imf-dip-asof-20251210t162520656782100z",
+  "run_key": "task-219-imf-dip-direct-investment-counterpart-phase2",
+  "source_code": "IMF_SDMX_DIP_API_V1",
+  "status": "succeeded",
+  "task": "TASK-219"
+}

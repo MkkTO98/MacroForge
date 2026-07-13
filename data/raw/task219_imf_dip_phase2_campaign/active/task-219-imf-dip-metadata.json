@@ -1,0 +1,33 @@
+{
+  "acquired_at_utc": "2026-07-13T04:34:56+00:00",
+  "attempt_id": "attempt-20260713T043456Z",
+  "content_type": "application/vnd.sdmx.structure+xml;version=2.1",
+  "headers": {
+    "Connection": "close",
+    "Content-Length": "3107393",
+    "Content-Type": "application/vnd.sdmx.structure+xml;version=2.1",
+    "Date": "Mon, 13 Jul 2026 04:34:57 GMT",
+    "Request-Context": "appId=cid-v1:e4518baf-f7f4-42d7-900e-7dd820548dc8",
+    "Set-Cookie": "ApplicationGatewayAffinity=dca9138616203b0df55300d07b8e6a61; Path=/",
+    "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+    "expires": "0",
+    "pragma": "no-cache",
+    "server": "istio-envoy",
+    "strict-transport-security": "max-age=31536000 ; includeSubDomains",
+    "x-content-type-options": "nosniff",
+    "x-correlation-id": "b8342d1c3ae4519db6bc017be41702be",
+    "x-envoy-upstream-service-time": "73",
+    "x-frame-options": "DENY",
+    "x-xss-protection": "0"
+  },
+  "http_status": 200,
+  "raw_bytes": 3107393,
+  "raw_sha256": "8e097ba9c36169bc203af73186951a79c72576b787f33415b5d48fd1adc03bc7",
+  "request_parameters": {
+    "dataflow": "DIP",
+    "references": "all"
+  },
+  "source_url": "https://api.imf.org/external/sdmx/2.1/dataflow/all/DIP/latest?references=all",
+  "status": "metadata_acquired",
+  "task": "TASK-219"
+}

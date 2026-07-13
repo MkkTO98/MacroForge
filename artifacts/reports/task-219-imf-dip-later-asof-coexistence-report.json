@@ -1,0 +1,9 @@
+{
+  "post_rollback_simulated_release_rows": 0,
+  "simulated_as_of_date": "2026-12-10",
+  "simulated_release_key": "imf-dip-asof-20251210t162520656782100z-simulated-later",
+  "simulation": "rolled_back_one_row_later_asof_load",
+  "status": "succeeded",
+  "task": "TASK-219",
+  "transaction_output": "simulated_later_rows|1|1"
+}
