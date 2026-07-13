@@ -11,6 +11,7 @@ import argparse
 import datetime as dt
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -99,16 +100,143 @@ def latest_architecture_audit(project: Path) -> Path | None:
     return reports[-1] if reports else None
 
 
-def completed_tasks_since(project: Path, since: Path | None) -> int:
-    since_time = since.stat().st_mtime if since and since.exists() else 0.0
-    count = 0
+def project_identity(project: Path) -> str:
+    project_yaml = read(project / "project.yaml")
+    match = re.search(r'^\s*name:\s*["\']?([^"\'\n]+)', project_yaml, flags=re.M)
+    return match.group(1).strip() if match else project.name
+
+
+def artifact_date(path: Path | None) -> dt.date | None:
+    if path is None:
+        return None
+    match = re.search(r"(20\d{6})", path.name)
+    if not match:
+        return None
+    try:
+        return dt.datetime.strptime(match.group(1), "%Y%m%d").date()
+    except ValueError:
+        return None
+
+
+def parse_date_token(value: str) -> dt.date | None:
+    value = value.strip()
+    for pattern, fmt in ((r"(20\d{2}-\d{2}-\d{2})", "%Y-%m-%d"), (r"(20\d{6})", "%Y%m%d")):
+        match = re.search(pattern, value)
+        if not match:
+            continue
+        try:
+            return dt.datetime.strptime(match.group(1), fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def explicit_task_completion_date(text: str) -> dt.date | None:
+    patterns = [
+        r"(?im)^\s*(?:completed|completed_at|completed_on|completion_date|date_completed|closed|closed_at|finished)\s*[:=]\s*([^\n#]+)",
+        r"(?im)^\s*status\s*[:=]\s*completed\s+on\s+([^\n#]+)",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if match:
+            parsed = parse_date_token(match.group(1))
+            if parsed:
+                return parsed
+    return None
+
+
+def task_filename_date(path: Path) -> dt.date | None:
+    # Authoritative only for task identities that explicitly embed a YYYYMMDD date token.
+    return parse_date_token(path.stem)
+
+
+def tracked_file_commit_date(project: Path, path: Path) -> dt.date | None:
+    try:
+        rel = path.relative_to(project)
+    except ValueError:
+        rel = path
+    try:
+        proc = subprocess.run(
+            ["git", "log", "-1", "--format=%cs", "--", str(rel)],
+            cwd=project,
+            text=True,
+            capture_output=True,
+            timeout=10,
+        )
+    except Exception:
+        return None
+    if proc.returncode != 0 or not proc.stdout.strip():
+        return None
+    try:
+        return dt.date.fromisoformat(proc.stdout.strip().splitlines()[0])
+    except ValueError:
+        return None
+
+
+def task_date_evidence(project: Path, task: Path, text: str, *, allow_mtime: bool) -> tuple[dt.date | None, str]:
+    explicit = explicit_task_completion_date(text)
+    if explicit:
+        return explicit, "explicit_completion_date"
+    named = task_filename_date(task)
+    if named:
+        return named, "dated_task_filename"
+    committed = tracked_file_commit_date(project, task)
+    if committed:
+        return committed, "git_last_commit_date"
+    if allow_mtime:
+        return dt.date.fromtimestamp(task.stat().st_mtime), "legacy_mtime_fallback"
+    return None, "unknown"
+
+
+def completed_tasks_since(project: Path, since: Path | None) -> dict[str, Any]:
+    since_date = artifact_date(since)
+    allow_mtime = since is not None and since.exists() and since_date is None
+    since_mtime_date = dt.date.fromtimestamp(since.stat().st_mtime) if allow_mtime else None
+    known_after: list[dict[str, str]] = []
+    known_before_or_on: list[dict[str, str]] = []
+    unknown: list[dict[str, str]] = []
+    modes: set[str] = set()
     for task in (project / "artifacts" / "tasks").glob("*.md"):
         if task.name == "_SUMMARY.md":
             continue
-        text = read(task).lower()
-        if ("status: completed" in text or "status: done" in text or "completed:" in text) and task.stat().st_mtime >= since_time:
-            count += 1
-    return count
+        raw = read(task)
+        text = raw.lower()
+        if not ("status: completed" in text or "status: done" in text or "completed:" in text):
+            continue
+        task_date, mode = task_date_evidence(project, task, raw, allow_mtime=allow_mtime)
+        modes.add(mode)
+        rel = str(task.relative_to(project))
+        item = {"path": rel, "evidence_mode": mode}
+        if task_date is not None:
+            item["date"] = task_date.isoformat()
+        if since_date is not None:
+            if task_date is None:
+                unknown.append(item)
+            elif task_date > since_date:
+                known_after.append(item)
+            else:
+                known_before_or_on.append(item)
+        elif since_mtime_date is not None:
+            item["audit_mtime_date"] = since_mtime_date.isoformat()
+            if task_date is None:
+                unknown.append(item)
+            elif task_date >= since_mtime_date:
+                known_after.append(item)
+            else:
+                known_before_or_on.append(item)
+        else:
+            unknown.append(item)
+    ordered_modes = sorted(modes) if modes else []
+    return {
+        "known_completed_tasks_after_latest_audit": len(known_after),
+        "completed_tasks_since_latest_audit": len(known_after),
+        "completed_tasks_unknown_temporal_position": len(unknown),
+        "cadence_fully_determined": not unknown,
+        "cadence_evidence_mode": ",".join(ordered_modes) if ordered_modes else "no_completed_tasks",
+        "known_after_tasks": known_after,
+        "known_before_or_on_tasks": known_before_or_on,
+        "unknown_temporal_tasks": unknown,
+    }
 
 
 def detect_mode(project: Path) -> str:
@@ -165,26 +293,55 @@ def check_context_and_state(project: Path, findings: list[dict[str, str]]) -> No
         add(findings, "warn", "governance_processes", "documentation_without_implementation", "context policy lacks Architecture-to-Reality Audit governance settings", "Add architecture_reality_audit policy with cadence, categories, and report location.")
 
 
+def declares_responsibility(project: Path, responsibility: str) -> bool:
+    tokens = {
+        "agent_role_instructions": [
+            "owns_agent_role_instructions: true",
+            "agent_role_instructions: required",
+            "requires_agent_role_instructions: true",
+            "macroforge owns agent role instructions",
+        ],
+        "metrics_policy": [
+            "owns_metrics_policy: true",
+            "metrics_policy: required",
+            "requires_metrics_policy: true",
+            "macroforge owns project-local metrics policy",
+        ],
+    }[responsibility]
+    files = [
+        project / "project.yaml",
+        project / "CONSTITUTION.md",
+        project / "AGENTS.md",
+        project / "state" / "architecture.md",
+        project / "context" / "context_policy.yaml",
+        project / "architecture" / "architecture_state.md",
+    ]
+    combined = "\n".join(read(path).lower() for path in files if path.exists())
+    return any(token in combined for token in tokens)
+
+
 def check_agent_instruction_alignment(project: Path, mode: str, findings: list[dict[str, str]]) -> None:
     agent_files = list((project / "agents").glob("*.md")) if (project / "agents").exists() else []
+    owns_agents = declares_responsibility(project, "agent_role_instructions")
     if not agent_files:
-        add(findings, "warn", "agent_instructions_vs_behavior", "missing_implementation", "No role agent instruction files found under agents/", "Generated projects should inherit role prompts or document why this project uses only AGENTS.md.")
+        if owns_agents:
+            add(findings, "warn", "agent_instructions_vs_behavior", "missing_implementation", "Declared agent-role instruction responsibility has no role files under agents/", "Either restore owned role instruction files or remove the declared responsibility.")
         return
     for p in agent_files:
         if p.name.startswith("_"):
             continue
         txt = read(p).lower()
         if "context used" not in txt:
-            add(findings, "warn", "agent_instructions_vs_behavior", "drift", f"{p.relative_to(project)} does not require Context used reporting", "Update role prompt from ProjectForge templates or add explicit Context used reporting.")
+            add(findings, "warn", "agent_instructions_vs_behavior", "drift", f"{p.relative_to(project)} does not require Context used reporting", "Update owned role prompt or remove the project-local role-instruction responsibility.")
         if "architecture-to-reality" not in txt and p.name in {"auditor.md", "reviewer.md", "planner.md"}:
-            add(findings, "warn", "agent_instructions_vs_behavior", "documentation_without_implementation", f"{p.relative_to(project)} does not mention Architecture-to-Reality Audit triggers", "Add audit-trigger guidance to governance/review/planning roles.")
+            add(findings, "warn", "agent_instructions_vs_behavior", "documentation_without_implementation", f"{p.relative_to(project)} does not mention Architecture-to-Reality Audit triggers", "Add audit-trigger guidance to owned governance/review/planning roles.")
 
 
 def check_logging_and_metrics(project: Path, findings: list[dict[str, str]]) -> None:
     if not has(project / "logs" / "logging_policy.yaml", "raw"):
         add(findings, "warn", "logging_systems", "obsolete_documentation", "logging policy does not clearly define raw operational logs", "Clarify logs/raw vs logs/derived separation in logs/logging_policy.yaml.")
-    if not has(project / "metrics" / "metrics_policy.yaml", "derived"):
-        add(findings, "warn", "logging_systems", "obsolete_documentation", "metrics policy does not clearly define metrics as derived evidence", "Clarify metrics as derived evidence, not raw logs.")
+    if declares_responsibility(project, "metrics_policy") and not has(project / "metrics" / "metrics_policy.yaml", "derived"):
+        add(findings, "warn", "logging_systems", "obsolete_documentation", "Declared metrics-policy responsibility is missing or does not clearly define metrics as derived evidence", "Clarify the owned metrics policy as derived evidence or remove the declared responsibility.")
 
 
 def check_templates(project: Path, mode: str, findings: list[dict[str, str]]) -> None:
@@ -219,7 +376,9 @@ def check(project: Path) -> dict[str, Any]:
     mode = detect_mode(project)
     findings: list[dict[str, str]] = []
     latest = latest_architecture_audit(project)
-    completed = completed_tasks_since(project, latest)
+    cadence = completed_tasks_since(project, latest)
+    completed = cadence["completed_tasks_since_latest_audit"]
+    unknown_completed = cadence["completed_tasks_unknown_temporal_position"]
 
     check_process_documented(project, mode, findings)
     check_tools_and_automation(project, mode, findings)
@@ -233,17 +392,25 @@ def check(project: Path) -> dict[str, Any]:
         add(findings, "block", "governance_processes", "drift", f"{completed} completed task(s) since last Architecture-to-Reality Audit", "Run and record an Architecture-to-Reality Audit before continuing major work.")
     elif completed >= 5:
         add(findings, "warn", "governance_processes", "drift", f"{completed} completed task(s) since last Architecture-to-Reality Audit", "Schedule an Architecture-to-Reality Audit soon; cadence is every 5-10 completed tasks.")
+    if unknown_completed:
+        add(findings, "warn", "governance_processes", "drift", f"{unknown_completed} completed task artifact(s) have unknown temporal position relative to latest Architecture-to-Reality Audit", "Record explicit completion dates, commit the task artifacts, or run a fresh audit after resolving cadence indeterminacy.")
 
     blocks = [f for f in findings if f["severity"] == "block"]
     warnings = [f for f in findings if f["severity"] == "warn"]
     return {
-        "project": str(project),
+        "project": project_identity(project),
         "mode": mode,
         "timestamp": dt.datetime.now(dt.UTC).isoformat(timespec="seconds"),
         "audit_categories": AUDIT_CATEGORIES,
         "drift_types": DRIFT_TYPES,
         "latest_architecture_reality_audit": str(latest.relative_to(project)) if latest else None,
         "completed_tasks_since_latest_audit": completed,
+        "known_completed_tasks_after_latest_audit": cadence["known_completed_tasks_after_latest_audit"],
+        "completed_tasks_unknown_temporal_position": unknown_completed,
+        "cadence_evidence_mode": cadence["cadence_evidence_mode"],
+        "cadence_fully_determined": cadence["cadence_fully_determined"],
+        "cadence_known_after_tasks": cadence["known_after_tasks"],
+        "cadence_unknown_temporal_tasks": cadence["unknown_temporal_tasks"],
         "blocks": blocks,
         "warnings": warnings,
     }
@@ -258,6 +425,9 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Mode: {report['mode']}",
         f"Latest previous audit: {report['latest_architecture_reality_audit'] or 'none'}",
         f"Completed tasks since latest audit: {report['completed_tasks_since_latest_audit']}",
+        f"Completed tasks with unknown temporal position: {report.get('completed_tasks_unknown_temporal_position', 0)}",
+        f"Cadence evidence mode: {report.get('cadence_evidence_mode', 'unknown')}",
+        f"Cadence fully determined: {report.get('cadence_fully_determined', False)}",
         "",
         "## Scope",
         "",

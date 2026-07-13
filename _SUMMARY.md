@@ -1,40 +1,30 @@
 # Folder Summary: .
 
 ## Purpose
-This folder is the relocated MacroForge project root at `/home/mkkto/srv/EIP/projects/MacroForge`, retaining ProjectForge-generated operating-system conventions.
+This folder is the MacroForge project root, retaining ProjectForge-generated operating-system conventions.
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
 - `.gitignore`
-- `.gitkeep`
 - `AGENTS.md`
 - `CONSTITUTION.md`
 - `README.md`
-- `agents/`
 - `architecture/`
 - `artifacts/`
-- `confidence/`
 - `config/`
 - `context/`
 - `data/`
 - `db/`
 - `docs/`
-- `hardware/`
 - `instructions/`
-- `knowledge/`
 - `logs/`
-- `memory/`
-- `metrics/`
-- `models/`
 - `permissions/`
 - `pipelines/`
-- `policies/`
 - `project.yaml`
 - `pyproject.toml`
 - `question_queue/`
 - `recovery/`
 - `simulation/`
-- `skills/`
 - `src/`
 - `state/`
 - `tests/`

@@ -6,8 +6,8 @@ Status: active
 
 Source review artifacts:
 
-- `/home/mkkto/srv/EIP/projects/MetaHarvest/reviews/R-20260608-macroforge-first-architectureharvest-review.md`
-- `/home/mkkto/srv/EIP/projects/MetaHarvest/reviews/R-20260608-macroforge-first-architectureharvest-review.yaml`
+- `MetaHarvest review R-20260608-macroforge-first-architectureharvest-review.md` (external sibling-project advisory evidence)
+- `MetaHarvest review R-20260608-macroforge-first-architectureharvest-review.yaml` (external sibling-project advisory evidence)
 
 Outcome implemented from review:
 

@@ -9,6 +9,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+from tools import consult_metaharvest as consult_module
 from tools.consult_metaharvest import (
     AdvisoryBuilder,
     ConsultationContract,
@@ -196,6 +197,48 @@ def test_retrieval_failure_is_non_blocking(tmp_path: Path):
 
     assert result.failure == "MetaHarvest unavailable; consultation skipped."
     assert result.records == []
+
+
+def test_missing_metaharvest_root_is_clear_and_non_blocking():
+    classification = classify_task_text("Change canonicalization lifecycle semantics.")
+    decision = ConsultationContract().evaluate(classification, RELEVANCE_MAP)
+
+    result = RetrievalContract().retrieve(decision, classification)
+
+    assert result.failure == "MetaHarvest root not provided; consultation skipped."
+    assert result.records == []
+    assert result.commands_run == []
+
+
+def test_consultation_module_has_no_hard_coded_machine_metaharvest_root():
+    source = Path(consult_module.__file__).read_text(encoding="utf-8")
+
+    assert "/home/" not in source
+    assert "srv/EIP/projects/MetaHarvest" not in source
+    assert consult_module.DEFAULT_METAHARVEST_ROOT is None
+
+
+def test_explicit_metaharvest_root_preserves_deterministic_retrieval(tmp_path: Path):
+    calls: list[list[str]] = []
+    record = tmp_path / "records" / "explicit.md"
+    record.parent.mkdir()
+    record.write_text("explicit record", encoding="utf-8")
+    (tmp_path / "tools").mkdir()
+    (tmp_path / "tools" / "query_knowledge.py").write_text("# fixture", encoding="utf-8")
+
+    def runner(args: list[str], cwd: Path):
+        calls.append(args)
+        return 0, "records/explicit.md\nExplicit result"
+
+    classification = classify_task_text("Change canonicalization lifecycle semantics.")
+    decision = ConsultationContract().evaluate(classification, RELEVANCE_MAP)
+
+    result = RetrievalContract(metaharvest_root=tmp_path, command_runner=runner).retrieve(decision, classification)
+
+    assert result.failure is None
+    assert result.records == ["records/explicit.md"]
+    assert result.deeper_records == {"records/explicit.md": "explicit record"}
+    assert calls == [["--problem", "canonicalization_lifecycle_comparability_eligibility_check_gates"]]
 
 
 def test_advisory_template_is_complete_and_authority_note_is_always_present(tmp_path: Path):

@@ -1,0 +1,567 @@
+# Post-Audit Residue Remediation Manifest
+
+Status: corrected implementation candidate, not publication.
+
+## Counts
+- action_counts:
+  - add: 9
+  - delete: 81
+  - modify: 14
+- additions: 9
+- audit_durability_entries: 2
+- candidate_add_modify_byte_size: 371890
+- deletions: 81
+- governance_manifest_entries: 2
+- large_blobs_over_50000:
+  - artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.json: 170470
+  - artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.md: 84315
+- migration_entries: 17
+- modifications: 14
+- obsolete_scaffold_deletion_entries: 75
+- ownership_classification_counts:
+  - A. Active MacroForge responsibility: 11
+  - D. Obsolete ProjectForge scaffold: 76
+  - F. Incomplete migration: 17
+- scaffold_reference_reconciliation_entries: 27
+- total_entries: 104
+
+## Phase 1 / correction findings
+- architecture_verdict: reaffirmed
+- audit_cadence_distinguishes_known_after_known_before_and_unknown: True
+- audit_cadence_unknown_tasks_warn_not_false_zero: True
+- audit_cadence_uses_explicit_filename_git_then_legacy_mtime_evidence: True
+- audit_locally_completed_not_durably_published_until_report_committed: True
+- audit_warning_clears_locally_only_because_untracked_report_exists: True
+- clean_origin_main_export_still_reports_44_task_audit_cadence_block_until_publication: True
+- clean_origin_main_export_still_reports_audit_cadence_block: True
+- committed_head_coherent_under_committed_validator: True
+- corrected_candidate_removes_machine_specific_paths: True
+- migration_must_publish_atomically: True
+- partial_migration_publication_breaks_coherence: True
+- question_queue_placeholders_retained_due_gitignore_contract: True
+- register_project_classified_obsolete_bootstrap_residue: True
+- unowned_obsolete_agents_scaffold_no_longer_warns: True
+- unowned_obsolete_metrics_scaffold_no_longer_warns: True
+- working_tree_migration_coherent_under_working_validator: True
+
+## Candidate paths
+- `.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D .gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `_SUMMARY.md` — modify — A. Active MacroForge responsibility — status ` M _SUMMARY.md`
+  - Evidence: Root summary contains block updated to remove obsolete scaffold directories/placeholders from corrected candidate publication boundary and remove machine-specific relocated-root path while preserving active MacroForge directories.
+  - Consumer/reference result: Active repository summary; no deleted scaffold dependency remains and no local-machine path remains.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Prevent stale current summary references to deleted scaffold paths and avoid publication of machine-specific root path.
+- `agents/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `agents/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/_SUMMARY.md`
+  - Evidence: agents/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: agents/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `agents/auditor.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/auditor.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `agents/bootstrapper.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/bootstrapper.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `agents/coder.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/coder.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `agents/context_manager.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/context_manager.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `agents/model_router.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/model_router.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `agents/planner.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/planner.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `agents/researcher.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/researcher.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `agents/reviewer.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/reviewer.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `agents/summarizer.md` — delete — D. Obsolete ProjectForge scaffold — status ` D agents/summarizer.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `architecture/_SUMMARY.md` — modify — F. Incomplete migration — status ` M architecture/_SUMMARY.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/architecture_state.md` — modify — F. Incomplete migration — status ` M architecture/architecture_state.md`
+  - Evidence: Active architecture state; corrected MetaHarvest evidence reference from machine-specific absolute path to source-project plus repository-relative review evidence.
+  - Consumer/reference result: Current architecture documentation consumer; no runtime dependency on external MetaHarvest checkout.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Preserve MetaHarvest provenance without local-machine paths.
+- `architecture/architectureharvest/_SUMMARY.md` — delete — F. Incomplete migration — status ` D architecture/architectureharvest/_SUMMARY.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/architectureharvest/adoption_candidates.md` — delete — F. Incomplete migration — status ` D architecture/architectureharvest/adoption_candidates.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/architectureharvest/rejected_candidates.md` — delete — F. Incomplete migration — status ` D architecture/architectureharvest/rejected_candidates.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/architectureharvest/relevance_map.yaml` — delete — F. Incomplete migration — status ` D architecture/architectureharvest/relevance_map.yaml`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/architectureharvest/review_history.md` — delete — F. Incomplete migration — status ` D architecture/architectureharvest/review_history.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/metaharvest/_SUMMARY.md` — add — F. Incomplete migration — status `?? architecture/metaharvest/_SUMMARY.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/metaharvest/adoption_candidates.md` — add — F. Incomplete migration — status `?? architecture/metaharvest/adoption_candidates.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/metaharvest/rejected_candidates.md` — add — F. Incomplete migration — status `?? architecture/metaharvest/rejected_candidates.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/metaharvest/relevance_map.yaml` — add — F. Incomplete migration — status `?? architecture/metaharvest/relevance_map.yaml`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `architecture/metaharvest/review_history.md` — add — F. Incomplete migration — status `?? architecture/metaharvest/review_history.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `artifacts/decisions/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D artifacts/decisions/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `artifacts/handoffs/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D artifacts/handoffs/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `artifacts/reports/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D artifacts/reports/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `artifacts/reports/R-20260713-architecture-reality-audit.md` — add — A. Active MacroForge responsibility — status `?? artifacts/reports/R-20260713-architecture-reality-audit.md`
+  - Evidence: Canonical July 13 Architecture-to-Reality Audit report; corrected to use stable project identity and explicit 5-task/local-clear/44-task durable cadence evidence.
+  - Consumer/reference result: Selected as latest audit in corrected candidate tree; clean origin/main without publication still selects July 1 audit and blocks at 44 tasks.
+  - Clean-export requirement: Required to durably reset architecture-audit cadence in a clean export.
+  - Publication rationale: Publish canonical audit evidence without machine-specific paths and without implying durable reset before publication.
+- `artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.json` — add — A. Active MacroForge responsibility — status `?? artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.json`
+  - Evidence: Created by bounded remediation task to prevent broad working-tree cleanup conflation.
+  - Consumer/reference result: Created by bounded remediation task to prevent broad working-tree cleanup conflation.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Machine/human remediation manifest proving exact candidate boundary and verification evidence.
+- `artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.md` — add — A. Active MacroForge responsibility — status `?? artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.md`
+  - Evidence: Created by bounded remediation task to prevent broad working-tree cleanup conflation.
+  - Consumer/reference result: Created by bounded remediation task to prevent broad working-tree cleanup conflation.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Machine/human remediation manifest proving exact candidate boundary and verification evidence.
+- `artifacts/tasks/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D artifacts/tasks/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `confidence/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D confidence/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `confidence/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D confidence/_SUMMARY.md`
+  - Evidence: confidence/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: confidence/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `confidence/confidence_policy.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D confidence/confidence_policy.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `confidence/confidence_template.md` — delete — D. Obsolete ProjectForge scaffold — status ` D confidence/confidence_template.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `config/_SUMMARY.md` — modify — A. Active MacroForge responsibility — status ` M config/_SUMMARY.md`
+  - Evidence: Active config summary updated to remove deleted setup/sufficiency scaffold entries while preserving neutral evidence release configuration.
+  - Consumer/reference result: Active config summary updated to remove deleted setup/sufficiency scaffold entries while preserving neutral evidence release configuration.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Prevent stale summary references after safe config scaffold deletion.
+- `config/setup_questionnaire.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D config/setup_questionnaire.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `config/sufficiency_policy.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D config/sufficiency_policy.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `context/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D context/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `docs/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D docs/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `docs/_SUMMARY.md` — modify — A. Active MacroForge responsibility — status ` M docs/_SUMMARY.md`
+  - Evidence: Active docs summary updated to remove deleted docs/.gitkeep only.
+  - Consumer/reference result: Active docs summary updated to remove deleted docs/.gitkeep only.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Prevent stale active summary reference to removed placeholder.
+- `docs/architecture/metaharvest-trigger-gated-consultation.md` — modify — F. Incomplete migration — status ` M docs/architecture/metaharvest-trigger-gated-consultation.md`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `hardware/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D hardware/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `hardware/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D hardware/_SUMMARY.md`
+  - Evidence: hardware/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: hardware/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `hardware/profile.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D hardware/profile.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `hardware/resource_policy.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D hardware/resource_policy.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `instructions/CONTEXT_POLICY.md` — modify — D. Obsolete ProjectForge scaffold — status ` M instructions/CONTEXT_POLICY.md`
+  - Evidence: Current policy formerly required knowledge/dependencies.yaml; corrected to require direct source/tests/state/architecture/task/decision evidence because MacroForge no longer maintains a parallel project-local knowledge-map directory.
+  - Consumer/reference result: Current policy formerly required knowledge/dependencies.yaml; corrected to require direct source/tests/state/architecture/task/decision evidence because MacroForge no longer maintains a parallel project-local knowledge-map directory.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Neutralize current policy consumer before deleting knowledge/dependencies.yaml.
+- `knowledge/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D knowledge/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `knowledge/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D knowledge/_SUMMARY.md`
+  - Evidence: knowledge/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: knowledge/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `knowledge/components.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D knowledge/components.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `knowledge/dependencies.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D knowledge/dependencies.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `memory/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D memory/_SUMMARY.md`
+  - Evidence: memory/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: memory/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `memory/archive/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D memory/archive/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `memory/archive/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D memory/archive/_SUMMARY.md`
+  - Evidence: memory/archive/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: memory/archive/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `memory/deprecated_decisions/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D memory/deprecated_decisions/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `memory/deprecated_decisions/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D memory/deprecated_decisions/_SUMMARY.md`
+  - Evidence: memory/deprecated_decisions/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: memory/deprecated_decisions/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `memory/retention_policy.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D memory/retention_policy.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `metrics/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D metrics/_SUMMARY.md`
+  - Evidence: metrics/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: metrics/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `metrics/events.jsonl` — delete — D. Obsolete ProjectForge scaffold — status ` D metrics/events.jsonl`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `metrics/metrics_policy.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D metrics/metrics_policy.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `metrics/recommendations/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D metrics/recommendations/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `metrics/recommendations/README.md` — delete — D. Obsolete ProjectForge scaffold — status ` D metrics/recommendations/README.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `metrics/recommendations/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D metrics/recommendations/_SUMMARY.md`
+  - Evidence: metrics/recommendations/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: metrics/recommendations/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `metrics/reports/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D metrics/reports/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `metrics/reports/README.md` — delete — D. Obsolete ProjectForge scaffold — status ` D metrics/reports/README.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `metrics/reports/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D metrics/reports/_SUMMARY.md`
+  - Evidence: metrics/reports/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: metrics/reports/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `models/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D models/_SUMMARY.md`
+  - Evidence: models/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: models/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `models/registry.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D models/registry.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `models/routing.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D models/routing.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `models/selection_policy.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D models/selection_policy.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `permissions/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D permissions/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `permissions/_SUMMARY.md` — modify — A. Active MacroForge responsibility — status ` M permissions/_SUMMARY.md`
+  - Evidence: Active permissions summary updated to remove only deleted .gitkeep while preserving allowlist/denylist/escalation policy files.
+  - Consumer/reference result: Active permissions summary updated to remove only deleted .gitkeep while preserving allowlist/denylist/escalation policy files.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Preserve active permissions semantics while removing placeholder residue.
+- `policies/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D policies/_SUMMARY.md`
+  - Evidence: policies/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: policies/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `policies/enforcement_policy.yaml` — delete — D. Obsolete ProjectForge scaffold — status ` D policies/enforcement_policy.yaml`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `simulation/dry_runs/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D simulation/dry_runs/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `simulation/dry_runs/_SUMMARY.md` — modify — A. Active MacroForge responsibility — status ` M simulation/dry_runs/_SUMMARY.md`
+  - Evidence: Active dry-run evidence summary updated to remove deleted .gitkeep only while preserving historical dry-run evidence list.
+  - Consumer/reference result: Active dry-run evidence summary updated to remove deleted .gitkeep only while preserving historical dry-run evidence list.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Preserve historical evidence and remove stale placeholder reference.
+- `skills/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/_SUMMARY.md`
+  - Evidence: skills/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: skills/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `skills/clarification-queue.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/clarification-queue.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/command-permissions.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/command-permissions.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/context-budgeting.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/context-budgeting.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/deferred-specification.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/deferred-specification.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/dry-run-workflow.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/dry-run-workflow.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/folder-summaries.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/folder-summaries.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/git-workflow.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/git-workflow.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/logging-workflow.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/logging-workflow.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/metrics-feedback.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/metrics-feedback.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/model-routing.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/model-routing.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/project-bootstrap.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/project-bootstrap.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/state-update.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/state-update.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `skills/structured-questionnaire.md` — delete — D. Obsolete ProjectForge scaffold — status ` D skills/structured-questionnaire.md`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `state/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D state/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `tests/invariants/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D tests/invariants/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `tests/invariants/_SUMMARY.md` — delete — D. Obsolete ProjectForge scaffold — status ` D tests/invariants/_SUMMARY.md`
+  - Evidence: tests/invariants/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Consumer/reference result: tests/invariants/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete stale generated summary for obsolete scaffold path family.
+- `tests/test_architectureharvest_integration.py` — delete — F. Incomplete migration — status ` D tests/test_architectureharvest_integration.py`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `tests/test_consult_metaharvest.py` — modify — A. Active MacroForge responsibility — status ` M tests/test_consult_metaharvest.py`
+  - Evidence: Targeted tests for explicit MetaHarvest root, missing root, invalid root, deterministic retrieval, and absence of hard-coded machine path.
+  - Consumer/reference result: Targeted tests for explicit MetaHarvest root, missing root, invalid root, deterministic retrieval, and absence of hard-coded machine path.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Verify corrected consultation-root contract.
+- `tests/test_metaharvest_integration.py` — add — F. Incomplete migration — status `?? tests/test_metaharvest_integration.py`
+  - Evidence: Contains MetaHarvest migration tests plus Architecture-to-Reality Audit regression tests for stable project identity, cadence date evidence, indeterminate tasks, thresholds, and obsolete scaffold warning removal.
+  - Consumer/reference result: Targeted pytest consumer verifies corrected audit and MetaHarvest integration behavior in temporary fixtures without relying on dirty working-tree residue.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Publish regression coverage for ArchitectureHarvest→MetaHarvest migration and corrected MacroForge audit cadence/scaffold semantics atomically.
+- `tools/.gitkeep` — delete — D. Obsolete ProjectForge scaffold — status ` D tools/.gitkeep`
+  - Evidence: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Consumer/reference result: Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.
+- `tools/_SUMMARY.md` — modify — A. Active MacroForge responsibility — status ` M tools/_SUMMARY.md`
+  - Evidence: Active tools summary updated only to remove obsolete tools/register_project.py after classifying it as scaffold residue.
+  - Consumer/reference result: Active tools summary updated only to remove obsolete tools/register_project.py after classifying it as scaffold residue.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Keep active tools summary consistent with corrected candidate boundary.
+- `tools/architecture_reality_audit.py` — modify — A. Active MacroForge responsibility — status ` M tools/architecture_reality_audit.py`
+  - Evidence: Canonical Architecture-to-Reality Audit; corrected to use stable project identity, date-evidence cadence classification, explicit unknown-temporal task reporting, and ownership-gated optional scaffold checks.
+  - Consumer/reference result: Used by canonical Architecture-to-Reality Audit; corrected candidate audit should select the July 13 report, report MacroForge as project identity, avoid clone-mtime cadence drift, expose unknown temporal evidence, and avoid warnings for unowned obsolete agents/metrics scaffold.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Prevent future canonical audit reports from embedding machine-specific roots, producing false clone-mtime cadence blocks, silently hiding undated completed tasks, or warning on obsolete unowned ProjectForge scaffold.
+- `tools/check_coherence.py` — modify — F. Incomplete migration — status ` M tools/check_coherence.py`
+  - Evidence: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Consumer/reference result: Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Publish ArchitectureHarvest→MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.
+- `tools/consult_metaharvest.py` — modify — F. Incomplete migration — status ` M tools/consult_metaharvest.py`
+  - Evidence: Active advisory helper; corrected to require explicit MetaHarvest root for retrieval and remove hard-coded local MetaHarvest checkout path.
+  - Consumer/reference result: Used by tests and documented trigger-gated consultation; deterministic when explicit valid root is supplied; missing/invalid root is non-blocking and explicit.
+  - Clean-export requirement: Required for corrected candidate clean-export coherence.
+  - Publication rationale: Preserve consultation behavior without machine-specific default or runtime coupling.
+- `tools/register_project.py` — delete — D. Obsolete ProjectForge scaffold — status ` D tools/register_project.py`
+  - Evidence: No active nonhistorical consumer beyond tools/_SUMMARY.md; references models/registry.yaml, models/routing.yaml, and skills/ are ProjectForge bootstrap residue rather than active MacroForge responsibilities.
+  - Consumer/reference result: No active nonhistorical consumer beyond tools/_SUMMARY.md; references models/registry.yaml, models/routing.yaml, and skills/ are ProjectForge bootstrap residue rather than active MacroForge responsibilities.
+  - Clean-export requirement: Not required as a standalone runtime/data dependency in clean export.
+  - Publication rationale: Delete obsolete bootstrap tool instead of hollowing it out to justify scaffold deletions.

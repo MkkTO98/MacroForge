@@ -20,7 +20,6 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 - `log_run.py`
 - `record_metric.py`
 - `recover_session.py`
-- `register_project.py`
 - `repository_execution_verifier.py`
 - `review_metrics.py`
 - `run.py`

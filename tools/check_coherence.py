@@ -13,7 +13,7 @@ ROOT_REQUIRED = [
  'CONSTITUTION.md','projectforge.yaml','state/active_goal.md','state/project_state.md',
  'state/architecture.md','permissions/allowlist.yaml','permissions/denylist.yaml',
  'permissions/escalation_rules.yaml','context/context_policy.yaml','simulation/dry_run_policy.yaml',
- 'metrics/metrics_policy.yaml','recovery/escalation_policy.yaml','recovery/continuity_framework.md','hardware/profile.yaml',
+ 'recovery/escalation_policy.yaml','recovery/continuity_framework.md',
  'automation/orchestration_schedule.yaml','docs/OPERATOR_MANUAL.md','tools/architecture_reality_audit.py','tools/recover_session.py'
 ]
 
@@ -21,11 +21,11 @@ GENERATED_REQUIRED = [
  'CONSTITUTION.md','AGENTS.md','project.yaml','state/active_goal.md','state/project_state.md',
  'state/architecture.md','permissions/allowlist.yaml','permissions/denylist.yaml',
  'permissions/escalation_rules.yaml','context/context_policy.yaml','simulation/dry_run_policy.yaml',
- 'metrics/metrics_policy.yaml','recovery/escalation_policy.yaml','recovery/continuity_framework.md','hardware/profile.yaml',
+ 'recovery/escalation_policy.yaml','recovery/continuity_framework.md',
  'workspace_config.yaml','tools/check_coherence.py','tools/run.py','tools/architecture_reality_audit.py','tools/recover_session.py',
- 'architecture/architecture_state.md','architecture/architectureharvest/relevance_map.yaml',
- 'architecture/architectureharvest/adoption_candidates.md','architecture/architectureharvest/rejected_candidates.md',
- 'architecture/architectureharvest/review_history.md'
+ 'architecture/architecture_state.md','architecture/metaharvest/relevance_map.yaml',
+ 'architecture/metaharvest/adoption_candidates.md','architecture/metaharvest/rejected_candidates.md',
+ 'architecture/metaharvest/review_history.md'
 ]
 
 
@@ -41,12 +41,9 @@ def detect_mode(root: Path) -> str:
 
 def check_common(root: Path, blocks: list[str], warns: list[str]) -> None:
     if (root/'logs'/'index').exists(): warns.append('logs/index exists; SQLite indexing should be opt-in, not default')
-    if (root/'models'/'hardware_profile.yaml').exists(): warns.append('models/hardware_profile.yaml is redundant; use hardware/profile.yaml')
     if (root/'tools'/'update_folder_summaries.py').exists(): warns.append('legacy update_folder_summaries.py present; use update_context_summaries.py')
     if not has_text(root/'permissions'/'escalation_rules.yaml','push_requires_human_approval'):
         blocks.append('manual GitHub push rule missing from permissions/escalation_rules.yaml')
-    if not has_text(root/'confidence'/'confidence_policy.yaml','codex_or_premium_model'):
-        blocks.append('Codex-before-human capability escalation missing from confidence policy')
     if (root/'workspace').exists() and (root/'project.yaml').exists():
         py=(root/'project.yaml').read_text(encoding='utf-8', errors='replace').lower()
         if 'meta_project: true' not in py:
@@ -63,19 +60,8 @@ def check_common(root: Path, blocks: list[str], warns: list[str]) -> None:
                 continue
             errs=mod.validate(report)
             if errs: blocks.append(f'invalid dry-run report: {report}: {errs[0]}')
-    for rel in ['agents/planner.md','agents/coder.md','agents/reviewer.md','agents/auditor.md']:
-        p=root/rel
-        if p.exists() and 'context used' not in p.read_text(encoding='utf-8', errors='replace').lower():
-            warns.append(f'{rel} does not explicitly require Context used reporting')
-    for rel in ['agents/coder.md','agents/reviewer.md']:
-        p=root/rel
-        txt=p.read_text(encoding='utf-8', errors='replace').lower() if p.exists() else ''
-        if p.exists() and ('knowledge/components.yaml' not in txt or 'knowledge/dependencies.yaml' not in txt):
-            blocks.append(f'{rel} does not enforce knowledge-map checks before structural changes')
     if not has_text(root/'logs'/'logging_policy.yaml', 'raw events') and not has_text(root/'logs'/'logging_policy.yaml', 'raw_operational_record'):
         warns.append('logging policy does not clearly define logs as raw operational records')
-    if not has_text(root/'metrics'/'metrics_policy.yaml', 'derived'):
-        warns.append('metrics policy does not clearly define metrics as derived evidence')
     if not has_text(root/'recovery'/'continuity_framework.md', 'Standard ProjectForge closeout contract'):
         blocks.append('continuity framework missing standard closeout contract')
     if not has_text(root/'recovery'/'continuity_framework.md', 'Recover project state and continue work'):
@@ -131,10 +117,11 @@ def check_generated(root: Path):
         blocks.append('workspace_config.yaml must record parent projectforge_root')
     if has_text(root/'state'/'active_goal.md', 'Project:') and not has_text(root/'state'/'active_goal.md', 'Purpose'):
         warns.append('state/active_goal.md appears underpopulated')
-    if not has_text(root/'architecture'/'architectureharvest'/'relevance_map.yaml', 'consult_required_during'):
-        blocks.append('architectureharvest relevance_map.yaml missing consultation trigger list')
-    if not has_text(root/'architecture'/'architectureharvest'/'relevance_map.yaml', 'active'):
-        blocks.append('architectureharvest relevance_map.yaml missing active/staleness statuses')
+    relevance_map = root/'architecture'/'metaharvest'/'relevance_map.yaml'
+    if not has_text(relevance_map, 'consult_required_during'):
+        blocks.append('metaharvest relevance_map.yaml missing consultation trigger list')
+    if not has_text(relevance_map, 'active'):
+        blocks.append('metaharvest relevance_map.yaml missing active/staleness statuses')
     return blocks, warns
 
 

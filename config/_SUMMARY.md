@@ -5,8 +5,7 @@ This folder is part of the ProjectForge file-backed operating system for `config
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
-- `setup_questionnaire.yaml`
-- `sufficiency_policy.yaml`
+- `neutral_evidence_release_subscriptions.json`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work

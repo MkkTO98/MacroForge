@@ -1,5 +1,5 @@
 schema_version: 1
-kind: architectureharvest_relevance_map
+kind: metaharvest_relevance_map
 project_id: macroforge
 status: active
 staleness_status: active
@@ -15,9 +15,9 @@ active_recommendations:
   - id: MF-AH-REV-001
     status: adopted_narrowly
     local_record: artifacts/manifests/canonical_assets.json
-    source_review: /home/mkkto/srv/EIP/projects/MetaHarvest/reviews/R-20260608-macroforge-first-architectureharvest-review.md
+    source_review: MetaHarvest review R-20260608-macroforge-first-architectureharvest-review.md (external sibling-project advisory evidence)
     boundary: file_backed_manifest_only_no_runtime_adoption
 references:
-  projectforge_relevance_map: /home/mkkto/srv/EIP/projects/MetaHarvest/relevance_maps/macroforge/macroforge-relevance-map.yaml
-  dbt_relevance_map: /home/mkkto/srv/EIP/projects/MetaHarvest/relevance_maps/macroforge/dbt-relevance-map.yaml
-  dagster_relevance_map: /home/mkkto/srv/EIP/projects/MetaHarvest/relevance_maps/macroforge/dagster-relevance-map.yaml
+  projectforge_relevance_map: MetaHarvest relevance map macroforge/macroforge-relevance-map.yaml (external sibling-project advisory evidence)
+  dbt_relevance_map: MetaHarvest relevance map macroforge/dbt-relevance-map.yaml (external sibling-project advisory evidence)
+  dagster_relevance_map: MetaHarvest relevance map macroforge/dagster-relevance-map.yaml (external sibling-project advisory evidence)

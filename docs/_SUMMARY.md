@@ -5,7 +5,6 @@ Human-readable MacroForge architecture, roadmap, data model, runbooks, and gloss
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
-- `.gitkeep`
 - `AUTONOMY_LEVELS.md`
 - `BRANCH_STRATEGY.md`
 - `architecture/`

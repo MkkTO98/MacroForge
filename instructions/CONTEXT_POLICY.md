@@ -14,4 +14,4 @@ Rules:
 - Cloud/Codex escalation requires `context/context_audit.json` / `.md`, estimated token counts, context mode, included/excluded file reasons, confirmation that raw logs were excluded, and confirmation that summaries were used.
 - Compact cloud governance uses the normal governance budget. Legitimate project-wide audits, redesigns, strategic reviews, gap analyses, and consistency reviews may use `--context-mode project_wide_review` with `--review-justification` and the larger configured project-wide review budget.
 - Agents must not treat summaries as authoritative when they conflict with decisions or state.
-- Cross-module changes must consult `knowledge/dependencies.yaml`.
+- Cross-module changes must consult the relevant source, tests, state, architecture, and task/decision artifacts directly; MacroForge no longer maintains a parallel project-local knowledge-map directory.

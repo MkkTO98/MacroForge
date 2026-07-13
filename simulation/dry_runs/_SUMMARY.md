@@ -5,7 +5,6 @@ This folder is part of the ProjectForge file-backed operating system for `simula
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
-- `.gitkeep`
 - `20260603_094428-open-task-012.md`
 - `20260603_100809-task-012-oecd-sdmx-tdd.md`
 - `20260603_132255-task-013-oecd-live-rerunnable-smoke.md`

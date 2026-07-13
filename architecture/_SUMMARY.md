@@ -6,7 +6,7 @@ This folder is part of the ProjectForge file-backed operating system for `archit
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
 - `architecture_state.md`
-- `architectureharvest/`
+- `metaharvest/`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work

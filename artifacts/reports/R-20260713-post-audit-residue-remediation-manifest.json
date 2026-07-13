@@ -1,0 +1,1949 @@
+{
+  "baseline": {
+    "branch": "main",
+    "fact_total": 10651727,
+    "head": "9ef9bdfde8eba49641d64404bf2a1a743553418e",
+    "origin_main": "9ef9bdfde8eba49641d64404bf2a1a743553418e"
+  },
+  "counts": {
+    "action_counts": {
+      "add": 9,
+      "delete": 81,
+      "modify": 14
+    },
+    "additions": 9,
+    "audit_durability_entries": 2,
+    "candidate_add_modify_byte_size": 371890,
+    "deletions": 81,
+    "governance_manifest_entries": 2,
+    "large_blobs_over_50000": [
+      [
+        "artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.json",
+        170470
+      ],
+      [
+        "artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.md",
+        84315
+      ]
+    ],
+    "migration_entries": 17,
+    "modifications": 14,
+    "obsolete_scaffold_deletion_entries": 75,
+    "ownership_classification_counts": {
+      "A. Active MacroForge responsibility": 11,
+      "D. Obsolete ProjectForge scaffold": 76,
+      "F. Incomplete migration": 17
+    },
+    "scaffold_reference_reconciliation_entries": 27,
+    "total_entries": 104
+  },
+  "created_utc": "2026-07-13T07:04:56Z",
+  "entries": [
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D .gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "docs/_SUMMARY.md:8:- `.gitkeep`",
+        "tests/invariants/_SUMMARY.md:8:- `.gitkeep`",
+        "artifacts/tasks/TASK-166-purposeless-structure-removal.md:41:- root `.gitkeep`",
+        "artifacts/tasks/TASK-166-purposeless-structure-removal.md:42:- all remaining `.gitkeep` files",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:2: D .gitkeep",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:6: D agents/.gitkeep",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:21: D artifacts/decisions/.gitkeep",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:23: D artifacts/handoffs/.gitkeep",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:24: D artifacts/reports/.gitkeep",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:37: D artifacts/tasks/.gitkeep"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": ".gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Active repository summary; no deleted scaffold dependency remains and no local-machine path remains.",
+      "current_git_status": " M _SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "Root summary contains block updated to remove obsolete scaffold directories/placeholders from corrected candidate publication boundary and remove machine-specific relocated-root path while preserving active MacroForge directories.",
+      "inbound_references": [
+        "root publication summary"
+      ],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "_SUMMARY.md",
+      "publication_rationale": "Prevent stale current summary references to deleted scaffold paths and avoid publication of machine-specific root path.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:6: D agents/.gitkeep",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:69: D logs/agents/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:7: D agents/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:70: D logs/agents/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1242: agents/.gitkeep                                    |    0",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1305: logs/agents/.gitkeep                               |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "agents/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D agents/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "agents/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "agents/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/auditor.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:7: D agents/auditor.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:8: D agents/auditor.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1243: agents/auditor.md                                  |   20 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/auditor.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/bootstrapper.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:8: D agents/bootstrapper.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:9: D agents/bootstrapper.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1244: agents/bootstrapper.md                             |   17 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/bootstrapper.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/coder.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:9: D agents/coder.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:10: D agents/coder.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1245: agents/coder.md                                    |   21 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/coder.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/context_manager.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:10: D agents/context_manager.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:11: D agents/context_manager.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1246: agents/context_manager.md                          |   17 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/context_manager.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/model_router.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:11: D agents/model_router.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:12: D agents/model_router.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1247: agents/model_router.md                             |   24 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/model_router.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/planner.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:12: D agents/planner.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:13: D agents/planner.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1248: agents/planner.md                                  |   20 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/planner.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/researcher.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:13: D agents/researcher.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:14: D agents/researcher.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1249: agents/researcher.md                               |   17 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/researcher.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/reviewer.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:14: D agents/reviewer.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:15: D agents/reviewer.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1250: agents/reviewer.md                                 |   24 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/reviewer.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D agents/summarizer.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:15: D agents/summarizer.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:16: D agents/summarizer.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1251: agents/summarizer.md                               |   16 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "agents/summarizer.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": " M architecture/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/knowledgeforge_git_status.log:5: M architecture/_SUMMARY.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_knowledgeforge_git_status.log:5: M architecture/_SUMMARY.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/knowledgeforge_modification_search.json:8:    \" M architecture/_SUMMARY.md\","
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/_SUMMARY.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Current architecture documentation consumer; no runtime dependency on external MetaHarvest checkout.",
+      "current_git_status": " M architecture/architecture_state.md",
+      "evidence_of_current_use_or_non_use": "Active architecture state; corrected MetaHarvest evidence reference from machine-specific absolute path to source-project plus repository-relative review evidence.",
+      "inbound_references": [
+        "tools/check_coherence.py:26: 'architecture/architecture_state.md','architecture/metaharvest/relevance_map.yaml',",
+        "artifacts/tasks/TASK-035-implement-narrow-architectureharvest-canonical-asset-manifest.md:16:- `architecture/architecture_state.md`",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:16: M architecture/architecture_state.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/knowledgeforge_git_status.log:7: M architecture/architecture_state.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_knowledgeforge_git_status.log:7: M architecture/architecture_state.md",
+        "artifacts/reports/R-20260708-purposeless-structure-removal.md:44:- `architecture/metaharvest/` and `architecture/architecture_state.md` \u2014 kept because `tools/consult_metaharvest.py`, `tools/check_coherence.py`, and accepted MetaHarvest trigger-gated consultation docs still reference the local compatibility path as an active advisory trigger map.",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:17: M architecture/architecture_state.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1252: architecture/architecture_state.md                 |    2 +-",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/knowledgeforge_modification_search.json:10:    \" M architecture/architecture_state.md\","
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/architecture_state.md",
+      "publication_rationale": "Preserve MetaHarvest provenance without local-machine paths.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": true,
+      "required_by_proposed_validator": true,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": " D architecture/architectureharvest/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/knowledgeforge_git_status.log:8: D architecture/architectureharvest/_SUMMARY.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_knowledgeforge_git_status.log:8: D architecture/architectureharvest/_SUMMARY.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/knowledgeforge_modification_search.json:11:    \" D architecture/architectureharvest/_SUMMARY.md\","
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/architectureharvest/_SUMMARY.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": true,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": " D architecture/architectureharvest/adoption_candidates.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:17: D architecture/architectureharvest/adoption_candidates.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/knowledgeforge_git_status.log:9: D architecture/architectureharvest/adoption_candidates.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_knowledgeforge_git_status.log:9: D architecture/architectureharvest/adoption_candidates.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:18: D architecture/architectureharvest/adoption_candidates.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/knowledgeforge_modification_search.json:12:    \" D architecture/architectureharvest/adoption_candidates.md\","
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/architectureharvest/adoption_candidates.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": true,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": " D architecture/architectureharvest/rejected_candidates.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:18: D architecture/architectureharvest/rejected_candidates.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/knowledgeforge_git_status.log:11: D architecture/architectureharvest/rejected_candidates.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_knowledgeforge_git_status.log:11: D architecture/architectureharvest/rejected_candidates.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:19: D architecture/architectureharvest/rejected_candidates.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/knowledgeforge_modification_search.json:14:    \" D architecture/architectureharvest/rejected_candidates.md\","
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/architectureharvest/rejected_candidates.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": true,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": " D architecture/architectureharvest/relevance_map.yaml",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:19: D architecture/architectureharvest/relevance_map.yaml",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/knowledgeforge_git_status.log:12: D architecture/architectureharvest/relevance_map.yaml",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_knowledgeforge_git_status.log:12: D architecture/architectureharvest/relevance_map.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:20: D architecture/architectureharvest/relevance_map.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/knowledgeforge_modification_search.json:15:    \" D architecture/architectureharvest/relevance_map.yaml\","
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/architectureharvest/relevance_map.yaml",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": true,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": " D architecture/architectureharvest/review_history.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:20: D architecture/architectureharvest/review_history.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/knowledgeforge_git_status.log:13: D architecture/architectureharvest/review_history.md",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_knowledgeforge_git_status.log:13: D architecture/architectureharvest/review_history.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:21: D architecture/architectureharvest/review_history.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1256: architecture/architectureharvest/review_history.md |   19 -",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/knowledgeforge_modification_search.json:16:    \" D architecture/architectureharvest/review_history.md\","
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/architectureharvest/review_history.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": true,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": "?? architecture/metaharvest/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/metaharvest/_SUMMARY.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "add",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": "?? architecture/metaharvest/adoption_candidates.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "tools/check_coherence.py:27: 'architecture/metaharvest/adoption_candidates.md','architecture/metaharvest/rejected_candidates.md',",
+        "artifacts/tasks/TASK-035-implement-narrow-architectureharvest-canonical-asset-manifest.md:18:- `architecture/metaharvest/adoption_candidates.md`",
+        "artifacts/reports/R-20260613-review-to-accepted-lifecycle-validation-design.md:101:- `architecture/metaharvest/adoption_candidates.md`"
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/metaharvest/adoption_candidates.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "add",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": true,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": "?? architecture/metaharvest/rejected_candidates.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "tools/check_coherence.py:27: 'architecture/metaharvest/adoption_candidates.md','architecture/metaharvest/rejected_candidates.md',",
+        "artifacts/tasks/TASK-035-implement-narrow-architectureharvest-canonical-asset-manifest.md:19:- `architecture/metaharvest/rejected_candidates.md`"
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/metaharvest/rejected_candidates.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "add",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": true,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": "?? architecture/metaharvest/relevance_map.yaml",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "docs/architecture/metaharvest-trigger-gated-consultation.md:9:MacroForge can optionally consult MetaHarvest during task-scope/governance classification when a proposed task materially matches the existing consultation triggers in `architecture/metaharvest/relevance_map.yaml`.",
+        "docs/architecture/metaharvest-trigger-gated-consultation.md:38:- `architecture/metaharvest/relevance_map.yaml`;",
+        "tools/check_coherence.py:26: 'architecture/architecture_state.md','architecture/metaharvest/relevance_map.yaml',",
+        "tools/consult_metaharvest.py:26:RELEVANCE_MAP_RELATIVE = Path(\"architecture/metaharvest/relevance_map.yaml\")",
+        "artifacts/tasks/TASK-043-implement-trigger-gated-metaharvest-consultation.md:18:- relevance-map loading from `architecture/metaharvest/relevance_map.yaml`;",
+        "artifacts/tasks/TASK-035-implement-narrow-architectureharvest-canonical-asset-manifest.md:17:- `architecture/metaharvest/relevance_map.yaml`",
+        "artifacts/tasks/TASK-169-acpf-trade-balance-capability-planning.md:29:- `tools/check_coherence.py` \u2014 localized stale-tooling repair so coherence checks validate active `architecture/metaharvest/relevance_map.yaml` after TASK-166 scaffold cleanup",
+        "artifacts/reports/R-20260627-governance-alignment-after-strategic-constitution-v11.md:41:- Current relevance map: `architecture/metaharvest/relevance_map.yaml`.",
+        "artifacts/reports/R-20260627-governance-alignment-after-strategic-constitution-v11.md:87:Current active triggers in `architecture/metaharvest/relevance_map.yaml`:",
+        "artifacts/reports/R-20260627-final-governance-refinement-and-freeze.md:112:- `architecture/metaharvest/relevance_map.yaml`"
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/metaharvest/relevance_map.yaml",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "add",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": true,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": "?? architecture/metaharvest/review_history.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "tools/check_coherence.py:28: 'architecture/metaharvest/review_history.md'",
+        "artifacts/tasks/TASK-035-implement-narrow-architectureharvest-canonical-asset-manifest.md:20:- `architecture/metaharvest/review_history.md`"
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "architecture/metaharvest/review_history.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "add",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": true,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D artifacts/decisions/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:21: D artifacts/decisions/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:22: D artifacts/decisions/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1257: artifacts/decisions/.gitkeep                       |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "artifacts/decisions/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D artifacts/handoffs/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:23: D artifacts/handoffs/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:24: D artifacts/handoffs/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1259: artifacts/handoffs/.gitkeep                        |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "artifacts/handoffs/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D artifacts/reports/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:24: D artifacts/reports/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:25: D artifacts/reports/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1260: artifacts/reports/.gitkeep                         |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "artifacts/reports/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required to durably reset architecture-audit cadence in a clean export.",
+      "consumer_reference_result": "Selected as latest audit in corrected candidate tree; clean origin/main without publication still selects July 1 audit and blocks at 44 tasks.",
+      "current_git_status": "?? artifacts/reports/R-20260713-architecture-reality-audit.md",
+      "evidence_of_current_use_or_non_use": "Canonical July 13 Architecture-to-Reality Audit report; corrected to use stable project identity and explicit 5-task/local-clear/44-task durable cadence evidence.",
+      "inbound_references": [],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "artifacts/reports/R-20260713-architecture-reality-audit.md",
+      "publication_rationale": "Publish canonical audit evidence without machine-specific paths and without implying durable reset before publication.",
+      "remediation_action": "add",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Created by bounded remediation task to prevent broad working-tree cleanup conflation.",
+      "current_git_status": "?? artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.json",
+      "evidence_of_current_use_or_non_use": "Created by bounded remediation task to prevent broad working-tree cleanup conflation.",
+      "inbound_references": [],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.json",
+      "publication_rationale": "Machine/human remediation manifest proving exact candidate boundary and verification evidence.",
+      "remediation_action": "add",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Created by bounded remediation task to prevent broad working-tree cleanup conflation.",
+      "current_git_status": "?? artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.md",
+      "evidence_of_current_use_or_non_use": "Created by bounded remediation task to prevent broad working-tree cleanup conflation.",
+      "inbound_references": [],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "artifacts/reports/R-20260713-post-audit-residue-remediation-manifest.md",
+      "publication_rationale": "Machine/human remediation manifest proving exact candidate boundary and verification evidence.",
+      "remediation_action": "add",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D artifacts/tasks/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:37: D artifacts/tasks/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:38: D artifacts/tasks/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1273: artifacts/tasks/.gitkeep                           |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "artifacts/tasks/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D confidence/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:43: D confidence/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:44: D confidence/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1279: confidence/.gitkeep                                |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "confidence/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "confidence/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D confidence/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "confidence/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "confidence/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "confidence/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D confidence/confidence_policy.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:44: D confidence/confidence_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:45: D confidence/confidence_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1280: confidence/confidence_policy.yaml                  |   24 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "confidence/confidence_policy.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D confidence/confidence_template.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:45: D confidence/confidence_template.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:46: D confidence/confidence_template.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1281: confidence/confidence_template.md                  |   18 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "confidence/confidence_template.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Active config summary updated to remove deleted setup/sufficiency scaffold entries while preserving neutral evidence release configuration.",
+      "current_git_status": " M config/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "Active config summary updated to remove deleted setup/sufficiency scaffold entries while preserving neutral evidence release configuration.",
+      "inbound_references": [
+        "config/setup_questionnaire.yaml",
+        "config/sufficiency_policy.yaml"
+      ],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "config/_SUMMARY.md",
+      "publication_rationale": "Prevent stale summary references after safe config scaffold deletion.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D config/setup_questionnaire.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:46: D config/setup_questionnaire.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:47: D config/setup_questionnaire.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1282: config/setup_questionnaire.yaml                    |  132 ---"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "config/setup_questionnaire.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D config/sufficiency_policy.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:47: D config/sufficiency_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:48: D config/sufficiency_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1283: config/sufficiency_policy.yaml                     |   35 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "config/sufficiency_policy.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D context/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:48: D context/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:49: D context/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1284: context/.gitkeep                                   |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "context/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D docs/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:52: D docs/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:53: D docs/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1288: docs/.gitkeep                                      |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "docs/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Active docs summary updated to remove deleted docs/.gitkeep only.",
+      "current_git_status": " M docs/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "Active docs summary updated to remove deleted docs/.gitkeep only.",
+      "inbound_references": [
+        "docs/.gitkeep"
+      ],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "docs/_SUMMARY.md",
+      "publication_rationale": "Prevent stale active summary reference to removed placeholder.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": " M docs/architecture/metaharvest-trigger-gated-consultation.md",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "docs/_SUMMARY.md:31:- `docs/architecture/metaharvest-trigger-gated-consultation.md` documents the Phase 1 advisory-only MetaHarvest consultation helper and its scoped invocation boundary.",
+        "artifacts/tasks/TASK-043-implement-trigger-gated-metaharvest-consultation.md:27:- minimal documentation at `docs/architecture/metaharvest-trigger-gated-consultation.md`.",
+        "artifacts/tasks/backlog.md:356:TASK-043 implemented the approved Phase 1 trigger-gated MetaHarvest consultation helper at `tools/consult_metaharvest.py`, with versioned structured task classification, a Consultation Contract that only returns `consult`/`do_not_consult`, a separate Retrieval Contract that only runs after consultation is requested, bounded primary/keyword/adjacent retrieval, mandatory Authority note, confidence semantics, non-blocking failure behavior, tests, and minimal documentation at `docs/architecture/metaharvest-trigger-gated-consultation.md`. It preserved no startup consultation, no eager retrieval, no automatic adoption/task creation, no runtime/orchestration framework, no MetaHarvest authority, no MetaHarvest mutation, and unchanged behavior when no trigger matches.",
+        "artifacts/reports/R-20260627-foundational-capability-extraction-candidate.md:22:- `docs/architecture/metaharvest-trigger-gated-consultation.md`.",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:58: M docs/architecture/metaharvest-trigger-gated-consultation.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:59: M docs/architecture/metaharvest-trigger-gated-consultation.md",
+        "artifacts/reports/R-20260626-post-freeze-v11-architectural-assessment.md:35:- `docs/architecture/metaharvest-trigger-gated-consultation.md`"
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "docs/architecture/metaharvest-trigger-gated-consultation.md",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D hardware/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:62: D hardware/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:63: D hardware/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1298: hardware/.gitkeep                                  |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "hardware/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "hardware/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D hardware/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "hardware/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "hardware/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "hardware/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D hardware/profile.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:63: D hardware/profile.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:64: D hardware/profile.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1299: hardware/profile.yaml                              |   18 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "hardware/profile.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D hardware/resource_policy.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:64: D hardware/resource_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:65: D hardware/resource_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1300: hardware/resource_policy.yaml                      |   11 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "hardware/resource_policy.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Current policy formerly required knowledge/dependencies.yaml; corrected to require direct source/tests/state/architecture/task/decision evidence because MacroForge no longer maintains a parallel project-local knowledge-map directory.",
+      "current_git_status": " M instructions/CONTEXT_POLICY.md",
+      "evidence_of_current_use_or_non_use": "Current policy formerly required knowledge/dependencies.yaml; corrected to require direct source/tests/state/architecture/task/decision evidence because MacroForge no longer maintains a parallel project-local knowledge-map directory.",
+      "inbound_references": [
+        "instructions/CONTEXT_POLICY.md:17"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "instructions/CONTEXT_POLICY.md",
+      "publication_rationale": "Neutralize current policy consumer before deleting knowledge/dependencies.yaml.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D knowledge/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:66: D knowledge/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:67: D knowledge/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1302: knowledge/.gitkeep                                 |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "knowledge/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "knowledge/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D knowledge/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "knowledge/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "knowledge/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "knowledge/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D knowledge/components.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:67: D knowledge/components.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:68: D knowledge/components.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1303: knowledge/components.yaml                          |   28 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "knowledge/components.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D knowledge/dependencies.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:68: D knowledge/dependencies.yaml",
+        "artifacts/reports/R-20260708-purposeless-structure-removal.md:104:- Updated `instructions/CONTEXT_POLICY.md` to remove the stale `knowledge/dependencies.yaml` requirement.",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:69: D knowledge/dependencies.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1304: knowledge/dependencies.yaml                        |   23 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "knowledge/dependencies.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "memory/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D memory/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "memory/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "memory/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "memory/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D memory/archive/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:72: D memory/archive/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:73: D memory/archive/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1308: memory/archive/.gitkeep                            |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "memory/archive/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "memory/archive/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D memory/archive/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "memory/archive/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "memory/archive/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "memory/archive/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D memory/deprecated_decisions/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:73: D memory/deprecated_decisions/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:74: D memory/deprecated_decisions/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1309: memory/deprecated_decisions/.gitkeep               |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "memory/deprecated_decisions/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "memory/deprecated_decisions/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D memory/deprecated_decisions/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "memory/deprecated_decisions/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "memory/deprecated_decisions/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "memory/deprecated_decisions/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D memory/retention_policy.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:74: D memory/retention_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:75: D memory/retention_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1310: memory/retention_policy.yaml                       |   17 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "memory/retention_policy.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "metrics/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D metrics/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "metrics/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "metrics/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "metrics/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D metrics/events.jsonl",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:75: D metrics/events.jsonl",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:76: D metrics/events.jsonl",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1311: metrics/events.jsonl                               |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "metrics/events.jsonl",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D metrics/metrics_policy.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:76: D metrics/metrics_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:77: D metrics/metrics_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1312: metrics/metrics_policy.yaml                        |   27 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "metrics/metrics_policy.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D metrics/recommendations/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:77: D metrics/recommendations/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:78: D metrics/recommendations/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1313: metrics/recommendations/.gitkeep                   |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "metrics/recommendations/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D metrics/recommendations/README.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:78: D metrics/recommendations/README.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:79: D metrics/recommendations/README.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1314: metrics/recommendations/README.md                  |    3 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "metrics/recommendations/README.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "metrics/recommendations/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D metrics/recommendations/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "metrics/recommendations/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "metrics/recommendations/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "metrics/recommendations/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D metrics/reports/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:79: D metrics/reports/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:80: D metrics/reports/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1315: metrics/reports/.gitkeep                           |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "metrics/reports/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D metrics/reports/README.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:80: D metrics/reports/README.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:81: D metrics/reports/README.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1316: metrics/reports/README.md                          |    3 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "metrics/reports/README.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "metrics/reports/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D metrics/reports/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "metrics/reports/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "metrics/reports/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "metrics/reports/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "models/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D models/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "models/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "models/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "models/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D models/registry.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:81: D models/registry.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:82: D models/registry.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1317: models/registry.yaml                               |   36 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "models/registry.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D models/routing.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:82: D models/routing.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:83: D models/routing.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1318: models/routing.yaml                                |  133 ---"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "models/routing.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D models/selection_policy.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:83: D models/selection_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:84: D models/selection_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1319: models/selection_policy.yaml                       |   67 --"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "models/selection_policy.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D permissions/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:84: D permissions/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:85: D permissions/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1320: permissions/.gitkeep                               |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "permissions/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Active permissions summary updated to remove only deleted .gitkeep while preserving allowlist/denylist/escalation policy files.",
+      "current_git_status": " M permissions/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "Active permissions summary updated to remove only deleted .gitkeep while preserving allowlist/denylist/escalation policy files.",
+      "inbound_references": [
+        "permissions/.gitkeep"
+      ],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "permissions/_SUMMARY.md",
+      "publication_rationale": "Preserve active permissions semantics while removing placeholder residue.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "policies/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D policies/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "policies/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "policies/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "policies/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D policies/enforcement_policy.yaml",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:85: D policies/enforcement_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:86: D policies/enforcement_policy.yaml",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1321: policies/enforcement_policy.yaml                   |   26 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "policies/enforcement_policy.yaml",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D simulation/dry_runs/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:91: D simulation/dry_runs/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:92: D simulation/dry_runs/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1327: simulation/dry_runs/.gitkeep                       |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "simulation/dry_runs/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Active dry-run evidence summary updated to remove deleted .gitkeep only while preserving historical dry-run evidence list.",
+      "current_git_status": " M simulation/dry_runs/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "Active dry-run evidence summary updated to remove deleted .gitkeep only while preserving historical dry-run evidence list.",
+      "inbound_references": [
+        "simulation/dry_runs/.gitkeep"
+      ],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "simulation/dry_runs/_SUMMARY.md",
+      "publication_rationale": "Preserve historical evidence and remove stale placeholder reference.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:92: D skills/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:93: D skills/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1328: skills/.gitkeep                                    |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "skills/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D skills/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "skills/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "skills/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/clarification-queue.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:93: D skills/clarification-queue.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:94: D skills/clarification-queue.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1329: skills/clarification-queue.md                      |   16 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/clarification-queue.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/command-permissions.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:94: D skills/command-permissions.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:95: D skills/command-permissions.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1330: skills/command-permissions.md                      |   11 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/command-permissions.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/context-budgeting.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:95: D skills/context-budgeting.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:96: D skills/context-budgeting.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1331: skills/context-budgeting.md                        |   13 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/context-budgeting.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/deferred-specification.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:96: D skills/deferred-specification.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:97: D skills/deferred-specification.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1332: skills/deferred-specification.md                   |   13 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/deferred-specification.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/dry-run-workflow.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:97: D skills/dry-run-workflow.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:98: D skills/dry-run-workflow.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1333: skills/dry-run-workflow.md                         |    9 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/dry-run-workflow.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/folder-summaries.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:98: D skills/folder-summaries.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:99: D skills/folder-summaries.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1334: skills/folder-summaries.md                         |   11 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/folder-summaries.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/git-workflow.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:99: D skills/git-workflow.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:100: D skills/git-workflow.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1335: skills/git-workflow.md                             |   11 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/git-workflow.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/logging-workflow.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:100: D skills/logging-workflow.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:101: D skills/logging-workflow.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1336: skills/logging-workflow.md                         |   14 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/logging-workflow.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/metrics-feedback.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:101: D skills/metrics-feedback.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:102: D skills/metrics-feedback.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1337: skills/metrics-feedback.md                         |    5 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/metrics-feedback.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/model-routing.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:102: D skills/model-routing.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:103: D skills/model-routing.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1338: skills/model-routing.md                            |   11 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/model-routing.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/project-bootstrap.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:103: D skills/project-bootstrap.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:104: D skills/project-bootstrap.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1339: skills/project-bootstrap.md                        |   20 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/project-bootstrap.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/state-update.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:104: D skills/state-update.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:105: D skills/state-update.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1340: skills/state-update.md                             |   11 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/state-update.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D skills/structured-questionnaire.md",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:105: D skills/structured-questionnaire.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:106: D skills/structured-questionnaire.md",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1341: skills/structured-questionnaire.md                 |   18 -"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "skills/structured-questionnaire.md",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D state/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:116: D state/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:117: D state/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1352: state/.gitkeep                                     |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "state/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D tests/invariants/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:122: D tests/invariants/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:123: D tests/invariants/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1358: tests/invariants/.gitkeep                          |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "tests/invariants/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "tests/invariants/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "current_git_status": " D tests/invariants/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "tests/invariants/_SUMMARY.md belongs to an obsolete scaffold directory/path family with no active MacroForge runtime/test/recovery/publication consumer after current references are neutralized.",
+      "inbound_references": [
+        "tests/invariants/_SUMMARY.md"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "tests/invariants/_SUMMARY.md",
+      "publication_rationale": "Delete stale generated summary for obsolete scaffold path family.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": " D tests/test_architectureharvest_integration.py",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "artifacts/tasks/TASK-035-implement-narrow-architectureharvest-canonical-asset-manifest.md:28:- `tests/test_architectureharvest_integration.py`",
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:125: D tests/test_architectureharvest_integration.py",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:126: D tests/test_architectureharvest_integration.py",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1361: tests/test_architectureharvest_integration.py      |  104 --"
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "tests/test_architectureharvest_integration.py",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Targeted tests for explicit MetaHarvest root, missing root, invalid root, deterministic retrieval, and absence of hard-coded machine path.",
+      "current_git_status": " M tests/test_consult_metaharvest.py",
+      "evidence_of_current_use_or_non_use": "Targeted tests for explicit MetaHarvest root, missing root, invalid root, deterministic retrieval, and absence of hard-coded machine path.",
+      "inbound_references": [
+        "tools/consult_metaharvest.py"
+      ],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "tests/test_consult_metaharvest.py",
+      "publication_rationale": "Verify corrected consultation-root contract.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Targeted pytest consumer verifies corrected audit and MetaHarvest integration behavior in temporary fixtures without relying on dirty working-tree residue.",
+      "current_git_status": "?? tests/test_metaharvest_integration.py",
+      "evidence_of_current_use_or_non_use": "Contains MetaHarvest migration tests plus Architecture-to-Reality Audit regression tests for stable project identity, cadence date evidence, indeterminate tasks, thresholds, and obsolete scaffold warning removal.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:1146:?? tests/test_metaharvest_integration.py",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1159:?? tests/test_metaharvest_integration.py"
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "tests/test_metaharvest_integration.py",
+      "publication_rationale": "Publish regression coverage for ArchitectureHarvest\u2192MetaHarvest migration and corrected MacroForge audit cadence/scaffold semantics atomically.",
+      "remediation_action": "add",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "current_git_status": " D tools/.gitkeep",
+      "evidence_of_current_use_or_non_use": "Tracked at HEAD and already deleted before this task; proposed check_coherence removes artificial requirements; active permissions/recovery/log contracts are excluded.",
+      "inbound_references": [
+        "artifacts/reports/neutral-evidence-release-exporter-compatibility-20260711/verification/final_macroforge_git_status.log:132: D tools/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:133: D tools/.gitkeep",
+        "artifacts/reports/neutral-evidence-closeout-outbox-v1-20260711/final-verification/macroforge_git_status.log:1368: tools/.gitkeep                                     |    0"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "tools/.gitkeep",
+      "publication_rationale": "Formalize already-present deletion of generated scaffold/placeholder file with no active MacroForge runtime/test/validator/recovery/publication consumer after proposed validator change.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Active tools summary updated only to remove obsolete tools/register_project.py after classifying it as scaffold residue.",
+      "current_git_status": " M tools/_SUMMARY.md",
+      "evidence_of_current_use_or_non_use": "Active tools summary updated only to remove obsolete tools/register_project.py after classifying it as scaffold residue.",
+      "inbound_references": [
+        "tools/register_project.py"
+      ],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "tools/_SUMMARY.md",
+      "publication_rationale": "Keep active tools summary consistent with corrected candidate boundary.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Used by canonical Architecture-to-Reality Audit; corrected candidate audit should select the July 13 report, report MacroForge as project identity, avoid clone-mtime cadence drift, expose unknown temporal evidence, and avoid warnings for unowned obsolete agents/metrics scaffold.",
+      "current_git_status": " M tools/architecture_reality_audit.py",
+      "evidence_of_current_use_or_non_use": "Canonical Architecture-to-Reality Audit; corrected to use stable project identity, date-evidence cadence classification, explicit unknown-temporal task reporting, and ownership-gated optional scaffold checks.",
+      "inbound_references": [
+        "artifacts/reports/R-20260713-architecture-reality-audit.md:4"
+      ],
+      "ownership_classification": "A. Active MacroForge responsibility",
+      "path": "tools/architecture_reality_audit.py",
+      "publication_rationale": "Prevent future canonical audit reports from embedding machine-specific roots, producing false clone-mtime cadence blocks, silently hiding undated completed tasks, or warning on obsolete unowned ProjectForge scaffold.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": true,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "current_git_status": " M tools/check_coherence.py",
+      "evidence_of_current_use_or_non_use": "Working-tree validator and consultation helper now require architecture/metaharvest; committed HEAD remains coherent only with architecture/architectureharvest. Partial publication would break coherence.",
+      "inbound_references": [
+        "docs/architecture/observed-ingestion-representation.md:87:python3 tools/check_coherence.py --project .",
+        "docs/architecture/historical-architecture-reconciliation.md:15:| `mf_task.sh` wrapper | Superseded | Replaced by Hermes-native task execution plus ProjectForge task artifacts, dry-runs, and `tools/check_coherence.py`/`tools/update_context_summaries.py`. | Current AGENTS.md says Hermes tools are the normal execution layer. A separate task wrapper is not needed for normal Hermes work. |",
+        "docs/runbooks/wdi-v1-runbook.md:98:python3 tools/check_coherence.py --project . --json",
+        "tools/architecture_reality_audit.py:54:    \"tools/check_coherence.py\",",
+        "tools/architecture_reality_audit.py:61:    \"tools/check_coherence.py\",",
+        "tools/architecture_reality_audit.py:203:    for rel in [\"templates/_shared_project/tools/architecture_reality_audit.py\", \"templates/_shared_project/tools/check_coherence.py\"]:",
+        "tools/architecture_reality_audit.py:307:        \"5. Rerun `tools/architecture_reality_audit.py`, `tools/check_coherence.py`, and relevant tests.\",",
+        "tools/install.sh:14:printf 'Use: .venv/bin/python tools/check_coherence.py --project . --json",
+        "tools/_SUMMARY.md:88:- `tools/recover_session.py` provides bounded fresh-session recovery; `tools/check_coherence.py` now treats the continuity framework files as generated-project requirements.",
+        "artifacts/tasks/TASK-183-bounded-revision-aware-scale-up-planning-assessment.md:69:python3 tools/check_coherence.py: coherence: 0 block(s), 0 warning(s)"
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "tools/check_coherence.py",
+      "publication_rationale": "Publish ArchitectureHarvest\u2192MetaHarvest current-path migration atomically while preserving historical ArchitectureHarvest provenance in completed artifacts.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Required for corrected candidate clean-export coherence.",
+      "consumer_reference_result": "Used by tests and documented trigger-gated consultation; deterministic when explicit valid root is supplied; missing/invalid root is non-blocking and explicit.",
+      "current_git_status": " M tools/consult_metaharvest.py",
+      "evidence_of_current_use_or_non_use": "Active advisory helper; corrected to require explicit MetaHarvest root for retrieval and remove hard-coded local MetaHarvest checkout path.",
+      "inbound_references": [
+        "docs/architecture/metaharvest-trigger-gated-consultation.md:4:Implementation: `tools/consult_metaharvest.py`",
+        "docs/architecture/metaharvest-trigger-gated-consultation.md:18:python3 tools/consult_metaharvest.py --task-summary '<scoped task summary>'",
+        "docs/architecture/metaharvest-trigger-gated-consultation.md:24:python3 tools/consult_metaharvest.py --task-file artifacts/tasks/<task>.md",
+        "docs/architecture/_SUMMARY.md:53:- `metaharvest-trigger-gated-consultation.md` documents the implemented Phase 1 helper at `tools/consult_metaharvest.py`: scoped task/governance preflight only, separate Consultation/Retrieval Contracts, versioned internal taxonomy, bounded advisory retrieval, non-blocking failure, and mandatory Authority note.",
+        "tools/_SUMMARY.md:87:- `tools/consult_metaharvest.py` implements the trigger-gated MetaHarvest consultation preflight helper. It is advisory-only and runs only for scoped task/governance classification, with versioned structured classification, separate Consultation/Retrieval Contracts, bounded retrieval, non-blocking failure, and mandatory Authority note. Classification v2 includes `foundational_capability_extraction` for proposed implementation expected to become a reusable dependency of multiple future capabilities.",
+        "artifacts/tasks/TASK-047-select-first-foundational-extraction-candidate.md:25:python3 tools/consult_metaharvest.py --allow-governance-deeper-cap --json --task-summary 'foundational capability extraction: select first shared deterministic post-observed-boundary infrastructure from converged implementation evidence; evaluate lineage generation, quality-check handling, provider metadata handling, canonical dimension mechanics, canonical load/upsert mechanics, validation helpers; investigate mature patterns, failure modes, over-abstraction risks, minimal extraction, reasons not to extract; no implementation.'",
+        "artifacts/tasks/TASK-043-implement-trigger-gated-metaharvest-consultation.md:12:Created `tools/consult_metaharvest.py`, a minimal preflight helper for the existing task-scope/governance-classification stage.",
+        "artifacts/tasks/TASK-043-implement-trigger-gated-metaharvest-consultation.md:58:python3 tools/consult_metaharvest.py --task-summary 'Run existing tests and inspect git status.'",
+        "artifacts/tasks/TASK-043-implement-trigger-gated-metaharvest-consultation.md:64:python3 tools/consult_metaharvest.py --metaharvest-root /tmp/nonexistent-metaharvest --task-summary 'Revise canonicalization lifecycle semantics and report eligibility governance.'",
+        "artifacts/tasks/TASK-043-implement-trigger-gated-metaharvest-consultation.md:70:python3 tools/consult_metaharvest.py --task-summary 'Revise canonicalization lifecycle semantics and report eligibility governance.'"
+      ],
+      "ownership_classification": "F. Incomplete migration",
+      "path": "tools/consult_metaharvest.py",
+      "publication_rationale": "Preserve consultation behavior without machine-specific default or runtime coupling.",
+      "remediation_action": "modify",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": true
+    },
+    {
+      "clean_export_requirement": "Not required as a standalone runtime/data dependency in clean export.",
+      "consumer_reference_result": "No active nonhistorical consumer beyond tools/_SUMMARY.md; references models/registry.yaml, models/routing.yaml, and skills/ are ProjectForge bootstrap residue rather than active MacroForge responsibilities.",
+      "current_git_status": " D tools/register_project.py",
+      "evidence_of_current_use_or_non_use": "No active nonhistorical consumer beyond tools/_SUMMARY.md; references models/registry.yaml, models/routing.yaml, and skills/ are ProjectForge bootstrap residue rather than active MacroForge responsibilities.",
+      "inbound_references": [
+        "tools/_SUMMARY.md:23"
+      ],
+      "ownership_classification": "D. Obsolete ProjectForge scaffold",
+      "path": "tools/register_project.py",
+      "publication_rationale": "Delete obsolete bootstrap tool instead of hollowing it out to justify scaffold deletions.",
+      "remediation_action": "delete",
+      "required_by_committed_validator": false,
+      "required_by_proposed_validator": false,
+      "required_for_clean_export_coherence": false
+    }
+  ],
+  "explicit_exclusions": [
+    ".gitignore unrelated existing data-fixture ignore-rule changes",
+    "PostgreSQL contents",
+    "TASK-207/TASK-208 residue",
+    "TASK-220",
+    "active logs/recovery contracts",
+    "active recovery contracts",
+    "attempt directories",
+    "bulk artifacts/reports/R-L-*",
+    "bulk task-*.json reports",
+    "caches/virtualenvs",
+    "generated context bundles",
+    "older campaign residue",
+    "optional neutral-evidence reports",
+    "other EIP repositories",
+    "project.yaml",
+    "provider evidence",
+    "question_queue placeholder deletions retained/excluded from corrected boundary",
+    "raw/processed/metadata/operational data",
+    "raw/processed/metadata/provider/operational data",
+    "recovery/continuity_framework.md and all recovery/*",
+    "unrelated modified docs/state/source/test/task/report files",
+    "workspace_config.yaml"
+  ],
+  "manifest_id": "R-20260713-post-audit-residue-remediation-manifest",
+  "phase1_findings": {
+    "architecture_verdict": "reaffirmed",
+    "audit_cadence_distinguishes_known_after_known_before_and_unknown": true,
+    "audit_cadence_unknown_tasks_warn_not_false_zero": true,
+    "audit_cadence_uses_explicit_filename_git_then_legacy_mtime_evidence": true,
+    "audit_locally_completed_not_durably_published_until_report_committed": true,
+    "audit_warning_clears_locally_only_because_untracked_report_exists": true,
+    "clean_origin_main_export_still_reports_44_task_audit_cadence_block_until_publication": true,
+    "clean_origin_main_export_still_reports_audit_cadence_block": true,
+    "committed_head_coherent_under_committed_validator": true,
+    "corrected_candidate_removes_machine_specific_paths": true,
+    "migration_must_publish_atomically": true,
+    "partial_migration_publication_breaks_coherence": true,
+    "question_queue_placeholders_retained_due_gitignore_contract": true,
+    "register_project_classified_obsolete_bootstrap_residue": true,
+    "unowned_obsolete_agents_scaffold_no_longer_warns": true,
+    "unowned_obsolete_metrics_scaffold_no_longer_warns": true,
+    "working_tree_migration_coherent_under_working_validator": true
+  },
+  "project": "MacroForge",
+  "schema_version": 1,
+  "scope_statement": "Corrected implementation candidate only; not publication. Boundary is authoritative for post-audit residue ownership remediation after verification-proven correction pass.",
+  "updated_utc": "2026-07-13T16:09:29+00:00"
+}

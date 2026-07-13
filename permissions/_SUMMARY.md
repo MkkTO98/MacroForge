@@ -5,7 +5,6 @@ This folder is part of the ProjectForge file-backed operating system for `permis
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
-- `.gitkeep`
 - `allowlist.yaml`
 - `denylist.yaml`
 - `escalation_rules.yaml`

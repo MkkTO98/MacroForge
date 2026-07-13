@@ -22,8 +22,8 @@ except ModuleNotFoundError:  # pragma: no cover - fallback for minimal stdlib us
     yaml = None
 
 CLASSIFICATION_VERSION = 2
-DEFAULT_METAHARVEST_ROOT = Path("/home/mkkto/srv/EIP/projects/MetaHarvest")
-RELEVANCE_MAP_RELATIVE = Path("architecture/architectureharvest/relevance_map.yaml")
+DEFAULT_METAHARVEST_ROOT: Path | None = None
+RELEVANCE_MAP_RELATIVE = Path("architecture/metaharvest/relevance_map.yaml")
 AUTHORITY_NOTE = (
     "Mandatory. MetaHarvest provides historical architectural context only. "
     "MacroForge retains full ownership of design decisions. Consultation is "
@@ -362,8 +362,8 @@ def _extract_records(output: str) -> list[str]:
 class RetrievalContract:
     """Retrieves compact advisory information only after consultation is requested."""
 
-    def __init__(self, metaharvest_root: Path = DEFAULT_METAHARVEST_ROOT, command_runner: CommandRunner | None = None) -> None:
-        self.metaharvest_root = Path(metaharvest_root)
+    def __init__(self, metaharvest_root: Path | None = DEFAULT_METAHARVEST_ROOT, command_runner: CommandRunner | None = None) -> None:
+        self.metaharvest_root = Path(metaharvest_root) if metaharvest_root is not None else None
         self.command_runner = command_runner or _default_command_runner
 
     def retrieve(
@@ -375,8 +375,17 @@ class RetrievalContract:
     ) -> RetrievalResult:
         if decision.action != "consult":
             raise ValueError("Retrieval Contract requires a consult decision from the Consultation Contract.")
-        query_tool = self.metaharvest_root / "tools" / "query_knowledge.py"
-        if not self.metaharvest_root.exists() or not query_tool.exists():
+        if self.metaharvest_root is None:
+            return RetrievalResult(
+                records=[],
+                deeper_records={},
+                commands_run=[],
+                failure="MetaHarvest root not provided; consultation skipped.",
+                raw_summaries=[],
+            )
+        metaharvest_root = self.metaharvest_root
+        query_tool = metaharvest_root / "tools" / "query_knowledge.py"
+        if not metaharvest_root.exists() or not query_tool.exists():
             return RetrievalResult(
                 records=[],
                 deeper_records={},
@@ -397,7 +406,7 @@ class RetrievalContract:
             if idx > 0 and records:
                 break
             commands_run.append("python3 tools/query_knowledge.py " + " ".join(args))
-            code, output = self.command_runner(args, self.metaharvest_root)
+            code, output = self.command_runner(args, metaharvest_root)
             raw_summaries.append(output.strip())
             if code != 0:
                 failure = f"MetaHarvest retrieval command failed with exit code {code}."
@@ -408,9 +417,9 @@ class RetrievalContract:
         selected_records = records[:cap]
         deeper_records: dict[str, str] = {}
         for record in selected_records:
-            candidate = (self.metaharvest_root / record).resolve()
+            candidate = (metaharvest_root / record).resolve()
             try:
-                candidate.relative_to(self.metaharvest_root.resolve())
+                candidate.relative_to(metaharvest_root.resolve())
             except ValueError:
                 continue
             if candidate.exists() and candidate.is_file():
@@ -495,7 +504,7 @@ def run_consultation(
     *,
     project_root: Path,
     task_text: str,
-    metaharvest_root: Path = DEFAULT_METAHARVEST_ROOT,
+    metaharvest_root: Path | None = DEFAULT_METAHARVEST_ROOT,
     allow_governance_deeper_cap: bool = False,
 ) -> tuple[TaskClassification, ConsultationDecision, RetrievalResult | None, str]:
     relevance_map = load_relevance_map(project_root / RELEVANCE_MAP_RELATIVE)
@@ -537,7 +546,7 @@ def _read_task_text(args: argparse.Namespace) -> str:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run trigger-gated MetaHarvest consultation for a scoped MacroForge task.")
     parser.add_argument("--project-root", type=Path, default=Path.cwd())
-    parser.add_argument("--metaharvest-root", type=Path, default=DEFAULT_METAHARVEST_ROOT)
+    parser.add_argument("--metaharvest-root", type=Path, default=None)
     parser.add_argument("--task-summary")
     parser.add_argument("--task-file")
     parser.add_argument("--allow-governance-deeper-cap", action="store_true")

@@ -1,7 +1,7 @@
-# Folder Summary: architecture/architectureharvest
+# Folder Summary: architecture/metaharvest
 
 ## Purpose
-This folder is part of the ProjectForge file-backed operating system for `architecture/architectureharvest`.
+This folder records MacroForge-local MetaHarvest advisory compatibility state. It is a consumer-local contract for advisory retrieval and architecture-governance context, not ownership of MetaHarvest itself and not runtime coupling.
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
@@ -17,3 +17,4 @@ This folder is part of the ProjectForge file-backed operating system for `archit
 
 ## Needs Attention
 - Do not treat deferred dbt/Dagster runtime or generalized ingestion candidates as approved.
+- Preserve historical ArchitectureHarvest terminology in historical reports, decisions, and completed tasks.

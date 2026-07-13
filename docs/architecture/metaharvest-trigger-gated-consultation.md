@@ -6,7 +6,7 @@ Design source: `artifacts/reports/R-20260626-metaharvest-trigger-gated-consultat
 
 ## Purpose
 
-MacroForge can optionally consult MetaHarvest during task-scope/governance classification when a proposed task materially matches the existing consultation triggers in `architecture/architectureharvest/relevance_map.yaml`.
+MacroForge can optionally consult MetaHarvest during task-scope/governance classification when a proposed task materially matches the existing consultation triggers in `architecture/metaharvest/relevance_map.yaml`.
 
 This is an advisory preflight helper only. It does not change MacroForge authority, create tasks, mutate MetaHarvest, mutate canonical data, add runtime orchestration, or run during startup.
 
@@ -35,7 +35,7 @@ Do not call it as unconditional startup behavior. Routine work such as status in
 Inputs:
 
 - versioned structured task classification (`task_classification_version: 1`);
-- `architecture/architectureharvest/relevance_map.yaml`;
+- `architecture/metaharvest/relevance_map.yaml`;
 - active consultation triggers;
 - MacroForge governance boundaries.
 
