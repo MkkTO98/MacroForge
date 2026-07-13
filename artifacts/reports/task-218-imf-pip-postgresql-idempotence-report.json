@@ -1,0 +1,24 @@
+{
+  "task": "TASK-218",
+  "status": "passed",
+  "same_run_idempotence": {
+    "run_key": "task-218-imf-pip-portfolio-counterpart-phase2",
+    "before_source_fact_count": 8275,
+    "after_source_fact_count": 8275,
+    "postgresql_growth": 0,
+    "staging_rows": 8275,
+    "fact_rows": 8275,
+    "observed_facts": 8000,
+    "missing_facts": 275,
+    "failed_quality_checks": 0,
+    "dataset_release_rows": 1,
+    "duplicate_canonical_key_groups": 0
+  },
+  "same_release_identity": {
+    "source_code": "IMF_SDMX_PIP_API_V1",
+    "provider_dataset_code": "IMF:PIP",
+    "release_key": "imf-pip-asof-20260311t004734566029300z",
+    "release_as_of_date": "2026-03-11"
+  },
+  "note": "Second load with the same stable run key and release/as-of identity produced zero source fact growth and retained run-scoped staging/fact agreement."
+}

@@ -1,0 +1,70 @@
+{
+  "explicit_missing_value_count": 275,
+  "normalized_path": "data/processed/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-normalized.json",
+  "normalized_sha256": "2a6a130ec8c0a45d43f0a15c57bdd52c637cdc2fe4b740c8cd88260d1f30281b",
+  "observed_value_count": 8000,
+  "raw_active_dir": "data/raw/task218_imf_pip_phase2_campaign/active",
+  "raw_active_files": [
+    {
+      "bytes": 1306,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-metadata.json",
+      "sha256": "51e19698fe0906c650b81085d188c9a76625e29e1c053efc051bd547ecad15b9"
+    },
+    {
+      "bytes": 3298317,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-metadata.xml",
+      "sha256": "7b6f2092595b3115108cb1d0cbd2b601df6801f89749e05e028903e1c933e2de"
+    },
+    {
+      "bytes": 13553,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-raw-values-manifest.json",
+      "sha256": "95c7296f153983960dd816aec5f72c0942b9377d8f566c0c92a5ea98cb1dcf57"
+    },
+    {
+      "bytes": 2530,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-values-chunk-01.json",
+      "sha256": "1a7aafef7f2bf82ad560698e54c3613b9b14e054351eceeeb6bc2ffda1d1d6c5"
+    },
+    {
+      "bytes": 222952,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-values-chunk-01.xml",
+      "sha256": "2fe6ee63c40bc91f989502a3fa9f60e5ebe9d362753acc197df3c956c814a28f"
+    },
+    {
+      "bytes": 2530,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-values-chunk-02.json",
+      "sha256": "e21923467f2de5c7e36bf658e1c523c42745969859f192e2d2c05083378dce2e"
+    },
+    {
+      "bytes": 222185,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-values-chunk-02.xml",
+      "sha256": "c3523a377017789c846751f34644af18cc2883d228bb0512ba16925ec28de620"
+    },
+    {
+      "bytes": 2530,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-values-chunk-03.json",
+      "sha256": "87a1f9c41c9ed2dc2b1e6274cf66f4608d9679afbcc9b7986ed6a2d360a23ac4"
+    },
+    {
+      "bytes": 222436,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-values-chunk-03.xml",
+      "sha256": "cf8c5b2fd4d76a2accfbba8dff70b1091075dfe8451dbfe820c98e3d8017be03"
+    },
+    {
+      "bytes": 2530,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-values-chunk-04.json",
+      "sha256": "d69eddb78fbf00d81d161a02d82a40474e2c15a7d84385eab5a770cc3c473949"
+    },
+    {
+      "bytes": 223076,
+      "path": "data/raw/task218_imf_pip_phase2_campaign/active/task-218-imf-pip-values-chunk-04.xml",
+      "sha256": "a003b666d98242587c733852a0f733eac10715efe9c5e85d145f54461dbaa063"
+    }
+  ],
+  "release_as_of_date": "2026-03-11",
+  "release_key": "imf-pip-asof-20260311t004734566029300z",
+  "row_count": 8275,
+  "status": "active_artifacts_promoted",
+  "task": "TASK-218",
+  "whole_series_absence_count": 73
+}

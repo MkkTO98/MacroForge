@@ -1,0 +1,22 @@
+{
+  "decision": "No shared IMF/PIP or relationship-position substrate extracted",
+  "evidence_compared": [
+    "TASK-216 IMF BOP current-account flows",
+    "TASK-217 IMF IIP aggregate stocks",
+    "TASK-218 IMF PIP counterpart portfolio positions"
+  ],
+  "explicitly_not_created": [
+    "universal SDMX machinery",
+    "generic campaign engine",
+    "counterparty ontology",
+    "schema redesign"
+  ],
+  "rejected_extraction_reason": "PIP introduces counterpart-country relationship semantics distinct from BOP/IIP aggregate scopes. Repetition is visible, but extracting now risks a generic SDMX or external-sector framework before relationship identity has repeated stable contracts.",
+  "repeated_responsibilities": [
+    "IMF SDMX metadata parsing",
+    "provider-derived as-of identity",
+    "attempt-specific acquisition and active promotion",
+    "explicit-missing and whole-series absence reconciliation"
+  ],
+  "task": "TASK-218"
+}

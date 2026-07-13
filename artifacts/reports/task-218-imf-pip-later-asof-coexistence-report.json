@@ -1,0 +1,21 @@
+{
+  "after_rollback": {
+    "simulated_run_facts": 0,
+    "simulated_run_rows": 0
+  },
+  "base_release_as_of_date": "2026-03-11",
+  "base_release_key": "imf-pip-asof-20260311t004734566029300z",
+  "method": "one-row generated load SQL for simulated later provider as-of; replaced COMMIT with SELECT verification plus ROLLBACK",
+  "sample_rows": 1,
+  "simulated_release_as_of_date": "2026-10-01",
+  "simulated_release_key": "imf-pip-asof-20261001t000000000000000z",
+  "simulated_run_key": "task-218-imf-pip-portfolio-counterpart-phase2-simulated-later-asof",
+  "status": "passed_rolled_back_sample",
+  "task": "TASK-218",
+  "within_transaction": {
+    "dataset_release_rows_for_source_dataset": 2,
+    "simulated_run_facts": 1,
+    "simulated_run_rows": 1,
+    "source_fact_rows_with_base_and_simulated_sample": 8276
+  }
+}

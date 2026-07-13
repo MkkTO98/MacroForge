@@ -1,0 +1,175 @@
+{
+  "candidate_cell_count": 8640,
+  "candidate_series_count": 1728,
+  "counterpart_dimension": "COUNTERPART_COUNTRY",
+  "data_structure": {
+    "agency_id": "IMF.STA",
+    "id": "DSD_PIP",
+    "version": "5.0.0"
+  },
+  "dataflow": {
+    "agency_id": "IMF.STA",
+    "id": "PIP",
+    "name": "Portfolio Investment Positions by Counterpart Economy (formerly CPIS)",
+    "version": "5.0.0"
+  },
+  "provider_dataset_code": "IMF:PIP",
+  "sector_selection": {
+    "counterpart_sector": "S1",
+    "sector": "S1"
+  },
+  "selected_capability": "Annual IMF PIP/CPIS portfolio investment positions by reporting economy, counterpart economy, and instrument family for a 24-economy investment-relevant matrix.",
+  "selected_economies": [
+    {
+      "canonical_code": "AUS",
+      "label": "Australia",
+      "provider_code": "AUS"
+    },
+    {
+      "canonical_code": "BEL",
+      "label": "Belgium",
+      "provider_code": "BEL"
+    },
+    {
+      "canonical_code": "BRA",
+      "label": "Brazil",
+      "provider_code": "BRA"
+    },
+    {
+      "canonical_code": "CAN",
+      "label": "Canada",
+      "provider_code": "CAN"
+    },
+    {
+      "canonical_code": "CHE",
+      "label": "Switzerland",
+      "provider_code": "CHE"
+    },
+    {
+      "canonical_code": "CHN",
+      "label": "China",
+      "provider_code": "CHN"
+    },
+    {
+      "canonical_code": "DEU",
+      "label": "Germany",
+      "provider_code": "DEU"
+    },
+    {
+      "canonical_code": "ESP",
+      "label": "Spain",
+      "provider_code": "ESP"
+    },
+    {
+      "canonical_code": "FRA",
+      "label": "France",
+      "provider_code": "FRA"
+    },
+    {
+      "canonical_code": "GBR",
+      "label": "United Kingdom",
+      "provider_code": "GBR"
+    },
+    {
+      "canonical_code": "HKG",
+      "label": "Hong Kong SAR",
+      "provider_code": "HKG"
+    },
+    {
+      "canonical_code": "IND",
+      "label": "India",
+      "provider_code": "IND"
+    },
+    {
+      "canonical_code": "IRL",
+      "label": "Ireland",
+      "provider_code": "IRL"
+    },
+    {
+      "canonical_code": "ITA",
+      "label": "Italy",
+      "provider_code": "ITA"
+    },
+    {
+      "canonical_code": "JPN",
+      "label": "Japan",
+      "provider_code": "JPN"
+    },
+    {
+      "canonical_code": "KOR",
+      "label": "Korea",
+      "provider_code": "KOR"
+    },
+    {
+      "canonical_code": "LUX",
+      "label": "Luxembourg",
+      "provider_code": "LUX"
+    },
+    {
+      "canonical_code": "MEX",
+      "label": "Mexico",
+      "provider_code": "MEX"
+    },
+    {
+      "canonical_code": "NLD",
+      "label": "Netherlands",
+      "provider_code": "NLD"
+    },
+    {
+      "canonical_code": "NOR",
+      "label": "Norway",
+      "provider_code": "NOR"
+    },
+    {
+      "canonical_code": "SGP",
+      "label": "Singapore",
+      "provider_code": "SGP"
+    },
+    {
+      "canonical_code": "SWE",
+      "label": "Sweden",
+      "provider_code": "SWE"
+    },
+    {
+      "canonical_code": "USA",
+      "label": "United States",
+      "provider_code": "USA"
+    },
+    {
+      "canonical_code": "DNK",
+      "label": "Denmark",
+      "provider_code": "DNK"
+    }
+  ],
+  "selected_indicators": [
+    {
+      "indicator": "P_TOTINV_P_USD",
+      "label": "Portfolio investment, total investment, positions"
+    },
+    {
+      "indicator": "P_F51_P_USD",
+      "label": "Portfolio investment, equity, positions"
+    },
+    {
+      "indicator": "P_F3_P_USD",
+      "label": "Portfolio investment, debt securities, positions"
+    }
+  ],
+  "series_key_dimensions": [
+    "COUNTRY",
+    "ACCOUNTING_ENTRY",
+    "INDICATOR",
+    "SECTOR",
+    "COUNTERPART_SECTOR",
+    "COUNTERPART_COUNTRY",
+    "FREQUENCY"
+  ],
+  "source_api": "IMF external SDMX 2.1 API /external/sdmx/2.1/data/PIP and dataflow/all/PIP/latest?references=all",
+  "task": "TASK-218",
+  "temporal_coverage_selected_window": {
+    "end": "2024",
+    "periods": 5,
+    "start": "2020"
+  },
+  "territory_dimension": "COUNTRY"
+}

@@ -1,0 +1,20 @@
+{
+  "after_source_fact_count": 8275,
+  "before_source_fact_count": 8275,
+  "counts": {
+    "dataset_release_rows": 1,
+    "fact_rows": 8275,
+    "failed_quality_checks": 0,
+    "missing_facts": 275,
+    "observed_facts": 8000,
+    "staging_rows": 8275
+  },
+  "duplicate_canonical_key_groups": 0,
+  "postgresql_growth": 0,
+  "provider_dataset_code": "IMF:PIP",
+  "release_key": "imf-pip-asof-20260311t004734566029300z",
+  "run_key": "task-218-imf-pip-portfolio-counterpart-phase2",
+  "source_code": "IMF_SDMX_PIP_API_V1",
+  "status": "succeeded",
+  "task": "TASK-218"
+}

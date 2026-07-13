@@ -1,0 +1,15 @@
+{
+  "actual_candidate_cells": 8640,
+  "actual_explicit_missing_facts": 275,
+  "actual_provider_valued_facts": 8000,
+  "architecture_compatibility": "compatible for bounded reporter-territory plus counterpart-in-indicator scalar representation",
+  "expected_candidate_cells": 8640,
+  "expected_explicit_missing_facts": 1296,
+  "expected_provider_valued_facts": 6048,
+  "missingness_prediction_error": -1021,
+  "prediction_verdict": "Mixed",
+  "provider_behavior_surprises": "PIP returns whole-series absences for many reporter/counterpart/instrument pairs; successful returned series usually have dense annual values.",
+  "scale_prediction_error": 0,
+  "task": "TASK-218",
+  "whole_series_absence_count": 73
+}
