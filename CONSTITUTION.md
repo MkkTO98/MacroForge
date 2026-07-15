@@ -252,13 +252,13 @@ Track maturity only in state/backlog/handoff artifacts and the lightweight capab
 
 Default development workflow after governance freeze is the source-expansion execution loop defined above. Future architectural reports should only be created when implementation exposes uncertainty that cannot be resolved from the Constitution, capability graph, contracts, dependency graph, deterministic verification evidence, the Marginal Source Cost Index, or the recurring implementation pain record.
 
-## ArchitectureHarvest consultation
+## MetaHarvest consultation
 
-ArchitectureHarvest should not be consulted uniformly.
+MetaHarvest should not be consulted uniformly.
 
 Instead, consultation intensity should increase dramatically whenever Hermes proposes extracting new shared infrastructure.
 
-At these architectural extraction points, Hermes should perform a deep ArchitectureHarvest consultation to identify:
+At these architectural extraction points, Hermes should perform a deep MetaHarvest consultation to identify:
 
 - existing implementations;
 - mature design patterns;
@@ -344,7 +344,7 @@ Each reassessment should determine:
 
 - whether dependencies have changed;
 - whether higher-leverage infrastructure has emerged;
-- whether ArchitectureHarvest consultation identifies better alternatives;
+- whether MetaHarvest consultation identifies better alternatives;
 - whether the next task still maximizes long-term leverage.
 
 The roadmap should evolve from implementation evidence rather than historical planning.

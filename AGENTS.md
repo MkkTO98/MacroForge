@@ -39,7 +39,7 @@ Project-local tools are helpers, not a replacement for Hermes:
 
 - `tools/build_context.py` creates explicit context bundles.
 - `tools/dry_run.py` and `tools/validate_dry_run.py` document and validate risky changes.
-- `tools/check_coherence.py` checks scaffold conventions.
+- `tools/check_coherence.py` checks repository coherence and context health.
 - `tools/context_health.py` checks primary-state/context-bundle size hygiene.
 - `tools/architecture_reality_audit.py` runs lightweight drift checks every 5-10 completed tasks and before major architecture/governance reviews.
 - `tools/update_context_summaries.py` refreshes folder summaries.

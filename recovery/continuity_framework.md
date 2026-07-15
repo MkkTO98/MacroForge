@@ -25,7 +25,7 @@ python3 tools/recover_session.py --project .
 python3 tools/recover_session.py --project . --json
 ```
 
-The helper reads a bounded set of fixed files plus only recent direct children of `artifacts/tasks/`, `artifacts/decisions/`, and `question_queue/pending/`. It does not inspect raw logs or walk the repository.
+The helper reads a bounded set of fixed files plus only recent direct children of `artifacts/tasks/`, `artifacts/decisions/`, and `question_queue/pending/` when the on-demand question queue exists. It does not inspect raw logs or walk the repository.
 
 ## What the recovery snapshot must answer
 
@@ -66,7 +66,7 @@ This standard closeout replaces ad hoc user-provided closeout procedures. User i
 When a session is near token, tool, time, or quota exhaustion, continuity beats optional cleanup. Perform these in order:
 
 1. Update the active task artifact with status, outcome so far, and incomplete acceptance criteria.
-2. Record blockers, open questions, or approval needs in the active task or `question_queue/pending/` as appropriate.
+2. Record blockers, open questions, or approval needs in the active task or an on-demand `question_queue/pending/` file as appropriate.
 3. Update `context/latest_handoff.md` with context used, files changed, tests/checks actually run, current blockers, next recommended actions, and exact resume command.
 4. Update `state/active_goal.md` and `state/project_state.md` only if their current-state pointers changed.
 5. If time remains, refresh affected summaries and run final verification.
