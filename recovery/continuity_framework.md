@@ -61,6 +61,46 @@ When receiving that command, the agent must not ask the user for a custom closeo
 
 This standard closeout replaces ad hoc user-provided closeout procedures. User instructions may narrow scope or add checks, but they should not be required to restate the standard task/state/handoff/summary/verification sequence.
 
+### Forward output-family closeout sufficiency
+
+For new tasks and explicitly reopened historical tasks, closeout should account for material output families at family level rather than creating one lifecycle row per file. Legacy completed tasks that predate this structure remain valid historical evidence; do not rewrite them merely to add new fields.
+
+When a task creates or changes material outputs, the active task artifact, closeout note, publication manifest, or equivalent accepted evidence should identify each relevant family with:
+
+- family name or purpose;
+- representative/root paths or exact publication-manifest reference;
+- owning task/source;
+- role: authoritative project truth, local/provider evidence, generated output, temporary attempt/checkpoint, release/export material, or unresolved material;
+- terminal disposition: `git-durable project truth`, `local/provider evidence`, `generated/rebuildable`, `external archive`, or `pending decision`;
+- publication expectation: publish now, local-only, generated/rebuildable, external-only, or deferred with bounded exception;
+- reconstruction/recovery source when applicable.
+
+Relevant ignored and non-Git outputs must be accounted for when they are material to recovery, reproducibility, provider evidence, or publication safety. Caches, bytecode, routine temporary files, and bulk generated material may be covered by path/family inheritance and do not need to be listed individually unless they are the task's substantive output.
+
+Publication verification must distinguish exact staged/commit boundary from completeness. A boundary check proves only what was included. Before publication, declared `git-durable project truth` families must be compared with the authorized staged/commit boundary. Missing declared durable paths and unauthorized extra paths are blockers unless an explicit bounded exception records the reason, owner, recovery evidence, and reconsideration trigger. Local/provider evidence and generated/rebuildable outputs are not required to be committed solely because they were used for validation.
+
+Forward closeout validation is operational, not only doctrinal. For a new task, an explicitly reopened historical task, or a publication boundary that claims completeness, run the project-local validator against the task closeout JSON or equivalent machine-readable closeout report:
+
+```bash
+python3 tools/check_coherence.py --project . --lifecycle-closeout /path/to/closeout.json --publication-boundary /path/to/publication-boundary.json
+```
+
+The closeout JSON may reuse the active task closeout report format, but it must include a non-empty `output_families` list for forward work. Omitted or empty `output_families` is a blocker in normal mode; an empty list is not a no-output attestation. Legacy completed records may be accepted without rewriting historical artifacts only with explicit historical handling:
+
+```bash
+python3 tools/check_coherence.py --project . --lifecycle-closeout /path/to/historical-closeout.json --legacy-record
+```
+
+A reopened historical task is forward work for closeout purposes and must not use the legacy bypass.
+
+Provider-originated payloads require a recorded rights/permitted-use status before new public publication. Public accessibility is not redistribution permission. Use existing source metadata such as `meta.source.license_note`, provider/source manifests, publication manifests, or backlog-owned rights evidence where available. Distinguish authored code/tests/tools, synthetic fixtures, provider-originated payloads, derived/normalized provider payloads, already committed legacy fixtures, and newly proposed provider-payload publication. For newly proposed provider-originated or derived provider payloads, `unknown` or `pending review` is not permitted for public publication. A permitted provider-payload publication must include a rights evidence reference. This rule is forward-looking and does not automatically remove or relabel committed legacy fixtures.
+
+A task that changes production PostgreSQL state must not be closed as fully reproducible while necessary authored source, tests, or tools remain non-durable unless the closeout records a bounded exception with reason, owner, recovery evidence, and reconsideration trigger. Raw/provider evidence may remain local/provider evidence; this requirement targets authored implementation needed to recover the production change.
+
+Content-sensitive mutation verification should supplement, not replace, Git path/status fingerprints. For publication or reconciliation in a dirty worktree, capture the path/status fingerprint, complete tracked-diff hash, per-authorized-path content hashes, exact staged boundary, untracked path manifest, bounded untracked/ignored stat fingerprints, and explicit pre/post non-target preservation. The lifecycle validator can emit bounded per-path content fingerprints with repeated `--fingerprint-path PATH`; project-relative paths resolve against `--project`, and an unavailable, symlink, or non-regular requested path blocks rather than producing passing null evidence. Lifecycle-only options such as `--publication-boundary` and `--fingerprint-path` require `--lifecycle-closeout`. This is for authorized paths and preservation checks, not a routine hash of all multi-gigabyte provider evidence. Avoid naive substring scans for secrets, SQL mutation, or provider payloads; use context-aware checks.
+
+Historical navigation remains summary-first. Reports, decisions, tasks, and final evidence remain institutional memory even when not loaded in normal active context. Use state, handoff, `_SUMMARY.md`, `recover_session.py`, `build_context.py`, context policy, task/decision folders, and targeted search to reach historical evidence. Do not add a parallel historical index or delete reports merely to reduce normal context size.
+
 ## Near-quota shutdown priority
 
 When a session is near token, tool, time, or quota exhaustion, continuity beats optional cleanup. Perform these in order:
