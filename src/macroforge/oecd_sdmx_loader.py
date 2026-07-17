@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import argparse
 import json
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
 from macroforge.db_helpers import jsonb_literal, parse_pipe_counts, psql_scalar, run_psql_file, sql_literal, write_json_report
 from macroforge.lineage_generation import canonical_lineage_events, lineage_values_sql
-from macroforge.observed_ingestion import build_oecd_observed_package, canonical_attribute_hash
+from macroforge.observed_ingestion import ObservedIngestionPackage, ObservedObservation, canonical_attribute_hash
+from macroforge.oecd_sdmx_observed import build_oecd_observed_package
 
 SOURCE_CODE = "OECD_NAAG"
 SOURCE_NAME = "OECD annual national accounts / NAAG Chapter 1 GDP dataflow"
@@ -323,6 +325,63 @@ WHERE NOT EXISTS (
 
 COMMIT;
 """
+
+
+def _json_rows(db_name: str, sql: str) -> list[dict[str, Any]]:
+    payload = psql_scalar(db_name, sql)
+    return json.loads(payload or "[]")
+
+
+def reconstruct_loaded_observed_package(
+    db_name: str,
+    expected_package: ObservedIngestionPackage,
+) -> ObservedIngestionPackage:
+    """Reconstruct OECD_NAAG observed-package evidence from loaded canonical/staging outputs."""
+
+    rows = _json_rows(
+        db_name,
+        """
+        WITH source_row AS (
+            SELECT source_id FROM meta.source WHERE source_code = 'OECD_NAAG'
+        )
+        SELECT COALESCE(jsonb_agg(jsonb_build_object(
+            'provider_indicator_code', i.source_indicator_code,
+            'provider_indicator_label', i.indicator_name,
+            'provider_territory_code', t.iso3_code,
+            'provider_territory_label', t.iso3_code,
+            'provider_period_code', p.period_year::text,
+            'frequency', p.frequency,
+            'unit_code', u.unit_code,
+            'value', fo.value,
+            'observation_status', fo.observation_status,
+            'attributes', a.attributes,
+            'source_payload', oso.source_payload,
+            'attribute_hash', a.attribute_hash,
+            'period_year', p.period_year,
+            'period_quarter', NULL,
+            'unit_label', NULL,
+            'decimal_precision', oso.decimal_precision
+        ) ORDER BY u.unit_code, p.period_year, t.iso3_code), '[]'::jsonb)::text
+        FROM curated.fact_observation fo
+        JOIN source_row s ON fo.source_id = s.source_id
+        JOIN curated.dim_indicator i ON fo.indicator_id = i.indicator_id
+        JOIN curated.dim_territory t ON fo.territory_id = t.territory_id
+        JOIN curated.dim_period p ON fo.period_id = p.period_id
+        JOIN curated.dim_unit u ON fo.unit_id = u.unit_id
+        JOIN curated.dim_attribute_set a ON fo.attribute_set_id = a.attribute_set_id
+        JOIN staging.oecd_sdmx_observation oso
+          ON oso.pipeline_run_id = fo.pipeline_run_id
+         AND oso.measure_code = i.source_indicator_code
+         AND oso.ref_area_code = t.iso3_code
+         AND oso.period_year = p.period_year
+         AND oso.unit_measure_code = u.unit_code;
+        """,
+    )
+    return replace(
+        expected_package,
+        row_count=int(psql_scalar(db_name, "SELECT count(*) FROM staging.oecd_sdmx_observation")),
+        observations=tuple(ObservedObservation(**row) for row in rows),
+    )
 
 
 def _counts(db_name: str) -> dict[str, Any]:

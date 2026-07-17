@@ -14,10 +14,13 @@ from macroforge.ingestion_feedback import (
     source_engineering_effort_profiles,
 )
 from macroforge.lineage_generation import canonical_lineage_events
-from macroforge.observed_ingestion import build_eurostat_observed_package, build_wdi_observed_package, compare_observed_packages
+from macroforge.eurostat_namq_observed import build_eurostat_observed_package
+from macroforge.observed_ingestion import compare_observed_packages
+from macroforge.wdi_observed import build_wdi_observed_package
+from synthetic_wdi import build_synthetic_wdi_fixture
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-WDI_NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "wdi" / "wdi-smoke-normalized.json"
+
 EUROSTAT_NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "eurostat" / "eurostat-namq-10-gdp-architecture-spike-normalized.json"
 BLS_RAW = PROJECT_ROOT / "data" / "raw" / "bls" / "bls-cpi-cuur0000sa0-2023-raw.json"
 
@@ -92,7 +95,7 @@ def test_package_comparison_feedback_explains_changed_observation_and_fingerprin
 
 
 def test_package_comparison_feedback_reports_success_from_existing_evidence():
-    package = build_wdi_observed_package(_load(WDI_NORMALIZED))
+    package = build_wdi_observed_package(build_synthetic_wdi_fixture("normalized_smoke"))
 
     feedback = deterministic_feedback_from_package_comparison("WDI", compare_observed_packages(package, package))
 

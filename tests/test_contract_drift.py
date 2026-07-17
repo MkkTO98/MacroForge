@@ -5,15 +5,14 @@ from dataclasses import replace
 from pathlib import Path
 
 from macroforge.contract_drift import validate_observed_package_contract
-from macroforge.observed_ingestion import (
-    build_eurostat_observed_package,
-    build_oecd_observed_package,
-    build_wdi_observed_package,
-    canonical_attribute_hash,
-)
+from macroforge.eurostat_namq_observed import build_eurostat_observed_package
+from macroforge.oecd_sdmx_observed import build_oecd_observed_package
+from macroforge.observed_ingestion import canonical_attribute_hash
+from macroforge.wdi_observed import build_wdi_observed_package
+from synthetic_wdi import build_synthetic_wdi_fixture
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-WDI_NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "wdi" / "wdi-smoke-normalized.json"
+
 OECD_NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "oecd_sdmx" / "oecd-sdmx-smoke-normalized.json"
 EUROSTAT_NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "eurostat" / "eurostat-namq-10-gdp-architecture-spike-normalized.json"
 
@@ -24,7 +23,7 @@ def _load(path: Path) -> dict:
 
 def _supported_packages():
     return (
-        build_wdi_observed_package(_load(WDI_NORMALIZED)),
+        build_wdi_observed_package(build_synthetic_wdi_fixture("normalized_smoke")),
         build_oecd_observed_package(_load(OECD_NORMALIZED)),
         build_eurostat_observed_package(_load(EUROSTAT_NORMALIZED)),
     )
@@ -42,7 +41,7 @@ def test_supported_observed_packages_satisfy_contract_invariants():
 
 
 def test_package_contract_drift_reports_deterministic_issue_codes_and_paths():
-    package = build_wdi_observed_package(_load(WDI_NORMALIZED))
+    package = build_wdi_observed_package(build_synthetic_wdi_fixture("normalized_smoke"))
     drifted = replace(package, row_count=package.row_count + 1, release_key="")
 
     report = validate_observed_package_contract(drifted)

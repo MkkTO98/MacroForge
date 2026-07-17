@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import argparse
 import json
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
 from macroforge.db_helpers import jsonb_literal, parse_pipe_counts, psql_scalar, run_psql_file, sql_literal, write_json_report
 from macroforge.lineage_generation import canonical_lineage_events, lineage_values_sql
-from macroforge.observed_ingestion import build_eurostat_observed_package, canonical_attribute_hash
+from macroforge.eurostat_namq_observed import build_eurostat_observed_package
+from macroforge.observed_ingestion import ObservedIngestionPackage, ObservedObservation, canonical_attribute_hash
 
 SOURCE_CODE = "EUROSTAT_NAMQ_GDP"
 SOURCE_NAME = "Eurostat quarterly national accounts GDP"
@@ -469,6 +471,71 @@ WHERE NOT EXISTS (
 
 COMMIT;
 """
+
+
+def _json_rows(db_name: str, sql: str) -> list[dict[str, Any]]:
+    payload = psql_scalar(db_name, sql)
+    return json.loads(payload or "[]")
+
+
+def reconstruct_loaded_observed_package(
+    db_name: str,
+    expected_package: ObservedIngestionPackage,
+) -> ObservedIngestionPackage:
+    """Reconstruct Eurostat NAMQ observed-package evidence from loaded canonical/staging outputs."""
+
+    rows = _json_rows(
+        db_name,
+        """
+        WITH source_row AS (
+            SELECT source_id FROM meta.source WHERE source_code = 'EUROSTAT_NAMQ_GDP'
+        )
+        SELECT COALESCE(jsonb_agg(jsonb_build_object(
+            'provider_indicator_code', i.source_indicator_code,
+            'provider_indicator_label', i.indicator_name,
+            'provider_territory_code', etm.provider_territory_code,
+            'provider_territory_label', en.provider_geo_name,
+            'provider_period_code', epm.provider_period_code,
+            'frequency', p.frequency,
+            'unit_code', u.unit_code,
+            'value', fo.value,
+            'observation_status', fo.observation_status,
+            'attributes', a.attributes,
+            'source_payload', en.source_payload,
+            'attribute_hash', a.attribute_hash,
+            'period_year', p.period_year,
+            'period_quarter', p.period_quarter,
+            'unit_label', u.unit_name,
+            'decimal_precision', en.decimal_precision
+        ) ORDER BY etm.provider_territory_code, epm.provider_period_code), '[]'::jsonb)::text
+        FROM curated.fact_observation fo
+        JOIN source_row s ON fo.source_id = s.source_id
+        JOIN curated.dim_indicator i ON fo.indicator_id = i.indicator_id
+        JOIN curated.dim_territory t ON fo.territory_id = t.territory_id
+        JOIN curated.dim_period p ON fo.period_id = p.period_id
+        JOIN curated.dim_unit u ON fo.unit_id = u.unit_id
+        JOIN curated.dim_attribute_set a ON fo.attribute_set_id = a.attribute_set_id
+        JOIN meta.provider_territory_mapping etm
+          ON etm.source_id = s.source_id
+         AND etm.territory_id = t.territory_id
+         AND etm.provider_dataset_code = 'namq_10_gdp'
+        JOIN meta.provider_period_mapping epm
+          ON epm.source_id = s.source_id
+         AND epm.period_id = p.period_id
+         AND epm.provider_dataset_code = 'namq_10_gdp'
+        JOIN staging.eurostat_namq_observation en
+          ON en.pipeline_run_id = fo.pipeline_run_id
+         AND en.national_accounts_item_code = i.source_indicator_code
+         AND en.provider_geo_code = etm.provider_territory_code
+         AND en.provider_period_code = epm.provider_period_code
+         AND en.unit_code = u.unit_code;
+        """,
+    )
+    return replace(
+        expected_package,
+        row_count=int(psql_scalar(db_name, "SELECT count(*) FROM staging.eurostat_namq_observation")),
+        observations=tuple(ObservedObservation(**row) for row in rows),
+    )
 
 
 def _counts(db_name: str) -> dict[str, Any]:

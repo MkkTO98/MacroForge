@@ -7,11 +7,12 @@ import uuid
 from pathlib import Path
 
 from macroforge import wdi_loader, wdi_validation
+from synthetic_wdi import write_synthetic_wdi_fixture
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MIGRATION = PROJECT_ROOT / "db" / "migrations" / "001_v0_schema_foundation.sql"
 CANONICAL_DOMAIN_MIGRATION = PROJECT_ROOT / "db" / "migrations" / "003_canonical_domain_dimensions.sql"
-NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "wdi" / "wdi-smoke-normalized.json"
+
 
 
 def _postgres_available() -> bool:
@@ -38,8 +39,11 @@ def test_wdi_validation_report_passes_after_loader_rerun(tmp_path):
                 capture_output=True,
                 text=True,
             )
-        wdi_loader.load_wdi_smoke_to_postgres(db_name, NORMALIZED, run_key="task-007-validation-test")
-        wdi_loader.load_wdi_smoke_to_postgres(db_name, NORMALIZED, run_key="task-007-validation-test")
+        normalized_path = write_synthetic_wdi_fixture(
+            tmp_path / "wdi-smoke-normalized.json", "normalized_smoke"
+        )
+        wdi_loader.load_wdi_smoke_to_postgres(db_name, normalized_path, run_key="task-007-validation-test")
+        wdi_loader.load_wdi_smoke_to_postgres(db_name, normalized_path, run_key="task-007-validation-test")
 
         json_report = tmp_path / "wdi-validation.json"
         md_report = tmp_path / "wdi-validation.md"

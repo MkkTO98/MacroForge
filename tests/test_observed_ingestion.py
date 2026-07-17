@@ -6,18 +6,19 @@ from typing import Any
 
 from dataclasses import replace
 
+from macroforge.eurostat_namq_observed import build_eurostat_observed_package
+from macroforge.oecd_sdmx_observed import build_oecd_observed_package
 from macroforge.observed_ingestion import (
     EMPTY_ATTRIBUTE_HASH,
-    build_eurostat_observed_package,
-    build_oecd_observed_package,
-    build_wdi_observed_package,
     canonical_attribute_hash,
     compare_observed_packages,
     observed_package_fingerprint,
 )
+from macroforge.wdi_observed import build_wdi_observed_package
+from synthetic_wdi import build_synthetic_wdi_fixture
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-WDI_NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "wdi" / "wdi-smoke-normalized.json"
+
 OECD_NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "oecd_sdmx" / "oecd-sdmx-smoke-normalized.json"
 EUROSTAT_NORMALIZED = PROJECT_ROOT / "data" / "metadata" / "eurostat" / "eurostat-namq-10-gdp-architecture-spike-normalized.json"
 
@@ -27,13 +28,14 @@ def _load(path: Path) -> dict[str, Any]:
 
 
 def test_wdi_observed_package_preserves_existing_loader_semantics():
-    package = build_wdi_observed_package(_load(WDI_NORMALIZED))
+    synthetic = build_synthetic_wdi_fixture("normalized_smoke")
+    package = build_wdi_observed_package(synthetic)
 
     assert package.source_code == "WDI"
     assert package.source_name == "World Bank World Development Indicators"
     assert package.source_home_url == "https://data.worldbank.org/"
     assert package.provider_dataset_code == "WDI"
-    assert package.release_key == "WDI:2026-04-08:2020:2021"
+    assert package.release_key == "WDI:2099-01-01:2020:2021"
     assert package.row_count == 8
     assert package.expected_row_count == 8
     assert package.input_filters == {
@@ -42,24 +44,24 @@ def test_wdi_observed_package_preserves_existing_loader_semantics():
         "date_range": "2020:2021",
     }
     assert package.raw_evidence["raw_sha256"] == ";".join(
-        artifact["sha256"] for artifact in _load(WDI_NORMALIZED)["raw_artifacts"]
+        artifact["sha256"] for artifact in synthetic["raw_artifacts"]
     )
 
     observation = package.observations[0]
     assert observation.provider_indicator_code == "NY.GDP.MKTP.CD"
-    assert observation.provider_indicator_label == "GDP (current US$)"
+    assert observation.provider_indicator_label == "Synthetic Indicator 1"
     assert observation.provider_territory_code == "DNK"
-    assert observation.provider_territory_label == "Denmark"
+    assert observation.provider_territory_label == "Synthetic Territory DNK"
     assert observation.provider_period_code == "2021"
     assert observation.frequency == "A"
     assert observation.period_year == 2021
     assert observation.unit_code == "unknown"
-    assert observation.value == 406110162088.054
+    assert observation.value == 11.25
     assert observation.observation_status == "observed"
-    assert observation.decimal_precision == 0
+    assert observation.decimal_precision == 2
     assert observation.attributes == {}
     assert observation.attribute_hash == EMPTY_ATTRIBUTE_HASH
-    assert observation.source_payload == _load(WDI_NORMALIZED)["rows"][0]
+    assert observation.source_payload == synthetic["rows"][0]
 
 
 def test_oecd_observed_package_preserves_existing_loader_semantics():
@@ -140,10 +142,12 @@ def test_eurostat_observed_package_preserves_existing_loader_semantics():
 
 
 def test_observed_package_fingerprint_is_deterministic_for_replayed_package():
-    package = build_wdi_observed_package(_load(WDI_NORMALIZED))
+    package = build_wdi_observed_package(build_synthetic_wdi_fixture("normalized_smoke"))
 
     first = observed_package_fingerprint(package)
-    second = observed_package_fingerprint(build_wdi_observed_package(_load(WDI_NORMALIZED)))
+    second = observed_package_fingerprint(
+        build_wdi_observed_package(build_synthetic_wdi_fixture("normalized_smoke"))
+    )
 
     assert first == second
     assert len(first) == 64
@@ -201,3 +205,28 @@ def test_observed_ingestion_module_is_not_a_generalized_framework():
     ]
     for token in forbidden:
         assert token not in source
+
+
+def test_observed_ingestion_module_does_not_own_source_specific_package_construction():
+    source = (PROJECT_ROOT / "src" / "macroforge" / "observed_ingestion.py").read_text(encoding="utf-8")
+
+    forbidden = [
+        "def _wdi_release_key",
+        "def _oecd_release_key",
+        "def _eurostat_release_key",
+        "def _oecd_observation_status",
+        "def _eurostat_attribute_payload",
+        "ObservedObservation(",
+    ]
+    for token in forbidden:
+        assert token not in source
+
+
+def test_legacy_observed_ingestion_builder_imports_remain_compatible():
+    from macroforge import observed_ingestion
+
+    normalized = build_synthetic_wdi_fixture("normalized_smoke")
+    legacy_package = observed_ingestion.build_wdi_observed_package(normalized)
+    source_owned_package = build_wdi_observed_package(normalized)
+
+    assert observed_package_fingerprint(legacy_package) == observed_package_fingerprint(source_owned_package)
