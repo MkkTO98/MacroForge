@@ -1,0 +1,133 @@
+{
+  "record_type": "bounded-corrective-supersession-lifecycle-closeout",
+  "schema_version": "macroforge-lifecycle-closeout-v1",
+  "date": "2026-07-30",
+  "status": "corrective-supersession-closeout",
+  "affected_publication": {
+    "commit": "af08d963a5fc1a86b2df643072e49341dfa62b67",
+    "branch": "main",
+    "historical_closeout": "artifacts/reports/R-20260717-wave-b-batch-02b-wdi-observed-ingestion-publication-closeout.json",
+    "historical_record_authority": "The original closeout remains authoritative evidence of what commit af08d963a5fc1a86b2df643072e49341dfa62b67 published.",
+    "historical_record_treatment": "This correction does not rewrite or replace the historical closeout. The historical closeout is excluded from the corrective publication boundary and must remain byte-identical to the version in the affected commit."
+  },
+  "correction": {
+    "finding_source": "later independent publication audit",
+    "finding": "Synthetic inputs for six WDI families were assigned unrelated historical provider artifact paths and SHA-256 digests instead of provenance for the exact supplied synthetic bytes. A subsequent bounded review also found that nested raw_artifacts paired the enclosing bundle path with response-level byte counts and digests, conflating two physical artifact identities.",
+    "affected_families": [
+      "macro indicators",
+      "operational Phase 1",
+      "demographics Phase 1",
+      "energy Phase 1",
+      "trade core",
+      "financial accounts core"
+    ],
+    "supersession_scope": "This record supersedes only the defective synthetic-input provenance and associated reproducibility claims. It does not supersede the original publication as a historical event or withdraw unrelated valid evidence from that publication.",
+    "corrected_behavior": [
+      "raw_artifact_path identifies the actual supplied enclosing input bundle",
+      "raw_sha256 is derived from the exact supplied bundle bytes decoded into normalized input",
+      "nested raw_artifacts raw_file, bytes, and sha256 identify that same supplied bundle and its exact bytes",
+      "nested raw_artifacts response_bytes and response_sha256 separately identify each exact canonicalized response representation",
+      "missing or contradictory required provenance fails closed",
+      "historical provider inputs retain their actual historical provenance",
+      "truthful provenance propagates through affected package, loader, release, refresh, and foundational-bundle metadata"
+    ],
+    "technical_path_count": 15,
+    "technical_paths": [
+      "src/macroforge/wdi_observed.py",
+      "src/macroforge/wdi_demographics.py",
+      "src/macroforge/wdi_energy_use_coal_electricity.py",
+      "src/macroforge/wdi_trade_core.py",
+      "src/macroforge/wdi_financial_accounts_core.py",
+      "src/macroforge/wdi_foundational_operational_bundle.py",
+      "tests/synthetic_wdi.py",
+      "tests/test_synthetic_wdi.py",
+      "tests/test_wdi_macro_indicators_operational.py",
+      "tests/test_wdi_operational_phase1.py",
+      "tests/test_wdi_demographics_phase1.py",
+      "tests/test_wdi_energy_phase1.py",
+      "tests/test_wdi_trade_core_operational.py",
+      "tests/test_wdi_financial_accounts_core_operational.py",
+      "tests/test_wdi_macro_indicators_refresh_verification.py"
+    ],
+    "deliberately_excluded_paths": [
+      {
+        "path": "src/macroforge/wdi_trade_balance_capability.py",
+        "reason": "The file was already untracked before this correction, and complete whole-file publication ownership is unresolved. Its local working-tree content is not part of this corrective lifecycle unit."
+      },
+      {
+        "path": "artifacts/reports/R-20260717-wave-b-batch-02b-wdi-observed-ingestion-publication-closeout.json",
+        "reason": "The original historical closeout is preserved unchanged; correction is represented additively by this record."
+      }
+    ]
+  },
+  "rights_and_reproducibility": {
+    "defect_category": "provenance-truth defect, not provider-payload redistribution",
+    "provider_payload_embedded_or_copied_by_correction": false,
+    "provider_payload_rights_violated": false,
+    "provider_payload_rights_effect": "No provider payload was added, copied, or redistributed by the defect or this authored correction. Existing provider evidence remains local and excluded from this corrective boundary.",
+    "reproducibility_claim": "partial",
+    "reproducibility_statement": "The authored synthetic evidence and corrective implementation are deterministic. Exact historical provider replay, production PostgreSQL regeneration, and full historical-run reproduction are not claimed.",
+    "production_postgresql_state_changed": false,
+    "postgresql_mutation_in_scope": false,
+    "bounded_reproducibility_exception": null
+  },
+  "verification_evidence": {
+    "initial_correction_red": "8 failed, 11 passed before the initial production correction",
+    "initial_direct_corrected_surface": "76 passed",
+    "initial_expanded_rights_safe_wdi_surface": "119 passed",
+    "initial_repository_execution_path_lifecycle_surface": "27 passed",
+    "initial_temporary_export_main_surface": "110 passed",
+    "initial_temporary_export_focused_tracked_surface": "63 passed, 7 deselected",
+    "nested_artifact_red": "An isolated export of committed c17fda8c30f09695eee1697088ba022055c8077c collected six independently named family cases; all six failed because committed production did not accept explicit raw_artifact_path and raw_payload provenance and therefore could not satisfy the bundle/response identity contract.",
+    "nested_artifact_green": "A separate isolated clean export overlaid with exactly the 15 technical candidate paths passed all six independently named nested-artifact regression cases.",
+    "current_positive_assessed_surface": "The exact positive 22-file assessed surface collected 132 tests and passed all 132. The earlier historical 112-test result is not claimed as the current result because the corrected surface now includes 20 additional provenance cases.",
+    "synthetic_serialization": "tests/synthetic_wdi.py owns canonical serialized bytes and SHA-256 identities; tests/test_synthetic_wdi.py proves repeated byte and digest determinism",
+    "scope_limit": "These results support the working-tree correction but do not establish publication. Publication readiness additionally requires the exact declared boundary and its clean-export and preservation gates to pass."
+  },
+  "publication_boundary": {
+    "technical_path_count": 15,
+    "lifecycle_path_count": 1,
+    "declared_path_count": 16,
+    "single_commit_required": true,
+    "excluded_untracked_trade_balance_capability": true,
+    "excluded_historical_closeout": true
+  },
+  "publication_status": {
+    "state_at_authorship": "unpublished working-tree corrective candidate",
+    "durability_rule": "This corrective record and its technical correction become durable only through a subsequent publication containing exactly the 16 declared Git-durable paths.",
+    "future_commit_identity_required_in_record": false,
+    "publication_claimed_by_this_record": false
+  },
+  "output_families": [
+    {
+      "name": "WDI synthetic-provenance technical correction and bounded corrective-supersession closeout",
+      "content_origin": "authored",
+      "path_count": 16,
+      "paths": [
+        "src/macroforge/wdi_observed.py",
+        "src/macroforge/wdi_demographics.py",
+        "src/macroforge/wdi_energy_use_coal_electricity.py",
+        "src/macroforge/wdi_trade_core.py",
+        "src/macroforge/wdi_financial_accounts_core.py",
+        "src/macroforge/wdi_foundational_operational_bundle.py",
+        "tests/synthetic_wdi.py",
+        "tests/test_synthetic_wdi.py",
+        "tests/test_wdi_macro_indicators_operational.py",
+        "tests/test_wdi_operational_phase1.py",
+        "tests/test_wdi_demographics_phase1.py",
+        "tests/test_wdi_energy_phase1.py",
+        "tests/test_wdi_trade_core_operational.py",
+        "tests/test_wdi_financial_accounts_core_operational.py",
+        "tests/test_wdi_macro_indicators_refresh_verification.py",
+        "artifacts/reports/R-20260730-wave-b-batch-02b-wdi-synthetic-provenance-corrective-supersession-closeout.json"
+      ],
+      "publication_expectation": "publish now",
+      "role": "authored implementation, regression tests, and bounded corrective-supersession closeout",
+      "terminal_disposition": "git-durable project truth"
+    }
+  ],
+  "self_reference": {
+    "path": "artifacts/reports/R-20260730-wave-b-batch-02b-wdi-synthetic-provenance-corrective-supersession-closeout.json",
+    "content_hash_required": false
+  }
+}

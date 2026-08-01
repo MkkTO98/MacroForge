@@ -27,7 +27,8 @@ from macroforge.wdi_loader import load_wdi_demographics_phase1_to_postgres
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 BASE_MIGRATION = PROJECT_ROOT / "db/migrations/001_v0_schema_foundation.sql"
 CANONICAL_DOMAIN_MIGRATION = PROJECT_ROOT / "db/migrations/003_canonical_domain_dimensions.sql"
-EXPECTED_FINGERPRINT = "c6e8c16c5043f732b163af39ac3548a2db02e86143d008d5b1f94552e4d965a4"
+HISTORICAL_FALSE_PROVENANCE_FINGERPRINT = "c6e8c16c5043f732b163af39ac3548a2db02e86143d008d5b1f94552e4d965a4"
+EXPECTED_FINGERPRINT = "ed7d3afd66981b561288db9252c20d354e30a4663d2dc6b53288e9d8c620f00c"
 EXPECTED_REFRESH_FINGERPRINT = "172f5978c1bccc08f3727a2101acb481860bed7dbdd12cb5ee8948c521d20624"
 
 
@@ -35,6 +36,12 @@ def _payload() -> dict:
     from synthetic_wdi import build_synthetic_wdi_fixture
 
     return build_synthetic_wdi_fixture("demographics_phase1")
+
+
+def _provenance() -> dict:
+    from synthetic_wdi import synthetic_fixture_bytes, synthetic_fixture_provenance
+
+    return {"raw_artifact_path": synthetic_fixture_provenance("demographics_phase1")["raw_artifact_path"], "raw_payload": synthetic_fixture_bytes("demographics_phase1")}
 
 
 def test_wdi_demographics_phase1_fixture_is_persisted_and_bounded() -> None:
@@ -56,7 +63,13 @@ def test_wdi_demographics_phase1_fixture_is_persisted_and_bounded() -> None:
 
 
 def test_wdi_demographics_phase1_normalizes_loader_compatible_rows() -> None:
-    normalized = normalize_wdi_demographics_phase1_fixture(_payload())
+    normalized = normalize_wdi_demographics_phase1_fixture(_payload(), **_provenance())
+    from synthetic_wdi import synthetic_fixture_provenance
+
+    provenance = synthetic_fixture_provenance("demographics_phase1")
+    assert normalized["raw_fixture_path"] == provenance["raw_artifact_path"]
+    assert normalized["raw_sha256"] == provenance["raw_sha256"]
+    assert normalized["raw_sha256"] != DEMOGRAPHICS_PHASE1_RAW_SHA256
     assert normalized["row_count"] == DEMOGRAPHICS_PHASE1_EXPECTED_OBSERVATION_COUNT
     assert normalized["expected_row_count"] == DEMOGRAPHICS_PHASE1_EXPECTED_OBSERVATION_COUNT
     assert normalized["date_range"] == "2000:2023"
@@ -74,8 +87,8 @@ def test_wdi_demographics_phase1_normalizes_loader_compatible_rows() -> None:
 
 
 def test_wdi_demographics_phase1_builds_deterministic_observed_package() -> None:
-    left = build_wdi_demographics_phase1_observed_package(_payload())
-    right = build_wdi_demographics_phase1_observed_package(_payload())
+    left = build_wdi_demographics_phase1_observed_package(_payload(), **_provenance())
+    right = build_wdi_demographics_phase1_observed_package(_payload(), **_provenance())
     assert left.source_code == "WDI"
     assert left.provider_dataset_code == "WDI"
     assert left.row_count == DEMOGRAPHICS_PHASE1_EXPECTED_OBSERVATION_COUNT
@@ -83,14 +96,17 @@ def test_wdi_demographics_phase1_builds_deterministic_observed_package() -> None
     assert validate_observed_package_contract(left).valid is True
     assert compare_observed_packages(left, right).equivalent is True
     assert observed_package_fingerprint(left) == EXPECTED_FINGERPRINT
+    assert EXPECTED_FINGERPRINT != HISTORICAL_FALSE_PROVENANCE_FINGERPRINT
     assert observed_package_fingerprint(left) == observed_package_fingerprint(right)
+    assert left.raw_evidence["raw_artifact_path"] == _provenance()["raw_artifact_path"]
+    assert left.raw_evidence["raw_sha256"] == __import__("synthetic_wdi").synthetic_fixture_provenance("demographics_phase1")["raw_sha256"]
 
 
 def test_wdi_demographics_phase1_writes_manifest_and_refresh_delta(tmp_path: Path) -> None:
     normalized_path = tmp_path / "normalized.json"
     manifest_path = tmp_path / "manifest.json"
-    normalized = write_wdi_demographics_phase1_normalized_artifact(_payload(), normalized_path)
-    manifest = write_wdi_demographics_phase1_refresh_manifest(_payload(), manifest_path, normalized_path=normalized_path)
+    normalized = write_wdi_demographics_phase1_normalized_artifact(_payload(), normalized_path, **_provenance())
+    manifest = write_wdi_demographics_phase1_refresh_manifest(_payload(), manifest_path, normalized_path=normalized_path, **_provenance())
     assert normalized_path.exists()
     assert manifest_path.exists()
     assert manifest["task"] == "TASK-133"
@@ -122,7 +138,7 @@ def test_wdi_demographics_phase1_loads_to_postgres_when_available(tmp_path: Path
         return
     db_name = f"macroforge_task133_verify_{uuid.uuid4().hex[:12]}"
     normalized_path = tmp_path / "normalized.json"
-    write_wdi_demographics_phase1_normalized_artifact(_payload(), normalized_path)
+    write_wdi_demographics_phase1_normalized_artifact(_payload(), normalized_path, **_provenance())
     try:
         subprocess.run(["createdb", db_name], check=True, capture_output=True, text=True)
         for migration in [BASE_MIGRATION, CANONICAL_DOMAIN_MIGRATION]:

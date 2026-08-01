@@ -27,7 +27,8 @@ from macroforge.wdi_loader import load_wdi_financial_accounts_core_operational_t
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 BASE_MIGRATION = PROJECT_ROOT / "db/migrations/001_v0_schema_foundation.sql"
 CANONICAL_DOMAIN_MIGRATION = PROJECT_ROOT / "db/migrations/003_canonical_domain_dimensions.sql"
-EXPECTED_FINGERPRINT = "768fef7537e5ff5fef986e936257a0ffd8b51a78847cf8abffc07a8b8087529f"
+HISTORICAL_FALSE_PROVENANCE_FINGERPRINT = "768fef7537e5ff5fef986e936257a0ffd8b51a78847cf8abffc07a8b8087529f"
+EXPECTED_FINGERPRINT = "e70f37c46fa3addbdff6e409f5cc77c2d2668d12d990e53d6924a1802cee36d6"
 EXPECTED_REFRESH_FINGERPRINT = "0ec582eba519f8a41ff26f2eec79d67b2ec5eab3a0fd3964d3803d2d0fdbbb1a"
 
 
@@ -35,6 +36,12 @@ def _payload() -> dict:
     from synthetic_wdi import build_synthetic_wdi_fixture
 
     return build_synthetic_wdi_fixture("financial_accounts_core")
+
+
+def _provenance() -> dict:
+    from synthetic_wdi import synthetic_fixture_bytes, synthetic_fixture_provenance
+
+    return {"raw_artifact_path": synthetic_fixture_provenance("financial_accounts_core")["raw_artifact_path"], "raw_payload": synthetic_fixture_bytes("financial_accounts_core")}
 
 
 def test_wdi_financial_accounts_core_fixture_is_persisted_and_bounded() -> None:
@@ -58,7 +65,13 @@ def test_wdi_financial_accounts_core_fixture_is_persisted_and_bounded() -> None:
 
 
 def test_wdi_financial_accounts_core_normalizes_loader_compatible_rows() -> None:
-    normalized = normalize_wdi_financial_accounts_core_fixture(_payload())
+    normalized = normalize_wdi_financial_accounts_core_fixture(_payload(), **_provenance())
+    from synthetic_wdi import synthetic_fixture_provenance
+
+    provenance = synthetic_fixture_provenance("financial_accounts_core")
+    assert normalized["raw_fixture_path"] == provenance["raw_artifact_path"]
+    assert normalized["raw_sha256"] == provenance["raw_sha256"]
+    assert normalized["raw_sha256"] != FINANCIAL_ACCOUNTS_CORE_RAW_SHA256
     assert normalized["row_count"] == FINANCIAL_ACCOUNTS_CORE_EXPECTED_OBSERVATION_COUNT
     assert normalized["expected_row_count"] == FINANCIAL_ACCOUNTS_CORE_EXPECTED_OBSERVATION_COUNT
     assert normalized["date_range"] == "2000:2023"
@@ -77,8 +90,8 @@ def test_wdi_financial_accounts_core_normalizes_loader_compatible_rows() -> None
 
 
 def test_wdi_financial_accounts_core_builds_deterministic_observed_package() -> None:
-    left = build_wdi_financial_accounts_core_observed_package(_payload())
-    right = build_wdi_financial_accounts_core_observed_package(_payload())
+    left = build_wdi_financial_accounts_core_observed_package(_payload(), **_provenance())
+    right = build_wdi_financial_accounts_core_observed_package(_payload(), **_provenance())
     assert left.source_code == "WDI"
     assert left.provider_dataset_code == "WDI"
     assert left.row_count == FINANCIAL_ACCOUNTS_CORE_EXPECTED_OBSERVATION_COUNT
@@ -86,14 +99,17 @@ def test_wdi_financial_accounts_core_builds_deterministic_observed_package() -> 
     assert validate_observed_package_contract(left).valid is True
     assert compare_observed_packages(left, right).equivalent is True
     assert observed_package_fingerprint(left) == EXPECTED_FINGERPRINT
+    assert EXPECTED_FINGERPRINT != HISTORICAL_FALSE_PROVENANCE_FINGERPRINT
     assert observed_package_fingerprint(left) == observed_package_fingerprint(right)
+    assert left.raw_evidence["raw_artifact_path"] == _provenance()["raw_artifact_path"]
+    assert left.raw_evidence["raw_sha256"] == __import__("synthetic_wdi").synthetic_fixture_provenance("financial_accounts_core")["raw_sha256"]
 
 
 def test_wdi_financial_accounts_core_writes_manifest_and_refresh_delta(tmp_path: Path) -> None:
     normalized_path = tmp_path / "normalized.json"
     manifest_path = tmp_path / "manifest.json"
-    normalized = write_wdi_financial_accounts_core_normalized_artifact(_payload(), normalized_path)
-    manifest = write_wdi_financial_accounts_core_refresh_manifest(_payload(), manifest_path, normalized_path=normalized_path)
+    normalized = write_wdi_financial_accounts_core_normalized_artifact(_payload(), normalized_path, **_provenance())
+    manifest = write_wdi_financial_accounts_core_refresh_manifest(_payload(), manifest_path, normalized_path=normalized_path, **_provenance())
     assert normalized_path.exists()
     assert manifest_path.exists()
     assert manifest["task"] == "TASK-143"
@@ -126,7 +142,7 @@ def test_wdi_financial_accounts_core_loads_to_postgres_when_available(tmp_path: 
         return
     db_name = f"macroforge_task143_verify_{uuid.uuid4().hex[:12]}"
     normalized_path = tmp_path / "normalized.json"
-    write_wdi_financial_accounts_core_normalized_artifact(_payload(), normalized_path)
+    write_wdi_financial_accounts_core_normalized_artifact(_payload(), normalized_path, **_provenance())
     try:
         subprocess.run(["createdb", db_name], check=True, capture_output=True, text=True)
         for migration in [BASE_MIGRATION, CANONICAL_DOMAIN_MIGRATION]:

@@ -15,6 +15,29 @@ from macroforge.observed_ingestion import (
 )
 
 
+def validated_wdi_raw_provenance(
+    raw: dict[str, Any],
+    *,
+    raw_artifact_path: str | Path,
+    raw_payload: str | bytes,
+) -> tuple[str, str, int]:
+    """Validate provenance and return the artifact path, SHA-256, and byte count."""
+
+    artifact_path = str(raw_artifact_path).strip()
+    if not artifact_path:
+        raise ValueError("raw_artifact_path is required")
+    payload_bytes = raw_payload.encode("utf-8") if isinstance(raw_payload, str) else raw_payload
+    if not isinstance(payload_bytes, bytes) or not payload_bytes:
+        raise ValueError("non-empty raw_payload bytes are required")
+    try:
+        represented = json.loads(payload_bytes)
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("raw_payload must be valid JSON bytes") from exc
+    if represented != raw:
+        raise ValueError("raw_payload bytes do not represent the supplied parsed WDI input")
+    return artifact_path, hashlib.sha256(payload_bytes).hexdigest(), len(payload_bytes)
+
+
 def _wdi_release_key(normalized: dict[str, Any]) -> str:
     last_updated = None
     if normalized.get("raw_artifacts"):
@@ -57,8 +80,8 @@ def build_wdi_observed_package(normalized: dict[str, Any]) -> ObservedIngestionP
         release_key=release_key,
         raw_evidence={
             "source_url": "; ".join(a["url"] for a in raw_artifacts),
-            "raw_artifact_path": normalized.get("support_bundle"),
-            "raw_sha256": ";".join(a["sha256"] for a in raw_artifacts),
+            "raw_artifact_path": normalized.get("raw_fixture_path", normalized.get("support_bundle")),
+            "raw_sha256": normalized.get("raw_sha256") or ";".join(a["sha256"] for a in raw_artifacts),
             "raw_artifacts": raw_artifacts,
         },
         input_filters={
@@ -88,9 +111,17 @@ EXPECTED_OBSERVATION_COUNT = len(COUNTRIES) * len(INDICATORS) * len(YEARS)
 DEFAULT_RUN_KEY = "task-129-wdi-macro-indicators-operational-v1"
 
 
-def normalize_wdi_macro_indicators_fixture(raw: dict[str, Any]) -> dict[str, Any]:
-    """Normalize the bounded TASK-129 WDI macro-indicator fixture into existing WDI loader shape."""
+def normalize_wdi_macro_indicators_fixture(
+    raw: dict[str, Any],
+    *,
+    raw_artifact_path: str | Path,
+    raw_payload: str | bytes,
+) -> dict[str, Any]:
+    """Normalize the bounded TASK-129 operational WDI fixture."""
 
+    actual_path, actual_sha256, actual_bytes = validated_wdi_raw_provenance(
+        raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+    )
     scope = raw.get("scope", {})
     if scope.get("task") != TASK_ID:
         raise ValueError(f"unexpected task scope: {scope.get('task')}")
@@ -119,17 +150,20 @@ def normalize_wdi_macro_indicators_fixture(raw: dict[str, Any]) -> dict[str, Any
             raise ValueError(f"missing WDI lastupdated metadata for {indicator_code}")
         if len(observations) != len(COUNTRIES) * len(YEARS):
             raise ValueError(f"unexpected WDI observation count for {indicator_code}: {len(observations)}")
+        raw_response_bytes = json.dumps(response, sort_keys=True).encode("utf-8")
         raw_artifacts.append(
             {
                 "indicator": indicator_code,
                 "url": request["url"],
                 "status": "ok",
                 "content_type": "application/json",
-                "bytes": len(json.dumps(response, sort_keys=True).encode("utf-8")),
-                "sha256": hashlib.sha256(json.dumps(response, sort_keys=True).encode("utf-8")).hexdigest(),
+                "bytes": actual_bytes,
+                "sha256": actual_sha256,
+                "response_bytes": len(raw_response_bytes),
+                "response_sha256": hashlib.sha256(raw_response_bytes).hexdigest(),
                 "row_count": len(observations),
                 "source_metadata": metadata,
-                "raw_file": Path(RAW_FIXTURE_PATH).name,
+                "raw_file": actual_path,
             }
         )
         for item in observations:
@@ -165,7 +199,7 @@ def normalize_wdi_macro_indicators_fixture(raw: dict[str, Any]) -> dict[str, Any
 
     return {
         "source": SOURCE_NAME,
-        "support_bundle": RAW_FIXTURE_PATH,
+        "support_bundle": actual_path,
         "created_at_utc": None,
         "countries": COUNTRIES,
         "indicators": INDICATORS,
@@ -174,8 +208,8 @@ def normalize_wdi_macro_indicators_fixture(raw: dict[str, Any]) -> dict[str, Any
         "row_count": len(rows),
         "rows": rows,
         "raw_artifacts": raw_artifacts,
-        "raw_fixture_path": RAW_FIXTURE_PATH,
-        "raw_sha256": RAW_SHA256,
+        "raw_fixture_path": actual_path,
+        "raw_sha256": actual_sha256,
         "operational_scope": {
             "task": TASK_ID,
             "maturation_track": "Track B",
@@ -196,12 +230,26 @@ def normalize_wdi_macro_indicators_fixture(raw: dict[str, Any]) -> dict[str, Any
     }
 
 
-def build_wdi_macro_indicators_observed_package(raw: dict[str, Any]) -> ObservedIngestionPackage:
-    return build_wdi_observed_package(normalize_wdi_macro_indicators_fixture(raw))
+def build_wdi_macro_indicators_observed_package(
+    raw: dict[str, Any], *, raw_artifact_path: str | Path, raw_payload: str | bytes
+) -> ObservedIngestionPackage:
+    return build_wdi_observed_package(
+        normalize_wdi_macro_indicators_fixture(
+            raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+        )
+    )
 
 
-def write_wdi_macro_indicators_normalized_artifact(raw: dict[str, Any], path: str | Path = DEFAULT_NORMALIZED_PATH) -> dict[str, Any]:
-    normalized = normalize_wdi_macro_indicators_fixture(raw)
+def write_wdi_macro_indicators_normalized_artifact(
+    raw: dict[str, Any],
+    path: str | Path = DEFAULT_NORMALIZED_PATH,
+    *,
+    raw_artifact_path: str | Path,
+    raw_payload: str | bytes,
+) -> dict[str, Any]:
+    normalized = normalize_wdi_macro_indicators_fixture(
+        raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+    )
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(normalized, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -212,19 +260,25 @@ def write_wdi_macro_indicators_refresh_manifest(
     raw: dict[str, Any],
     path: str | Path = DEFAULT_REFRESH_MANIFEST_PATH,
     *,
+    raw_artifact_path: str | Path,
+    raw_payload: str | bytes,
     normalized_path: str | Path = DEFAULT_NORMALIZED_PATH,
     load_counts: dict[str, int] | None = None,
 ) -> dict[str, Any]:
-    package = build_wdi_macro_indicators_observed_package(raw)
-    normalized = normalize_wdi_macro_indicators_fixture(raw)
+    package = build_wdi_macro_indicators_observed_package(
+        raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+    )
+    normalized = normalize_wdi_macro_indicators_fixture(
+        raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+    )
     payload = {
         "task": TASK_ID,
         "status": "succeeded",
         "capability": CAPABILITY,
         "maturation_track": "Track B",
         "refresh_procedure": "bounded_manual_refresh_with_deterministic_manifest",
-        "raw_fixture_path": RAW_FIXTURE_PATH,
-        "raw_sha256": RAW_SHA256,
+        "raw_fixture_path": normalized["raw_fixture_path"],
+        "raw_sha256": normalized["raw_sha256"],
         "normalized_path": str(normalized_path),
         "source_urls": [request["url"] for request in raw["requests"]],
         "countries": COUNTRIES,
@@ -374,9 +428,17 @@ def _phase1_country_catalog(raw: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return catalog
 
 
-def normalize_wdi_operational_phase1_fixture(raw: dict[str, Any]) -> dict[str, Any]:
+def normalize_wdi_operational_phase1_fixture(
+    raw: dict[str, Any],
+    *,
+    raw_artifact_path: str | Path,
+    raw_payload: str | bytes,
+) -> dict[str, Any]:
     """Normalize the bounded TASK-132 WDI Phase 1 fixture into existing WDI loader shape."""
 
+    actual_path, actual_sha256, actual_bytes = validated_wdi_raw_provenance(
+        raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+    )
     scope = raw.get("scope", {})
     if scope.get("task") != PHASE1_TASK_ID:
         raise ValueError(f"unexpected task scope: {scope.get('task')}")
@@ -410,18 +472,20 @@ def normalize_wdi_operational_phase1_fixture(raw: dict[str, Any]) -> dict[str, A
             raise ValueError(f"missing WDI lastupdated metadata for {indicator_code}")
         if len(observations) != expected_rows_per_indicator:
             raise ValueError(f"unexpected WDI Phase 1 observation count for {indicator_code}: {len(observations)}")
-        raw_response_json = json.dumps(response, sort_keys=True)
+        raw_response_bytes = json.dumps(response, sort_keys=True).encode("utf-8")
         raw_artifacts.append(
             {
                 "indicator": indicator_code,
                 "url": request["url"],
                 "status": "ok",
                 "content_type": "application/json",
-                "bytes": len(raw_response_json.encode("utf-8")),
-                "sha256": hashlib.sha256(raw_response_json.encode("utf-8")).hexdigest(),
+                "bytes": actual_bytes,
+                "sha256": actual_sha256,
+                "response_bytes": len(raw_response_bytes),
+                "response_sha256": hashlib.sha256(raw_response_bytes).hexdigest(),
                 "row_count": len(observations),
                 "source_metadata": metadata,
-                "raw_file": Path(PHASE1_RAW_FIXTURE_PATH).name,
+                "raw_file": actual_path,
             }
         )
         for item in observations:
@@ -462,7 +526,7 @@ def normalize_wdi_operational_phase1_fixture(raw: dict[str, Any]) -> dict[str, A
 
     return {
         "source": SOURCE_NAME,
-        "support_bundle": PHASE1_RAW_FIXTURE_PATH,
+        "support_bundle": actual_path,
         "created_at_utc": None,
         "countries": countries,
         "indicators": PHASE1_INDICATORS,
@@ -471,8 +535,8 @@ def normalize_wdi_operational_phase1_fixture(raw: dict[str, Any]) -> dict[str, A
         "row_count": len(rows),
         "rows": rows,
         "raw_artifacts": raw_artifacts,
-        "raw_fixture_path": PHASE1_RAW_FIXTURE_PATH,
-        "raw_sha256": PHASE1_RAW_SHA256,
+        "raw_fixture_path": actual_path,
+        "raw_sha256": actual_sha256,
         "operational_scope": {
             "task": PHASE1_TASK_ID,
             "mode": PHASE1_MODE,
@@ -489,14 +553,26 @@ def normalize_wdi_operational_phase1_fixture(raw: dict[str, Any]) -> dict[str, A
     }
 
 
-def build_wdi_operational_phase1_observed_package(raw: dict[str, Any]) -> ObservedIngestionPackage:
-    return build_wdi_observed_package(normalize_wdi_operational_phase1_fixture(raw))
+def build_wdi_operational_phase1_observed_package(
+    raw: dict[str, Any], *, raw_artifact_path: str | Path, raw_payload: str | bytes
+) -> ObservedIngestionPackage:
+    return build_wdi_observed_package(
+        normalize_wdi_operational_phase1_fixture(
+            raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+        )
+    )
 
 
 def write_wdi_operational_phase1_normalized_artifact(
-    raw: dict[str, Any], path: str | Path = PHASE1_DEFAULT_NORMALIZED_PATH
+    raw: dict[str, Any],
+    path: str | Path = PHASE1_DEFAULT_NORMALIZED_PATH,
+    *,
+    raw_artifact_path: str | Path,
+    raw_payload: str | bytes,
 ) -> dict[str, Any]:
-    normalized = normalize_wdi_operational_phase1_fixture(raw)
+    normalized = normalize_wdi_operational_phase1_fixture(
+        raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+    )
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(normalized, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -507,11 +583,17 @@ def write_wdi_operational_phase1_refresh_manifest(
     raw: dict[str, Any],
     path: str | Path = PHASE1_DEFAULT_REFRESH_MANIFEST_PATH,
     *,
+    raw_artifact_path: str | Path,
+    raw_payload: str | bytes,
     normalized_path: str | Path = PHASE1_DEFAULT_NORMALIZED_PATH,
     load_counts: dict[str, int] | None = None,
 ) -> dict[str, Any]:
-    package = build_wdi_operational_phase1_observed_package(raw)
-    normalized = normalize_wdi_operational_phase1_fixture(raw)
+    package = build_wdi_operational_phase1_observed_package(
+        raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+    )
+    normalized = normalize_wdi_operational_phase1_fixture(
+        raw, raw_artifact_path=raw_artifact_path, raw_payload=raw_payload
+    )
     payload = {
         "task": PHASE1_TASK_ID,
         "status": "succeeded",
@@ -519,8 +601,8 @@ def write_wdi_operational_phase1_refresh_manifest(
         "phase": "WDI Phase 1",
         "capability": PHASE1_CAPABILITY,
         "refresh_procedure": "bounded_phase1_manual_refresh_with_deterministic_manifest_and_delta_report",
-        "raw_fixture_path": PHASE1_RAW_FIXTURE_PATH,
-        "raw_sha256": PHASE1_RAW_SHA256,
+        "raw_fixture_path": normalized["raw_fixture_path"],
+        "raw_sha256": normalized["raw_sha256"],
         "normalized_path": str(normalized_path),
         "source_urls": [request["url"] for request in raw["requests"]],
         "country_count": len(normalized["countries"]),

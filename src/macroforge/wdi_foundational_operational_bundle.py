@@ -58,16 +58,18 @@ def _component_manifest(
     component: str,
     fixture_path: Path,
     expected_rows: int,
-    package_builder: Callable[[dict[str, Any]], Any],
+    package_builder: Callable[..., Any],
 ) -> dict[str, Any]:
-    payload = _read_json(fixture_path)
-    package = package_builder(payload)
+    raw_bytes = fixture_path.read_bytes()
+    payload = json.loads(raw_bytes)
+    relative_path = fixture_path.relative_to(PROJECT_ROOT).as_posix()
+    package = package_builder(payload, raw_artifact_path=relative_path, raw_payload=raw_bytes)
     indicators = sorted({obs.provider_indicator_code for obs in package.observations})
     countries = sorted({obs.provider_territory_code for obs in package.observations})
     years = sorted({obs.period_year for obs in package.observations})
     return {
         "component": component,
-        "fixture_path": fixture_path.relative_to(PROJECT_ROOT).as_posix(),
+        "fixture_path": relative_path,
         "raw_sha256": _sha256(fixture_path),
         "row_count": package.row_count,
         "expected_row_count": expected_rows,
@@ -165,9 +167,18 @@ def _write_normalized_artifacts(normalized_dir: Path) -> dict[str, Path]:
         "demographics_phase1": normalized_dir / "wdi-demographics-phase1-normalized.json",
         "energy_phase1": normalized_dir / "wdi-energy-phase1-normalized.json",
     }
-    write_wdi_operational_phase1_normalized_artifact(_read_json(MACRO_FIXTURE), paths["macro_phase1"])
-    write_wdi_demographics_phase1_normalized_artifact(_read_json(DEMOGRAPHICS_FIXTURE), paths["demographics_phase1"])
-    write_wdi_energy_phase1_normalized_artifact(_read_json(ENERGY_FIXTURE), paths["energy_phase1"])
+    for fixture_path, output_path, writer in (
+        (MACRO_FIXTURE, paths["macro_phase1"], write_wdi_operational_phase1_normalized_artifact),
+        (DEMOGRAPHICS_FIXTURE, paths["demographics_phase1"], write_wdi_demographics_phase1_normalized_artifact),
+        (ENERGY_FIXTURE, paths["energy_phase1"], write_wdi_energy_phase1_normalized_artifact),
+    ):
+        raw_bytes = fixture_path.read_bytes()
+        writer(
+            json.loads(raw_bytes),
+            output_path,
+            raw_artifact_path=fixture_path.relative_to(PROJECT_ROOT).as_posix(),
+            raw_payload=raw_bytes,
+        )
     return paths
 
 

@@ -15,14 +15,21 @@ from macroforge.wdi_observed import (
     refresh_delta_report_fingerprint,
     write_wdi_macro_indicators_refresh_delta_report,
 )
-from synthetic_wdi import build_synthetic_wdi_fixture
+from synthetic_wdi import build_synthetic_wdi_fixture, synthetic_fixture_bytes, synthetic_fixture_provenance
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_REFRESH_FINGERPRINT = "551c414d3b3e0c1eb19761de7c068f29eecbd601f92542ab3a827b80c65f3422"
 
 
 def _normalized() -> dict:
-    return normalize_wdi_macro_indicators_fixture(build_synthetic_wdi_fixture("macro_indicators"))
+    return normalize_wdi_macro_indicators_fixture(build_synthetic_wdi_fixture("macro_indicators"), **_provenance())
+
+
+def _provenance() -> dict:
+    return {
+        "raw_artifact_path": synthetic_fixture_provenance("macro_indicators")["raw_artifact_path"],
+        "raw_payload": synthetic_fixture_bytes("macro_indicators"),
+    }
 
 
 def _mutated_current(previous: dict) -> dict:
@@ -105,8 +112,10 @@ def test_refresh_delta_report_handles_no_change_case() -> None:
 def test_refresh_delta_report_uses_persisted_task129_normalized_artifact(tmp_path: Path) -> None:
     normalized_path = tmp_path / "normalized.json"
     normalized = write_wdi_macro_indicators_normalized_artifact(
-        build_synthetic_wdi_fixture("macro_indicators"), normalized_path
+        build_synthetic_wdi_fixture("macro_indicators"), normalized_path, **_provenance()
     )
+    assert normalized["raw_fixture_path"] == _provenance()["raw_artifact_path"]
+    assert normalized["raw_sha256"] == synthetic_fixture_provenance("macro_indicators")["raw_sha256"]
     assert hashlib.sha256(normalized_path.read_bytes()).hexdigest()
     report = build_wdi_macro_indicators_refresh_delta_report(normalized, normalized)
     assert report["previous_row_count"] == EXPECTED_OBSERVATION_COUNT

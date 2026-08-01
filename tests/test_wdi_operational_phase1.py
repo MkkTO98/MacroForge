@@ -25,7 +25,8 @@ from macroforge.wdi_observed import (
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 BASE_MIGRATION = PROJECT_ROOT / "db/migrations/001_v0_schema_foundation.sql"
 CANONICAL_DOMAIN_MIGRATION = PROJECT_ROOT / "db/migrations/003_canonical_domain_dimensions.sql"
-EXPECTED_FINGERPRINT = "5b6bdf25264a12ea51a83d48b8ffd6cfbb5f3541044be129f8a6f72f1096f58c"
+HISTORICAL_FALSE_PROVENANCE_FINGERPRINT = "5b6bdf25264a12ea51a83d48b8ffd6cfbb5f3541044be129f8a6f72f1096f58c"
+EXPECTED_FINGERPRINT = "841a0f9f1b284a509760543264cf6da1e7f08dc4534a3aff13f436a8f24cb709"
 EXPECTED_REFRESH_FINGERPRINT = "f19f544a235d78d3590e46b24682cf434ef8b17c68871d6223b1de9a4bf43f42"
 
 
@@ -33,6 +34,12 @@ def _payload() -> dict:
     from synthetic_wdi import build_synthetic_wdi_fixture
 
     return build_synthetic_wdi_fixture("operational_phase1")
+
+
+def _provenance() -> dict:
+    from synthetic_wdi import synthetic_fixture_bytes, synthetic_fixture_provenance
+
+    return {"raw_artifact_path": synthetic_fixture_provenance("operational_phase1")["raw_artifact_path"], "raw_payload": synthetic_fixture_bytes("operational_phase1")}
 
 
 def _postgres_available() -> bool:
@@ -60,7 +67,13 @@ def test_wdi_phase1_fixture_is_persisted_and_bounded() -> None:
 
 
 def test_wdi_phase1_normalizes_all_non_aggregate_country_macro_coverage() -> None:
-    normalized = normalize_wdi_operational_phase1_fixture(_payload())
+    normalized = normalize_wdi_operational_phase1_fixture(_payload(), **_provenance())
+    from synthetic_wdi import synthetic_fixture_provenance
+
+    provenance = synthetic_fixture_provenance("operational_phase1")
+    assert normalized["raw_fixture_path"] == provenance["raw_artifact_path"]
+    assert normalized["raw_sha256"] == provenance["raw_sha256"]
+    assert normalized["raw_sha256"] != PHASE1_RAW_SHA256
     assert normalized["operational_scope"]["phase"] == "WDI Phase 1"
     assert normalized["operational_scope"]["expansion_level"] == "all_non_aggregate_countries_validated_macro_set_2000_2023"
     assert normalized["row_count"] == PHASE1_EXPECTED_OBSERVATION_COUNT
@@ -77,21 +90,24 @@ def test_wdi_phase1_normalizes_all_non_aggregate_country_macro_coverage() -> Non
 
 
 def test_wdi_phase1_builds_deterministic_observed_package() -> None:
-    left = build_wdi_operational_phase1_observed_package(_payload())
-    right = build_wdi_operational_phase1_observed_package(_payload())
+    left = build_wdi_operational_phase1_observed_package(_payload(), **_provenance())
+    right = build_wdi_operational_phase1_observed_package(_payload(), **_provenance())
     assert left.source_code == "WDI"
     assert left.provider_dataset_code == "WDI"
     assert left.row_count == PHASE1_EXPECTED_OBSERVATION_COUNT
     assert left.expected_row_count == PHASE1_EXPECTED_OBSERVATION_COUNT
     assert compare_observed_packages(left, right).equivalent is True
     assert observed_package_fingerprint(left) == EXPECTED_FINGERPRINT
+    assert EXPECTED_FINGERPRINT != HISTORICAL_FALSE_PROVENANCE_FINGERPRINT
+    assert left.raw_evidence["raw_artifact_path"] == _provenance()["raw_artifact_path"]
+    assert left.raw_evidence["raw_sha256"] == __import__("synthetic_wdi").synthetic_fixture_provenance("operational_phase1")["raw_sha256"]
 
 
 def test_wdi_phase1_writes_normalized_manifest_and_refresh_delta(tmp_path: Path) -> None:
     normalized_path = tmp_path / "normalized.json"
     manifest_path = tmp_path / "manifest.json"
-    normalized = write_wdi_operational_phase1_normalized_artifact(_payload(), normalized_path)
-    manifest = write_wdi_operational_phase1_refresh_manifest(_payload(), manifest_path, normalized_path=normalized_path)
+    normalized = write_wdi_operational_phase1_normalized_artifact(_payload(), normalized_path, **_provenance())
+    manifest = write_wdi_operational_phase1_refresh_manifest(_payload(), manifest_path, normalized_path=normalized_path, **_provenance())
     assert normalized_path.exists()
     assert manifest_path.exists()
     assert manifest["task"] == "TASK-132"
@@ -121,7 +137,7 @@ def test_wdi_phase1_loads_to_isolated_postgres_when_available(tmp_path: Path) ->
         return
     db_name = f"macroforge_wdi_phase1_test_{uuid.uuid4().hex[:12]}"
     normalized_path = tmp_path / "normalized.json"
-    write_wdi_operational_phase1_normalized_artifact(_payload(), normalized_path)
+    write_wdi_operational_phase1_normalized_artifact(_payload(), normalized_path, **_provenance())
     try:
         try:
             subprocess.run(["createdb", db_name], check=True, capture_output=True, text=True)

@@ -9,6 +9,7 @@ identifiers, not copied observation payloads.
 from __future__ import annotations
 
 import copy
+import hashlib
 import itertools
 import json
 from functools import lru_cache
@@ -300,3 +301,19 @@ def synthetic_fixture_json(family: str) -> str:
     """Serialize a family canonically for raw-payload normalizers and hashing tests."""
 
     return json.dumps(build_synthetic_wdi_fixture(family), indent=2, sort_keys=True) + "\n"
+
+
+def synthetic_fixture_bytes(family: str) -> bytes:
+    """Return the exact canonical bytes represented by a synthetic fixture identity."""
+
+    return synthetic_fixture_json(family).encode("utf-8")
+
+
+def synthetic_fixture_provenance(family: str) -> dict[str, str]:
+    """Return deterministic authored provenance for the canonical fixture bytes."""
+
+    payload = synthetic_fixture_bytes(family)
+    return {
+        "raw_artifact_path": f"tests/synthetic_wdi.py#{family}",
+        "raw_sha256": hashlib.sha256(payload).hexdigest(),
+    }
