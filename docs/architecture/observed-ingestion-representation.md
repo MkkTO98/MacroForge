@@ -82,11 +82,17 @@ The package does not replace source-specific acquisition, source-specific normal
 
 Any change to this contract should demonstrate compatibility by running, at minimum:
 
+Synchronize the established environment from the committed lock first when needed:
+
+```text
+uv sync --locked --group test
+```
+
 ```text
 git diff --check
-python3 tools/check_coherence.py --project .
-uvx --from pytest --with pyyaml pytest tests/test_observed_ingestion.py tests/test_wdi_loader.py tests/test_oecd_sdmx_loader.py tests/test_eurostat_namq_loader.py tests/test_combined_source_smoke.py -q
-uvx --from pytest --with pyyaml pytest tests -q
+uv run --locked --group test python tools/check_coherence.py --project .
+uv run --locked --group test pytest tests/test_observed_ingestion.py tests/test_wdi_loader.py tests/test_oecd_sdmx_loader.py tests/test_eurostat_namq_loader.py tests/test_combined_source_smoke.py -q
+uv run --locked --group test pytest tests -q
 ```
 
 If deterministic report artifacts regenerate with only isolated temporary database-name differences, restore them unless the task explicitly changes report content.

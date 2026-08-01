@@ -7,9 +7,7 @@ if ! command -v uv >/dev/null 2>&1; then
   exit 1
 fi
 uv venv --allow-existing >/dev/null
-uv pip install 'PyYAML>=6.0' 'pytest>=8.0' >/dev/null
+uv sync --locked --group test >/dev/null
 chmod +x tools/*.py
-printf '[ok] ProjectForge tools prepared in .venv.
-'
-printf 'Use: .venv/bin/python tools/check_coherence.py --project . --json
-'
+printf '[ok] ProjectForge tools prepared in .venv from the committed test dependency lock.\n'
+printf 'Use: uv run --locked --group test python tools/check_coherence.py --project . --json\n'

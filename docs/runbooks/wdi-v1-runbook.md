@@ -92,10 +92,18 @@ no_duplicate_fact_grain=0
 
 ## Step 3 — Project verification
 
+Synchronize the established environment from the committed lock when needed:
+
 ```bash
-uvx --from pytest --with pyyaml pytest tests/test_wdi.py tests/test_wdi_loader.py tests/test_wdi_validation.py -q
-uvx --from pytest --with pyyaml pytest tests -q
-python3 tools/check_coherence.py --project . --json
+uv sync --locked --group test
+```
+
+Run verification through that locked environment:
+
+```bash
+uv run --locked --group test pytest tests/test_wdi.py tests/test_wdi_loader.py tests/test_wdi_validation.py -q
+uv run --locked --group test pytest tests -q
+uv run --locked --group test python tools/check_coherence.py --project . --json
 ```
 
 Current full-suite verification from TASK-007:

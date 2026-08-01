@@ -18,7 +18,7 @@ def load_yaml(path: Path):
     text = path.read_text(encoding="utf-8")
     if yaml:
         return yaml.safe_load(text) or {}
-    raise RuntimeError("PyYAML is required for tools/run.py. Use `uvx --with pyyaml python tools/run.py ...` for one-shot execution, or run `uv venv && uv pip install pyyaml`.")
+    raise RuntimeError("PyYAML is required for tools/run.py. Run `uv sync --locked --group test`, then `uv run --locked --group test python tools/run.py ...`.")
 
 
 def command_string(args: list[str]) -> str:

@@ -79,13 +79,19 @@ Read first:
 
 ## Repository quality controls
 
+Provision the committed verification environment without changing the lock:
+
+```bash
+uv sync --locked --group test
+```
+
 Before reporting code, schema, governance, or state changes, run the relevant checks:
 
 ```bash
-python3 tools/check_coherence.py --project .
-python3 tools/context_health.py --project .
-python3 tools/architecture_reality_audit.py --project .
-uvx pytest -q
+uv run --locked --group test python tools/check_coherence.py --project .
+uv run --locked --group test python tools/context_health.py --project .
+uv run --locked --group test python tools/architecture_reality_audit.py --project .
+uv run --locked --group test pytest -q
 ```
 
 ## References

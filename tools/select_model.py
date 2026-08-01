@@ -47,7 +47,7 @@ CLOUD_ESCALATION_REASONS = {
 
 def load_yaml(path: Path) -> dict[str, Any]:
     if yaml is None:
-        raise RuntimeError("PyYAML required. Use `uvx --with pyyaml python tools/select_model.py ...` for one-shot execution, or run `uv venv && uv pip install pyyaml`.")
+        raise RuntimeError("PyYAML required. Run `uv sync --locked --group test`, then `uv run --locked --group test python tools/select_model.py ...`.")
     return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
 

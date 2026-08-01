@@ -1,0 +1,182 @@
+{
+  "record_type": "bounded-dependency-governance-lifecycle-closeout",
+  "schema_version": "macroforge-lifecycle-closeout-v1",
+  "date": "2026-07-30",
+  "correction_revision_date": "2026-07-31",
+  "status": "corrected-dependency-governance-publication-candidate-awaiting-independent-re-review",
+  "baseline": {
+    "commit": "af08d963a5fc1a86b2df643072e49341dfa62b67",
+    "branch": "main"
+  },
+  "correction": {
+    "defect_category": "repository dependency-governance inconsistency",
+    "finding": "MacroForge verification dependencies were absent from pyproject.toml and uv.lock while authoritative setup and verification surfaces resolved pytest and PyYAML through unlocked uvx or uv pip install commands.",
+    "existing_governance_owner": "pyproject.toml and uv.lock own dependency declaration and exact resolution; repository setup and verification surfaces consume that model.",
+    "canonical_group": "test",
+    "declared_requirements": [
+      "pytest>=8,<9",
+      "PyYAML>=6,<7"
+    ],
+    "canonical_provisioning_command": "uv sync --locked --group test",
+    "canonical_verification_prefix": "uv run --locked --group test pytest",
+    "locked_packages_observed_at_authorship": {
+      "pytest": "8.4.2",
+      "PyYAML": "6.0.3",
+      "iniconfig": "2.3.0",
+      "packaging": "26.2",
+      "pluggy": "1.6.0",
+      "Pygments": "2.20.0",
+      "colorama": "0.4.6 (Windows-only pytest dependency in the universal lock)"
+    },
+    "current_locked_versions_are_observed_state_not_permanent_policy": true
+  },
+  "independent_review_correction": {
+    "predecessor_verdict": "DEPENDENCY-GOVERNANCE PUBLICATION REVIEW REJECTED",
+    "candidate_content_changed_relative_to_rejected_candidate": [
+      "tests/test_dependency_governance.py",
+      "artifacts/reports/R-20260730-dependency-governance-correction-closeout.json"
+    ],
+    "installer_byte_reconciliation": "The rejected export already contained single newline escapes and emitted real line boundaries. The correction attempt therefore produced no byte delta in tools/install.sh; bounded syntax and output checks reconfirmed the existing candidate bytes.",
+    "corrected_findings": [
+      "the durable regression gate now combines MacroForge structural policy checks with uv lock --check as semantic authority",
+      "duplicate direct dependency declarations fail closed",
+      "the invalid 8.invalid mutation reaches and is rejected by uv semantic validation",
+      "compatible evolution uses a genuine uv-generated resolution from published package metadata",
+      "installer success guidance emits real newline boundaries",
+      "the governed verification sequence does not rely on unqualified host python"
+    ]
+  },
+  "regression_proof": {
+    "governed_command_sequence": [
+      "uv lock --check",
+      "uv sync --locked --group test --dry-run",
+      "PYTHONDONTWRITEBYTECODE=1 uv run --locked --group test pytest -q -p no:cacheprovider tests/test_dependency_governance.py"
+    ],
+    "current_candidate_result": {
+      "exit_code": 0,
+      "tests": "6 passed"
+    },
+    "verification_history": {
+      "mistaken_broad_selection": {
+        "result": "362 passed, 1 failed",
+        "failure": "known clean-clone fixture data/metadata/wdi/wdi-smoke-normalized.json was absent",
+        "postgresql_effect": "tests/test_canonical_gdp_snapshot.py created and dropped macroforge_canonical_gdp_snapshot_test_6cd5127a7df1 before the fixture failure",
+        "classification": "failed verification attempt with unauthorized transient PostgreSQL mutation; not a successful verification surface"
+      },
+      "final_explicit_non_postgresql_surface": {
+        "result": "250 passed",
+        "postgresql_tests_included": false
+      },
+      "read_only_postflight_reconciliation": {
+        "exact_temporary_database_present": false,
+        "other_databases_matching_test_naming_convention": [],
+        "total_fact_observation_rows": 10651727,
+        "wdi_fact_rows": 10553399,
+        "transaction_disposition": "ROLLBACK",
+        "mutating_reconciliation_actions": []
+      }
+    },
+    "custom_structural_validation_proves": [
+      "the canonical test dependency group is exactly pytest>=8,<9 and PyYAML>=6,<7",
+      "duplicate direct dependency declarations are rejected",
+      "project test-group metadata agrees with pyproject.toml declarations",
+      "direct locked package majors remain within the durable intervals",
+      "dependency references resolve across optional version, source, specifier, and marker shapes",
+      "third-party package sources are the public PyPI registry",
+      "registry distributions use files.pythonhosted.org URLs with SHA-256 integrity metadata"
+    ],
+    "uv_semantic_validation_proves": [
+      "uv.lock is syntactically and semantically valid lock data",
+      "the lock remains current for the governing pyproject.toml inputs and uv resolution settings"
+    ],
+    "negative_mutations": {
+      "semantically_invalid_locked_version_8_invalid": "rejected by uv lock --check through the combined gate",
+      "missing_required_direct_dependency": "rejected by custom structural policy",
+      "unsupported_direct_dependency_major": "rejected by custom structural policy",
+      "dangling_dependency_reference": "rejected by custom structural policy",
+      "duplicate_conflicting_direct_declaration": "rejected by custom structural policy",
+      "unexpected_package_source": "rejected by custom structural policy",
+      "malformed_sha256_distribution_metadata": "rejected by custom structural policy",
+      "missing_sha256_distribution_metadata": "rejected by custom structural policy"
+    },
+    "compatible_evolution_proof": {
+      "method": "A disposable pyproject retained the exact durable direct intervals and added a 2025-01-01 exclude-newer resolver input. uv lock --upgrade generated the alternate lock from real published PyPI metadata, and plain uv lock --check accepted it under that disposable project's declared resolver input.",
+      "generated_direct_versions_observed": {
+        "pytest": "8.3.4",
+        "PyYAML": "6.0.2"
+      },
+      "uv_generation_exit_code": 0,
+      "uv_semantic_check_exit_code": 0,
+      "proof_scope": "Demonstrates that the durable intervals and structural policy accept a different genuine uv-valid compatible resolution; it does not freeze these versions or the alternate transitive graph."
+    },
+    "mutable_resolution_state_not_encoded_as_test_policy": [
+      "exact compatible patch versions",
+      "the complete current transitive package set",
+      "exact resolver-selected transitive relationships or platform markers",
+      "the absence of future resolver-valid dependencies"
+    ]
+  },
+  "reproducibility_scope": {
+    "becomes_reproducible": [
+      "provisioning the declared MacroForge verification dependencies",
+      "resolving their exact versions from committed uv lock data",
+      "running verification through the locked project environment"
+    ],
+    "does_not_claim": [
+      "full historical provider replay",
+      "production PostgreSQL regeneration",
+      "backup or external-disk reconstruction",
+      "complete historical repository reconstruction",
+      "broader data or provider reproducibility",
+      "WDI synthetic-provenance corrective publication readiness"
+    ],
+    "provider_or_postgresql_mutation_in_scope": false
+  },
+  "separation": {
+    "independent_from_wdi_synthetic_provenance_correction": true,
+    "wdi_candidate_paths_included": false,
+    "wdi_corrective_publication_claimed": false,
+    "task_220_in_scope": false,
+    "new_ingestion_work_in_scope": false,
+    "model_selection_or_registry_correction_in_scope": false
+  },
+  "publication_boundary": {
+    "technical_path_count": 9,
+    "technical_path_count_explanation": "Nine technical paths own dependency declaration, exact lock resolution, authoritative setup and verification guidance, installer/runtime remediation guidance, and the durable regression gate. The lifecycle record is counted separately.",
+    "lifecycle_path_count": 1,
+    "declared_path_count": 10,
+    "single_commit_required": true
+  },
+  "publication_status": {
+    "state_at_corrected_authorship": "unpublished corrected dependency-governance candidate awaiting a new independent publication review",
+    "durability_rule": "This correction becomes durable only through a subsequent authorized publication containing exactly the 10 declared Git-durable paths.",
+    "future_commit_identity_required_in_record": false,
+    "publication_claimed_by_this_record": false
+  },
+  "output_families": [
+    {
+      "name": "MacroForge locked verification dependency-governance correction",
+      "content_origin": "authored",
+      "path_count": 10,
+      "paths": [
+        "pyproject.toml",
+        "uv.lock",
+        "README.md",
+        "docs/runbooks/wdi-v1-runbook.md",
+        "docs/architecture/observed-ingestion-representation.md",
+        "tools/install.sh",
+        "tools/run.py",
+        "tools/select_model.py",
+        "tests/test_dependency_governance.py",
+        "artifacts/reports/R-20260730-dependency-governance-correction-closeout.json"
+      ],
+      "publication_expectation": "independent re-review required before any publication",
+      "role": "bounded dependency declarations, exact lock data as observed state, reconciled setup and verification guidance, combined structural-and-semantic regression proof, and lifecycle closeout",
+      "terminal_disposition": "git-durable project truth"
+    }
+  ],
+  "self_reference": {
+    "path": "artifacts/reports/R-20260730-dependency-governance-correction-closeout.json",
+    "content_hash_required": false
+  }
+}
