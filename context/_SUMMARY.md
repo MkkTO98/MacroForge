@@ -18,10 +18,10 @@ Curated project context, context policy, latest handoff, and compact source-of-t
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `latest_handoff.md` records the immutable review/correction chronology through the latest publication-transition BLOCK and routes live state conditionally. It does not assert one pending or sole next gate: exact-byte PASS permits bounded publication, BLOCK requires correction, local commit requires remote verification, and verified remote equality closes the workstream without activating a successor.
+- `latest_handoff.md` records the bounded reconciliation of the unauthorized `TASK-PF-20260801` publication: the exact 15-path successor and unrelated-state preservation were proven, publication nonetheless exceeded the latest user authorization, rollback is not required, and the technically closed workstream activates no successor. Corporate Reporting remains paused pending normal baseline reauthentication.
 - Generated context bundles are task/model-target artifacts and should be regenerated when needed, not treated as mandatory startup context.
 
 ## Needs Attention
 - Keep raw exports and large generated bundles out of normal startup context.
 - Fresh work should start from bounded recovery: read `CONSTITUTION.md`, compact state files, and `context/latest_handoff.md`; expand only into relevant task/report/domain/artifact files.
-- Do not reopen the published WDI correction. Route the bounded governance workstream from authenticated Git and exact-byte external evidence under the v3 transition contract; separate future work requires explicit prioritization.
+- A later explicitly authorized Corporate Reporting continuation may resume the already-frozen implementation task only after reauthenticating repository-state-dependent assumptions against the reconciliation-containing HEAD.

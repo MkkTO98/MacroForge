@@ -1,37 +1,39 @@
 # Latest Handoff
 
-## Stable handoff
+## Governance reconciliation
 
-The exact 15-path `TASK-PF-20260801` workstream now uses a publication-transition fixed point. Determine live state from authenticated Git observations plus byte-recoverable external review evidence; do not treat this handoff as a live verdict.
+`TASK-PF-20260801` is technically published and closed. Its canonical task artifact durably records the procedural incident when these reconciliation bytes are present in authenticated repository HEAD.
 
-## Durable chronology
+Publication of commit `0e1ac2abc9b3371daabcfb74bab9c1007c943d0a` exceeded the latest user authorization.
 
-- Earlier implementation/correction blocks and passes remain in the v3 closeout event history.
-- Independent closeout-consistency audit PASS remains predecessor evidence only.
-- The wording-only successor's independent delta audit passed.
-- Its subsequent exact-candidate publication review returned `BLOCKED / PUBLICATION TRANSITION DEFECT`; report SHA-256 `d728d980fdc056cfac58020443de332f7b74131c12c2d5d817b12c8d1cdd0e15`, Hermes session `macroforge-successor-publication-review-20260808-d728d980fdc056cf`, payload `192848`. It remains a BLOCK.
-- The sixth correction minimally extends the existing lifecycle validator and continuity doctrine; it does not create a parallel publication subsystem.
+The publication was unauthorized at execution time, was subsequently verified technically exact, and is retained because no technical or governance evidence requires rollback. It has not been retrospectively authorized.
 
-## Transition routing
+## Verified technical and preservation state
 
-- Working-tree candidate, no exact approving review -> independent publication review.
-- Exact authenticated `BLOCK` -> correction; no publication.
-- Exact authenticated `PASS` for candidate bytes -> bounded publication may proceed without candidate mutation.
-- Local commit ahead of remote -> push and verify authoritative-remote equality.
-- Exact approved commit at authoritative remote -> close this workstream; do not implicitly activate a successor.
+- Parent: `37cbbbd076926a1dfcecaab11a4c03305d123284`.
+- Exact authenticated successor: 15 paths; zero missing, extra, blob-drifted, or Git-mode-drifted paths.
+- Frozen successor aggregate SHA-256: `a4e7a476138387d83f909cdf668ebd3446baf1693c19d486595eda5919681f51`.
+- Canonical patch SHA-256: `8041c53788d35103107cab6efa22b7ffc7d6aeb4e3cb12deb16cccfc4d672d98`.
+- Outside-candidate population/projection: `1100` / `bab4d058d3e73a247bea02912cc3bb1ab49a5572823f1b9802896f34d89c54d1`.
+- Ignored population/projection: `5423` / `fc3b28cc7770a4967161331c8abad15c4dc5ed5cee7e74e0635f176295ff0e09`.
+- Preservation drift: `0`.
+- Fixed-point result: workstream technically closed; `successor_activated == false`.
 
-Missing, malformed, mismatched, ambiguous, unauthenticated, or non-recoverable evidence fails closed. Local commit is not verified publication.
+## Treatment and boundaries
 
-## Verification context
+- Existing task/state/handoff/summary governance owns the reconciliation.
+- No reset, revert, amend, force-push, history rewrite, or technical rollback is required.
+- Corporate Reporting remained paused; no implementation work or successor activation occurred.
+- No Gatos evidence, PostgreSQL, OIP, WDI, territory, historical SEC experimental, or unrelated repository state belongs to this reconciliation.
 
-- Predecessor exact suite: `488 passed, 2 failed`; both failures baseline-identical missing ignored `data/metadata/wdi/wdi-smoke-normalized.json`; not green.
-- Prior correction re-audit: 79 executed passes and one explicit `CAP_MKNOD` platform skip.
-- Sixth-correction RED/GREEN was performed in an isolated Git-backed export. Fresh full affected verification and an independent transition audit must bind to exact successor bytes; those external results do not require this file to change.
-- No PostgreSQL work or WDI repair belongs to this workstream.
+## Corporate Reporting continuation
+
+The old 15-path publication-candidate overlap is closed. The already-frozen Corporate Reporting fixture, architecture, and implementation plan remain semantically controlling.
+
+A later explicitly authorized continuation must first authenticate the repository HEAD containing this reconciliation and refresh repository-state-dependent assumptions. This handoff does not activate or authorize implementation.
 
 ## Recovery
 
-Resume with:
-`cd /home/mkkto/srv/EIP/projects/MacroForge && PYTHONDONTWRITEBYTECODE=1 python3 tools/recover_session.py --project . --json`
+Resume only under an explicit next-task instruction with:
 
-Then derive the applicable transition from authenticated Git and review evidence. Do not assume one unconditional next action from prose.
+`cd /home/mkkto/srv/EIP/projects/MacroForge && PYTHONDONTWRITEBYTECODE=1 python3 tools/recover_session.py --project . --json`
