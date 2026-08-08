@@ -53,13 +53,24 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 - `task207_fred_us_macro_monthly_phase2_campaign.py`
 - `task208_bls_us_labor_breadth_monthly_phase2_campaign.py`
 - `task209_imf_weo_g20_projection_phase2_campaign.py`
+- `task211_imf_weo_broad_macro_repository_expansion.py`
+- `task213_bis_cbpol_metadata_cleanup.py`
+- `task213_bis_cbpol_policy_rate_phase2_campaign.py`
+- `task214_bis_dsr_credit_cycle_phase2_campaign.py`
+- `task215_bis_credit_gap_phase2_campaign.py`
+- `task216_imf_bop_phase2_campaign.py`
+- `task217_imf_iip_phase2_campaign.py`
+- `task218_imf_pip_phase2_campaign.py`
+- `task219_imf_dip_phase2_campaign.py`
 - `telegram_notifier_stub.py`
 - `update_context_summaries.py`
 - `update_state.py`
 - `validate_dry_run.py`
+- `validate_publication_boundary_json.py`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `check_coherence.py` provides the canonical bounded ignored/untracked preservation and lifecycle-closeout route. Lifecycle v3 preserves explicit suppliedness and exact boundary authority while adding `evaluate_publication_transition`: a closed fail-closed evaluator for no-review, BLOCK, exact-byte PASS, local-commit-ahead, and verified-authoritative-remote conditions. It does not authenticate callers itself or create a competing publication subsystem.
 - `task209_imf_weo_g20_projection_phase2_campaign.py` builds/loads the release-aware IMF WEO April 2026 G20 projection campaign with explicit-missing semantics for absent requested year keys inside valid country-indicator series.
 - `task208_bls_us_labor_breadth_monthly_phase2_campaign.py` remains deferred pending clean BLS regeneration.
 - `task206_wdi_social_protection_all_programs_chunked_expansion.py` executes the corrected TASK-206 WDI aggregate social-protection all-program campaign with per-indicator checkpoints, per-chunk raw/normalized artifacts, bounded ASPIRE blank-`countryiso3code` territory fallback, provider classification, and acquisition-error completion semantics.

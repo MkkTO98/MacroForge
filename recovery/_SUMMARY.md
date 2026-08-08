@@ -5,7 +5,6 @@ This folder is part of the ProjectForge file-backed operating system for `recove
 
 ## Contains
 <!-- PROJECTFORGE:BEGIN-CONTAINS -->
-- `.gitkeep`
 - `continuity_framework.md`
 - `escalation_policy.yaml`
 - `failure_playbooks.md`
@@ -13,7 +12,7 @@ This folder is part of the ProjectForge file-backed operating system for `recove
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `continuity_framework.md` documents MacroForge's adopted bounded recovery, standard closeout, and near-quota shutdown procedure.
+- `continuity_framework.md` documents bounded recovery/closeout, caller-observation suppliedness, and lifecycle-v3 publication fixed-point semantics. Current transition is derived from authenticated Git and exact-byte external evidence; no mutable pending/sole-next-gate assertion, local-commit publication shortcut, or implicit successor activation is permitted.
 
 ## Needs Attention
 - No folder-specific issues recorded.

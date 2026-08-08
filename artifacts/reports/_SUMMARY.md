@@ -142,6 +142,7 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `R-20260801-ignored-artifact-preservation-governance-closeout.json` preserves the exact correction/review chronology through the latest `BLOCKED / PUBLICATION TRANSITION DEFECT` and sixth correction. Lifecycle v3 encodes a state-conditioned fixed point: exact-byte PASS can authorize bounded publication without editing reviewed bytes, BLOCK prohibits publication, local commit still requires remote verification, and verified remote equality closes the workstream without implicit successor activation.
 - TASK-216 reports document IMF BOP annual current-account Phase 2 evidence: provider-structure investigation, frozen candidate universe/prediction, raw/processed checksum reconciliation, PostgreSQL load/idempotence/later-snapshot coexistence, prediction evaluation, and IMF-BOP extraction decision.
 - TASK-209 reports document IMF WEO April 2026 release/vintage evidence, Saudi Arabia LUR explicit-missing semantics, final 342-fact PostgreSQL accounting, checksum reconciliation, and architecture verdict that the existing revision-aware scalar substrate is sufficient.
 - `task-206-*.json` reports document corrected TASK-206 provider-empty audit findings, ASPIRE blank-`countryiso3code` territory fallback correction, PostgreSQL same-run replacement/idempotence, provider classifications, wider ASPIRE/source-29 impact, repository verification, and Phase 1 transition-gate evidence.

@@ -1,55 +1,37 @@
 # Latest Handoff
 
-TASK-219 IMF DIP/CDIS direct-investment counterpart expansion is complete, verified, committed, and pushed.
+## Stable handoff
 
-Git sync after TASK-219 publication:
+The exact 15-path `TASK-PF-20260801` workstream now uses a publication-transition fixed point. Determine live state from authenticated Git observations plus byte-recoverable external review evidence; do not treat this handoff as a live verdict.
 
-- Branch: `main`
-- HEAD/origin: `a4404481ecd61767b330b2ba4fba6d0038916cde`
-- Ahead/behind: `0/0`
-- Staged count after publication: `0`
-- Commit: `feat: add TASK-219 IMF DIP direct-investment counterpart expansion`
-- Commit path count: `27`
+## Durable chronology
 
-TASK-219 result:
+- Earlier implementation/correction blocks and passes remain in the v3 closeout event history.
+- Independent closeout-consistency audit PASS remains predecessor evidence only.
+- The wording-only successor's independent delta audit passed.
+- Its subsequent exact-candidate publication review returned `BLOCKED / PUBLICATION TRANSITION DEFECT`; report SHA-256 `d728d980fdc056cfac58020443de332f7b74131c12c2d5d817b12c8d1cdd0e15`, Hermes session `macroforge-successor-publication-review-20260808-d728d980fdc056cf`, payload `192848`. It remains a BLOCK.
+- The sixth correction minimally extends the existing lifecycle validator and continuity doctrine; it does not create a parallel publication subsystem.
 
-- Source/dataset: `IMF_SDMX_DIP_API_V1` / `IMF:DIP`.
-- Release/as-of key: `imf-dip-asof-20251210t162520656782100z`.
-- Run: `task-219-imf-dip-direct-investment-counterpart-phase2`.
-- Scope: `DV_TYPE=O`, 24 reporters × 24 counterparts × 6 direct-investment concepts × 2020-2024.
-- Candidate cells: 17,280; returned/compatible series: 3,243; whole-series absences: 213 series / 1,065 cells.
-- Loaded facts: 16,215 = 14,755 observed + 1,460 explicit-missing.
-- Canonical indicators: 144; acquisition errors: 0; incompatible series: 0.
-- Repository total after load: 10,651,727.
-- PostgreSQL tuple: `task219_db|1|1|1|16215|16215|14755|1460|0|0|0`.
+## Transition routing
 
-Verification already completed:
+- Working-tree candidate, no exact approving review -> independent publication review.
+- Exact authenticated `BLOCK` -> correction; no publication.
+- Exact authenticated `PASS` for candidate bytes -> bounded publication may proceed without candidate mutation.
+- Local commit ahead of remote -> push and verify authoritative-remote equality.
+- Exact approved commit at authoritative remote -> close this workstream; do not implicitly activate a successor.
 
-- TASK-219 tests: `6 passed in 0.59s`.
-- TASK-216 through TASK-219 compatibility tests: `24 passed in 17.49s`.
-- JSON boundary: `json_boundary_validated=16`.
-- Checksums: 22 entries, 0 missing, 0 mismatches; raw references 11/11.
-- Sensitive/absolute-path/environment/non-raw-whitespace scans: 0 hits.
-- Context health and coherence: 0 blocks.
-- Architecture-reality audit: 0 blocks, 1 warning (`5 completed task(s) since last Architecture-to-Reality Audit`).
+Missing, malformed, mismatched, ambiguous, unauthenticated, or non-recoverable evidence fails closed. Local commit is not verified publication.
 
-Publication notes:
+## Verification context
 
-- 16 normal-added paths and 11 force-added active raw provider-evidence files.
-- Bounded raw-provider XML whitespace exception carried only for immutable IMF metadata XML: `data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-metadata.xml`.
-- Raw XML was not normalized or rewritten.
+- Predecessor exact suite: `488 passed, 2 failed`; both failures baseline-identical missing ignored `data/metadata/wdi/wdi-smoke-normalized.json`; not green.
+- Prior correction re-audit: 79 executed passes and one explicit `CAP_MKNOD` platform skip.
+- Sixth-correction RED/GREEN was performed in an isolated Git-backed export. Fresh full affected verification and an independent transition audit must bind to exact successor bytes; those external results do not require this file to change.
+- No PostgreSQL work or WDI repair belongs to this workstream.
 
-Architecture/extraction verdict:
+## Recovery
 
-- Representation verdict: B — scalar/source-scoped indicator representation remains operationally sufficient; monitor relationship indicator proliferation.
-- No schema redesign, counterpart dimension, relationship ontology, generic SDMX adapter, generic IMF framework, or shared IMF relationship-position substrate was created.
+Resume with:
+`cd /home/mkkto/srv/EIP/projects/MacroForge && PYTHONDONTWRITEBYTECODE=1 python3 tools/recover_session.py --project . --json`
 
-Closeout update:
-
-- This closeout updates `artifacts/tasks/TASK-219-imf-dip-direct-investment-counterpart-expansion.md`, `context/latest_handoff.md`, `state/active_goal.md`, and `state/project_state.md` to reflect TASK-219 publication.
-- Preserve unrelated dirty-tree residue untouched.
-- Do not begin TASK-220 until this closeout commit is pushed or explicitly deferred.
-
-Resume command:
-
-`Recover project state and continue work.`
+Then derive the applicable transition from authenticated Git and review evidence. Do not assume one unconditional next action from prose.

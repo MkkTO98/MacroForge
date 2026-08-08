@@ -1,0 +1,331 @@
+{
+  "record_type": "bounded-governance-closeout",
+  "lifecycle_profile": "macroforge-ignored-artifact-governance-lifecycle-v3",
+  "task_identity": "TASK-PF-20260801",
+  "title": "Ignored-artifact preservation governance",
+  "authority_baseline": {
+    "branch": "main",
+    "commit": "37cbbbd076926a1dfcecaab11a4c03305d123284",
+    "publication_state": "published"
+  },
+  "publication": {
+    "transition_model": "state-conditioned-publication-v1",
+    "candidate_identity_binding": "external-review-binds-exact-candidate-bytes",
+    "review_evidence_authority": "authenticated-byte-recoverable-external-evidence",
+    "remote_publication_requirement": "exact-commit-verified-at-authoritative-remote",
+    "successor_activation": "never-implicit"
+  },
+  "candidate_state": {
+    "representation": "transition-invariant-candidate-record",
+    "review_verdict_authority": "authenticated-external-evidence",
+    "commit_publication_separation": "local-commit-is-not-verified-remote-publication",
+    "current_state_derivation": "authenticated-git-and-review-evidence"
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "date": "2026-08-01",
+      "event_type": "initial-authorship",
+      "disposition": "implementation-complete-unpublished",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      }
+    },
+    {
+      "sequence": 2,
+      "date": "2026-08-02",
+      "event_type": "first-independent-publication-review",
+      "disposition": "blocked-no-publication",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "findings": [
+        "publication-sensitive-lifecycle-wording",
+        "overbroad-reproducibility",
+        "nested-git-path-overreach",
+        "mode-validation-gap",
+        "pyc-validation-gap",
+        "snapshot-authority-overclaim",
+        "provider-rights-vocabulary-gap",
+        "absent-candidate-acceptance"
+      ]
+    },
+    {
+      "sequence": 3,
+      "date": "2026-08-02",
+      "event_type": "first-corrective-pass",
+      "disposition": "bounded-correction-implemented",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      }
+    },
+    {
+      "sequence": 4,
+      "date": "2026-08-02",
+      "event_type": "second-independent-publication-review",
+      "disposition": "blocked-no-publication",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "findings": [
+        "lifecycle-profile-open-world",
+        "blocking-special-file-open",
+        "caller-supplied-observation-false-completeness",
+        "unbounded-pytest-marker-read"
+      ]
+    },
+    {
+      "sequence": 5,
+      "date": "2026-08-02",
+      "event_type": "second-corrective-pass",
+      "disposition": "bounded-correction-implemented",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "verification_state": "superseded-by-subsequent-blocked-audit"
+    },
+    {
+      "sequence": 6,
+      "date": "2026-08-02",
+      "event_type": "third-independent-implementation-audit",
+      "disposition": "blocked-no-publication",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "findings": [
+        "output-families-cardinality-bypass",
+        "canonical-boundary-authority-bypass",
+        "stale-lifecycle-truth"
+      ]
+    },
+    {
+      "sequence": 7,
+      "date": "2026-08-02",
+      "event_type": "third-corrective-pass",
+      "disposition": "bounded-correction-implemented",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "verification_state": "internal-verification-complete-independent-audit-pending-at-correction"
+    },
+    {
+      "sequence": 8,
+      "date": "2026-08-08",
+      "event_type": "first-independent-correction-audit",
+      "disposition": "blocked-no-publication",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "findings": [
+        "caller-supplied-partial-pair-false-completeness"
+      ]
+    },
+    {
+      "sequence": 9,
+      "date": "2026-08-08",
+      "event_type": "fourth-corrective-pass",
+      "disposition": "bounded-correction-implemented",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "verification_state": "internal-verification-complete-independent-reaudit-pending-at-correction"
+    },
+    {
+      "sequence": 10,
+      "date": "2026-08-08",
+      "event_type": "first-independent-correction-reaudit",
+      "disposition": "passed-no-publication-authority",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      }
+    },
+    {
+      "sequence": 11,
+      "date": "2026-08-08",
+      "event_type": "first-independent-closeout-consistency-audit",
+      "disposition": "passed-no-publication-authority",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      }
+    },
+    {
+      "sequence": 12,
+      "date": "2026-08-08",
+      "event_type": "third-independent-publication-review",
+      "disposition": "blocked-no-publication",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "findings": [
+        "stale-lifecycle-current-pointer-wording"
+      ]
+    },
+    {
+      "sequence": 13,
+      "date": "2026-08-08",
+      "event_type": "fifth-corrective-pass",
+      "disposition": "bounded-correction-implemented",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "verification_state": "internal-verification-complete-independent-delta-audit-pending-at-correction"
+    },
+    {
+      "sequence": 14,
+      "date": "2026-08-08",
+      "event_type": "independent-lifecycle-delta-audit",
+      "disposition": "passed-no-publication-authority",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      }
+    },
+    {
+      "sequence": 15,
+      "date": "2026-08-08",
+      "event_type": "fourth-independent-publication-review",
+      "disposition": "blocked-no-publication",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "findings": [
+        "publication-transition-fixed-point-defect"
+      ]
+    },
+    {
+      "sequence": 16,
+      "date": "2026-08-08",
+      "event_type": "sixth-corrective-pass",
+      "disposition": "bounded-correction-implemented",
+      "publication_authority": "not-granted",
+      "publication_occurred": false,
+      "state": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+      },
+      "verification_state": "internal-verification-complete-independent-transition-audit-required-at-correction"
+    }
+  ],
+  "reproducibility": {
+    "scope": "prospective-bounded",
+    "historical_completeness": "not-claimed",
+    "retroactive_proof": "not-available",
+    "observation_completeness_authority": "independent-git-discovery-required"
+  },
+  "assurance_boundaries": {
+    "provider_rights": "caller-classified-not-independently-established",
+    "snapshot_identity": "caller-supplied-baseline-assertion-not-publication-authority",
+    "publication_scope": "separate-from-preservation-scope",
+    "production_postgresql": "unchanged-read-only-verification-only"
+  },
+  "wdi_correction_treatment": {
+    "reopened": false,
+    "amended": false,
+    "superseded": false,
+    "reviewed_again": false,
+    "published_commit_preserved": "37cbbbd076926a1dfcecaab11a4c03305d123284"
+  },
+  "output_families": [
+    {
+      "name": "bounded ignored-artifact governance candidate",
+      "role": "authored implementation, tests, doctrine, lifecycle, state, handoff, and affected summaries",
+      "terminal_disposition": "git-durable project truth",
+      "content_origin": "authored",
+      "paths": [
+        "artifacts/reports/R-20260801-ignored-artifact-preservation-governance-closeout.json",
+        "artifacts/reports/_SUMMARY.md",
+        "artifacts/tasks/TASK-PF-20260801-ignored-artifact-preservation-governance.md",
+        "artifacts/tasks/_SUMMARY.md",
+        "context/_SUMMARY.md",
+        "context/latest_handoff.md",
+        "recovery/_SUMMARY.md",
+        "recovery/continuity_framework.md",
+        "state/_SUMMARY.md",
+        "state/active_goal.md",
+        "state/project_state.md",
+        "tests/_SUMMARY.md",
+        "tests/test_ignored_artifact_preservation.py",
+        "tools/_SUMMARY.md",
+        "tools/check_coherence.py"
+      ]
+    }
+  ],
+  "non_authoritative_commentary": [
+    "Initial authorship, both blocked independent publication reviews, and both earlier corrective passes remain historical facts; none published this candidate.",
+    "The third independent implementation audit blocked after finding an output-family cardinality bypass, caller-controlled canonical-boundary substitution, and consequent stale verification truth.",
+    "The third bounded correction was implemented and internally verified, but the first independent correction audit on 2026-08-08 blocked after proving that a one-sided caller observation pair can still receive complete independently verified provenance when the omitted side is independently empty.",
+    "The fourth bounded correction now distinguishes argument suppliedness from empty bytes and forces every one-sided caller-observation case to remain incomplete and caller-supplied-unverified; the closed profile also represents the blocked audit and mutually exclusive re-audit branches without weakening prior history.",
+    "The fresh independent correction re-audit passed 79 executed probes with zero failures and one platform-capability device-node skip; report SHA-256 is 07b05e33d07f88154baa59cca1c05bc6097214878094165e4cb05e6aa8efbe64 and evidence identity is 4551d98d6d7ba1ed9cf26a2e945d834d192f3b96e14bdd28440c98f5ae58fd84.",
+    "At the predecessor report checkpoint, correction verification did not grant publication approval: the later closeout-consistency audit and publication reviews had not yet occurred, and the candidate was then unpublished, unstaged, uncommitted, and unpushed without publication authority.",
+    "After that checkpoint, the external final closeout-consistency audit evaluated predecessor aggregate 4821a68766df94b0e132effdabf5fb0f1c8e58e9f56769c998056915e965e894 and returned PASS. Its complete 134744-byte report is preserved in Hermes session macroforge-ignored-artifact-closeout-audit-20260808-874ad1a36b003638 at payload message 190901 with SHA-256 874ad1a36b0036386e36f17e15ccb92416c056f426a6b603ec1245dea6149b79 and evidence identity d809953c4fb5efe168ecff2c096575e63e8f94db84065522e9140a9a11e84e86; it is closeout evidence, not publication authority.",
+    "The subsequent fresh independent publication review returned BLOCKED / CANDIDATE DEFECT. It found implementation, evidence integrity, and the exact 15-path publication boundary sound, but blocked publication because this commentary and current state, handoff, and summary pointers retained stale or unqualified pre-final-audit wording. Review report SHA-256 is f563e231d7f77bfe0bb2814861e8aa4d7ac7c9f84420b257619a076d93d348c2.",
+    "The ten-path wording reconciliation preserved chronology and changed lifecycle wording only. Its independent delta audit passed, but the subsequent exact-candidate publication review returned BLOCKED / PUBLICATION TRANSITION DEFECT because transient pending/sole-next-gate assertions would self-invalidate on review success.",
+    "Fourth-pass internal evidence is 107 focused passes; an exact Git-backed tracked suite with 488 passes plus only the two baseline-identical absent ignored-WDI-fixture failures; passing coherence, lifecycle, explicit canonical publication-boundary, context-health, recovery, architecture-to-reality, deterministic-repeat, and diff checks; and production PostgreSQL count agreement under BEGIN READ ONLY with explicit ROLLBACK. The suite is not claimed green. Live architectural-governance testing is contaminated by preserved unrelated Git-visible artifacts, while the exact candidate export's architecture-to-reality audit is warning-free.",
+    "The mechanism provides prospective bounded reproducibility only; complete historical ignored-byte evidence is not claimed.",
+    "Provider-rights values are caller classifications and do not independently establish permission.",
+    "The published WDI correction at the authority baseline remains closed and unchanged. The final third-correction clean-export WDI nodes exactly matched the preserved baseline's two absent ignored-fixture failures; this differential grants no waiver or publication authority.",
+    "The latest blocked publication review is preserved as event 15 and as immutable external evidence: 25361 bytes, SHA-256 d728d980fdc056cfac58020443de332f7b74131c12c2d5d817b12c8d1cdd0e15, Hermes session macroforge-successor-publication-review-20260808-d728d980fdc056cf payload 192848. It remains a BLOCK and grants no publication authority.",
+    "The sixth bounded correction replaces transient live publication assertions with the closed state-conditioned publication-v1 invariant. Authenticated exact-byte PASS evidence permits bounded publication without changing candidate bytes; BLOCK requires correction; local commit still requires push and authoritative-remote verification; verified remote equality closes this workstream without implicitly activating a successor.",
+    "The repository record is intentionally a transition invariant rather than a live review verdict. Current authority is derived from authenticated Git state plus byte-recoverable external review evidence, so later review, commit, push, and verified-publication transitions do not require mutation of these candidate bytes."
+  ]
+}

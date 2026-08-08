@@ -127,9 +127,11 @@ Tests for MacroForge source evidence, loaders, database schema, canonical-domain
 - `test_wdi_demographics_phase1.py`
 - `test_wdi_dependency_ratios.py`
 - `test_wdi_education_human_capital.py`
+- `test_ignored_artifact_preservation.py`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `test_ignored_artifact_preservation.py` covers protected identity, bounded cache/PYC reads, special-file/race safety, explicit observation suppliedness, exact family/path authority, exact lifecycle history, and the v3 fixed-point transition model. It tests no review, exact BLOCK, mismatched PASS, exact PASS, local-commit-ahead, verified-remote-equality, malformed evidence, commit/publication separation, and no implicit successor activation. Prior re-audit evidence remains 79 executed passes plus one separate `CAP_MKNOD` skip.
 - `test_task209_imf_weo_g20_projection_phase2_campaign.py` covers TASK-209 normalization, release/vintage identity, explicit-missing Saudi Arabia LUR semantics, SQL quality checks, and simulated later-release coexistence.
 - `test_task207_bls_us_labor_monthly_phase2_campaign.py` contains the narrow accepted BLS source-identity regression alignment to `BLS_PUBLIC_API_V2`.
 - `test_task206_acquisition_completion_semantics.py` verifies corrected TASK-206 territory fallback and completion invariants: valid `countryiso3code` remains authoritative; blank `countryiso3code` can fall back to accepted non-aggregate `country.id`; aggregate/unknown IDs are rejected; provider fields are preserved; duplicate canonical keys are avoided; acquisition errors remain distinct from provider exclusions and block completion/candidate-exhaustion/capability-closure claims.
@@ -213,3 +215,4 @@ Tests for MacroForge source evidence, loaders, database schema, canonical-domain
 - `test_wdi_foundational_operational_bundle.py` verifies TASK-139 WDI foundational operational bundle manifest, deterministic fingerprint, PostgreSQL load, and forbidden-scope boundaries.
 - `test_bls_cpi_major_categories_operational.py` verifies TASK-140 CPI operational fixture, observed package, manifest, PostgreSQL load, and anti-framework boundaries.
 - TASK-142 added `test_wdi_trade_core_operational.py` covering fixture, normalization, deterministic package, refresh artifacts, PostgreSQL load, and non-goals.
+- 2026-07-11: TASK-210 added MacroForge-owned neutral evidence-release export compatibility report/exporter/tests for bounded WDI trade-share scope.

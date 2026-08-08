@@ -1,48 +1,32 @@
 # Project State
 
-## Current status
+## State representation
 
-TASK-219 IMF DIP/CDIS direct-investment counterpart expansion is complete, verified, committed, and pushed as `a4404481ecd61767b330b2ba4fba6d0038916cde`. TASK-219 closeout state/handoff updates are being finalized.
+`TASK-PF-20260801` uses `macroforge-ignored-artifact-governance-lifecycle-v3`. Its current pointers are transition invariants, not snapshots that claim a review is pending, a review is the sole next gate, a local commit is published, or a successor is active.
 
-Do not begin TASK-220 until the closeout commit is pushed or explicitly deferred. Preserve unrelated working-tree residue untouched.
+## Stable authority facts
 
-## Recent completed work
+- Authority baseline: branch `main`, commit `37cbbbd076926a1dfcecaab11a4c03305d123284`.
+- Publication boundary: one code-owned canonical 15-path tuple.
+- Latest blocked review remains immutable evidence: `BLOCKED / PUBLICATION TRANSITION DEFECT`, SHA-256 `d728d980fdc056cfac58020443de332f7b74131c12c2d5d817b12c8d1cdd0e15`.
+- Review verdicts are external evidence bound to exact candidate bytes; they change authority, not repository-byte truth.
+- Local commit and verified authoritative-remote publication are distinct states.
+- Verified publication closes this workstream without implicitly activating a successor.
 
-- TASK-218 IMF PIP/CPIS reporter-counterpart portfolio-position expansion was completed, verified, committed, and pushed as `c92d70c20c82662970284595617dcc3cbca930d1`.
-- TASK-219 was selected over IMF GFS, additional IMF BOP, BIS, BLS, residual WDI, cleanup, and architecture-only work because IMF DIP/CDIS adds a high-value direct-investment relationship-position capability and provides a second pressure test for the reporter/counterpart representation proven in TASK-218.
-- TASK-219 confirmed IMF SDMX DIP dataflow `DIP` version `12.0.1`, DSD `DSD_DIP` version `13.0.0`, and provider title Direct Investment Positions by Counterpart Economy (formerly CDIS).
-- Frozen candidate universe: 24 reporters × 24 counterparts × 6 direct-investment direction/instrument concepts × 2020-2024, annual frequency, `DV_TYPE=O`, 3,456 expected series, 17,280 expected cells.
-- Preserved request URLs/parameters, metadata response, raw SDMX XML chunks, raw HTTP/acquisition metadata, response headers, timestamps, checksums, normalized artifact, manifest, relationship-proliferation report, prediction evaluation, extraction decision, and load SQL.
-- Loaded canonical PostgreSQL facts through source `IMF_SDMX_DIP_API_V1`, provider dataset `IMF:DIP`, as-of key `imf-dip-asof-20251210t162520656782100z`, run key `task-219-imf-dip-direct-investment-counterpart-phase2`.
-- Actual TASK-219 result: 16,215 loaded facts = 14,755 observed/provider-valued + 1,460 explicit-missing; 213 whole-series absences (1,065 candidate cells); 0 acquisition errors; 0 incompatible series; 144 source-scoped indicators.
-- TASK-219 publication included a bounded raw-provider XML whitespace exception only for immutable IMF metadata XML at `data/raw/task219_imf_dip_phase2_campaign/active/task-219-imf-dip-metadata.xml`; raw XML was not normalized or rewritten.
+## Condition-derived transition
 
-## Verification snapshot
+1. Working-tree difference and no authenticated exact-byte approval: independent review required.
+2. Working-tree difference and authenticated exact-byte `BLOCK`: correction required; publication prohibited.
+3. Working-tree difference and authenticated exact-byte `PASS`: bounded publication permitted without another candidate edit.
+4. Approved local commit with authoritative remote not equal: push and remote verification required.
+5. Exact approved commit verified at authoritative remote: workstream closed; no successor automatically activated.
 
-TASK-219 verification:
+The evaluator fails closed for missing, malformed, mismatched, ambiguous, unauthenticated, or non-recoverable evidence.
 
-- Focused TASK-219 tests: `6 passed in 0.59s`.
-- TASK-216/TASK-217/TASK-218/TASK-219 compatibility tests: `24 passed in 17.49s`.
-- JSON boundary validation: `json_boundary_validated=16`.
-- Checksum reconciliation: 22 entries, 0 missing targets, 0 mismatches.
-- Raw-reference reconciliation: 11 active raw files, 11 raw refs, 0 unreferenced, 0 missing refs.
-- PostgreSQL verification tuple: `task219_db|1|1|1|16215|16215|14755|1460|0|0|0`.
-- Repository total after TASK-219: `10,651,727`.
-- Same-run idempotence: growth 0.
-- Later-as-of coexistence: simulated later release verified inside rollback; no simulated rows persisted.
-- Sensitive-material, absolute-path/environment-leakage, and non-raw authored-whitespace scans: 0 hits.
-- Context health: 0 blocks, 0 warnings.
-- Coherence: 0 blocks, 0 warnings.
-- Architecture-reality audit: 0 blocks, 1 warning (`5 completed task(s) since last Architecture-to-Reality Audit`).
+## Verification posture
 
-## Architecture verdict
+Predecessor complete-suite evidence remains exactly `488 passed, 2 failed`, with both failures baseline-identical absent ignored-WDI-fixture failures; the suite is not claimed green. The prior independent correction re-audit produced 79 executed passes plus one separate `CAP_MKNOD` platform skip. Changed implementation requires fresh successor verification and independent transition audit; their external evidence can advance authority without editing these bytes.
 
-TASK-219 reaffirms current architecture. The existing scalar/revision-aware substrate preserved reporter territory, counterpart identity in source-scoped indicator identity/attributes, direct-investment direction and instrument semantics, provider-derived as-of evidence, source/dataset/run separation, unit semantics, annual periods, explicit-missing facts, lineage/quality evidence, duplicate prevention, idempotence, and later-release coexistence.
+## Constraints
 
-Representation verdict: **B — current scalar/source-scoped indicator representation remains operationally sufficient, but relationship indicator proliferation should continue to be monitored.**
-
-No IMF-DIP shared substrate was extracted. TASK-218 and TASK-219 share a relationship representation pattern, but PIP and DIP provider semantics still differ materially. Extraction now would risk premature generic IMF SDMX/relationship machinery.
-
-## Guardrails
-
-Do not stage, commit, clean, restore, delete, move, or push unrelated residue. Preserve TASK-207 FRED-detour evidence, TASK-208 attempt/temp artifacts, neutral-evidence optional reports, older attempt directories, unrelated summaries, scaffold/MetaHarvest residue, and all other unrelated working-tree paths unless explicitly authorized.
+These records do not authorize staging, commit, push, publication, PostgreSQL mutation, WDI repair, unrelated cleanup, successor ingestion, or `TASK-220` activation.
