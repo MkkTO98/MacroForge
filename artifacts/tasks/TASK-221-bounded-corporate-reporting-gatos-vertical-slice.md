@@ -1,12 +1,12 @@
 # TASK-221 — Bounded Corporate Reporting Gatos vertical slice
 
-Status: **IMPLEMENTED — READY FOR PUBLICATION REVIEW; local candidate only, no publication authority**
+Status: **GIT-PUBLISHED AND TECHNICALLY CLOSED; no successor active**
 
 ## Goal and outcome
 
 Implement the frozen Gatos Silver, Inc. original `10-K` / amendment `10-K/A` Corporate Reporting slice with deterministic SEC/XBRL parsing, PostgreSQL persistence, knowledge-time/query semantics, release gating, lineage, amendment semantics, and preservation verification.
 
-The exact 13-path candidate is implemented, verification-complete, prospectively adopted from authenticated current bytes, and independently reviewed `PASS`. Publication remains a separate fail-closed transition. Nothing is staged, committed, pushed, published, or remotely delivered.
+The exact 13-path implementation candidate was implemented, verification-complete, prospectively adopted from authenticated current bytes, and independently reviewed `PASS`. It was then included in the exact reviewed 20-path Git publication boundary and published under explicit user authority in commit `3be04c379409067e728ff851e7b98d3c08d8d864` (`feat: add SEC corporate reporting foundation`). Repository publication is complete; no Corporate Reporting data release or remote delivery occurred.
 
 Frozen planning authority remains external under `/tmp/macroforge-corporate-gatos-freeze-6DQdCj/derived/`.
 
@@ -17,8 +17,8 @@ Final freeze: `/tmp/task221-fourth-final-candidate-freeze-v1.json`
 - manifest SHA-256: `2ef71bf434a911f520530d084b114369640a5d9804cac0a2bc94e06cedf9c5bd`;
 - canonical identity serialization: `2,670` bytes;
 - canonical SHA-256: `3816e7f4cf90190cbfa145b88304106e5af0611b138702ba56d0a8dec713907f`;
-- branch/HEAD/local `origin/main`: `main` / `4d5fb7148c79bc25510a1b3ad4f594610389e8da` / same;
-- staged/unmerged: `0/0`;
+- pre-publication checkpoint branch/HEAD/local `origin/main`: `main` / `4d5fb7148c79bc25510a1b3ad4f594610389e8da` / same;
+- pre-publication checkpoint staged/unmerged: `0/0`;
 - intended Git mode for every candidate path: `100644`;
 - recorded filesystem permission for every candidate path: `0600`.
 
@@ -103,6 +103,12 @@ One fresh read-only reviewer authenticated all 13 frozen identities and returned
 
 The reviewer explicitly accepted prospective adoption despite unresolved historical writer provenance and the same-byte metadata incident, without converting either limitation into a false historical claim.
 
+## Git publication and terminal reconciliation
+
+The implementation-ready state above was the truthful pre-publication checkpoint. A separate publication-readiness review authenticated an exact 20-path boundary: the 13 implementation/test/fixture paths plus seven TASK-221 governance paths. Under later explicit user authorization, that exact boundary was committed and pushed as `3be04c379409067e728ff851e7b98d3c08d8d864`, with parent `4d5fb7148c79bc25510a1b3ad4f594610389e8da`. Committed blobs and modes matched the reviewed candidate, and post-push local HEAD, `origin/main`, and the server-advertised `refs/heads/main` were synchronized at the publication commit.
+
+When these reconciliation bytes are present in authenticated repository HEAD, TASK-221 is Git-published and technically closed. The publication event does not authorize Corporate Reporting data release, mapping acceptance, provider redistribution, or remote data delivery. No successor task was automatically created or activated.
+
 ## Preservation and live state
 
 - Both provenance directories and their sealed inventories remain preserved:
@@ -116,21 +122,21 @@ The reviewer explicitly accepted prospective adoption despite unresolved histori
 - Existing PostgreSQL table counts are unchanged; all observed DML counters remain zero.
 - Corporate Reporting releases/reservations/completions: `0/0/0`.
 - Accepted real mappings, eligible real revisions, redistribution rights, and quality authority: `0/0/0/0`.
-- No publication artifact or status sidecar exists; remote delivery is disabled.
+- No Corporate Reporting data-publication artifact or status sidecar exists; remote delivery is disabled.
 
 ## Output families
 
 | Family | Representative paths | Role | Terminal disposition / publication expectation |
 |---|---|---|---|
-| Corporate Reporting implementation | exact frozen 13-path manifest | authored project truth candidate | local working tree; separate publication review required |
+| Corporate Reporting implementation | exact frozen 13-path manifest | authored project truth | Git-published in `3be04c379409067e728ff851e7b98d3c08d8d864`; technically closed |
 | PostgreSQL state | Migration 005 and source-scoped tables | generated local verification state | local-only; not publication evidence |
 | Provider filing evidence | protected Gatos material outside repository | local/provider evidence | external-only; redistribution rights unresolved |
-| Verification/review evidence | task record and authenticated `/tmp` freeze/suite/provenance evidence | governance evidence | local evidence supporting publication review |
+| Verification/review evidence | task record and authenticated `/tmp` freeze/suite/provenance evidence | governance evidence | historical evidence supporting the completed Git publication |
 | Runtime caches | pytest/bytecode cache families | generated/rebuildable | ignored; never publication material |
 
-## Remaining gates and next action
+## Terminal state and next action
 
-TASK-221 implementation is complete, but publication is not authorized. Mapping and redistribution-rights gates remain fail-closed at zero. A separate publication review must authenticate this exact candidate, resolve the intended Git boundary and provider-rights posture, and obtain explicit staging/commit/push/publication authority.
+TASK-221 implementation and Git publication are complete. Mapping, eligible-revision, Corporate Reporting data-release, redistribution-rights, quality-authority, and remote-delivery gates remain fail-closed at zero or disabled. No successor is active. Any future Corporate Reporting work requires a separately selected and authorized task; repository publication must not be treated as data-release or provider-rights authority.
 
 Resume command:
 

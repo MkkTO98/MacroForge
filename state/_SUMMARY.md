@@ -14,13 +14,13 @@ Current project state files: active goal, architecture posture, project state, i
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `active_goal.md` and `project_state.md` record TASK-221 as implemented and ready for a separate publication review. Its exact 13-path Corporate Reporting candidate is frozen, verification-complete, and independently reviewed PASS, but mapping/rights gates remain fail-closed and no staging, commit, push, or publication occurred.
+- `active_goal.md` and `project_state.md` record TASK-221 as implemented, independently verified, Git-published in `3be04c379409067e728ff851e7b98d3c08d8d864`, and technically closed with no successor active. Mapping, eligible-revision, Corporate Reporting data-release, redistribution-rights, quality-authority, and remote-delivery gates remain fail-closed.
 - `architecture.md` remains the compact architecture posture: source-specific acquisition/normalization, `ObservedIngestionPackage v1`, deterministic post-boundary substrate, DRDF/ACPF/CEF planning governance, mature scalar architecture, and evidence-based maintenance.
 - `recent_changes.md`, `known_issues.md`, and `lessons.md` remain supporting state artifacts.
 
 ## Needs Attention
-- Any next TASK-221 transition must use the exact frozen candidate and receive separate publication-review and Git/publication authorization. Do not modify the reviewed implementation/test bytes.
+- TASK-221 has no automatic successor. Any future Corporate Reporting work requires separate task selection and explicit authority; do not infer data-release, mapping, rights, or remote-delivery authority from repository publication.
 - Preserve the unresolved historical writer-provenance limitation and same-byte loader-test metadata incident without converting either into a historical authorship or metadata-preservation claim.
 - Keep primary state files concise. Do not re-add task-by-task implementation history to `project_state.md` or `architecture.md`; use task artifacts, reports, decisions, summaries, and handoffs instead.
-- Before any Corporate Reporting implementation, reauthenticate the repository HEAD containing the governance reconciliation and refresh only repository-state-dependent assumptions against the already-frozen fixture, architecture, and implementation plan.
+- Before any future Corporate Reporting work, reauthenticate repository HEAD and establish a separately authorized task; preserve the published TASK-221 implementation bytes unless a new task explicitly authorizes change.
 - Future repository expansion should follow DRDF -> ACPF -> CEF where domain/capability work is involved.

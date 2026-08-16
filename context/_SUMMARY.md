@@ -18,11 +18,11 @@ Curated project context, context policy, latest handoff, and compact source-of-t
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `latest_handoff.md` records TASK-221's exact frozen 13-path Corporate Reporting candidate, completed verification, fresh 23-question independent PASS, reconciled zero-publication state, preservation limitations, and separate publication-review boundary.
+- `latest_handoff.md` records TASK-221's exact published implementation identity, commit `3be04c379409067e728ff851e7b98d3c08d8d864`, completed verification, fresh 23-question independent PASS, preserved chronology and limitations, fail-closed Corporate Reporting data-release authority, and no active successor.
 - Generated context bundles are task/model-target artifacts and should be regenerated when needed, not treated as mandatory startup context.
 
 ## Needs Attention
-- Any TASK-221 continuation must authenticate `/tmp/task221-fourth-final-candidate-freeze-v1.json` and remain within separately granted publication-review authority; reviewed implementation/test bytes must not change.
-- Mapping and redistribution-rights gates remain fail-closed, and the provenance/metadata limitations must remain explicit.
+- TASK-221 is Git-published and technically closed. Any future Corporate Reporting work requires separate task selection and authority; reviewed implementation/test bytes must not change absent that authority.
+- Mapping, eligible-revision, Corporate Reporting data-release, redistribution-rights, quality-authority, and remote-delivery gates remain fail-closed, and the provenance/metadata limitations remain explicit.
 - Keep raw exports and large generated bundles out of normal startup context.
 - Fresh work should start from bounded recovery: read `CONSTITUTION.md`, compact state files, and `context/latest_handoff.md`; expand only into relevant task/report/domain/artifact files.
