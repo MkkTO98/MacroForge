@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:us-gaap="http://fasb.org/us-gaap/2022" xmlns:gato="http://example.test/gato" xmlns:ex="http://example.test/typed">
+  <xbrli:context id="two-axis"><xbrli:entity><xbrli:identifier scheme="http://www.sec.gov/CIK">0000000001</xbrli:identifier><xbrli:segment><xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">us-gaap:CorporateMember</xbrldi:explicitMember><xbrldi:explicitMember dimension="us-gaap:StatementOperatingActivitiesSegmentAxis">us-gaap:SegmentContinuingOperationsMember</xbrldi:explicitMember></xbrli:segment></xbrli:entity><xbrli:period><xbrli:instant>2024-12-31</xbrli:instant></xbrli:period></xbrli:context>
+  <xbrli:context id="one-axis"><xbrli:entity><xbrli:identifier scheme="http://www.sec.gov/CIK">0000000001</xbrli:identifier><xbrli:segment><xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">us-gaap:CorporateMember</xbrldi:explicitMember></xbrli:segment></xbrli:entity><xbrli:period><xbrli:instant>2024-12-31</xbrli:instant></xbrli:period></xbrli:context>
+  <xbrli:context id="typed"><xbrli:entity><xbrli:identifier scheme="http://www.sec.gov/CIK">0000000001</xbrli:identifier><xbrli:segment><xbrldi:typedMember dimension="ex:LegalEntityAxis"><ex:identifier code="A"> Alpha </ex:identifier></xbrldi:typedMember></xbrli:segment></xbrli:entity><xbrli:period><xbrli:startDate>2024-01-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period></xbrli:context>
+  <xbrli:unit id="usd"><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unit>
+  <xbrli:unit id="usd-per-share"><xbrli:divide><xbrli:unitNumerator><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unitNumerator><xbrli:unitDenominator><xbrli:measure>xbrli:shares</xbrli:measure></xbrli:unitDenominator></xbrli:divide></xbrli:unit>
+  <us-gaap:Assets contextRef="two-axis" unitRef="usd" decimals="-3">100</us-gaap:Assets>
+  <us-gaap:Assets contextRef="one-axis" unitRef="usd" decimals="-3">200</us-gaap:Assets>
+  <us-gaap:EarningsPerShareDiluted contextRef="typed" unitRef="usd-per-share" decimals="2">-1.03</us-gaap:EarningsPerShareDiluted>
+  <gato:Note contextRef="typed" xml:lang="en">same</gato:Note>
+  <gato:Note contextRef="typed" xml:lang="en">same</gato:Note>
+</xbrli:xbrl>

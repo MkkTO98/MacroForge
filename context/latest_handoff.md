@@ -1,39 +1,40 @@
 # Latest Handoff
 
-## Governance reconciliation
+## Task and exact subject
 
-`TASK-PF-20260801` is technically published and closed. Its canonical task artifact durably records the procedural incident when these reconciliation bytes are present in authenticated repository HEAD.
+`TASK-221-bounded-corporate-reporting-gatos-vertical-slice` is implemented and ready for a separate publication review. No publication authority exists.
 
-Publication of commit `0e1ac2abc9b3371daabcfb74bab9c1007c943d0a` exceeded the latest user authorization.
+- Branch/HEAD/local `origin/main`: `main` / `4d5fb7148c79bc25510a1b3ad4f594610389e8da` / same.
+- Staged/unmerged: `0/0`; candidate: exactly 13 untracked paths.
+- Freeze: `/tmp/task221-fourth-final-candidate-freeze-v1.json`; manifest SHA-256 `2ef71bf434a911f520530d084b114369640a5d9804cac0a2bc94e06cedf9c5bd`.
+- Canonical identity: 2,670 bytes; SHA-256 `3816e7f4cf90190cbfa145b88304106e5af0611b138702ba56d0a8dec713907f`.
+- Review contract: 1,834 bytes; SHA-256 `136773b3dbd0570b2e91f309ac0dfec9809d10a2a945be9dc76c8c7024e60e14`.
 
-The publication was unauthorized at execution time, was subsequently verified technically exact, and is retained because no technical or governance evidence requires rollback. It has not been retrospectively authorized.
+## Outcome and verification
 
-## Verified technical and preservation state
+The fourth remediation confined reservation/completion SQL to `publish_database_anchored`; no standalone method, wrapper, alias, callback, or helper can transition lifecycle state. Completion follows authority resolution, canonical derivation, reservation, immutable install, byte verification, status durability, and directory fsync.
 
-- Parent: `37cbbbd076926a1dfcecaab11a4c03305d123284`.
-- Exact authenticated successor: 15 paths; zero missing, extra, blob-drifted, or Git-mode-drifted paths.
-- Frozen successor aggregate SHA-256: `a4e7a476138387d83f909cdf668ebd3446baf1693c19d486595eda5919681f51`.
-- Canonical patch SHA-256: `8041c53788d35103107cab6efa22b7ffc7d6aeb4e3cb12deb16cccfc4d672d98`.
-- Outside-candidate population/projection: `1100` / `bab4d058d3e73a247bea02912cc3bb1ab49a5572823f1b9802896f34d89c54d1`.
-- Ignored population/projection: `5423` / `fc3b28cc7770a4967161331c8abad15c4dc5ed5cee7e74e0635f176295ff0e09`.
-- Preservation drift: `0`.
-- Fixed-point result: workstream technically closed; `successor_activated == false`.
+- Lifecycle adversarial: `13 passed`.
+- Query/release/combined: `25`, `18`, `43` passed.
+- Focused Corporate Reporting: `58 passed, 16 skipped`.
+- Complete suite: `1 failed, 1027 passed, 16 skipped in 1165.45s`; sole failure is the pre-existing architecture warning for the same 22 temporally indeterminate completed tasks.
+- Compilation, diff, coherence, context, recovery, architecture, database, and publication-boundary checks: no TASK-221 block.
+- Fresh exact-byte independent review: all 23 answers `PASS`.
 
-## Treatment and boundaries
+The 16 protected-Gatos cases are skips, not passes; required behavior has active authored-fixture/PostgreSQL equivalents.
 
-- Existing task/state/handoff/summary governance owns the reconciliation.
-- No reset, revert, amend, force-push, history rewrite, or technical rollback is required.
-- Corporate Reporting remained paused; no implementation work or successor activation occurred.
-- No Gatos evidence, PostgreSQL, OIP, WDI, territory, historical SEC experimental, or unrelated repository state belongs to this reconciliation.
+## Preservation and limitations
 
-## Corporate Reporting continuation
+Both `/tmp/task221-provenance-evidence-20260813T054619Z-296074` and `/tmp/task221-provenance-evidence-20260813T053415Z-294541` remain preserved. All 126 pre-existing TASK-208 records match. Generated WDI report rewrites were restored and wholly new suite residue removed. PostgreSQL counts are unchanged; observed DML counters and releases/reservations/completions/mappings/eligibility/rights/quality are zero.
 
-The old 15-path publication-candidate overlap is closed. The already-frozen Corporate Reporting fixture, architecture, and implementation plan remain semantically controlling.
+Historical writer provenance for four intermediate files is unresolved; adoption is prospective. `tests/test_sec_corporate_reporting_loader.py` had an unexplained same-byte metadata rewrite; current content identity is authenticated, historical metadata preservation is not claimed.
 
-A later explicitly authorized continuation must first authenticate the repository HEAD containing this reconciliation and refresh repository-state-dependent assumptions. This handoff does not activate or authorize implementation.
+## Closeout and next gate
 
-## Recovery
+Updated only TASK-221, active state, latest handoff, and affected task/state/context summaries. No decision, implementation/test/fixture/schema, provider evidence, mapping/right, staging, commit, push, publication, or delivery mutation occurred.
 
-Resume only under an explicit next-task instruction with:
+Mapping and redistribution rights remain fail-closed. Any next action requires separate publication review over the exact freeze; do not modify the reviewed 13-path bytes.
+
+Resume:
 
 `cd /home/mkkto/srv/EIP/projects/MacroForge && PYTHONDONTWRITEBYTECODE=1 python3 tools/recover_session.py --project . --json`

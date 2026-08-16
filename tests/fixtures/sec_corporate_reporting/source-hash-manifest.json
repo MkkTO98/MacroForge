@@ -1,0 +1,15 @@
+{
+  "schema": "macroforge-authored-sec-corporate-reporting-fixture-manifest-v1",
+  "provider_bytes_in_repository": false,
+  "authored_fixtures": {
+    "compact-instance.xml": "a134f53c481487f5c6641736873828a9d8c2d5ed5d594ad625d81cb425780a09",
+    "compact-conflict.xml": "0d405d966651fdc45935499a918ed0ee13fcf954d8d8b9840e53af728cda2b75",
+    "malformed-divide.xml": "946170be040eb912a783d0486aa0427d1039abe610b543a4c110daa215ab7072"
+  },
+  "protected_fixture": {
+    "root_hint": "/tmp/macroforge-corporate-gatos-freeze-6DQdCj",
+    "inventory_sha256": "10e268160b0daaf2fc826d857be3e7653a60486b39ac75113d390aa94f58c425",
+    "original_instance_sha256": "cdfc790eef3c8adaafebc7f2c51111d2e8ddb124aa417e41a454b03deb556098",
+    "amendment_instance_sha256": "83b1d7cc7f65e7fb938691950149e43154b609c1cd69b1bb75541d6e2d81ea92"
+  }
+}

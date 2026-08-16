@@ -2,31 +2,34 @@
 
 ## Current governance condition
 
-`TASK-PF-20260801` is technically published and closed under `macroforge-ignored-artifact-governance-lifecycle-v3`. Its canonical task history records that publication of commit `0e1ac2abc9b3371daabcfb74bab9c1007c943d0a` exceeded the latest user authorization.
+`TASK-221` is implemented and ready for a separate publication review. The exact 13-path Corporate Reporting candidate passed focused and complete-suite classification gates and one fresh independent 23-question review. It is not accepted for publication and remains unstaged, uncommitted, unpushed, and unpublished.
 
-The publication was unauthorized at execution time, was subsequently verified technically exact, and is retained because no technical or governance evidence requires rollback. This reconciliation does not retrospectively authorize the publication.
+## Stable repository facts
 
-## Stable technical facts
+- Branch: `main`.
+- HEAD and local `origin/main`: `4d5fb7148c79bc25510a1b3ad4f594610389e8da`.
+- Staged/unmerged: `0/0`.
+- Candidate boundary: exactly 13 untracked paths.
+- Canonical candidate identity: 2,670 bytes; SHA-256 `3816e7f4cf90190cbfa145b88304106e5af0611b138702ba56d0a8dec713907f`.
+- Freeze manifest: `/tmp/task221-fourth-final-candidate-freeze-v1.json`; SHA-256 `2ef71bf434a911f520530d084b114369640a5d9804cac0a2bc94e06cedf9c5bd`.
 
-- Parent baseline: `37cbbbd076926a1dfcecaab11a4c03305d123284`.
-- Accepted technical implementation commit: `0e1ac2abc9b3371daabcfb74bab9c1007c943d0a`.
-- Publication boundary: exactly the code-owned canonical 15-path tuple.
-- Missing, extra, blob-drifted, or Git-mode-drifted paths: `0`.
-- Outside-candidate population/projection: `1100` / `bab4d058d3e73a247bea02912cc3bb1ab49a5572823f1b9802896f34d89c54d1`.
-- Ignored population/projection: `5423` / `fc3b28cc7770a4967161331c8abad15c4dc5ed5cee7e74e0635f176295ff0e09`.
-- Publication transition: technically closed.
-- `successor_activated == false`.
+## Verification state
 
-The repository baseline for later work is the authenticated HEAD containing this reconciliation. Future agents must reauthenticate it rather than infer a live hash from this pre-commit record.
+- Lifecycle adversarial selection: `13 passed`.
+- Query/release modules and combined selection: `25`, `18`, and `43` passed.
+- Focused Corporate Reporting suite: `58 passed, 16 skipped`; skips require unavailable protected Gatos fixtures and are not passes.
+- Renewed repository suite: `1 failed, 1027 passed, 16 skipped in 1165.45s`; the sole failure is the accepted pre-existing architecture-cadence warning for 22 completed tasks with indeterminate dates, not a TASK-221 regression.
+- Compilation, diff check, coherence, context, recovery, database, and publication-boundary checks passed within stated limitations.
+- Fresh independent review authenticated the exact freeze and returned PASS on all 23 questions.
 
-## Governance treatment
+## Database and preservation state
 
-- Existing task/state/handoff/summary mechanisms own the reconciliation; no new incident subsystem or lifecycle was created.
-- No reset, revert, amend, force-push, or history rewrite is required.
-- Corporate Reporting remained paused and no implementation successor was activated.
-- The already-frozen Corporate Reporting fixture, architecture, and implementation plan remain semantically controlling.
-- Repository-state-dependent Corporate Reporting assumptions require normal reauthentication before implementation resumes under separate authorization.
+Corporate Reporting releases, reservations, completions, accepted real mappings, eligible real revisions, rights authority, and quality authority are all zero. No publication artifact/status sidecar exists and remote delivery is disabled. Existing PostgreSQL counts are unchanged and observed DML counters are zero.
 
-## Constraints
+All 126 pre-existing TASK-208 evidence records remain byte-identical. Generated WDI report rewrites were restored to authenticated pre-suite bytes; wholly new suite residue was removed. Verification-generated ignored caches remain generated/rebuildable and outside candidate authority.
 
-This state does not authorize Corporate Reporting implementation, Gatos evidence mutation, PostgreSQL work, OIP work, WDI work, territory work, historical SEC experimental mutation, unrelated cleanup, rollback, or any implicit successor.
+Historical writer provenance for four intermediate files remains unresolved, so adoption is prospective only. The unexplained same-byte metadata rewrite of `tests/test_sec_corporate_reporting_loader.py` is recorded without claiming historical metadata preservation.
+
+## Architecture posture and next action
+
+Accepted architecture is unchanged. Corporate Reporting remains source-specific and fail-closed. Mapping and redistribution-rights gates remain unsatisfied. The next transition requires a separately authorized publication review of the exact frozen candidate; do not modify reviewed implementation/test bytes or infer staging, commit, push, publication, or remote-delivery authority.
