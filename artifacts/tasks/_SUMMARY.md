@@ -126,9 +126,13 @@ Durable task contracts, backlog, acceptance criteria, and current work status.
 - `TASK-118-bounded-fdic-bank-regulatory-certification-evidence-slice.md`
 - `TASK-119-bounded-fdic-branch-locations-evidence-slice.md`
 - `TASK-221-bounded-corporate-reporting-gatos-vertical-slice.md`
+- `TASK-222-corporate-portfolio-v1-manifest-validator.md`
+- `TASK-223-corporate-proof-tranche-occurrence-ingestion.md`
+- `TASK-224-corporate-reporting-domain-placement-release-admission.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `TASK-224-corporate-reporting-domain-placement-release-admission.md` is complete under external exact-final-manifest gates. DEC-024 keeps Corporate Reporting as a bounded sibling domain inside MacroForge and specifies an inactive source-native private-analysis release-candidate admission/rehearsal successor. No mapping, rights, release, redistribution, publication-operation, downstream-delivery, or successor authority was exercised.
 - `TASK-221-bounded-corporate-reporting-gatos-vertical-slice.md` is implemented, independently verified, Git-published in `3be04c379409067e728ff851e7b98d3c08d8d864`, and technically closed with no successor active. The exact 13-path implementation identity remains SHA-256 `3816e7f4cf90190cbfa145b88304106e5af0611b138702ba56d0a8dec713907f`; the 16 protected-Gatos cases remain skips, not passes, and historical provenance/metadata limitations remain recorded. Mapping, eligible-revision, data-release, redistribution-rights, quality-authority, and remote-delivery gates remain fail-closed; Git publication granted none of those authorities.
 - `TASK-PF-20260801-ignored-artifact-preservation-governance.md` is the canonical owner of the bounded unauthorized-publication reconciliation. Commit `0e1ac2abc9b3371daabcfb74bab9c1007c943d0a` is technically the exact authenticated 15-path successor and preserved unrelated state, but its publication exceeded the latest user authorization. The publication is retained without retrospective authorization or rollback; the task is technically closed, `successor_activated == false`, and no successor is active.
 - `TASK-217-imf-iip-phase2-external-position-expansion.md` is implemented and locally verified; unpublished. It broadens IMF IIP annual external-position stock monitoring to 214 accepted canonical countries, 642 provider-advertised series, 9,630 candidate cells, and 7,695 loaded facts (6,969 provider-valued, 726 explicit-missing), with 129 whole-series absences, 0 acquisition errors/incompatible series/failed quality checks/duplicate canonical-key groups, source `IMF_SDMX_IIP_API_V1`, dataset `IMF:IIP`, as-of `imf-iip-asof-20260711t233032958933600z`.

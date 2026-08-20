@@ -2,20 +2,20 @@
 
 ## Goal
 
-No successor objective is active. MacroForge is idle after the Git publication, governance reconciliation, and full closure of `TASK-223`.
+No successor objective is active. TASK-224 is complete when its external final manifest authenticates all required gates and three final-byte PASS reviews; publication state is determined from live Git.
 
 ## Current gates
 
-1. TASK-223 implementation commit `9d00347cbddb76531b0dacf3c692d1828cf8eed9` is confirmed on remote `main`; its ten-path candidate SHA-256 is `a25640b04ddf8a8fd1034bc4e7e402a46e0c4f11eb84e10d3c42bdfc6714409c`.
-2. The proof tranche, deterministic replay, two-database convergence, complete suite, and independent review passed; TASK-223 is published, reconciled, and closed.
-3. Git publication did not constitute a governed Corporate Reporting data release and did not grant mapping, rights, redistribution, release, publication-operation, or downstream-delivery authority.
-4. TASK-223 added or altered zero governed rows. The dirty protected live `main`, excluded evidence, and provider evidence remain protected.
-5. No successor is active. TASK-224 is not activated and requires separate explicit authorization.
+1. Corporate Reporting remains a bounded sibling domain inside MacroForge under DEC-024.
+2. The next specified step is a source-native private-analysis release-candidate admission contract and disposable rehearsal for the exact TASK-223 tranche.
+3. That successor is inactive and separately authorized work only.
+4. Accepted mappings, rights approval, governed release, redistribution, publication operations, and downstream delivery remain zero/unauthorized as applicable.
+5. Git publication of TASK-224 documentation grants none of those data authorities.
 
-## Most recently closed task
+## Most recently completed task
 
-`artifacts/tasks/TASK-223-corporate-proof-tranche-occurrence-ingestion.md`
+`artifacts/tasks/TASK-224-corporate-reporting-domain-placement-release-admission.md`
 
 ## Current next action
 
-Await a separately authorized objective. Do not infer or activate TASK-224 from TASK-223 closure.
+Await separate explicit authorization. Do not infer or activate TASK-225.

@@ -125,6 +125,7 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 - `R-20260627-deterministic-ingestion-substrate-execution-model.md`
 - `R-20260627-final-governance-refinement-and-freeze.md`
 - `R-20260627-foundational-capability-extraction-candidate.md`
+- `R-20260820-task-224-corporate-reporting-release-admission-gap-map.md`
 - `task-209-forecast-vintage-decision-evidence-integrity-audit.md`
 - `task-209-final-closeout-consistency-check.md`
 - `task-209-imf-weo-g20-projections-artifact-checksums.txt`
@@ -142,6 +143,7 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `R-20260820-task-224-corporate-reporting-release-admission-gap-map.md` separates source-native admission, comparability, rights, eligibility, publication, and downstream blockers; specifies the minimum KnowledgeForge contract; and freezes an exact inactive TASK-225 rehearsal specification.
 - `R-20260801-ignored-artifact-preservation-governance-closeout.json` preserves the exact correction/review chronology through the latest `BLOCKED / PUBLICATION TRANSITION DEFECT` and sixth correction. Lifecycle v3 encodes a state-conditioned fixed point: exact-byte PASS can authorize bounded publication without editing reviewed bytes, BLOCK prohibits publication, local commit still requires remote verification, and verified remote equality closes the workstream without implicit successor activation.
 - TASK-216 reports document IMF BOP annual current-account Phase 2 evidence: provider-structure investigation, frozen candidate universe/prediction, raw/processed checksum reconciliation, PostgreSQL load/idempotence/later-snapshot coexistence, prediction evaluation, and IMF-BOP extraction decision.
 - TASK-209 reports document IMF WEO April 2026 release/vintage evidence, Saudi Arabia LUR explicit-missing semantics, final 342-fact PostgreSQL accounting, checksum reconciliation, and architecture verdict that the existing revision-aware scalar substrate is sufficient.
