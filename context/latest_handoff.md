@@ -1,38 +1,32 @@
 # Latest Handoff
 
-## Terminal state
+## Active task
 
-`TASK-222-corporate-portfolio-v1-manifest-validator` is implemented, independently reviewed, Git-published, and technically closed. Exactly eight TASK-222 paths were committed as `4f2647d5350d580848e0bf9431f20aff1c1d9c20`, with parent `3e2cfc2d5db3d0236a8e468868d2a690d76d7b15`, and pushed by non-force fast-forward to remote `main`; local `origin/main` advanced to the same commit. No successor task is active.
+`TASK-223-corporate-proof-tranche-occurrence-ingestion` is reviewed and publication-ready in detached worktree `/home/mkkto/srv/EIP/worktrees/MacroForge-task223-corporate-proof-tranche-ingestion`, baseline `6900a58f2a5850f6511e20a23f036efcf71ea9d8`. It is not committed, published, or closed. No successor is active.
 
-## Published boundary
+## Proven checkpoint
 
+- Ledger: 19 acts, 10 absences, 24,050 bytes, SHA-256 `6fe4a5ad05836a7e290e71297e4d6ab328232cbfd5fefa2a0476370250061c9c`.
+- Provider evidence: 147 files, 177,860,301 bytes, identity `6f72b49b7de4b99b35134797280f4cdbbb2a546101f3f810f38789f80a87917e`; reused without network.
+- Campaign `a4c0bc3a385b4612a8156222b3c07101` independently ingested and replayed R4A/R4B. Both stable-state SHA-256 values are `6ec07fda17adc36825479552bc34baada697b0cfee7e535e914acf95545afe15`.
+- Fresh read-only R4A/R4B reauthentication reproduced 19 filings, 147 documents, 35,048 occurrences, 32,381 semantic slots, two proposed amendment relationships, and zero mapping/snapshot/eligibility/release/publication/rights/quality authority.
+- Corrected complete suite invoked exactly once with authenticated Python 3.11.15 and pytest 8.4.2: 604 accounted, 588 passed, 16 protected-provider skips, zero failed/errored/deselected/unexecuted, exit zero.
+- Exact suite residue was authenticated and reconciled non-recursively. Protected TASK-165 report SHA-256 remained `aee8ca86a9dd4c72f3ad5a217966bc7c8219d223523115c1addfcc7cfd479358`.
 
-- `src/macroforge/sec_corporate_portfolio.py`
-- `tools/build_sec_corporate_portfolio_manifest.py`
-- `tests/test_sec_corporate_portfolio.py`
-- `artifacts/reports/sec-corporate-portfolio-v1-manifest-20260630.json`
-- `artifacts/tasks/TASK-222-corporate-portfolio-v1-manifest-validator.md`
-- `state/active_goal.md`
-- `state/project_state.md`
-- `context/latest_handoff.md`
+## Preservation
 
-## Final evidence
+- Governed historical Corporate Reporting rows predate TASK-223. TASK-223 made no governed write; release/rights/quality/reservation/completion remain zero.
+- Dirty live `main`, retained TASK-222 worktree, provider evidence, and unrelated state remain protected.
+- No stage, commit, push, publication, governed ingestion, authority acceptance, redistribution, delivery, or successor activation occurred.
 
-- Final implementation freeze before continuity-only edits: `00cab9c83a49e8e601fd48d3611f1fee604f8c034c2aa6b4819dc28e9dfd8c75`.
-- Fresh independent adversarial review: unconditional `PASS`.
+## Frozen implementation and review
 
-## Verification
+Clean implementation freeze `/tmp/task223-clean-final-implementation-freeze.json` authenticated ten paths at canonical candidate SHA-256 `6676cb6230fa911d0c31a0a3bfe893f9c3822bace8c44edcb27ca93138689366` before continuity-record updates.
 
-- Focused TASK-222: `30 passed`.
-- Related Corporate Reporting: `58 passed, 16 skipped`; protected-provider skips remain skips.
-- Earlier repository suite: `572 passed, 16 skipped, 2 failed in 505.13s`; both failures were absent ignored WDI-fixture failures outside TASK-222.
-- Authoritative final suite after fixture provisioning and four permanent URL/redirect tests: `594/594` executed, `578 passed`, `16 skipped`, zero failed/errors/deselected/unexecuted, exit status `0`.
-- Compilation, `git diff --check`, report authentication, C/D and E/F comparisons, coherence, isolation, privacy, package identity, and dependency provenance checks passed within their stated boundaries.
+Three independent read-only reviews authenticated those identical bytes and returned unconditional PASS for: (1) Corporate Reporting boundary and portfolio proof; (2) transaction/replay/isolation/governance; and (3) test sufficiency and exact suite-time byte validity. No reviewer modified files, reran ingestion or pytest, or wrote PostgreSQL.
 
-## Authority and remaining gates
+## Next authorization
 
-No provider body entered Git or governed PostgreSQL. All ten inherited protected paths were excluded from the publication commit and remain unchanged. The live checked-out `main` branch remains deliberately at the parent because its 39 tracked-unstaged and 1,070 untracked paths are protected external state. Corporate Reporting releases, reservations, completions, accepted mappings, eligible revisions, rights authority, and quality authority remain zero; remote delivery remains disabled. Git publication did not perform PostgreSQL ingestion, create a MacroForge governed data release, accept mappings or rights, authorize redistribution, or enable delivery.
+After post-record checks and final freeze, authorize publication only for the exact authenticated TASK-223 path set. Do not launch another campaign or replay, rerun the complete suite, or activate TASK-224.
 
-Resume bounded project recovery without inferring a successor or data-publication authority:
-
-`cd /home/mkkto/srv/EIP/worktrees/MacroForge-corporate-portfolio-v1-manifest-validator && PYTHONDONTWRITEBYTECODE=1 python3 tools/recover_session.py --project . --json`
+Resume: `cd /home/mkkto/srv/EIP/worktrees/MacroForge-task223-corporate-proof-tranche-ingestion && PYTHONDONTWRITEBYTECODE=1 python3 tools/recover_session.py --project . --json`

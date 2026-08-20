@@ -19,6 +19,7 @@ XBRLDI = "http://xbrl.org/2006/xbrldi"
 XML = "http://www.w3.org/XML/1998/namespace"
 XSI = "http://www.w3.org/2001/XMLSchema-instance"
 XSD = "http://www.w3.org/2001/XMLSchema"
+IX = "http://www.xbrl.org/2013/inlineXBRL"
 
 
 class ParserInvariantError(ValueError):
@@ -172,6 +173,9 @@ class Occurrence:
     decimals: str | None
     precision: str | None
     occurrence_sha256: str
+    inline_format: str | None = None
+    inline_scale: int | None = None
+    inline_sign: str | None = None
 
     @property
     def value_fingerprint(self) -> str:
@@ -399,6 +403,128 @@ def parse_instance(path: str | Path, *, accession: str, dts_manifest_sha256: str
     }
     output = [{"slot": s.slot_sha256, "status": s.status,
                "occurrences": [o.occurrence_sha256 for o in s.occurrences]} for s in sorted(slots.values(), key=lambda x: x.slot_sha256)]
+    return ParserReport(accession, dts_manifest_sha256, sha256(path.read_bytes()).hexdigest(),
+                        contexts, units, occurrences, slots, metrics, _digest(output))
+
+
+def _inline_lexical(element: ET.Element, continuations: Mapping[str, ET.Element]) -> str:
+    """Return source lexical text, respecting Inline XBRL exclude/continuation markup."""
+    pieces: list[str] = []
+
+    def collect(node: ET.Element) -> None:
+        if node.tag == f"{{{IX}}}exclude":
+            return
+        if node.text:
+            pieces.append(node.text)
+        for child in node:
+            collect(child)
+            if child.tail:
+                pieces.append(child.tail)
+
+    collect(element)
+    wanted = element.attrib.get("continuedAt")
+    seen: set[str] = set()
+    while wanted:
+        if wanted in seen or wanted not in continuations:
+            raise ParserInvariantError("invalid Inline XBRL continuation chain")
+        seen.add(wanted)
+        continuation = continuations[wanted]
+        collect(continuation)
+        wanted = continuation.attrib.get("continuedAt")
+    return "".join(pieces).strip()
+
+
+def parse_inline_instance(
+    path: str | Path, *, accession: str, dts_manifest_sha256: str,
+) -> ParserReport:
+    """Parse raw Inline XBRL facts without transforming their source lexical values."""
+    path = Path(path)
+    root, namespace_scopes = _parse_with_namespace_scopes(path)
+    contexts = {
+        element.attrib["id"]: _parse_context(element, namespace_scopes)
+        for element in root.findall(f".//{{{XBRLI}}}context")
+    }
+    units = {
+        element.attrib["id"]: _parse_unit(element, namespace_scopes)
+        for element in root.findall(f".//{{{XBRLI}}}unit")
+    }
+    continuations = {
+        element.attrib["id"]: element
+        for element in root.iter(f"{{{IX}}}continuation") if "id" in element.attrib
+    }
+    occurrences: list[Occurrence] = []
+    slots: dict[str, SemanticSlot] = {}
+    fact_tags = {f"{{{IX}}}nonFraction", f"{{{IX}}}nonNumeric"}
+    for element in root.iter():
+        if element.tag not in fact_tags:
+            continue
+        ordinal = len(occurrences) + 1
+        context_ref = element.attrib.get("contextRef", "")
+        unit_ref = element.attrib.get("unitRef")
+        if context_ref not in contexts:
+            raise ParserInvariantError(f"fact references unknown context {context_ref}")
+        if unit_ref is not None and unit_ref not in units:
+            raise ParserInvariantError(f"fact references unknown unit {unit_ref}")
+        scope = namespace_scopes[id(element)]
+        concept = _qname(element.attrib.get("name", ""), scope)
+        format_name = _qname(element.attrib["format"], scope) if "format" in element.attrib else None
+        raw_scale = element.attrib.get("scale")
+        try:
+            scale = int(raw_scale) if raw_scale is not None else None
+        except ValueError as error:
+            raise ParserInvariantError("Inline XBRL scale is not an integer") from error
+        sign = element.attrib.get("sign")
+        lexical = _inline_lexical(element, continuations)
+        nil = element.attrib.get(f"{{{XSI}}}nil", "false").lower() in {"1", "true"}
+        lang = element.attrib.get(f"{{{XML}}}lang")
+        payload = {
+            "ordinal": ordinal, "concept": concept, "context": context_ref,
+            "unit": unit_ref, "lang": lang, "value": lexical, "nil": nil,
+            "decimals": element.attrib.get("decimals"),
+            "precision": element.attrib.get("precision"),
+        }
+        occurrence = Occurrence(
+            ordinal, concept, context_ref, unit_ref, lang, lexical, nil,
+            element.attrib.get("decimals"), element.attrib.get("precision"),
+            _digest(payload), format_name, scale, sign,
+        )
+        occurrences.append(occurrence)
+        context = contexts[context_ref]
+        unit_hash = units[unit_ref].semantic_hash if unit_ref else None
+        correspondence = (concept, context.correspondence(), unit_hash, lang)
+        slot_hash = _digest({"accession": accession, "dts": dts_manifest_sha256,
+                             "correspondence": correspondence})
+        slots.setdefault(slot_hash, SemanticSlot(slot_hash, correspondence, [])).occurrences.append(occurrence)
+    for slot in slots.values():
+        values = {item.value_fingerprint for item in slot.occurrences}
+        if len(values) == 1:
+            slot.status = "accepted_identical"
+            slot.selected_occurrence = min(
+                slot.occurrences, key=lambda item: (item.occurrence_sha256, item.source_ordinal),
+            )
+        else:
+            slot.status = "conflict"
+            slot.selected_occurrence = None
+    metrics = {
+        "context_count": len(contexts),
+        "instant_context_count": sum(c.period[0] == "instant" for c in contexts.values()),
+        "duration_context_count": sum(c.period[0] == "duration" for c in contexts.values()),
+        "dimensioned_context_count": sum(bool(c.dimensions) for c in contexts.values()),
+        "typed_member_count": sum(d.member_kind == "typed" for c in contexts.values() for d in c.dimensions),
+        "unit_count": len(units), "fact_count": len(occurrences),
+        "semantic_slot_count": len(slots),
+        "duplicate_slot_count": sum(len(s.occurrences) > 1 for s in slots.values()),
+        "duplicate_occurrence_excess": sum(len(s.occurrences) - 1 for s in slots.values()),
+        "conflicting_slot_count": sum(s.status == "conflict" for s in slots.values()),
+        "inline_scale_count": sum(item.inline_scale is not None for item in occurrences),
+        "inline_sign_count": sum(item.inline_sign is not None for item in occurrences),
+        "nil_occurrence_count": sum(item.nil for item in occurrences),
+    }
+    output = [
+        {"slot": s.slot_sha256, "status": s.status,
+         "occurrences": [o.occurrence_sha256 for o in s.occurrences]}
+        for s in sorted(slots.values(), key=lambda item: item.slot_sha256)
+    ]
     return ParserReport(accession, dts_manifest_sha256, sha256(path.read_bytes()).hexdigest(),
                         contexts, units, occurrences, slots, metrics, _digest(output))
 

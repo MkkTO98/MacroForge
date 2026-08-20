@@ -1,0 +1,640 @@
+{
+  "authority_limits": {
+    "amendment_relationships_are_authoritative": false,
+    "restatement_status": "undetermined",
+    "rights_or_release_authority": false,
+    "semantic_mappings_accepted": false
+  },
+  "counts": {
+    "explicit_absences": 10,
+    "selected_amendments": 2,
+    "selected_filing_acts": 19,
+    "selected_inline": 18,
+    "selected_originals": 17,
+    "selected_traditional": 1,
+    "unique_ciks": 15
+  },
+  "explicit_absences": [
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2024-11-22T16:23:38.000Z",
+        "accession": "0001104659-24-122113",
+        "description": "Marathon Oil acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/101778/000110465924122113/tm2428994d1_8k.htm"
+      },
+      "cik": "0000101778",
+      "company": "Marathon Oil",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "f5566b5e11e8aca91db46472c10087252c863f695581c785acaa96eb7519e5e6",
+      "expected_form": "10-K",
+      "fiscal_period": "FY",
+      "issuer_fiscal_year": 2024,
+      "slot_id": "0000101778:2024:FY"
+    },
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2024-11-22T16:23:38.000Z",
+        "accession": "0001104659-24-122113",
+        "description": "Marathon Oil acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/101778/000110465924122113/tm2428994d1_8k.htm"
+      },
+      "cik": "0000101778",
+      "company": "Marathon Oil",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "6f7749f6cfe5a025f72d722213adb45a52c3411bd87821013fbd7f4bc56728e3",
+      "expected_form": "10-K",
+      "fiscal_period": "FY",
+      "issuer_fiscal_year": 2025,
+      "slot_id": "0000101778:2025:FY"
+    },
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2024-11-22T16:23:38.000Z",
+        "accession": "0001104659-24-122113",
+        "description": "Marathon Oil acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/101778/000110465924122113/tm2428994d1_8k.htm"
+      },
+      "cik": "0000101778",
+      "company": "Marathon Oil",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "91a625fc25d50c09161615c6d47e8f1f8d6d2fdc0050cbb29a5b5291405109fc",
+      "expected_form": "10-Q",
+      "fiscal_period": "Q1",
+      "issuer_fiscal_year": 2025,
+      "slot_id": "0000101778:2025:Q1"
+    },
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2024-11-22T16:23:38.000Z",
+        "accession": "0001104659-24-122113",
+        "description": "Marathon Oil acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/101778/000110465924122113/tm2428994d1_8k.htm"
+      },
+      "cik": "0000101778",
+      "company": "Marathon Oil",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "11f7dd0b7005939ae30099620f13dac40109655ecff05e524c7cd94fef54831a",
+      "expected_form": "10-Q",
+      "fiscal_period": "Q2",
+      "issuer_fiscal_year": 2025,
+      "slot_id": "0000101778:2025:Q2"
+    },
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2024-11-22T16:23:38.000Z",
+        "accession": "0001104659-24-122113",
+        "description": "Marathon Oil acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/101778/000110465924122113/tm2428994d1_8k.htm"
+      },
+      "cik": "0000101778",
+      "company": "Marathon Oil",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "9dcd3fdc1b30b9b93684520d2fdcb1b9485ed78681d1d201c1b73ba093e132c2",
+      "expected_form": "10-Q",
+      "fiscal_period": "Q3",
+      "issuer_fiscal_year": 2025,
+      "slot_id": "0000101778:2025:Q3"
+    },
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2025-01-16T08:36:13.000Z",
+        "accession": "0001193125-25-007425",
+        "description": "Gatos Silver acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/1517006/000119312525007425/d871159d8k.htm"
+      },
+      "cik": "0001517006",
+      "company": "Gatos Silver",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "61b6000e7df7e588169b50c934f919615ad19f5d10f058f9acb582a6ea2355f3",
+      "expected_form": "10-K",
+      "fiscal_period": "FY",
+      "issuer_fiscal_year": 2024,
+      "slot_id": "0001517006:2024:FY"
+    },
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2025-01-16T08:36:13.000Z",
+        "accession": "0001193125-25-007425",
+        "description": "Gatos Silver acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/1517006/000119312525007425/d871159d8k.htm"
+      },
+      "cik": "0001517006",
+      "company": "Gatos Silver",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "6defb1443dc7d4c3f42977df755231e6de633c7e489005a7dbb9f0e1a2a95d60",
+      "expected_form": "10-K",
+      "fiscal_period": "FY",
+      "issuer_fiscal_year": 2025,
+      "slot_id": "0001517006:2025:FY"
+    },
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2025-01-16T08:36:13.000Z",
+        "accession": "0001193125-25-007425",
+        "description": "Gatos Silver acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/1517006/000119312525007425/d871159d8k.htm"
+      },
+      "cik": "0001517006",
+      "company": "Gatos Silver",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "c3a3828fae55a25abc4b4f9a54f1d06a2d14b6c6e4774c5d9ca3426e8baac18a",
+      "expected_form": "10-Q",
+      "fiscal_period": "Q1",
+      "issuer_fiscal_year": 2025,
+      "slot_id": "0001517006:2025:Q1"
+    },
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2025-01-16T08:36:13.000Z",
+        "accession": "0001193125-25-007425",
+        "description": "Gatos Silver acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/1517006/000119312525007425/d871159d8k.htm"
+      },
+      "cik": "0001517006",
+      "company": "Gatos Silver",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "3900bc3e7aa533a85f3a243b074e6c4e7566c0f6d7c9ddd8b42c949457e19ad7",
+      "expected_form": "10-Q",
+      "fiscal_period": "Q2",
+      "issuer_fiscal_year": 2025,
+      "slot_id": "0001517006:2025:Q2"
+    },
+    {
+      "acceptance_cutoff": "2026-06-30T23:59:59Z",
+      "cessation_evidence": {
+        "accepted_at": "2025-01-16T08:36:13.000Z",
+        "accession": "0001193125-25-007425",
+        "description": "Gatos Silver acquisition closing 8-K; reporting ceased after FY2024 Q3.",
+        "kind": "acquisition_cessation",
+        "url": "https://www.sec.gov/Archives/edgar/data/1517006/000119312525007425/d871159d8k.htm"
+      },
+      "cik": "0001517006",
+      "company": "Gatos Silver",
+      "disposition": "acquisition_cessation_absence",
+      "expected_explicit_absence_identity": "5db0829ab2d66c574f655c6abe831e8b41341b6358fad3ff22471c06f83b5b46",
+      "expected_form": "10-Q",
+      "fiscal_period": "Q3",
+      "issuer_fiscal_year": 2025,
+      "slot_id": "0001517006:2025:Q3"
+    }
+  ],
+  "filing_acts": [
+    {
+      "accepted_at": "2024-02-21T22:34:43.000Z",
+      "accession": "0000003570-24-000040",
+      "amendment_relationship": null,
+      "cik": "0000003570",
+      "company": "Cheniere Energy",
+      "filing_date": "2024-02-22",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "d4a8013a964291b7bfb0013a4e9a1fb38a47bb646fd03b76df297274b1c4abb3",
+      "original_or_amendment": "original",
+      "primary_document": "lng-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-28T21:37:18.000Z",
+      "accession": "0000034088-24-000018",
+      "amendment_relationship": null,
+      "cik": "0000034088",
+      "company": "ExxonMobil",
+      "filing_date": "2024-02-28",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "fb21a0a70bcfd4f2130a6597ac8675e450ab324a1ffb26daf4e1ca4d96929ecb",
+      "original_or_amendment": "original",
+      "primary_document": "xom-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-06T19:42:35.000Z",
+      "accession": "0000045012-24-000007",
+      "amendment_relationship": null,
+      "cik": "0000045012",
+      "company": "Halliburton",
+      "filing_date": "2024-02-06",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "3ccef6a55995d86f907724a19bf8cc7032d2c0c8d7f82a969bf821e3d2cd0cf3",
+      "original_or_amendment": "original",
+      "primary_document": "hal-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-26T21:07:14.000Z",
+      "accession": "0000093410-24-000013",
+      "amendment_relationship": null,
+      "cik": "0000093410",
+      "company": "Chevron",
+      "filing_date": "2024-02-26",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "c2880a77c878216f3b420809e9915f8057537b0493890158fba1198c4411aae6",
+      "original_or_amendment": "original",
+      "primary_document": "cvx-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-22T16:33:31.000Z",
+      "accession": "0000101778-24-000023",
+      "amendment_relationship": null,
+      "cik": "0000101778",
+      "company": "Marathon Oil",
+      "filing_date": "2024-02-22",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "0ff2d049c870daf98d785beedc7ce774c0b62883160822b410d80d6f143846db",
+      "original_or_amendment": "original",
+      "primary_document": "mro-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-14T21:23:10.000Z",
+      "accession": "0000797468-24-000034",
+      "amendment_relationship": null,
+      "cik": "0000797468",
+      "company": "Occidental",
+      "filing_date": "2024-02-14",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "602c32cb16a614d1e272281f740b2c9c10fd0affa3783b13ada97b26c77697f6",
+      "original_or_amendment": "original",
+      "primary_document": "oxy-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-22T21:43:31.000Z",
+      "accession": "0000821189-24-000011",
+      "amendment_relationship": null,
+      "cik": "0000821189",
+      "company": "EOG Resources",
+      "filing_date": "2024-02-22",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "c7294db376c24b53d0ff7ae6311c30a391e535acf7669f389bce23441a630980",
+      "original_or_amendment": "original",
+      "primary_document": "eog-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-15T23:00:31.000Z",
+      "accession": "0000831259-24-000011",
+      "amendment_relationship": null,
+      "cik": "0000831259",
+      "company": "Freeport-McMoRan",
+      "filing_date": "2024-02-16",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "1c012d2d51d5a8498802c2a34d7dd215238f1b172908199810ddddadf1ee5012",
+      "original_or_amendment": "original",
+      "primary_document": "fcx-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-14T22:46:06.000Z",
+      "accession": "0000915913-24-000016",
+      "amendment_relationship": null,
+      "cik": "0000915913",
+      "company": "Albemarle",
+      "filing_date": "2024-02-15",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "93428b797a94a66336674aa7faf0765b6ad87afcee70433a01af7b55ff38aff6",
+      "original_or_amendment": "original",
+      "primary_document": "alb-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-03-28T20:18:54.000Z",
+      "accession": "0000915913-24-000094",
+      "amendment_relationship": {
+        "authoritative": false,
+        "basis": "same_cik_base_form_report_date_and_fiscal_slot",
+        "original_accession": "0000915913-24-000016",
+        "restatement_status": "undetermined"
+      },
+      "cik": "0000915913",
+      "company": "Albemarle",
+      "filing_date": "2024-03-28",
+      "fiscal_period": "FY",
+      "form": "10-K/A",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "e8777dd88234bd2aa9b581dba11d433f77d0ef6bf19b3413108d0c37d6a9844a",
+      "original_or_amendment": "amendment",
+      "primary_document": "alb-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "exactly_linked_fy2023_10ka"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-01-24T17:15:58.000Z",
+      "accession": "0000950170-24-006884",
+      "amendment_relationship": null,
+      "cik": "0000087347",
+      "company": "SLB",
+      "filing_date": "2024-01-24",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "1d684c683aa925e87b74faf5185bd5cee5893c40c1cf44b234d2890813aed6f5",
+      "original_or_amendment": "original",
+      "primary_document": "slb-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2021-05-07T13:39:10.000Z",
+      "accession": "0001104659-21-062988",
+      "amendment_relationship": null,
+      "cik": "0001517006",
+      "company": "Gatos Silver",
+      "filing_date": "2021-05-07",
+      "fiscal_period": "Q1",
+      "form": "10-Q",
+      "is_inline_xbrl": false,
+      "issuer_fiscal_year": 2021,
+      "manifest_package_identity": "e11af68b1c692dbb926cdfb8138d25327d23e20de5c1ce2f259e99c3b9a62992",
+      "original_or_amendment": "original",
+      "primary_document": "tm2113231d1_10q.htm",
+      "report_date": "2021-03-31",
+      "selection_criteria": [
+        "gatos_traditional_xbrl"
+      ],
+      "xbrl_format": "traditional"
+    },
+    {
+      "accepted_at": "2024-02-15T19:01:15.000Z",
+      "accession": "0001163165-24-000010",
+      "amendment_relationship": null,
+      "cik": "0001163165",
+      "company": "ConocoPhillips",
+      "filing_date": "2024-02-15",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "3e2802125b84cd4db298cf30a0b812e7f9fa553922ad916183093e573042a802",
+      "original_or_amendment": "original",
+      "primary_document": "cop-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-29T12:51:31.000Z",
+      "accession": "0001164727-24-000016",
+      "amendment_relationship": null,
+      "cik": "0001164727",
+      "company": "Newmont",
+      "filing_date": "2024-02-29",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "ced980a7e19426839f58f71d0c3e6dde829607981bf966d6b8f523580de631a5",
+      "original_or_amendment": "original",
+      "primary_document": "nem-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-20T13:56:07.000Z",
+      "accession": "0001506307-24-000011",
+      "amendment_relationship": null,
+      "cik": "0001506307",
+      "company": "Kinder Morgan",
+      "filing_date": "2024-02-20",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "36f178cbf2149ede2c4877d1b9a7d39c0b9ec0b47a26f77184c239d6d87a4ced",
+      "original_or_amendment": "original",
+      "primary_document": "kmi-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2023-07-25T20:14:45.000Z",
+      "accession": "0001562762-23-000287",
+      "amendment_relationship": null,
+      "cik": "0000016160",
+      "company": "Cal-Maine Foods",
+      "filing_date": "2023-07-25",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "9084dcaa75da61dddde71b15331b4b324c37685d2489a75bcebfbaa71c58b510",
+      "original_or_amendment": "original",
+      "primary_document": "calm-20230603_10K.htm",
+      "report_date": "2023-06-03",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2025-07-22T20:22:06.000Z",
+      "accession": "0001562762-25-000170",
+      "amendment_relationship": null,
+      "cik": "0000016160",
+      "company": "Cal-Maine Foods",
+      "filing_date": "2025-07-22",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2025,
+      "manifest_package_identity": "c379eef094510246a7ed1c3c08cd906b9d884feaa07e09a11b329c354765e9a9",
+      "original_or_amendment": "original",
+      "primary_document": "calm2025053110K.htm",
+      "report_date": "2025-05-31",
+      "selection_criteria": [
+        "cal_maine_fy2025_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-02-20T21:55:16.000Z",
+      "accession": "0001628280-24-005761",
+      "amendment_relationship": null,
+      "cik": "0001517006",
+      "company": "Gatos Silver",
+      "filing_date": "2024-02-21",
+      "fiscal_period": "FY",
+      "form": "10-K",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "7de17150430daddd6728e14eb1aab6ce9b2b6a0fb6ba9a43e4f4cb26b7ca1888",
+      "original_or_amendment": "original",
+      "primary_document": "gato-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "fy2023_original_10k"
+      ],
+      "xbrl_format": "inline"
+    },
+    {
+      "accepted_at": "2024-05-06T16:19:05.000Z",
+      "accession": "0001628280-24-020639",
+      "amendment_relationship": {
+        "authoritative": false,
+        "basis": "same_cik_base_form_report_date_and_fiscal_slot",
+        "original_accession": "0001628280-24-005761",
+        "restatement_status": "undetermined"
+      },
+      "cik": "0001517006",
+      "company": "Gatos Silver",
+      "filing_date": "2024-05-06",
+      "fiscal_period": "FY",
+      "form": "10-K/A",
+      "is_inline_xbrl": true,
+      "issuer_fiscal_year": 2023,
+      "manifest_package_identity": "527b82f826044068e2fb687acdf4ca2db2654bf4b319c91778e0b2069ebef63e",
+      "original_or_amendment": "amendment",
+      "primary_document": "gato-20231231.htm",
+      "report_date": "2023-12-31",
+      "selection_criteria": [
+        "exactly_linked_fy2023_10ka"
+      ],
+      "xbrl_format": "inline"
+    }
+  ],
+  "frozen_absence_identities": [
+    "11f7dd0b7005939ae30099620f13dac40109655ecff05e524c7cd94fef54831a",
+    "3900bc3e7aa533a85f3a243b074e6c4e7566c0f6d7c9ddd8b42c949457e19ad7",
+    "5db0829ab2d66c574f655c6abe831e8b41341b6358fad3ff22471c06f83b5b46",
+    "61b6000e7df7e588169b50c934f919615ad19f5d10f058f9acb582a6ea2355f3",
+    "6defb1443dc7d4c3f42977df755231e6de633c7e489005a7dbb9f0e1a2a95d60",
+    "6f7749f6cfe5a025f72d722213adb45a52c3411bd87821013fbd7f4bc56728e3",
+    "91a625fc25d50c09161615c6d47e8f1f8d6d2fdc0050cbb29a5b5291405109fc",
+    "9dcd3fdc1b30b9b93684520d2fdcb1b9485ed78681d1d201c1b73ba093e132c2",
+    "c3a3828fae55a25abc4b4f9a54f1d06a2d14b6c6e4774c5d9ca3426e8baac18a",
+    "f5566b5e11e8aca91db46472c10087252c863f695581c785acaa96eb7519e5e6"
+  ],
+  "frozen_accessions": [
+    "0000003570-24-000040",
+    "0000034088-24-000018",
+    "0000045012-24-000007",
+    "0000093410-24-000013",
+    "0000101778-24-000023",
+    "0000797468-24-000034",
+    "0000821189-24-000011",
+    "0000831259-24-000011",
+    "0000915913-24-000016",
+    "0000915913-24-000094",
+    "0000950170-24-006884",
+    "0001104659-21-062988",
+    "0001163165-24-000010",
+    "0001164727-24-000016",
+    "0001506307-24-000011",
+    "0001562762-23-000287",
+    "0001562762-25-000170",
+    "0001628280-24-005761",
+    "0001628280-24-020639"
+  ],
+  "ledger_sha256": "d55e413cae29d8abef44a871a22205d0504076ace916b1c643399ab7fb1a12b2",
+  "schema": "macroforge.task223.corporate_proof_tranche_ledger.v1",
+  "selection_rules": [
+    "exactly one original 10-K for issuer fiscal year 2023 for each of 15 accepted CIKs",
+    "every 10-K/A linked by the published same-CIK/base-form/report-date/fiscal-slot relation to a selected FY2023 original",
+    "Gatos Silver traditional-XBRL accession 0001104659-21-062988",
+    "Cal-Maine Foods issuer-fiscal-year-2025 10-K and every exactly linked 10-K/A",
+    "all acquisition-cessation absence slots"
+  ],
+  "source_manifest": {
+    "byte_length": 9767049,
+    "path": "artifacts/reports/sec-corporate-portfolio-v1-manifest-20260630.json",
+    "semantic_identity": "937056b9e903daa5e3550ed18cb1dff6d34bb1fbc49e3bb8e1f51a8d4420516a",
+    "serialized_sha256": "9cde110033fd3e8f22bedf768f01e7f90dd2c72784ad4f43172e5220ad9edf9f"
+  },
+  "task_id": "TASK-223"
+}

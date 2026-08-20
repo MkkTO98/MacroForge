@@ -13,10 +13,12 @@ from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 import subprocess
+import time
 from typing import Any, Iterable
-from uuid import UUID, uuid5
+from uuid import UUID, uuid4, uuid5
 
 from macroforge.sec_corporate_reporting import ParserReport, parse_extension_schema, parse_instance
 
@@ -31,6 +33,15 @@ class QualityGateError(RuntimeError):
 
 class PostgreSQLLoadError(RuntimeError):
     pass
+
+
+class PostgreSQLLoadTimeout(PostgreSQLLoadError):
+    """A bounded load expired; reconciliation is included in the message."""
+
+
+RECONCILIATION_QUERY_TIMEOUT_SECONDS = 15.0
+CANCEL_POLL_SECONDS = 15.0
+TERMINATE_POLL_SECONDS = 15.0
 
 
 class CorporateReportingStore:
@@ -104,6 +115,10 @@ class CorporateFilingLoad:
     parser_contract: str = "sec-rendered-xbrl-instance-v1"
     parser_version: str = "1"
     parser_selection_status: str | None = None
+    cik: str = "0001517006"
+    issuer_name: str = "Gatos Silver, Inc."
+    relationship_original_accession: str | None = None
+    relationship_status: str | None = None
 
 
 @dataclass(frozen=True)
@@ -299,11 +314,32 @@ def _knowledge(sql: list[str], revision_id: str, axis: str, key: str, pipeline_i
 
 
 def _build_postgresql_sql(
-    filings: tuple[CorporateFilingLoad, ...], cik: str, knowledge_cutoff: str,
+    filings: tuple[CorporateFilingLoad, ...], cik_or_knowledge_cutoff: str,
+    knowledge_cutoff: str | None = None,
+    *, application_name: str = "macroforge-corporate-loader",
+    statement_timeout_ms: int = 300_000,
+    lock_timeout_ms: int = 30_000,
+    idle_transaction_timeout_ms: int = 60_000,
+    governance_closure: bool = True,
 ) -> str:
+    # The former batch-wide CIK argument remains accepted only for compatibility;
+    # source identity now travels on each immutable filing load.
+    if knowledge_cutoff is None:
+        knowledge_cutoff = cik_or_knowledge_cutoff
     if not filings:
         raise ValueError("at least one filing is required")
-    sql = ["\\set ON_ERROR_STOP on", "BEGIN;", "SET CONSTRAINTS ALL DEFERRED;"]
+    if not (0 < lock_timeout_ms < statement_timeout_ms):
+        raise ValueError("lock timeout must be positive and shorter than statement timeout")
+    if idle_transaction_timeout_ms <= 0:
+        raise ValueError("idle transaction timeout must be positive")
+    sql = [
+        "\\set ON_ERROR_STOP on", "BEGIN;",
+        f"SET LOCAL application_name={_sql(application_name)};",
+        f"SET LOCAL statement_timeout='{statement_timeout_ms}ms';",
+        f"SET LOCAL lock_timeout='{lock_timeout_ms}ms';",
+        f"SET LOCAL idle_in_transaction_session_timeout='{idle_transaction_timeout_ms}ms';",
+        "SET CONSTRAINTS ALL DEFERRED;",
+    ]
     for filing in sorted(filings, key=lambda f: f.accession):
         run_key = (f"sec-corporate-reporting:{filing.accession}:{filing.source_manifest_sha256}:"
                    f"{filing.dts_manifest_sha256}:{filing.parser_attempt_key}:{filing.parser_contract}:"
@@ -354,11 +390,13 @@ def _build_postgresql_sql(
     _insert(sql, "meta.source", ("source_code", "source_name", "source_home_url", "license_note"),
             ("SEC_CORPORATE_REPORTING", "U.S. Securities and Exchange Commission", "https://www.sec.gov/",
              "rights unknown; private analysis only"))
-    entity_id = _id("entity", "sec:cik", cik)
-    _insert(sql, "corporate_reporting.reporting_entity", ("entity_id", "entity_kind"), (entity_id, "registrant"))
-    _insert(sql, "corporate_reporting.entity_identifier",
-            ("entity_identifier_id", "entity_id", "scheme", "normalized_value"),
-            (_id("entity_identifier", cik), entity_id, "sec:cik", cik))
+    for filing in sorted(filings, key=lambda item: (item.cik, item.accession)):
+        entity_id = _id("entity", "sec:cik", filing.cik)
+        _insert(sql, "corporate_reporting.reporting_entity", ("entity_id", "entity_kind"),
+                (entity_id, "registrant"))
+        _insert(sql, "corporate_reporting.entity_identifier",
+                ("entity_identifier_id", "entity_id", "scheme", "normalized_value"),
+                (_id("entity_identifier", filing.cik), entity_id, "sec:cik", filing.cik))
 
     snapshot_members: list[tuple[str, str, str]] = []
     filing_ids: dict[str, str] = {}
@@ -367,6 +405,7 @@ def _build_postgresql_sql(
     primary_ids: dict[str, str] = {}
     for filing in sorted(filings, key=lambda f: f.accepted_at):
         accession = filing.accession
+        entity_id = _id("entity", "sec:cik", filing.cik)
         filing_id = _id("filing", accession)
         filing_ids[accession] = filing_id
         run_key = (f"sec-corporate-reporting:{accession}:{filing.source_manifest_sha256}:"
@@ -411,11 +450,17 @@ def _build_postgresql_sql(
                     (document_id, filing_id, document.name, document.role, document.source_url,
                      document.media_type, document.byte_length, document.sha256, document.local_evidence_locator, sequence))
         primary_ids[accession] = document_ids[filing.primary_document_name]
-        instance_document_id = next(document_ids[d.name] for d in filing.documents if d.role == "sec_rendered_xbrl_instance")
+        source_documents = [
+            document_ids[d.name] for d in filing.documents
+            if d.sha256 == filing.report.source_sha256
+        ]
+        if len(source_documents) != 1:
+            raise QualityGateError("parser source must identify exactly one filing document")
+        instance_document_id = source_documents[0]
         schema_document_id = next(document_ids[d.name] for d in filing.documents if d.role == "extension_schema")
         _insert(sql, "corporate_reporting.reporting_scope",
                 ("scope_id", "filing_id", "reporting_entity_id", "scope_kind", "scope_label", "evidence_fingerprint"),
-                (scope_id, filing_id, entity_id, "consolidated_registrant", "Gatos Silver, Inc.",
+                (scope_id, filing_id, entity_id, "consolidated_registrant", filing.issuer_name,
                  _digest({"accession": accession, "scope": "registrant"})))
         _insert(sql, "corporate_reporting.parser_run",
                 ("parser_run_id", "pipeline_run_id", "filing_id", "parser_attempt_key", "parser_contract", "parser_version",
@@ -505,14 +550,21 @@ def _build_postgresql_sql(
             interpretation_ids[occurrence.source_ordinal] = interpretation_id
             boolean = occurrence.lexical_value.lower() in {"true", "1"} if (
                 not occurrence.nil and occurrence.unit_ref is None and occurrence.lexical_value.lower() in {"true", "false", "1", "0"}) else None
+            numeric = _numeric(occurrence.lexical_value, occurrence.unit_ref is not None, occurrence.nil)
+            if occurrence.inline_format is not None or occurrence.inline_scale is not None or occurrence.inline_sign is not None:
+                # Raw Inline lexical text is evidence, not a normalized value. A
+                # separately proven transformation must own format/scale/sign.
+                numeric = "NULL"
             _insert(sql, "corporate_reporting.fact_occurrence",
                     ("fact_occurrence_id", "filing_id", "document_id", "source_ordinal",
                      "source_concept_qname", "source_context_ref", "source_unit_ref", "xml_lang",
-                     "lexical_value", "nil_flag", "decimals", "precision", "occurrence_sha256"),
+                     "lexical_value", "nil_flag", "decimals", "precision", "inline_format",
+                     "inline_scale", "inline_sign", "occurrence_sha256"),
                     (occurrence_id, filing_id, instance_document_id, occurrence.source_ordinal,
                      occurrence.concept, occurrence.context_ref, occurrence.unit_ref,
                      occurrence.xml_lang, occurrence.lexical_value,
                      occurrence.nil, occurrence.decimals, occurrence.precision,
+                     occurrence.inline_format, occurrence.inline_scale, occurrence.inline_sign,
                      occurrence.occurrence_sha256))
             _insert(sql, "corporate_reporting.fact_occurrence_interpretation",
                     ("fact_occurrence_interpretation_id", "parser_run_id", "fact_occurrence_id",
@@ -521,8 +573,7 @@ def _build_postgresql_sql(
                     (interpretation_id, parser_id, occurrence_id, filing_id,
                      concept_ids[occurrence.concept], context_ids[occurrence.context_ref],
                      alias_ids[occurrence.unit_ref] if occurrence.unit_ref is not None else None,
-                     Decimal(_numeric(occurrence.lexical_value, occurrence.unit_ref is not None, occurrence.nil))
-                     if _numeric(occurrence.lexical_value, occurrence.unit_ref is not None, occurrence.nil) != "NULL" else None,
+                     Decimal(numeric) if numeric != "NULL" else None,
                      boolean))
         for slot in filing.report.slots.values():
             first = slot.occurrences[0]
@@ -562,7 +613,7 @@ def _build_postgresql_sql(
                                  filing.parser_attempt_key, selection_status)
         selection_payload_id = _id("parser_selection", selection_key,
                                    filing.parser_attempt_key, selection_status)
-        if filing.parser_attempt_key != _PROTECTED_INITIAL_ATTEMPT:
+        if selection_status != "accepted":
             sql.append("DO $$ BEGIN IF NOT EXISTS (SELECT 1 FROM corporate_reporting.knowledge_revision "
                        f"WHERE axis_type='parser_selection' AND object_key={_sql(selection_key)}) "
                        f"THEN RAISE EXCEPTION 'CORPORATE_REPORTING_IDENTITY_CONFLICT:{accession}:parser_selection_root_missing'; END IF; END $$;")
@@ -632,6 +683,48 @@ def _build_postgresql_sql(
     # parser runs and append-only selection proposals persist, while the prior
     # accepted snapshot remains the sole consumable state.
     if not any(_selection_status(filing) == "accepted" for filing in filings):
+        sql.extend(["SET CONSTRAINTS ALL IMMEDIATE;", "COMMIT;",
+                    "SELECT json_build_object('filing_count',(SELECT count(*) FROM corporate_reporting.filing_submission WHERE accession IN ("
+                    + ",".join(_sql(f.accession) for f in filings) + ")),'document_count',(SELECT count(*) FROM corporate_reporting.filing_document d JOIN corporate_reporting.filing_submission f USING(filing_id) WHERE f.accession IN ("
+                    + ",".join(_sql(f.accession) for f in filings) + ")),'occurrence_count',(SELECT count(*) FROM corporate_reporting.fact_occurrence o JOIN corporate_reporting.filing_submission f USING(filing_id) WHERE f.accession IN ("
+                    + ",".join(_sql(f.accession) for f in filings) + ")),'slot_count',(SELECT count(*) FROM corporate_reporting.fact_semantic_slot s JOIN corporate_reporting.filing_submission f USING(filing_id) JOIN corporate_reporting.parser_run p ON p.parser_run_id=s.parser_run_id WHERE f.accession IN ("
+                    + ",".join(_sql(f.accession) for f in filings) + ") AND p.parser_attempt_key IN (" + ",".join(_sql(f.parser_attempt_key) for f in filings) + ")),'relationship_count',(SELECT count(*) FROM corporate_reporting.filing_relationship_revision));"])
+        return "\n".join(sql) + "\n"
+
+    # Source-authenticated amendment linkage remains a proposal. It does not infer
+    # restatement or semantic equivalence, and its predecessor may have been
+    # committed by an earlier per-filing transaction.
+    for filing in filings:
+        if filing.relationship_original_accession is None:
+            continue
+        relationship_key = _digest({
+            "axis": "filing_relationship",
+            "predecessor": filing.relationship_original_accession,
+            "successor": filing.accession,
+            "type": "amends",
+        })
+        relationship_revision = _id("knowledge", "filing_relationship", relationship_key)
+        evidence = _digest({
+            "basis": "same_cik_base_form_report_date_and_fiscal_slot",
+            "restatement_status": "undetermined",
+        })
+        _knowledge(sql, relationship_revision, "filing_relationship", relationship_key,
+                   pipeline_ids[filing.accession], evidence, filing.accepted_at,
+                   knowledge_cutoff)
+        _insert(sql, "corporate_reporting.filing_relationship_revision",
+                ("relationship_revision_id", "knowledge_revision_id", "object_key",
+                 "predecessor_filing_id", "successor_filing_id", "relationship_type",
+                 "evidence_document_id", "evidence_excerpt_fingerprint", "assertion_status"),
+                (_id("relationship", relationship_key), relationship_revision, relationship_key,
+                 _id("filing", filing.relationship_original_accession), filing_ids[filing.accession],
+                 "amends", primary_ids[filing.accession], evidence,
+                 filing.relationship_status or "proposed"))
+        snapshot_members.append(("filing_relationship", relationship_key, relationship_revision))
+
+    # TASK-223 source-ingestion proof deliberately stops before governance closure.
+    # Normalized source evidence and proposed amendment relations remain; snapshots,
+    # mappings, and release eligibility belong to a separately authorized operation.
+    if not governance_closure:
         sql.extend(["SET CONSTRAINTS ALL IMMEDIATE;", "COMMIT;",
                     "SELECT json_build_object('filing_count',(SELECT count(*) FROM corporate_reporting.filing_submission WHERE accession IN ("
                     + ",".join(_sql(f.accession) for f in filings) + ")),'document_count',(SELECT count(*) FROM corporate_reporting.filing_document d JOIN corporate_reporting.filing_submission f USING(filing_id) WHERE f.accession IN ("
@@ -744,22 +837,96 @@ def _build_postgresql_sql(
     return "\n".join(sql) + "\n"
 
 
+def _reconcile_timed_out_backend(
+    *, database_url: str, psql_path: str, application_name: str,
+    reconciliation_timeout_seconds: float = RECONCILIATION_QUERY_TIMEOUT_SECONDS,
+    reconciliation_deadline: float | None = None,
+) -> str:
+    """Cancel/terminate only the exact tagged backend left by a timed-out client."""
+    argv = [psql_path, "-X", "-v", "ON_ERROR_STOP=1", "-A", "-t", "-d", database_url]
+    env = {**os.environ, "PGAPPNAME": (application_name + "-reconcile")[:63]}
+    predicate = (
+        "datname=current_database() AND usename=current_user AND backend_type='client backend' "
+        f"AND application_name={_sql(application_name)} AND pid<>pg_backend_pid()"
+    )
+
+    def query(statement: str) -> str:
+        remaining = (
+            reconciliation_timeout_seconds if reconciliation_deadline is None
+            else reconciliation_deadline - time.monotonic()
+        )
+        if remaining <= 0:
+            raise PostgreSQLLoadTimeout("backend reconciliation deadline expired")
+        result = subprocess.run(
+            argv, input=statement, text=True, capture_output=True, env=env,
+            timeout=min(reconciliation_timeout_seconds, remaining),
+        )
+        if result.returncode:
+            raise PostgreSQLLoadTimeout("backend reconciliation query failed")
+        return result.stdout.strip()
+
+    def pids() -> list[int]:
+        value = query(f"SELECT pid FROM pg_stat_activity WHERE {predicate} ORDER BY pid;")
+        return [int(item) for item in value.splitlines() if item]
+
+    found = pids()
+    if not found:
+        return "already_absent"
+    if len(found) != 1:
+        raise PostgreSQLLoadTimeout("backend reconciliation identity is ambiguous")
+    pid = found[0]
+    query(f"SELECT pg_cancel_backend(pid) FROM pg_stat_activity WHERE pid={pid} AND {predicate};")
+    deadline = time.monotonic() + CANCEL_POLL_SECONDS
+    if reconciliation_deadline is not None:
+        deadline = min(deadline, reconciliation_deadline)
+    while time.monotonic() < deadline:
+        if not pids():
+            return "canceled"
+        time.sleep(0.1)
+    found = pids()
+    if found != [pid]:
+        raise PostgreSQLLoadTimeout("backend identity changed during reconciliation")
+    query(f"SELECT pg_terminate_backend(pid,5000) FROM pg_stat_activity WHERE pid={pid} AND {predicate};")
+    deadline = time.monotonic() + TERMINATE_POLL_SECONDS
+    if reconciliation_deadline is not None:
+        deadline = min(deadline, reconciliation_deadline)
+    while time.monotonic() < deadline:
+        if not pids():
+            return "terminated"
+        time.sleep(0.1)
+    raise PostgreSQLLoadTimeout("exact timed-out backend survived reconciliation")
+
+
 def load_corporate_filings_to_postgres(
     filings: Iterable[CorporateFilingLoad],
     *,
     database_url: str,
     knowledge_cutoff: str,
-    cik: str = "0001517006",
     psql_path: str = "psql",
+    deadline: float | None = None,
+    reconciliation_deadline: float | None = None,
+    application_name: str | None = None,
+    statement_timeout_seconds: float = 300.0,
+    lock_timeout_seconds: float = 30.0,
+    idle_transaction_timeout_seconds: float = 60.0,
+    client_timeout_seconds: float = 330.0,
+    governance_closure: bool = True,
 ) -> PostgreSQLLoadResult:
     """Atomically persist normalized filings; exact replay is a no-op.
 
-    The database must already have migrations 001 and 005 applied. Any command,
-    constraint, quality, or immutable-identity failure rolls back the whole batch.
+    Server limits precede every database operation.  The client limit is longer
+    than the statement limit but is capped by the caller's absolute deadline.
     """
     batch = tuple(filings)
     if not batch:
         raise ValueError("at least one filing is required")
+    if not (0 < lock_timeout_seconds < statement_timeout_seconds < client_timeout_seconds):
+        raise ValueError("require lock < statement < client timeout")
+    if idle_transaction_timeout_seconds <= 0:
+        raise ValueError("idle transaction timeout must be positive")
+    app = application_name or f"macroforge-cr-{uuid4().hex[:24]}"
+    if len(app) > 63 or not app:
+        raise ValueError("application name must contain 1..63 characters")
     for filing in batch:
         if not filing.parser_attempt_key or not filing.parser_contract or not filing.parser_version:
             raise QualityGateError("parser attempt identity, contract, and version are required")
@@ -770,9 +937,16 @@ def load_corporate_filings_to_postgres(
             raise QualityGateError("report and filing accession differ")
         if filing.report.dts_manifest_sha256 != filing.dts_manifest_sha256:
             raise QualityGateError("report and filing DTS manifest differ")
-        instance_documents = [d for d in filing.documents if d.role == "sec_rendered_xbrl_instance"]
-        if len(instance_documents) != 1 or instance_documents[0].sha256 != filing.report.source_sha256:
-            raise QualityGateError("parser source and filing document hash differ")
+        source_documents = [d for d in filing.documents if d.sha256 == filing.report.source_sha256]
+        if len(source_documents) != 1:
+            raise QualityGateError("parser source must match exactly one filing document")
+        if not filing.cik.isdigit() or len(filing.cik) != 10 or not filing.issuer_name:
+            raise QualityGateError("per-filing SEC CIK and issuer name are required")
+        if filing.relationship_original_accession is None:
+            if filing.relationship_status is not None:
+                raise QualityGateError("relationship status requires an original accession")
+        elif filing.relationship_status not in {None, "proposed", "deferred", "rejected"}:
+            raise QualityGateError("source-derived amendment relationships cannot be accepted")
         if len({d.name for d in filing.documents}) != len(filing.documents):
             raise QualityGateError("filing document names are not unique")
 
@@ -787,11 +961,39 @@ def load_corporate_filings_to_postgres(
         raise ValueError("knowledge_cutoff must be a timezone-aware ISO-8601 timestamp")
     if internal_cutoff == sec_acceptance_cutoff:
         raise ValueError("knowledge_cutoff must be independent from SEC acceptance cutoff")
-    statement = _build_postgresql_sql(batch, cik, knowledge_cutoff)
-    completed = subprocess.run(
-        [psql_path, "-X", "-v", "ON_ERROR_STOP=1", "-q", "-A", "-t", "-d", database_url],
-        input=statement, text=True, capture_output=True,
+    remaining = float("inf") if deadline is None else deadline - time.monotonic()
+    if reconciliation_deadline is not None:
+        if remaining < client_timeout_seconds:
+            raise PostgreSQLLoadTimeout("work deadline leaves no complete bounded client window")
+        timeout = client_timeout_seconds
+    else:
+        timeout = min(client_timeout_seconds, remaining - 0.25)
+    effective_statement_timeout = min(statement_timeout_seconds, timeout - 0.5)
+    effective_lock_timeout = min(lock_timeout_seconds, effective_statement_timeout / 2)
+    effective_idle_timeout = min(idle_transaction_timeout_seconds, effective_statement_timeout)
+    if min(timeout, effective_statement_timeout, effective_lock_timeout, effective_idle_timeout) <= 0:
+        raise PostgreSQLLoadTimeout("campaign deadline leaves no bounded load window")
+    statement = _build_postgresql_sql(
+        batch, knowledge_cutoff, application_name=app,
+        statement_timeout_ms=max(1, int(effective_statement_timeout * 1000)),
+        lock_timeout_ms=max(1, int(effective_lock_timeout * 1000)),
+        idle_transaction_timeout_ms=max(1, int(effective_idle_timeout * 1000)),
+        governance_closure=governance_closure,
     )
+    try:
+        completed = subprocess.run(
+            [psql_path, "-X", "-v", "ON_ERROR_STOP=1", "-q", "-A", "-t", "-d", database_url],
+            input=statement, text=True, capture_output=True,
+            timeout=timeout, env={**os.environ, "PGAPPNAME": app},
+        )
+    except subprocess.TimeoutExpired as error:
+        disposition = _reconcile_timed_out_backend(
+            database_url=database_url, psql_path=psql_path, application_name=app,
+            reconciliation_deadline=reconciliation_deadline,
+        )
+        raise PostgreSQLLoadTimeout(
+            f"psql client timeout; application={app}; reconciliation={disposition}"
+        ) from error
     if completed.returncode:
         message = completed.stderr.strip()
         if "CORPORATE_REPORTING_IDENTITY_CONFLICT" in message:
