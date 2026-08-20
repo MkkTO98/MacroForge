@@ -1,0 +1,62 @@
+{
+  "acceptance": "REJECTED",
+  "aggregate_sha256": "553ea49056dcf8bd26e06a85a9d3086e0d4ae68838249a476526fbf7d3ac9e67",
+  "candidate_path_count": 25,
+  "freeze_path": "/tmp/task225-remediated-final-freeze-20260820-zhzwPLPs/task225-remediated-final-review-freeze.json",
+  "freeze_sha256": "fd0cc9009e8ba4066d8914bcbcce8a12269f41cf08c5ccf8d491107a6b802fc2",
+  "material_change_invalidation": {
+    "complete_suite": "invalidated",
+    "focused": "invalidated",
+    "freeze": "invalidated",
+    "integration": "invalidated",
+    "rehearsal": "invalidated",
+    "reviews": "invalidated"
+  },
+  "reviewers": [
+    {
+      "decision": "FAIL",
+      "reviewer": "A",
+      "verified": [
+        "freeze hash",
+        "all 25 path hashes, modes, sizes, and Git statuses",
+        "aggregate fingerprint",
+        "targeted PostgreSQL adversarial checks: 7 passed, 61 deselected"
+      ],
+      "findings": [
+        "canonical contract status and rehearsal chronology were stale and contradicted fresh evidence"
+      ]
+    },
+    {
+      "decision": "FAIL",
+      "reviewer": "B",
+      "verified": [
+        "freeze hash",
+        "all 25 path hashes, modes, and sizes",
+        "aggregate fingerprint",
+        "tracked diff hash",
+        "protected input hashes",
+        "672-item complete-suite accounting"
+      ],
+      "findings": [
+        "canonical contract status and rehearsal chronology were stale",
+        "task database-retention wording was ambiguous relative to authenticated cleanup before frozen-byte review"
+      ]
+    },
+    {
+      "decision": "FAIL",
+      "reviewer": "C",
+      "verified": [
+        "freeze hash",
+        "all 25 path hashes, modes, sizes, and Git statuses",
+        "aggregate fingerprint",
+        "parent and tracked diff hashes",
+        "zero staged and unmerged paths"
+      ],
+      "findings": [
+        "canonical contract status and rehearsal chronology were stale",
+        "same-table predecessor foreign key made positive successor persistence impossible under the exact one-candidate boundary"
+      ]
+    }
+  ],
+  "unanimous_pass": false
+}

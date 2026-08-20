@@ -1,0 +1,67 @@
+{
+  "acceptance": "FAIL",
+  "authorization_consumed": true,
+  "collection_only_followup": {
+    "collection_file": "/tmp/task225-complete-suite-20260820T123031Z-XgEpff/collection.txt",
+    "collection_file_sha256": "f5ab962a952164f60d75f77d9f918020c04b9a5034781465eb4ca529df0004cf",
+    "purpose": "map preserved F progress positions; executed no tests"
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' PYTHONPATH=.:src /home/mkkto/srv/EIP/projects/MacroForge/.venv/bin/python -m pytest -q",
+  "counts": {
+    "collected": 614,
+    "deselected": 0,
+    "errored": 0,
+    "executed": 610,
+    "failed": 2,
+    "passed": 592,
+    "skipped": 16,
+    "unexecuted": 4
+  },
+  "failure_classification": {
+    "failed_nodes": [
+      "tests/test_canonical_gdp_snapshot.py::test_snapshot_runs_against_isolated_postgres_and_generates_canonical_only_report",
+      "tests/test_combined_source_smoke.py::test_combined_source_smoke_runs_against_isolated_postgres_and_combines_all_sources"
+    ],
+    "focused_reproduction": "2 failed in 1.24s",
+    "root_cause": "isolated worktree lacked data/metadata/wdi/wdi-smoke-normalized.json; both failed with FileNotFoundError before their loader assertions",
+    "fixture_source_authenticated": {
+      "path": "/home/mkkto/srv/EIP/projects/MacroForge/data/metadata/wdi/wdi-smoke-normalized.json",
+      "regular_non_symlink": true,
+      "sha256": "19a7ef1d8552580c0372d91bbb1095f1a222bf47c469764b7d0c61c7b4310c9a",
+      "size": 4371
+    },
+    "fixture_target_present": false
+  },
+  "implementation_verification_before_suite": {
+    "corporate_reporting_integration": "98 passed, 16 skipped in 17.97s",
+    "task225_focused": "10 passed in 146.34s",
+    "two_database_rehearsal": "PASS"
+  },
+  "residue_preserved": [
+    {"path":"artifacts/reports/task-165-wdi-campaign-compatibility-classification-report.json","mode":"0664","size":1476,"sha256":"bb60d42fb5a40cb399c491cd04f5d59ea33d03f57360a364aa506790c19abffe"},
+    {"path":"artifacts/reports/task-165-wdi-campaign-exception-report.json","mode":"0664","size":1210,"sha256":"3de7ded03e4517e429b6227514d9280aad37dcffe0ea291fe4150eeb87dabebd"},
+    {"path":"artifacts/reports/task-165-wdi-campaign-operational-expansion-report.json","mode":"0664","size":856,"sha256":"22a14ec87718930b221332bf2b269d55009ce3aab72c181e7c3006298d577abe"},
+    {"path":"artifacts/reports/task-165-wdi-campaign-preflight-report.json","mode":"0664","size":3345,"sha256":"c5ac8ac356c5b048ca93ac61edb3b7e6f433ffe4e05e728b91439e00a417f637"},
+    {"path":"artifacts/reports/task-165-wdi-campaign-repository-coverage-report.json","mode":"0664","size":3288,"sha256":"484a003e4379b8fc4b48978c5e4d80ff1c6149797c49f37732e6e61bcfaaaa51"},
+    {"path":"artifacts/reports/task-165-wdi-campaign-updated-confidence-assessment.json","mode":"0664","size":983,"sha256":"ffceda404cd5e9896f79de8efe6a91dda826a0f7f8fd6d8779c7b5d8f6ce42b2"},
+    {"path":"artifacts/tmp/task208_publish_20260820T124142Z/active-raw.json","mode":"0664","size":2651,"sha256":"6a7f32c7c51536f4595879ddf06e5c5bd381b52e61180bed1729ed6f75917a0f"},
+    {"path":"artifacts/tmp/task208_publish_20260820T124142Z/failed-chunk.json","mode":"0664","size":84,"sha256":"add8dec5f0c9731a6e1fb7ab0ba64cd8237c5902064b3a678dfae5bbeb954ae4"}
+  ],
+  "runtime": {
+    "interpreter_sha256": "6759dcc6aa5a3fe3377349092f92f6700f1f79017294c1d0085009eb8802cb1e",
+    "pytest": "8.4.2",
+    "python": "3.11.15"
+  },
+  "schema": "macroforge.task225.incomplete-complete-suite-evidence.v1",
+  "transcript": {
+    "directory": "/tmp/task225-complete-suite-20260820T123031Z-XgEpff",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "db7637551fe444abc6cb32e1a97d2b08b08b6774316555b68ff7c09e91f84f5d"
+  },
+  "working_directory": "/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate",
+  "wrapper": {
+    "exit_status": 124,
+    "timeout_seconds": 600,
+    "pytest_completion_summary_emitted": false
+  }
+}

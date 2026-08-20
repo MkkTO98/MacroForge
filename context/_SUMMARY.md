@@ -18,11 +18,11 @@ Curated project context, context policy, latest handoff, and compact source-of-t
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- `latest_handoff.md` records TASK-224's completed placement/admission decision, DEC-024 bounded-sibling verdict, exact inactive source-native private-analysis rehearsal successor, preserved governance/data authorities, and no active successor.
+- `latest_handoff.md` records that the successor-corrected focused, integration, rehearsal, and sole replacement complete-suite gates pass; failed attempts remain distinct history, and only a new exact freeze plus three identical-byte reviews remain before acceptance.
 - Generated context bundles are task/model-target artifacts and should be regenerated when needed, not treated as mandatory startup context.
 
 ## Needs Attention
-- TASK-224 publication state derives from live Git and its external exact-final-manifest gates; repository publication grants no mapping, rights, release, redistribution, publication-operation, downstream-delivery, or successor authority.
-- TASK-225 is a specification only and requires separate explicit authorization.
+- TASK-225 is a final closeout candidate and remains unaccepted only at the external exact-freeze/review gate. Database-isolation, permission, SEC-cutoff, continuity, focused, integration, rehearsal, and replacement complete-suite obligations pass on current bytes.
+- Governed release remains absent. The candidate is private-analysis-only; redistribution, publication, and remote delivery remain unauthorized; no successor is active.
 - Keep raw exports and large generated bundles out of normal startup context.
 - Fresh work should start from bounded recovery: read `CONSTITUTION.md`, compact state files, and `context/latest_handoff.md`; expand only into relevant task/report/domain/artifact files.

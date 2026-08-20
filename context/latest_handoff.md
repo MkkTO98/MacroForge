@@ -1,25 +1,31 @@
 # Latest Handoff
 
-## Terminal task state
+## Status
 
-TASK-224 is complete under external exact-final-manifest gates. DEC-024 keeps Corporate Reporting as a bounded sibling domain inside MacroForge and rejects stronger packaging or a separate Forge absent independent lifecycle evidence. Publication state must be authenticated from live Git.
+TASK-225 successor correction is implemented in `/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate` at parent `d20114aece9f9daf5d64b81880f103d76cff2715`.
 
-## Principal outcome
+The first remediated freeze was rejected 0/3 despite identical-byte authentication. Review found stale lifecycle prose and a substantive successor defect: Migration 006 required a predecessor row in the same table while the database marker permits only one exact candidate.
 
-The smallest next implementation is a source-native private-analysis release-candidate admission contract and disposable rehearsal for the exact TASK-223 19-filing tranche. It comes before a narrow semantic-comparability pilot. Mapping status remains explicit; rights remain private-analysis-only candidate posture with redistribution unresolved/not authorized and remote delivery disabled.
+## Correction and proof
 
-## Artifacts
+- Added a positive PostgreSQL successor-persistence regression.
+- RED reproduced the predecessor FK failure.
+- Migration 006 now stores a lowercase 64-hex external predecessor identity without the impossible same-database FK.
+- GREEN passed.
+- Corrected focused gate: `69 passed`.
+- Corrected integration: `98 passed, 16 skipped`.
+- Corrected two-database rehearsal: PASS; candidate `08ec6fb...`, payload `6069a91c...`, state `a03e54ff...`; canonical report SHA-256 `4a76043b...`.
+- Exact rehearsal databases `macroforge_task225_candidate_04e8d34f0bdc` and `macroforge_task225_candidate_3e727c91c493` were authenticated and removed.
+- Durable evidence: `artifacts/reports/task225-successor-correction-verification.json` and `artifacts/reports/task225-rejected-remediated-freeze-review.json`.
 
-- `artifacts/tasks/TASK-224-corporate-reporting-domain-placement-release-admission.md`
-- `artifacts/decisions/DEC-024-corporate-reporting-placement-and-release-admission.md`
-- `artifacts/reports/R-20260820-task-224-corporate-reporting-release-admission-gap-map.md`
+## Replacement complete-suite result
 
-## Preservation and authority
+- The first successor-corrected attempt timed out under the former 1,200-second cap and remains failed evidence.
+- Diagnostic collection authenticated 673 items and ordinary cumulative runtime.
+- Exactly one authorized 1,500-second replacement passed: `657 passed, 16 skipped in 1256.12s`; all 673 items accounted, zero failures/errors/deselections/unexecuted, wrapper/pytest exit zero, `[100%]`.
+- Accepted evidence: `artifacts/reports/task225-successor-corrected-replacement-complete-suite-evidence.json`.
+- Exact cleanup restored the pre-suite worktree baseline before evidence creation and preserved `pytest-3815`, all 11 cache/bytecode records, protected WDI source, and zero TASK-225 database/session/process/prepared-transaction residue.
 
-No implementation, test, schema, migration, provider evidence, campaign, or PostgreSQL row changed. No accepted mapping, rights grant, governed release, redistribution, publication operation, or downstream delivery occurred. The protected live `main` worktree remains outside TASK-224. TASK-225 and every successor remain inactive.
+## Resume procedure
 
-## Resume
-
-Await separate explicit authorization. Recover bounded state with:
-
-`cd /home/mkkto/srv/EIP/projects/MacroForge && PYTHONDONTWRITEBYTECODE=1 python3 tools/recover_session.py --project . --json`
+Do not rerun focused, integration, rehearsal, or complete-suite gates. Authenticate fresh read-only governance gates and governed counts, freeze the exact intended Git-visible candidate externally, and obtain three independent unconditional identical-byte PASS reviews. Candidate construction is not governed admission or publication; no staging, commit, push, rights acceptance, redistribution, remote delivery, downstream consumption, or successor activation is authorized.

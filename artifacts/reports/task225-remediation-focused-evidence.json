@@ -1,0 +1,72 @@
+{
+  "acceptance": "PASS",
+  "authorization": {
+    "authorization_consumed": true,
+    "replacement_invocation_count": 1,
+    "retry_count": 0
+  },
+  "candidate_byte_linkage": {
+    "contract": "58934f437692b447d2b38034896886c2eecfb9f8b69cba807f113056eb44d383",
+    "implementation": "f335990b704c6b7c69c15142198da075ccab9a01a0737f8d2d34bd0d06a9094d",
+    "migration": "65a1f9090a49387957512ba1487f6382c9e01a54810437793e230c46be430d30",
+    "runner": "25b70f46c2b43d26661684b8d14ae0dab4318eb8ff2004273f661d32921bccb2",
+    "test": "0eb0c1aa9fbd9b80419f556fad6a3b7dbe1e86d57097025bc7f47fa90bd41e21"
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' PYTHONPATH=.:src /home/mkkto/srv/EIP/projects/MacroForge/.venv/bin/python -m pytest -q tests/test_source_native_corporate_candidate.py",
+  "counts": {
+    "collected": 68,
+    "deselected": 0,
+    "errored": 0,
+    "executed": 68,
+    "failed": 0,
+    "passed": 68,
+    "skipped": 0,
+    "unexecuted": 0
+  },
+  "preservation": {
+    "accepted_eligibility": 0,
+    "accepted_mappings": 0,
+    "accepted_quality": 0,
+    "accepted_rights": 0,
+    "candidate_paths_byte_identical_pre_to_post": true,
+    "candidate_relations_in_governed_database": 0,
+    "fixture_absent": true,
+    "governed_database_size_bytes": 25889733655,
+    "governed_releases": 0,
+    "preexisting_pyc_exact_match": true,
+    "prepared_transactions": 0,
+    "publication_completions": 0,
+    "publication_reservations": 0,
+    "pytest_cache_count": 0,
+    "pytest_current_removed": true,
+    "pytest_temp_root_removed_exactly": true,
+    "relevant_sessions": 0,
+    "staged_count": 0,
+    "task225_disposable_databases": 0,
+    "unmerged_count": 0
+  },
+  "runtime": {
+    "editable_or_pth_live_redirect": false,
+    "interpreter_sha256": "6759dcc6aa5a3fe3377349092f92f6700f1f79017294c1d0085009eb8802cb1e",
+    "project_imports_beneath_isolated_worktree": true,
+    "pytest": "8.4.2",
+    "python": "3.11.15",
+    "resolved_interpreter": "/home/mkkto/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/bin/python3.11"
+  },
+  "schema": "macroforge.task225.remediation-focused-evidence.v1",
+  "transcript": {
+    "directory": "/tmp/task225-replacement-focused-20260820TXXXXXX-pNVncq3o",
+    "metadata_sha256": "71515d9773ab19bb3b8cbcdb022475a80dd11f75c31a3c3b077fc22dfcc30de5",
+    "post_run_reconciliation_sha256": "126091cef6002cca58b9bb2fd8278a7fc38ee3d5e64eea42d12d012855d9c542",
+    "preflight_manifest_sha256": "d06a763dd28555561f0e8cfa56e289d849464ff215ba53d31c10d7dd2cb1cbba",
+    "pytest_temp_manifest_sha256": "8055158d4a99ef0a405e651d6dc6a798d9bc57ca063c84a4901fb69167e096a6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3c0dfa64ffb6a5618fd024e272a8720218bea154be3e0dd3856f946e61e3d16"
+  },
+  "wrapper": {
+    "duration_ns": 676855855070,
+    "exit_status": 0,
+    "pytest_duration_seconds": 676.68,
+    "timed_out": false
+  }
+}

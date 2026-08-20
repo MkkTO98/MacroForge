@@ -1,0 +1,139 @@
+{
+  "acceptance": "PASS",
+  "boundary": {
+    "committed": false,
+    "contract_changed": false,
+    "governed_admission": false,
+    "implementation_changed": false,
+    "migration_changed": false,
+    "published": false,
+    "pushed": false,
+    "redistributed": false,
+    "remote_delivery": false,
+    "runner_changed": false,
+    "staged": false,
+    "successor_activated": false,
+    "tests_changed": false
+  },
+  "candidate_byte_linkage": {
+    "candidate_contract_sha256": "659d0d5f98617a94728eee1f9838c3d921028facb900e509e6959b400cf6af92",
+    "migration_006_sha256": "41b13de3a3730ed0a4190385dc0282ee4c5153898c594b2fc339a1e7ef0e9d20",
+    "rehearsal_runner_sha256": "25b70f46c2b43d26661684b8d14ae0dab4318eb8ff2004273f661d32921bccb2",
+    "source_native_module_sha256": "f335990b704c6b7c69c15142198da075ccab9a01a0737f8d2d34bd0d06a9094d",
+    "source_native_test_sha256": "8a51fbc01f6057477760d8969bc47743f4fe1d7eb1d9297c696e217cf9220926"
+  },
+  "fixture": {
+    "installed_mode": "0644",
+    "protected_source_unchanged": true,
+    "sha256": "19a7ef1d8552580c0372d91bbb1095f1a222bf47c469764b7d0c61c7b4310c9a",
+    "size_bytes": 4371,
+    "source": "/home/mkkto/srv/EIP/projects/MacroForge/data/metadata/wdi/wdi-smoke-normalized.json",
+    "source_target_authenticated_before_suite": true,
+    "source_target_reauthenticated_before_cleanup": true,
+    "target": "data/metadata/wdi/wdi-smoke-normalized.json",
+    "target_and_directory_absent_after_cleanup": true
+  },
+  "governed_database_preservation": {
+    "accepted_mappings": 0,
+    "accepted_quality": 0,
+    "accepted_rights": 0,
+    "blocked_authority_roots": 1,
+    "blocked_eligibility_revisions": 1,
+    "eligible_authority": 0,
+    "governed_releases": 0,
+    "publication_completions": 0,
+    "publication_reservations": 0,
+    "task225_candidate_tables_in_governed_database": 0
+  },
+  "invocation": {
+    "authorization_consumed": true,
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' PYTHONPATH=.:src /home/mkkto/srv/EIP/projects/MacroForge/.venv/bin/python -m pytest -q",
+    "ended_utc": "2026-08-20T19:09:15.188459222Z",
+    "environment": {
+      "PYTEST_ADDOPTS": "-p no:cacheprovider",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONPATH": ".:src"
+    },
+    "invocation_count": 1,
+    "retry_count": 0,
+    "runner_shell_pid": 203415,
+    "started_utc": "2026-08-20T18:48:18.545179685Z",
+    "timeout_wrapper_pid": 203427,
+    "working_directory": "/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate",
+    "wrapper": {
+      "duration_ns": 1256641475239,
+      "exit_status": 0,
+      "kill_after_seconds": 30,
+      "limit_seconds": 1500,
+      "program": "GNU timeout",
+      "signal": "TERM",
+      "version": "9.4"
+    }
+  },
+  "predecessor_evidence": {
+    "diagnostic_collection_stdout_sha256": "5051ae386bec86965c395f20b576abf6f5f45f1eaae76947082f92246f014a47",
+    "diagnostic_collection_transcript": "/tmp/task225-timeout-diagnostic-collection-20260820-k6gd2ojN",
+    "failed_suite_evidence": "artifacts/reports/task225-successor-corrected-complete-suite-evidence.json",
+    "failed_suite_evidence_sha256": "ead63a2aae573a67f5c743daef99f1d8e5d48060d7ceda6621b23cf0627ec7b9",
+    "failed_transcript": "/tmp/task225-successor-corrected-final-suite-20260820-gzzms0s6",
+    "timeout_diagnosis": "ORDINARY CUMULATIVE RUNTIME EXCEEDED CAP"
+  },
+  "preservation": {
+    "candidate_databases_remaining": 0,
+    "new_cache_or_bytecode_remaining": 0,
+    "post_cleanup_worktree_manifest_sha256": "565c12e7c0c28096a01b2e1a4b2eac8cdb81b2367b972d69ce869db08c84efd0",
+    "post_cleanup_worktree_records": 1172,
+    "pre_worktree_manifest_sha256": "565c12e7c0c28096a01b2e1a4b2eac8cdb81b2367b972d69ce869db08c84efd0",
+    "pre_worktree_records": 1172,
+    "preexisting_pytest_records": 1488,
+    "preexisting_pytest_state_exact": true,
+    "prepared_transactions_remaining": 0,
+    "preserved_pytest_roots": [
+      "pytest-3815"
+    ],
+    "protected_cache_bytecode_records": 11,
+    "relevant_processes_remaining": 0,
+    "relevant_sessions_remaining": 0,
+    "removed_suite_pytest_records": 1528,
+    "removed_suite_worktree_records": 9,
+    "restored_tracked_reports": 2,
+    "staged_paths": 0,
+    "unmerged_entries": 0,
+    "worktree_exact_before_evidence": true
+  },
+  "runtime": {
+    "executable": "/home/mkkto/srv/EIP/projects/MacroForge/.venv/bin/python",
+    "interpreter_sha256": "6759dcc6aa5a3fe3377349092f92f6700f1f79017294c1d0085009eb8802cb1e",
+    "isolated_import_resolution": true,
+    "project_module": "/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate/src/macroforge/source_native_corporate_candidate.py",
+    "pytest_version": "8.4.2",
+    "python_version": "3.11.15",
+    "resolved_interpreter": "/home/mkkto/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/bin/python3.11"
+  },
+  "test_accounting": {
+    "accounted": 673,
+    "collected": 673,
+    "deselected": 0,
+    "errors": 0,
+    "executed": 673,
+    "failed": 0,
+    "marker_accounting_support_only": true,
+    "marker_count": 673,
+    "passed": 657,
+    "protected_provider_skips": 16,
+    "pytest_duration_seconds": 1256.12,
+    "skipped": 16,
+    "terminal_100_percent": true,
+    "terminal_summary": "657 passed, 16 skipped in 1256.12s (0:20:56)",
+    "unexecuted": 0
+  },
+  "transcript": {
+    "directory": "/tmp/task225-successor-corrected-replacement-suite-20260820-y1ysyfom",
+    "metadata_sha256": "3aa362a1fdc7fae44744446c6f3fa1a8f78f58779b1fa47c731ebefd2cef0258",
+    "stderr": "/tmp/task225-successor-corrected-replacement-suite-20260820-y1ysyfom/stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_size": 0,
+    "stdout": "/tmp/task225-successor-corrected-replacement-suite-20260820-y1ysyfom/stdout.txt",
+    "stdout_sha256": "69a20e456712578ae11fb7349383892daf1d5a9df56d44c9a28a9f08e08ee83e"
+  }
+}

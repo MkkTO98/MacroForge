@@ -1,0 +1,61 @@
+{
+  "acceptance": "PARTIAL_PASS_COMPLETE_SUITE_PENDING_FRESH_AUTHORIZATION",
+  "candidate_byte_linkage": {
+    "migration_006_sha256": "41b13de3a3730ed0a4190385dc0282ee4c5153898c594b2fc339a1e7ef0e9d20",
+    "source_native_module_sha256": "f335990b704c6b7c69c15142198da075ccab9a01a0737f8d2d34bd0d06a9094d",
+    "source_native_test_sha256": "8a51fbc01f6057477760d8969bc47743f4fe1d7eb1d9297c696e217cf9220926",
+    "rehearsal_runner_sha256": "25b70f46c2b43d26661684b8d14ae0dab4318eb8ff2004273f661d32921bccb2"
+  },
+  "focused": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' PYTHONPATH=.:src /home/mkkto/srv/EIP/projects/MacroForge/.venv/bin/python -m pytest -q tests/test_source_native_corporate_candidate.py",
+    "duration_ns": 723335034766,
+    "executed": 69,
+    "exit_status": 0,
+    "failed": 0,
+    "passed": 69,
+    "skipped": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "c8116d75b97e29e046c1c979e9a565cc5263a9cf542a6f6b629a248a507a5127",
+    "transcript": "/tmp/task225-successor-corrected-focused-20260820-mLa2FYPC"
+  },
+  "integration": {
+    "command_scope": [
+      "tests/test_corporate_reporting_queries.py",
+      "tests/test_corporate_reporting_release.py",
+      "tests/test_sec_corporate_reporting.py",
+      "tests/test_sec_corporate_reporting_loader.py",
+      "tests/test_sec_corporate_proof_tranche.py",
+      "tests/test_sec_corporate_portfolio.py"
+    ],
+    "executed": 114,
+    "exit_status": 0,
+    "failed": 0,
+    "passed": 98,
+    "skipped": 16,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "62acd95d00fb7d6f4319879bb733b4dc57eaf3e24204765d2c79a9149cafd079",
+    "transcript": "/tmp/task225-successor-corrected-integration-20260820-1hGTnkxg"
+  },
+  "rehearsal": {
+    "candidate_sha256": "08ec6fb6c30b1eeeb9d62638c403954f32a00bb15874f3142e228a1b441e79a1",
+    "converged_state_sha256": "a03e54ff68b4a18a741c46cd394a19e02b347fca973f58eb56162f08f577d6b0",
+    "databases_removed_by_exact_name": true,
+    "payload_sha256": "6069a91c3841922bbff32bde5b6e60e2722fab571ecf5cc01f77d442bc999887",
+    "report_sha256": "4a76043b533c11b4a890b9e532eb3e97ad0991c9d14fedf896f7f662ecd189a0",
+    "result": "PASS",
+    "rollback_attacks_rejected_without_state_change": true,
+    "transcript": "/tmp/task225-successor-corrected-rehearsal-20260820-qFIu5gtj",
+    "two_database_convergence": true
+  },
+  "regression": {
+    "green": "1 passed in 38.65s",
+    "red": "foreign-key rejection reproduced in 26.56s",
+    "semantics": "predecessor is an externally content-addressed candidate identity; the disposable database remains bound to one exact candidate"
+  },
+  "residue": {
+    "candidate_databases_remaining": 0,
+    "new_cache_or_bytecode_remaining": 0,
+    "pre_existing_pytest_3815_preserved": true,
+    "test_pytest_roots_authenticated_and_removed": true
+  }
+}

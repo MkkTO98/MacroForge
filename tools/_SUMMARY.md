@@ -67,9 +67,11 @@ This folder is part of the ProjectForge file-backed operating system for `tools`
 - `update_state.py`
 - `validate_dry_run.py`
 - `validate_publication_boundary_json.py`
+- `run_source_native_candidate_rehearsal.py`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `run_source_native_candidate_rehearsal.py` creates two bounded TASK-225 databases from independently replayed authenticated R4 source states, applies Migration 006, proves convergence/replay/rollback, and writes deterministic rehearsal evidence.
 - `check_coherence.py` provides the canonical bounded ignored/untracked preservation and lifecycle-closeout route. Lifecycle v3 preserves explicit suppliedness and exact boundary authority while adding `evaluate_publication_transition`: a closed fail-closed evaluator for no-review, BLOCK, exact-byte PASS, local-commit-ahead, and verified-authoritative-remote conditions. It does not authenticate callers itself or create a competing publication subsystem.
 - `task209_imf_weo_g20_projection_phase2_campaign.py` builds/loads the release-aware IMF WEO April 2026 G20 projection campaign with explicit-missing semantics for absent requested year keys inside valid country-indicator series.
 - `task208_bls_us_labor_breadth_monthly_phase2_campaign.py` remains deferred pending clean BLS regeneration.

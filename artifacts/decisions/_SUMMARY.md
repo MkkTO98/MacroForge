@@ -55,10 +55,12 @@ This folder is part of the ProjectForge file-backed operating system for `artifa
 - `DEC-022-next-ten-source-expansion-optimization.md`
 - `DEC-023-long-term-domain-vision-and-knowledgeforge-boundary.md`
 - `DEC-024-corporate-reporting-placement-and-release-admission.md`
+- `DEC-025-corporate-reporting-candidate-and-governed-release-precedence.md`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
-- DEC-024 is accepted: Corporate Reporting remains a bounded sibling domain inside MacroForge; source-native private-analysis release-candidate admission precedes comparability; CIK remains SEC-scoped; qualitative split triggers are explicit; TASK-225 remains inactive.
+- DEC-025 is accepted for TASK-225 implementation: candidate v1 is canonical before admission; authority-derived v3 has precedence only after separate governed admission; historical v2/stored forms are compatibility representations that must agree or fail closed.
+- DEC-024 is accepted: Corporate Reporting remains a bounded sibling domain inside MacroForge; source-native private-analysis release-candidate admission precedes comparability; CIK remains SEC-scoped; qualitative split triggers are explicit; TASK-225 suite acceptance is established while the candidate remains uncommitted, unpublished, unadmitted, non-governed, private-analysis-only, and without an active successor.
 - DEC-023 is accepted: MacroForge's long-term world-economy observation-domain direction is a non-binding architectural vision only. It preserves DEC-022, the frozen heterogeneous-source loop, source-specific-first discipline, and MacroForge/KnowledgeForge boundaries; it does not authorize source priorities, implementation tasks, canonical entity infrastructure, graph/catalog systems, source frameworks, or provider metadata frameworks.
 - DEC-022 is accepted: MacroForge now optimizes for making the next ten heterogeneous trustworthy source implementations progressively cheaper, assumes the current post-boundary architecture is correct unless repeated evidence falsifies it, requires short Implementation Lessons after heterogeneous source work, and records future stability-review debt only.
 - DEC-021 is accepted and TASK-037 implemented its bounded WDI unit metadata enrichment scope.

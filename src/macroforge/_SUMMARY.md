@@ -34,9 +34,11 @@ This folder contains MacroForge implementation modules for source evidence, sour
 - `wdi_loader.py`
 - `wdi_smoke.py`
 - `wdi_validation.py`
+- `source_native_corporate_candidate.py`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `source_native_corporate_candidate.py` implements TASK-225 deterministic source-native candidate construction, authenticated source snapshot reading, deliberate non-mapping, append-only persistence/replay, and representation precedence without governed authority.
 - `fred_yield_curve.py` implements TASK-065's bounded FRED monthly U.S. Treasury yield-curve evidence slice: source-specific CSV fixture normalization, 2024-01/2024-02 observed-package construction across 1-month, 1-year, 10-year, and 30-year tenors, market curve/tenor metadata preservation, and deterministic replay evidence, with no broad FRED support, generic market-data infrastructure, yield-curve framework, canonical loading, interpolation, or derived curve analytics.
 - `eurostat_energy_balance.py` implements TASK-064's bounded Eurostat complete energy balance evidence slice: source-specific JSON-stat fixture normalization, annual DE/FR production/import/export/final-consumption observed-package construction across total energy and renewables/biofuels, energy balance component/fuel/unit metadata preservation, and deterministic replay evidence, with no broad Eurostat Energy support, generic energy infrastructure, canonical loading, unit conversion, or derived energy analytics.
 - `imf_bop_financial_account.py` implements TASK-063's bounded IMF BOP financial-account evidence slice: source-specific StructureSpecificData XML fixture normalization, annual USA/JPN asset/liability direct/portfolio investment observed-package construction, BOP accounting-entry/investment-category/unit/scale/methodology/access metadata preservation, and deterministic replay evidence, with no broad BOP support, financial-account framework, canonical loading, or generic SDMX extraction.

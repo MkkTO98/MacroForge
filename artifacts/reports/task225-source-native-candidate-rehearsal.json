@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "candidate_sha256": "08ec6fb6c30b1eeeb9d62638c403954f32a00bb15874f3142e228a1b441e79a1",
+    "payload_byte_length": 13090189,
+    "payload_file_sha256": "6069a91c3841922bbff32bde5b6e60e2722fab571ecf5cc01f77d442bc999887"
+  },
+  "created_at": "2026-08-20T17:15:23.822890Z",
+  "databases": [
+    {
+      "candidate_database_state": {
+        "counts": {
+          "absence_members": 10,
+          "candidates": 1,
+          "filing_members": 19,
+          "state_axes": 9
+        },
+        "state_sha256": "a03e54ff68b4a18a741c46cd394a19e02b347fca973f58eb56162f08f577d6b0"
+      },
+      "candidate_persistence": {
+        "candidate_sha256": "08ec6fb6c30b1eeeb9d62638c403954f32a00bb15874f3142e228a1b441e79a1",
+        "payload_sha256": "6069a91c3841922bbff32bde5b6e60e2722fab571ecf5cc01f77d442bc999887"
+      },
+      "database": "macroforge_task225_candidate_04e8d34f0bdc",
+      "database_boundary": {
+        "contract_version": "1",
+        "database": "macroforge_task225_candidate_04e8d34f0bdc",
+        "expected_candidate_sha256": "08ec6fb6c30b1eeeb9d62638c403954f32a00bb15874f3142e228a1b441e79a1",
+        "expected_sec_cutoff": "2026-06-30T23:59:59Z",
+        "purpose": "task225_source_native_candidate_rehearsal_v1"
+      },
+      "governed_authority_counts": {
+        "accepted_eligibility": 0,
+        "accepted_mappings": 0,
+        "accepted_quality": 0,
+        "accepted_rights": 0,
+        "governed_releases": 0,
+        "publication_completions": 0,
+        "publication_reservations": 0
+      },
+      "rollback_attack": {
+        "attempt_exit_status": 3,
+        "rejected": true,
+        "state_unchanged": true,
+        "stderr_sha256": "e4324c7ffe7f8ed26527ec81b900d5d142835fafc48d426d475885a27828cd0e"
+      },
+      "source_counts": {
+        "amendments": 2,
+        "documents": 147,
+        "filings": 19,
+        "occurrences": 35048,
+        "slots": 32381
+      },
+      "source_database": "macroforge_task223_r4a_1787071792_20113"
+    },
+    {
+      "candidate_database_state": {
+        "counts": {
+          "absence_members": 10,
+          "candidates": 1,
+          "filing_members": 19,
+          "state_axes": 9
+        },
+        "state_sha256": "a03e54ff68b4a18a741c46cd394a19e02b347fca973f58eb56162f08f577d6b0"
+      },
+      "candidate_persistence": {
+        "candidate_sha256": "08ec6fb6c30b1eeeb9d62638c403954f32a00bb15874f3142e228a1b441e79a1",
+        "payload_sha256": "6069a91c3841922bbff32bde5b6e60e2722fab571ecf5cc01f77d442bc999887"
+      },
+      "database": "macroforge_task225_candidate_3e727c91c493",
+      "database_boundary": {
+        "contract_version": "1",
+        "database": "macroforge_task225_candidate_3e727c91c493",
+        "expected_candidate_sha256": "08ec6fb6c30b1eeeb9d62638c403954f32a00bb15874f3142e228a1b441e79a1",
+        "expected_sec_cutoff": "2026-06-30T23:59:59Z",
+        "purpose": "task225_source_native_candidate_rehearsal_v1"
+      },
+      "governed_authority_counts": {
+        "accepted_eligibility": 0,
+        "accepted_mappings": 0,
+        "accepted_quality": 0,
+        "accepted_rights": 0,
+        "governed_releases": 0,
+        "publication_completions": 0,
+        "publication_reservations": 0
+      },
+      "rollback_attack": {
+        "attempt_exit_status": 3,
+        "rejected": true,
+        "state_unchanged": true,
+        "stderr_sha256": "e4324c7ffe7f8ed26527ec81b900d5d142835fafc48d426d475885a27828cd0e"
+      },
+      "source_counts": {
+        "amendments": 2,
+        "documents": 147,
+        "filings": 19,
+        "occurrences": 35048,
+        "slots": 32381
+      },
+      "source_database": "macroforge_task223_r4b_1787071792_20113"
+    }
+  ],
+  "duration_seconds": 360.853622,
+  "input_evidence": {
+    "ledger_path": "/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate/artifacts/reports/task223-corporate-proof-tranche-ledger.json",
+    "ledger_serialized_sha256": "6fe4a5ad05836a7e290e71297e4d6ab328232cbfd5fefa2a0476370250061c9c",
+    "manifest_path": "/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate/artifacts/reports/sec-corporate-portfolio-v1-manifest-20260630.json",
+    "manifest_serialized_sha256": "9cde110033fd3e8f22bedf768f01e7f90dd2c72784ad4f43172e5220ad9edf9f"
+  },
+  "result": "PASS",
+  "schema": "macroforge.task225.source-native-candidate-rehearsal.v1",
+  "two_database_convergence": true
+}

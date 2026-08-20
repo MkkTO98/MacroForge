@@ -1,0 +1,132 @@
+{
+  "acceptance": "PASS",
+  "authorization": {
+    "prior_attempt_consumed": true,
+    "replacement_authorization_consumed": true,
+    "replacement_invocation_count": 1,
+    "retry_count": 0,
+    "timeout_seconds": 1200
+  },
+  "candidate_byte_linkage": {
+    "contract_sha256": "bf74628cae2fe3b73976c77a4146a63c750ab12d7d5e2edc18d465d31bd8ccf4",
+    "implementation_sha256": "fefa73f7b5f2bbed1b4f526b2257114a9caba7f27d6603fdadab2bf5c58339c8",
+    "migration_sha256": "bdbd8c8df908e9dd4a7a7248ec538f520ec9a7a4e1b3ba78939eb5abe368aef6",
+    "runner_sha256": "ee97b85aa087b462b8d5f2df0e2ec7754843f1c6a68db6a914bc1dbc6ccf3b66",
+    "test_sha256": "006cbc14a8c7c370735af6e42685ff4386e545405a0c1c7faf3cd28b0f3d1b3b"
+  },
+  "cleanup": {
+    "cache_or_bytecode_paths": 0,
+    "fixture_parent_absent": true,
+    "fixture_target_absent": true,
+    "generated_files_removed": [
+      "artifacts/reports/task-165-wdi-campaign-compatibility-classification-report.json",
+      "artifacts/reports/task-165-wdi-campaign-exception-report.json",
+      "artifacts/reports/task-165-wdi-campaign-operational-expansion-report.json",
+      "artifacts/reports/task-165-wdi-campaign-preflight-report.json",
+      "artifacts/reports/task-165-wdi-campaign-repository-coverage-report.json",
+      "artifacts/reports/task-165-wdi-campaign-updated-confidence-assessment.json",
+      "artifacts/tmp/task208_publish_20260820T132320Z/active-raw.json",
+      "artifacts/tmp/task208_publish_20260820T132320Z/failed-chunk.json"
+    ],
+    "generated_directory_removed_with_rmdir": "artifacts/tmp/task208_publish_20260820T132320Z",
+    "post_cleanup_manifest_record_count": 1159,
+    "post_cleanup_manifest_sha256": "c7347557b1bebbe463b602cc62ef44cf553065a6a43d221fb1bab26c35ee4b1c",
+    "pre_suite_equivalence_except_authorized_fixture_removal": true,
+    "staged_count": 0,
+    "tracked_reports_restored": {
+      "artifacts/reports/canonical-gdp-snapshot-20260604.json": "c86d29fc24a2b14a86fec2f8e9d0e7ddb23d4d128bb19ca037574df10d8d5e77",
+      "artifacts/reports/combined-source-canonical-smoke-20260604.json": "220c0d740e2b733e13cd065a11a93249fc48f64c4b4c13bc62c89c9bd5b612b6"
+    },
+    "unchanged_tracked_report": {
+      "artifacts/reports/canonical-gdp-snapshot-20260604.md": "ebe1193336bbaf65f74acfe5c5c04ea08f669e4cb6df334215a9f014846952d5"
+    },
+    "unmerged_count": 0
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' PYTHONPATH=.:src /home/mkkto/srv/EIP/projects/MacroForge/.venv/bin/python -m pytest -q",
+  "counts": {
+    "collected": 614,
+    "deselected": 0,
+    "errored": 0,
+    "executed": 614,
+    "failed": 0,
+    "passed": 598,
+    "skipped": 16,
+    "unexecuted": 0
+  },
+  "created_at": "2026-08-20T13:34:57Z",
+  "failed_attempt_preserved": {
+    "evidence_path": "artifacts/reports/task225-incomplete-complete-suite-evidence.json",
+    "evidence_sha256": "53f70ffaf3b28c2354b2c22a6acbc550dd7bdfdbc41dce73d04683324f16bdd4",
+    "transcript_directory": "/tmp/task225-complete-suite-20260820T123031Z-XgEpff"
+  },
+  "fixture": {
+    "source_path": "/home/mkkto/srv/EIP/projects/MacroForge/data/metadata/wdi/wdi-smoke-normalized.json",
+    "source_regular_non_symlink": true,
+    "source_sha256_after_cleanup": "19a7ef1d8552580c0372d91bbb1095f1a222bf47c469764b7d0c61c7b4310c9a",
+    "source_size": 4371,
+    "target_mode": "0644",
+    "target_path": "data/metadata/wdi/wdi-smoke-normalized.json",
+    "target_sha256_before_suite": "19a7ef1d8552580c0372d91bbb1095f1a222bf47c469764b7d0c61c7b4310c9a",
+    "target_sha256_before_removal": "19a7ef1d8552580c0372d91bbb1095f1a222bf47c469764b7d0c61c7b4310c9a"
+  },
+  "focused_and_rehearsal_evidence": {
+    "candidate_sha256": "08ec6fb6c30b1eeeb9d62638c403954f32a00bb15874f3142e228a1b441e79a1",
+    "database_state_sha256": "a03e54ff68b4a18a741c46cd394a19e02b347fca973f58eb56162f08f577d6b0",
+    "payload_sha256": "6069a91c3841922bbff32bde5b6e60e2722fab571ecf5cc01f77d442bc999887",
+    "rehearsal_report_path": "artifacts/reports/task225-source-native-candidate-rehearsal.json",
+    "rehearsal_report_sha256": "752a501e68ce48d810b822db57cbf72779a6a289abc92073ed3036def0319423",
+    "reuse_status": "VALID — implementation, schema, focused-test, runner, and contract bytes unchanged"
+  },
+  "governed_preservation": {
+    "accepted_mapping_count": 0,
+    "blocked_authority_root_count": 1,
+    "blocked_eligibility_revision_count": 1,
+    "eligible_authority_count": 0,
+    "governed_database_writes": 0,
+    "publication_completion_count": 0,
+    "publication_reservation_count": 0,
+    "quality_revision_count": 0,
+    "release_count": 0,
+    "relevant_post_suite_databases": 0,
+    "relevant_post_suite_prepared_transactions": 0,
+    "relevant_post_suite_sessions": 0,
+    "rights_revision_count": 0,
+    "task225_candidate_tables_present_in_governed_database": false,
+    "task225_disposable_databases": 0
+  },
+  "pre_suite_manifest": {
+    "canonical_sha256": "2dd8c674277bda5d7730e452a47b7a3fb698469f2a915f87861f14e1a6ede195",
+    "file_sha256": "c282baf127a9d8a06183c3f4148b259532f0eebdfa19e919ac6a9ebebf66d4b4",
+    "path": "/tmp/task225-replacement-complete-suite-20260820TddWQMz/pre-suite-manifest.json",
+    "record_count": 1161
+  },
+  "runtime": {
+    "interpreter_path": "/home/mkkto/srv/EIP/projects/MacroForge/.venv/bin/python",
+    "interpreter_resolved_path": "/home/mkkto/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/bin/python3.11",
+    "interpreter_sha256": "6759dcc6aa5a3fe3377349092f92f6700f1f79017294c1d0085009eb8802cb1e",
+    "macroforge_origin": "/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate/src/macroforge/__init__.py",
+    "pytest": "8.4.2",
+    "python": "3.11.15",
+    "task225_module_origin": "/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate/src/macroforge/source_native_corporate_candidate.py",
+    "task225_runner_origin": "/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate/tools/run_source_native_candidate_rehearsal.py"
+  },
+  "schema": "macroforge.task225.replacement-complete-suite-evidence.v1",
+  "transcript": {
+    "command_sha256": "088cd8d392b3e54109c9f5fc84c16344e1fc17770be1a4e18c6bc570e9c36aa3",
+    "directory": "/tmp/task225-replacement-complete-suite-20260820TddWQMz",
+    "execution_sha256": "6537f14f5457bcc8e8ce8dd315abfab9d6bf1993d7ee8b8b2b326ba943264a8b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "21d356dc48d82cef25cf5d157d89bf8d10954f43ac9d6bc8f55f0ebae1021ebb",
+    "working_directory_sha256": "0c2a92162ae799a26453201ebe3d19df4e7a82b12e6bf04ff92dbb4888e6b628",
+    "wrapper_script_sha256": "9380dee5f8f16a9e5776a574b2cb4844b4f7b6600bf8319d160d31308c4d9773"
+  },
+  "wrapper": {
+    "ended_utc": "2026-08-20T13:31:09.077424Z",
+    "exit_status": 0,
+    "pytest_duration_seconds": 675.12,
+    "pytest_exit_status": 0,
+    "started_utc": "2026-08-20T13:19:53.433512Z",
+    "timed_out": false,
+    "wrapper_duration_seconds": 675.643892742999
+  }
+}

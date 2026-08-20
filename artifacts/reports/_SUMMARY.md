@@ -126,6 +126,17 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 - `R-20260627-final-governance-refinement-and-freeze.md`
 - `R-20260627-foundational-capability-extraction-candidate.md`
 - `R-20260820-task-224-corporate-reporting-release-admission-gap-map.md`
+- `R-20260820-task225-source-native-private-analysis-candidate-contract-v1.md`
+- `task225-incomplete-complete-suite-evidence.json`
+- `task225-final-byte-complete-suite-evidence.json`
+- `task225-remediation-focused-evidence.json`
+- `task225-review-remediation-obligation-matrix.json`
+- `task225-replacement-complete-suite-evidence.json`
+- `task225-source-native-candidate-rehearsal.json`
+- `task225-rejected-remediated-freeze-review.json`
+- `task225-successor-corrected-complete-suite-evidence.json`
+- `task225-successor-corrected-replacement-complete-suite-evidence.json`
+- `task225-successor-correction-verification.json`
 - `task-209-forecast-vintage-decision-evidence-integrity-audit.md`
 - `task-209-final-closeout-consistency-check.md`
 - `task-209-imf-weo-g20-projections-artifact-checksums.txt`
@@ -143,6 +154,7 @@ Architecture reports, validation reports, canonicalization reports, strategic re
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- TASK-225 is a final closeout candidate on unchanged successor-corrected bytes: 69 focused passes, 98 integration passes plus 16 protected skips, convergent two-database rehearsal, and an accepted replacement complete suite with 657 passes plus 16 protected skips and all 673 items accounted. Failed attempts remain distinct history. A new exact freeze and three unconditional identical-byte reviews remain; no governed admission or publication authority exists.
 - `R-20260820-task-224-corporate-reporting-release-admission-gap-map.md` separates source-native admission, comparability, rights, eligibility, publication, and downstream blockers; specifies the minimum KnowledgeForge contract; and freezes an exact inactive TASK-225 rehearsal specification.
 - `R-20260801-ignored-artifact-preservation-governance-closeout.json` preserves the exact correction/review chronology through the latest `BLOCKED / PUBLICATION TRANSITION DEFECT` and sixth correction. Lifecycle v3 encodes a state-conditioned fixed point: exact-byte PASS can authorize bounded publication without editing reviewed bytes, BLOCK prohibits publication, local commit still requires remote verification, and verified remote equality closes the workstream without implicit successor activation.
 - TASK-216 reports document IMF BOP annual current-account Phase 2 evidence: provider-structure investigation, frozen candidate universe/prediction, raw/processed checksum reconciliation, PostgreSQL load/idempotence/later-snapshot coexistence, prediction evaluation, and IMF-BOP extraction decision.

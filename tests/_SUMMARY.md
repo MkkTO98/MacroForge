@@ -128,9 +128,11 @@ Tests for MacroForge source evidence, loaders, database schema, canonical-domain
 - `test_wdi_dependency_ratios.py`
 - `test_wdi_education_human_capital.py`
 - `test_ignored_artifact_preservation.py`
+- `test_source_native_corporate_candidate.py`
 <!-- PROJECTFORGE:END-CONTAINS -->
 
 ## Active Work
+- `test_source_native_corporate_candidate.py` covers frozen membership/accounting, manifest-bound document identity, filing-qualified occurrence/slot ownership, content/alias/N+1 rejection, exact disposable-database isolation, append-only persistence, rollback, replay, and representation precedence. Successor-corrected focused verification passed 69 tests; the corrected complete suite subsequently passed with 673 accounted items, 657 passes, 16 protected-provider skips, and zero failures, errors, deselections, or unexecuted items.
 - `test_ignored_artifact_preservation.py` covers protected identity, bounded cache/PYC reads, special-file/race safety, explicit observation suppliedness, exact family/path authority, exact lifecycle history, and the v3 fixed-point transition model. It tests no review, exact BLOCK, mismatched PASS, exact PASS, local-commit-ahead, verified-remote-equality, malformed evidence, commit/publication separation, and no implicit successor activation. Prior re-audit evidence remains 79 executed passes plus one separate `CAP_MKNOD` skip.
 - `test_task209_imf_weo_g20_projection_phase2_campaign.py` covers TASK-209 normalization, release/vintage identity, explicit-missing Saudi Arabia LUR semantics, SQL quality checks, and simulated later-release coexistence.
 - `test_task207_bls_us_labor_monthly_phase2_campaign.py` contains the narrow accepted BLS source-identity regression alignment to `BLS_PUBLIC_API_V2`.

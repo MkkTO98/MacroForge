@@ -1,0 +1,103 @@
+{
+  "acceptance": "FAILED_TIMEOUT_INCOMPLETE_ACCOUNTING",
+  "authorization": {
+    "complete_suite_invocation_count": 1,
+    "consumed_when_pytest_started": true,
+    "retry_count": 0,
+    "wrapper_limit_seconds": 1200
+  },
+  "candidate_byte_linkage": {
+    "migration_006_sha256": "41b13de3a3730ed0a4190385dc0282ee4c5153898c594b2fc339a1e7ef0e9d20",
+    "rehearsal_report_sha256": "4a76043b533c11b4a890b9e532eb3e97ad0991c9d14fedf896f7f662ecd189a0",
+    "rehearsal_runner_sha256": "25b70f46c2b43d26661684b8d14ae0dab4318eb8ff2004273f661d32921bccb2",
+    "source_native_module_sha256": "f335990b704c6b7c69c15142198da075ccab9a01a0737f8d2d34bd0d06a9094d",
+    "source_native_test_sha256": "8a51fbc01f6057477760d8969bc47743f4fe1d7eb1d9297c696e217cf9220926",
+    "successor_correction_verification_sha256": "a42b61af54b3743adc5f1eab9c0203ada3bbc9175513ab66ba5808569530558c"
+  },
+  "cleanup": {
+    "authenticated_suite_residue_manifest_sha256": "cd432c7e086300d2cd9f263911751983bba701bf946fc6299f66402adac3d2d0",
+    "candidate_databases_remaining": 0,
+    "fixture_directory_absent": true,
+    "fixture_source_sha256_after_cleanup": "19a7ef1d8552580c0372d91bbb1095f1a222bf47c469764b7d0c61c7b4310c9a",
+    "fixture_target_absent_every_form": true,
+    "new_or_changed_cache_bytecode_records": 0,
+    "post_cleanup_verification_sha256": "db190befacc5520d398a5eb2b0c3fee53c2c72fd6aa41bf231bca2b36be137c1",
+    "pre_existing_cache_bytecode_records_preserved": 11,
+    "pre_existing_pytest_state_exactly_preserved": true,
+    "prepared_transactions_remaining": 0,
+    "pytest_records_removed": 1515,
+    "relevant_processes_remaining": 0,
+    "relevant_sessions_remaining": 0,
+    "staged_paths": 0,
+    "tracked_reports_restored_from_authenticated_backups": 2,
+    "unmerged_paths": 0,
+    "worktree_matches_pre_suite_baseline_before_this_evidence_report": true,
+    "worktree_records": 1171
+  },
+  "fixture": {
+    "mode": "0644",
+    "sha256": "19a7ef1d8552580c0372d91bbb1095f1a222bf47c469764b7d0c61c7b4310c9a",
+    "size_bytes": 4371,
+    "source": "/home/mkkto/srv/EIP/projects/MacroForge/data/metadata/wdi/wdi-smoke-normalized.json",
+    "target": "data/metadata/wdi/wdi-smoke-normalized.json"
+  },
+  "governed_state_after_cleanup": {
+    "accepted_eligibility": 0,
+    "accepted_mappings": 0,
+    "accepted_quality": 0,
+    "accepted_rights": 0,
+    "blocked_authority_roots": 1,
+    "blocked_eligibility": 1,
+    "governed_releases": 0,
+    "publication_completions": 0,
+    "publication_reservations": 0
+  },
+  "historical_distinction": {
+    "current_invocation": "successor-corrected final-byte suite; wrapper timeout/SIGTERM; invalid",
+    "earlier_success_invalidated_by_material_remediation": "artifacts/reports/task225-final-byte-complete-suite-evidence.json",
+    "focused_and_integration_verification": "artifacts/reports/task225-successor-correction-verification.json",
+    "original_timeout": "artifacts/reports/task225-incomplete-complete-suite-evidence.json",
+    "original_byte_success": "artifacts/reports/task225-replacement-complete-suite-evidence.json",
+    "prior_terminated_sigterm_process": "distinct historical process; no result or authorization reused"
+  },
+  "invocation": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_ADDOPTS='-p no:cacheprovider' PYTHONPATH=.:src /home/mkkto/srv/EIP/projects/MacroForge/.venv/bin/python -m pytest -q",
+    "ended_utc": "2026-08-20T18:10:33.045592383Z",
+    "environment": {
+      "PYTEST_ADDOPTS": "-p no:cacheprovider",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONPATH": ".:src"
+    },
+    "executable": "/home/mkkto/srv/EIP/projects/MacroForge/.venv/bin/python",
+    "interpreter_sha256": "6759dcc6aa5a3fe3377349092f92f6700f1f79017294c1d0085009eb8802cb1e",
+    "process_status": 124,
+    "pytest_exit_status": "UNKNOWN_TIMEOUT",
+    "pytest_version": "8.4.2",
+    "python_version": "3.11.15",
+    "resolved_interpreter": "/home/mkkto/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/bin/python3.11",
+    "started_utc": "2026-08-20T17:50:33.016987586Z",
+    "working_directory": "/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate",
+    "wrapper_duration_ns": 1200027202970
+  },
+  "preservation_baseline": {
+    "git_status_sha256": "ff0c9ebac869894a007263479afc9e8e7ab5da132872ac43a3f01ac89c434888",
+    "git_visible_candidate_paths": 27,
+    "worktree_manifest_sha256": "2925f71222f6257c2ea0b5f7005d3dc460473dff6c549a54a850ed5e1e1eac40"
+  },
+  "test_accounting": {
+    "collected": "UNKNOWN_NO_TERMINAL_SUMMARY",
+    "deselected": "UNKNOWN_NO_TERMINAL_SUMMARY",
+    "errors": "UNKNOWN_NO_TERMINAL_SUMMARY",
+    "executed_markers_observed": 668,
+    "failed": "UNKNOWN_NO_TERMINAL_SUMMARY",
+    "passed_markers_observed": 652,
+    "protected_provider_skip_markers_observed": 16,
+    "terminal_summary_present": false,
+    "unexecuted": "UNKNOWN_NO_TERMINAL_SUMMARY"
+  },
+  "transcript": {
+    "directory": "/tmp/task225-successor-corrected-final-suite-20260820-gzzms0s6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "9f64963e0fdc7821bb29eb6c2ae63e4bc1d6da436031047eeb402fd311c5ddf8"
+  }
+}

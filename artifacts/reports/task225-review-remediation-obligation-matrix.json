@@ -1,0 +1,203 @@
+{
+  "additional_equivalent_paths": [
+    "nullable header trigger comparisons",
+    "self-consistent attacker-authored SourceNativeCandidate",
+    "state-axis status and completeness bypass",
+    "header-only or partial-child commit",
+    "payload digest non-recomputation",
+    "marker update/delete after migration",
+    "rollback probe without independent database authentication"
+  ],
+  "architecture": {
+    "bounded_decision": "Use a TASK-225-specific durable marker installed only after exact database creation, then authenticate actual current_database(), exact name, purpose, contract, and expected candidate identity at migration, persistence, and SQL mutation boundaries.",
+    "canonical_existing_mechanism": "No durable generic database-purpose subsystem exists. Existing MacroForge tools use generated disposable names; TASK-223 additionally authenticates current_database().",
+    "migration_006_placement": "Retain sequence after Migration 005, but classify and enforce Migration 006 as a disposable TASK-225 rehearsal-only migration. Its guard executes before first DDL in one transaction.",
+    "why_not_generalize": "A generic environment/purpose framework would broaden unrelated ingestion and migration contracts without repeated evidence of shared need."
+  },
+  "current_gate_status": {
+    "complete_suite": "PASS",
+    "final_reviews": "PENDING",
+    "focused": "PASS",
+    "governance": "PASS",
+    "integration": "PASS",
+    "rehearsal": "PASS"
+  },
+  "failed_freeze": {
+    "aggregate": "f80f5ff493b73e7fe39f4651899d17067f80d8c855ec9606c38b857fddb6b3dd",
+    "disposition": "superseded historical evidence; never accepted",
+    "path": "/tmp/task225-final-closeout-freeze-20260820TtPUX8o/task225-final-closeout-freeze.json",
+    "sha256": "1afcd39b94e99b424e4ccdd572099de537f45b2ae9e998b5aa62915654186bc8"
+  },
+  "failed_review": {
+    "decisions": [
+      "FAIL",
+      "FAIL",
+      "UNCONDITIONAL PASS"
+    ],
+    "path": "/tmp/task225-final-closeout-freeze-20260820TtPUX8o/task225-final-review-results.json",
+    "sha256": "e1593c3b2413e50a64c9d14e78eafa5bccbbf634cfbdffc6553389bca027d57e",
+    "unanimous": false
+  },
+  "obligations": [
+    {
+      "bypasses": [
+        "direct psql -f",
+        "direct persist_source_native_candidate call",
+        "DSN/connection-name mismatch",
+        "wrong or absent marker",
+        "direct INSERT/COPY",
+        "marker contradiction after installation"
+      ],
+      "canonical_owner": [
+        "tools/run_source_native_candidate_rehearsal.py",
+        "db/migrations/006_corporate_reporting_source_native_candidate.sql",
+        "src/macroforge/source_native_corporate_candidate.py"
+      ],
+      "current_enforcement": "runner target-name check only",
+      "finding": "governed database isolation",
+      "invalidated_evidence": [
+        "old focused tests",
+        "old rehearsal",
+        "old complete suite",
+        "failed freeze/reviews"
+      ],
+      "missing_enforcement": [
+        "actual current_database authentication",
+        "durable purpose/identity marker",
+        "migration entry guard",
+        "same-connection persistence preflight",
+        "direct-SQL mutation guard"
+      ],
+      "negative_tests": [
+        "governed/wrong-name/unmarked/wrong-purpose/mismatched-candidate migration or persistence",
+        "direct SQL and COPY bypass",
+        "zero partial rows"
+      ],
+      "positive_tests": [
+        "exact marked disposable database migrates and persists",
+        "replay succeeds"
+      ],
+      "production_change": "Install and authenticate a narrow immutable TASK-225 boundary marker; verify it on the actual connection before mutation.",
+      "remediation_status": "IMPLEMENTED_AND_FOCUSED_VERIFIED",
+      "sql_change": "Transactional migration preamble plus per-row boundary assertions and deferred relational closure.",
+      "verification_evidence": "artifacts/reports/task225-remediation-focused-evidence.json"
+    },
+    {
+      "bypasses": [
+        "missing permission object/key",
+        "JSON null",
+        "string false type confusion",
+        "permissive boolean",
+        "extra/invalid state",
+        "direct SQL"
+      ],
+      "canonical_owner": [
+        "src/macroforge/source_native_corporate_candidate.py",
+        "db/migrations/006_corporate_reporting_source_native_candidate.sql"
+      ],
+      "current_enforcement": "Python builder emits four fields; SQL compares three text extractions with nullable CHECK semantics",
+      "finding": "nullable private-analysis permissions",
+      "invalidated_evidence": [
+        "old focused tests",
+        "old rehearsal",
+        "old complete suite",
+        "failed freeze/reviews"
+      ],
+      "missing_enforcement": [
+        "private_analysis_candidate",
+        "exact keys/types",
+        "missing/null rejection",
+        "cross-field exact posture",
+        "self-consistent attacker-created candidate rejection"
+      ],
+      "negative_tests": [
+        "each field missing/null",
+        "multiple nulls",
+        "invalid types/enums",
+        "contradictory/permissive values",
+        "extra fields",
+        "atomic direct-SQL rejection"
+      ],
+      "positive_tests": [
+        "only explicit private-analysis-only posture persists and reloads exactly"
+      ],
+      "production_change": "Validate exact permission object during every candidate verification.",
+      "remediation_status": "IMPLEMENTED_AND_FOCUSED_VERIFIED",
+      "sql_change": "Require exact JSONB permission object with IS TRUE semantics; verify exact state axes and knowledge posture.",
+      "verification_evidence": "artifacts/reports/task225-remediation-focused-evidence.json"
+    },
+    {
+      "bypasses": [
+        "arbitrary text ending Z",
+        "calendar/time overflow",
+        "offset spelling",
+        "fractional seconds",
+        "whitespace",
+        "lowercase or duplicate Z",
+        "different valid instant"
+      ],
+      "canonical_owner": [
+        "src/macroforge/source_native_corporate_candidate.py",
+        "db/migrations/006_corporate_reporting_source_native_candidate.sql"
+      ],
+      "current_enforcement": "endswith('Z') and PostgreSQL timestamptz cast",
+      "finding": "noncanonical SEC cutoff",
+      "invalidated_evidence": [
+        "old candidate-building tests",
+        "old rehearsal",
+        "old complete suite",
+        "failed freeze/reviews"
+      ],
+      "missing_enforcement": [
+        "semantic parse",
+        "canonical UTC round-trip",
+        "exact authenticated manifest cutoff binding",
+        "SQL textual contract"
+      ],
+      "negative_tests": [
+        "all malformed/noncanonical forms",
+        "manifest mismatch",
+        "no alternate identity through spelling"
+      ],
+      "positive_tests": [
+        "exact canonical cutoff",
+        "boundary-valid canonical dates through validator"
+      ],
+      "production_change": "Require YYYY-MM-DDTHH:MM:SSZ, parse strictly, canonical round-trip, and exact source-manifest acceptance_cutoff equality.",
+      "remediation_status": "IMPLEMENTED_AND_FOCUSED_VERIFIED",
+      "sql_change": "Require exact TASK-225 canonical cutoff text in candidate_document and equality to typed header.",
+      "verification_evidence": "artifacts/reports/task225-remediation-focused-evidence.json"
+    },
+    {
+      "bypasses": [
+        "startup reads obsolete TASK-224/specification-only claim",
+        "handoff treats rejected bytes as accepted current evidence"
+      ],
+      "canonical_owner": [
+        "context/_SUMMARY.md",
+        "context/latest_handoff.md",
+        "state/active_goal.md",
+        "state/project_state.md",
+        "affected folder summaries"
+      ],
+      "current_enforcement": "manual continuity reconciliation",
+      "finding": "stale context summary",
+      "invalidated_evidence": [
+        "old closeout summaries and failed freeze"
+      ],
+      "missing_enforcement": "failed-review chronology and remediation state",
+      "negative_tests": [
+        "no specification-only or freeze-pending stale current claim"
+      ],
+      "positive_tests": [
+        "coherence/context-health",
+        "manual exact summary comparison"
+      ],
+      "production_change": "none",
+      "remediation_status": "IMPLEMENTED_AND_FOCUSED_VERIFIED",
+      "sql_change": "none",
+      "verification_evidence": "artifacts/reports/task225-remediation-focused-evidence.json"
+    }
+  ],
+  "schema": "macroforge.task225.review-remediation-obligation-matrix.v1"
+}
