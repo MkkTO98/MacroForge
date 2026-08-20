@@ -1,10 +1,10 @@
 # TASK-223 — Corporate Portfolio v1 proof-tranche occurrence ingestion and isolated PostgreSQL rehearsal
 
-Status: **REVIEWED — PUBLICATION-READY**
+Status: **PUBLISHED — RECONCILED — CLOSED**
 
 ## Authority
 
-User-authorized bounded successor to published TASK-222. Baseline: `6900a58f2a5850f6511e20a23f036efcf71ea9d8`. Work occurs only in detached isolated worktree `/home/mkkto/srv/EIP/worktrees/MacroForge-task223-corporate-proof-tranche-ingestion`.
+User-authorized bounded successor to published TASK-222. Baseline: `6900a58f2a5850f6511e20a23f036efcf71ea9d8`. Implementation and verification occurred only in detached isolated worktree `/home/mkkto/srv/EIP/worktrees/MacroForge-task223-corporate-proof-tranche-ingestion`. The reviewed ten-path implementation candidate was Git-published to remote `main` as commit `9d00347cbddb76531b0dacf3c692d1828cf8eed9` by a direct one-commit non-force fast-forward from the baseline.
 
 ## Goal
 
@@ -55,7 +55,7 @@ Deduplicate accessions. Stop if any criterion is unsupported. The ledger must fr
 
 ## Explicit exclusions
 
-No governed PostgreSQL writes, production Corporate Reporting rows, mapping acceptance, semantic-equivalence inference, final reporting-scope authority, restatement classification, governed release, rights/redistribution authority, remote delivery, downstream Forge integration, complete 311-package ingestion, staging, commit, push, publication, successor activation, or retained provider body in Git.
+No governed PostgreSQL writes, production Corporate Reporting rows, mapping acceptance, semantic-equivalence inference, final reporting-scope authority, restatement classification, governed Corporate Reporting data release, release membership, release eligibility, rights approval, redistribution permission, publication reservation/completion, KnowledgeForge delivery, InsightForge analysis, BriefForge delivery, complete 311-package ingestion, successor activation, or retained provider body in Git. The later authorized Git publication of TASK-223 implementation, tests, runner, ledger, and governance records did not alter these exclusions and did not constitute a governed data release.
 
 ## Acceptance criteria
 
@@ -69,9 +69,11 @@ No governed PostgreSQL writes, production Corporate Reporting rows, mapping acce
 - [x] Governed PostgreSQL, publication authority, and live tree remain unchanged.
 - [x] Exact candidate frozen and fresh independent review passes.
 
-## Current next action
+## Publication and closeout
 
-Await explicit publication authority for the exact post-record ten-path candidate. Publication must remain limited to staging, committing, and publishing those authenticated paths through the normal TASK-223 lifecycle. Do not rerun ingestion, replay, or the complete suite; do not activate TASK-224.
+The final reviewed implementation candidate contained exactly ten paths and had canonical SHA-256 `a25640b04ddf8a8fd1034bc4e7e402a46e0c4f11eb84e10d3c42bdfc6714409c`. It was committed as `9d00347cbddb76531b0dacf3c692d1828cf8eed9` (`feat: add SEC corporate proof-tranche ingestion`) with parent `6900a58f2a5850f6511e20a23f036efcf71ea9d8`, then confirmed on remote `main` through a direct one-commit non-force fast-forward.
+
+Git publication occurred after implementation, deterministic replay, two-database convergence, the complete suite, final-byte freeze, and independent review. This governance-only reconciliation occurred after that implementation publication. TASK-223 is therefore published, reconciled, and closed. No successor is active, and TASK-224 has not been activated. Any mapping, rights, redistribution, governed release, or downstream-delivery work remains deferred and requires separate authority.
 
 ## Proven campaign checkpoint
 
@@ -81,10 +83,14 @@ The corrected complete suite ran exactly once against these exact implementation
 
 ## Final independent review
 
-Three independent read-only reviews authenticated the identical clean implementation freeze, canonical candidate SHA-256 `6676cb6230fa911d0c31a0a3bfe893f9c3822bace8c44edcb27ca93138689366`, and returned unconditional PASS:
+Three independent read-only reviews authenticated the identical clean pre-continuity implementation freeze, canonical candidate SHA-256 `6676cb6230fa911d0c31a0a3bfe893f9c3822bace8c44edcb27ca93138689366`, and returned unconditional PASS:
 
 1. Corporate Reporting boundary, authority separation, occurrence preservation, and exact 19-act/10-absence portfolio accounting: **PASS**.
 2. Transaction rollback, replay, two-database convergence, target isolation, governed-database preservation, and zero authority leakage: **PASS**.
 3. Permanent-test sufficiency, complete-suite accounting, exact suite-time byte identity, protected-skip honesty, and residue/protected-state separation: **PASS**.
 
-No reviewer changed files, reran ingestion or pytest, or wrote PostgreSQL. TASK-223 is reviewed and publication-ready but is not committed, published, or closed.
+No reviewer changed files, reran ingestion or pytest, or wrote PostgreSQL. The later post-record ten-path candidate had canonical SHA-256 `a25640b04ddf8a8fd1034bc4e7e402a46e0c4f11eb84e10d3c42bdfc6714409c` and is the candidate published by implementation commit `9d00347cbddb76531b0dacf3c692d1828cf8eed9`.
+
+## Governed-database accounting
+
+Final read-only closeout authentication of governed `macroforge` recorded: zero accepted mappings, one historical knowledge snapshot, one historical release-eligibility row, zero releases, zero rights decisions, zero quality decisions, zero publication reservations, and zero publication completions. The snapshot and eligibility rows pre-existed TASK-223. TASK-223 added or altered zero governed rows, and no governed database write occurred during TASK-223.
