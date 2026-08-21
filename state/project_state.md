@@ -2,7 +2,7 @@
 
 ## Current governance condition
 
-TASK-225 is a final closeout candidate and remains non-governed. Successor-corrected focused, integration, two-database rehearsal, and replacement complete-suite gates pass on unchanged implementation bytes. Exact external freeze authentication and three independent identical-byte reviews remain before final acceptance.
+TASK-225's scoped implementation objective is complete and closes through governance reconciliation. Successor-corrected focused, integration, two-database rehearsal, and the 673-item replacement complete suite passed on unchanged implementation bytes. The exact 29-path freeze received three unconditional identical-byte reviews before direct one-commit Git publication in `7379417873564f5412bcbd4fc2725ba7a1841c3d`.
 
 ## Preserved history
 
@@ -21,4 +21,4 @@ TASK-225 is a final closeout candidate and remains non-governed. Successor-corre
 - accepted replacement evidence: `artifacts/reports/task225-successor-corrected-replacement-complete-suite-evidence.json`;
 - failed 1,200-second predecessor attempt and diagnostic collection remain distinct preserved evidence.
 
-Governed accepted mappings, rights, quality, eligible authority, releases, publication reservations, and publication completions remain zero; one blocked eligibility revision and one blocked authority root remain. Candidate construction grants no rights, redistribution, publication, remote-delivery, downstream-consumption, or successor authority. Nothing is staged, committed, pushed, published, delivered, or activated.
+Governed accepted mappings, rights, quality, eligible authority, releases, publication reservations, and publication completions remain zero; one blocked eligibility revision and one blocked authority root remain. Git publication is not governed Corporate Reporting admission or dataset release. The source-native candidate remains private-analysis-only and grants no redistribution permission, remote-delivery authority, downstream-consumption authority, or governed database authority. No successor is active or defined, and the repository is idle pending explicit user direction.

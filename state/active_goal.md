@@ -2,7 +2,7 @@
 
 ## Goal
 
-Freeze the successor-corrected final closeout candidate and obtain three independent unconditional identical-byte PASS reviews without changing candidate bytes or exercising publication authority.
+Close TASK-225 through governance-only reconciliation after successful publication of the exact reviewed implementation. No successor becomes active automatically.
 
 ## Current status
 
@@ -17,7 +17,11 @@ Freeze the successor-corrected final closeout candidate and obtain three indepen
 9. Diagnostic collection proved 673 items and ordinary cumulative runtime beyond the former cap.
 10. The sole authorized replacement suite passed exactly: `657 passed, 16 skipped` in `1256.12s`, all 673 items accounted, wrapper/pytest exit zero, and `[100%]` emitted.
 11. Exact cleanup restored the pre-suite baseline before durable evidence was added; governed state remains unchanged and non-admitted.
+12. The exact 29-path implementation freeze received three unconditional identical-byte PASS reviews.
+13. The reviewed implementation was Git-published in `7379417873564f5412bcbd4fc2725ba7a1841c3d` by direct one-commit fast-forward.
+14. Git publication did not perform governed Corporate Reporting admission or dataset release; private-analysis, rights, redistribution, delivery, and governed-database boundaries remain closed.
+15. This governance reconciliation closes TASK-225. No successor is active or defined.
 
-## Next authorized step
+## Idle condition
 
-Do not rerun any verification suite. Complete fresh read-only closeout gates, freeze the exact intended candidate path set externally, and obtain three independent reviews over that identical freeze. Nothing may be staged, committed, pushed, published, admitted, redistributed, remotely delivered, or activated.
+After this governance reconciliation, the repository is idle pending explicit user direction. Do not infer or activate a successor. No governed admission, dataset release, redistribution permission, remote-delivery authority, downstream-consumption authority, or governed database write follows from Git publication.

@@ -2,7 +2,7 @@
 
 ## Status
 
-TASK-225 successor correction is implemented in `/home/mkkto/srv/EIP/worktrees/MacroForge-task225-source-native-release-candidate` at parent `d20114aece9f9daf5d64b81880f103d76cff2715`.
+TASK-225's exact reviewed 29-path implementation was Git-published in commit `7379417873564f5412bcbd4fc2725ba7a1841c3d` by direct one-commit fast-forward from `d20114aece9f9daf5d64b81880f103d76cff2715`. This governance reconciliation closes the scoped implementation objective without activating or defining a successor.
 
 The first remediated freeze was rejected 0/3 despite identical-byte authentication. Review found stale lifecycle prose and a substantive successor defect: Migration 006 required a predecessor row in the same table while the database marker permits only one exact candidate.
 
@@ -26,6 +26,6 @@ The first remediated freeze was rejected 0/3 despite identical-byte authenticati
 - Accepted evidence: `artifacts/reports/task225-successor-corrected-replacement-complete-suite-evidence.json`.
 - Exact cleanup restored the pre-suite worktree baseline before evidence creation and preserved `pytest-3815`, all 11 cache/bytecode records, protected WDI source, and zero TASK-225 database/session/process/prepared-transaction residue.
 
-## Resume procedure
+## Closed state
 
-Do not rerun focused, integration, rehearsal, or complete-suite gates. Authenticate fresh read-only governance gates and governed counts, freeze the exact intended Git-visible candidate externally, and obtain three independent unconditional identical-byte PASS reviews. Candidate construction is not governed admission or publication; no staging, commit, push, rights acceptance, redistribution, remote delivery, downstream consumption, or successor activation is authorized.
+The implementation's exact external freeze and three unconditional identical-byte reviews completed before Git publication. The accepted 673-item complete-suite evidence and implementation bytes remain unchanged. Git publication is not governed Corporate Reporting admission or dataset release: the candidate remains private-analysis-only; accepted mappings, rights, quality, eligible authority, releases, publication reservations, and publication completions remain absent; no governed database write, redistribution permission, remote-delivery authority, downstream-consumption authority, or successor activation occurred. No successor is active or defined. The repository is idle pending explicit user direction.

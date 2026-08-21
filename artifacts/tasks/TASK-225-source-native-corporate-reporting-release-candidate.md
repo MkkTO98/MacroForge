@@ -1,6 +1,6 @@
 # TASK-225 — Source-native Corporate Reporting private-analysis release-candidate admission contract and disposable rehearsal
 
-Status: **FINAL CLOSEOUT CANDIDATE — SUCCESSOR-CORRECTED COMPLETE SUITE PASS; EXTERNAL FREEZE AND THREE REVIEWS REQUIRED**
+Status: **COMPLETE — EXACT REVIEWED IMPLEMENTATION GIT-PUBLISHED; GOVERNANCE RECONCILIATION CLOSES TASK-225**
 
 ## Starting authority
 
@@ -41,7 +41,7 @@ Before the complete suite, freeze tracked/untracked report paths that the suite 
 
 ## Closeout
 
-Success is a reviewed deterministic candidate and disposable rehearsal, not a governed release. Stop with an unstaged, uncommitted, unpushed candidate ready for a separate publication decision. Governed counts and protected live-tree bytes must remain unchanged; no successor may activate.
+Success required a reviewed deterministic candidate and disposable rehearsal, followed by a separately authorized exact-byte Git publication and governance reconciliation. The exact reviewed 29-path implementation was Git-published in commit `7379417873564f5412bcbd4fc2725ba7a1841c3d` by direct one-commit fast-forward. This governance reconciliation closes TASK-225 without governed admission, dataset release, redistribution permission, remote-delivery authority, or successor activation.
 
 ## Superseded pre-review outcome
 
@@ -55,7 +55,7 @@ A replacement suite passed on the original bytes: wrapper exit 0, pytest exit 0,
 
 These results are historical only. Final review of freeze `1afcd39b94e99b424e4ccdd572099de537f45b2ae9e998b5aa62915654186bc8` returned FAIL / FAIL / UNCONDITIONAL PASS and correctly withheld unanimous acceptance. The failed freeze and review record remain superseded evidence and must not be represented as accepted.
 
-## Active remediation
+## Historical remediation
 
 The four review obligations are recorded in `artifacts/reports/task225-review-remediation-obligation-matrix.json`:
 
@@ -64,9 +64,9 @@ The four review obligations are recorded in `artifacts/reports/task225-review-re
 3. replace trailing-`Z` cutoff acceptance with canonical parse/round-trip and authenticated source-authority binding;
 4. reconcile `context/_SUMMARY.md` and every related current-state claim.
 
-Implementation/schema/test changes invalidate the old focused, rehearsal, and complete-suite evidence. Fresh verification, two new disposable rehearsals, one final-byte complete suite, cleanup, canonical gates, a new exact freeze, and three fresh identical-byte unconditional PASS reviews are required.
+At that remediation stage, implementation/schema/test changes invalidated the old focused, rehearsal, and complete-suite evidence. Fresh verification, two new disposable rehearsals, one final-byte complete suite, cleanup, canonical gates, a new exact freeze, and three fresh identical-byte unconditional PASS reviews were therefore required and were later completed.
 
-Governed accepted mapping/rights/quality/eligible-authority/release/publication counts remain zero; one inherited eligibility revision and authority root remain explicitly `blocked`. Redistribution, publication, and remote delivery remain unauthorized. No release is admitted, no successor is active, and nothing is staged, committed, pushed, or delivered.
+Throughout remediation, governed accepted mapping/rights/quality/eligible-authority/release/publication counts remained zero; one inherited eligibility revision and authority root remained explicitly `blocked`. No governed release, redistribution permission, remote-delivery authority, or successor activation resulted.
 
 ## Remediated final-byte verification
 
@@ -80,14 +80,14 @@ The remediation obligations are implemented on exact candidate bytes and the inv
 - canonical gates: coherence, context health, architecture reality, JSON validation, and `git diff --check` PASS with zero blocks/warnings;
 - governed preservation: accepted mapping/rights/quality/eligible-authority/release/publication counts remain zero; one blocked eligibility revision and one blocked authority root remain; no TASK-225 relation, disposable database, relevant session, or prepared transaction remains.
 
-Acceptance is still withheld until a new exact-byte freeze receives three independent unconditional PASS reviews. Any substantive byte change after freeze invalidates review.
+Acceptance was withheld at that stage until a new exact-byte freeze received three independent unconditional PASS reviews. That gate was subsequently satisfied; any substantive byte change after a freeze would still invalidate its review.
 
 ## Rejected remediated freeze and successor correction
 
 - Freeze `fd0cc9009e8ba4066d8914bcbcce8a12269f41cf08c5ccf8d491107a6b802fc2` was rejected unanimously after all three reviewers authenticated its 25 paths and aggregate `553ea49056dcf8bd26e06a85a9d3086e0d4ae68838249a476526fbf7d3ac9e67`.
 - Reviewers found stale rehearsal chronology in the canonical contract and an impossible successor persistence contract: a same-table predecessor foreign key conflicted with the exact one-candidate database marker.
 - A RED PostgreSQL regression reproduced the foreign-key rejection. Migration 006 now stores a syntactically constrained external predecessor identity without the impossible same-database foreign key, and the regression is GREEN.
-- This material SQL/test correction invalidates rehearsal, focused/integration acceptance, complete suite, continuity freeze, and reviews until fresh affected gates pass.
+- At that stage, this material SQL/test correction invalidated rehearsal, focused/integration acceptance, complete suite, continuity freeze, and reviews until fresh affected gates passed.
 - The consumed complete-suite authorization is not reusable; a new complete-suite invocation requires fresh authorization.
 - Fresh successor-corrected verification now passes: focused `69 passed`; Corporate Reporting integration `98 passed, 16 skipped`; two new disposable databases converged on candidate `08ec6fb...`, payload `6069a91c...`, and state `a03e54ff...`; rollback attacks were rejected without state change; canonical rehearsal report SHA-256 is `4a76043b...`; both databases were authenticated and removed exactly.
 - Durable corrected-gate evidence: `artifacts/reports/task225-successor-correction-verification.json`.
@@ -95,5 +95,5 @@ Acceptance is still withheld until a new exact-byte freeze receives three indepe
 - Exactly one authorized replacement complete suite passed on unchanged candidate bytes: wrapper/pytest exit zero, `673` collected/executed/accounted, `657 passed`, `16` protected-provider skips, zero failures/errors/deselections/unexecuted, and `[100%]` emitted in `1256.12s`.
 - Durable accepted-suite evidence: `artifacts/reports/task225-successor-corrected-replacement-complete-suite-evidence.json`. The failed evidence remains separately preserved at `artifacts/reports/task225-successor-corrected-complete-suite-evidence.json`.
 - Exact cleanup restored the 1,172-record pre-suite worktree baseline before writing the new evidence report, preserved all 11 cache/bytecode records and `pytest-3815`, and left no fixture, suite-created pytest root, TASK-225 database/session/process, or prepared transaction.
-- Candidate construction is complete for final external freeze/review. It is not governed admission or publication: accepted mappings, rights, quality, eligible authority, releases, publication reservations, and publication completions remain zero; one blocked eligibility revision and one blocked authority root remain.
-- Rights, redistribution, publication, remote delivery, downstream consumption, staging, commit, push, and successor activation remain unauthorized. Final acceptance requires a new exact-byte external freeze and three independent unconditional PASS reviews over identical bytes.
+- The final exact 29-path candidate freeze and three unconditional identical-byte reviews completed before Git publication. The reviewed implementation was then published in commit `7379417873564f5412bcbd4fc2725ba7a1841c3d` by direct one-commit fast-forward; the accepted 673-item suite evidence remains unchanged.
+- TASK-225's scoped implementation objective is complete, and this governance reconciliation closes the task. Git publication is not governed Corporate Reporting admission or dataset release. The source-native candidate remains private-analysis-only; accepted mappings, rights, quality, eligible authority, releases, publication reservations, and publication completions remain absent; no governed database write, redistribution permission, remote-delivery authority, downstream consumption authority, or successor activation occurred. No successor is active or defined, and the repository is idle pending explicit user direction.
